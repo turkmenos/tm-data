@@ -1,57 +1,39 @@
 # tm-data
-<<<<<<< HEAD
-SQL datasets for Turkmenistan’s administrative regions and settlements.
-=======
 
-Ready-to-import SQL datasets for the administrative geography and settlements of Turkmenistan.
+Open datasets related to Turkmenistan.
 
-Supports PostgreSQL, MySQL, SQLite, and SQL Server. Each database is provided as a standalone `import.sql` file containing the schema, indexes, search helpers, and seed data.
+`tm-data` is an open-source repository for collecting, organizing, and sharing datasets related to Turkmenistan.
 
-## Choose a language
+Datasets are stored in simple, machine-readable formats so they can be easily used in software projects, research, data analysis, and machine learning.
 
-| Language | Instructions | Sources |
-| --- | --- | --- |
-| 🇬🇧 English | [English import guide](source/en/README.md) | [English sources](source/en/SOURCES.md) |
-| 🇹🇲 Türkmençe | [Türkmençe import gollanmasy](source/tm/README.md) | [Türkmençe çeşmeler](source/tm/SOURCES.md) |
+New datasets and categories will be added over time.
 
-## Download
+Each dataset includes information about its source and structure.
 
-Choose your database and use its `import.sql` file:
+## Formats
 
-| Database | Import file |
-| --- | --- |
-| PostgreSQL 14+ | [`sql/postgresql/import.sql`](sql/postgresql/import.sql) |
-| MySQL 8+ | [`sql/mysql/import.sql`](sql/mysql/import.sql) |
-| SQLite 3.24+ | [`sql/sqlite/import.sql`](sql/sqlite/import.sql) |
-| SQL Server 2017+ | [`sql/sqlserver/import.sql`](sql/sqlserver/import.sql) |
+Datasets may be available in formats such as:
 
-Each file includes:
+- JSON
+- JSONL
+- CSV
+- SQL
+- Parquet
 
-- Database schema
-- Administrative region data
-- Region aliases
-- Indexes
-- Search helpers
-- Seed data
+The format depends on the type and purpose of each dataset.
 
-Imports are idempotent and can be safely run again without creating duplicate regions or aliases.
+## Sources
 
-## Preview
+The original source of each dataset is documented whenever possible.
 
-<table>
-  <tr>
-    <td align="center">
-      <img src="./assets/region.png" width="300"><br>
-      <b>Regions</b>
-    </td>
-    <td align="center">
-      <img src="./assets/region_aliases.png" width="300"><br>
-      <b>Region Aliases</b>
-    </td>
-    <td align="center">
-      <img src="./assets/region_search.png" width="300"><br>
-      <b>Region Search</b>
-    </td>
-  </tr>
-</table>
->>>>>>> 7900f75 (Initial release)
+External data is only included when its license or terms permit redistribution.
+
+## Contributing
+
+Contributions are welcome.
+
+You can contribute new datasets, improve existing data, fix errors, or add missing information.
+
+## License
+
+Licensing may vary between datasets. Check the documentation included with each dataset before using it.
