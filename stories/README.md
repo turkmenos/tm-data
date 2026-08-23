@@ -1,81 +1,147 @@
-# Turkmen Stories Dataset
+# Turkmen Stories and Prose Dataset
 
-[← Main page](../README.md) · [Sources](SOURCES.md)
+[← Main page](../README.md) · [Sources and rights](SOURCES.md)
 
-A structured home for Turkmen folk tales, short stories, legends, fables, and children's stories. The dataset is designed for reading applications, search, text-to-speech, linguistic research, RAG, and—where the license explicitly permits it—machine-learning training.
+Page-level Turkmen text extracted from PDF books. The collection is intended for search, reading applications, text-to-speech experiments, linguistic research, and the preparation of future RAG or machine-learning datasets.
 
-## Status
+> The current files are extraction outputs, not a finished story-level training dataset. Text still needs source verification, OCR cleanup, metadata enrichment, and—in multi-work books—division into individual works.
 
-The schema and contribution rules are ready, but no story text has been imported yet. A work must not be added merely because it can be read or downloaded online. Include full text only when it is:
+## Contents
 
-- in the public domain and that status has been verified;
-- published under a license that permits redistribution; or
-- covered by written permission from the relevant rights holder.
+| Work | Source pages | Extracted characters | Files |
+| --- | ---: | ---: | --- |
+| Gökdepe galasy | 84 | 116,667 | [JSON](gokdepe-galasy/gokdepe_galasy.json) · [SQLite](gokdepe-galasy/gokdepe_galasy.db) · [MySQL](gokdepe-galasy/gokdepe_galasy.sql) |
+| Goňubek | 38 | 56,583 | [JSON](gonubek/gonubek.json) · [SQLite](gonubek/gonubek.db) · [MySQL](gonubek/gonubek.sql) |
+| Göreş | 235 | 375,230 | [JSON](goresh/chary_ashyr_-_goresh.json) · [SQLite](goresh/chary_ashyr_-_goresh.db) · [MySQL](goresh/chary_ashyr_-_goresh.sql) |
+| Şükür bagşy | 58 | 93,514 | [JSON](shukur-bagshy/nurmyrat_saryhanow_-_shukur_bagshy.json) · [SQLite](shukur-bagshy/nurmyrat_saryhanow_-_shukur_bagshy.db) · [MySQL](shukur-bagshy/nurmyrat_saryhanow_-_shukur_bagshy.sql) |
+| **Total** | **415** | **641,994** | |
 
-## Files
+Counts come from the extraction metadata and include front matter, page numbers, running headers, and other text that may later be removed.
 
-| File | Purpose |
-| --- | --- |
-| [`schema/story.schema.json`](schema/story.schema.json) | JSON Schema for validating each story record |
-| `data/*.jsonl` | Future UTF-8 story records, one JSON object per line |
-| [`SOURCES.md`](SOURCES.md) | Provenance, permission, and source notes |
+## Available formats
 
-## Record format
+Each work is distributed in three equivalent formats:
+
+- **JSON** — one document object containing metadata, a `pages` array, and—when generated—a `page_columns` object.
+- **SQLite** — a ready-to-query database containing `documents` and `pages`; some files also contain `page_columns`.
+- **MySQL SQL** — a UTF-8 import script containing the schema and extracted text.
+
+These files use page-level records. They are regular JSON documents, not JSONL files.
+
+## JSON structure
 
 ```json
 {
-  "id": "folk-tale-example",
-  "language": "tk",
-  "title": "Example title",
-  "slug": "example-title",
-  "genre": "folk_tale",
-  "text_original": "Original Turkmen text...",
-  "text_normalized": "Normalized Turkmen text...",
-  "author": null,
-  "is_anonymous": true,
-  "source_title": "Source publication",
-  "source_url": "https://example.org/source",
-  "source_date": "1900",
-  "retrieved_at": "2026-08-23",
-  "copyright_status": "public_domain",
-  "license": "Public domain",
-  "permission_reference": null,
-  "verification_status": "verified"
+  "source_file": "example.pdf",
+  "source_path": "/local/path/example.pdf",
+  "created_at": "2026-08-23T19:44:17Z",
+  "page_count": 2,
+  "pages": [
+    {
+      "page_number": 1,
+      "text": "Extracted Turkmen text...",
+      "character_count": 27
+    }
+  ],
+  "page_columns": {
+    "page_1": "Extracted Turkmen text..."
+  }
 }
 ```
 
-## Important fields
+`pages` is the preferred representation. The wide `page_columns` object is a compatibility export and should not be used as the canonical structure for new tools.
 
-- `text_original` preserves the source spelling and layout as closely as practical.
-- `text_normalized` contains a corrected, search- and TTS-friendly version without silently replacing the original.
-- `copyright_status` records whether reuse is actually permitted; `unknown` records must not contain full text.
-- `permission_reference` identifies written permission when redistribution depends on it.
-- `verification_status` describes editorial verification, not copyright status.
+## Querying SQLite
 
-## Recommended genres
+SQLite files can be opened without an import step:
 
-- `folk_tale`
-- `short_story`
-- `legend`
-- `fable`
-- `children_story`
-- `anecdote`
-- `myth`
-- `other`
+```sh
+sqlite3 stories/shukur-bagshy/nurmyrat_saryhanow_-_shukur_bagshy.db
+```
 
-## Adding material from Kitaphana
+Example queries:
 
-[Kitaphana](https://www.kitaphana.net/) is a useful discovery catalog, but availability on the website does not by itself grant redistribution or model-training rights. Before importing a book:
+```sql
+SELECT source_file, page_count FROM documents;
 
-1. Identify the author, translator, editor, publisher, and publication year.
-2. Determine the copyright status of the underlying work and the specific edition.
-3. Obtain written permission if no explicit reusable license is provided.
-4. Save evidence of the license or permission in the source record.
-5. Extract and normalize the text, then manually review OCR errors and story boundaries.
-6. Keep train, validation, and test splits separated by work—not by random paragraphs—to prevent leakage.
+SELECT page_number, text
+FROM pages
+WHERE text LIKE '%bagşy%'
+ORDER BY page_number;
+```
 
-Do not import account details, annotations, website interface text, or unrelated books. Do not bypass access controls or overload the website.
+## Importing into MySQL
 
-## Validation
+The SQL exports target MySQL and use `utf8mb4`:
 
-Each line in a future JSONL file should validate against `schema/story.schema.json`. IDs and slugs must be unique across the dataset. UTF-8 Turkmen characters must be preserved.
+```sh
+mysql --default-character-set=utf8mb4 -u USER -p DATABASE_NAME \
+  < stories/shukur-bagshy/nurmyrat_saryhanow_-_shukur_bagshy.sql
+```
+
+Import each work into a separate database. The files use the same table names, and some exports drop existing `documents`, `pages`, and `page_columns` tables. Importing multiple files into one database can overwrite or conflict with previously imported data.
+
+## Database schema
+
+### `documents`
+
+| Column | Description |
+| --- | --- |
+| `id` | Document identifier |
+| `source_file` | Original PDF filename |
+| `source_path` | PDF path recorded during extraction |
+| `created_at` | Extraction timestamp |
+| `page_count` | Number of extracted pages |
+
+### `pages`
+
+| Column | Description |
+| --- | --- |
+| `id` | Page record identifier |
+| `document_id` | Reference to `documents.id` |
+| `page_number` | One-based source page number |
+| `text` | Extracted UTF-8 text |
+| `character_count` | Character count for the extracted page |
+
+## Data quality and limitations
+
+- Text is organized by PDF page rather than by chapter or story.
+- OCR and PDF extraction artifacts remain, including broken words, control characters, page numbers, and repeated website headers or footers.
+- `character_count` measures extracted text and is not a linguistic word or token count.
+- Empty pages may be present.
+- `source_path` may reveal an extraction-time local filesystem path and should be removed or replaced with a relative path before publishing derived exports.
+- The same content is repeated across JSON, SQLite, and SQL formats; do not treat each format as a separate work.
+- No train, validation, or test split has been prepared.
+
+## Preparing JSONL for language-model use
+
+Do not rename the current JSON files to `.jsonl`. Create a separate derived file after cleanup and story/chapter segmentation, with one complete record per line:
+
+```jsonl
+{"id":"shukur-bagshy","language":"tk","title":"Şükür bagşy","text":"Cleaned text...","source_title":"Şükür bagşy","verification_status":"needs_review"}
+```
+
+A recommended pipeline is:
+
+```text
+PDF extraction → page review → OCR cleanup → work/chapter segmentation
+→ source and rights verification → JSONL export → validation
+```
+
+Keep the original page-level export so every cleaned passage can be traced back to its source page.
+
+## Sources, copyright, and redistribution
+
+Online availability does not by itself grant permission to redistribute a work or use it for model training. Before publishing full text or derived training data, verify the rights for the underlying work, translation, edition, and digital transcription.
+
+Record the author, publisher, publication date, source URL, retrieval date, copyright status, license, and any written permission in [SOURCES.md](SOURCES.md). Material with unknown rights should not be presented as openly licensed data.
+
+## Adding another work
+
+1. Keep the original PDF outside the repository unless redistribution is explicitly permitted.
+2. Extract every page in UTF-8 and preserve Turkmen characters such as `ä`, `ç`, `ň`, `ö`, `ş`, `ü`, `ý`, and `ž`.
+3. Store the work in its own lowercase, hyphenated directory.
+4. Generate matching JSON, SQLite, and MySQL files only when those formats are needed.
+5. Check page counts, ordering, empty pages, encoding, and duplicate text.
+6. Document provenance, extraction method, data quality, and rights.
+7. Update the contents table in this README.

@@ -10,7 +10,7 @@ Open, machine-readable datasets related to Turkmenistan.
 | --- | --- | --- | --- |
 | Geography | Administrative divisions, settlements, alternative names, and search helpers | PostgreSQL, MySQL, SQLite, SQL Server | [Guide](geo/README.md) |
 | Poetry | 605 works by seven Turkmen poets | MySQL 8+ SQL | [Guide](poetry/README.md) |
-| Stories | Schema for Turkmen folk tales, short stories, legends, and fables | JSONL, JSON Schema | [Guide](stories/README.md) |
+| Stories | Page-level text extracted from Turkmen stories and prose | JSON, SQLite, MySQL SQL | [Guide](stories/README.md) |
 | Colors | Turkmen color names, English translations, HEX values, and categories | MySQL 8+ SQL | [Guide](colors/README.md) |
 
 Each dataset documents its structure, import process, limitations, and available sources in its own directory.
