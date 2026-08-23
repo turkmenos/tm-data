@@ -1,12 +1,12 @@
 # Türkmençe SQL import gollanmasy
 
-[← Baş sahypa](../README.md) · [English](../en/README.md) · [Çeşmeler](SOURCES.md)
+[← Baş sahypa](../../README.md) · [English](../en/README.md) · [Çeşmeler](SOURCES.md)
 
 Ulanylýan maglumatlar bazasyny saýlaň, degişli `import.sql` faýlyny ýükläň we göni maglumatlar bazaňyza import ediň.
 
 ## PostgreSQL
 
-[`sql/postgresql/import.sql`](../sql/postgresql/import.sql) faýlyny ýükläň we şu buýrugy işlediň:
+[`sql/postgresql/import.sql`](../../sql/postgresql/import.sql) faýlyny ýükläň we şu buýrugy işlediň:
 
 ```sh
 psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -f import.sql
@@ -14,17 +14,17 @@ psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -f import.sql
 
 ## MySQL
 
-[`sql/mysql/import.sql`](../sql/mysql/import.sql) faýlyny ýükläň we şu buýrugy işlediň:
+[`sql/mysql/import.sql`](../../sql/mysql/import.sql) faýlyny ýükläň we şu buýrugy işlediň:
 
 ```sh
 mysql --default-character-set=utf8mb4 -u USER -p DATABASE_NAME < import.sql
 ```
 
-MySQL import faýly maglumatlar bazasyny awtomatik döredýär we saýlaýar. Faýly serwer derejesindäki SQL redaktorynda hem göni işledip bolýar.
+MySQL import faýly `turkmenistan_geo` maglumatlar bazasyny awtomatik döredýär we saýlaýar. Faýly serwer derejesindäki SQL redaktorynda hem göni işledip bolýar.
 
 ## SQLite
 
-[`sql/sqlite/import.sql`](../sql/sqlite/import.sql) faýlyny ýükläň we şu buýrugy işlediň:
+[`sql/sqlite/import.sql`](../../sql/sqlite/import.sql) faýlyny ýükläň we şu buýrugy işlediň:
 
 ```sh
 sqlite3 tm-data.sqlite < import.sql
@@ -32,7 +32,7 @@ sqlite3 tm-data.sqlite < import.sql
 
 ## SQL Server
 
-[`sql/sqlserver/import.sql`](../sql/sqlserver/import.sql) faýlyny ýükläň we şu buýrugy işlediň:
+[`sql/sqlserver/import.sql`](../../sql/sqlserver/import.sql) faýlyny ýükläň we şu buýrugy işlediň:
 
 ```sh
 sqlcmd -S SERVER -d DATABASE_NAME -C -i import.sql

@@ -1,78 +1,71 @@
 # Turkmen Poetry Dataset
 
-A structured collection of Turkmen poetry prepared for use in databases, applications, research projects, educational tools, and digital archives.
+[← Main page](../README.md)
 
-The goal of this dataset is to make Turkmen literary works easier to access, search, preserve, and use programmatically.
+A collection of Turkmen poetry prepared in SQL format for databases, applications, research, educational tools, and digital archives.
 
-Poems are stored in SQL format with their titles, authors, text, and available source information.
+## Current contents
 
-> This dataset is part of the `tm-data` project.
+| Poet | Records | Import file |
+| --- | ---: | --- |
+| Bahargül Mejidowa | 24 | [`sql/bahargul-mejidova/poetry.sql`](sql/bahargul-mejidova/poetry.sql) |
+| Gara Seýitliýew | 98 | [`sql/gara-seyitliyev/poetry.sql`](sql/gara-seyitliyev/poetry.sql) |
+| Kerim Gurbannepesow | 250 | [`sql/kerim-gurbannepesov/poetry.sql`](sql/kerim-gurbannepesov/poetry.sql) |
+| Mollanepes | 26 | [`sql/mollanepes/poetry.sql`](sql/mollanepes/poetry.sql) |
+| Nobatguly Rejepow | 48 | [`sql/nobatguly-rejepov/poetry.sql`](sql/nobatguly-rejepov/poetry.sql) |
+| Magtymguly Pyragy | 130 | [`sql/pyragy/pyragy.sql`](sql/pyragy/pyragy.sql) |
+| Seýdi | 29 | [`sql/seydi/poetry.sql`](sql/seydi/poetry.sql) |
+| **Total** | **605** | |
 
----
+Counts are based on the `poems` records present in the SQL files.
 
-## About the Dataset
+## Requirements and import
 
-The poetry dataset contains works by Turkmen poets collected from available digital and printed sources.
+The files target MySQL 8+ and use `utf8mb4`. To import one poet:
 
-Each poem is stored as a separate database record rather than storing an entire book as a single text entry.
+```sh
+mysql --default-character-set=utf8mb4 -u USER -p DATABASE_NAME \
+  < sql/pyragy/pyragy.sql
+```
 
-Example:
+Run each file separately to import every poet. All files create the same `poets` and `poems` tables with `IF NOT EXISTS`. Poet records are reused by name, but poems have no unique constraint. Running the same file more than once can therefore create duplicate poem records.
 
-| id | poet_id | title | text | source |
-|---:|---:|---|---|---|
-| 1 | 1 | Gürgeniň | ... | ... |
-| 2 | 1 | Gerekdir | ... | ... |
-| 3 | 1 | Ýaşymyz | ... | ... |
+## Schema
 
-This structure makes it possible to:
+### `poets`
 
-- search poems by title;
-- retrieve poems by poet;
-- build poetry websites and APIs;
-- create educational applications;
-- perform linguistic and literary research;
-- build search indexes;
-- preserve Turkmen literary works in structured digital form.
+| Column | Type | Description |
+| --- | --- | --- |
+| `id` | `BIGINT UNSIGNED` | Auto-incrementing primary key |
+| `name` | `VARCHAR(255)` | Unique poet name |
 
----
+### `poems`
 
+| Column | Type | Description |
+| --- | --- | --- |
+| `id` | `BIGINT UNSIGNED` | Auto-incrementing primary key |
+| `poet_id` | `BIGINT UNSIGNED` | Foreign key referencing `poets.id` |
+| `title` | `VARCHAR(500)` | Title of the poem or record |
+| `text` | `LONGTEXT` | Full text with line breaks preserved |
+| `source` | `VARCHAR(1000)` | Source information when available |
 
+Example query:
 
-# Türkmen Goşgularynyň Maglumat Toplumy
+```sql
+SELECT p.name, poem.title, poem.text, poem.source
+FROM poems AS poem
+JOIN poets AS p ON p.id = poem.poet_id
+WHERE p.name = 'Magtymguly Pyragy'
+ORDER BY poem.title;
+```
 
-Maglumat bazalarynda, programmalarda, ylmy-barlag taslamalarynda, bilim ulgamlarynda we sanly arhiwlerde ulanmak üçin taýýarlanan türkmen goşgularynyň gurluşly maglumat toplumy.
+## Known limitations
 
-Bu maglumat toplumynyň maksady türkmen edebi eserlerini has elýeterli etmek, gözlemegi aňsatlaşdyrmak, sanly görnüşde gorap saklamak we programmalarda ulanmak mümkinçiligini döretmekdir.
+- Some `source` values are empty, so publication metadata is incomplete.
+- Text converted from print or PDF may retain page numbers, form-feed characters, or OCR errors.
+- Record boundaries depend on the source layout; some long records may contain a collection rather than one poem.
+- An open SQL structure does not imply that every literary work is free of copyright. Verify the rights for each work, particularly works by modern authors, before redistribution.
 
-Goşgular SQL görnüşinde olaryň atlary, awtorlary, tekstleri we bar bolan çeşme maglumatlary bilen saklanýar.
+## Contributing
 
-> Bu maglumat toplumy `tm-data` taslamasynyň bir bölegidir.
-
----
-
-## Maglumat toplumy barada
-
-Bu maglumat toplumynda dürli sanly we çap edilen çeşmelerden ýygnalan türkmen şahyrlarynyň eserleri ýerleşdirilýär.
-
-Kitabyň ähli tekstini bir ýazgy hökmünde saklamagyň ýerine, her bir goşgy maglumat bazasynda aýratyn ýazgy hökmünde saklanýar.
-
-Mysal:
-
-| id | poet_id | title | text | source |
-|---:|---:|---|---|---|
-| 1 | 1 | Gürgeniň | ... | ... |
-| 2 | 1 | Gerekdir | ... | ... |
-| 3 | 1 | Ýaşymyz | ... | ... |
-
-Şeýle gurluş aşakdaky mümkinçilikleri berýär:
-
-- goşgulary ady boýunça gözlemek;
-- belli bir şahyryň goşgularyny tapmak;
-- goşgy we edebiýat web sahypalaryny döretmek;
-- API hyzmatlaryny taýýarlamak;
-- bilim we okuw programmalarynda ulanmak;
-- dil we edebiýat boýunça ylmy-barlag geçirmek;
-- gözleg indekslerini döretmek;
-- türkmen edebi eserlerini gurluşly sanly maglumat görnüşinde gorap saklamak.
-
----
+When adding a poet or correction, include the canonical author name, one record per poem where the source permits it, complete bibliographic information, and the text-verification status. Preserve Turkmen characters in UTF-8.

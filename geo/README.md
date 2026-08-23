@@ -1,4 +1,4 @@
-# tm-data
+# geo
 
 Ready-to-import SQL datasets for the administrative geography and settlements of Turkmenistan.
 

@@ -1,12 +1,12 @@
 # English SQL Import Guide
 
-[← Main page](../README.md) · [Türkmençe](../tm/README.md) · [Sources](SOURCES.md)
+[← Main page](../../README.md) · [Türkmençe](../tm/README.md) · [Sources](SOURCES.md)
 
 Choose your database, download the corresponding `import.sql` file, and import it directly.
 
 ## PostgreSQL
 
-Download [`sql/postgresql/import.sql`](../sql/postgresql/import.sql), then run:
+Download [`sql/postgresql/import.sql`](../../sql/postgresql/import.sql), then run:
 
 ```sh
 psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -f import.sql
@@ -14,17 +14,17 @@ psql "$DATABASE_URL" -v ON_ERROR_STOP=1 -f import.sql
 
 ## MySQL
 
-Download [`sql/mysql/import.sql`](../sql/mysql/import.sql), then run:
+Download [`sql/mysql/import.sql`](../../sql/mysql/import.sql), then run:
 
 ```sh
 mysql --default-character-set=utf8mb4 -u USER -p DATABASE_NAME < import.sql
 ```
 
-The MySQL import file creates and selects the `tm_data` database automatically. It can also be executed directly in a server-level SQL editor.
+The MySQL import file creates and selects the `turkmenistan_geo` database automatically. It can also be executed directly in a server-level SQL editor.
 
 ## SQLite
 
-Download [`sql/sqlite/import.sql`](../sql/sqlite/import.sql), then run:
+Download [`sql/sqlite/import.sql`](../../sql/sqlite/import.sql), then run:
 
 ```sh
 sqlite3 tm-data.sqlite < import.sql
@@ -32,7 +32,7 @@ sqlite3 tm-data.sqlite < import.sql
 
 ## SQL Server
 
-Download [`sql/sqlserver/import.sql`](../sql/sqlserver/import.sql), then run:
+Download [`sql/sqlserver/import.sql`](../../sql/sqlserver/import.sql), then run:
 
 ```sh
 sqlcmd -S SERVER -d DATABASE_NAME -C -i import.sql

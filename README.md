@@ -1,39 +1,57 @@
 # tm-data
 
-Open datasets related to Turkmenistan.
+Open, machine-readable datasets related to Turkmenistan.
 
-`tm-data` is an open-source repository for collecting, organizing, and sharing datasets related to Turkmenistan.
+`tm-data` collects, organizes, and shares Turkmen data for use in software, research, data analysis, education, and machine learning.
 
-Datasets are stored in simple, machine-readable formats so they can be easily used in software projects, research, data analysis, and machine learning.
+## Datasets
 
-New datasets and categories will be added over time.
+| Dataset | Contents | Format | Documentation |
+| --- | --- | --- | --- |
+| Geography | Administrative divisions, settlements, alternative names, and search helpers | PostgreSQL, MySQL, SQLite, SQL Server | [Guide](geo/README.md) |
+| Poetry | 605 works by seven Turkmen poets | MySQL 8+ SQL | [Guide](poetry/README.md) |
+| Stories | Schema for Turkmen folk tales, short stories, legends, and fables | JSONL, JSON Schema | [Guide](stories/README.md) |
+| Colors | Turkmen color names, English translations, HEX values, and categories | MySQL 8+ SQL | [Guide](colors/README.md) |
 
-Each dataset includes information about its source and structure.
+Each dataset documents its structure, import process, limitations, and available sources in its own directory.
 
-## Formats
+## Usage
 
-Datasets may be available in formats such as:
+Clone the repository:
 
-- JSON
-- JSONL
-- CSV
-- SQL
-- Parquet
+```sh
+git clone https://github.com/dayanchm/tm-data.git
+cd tm-data
+```
 
-The format depends on the type and purpose of each dataset.
-
-## Sources
-
-The original source of each dataset is documented whenever possible.
-
-External data is only included when its license or terms permit redistribution.
+Follow the import instructions for the dataset you want to use. SQL files use UTF-8; choose a connection encoding and collation that preserve Turkmen characters such as `ä`, `ç`, `ň`, `ö`, `ş`, `ü`, `ý`, and `ž`.
 
 ## Contributing
 
-Contributions are welcome.
+Contributions may include new datasets, corrections, sources, translations, or additional export formats.
 
-You can contribute new datasets, improve existing data, fix errors, or add missing information.
+1. Place data in an appropriately named directory and use a clear, machine-readable structure.
+2. Document the source URL, retrieval date, and redistribution rights.
+3. Describe the schema, format, import steps, and known limitations in the dataset README.
+4. Preserve the Turkmen alphabet in UTF-8 and check for duplicates where possible.
+5. Do not include private, sensitive, or non-redistributable data.
 
-## License
+## Ideas for future datasets
 
-Licensing may vary between datasets. Check the documentation included with each dataset before using it.
+- A Turkmen dictionary with parts of speech, definitions, synonyms, antonyms, and example sentences
+- Proverbs, sayings, and riddles with topic labels
+- Turkmen given names with gender, meaning, and origin
+- District codes, postal codes, and telephone codes
+- Holidays, historical dates, and cultural heritage sites
+- Thematic vocabulary for animals, plants, food, occupations, and family relationships
+- Turkmen stop words, suffixes, transliteration rules, and text-normalization data
+- GeoJSON and CSV exports for geography, plus JSON and CSV exports for other datasets
+- Automated schema, encoding, duplicate, and integrity checks
+
+For any new dataset, reliable provenance, redistribution rights, and verification status are more important than record count alone.
+
+## Sources and license
+
+General provenance guidelines are available in [SOURCES.md](SOURCES.md). Detailed sources are documented within each dataset when available.
+
+The repository's original code and independently created material are provided under the [MIT License](LICENSE). External data, source material, and literary works may have separate licenses or copyright restrictions. Review each dataset's documentation before use or redistribution.
