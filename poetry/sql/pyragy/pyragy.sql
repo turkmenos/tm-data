@@ -1,0 +1,26666 @@
+-- tm-data
+-- Turkmen Poetry Dataset
+-- MySQL 8+
+
+SET NAMES utf8mb4;
+
+SET FOREIGN_KEY_CHECKS = 0;
+
+CREATE TABLE IF NOT EXISTS poets (
+    id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+
+    PRIMARY KEY (id),
+    UNIQUE KEY uq_poets_name (name)
+) ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS poems (
+    id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    poet_id BIGINT UNSIGNED NOT NULL,
+    title VARCHAR(500) NOT NULL,
+    text LONGTEXT NOT NULL,
+    source VARCHAR(1000) NULL,
+
+    PRIMARY KEY (id),
+
+    KEY idx_poems_poet_id (poet_id),
+    KEY idx_poems_title (title),
+
+    CONSTRAINT fk_poems_poet
+        FOREIGN KEY (poet_id)
+        REFERENCES poets(id)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+) ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO poets (name)
+VALUES ('Magtymguly Pyragy')
+ON DUPLICATE KEY UPDATE name = VALUES(name);
+
+SET @poet_id = (
+    SELECT id
+    FROM poets
+    WHERE name = 'Magtymguly Pyragy'
+    LIMIT 1
+);
+
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Gürgeniň',
+    'Öňünde belent dag, serinde duman,
+Deňizden öwüser ýeli Gürgeniň;
+Bulut oýnap, baran dolsa çaýlara,
+Akar boz bulanyp sili Gürgeniň.
+
+Tokaýlary bardyr gargy-gamyşly,
+Gözelleri bardyr altyn-kümüşli
+Boz güsbent, gyr ýylky, gara gäwmişli,
+Argaly gäw bolar maly Gürgeniň.
+
+Hatarlanyp duran iner, maýalar,
+Agyr bezirgenler, tuçjar eýeler,
+Seňrikläp, abanyp duran gaýalar,
+Öňi-ardy sagy-soly Gürgeniň.
+
+Ýigitler tirme-şal guşar biline,
+Ýorga münüp, tarlaň alar eline,
+Ak göwsün biýr jeren deňiz ýeline,
+Mäleýir maraly çöli Gürgeniň.
+
+Magtymguly ilden-ile aralar,
+Hijran tygy bilen bagryn paralar,
+Golun sallap maral gabak periler,
+Iner olumyndan däli Gurgeniň.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Gerekdir',
+    '«Menem» diýen goç ýigide
+Bir mynasyp ýar gerekdir.
+Arap at, ýowly ýigide
+Almaz zülpükar gerekdir.
+
+Ýigit öler ýurt üstünde,
+Janyn berip ar üstünde,
+Goç ýigitler il üstünde
+Namys bilen ar gerekdir.
+
+Bäş gün köňül hoş etmäge,
+Saçak ýazyp, nan dökmäge,
+Abraý alyp, at etmäge,
+Golda bendi-bar gerekdir.
+
+Mekgä baran bolar hajy,
+Aýralyk ölümden ajy.
+Goç ýigide ar galyjy,
+Aşyga didar gerekdir.
+
+Artdyr pelek ahy-zaryň,
+Alar elden ygtyýaryň.
+Magtymguly, söwer ýaryň
+Syýa zülpi tar gerekdir.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Ýaşymyz',
+    'Istär elden çyka döwlet humaýym,
+          Doga kylyp, döker bolduk ýaşymyz,
+          Dilegim duş eýle, gözel allahym!
+          Ersgin boldy, gitdi gyzylbaşymyz.
+
+          Hyzyr gezen çölde iller ýaýylsyn,
+          Ýurt binamyz gaýym bolsun, gurulsyn,
+          Çille mest nerlermiz barça aýylsyn
+          Bir sufrada1 eda bolsun aşymyz.
+
+          Derwüşler köňli jem bolsun namaza,
+          Ýigitler ýygylsyn söhbete-saza,
+          Ilimiz ulaşsyn sowulmaz ýaza,
+          Togsan dolup, tamam bolsun gyşymyz.
+
+          Türkmenler, baglasak bir ýere bili,
+          Gurudars Gulzumy, derýaýy-Nili,
+          Teke, ýomut, gökleň, ýazyr, alili —
+          Bir döwlete gulluk etsek bäşimiz.
+
+          Magtymguly, diýdi janyň dirligne,
+          Galmalyň biz gyzylbaşyň horlugna,
+          Rowaç beriň ýomut, gökleň birligne,
+          Ol Kemalhan Owgan bolsun başymyz.
+
+1 Sufra – saçak.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Öňi-ardy bilinmez',
+    'Ýomut, gökleň tagsyp edip özünden,
+        Çyksa goşun, öňi-ardy bilinmez;
+        Sygmaý çykdy deşdi-sähra düzünden,
+        Ýörän ýoly, gonan ýurdy bilinmez.
+
+        Garga salsaň, tugun bile depişer,
+        Haýbatyndan daglar-daşlar gapyşar,
+        Öli turup, dirilere ýapyşar,
+        Arslany, tilkisi, gurdy bilinmez.
+
+        Üç müň naýzabazy bardyr nökerden,
+        Tört müň pildary bar, gala ýykardan,
+        Teke, salyr ýöriş etse ýokardan,
+        Öňünde oý-çukur, ýerdi bilinmez.
+
+        Ähli iller namys edip gelerler,
+        Galaň ýykyp, tagtyň berbat kylarlar,
+        Dökülerler, galalaryň alalar,
+        Bu kentleriň1 üçi, dördi bilinmez.
+
+        Magtymguly, Alynyňdyr bu meýdan,
+        Ne iş tutar, görüň, bu Omar, Osman,
+        At deminden dolar zeminu-asman,
+        Horasanyň häki-gerdi bilinmez.
+
+1 Kent – oba.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Gökleň',
+    'Çöle çykar bolsa meňzär
+Keýige, gulana gökleň;
+Tagsyp edip söweş etse,
+Döner aç arslana gökleň.
+
+Ilinu-ýurdun byrakmaz,
+Bela bakmaz, närse ýokmaz,
+Alladan emirdir, çykmaz
+Bu sözüm ýalana gökleň.
+
+Ylham etdi möwlam maňa,
+Nazar düşdi senden ýaňa,
+Ýok bolar kast eden saňa,
+Gaýdyp dol Gürgene, gökleň.
+
+Sözüm agzyma hak salar,
+Bir nepes aýdanym bolar,
+Ýamanlyk eýleýen geler
+Nurbat diýp, amana, gökleň.
+
+Hyruç eýläp tursa gowur,
+Permana geler Nişabur,
+Öwrüler bu döwran-döwür
+Ähli musulmana gökleň.
+
+Haraba dönüp Horasan,
+At aýagna galar ýegsan,
+Kese Arkaç, Mazanderan,
+Gelerler permana, gökleň.
+
+Ýoluň açyk gün nury dek,
+Güýji artar Rum zory dek
+Aslyşar sen aç böri dek,
+Yşk edip meýdana, gökleň.
+
+Zor biýr mertleriň söweşe,
+Döwletiň öňünden daşa,
+Gylyç urup gyzylbaşa, –
+Dolar sen Gürgene, gökleň.
+
+Islär men döwletiň artyp,
+Hak iş üçin ýörip, ýortup,
+Pyragy diýr, goşun tartyp,
+Dolar sen Gürgene, gökleň.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Reýgan eýledi',
+    'Gaýgy-gamda eziz ömrüm solduryp,
+         Şum pelek azabym reýgan eýledi;
+         Ýazan kitaplarym sile aldyryp,
+         Gözlerim yzynda girýan eýledi.
+
+         Gapyllykda duşman aldy daşymyz,
+         Dargatdy her ýana deňi-duşumyz,
+         Bäş ýylda bir kitap eden işimiz,
+         Gyzylbaşlar alyp, weýran eýledi.
+
+         Bir niçämiz goly bagly gul bolup,
+         Niçeler yzynda sargaryp-solup,
+         Kimi berip, onuň bahasyn alyp.
+         Her kime bir belli baha eýledi.
+
+         Şum pelek birehim, maňa bildirdi,
+         Aglamakdan gül ýüzlerim soldurdy.
+         Golýazma kitabym sile aldyrdy,
+         Duşmanymy jeýhun derýa eýledi...
+
+         Niçeler dünýäde boldy bir kişi,
+         Niçäniň agzyny doldurmaz aşy,
+         Niçäniň matamdan gutulmaz başy,
+         Gije-gündiz «waleýleta!»1 eýledi.
+1 Waleýleta – dat-bidat.
+
+         Köýdürer şum pelek jebri-jepasy
+         Ýalandyr, ynanmaň, ähdi-wepasy,
+         Magtymguly, ýok bu sözüň hatasy,
+         Pelek elip kaddym duta1 eýledi.
+
+1 Duta – iki eplenen, bükük, egri.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Pukaraýam',
+    'Watanymda han idim,
+Hanlara perman idim,
+Dertlere derman idim,
+Misgine dükan idim,
+Jansyzlara jan idim,
+Neýleý, indi biçäreýem.
+
+Gözsüzleriň gözi idim,
+Lallaryň men sözi idim,
+Il-günümniň ýüzi idim,
+Söwer magşuk näzi idim,
+Hatamy Taý özi idim,
+Neýleý, indi pukaraýam.
+
+Erem içre reýhan idim,
+Watanga zerefşan idim,
+Mert ýigitde keman idim,
+Dag başynda duman idim,
+Pyragy diýr, aman idim,
+Indi weýran bir saraýam.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Türkmen binasy',
+    'Gurdugym aslynda bilgil,
+              bu zeminiň myhydyr,
+Erer ol erkin mydam,
+              budur türkmen binasy.
+
+Terki dünýä eýleýir,
+             gelse rakyp gaşyna,
+Bil, polatdan bina bolgan,
+             budur türkmen galasy.
+
+Süleýman, Rüstem Zal,
+           Jemşit oňa bolmuş geda,
+Günde ýüz müň salsa leşger,
+           degmez şanyň belasy.
+
+Daglar ondan alar taglym,
+            leşgerleri sap-sap durar.
+Her salanda zülpükary,
+            artar ýigidiň höwesi.
+
+Teke, ýomut, ýazyr gökleň,
+             Ahal ili bir bolup,
+Kylsa bir jaýga ýöriş,
+             açylar gül lälesi.
+
+        Külli gyzylbaş baryny
+                     atdy dag arkasyna,
+        Gije-saba ýatmaýyr,
+                     geler olarnyň nalasy.
+
+        Her gadam ursa saýýat1 ,
+                    bolmaýyr ol duşugär,
+        Bendi kylyp ala bilmez,
+                    düşmez türkmen balasy.
+
+        Aryflary dem-dem geler,
+                    toýy bardyr her zaman,
+        Merdi-merdan sözlüdir ol,
+                    ýokdur köňül gilesi2 .
+
+        Aýdadyr Magtymguly,
+                    ýokdur köňülde hilesi,
+        Hak sylaýyp kylmyş nazar,
+                    bardyr onuň saýasy.
+
+1 Saýýat – awçy, şikarçy.
+2 Gile – närazyçylyk, göwün-garyn etmeklik, kine.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Türkmeniň',
+    'Jeýhun bile bahry-Hazar1 arasy,
+         Çöl üstünden öser ýeli türkmeniň,
+         Gül gunçasy, gara gözüm garasy,
+         Gara dagdan iner sili türkmeniň.
+
+         Hak sylamyş, bardyr onuň saýasy,
+         Çyrpynşar çölünde neri, maýasy,
+         Reňbe-reň gül açar ýaşyl ýaýlasy,
+         Gark bolmuş reýhana çöli türkmeniň.
+
+         Al-ýaşyl bürenip çykar perisi,
+         Kükeýip bark urar anbaryň ysy,
+         Beg, töre, aksakal, ýurduň eýesi.
+         Küren tutar gözel ili türkmeniň.
+
+         Ol merdiň ogludyr, mertdir pederi,
+         Görogly gardaşy, serhoşdyr seri,
+         Dagda, düzde kowsa saýýatlar, diri
+         Ala bilmez, ýolbars ogly turkmeniň.
+
+         Köňüller, ýürekler bir bolup başlar,
+         Tartsa ýygyn, erär topraklar-daşlar,
+         Bir suprada taýýar kylynsa aşlar,
+         Göteriler ol ykbaly türkmeniň.
+1 Bahary-Hazar – Hazar (Kaspi) deňzi.
+
+Köňül howalanar, ata çykanda,
+Daglar lagla döner, gyýa bakanda,
+Bal getirer, joşup derýa akanda,
+Bent tutdurmaz gelse sili türkmeniň.
+
+Gapyl galmaz, döwüş güni har bolmaz,
+Gargyşa, nazara griftar bolmaz,
+Bilbilden aýrylyp, solup saralmaz,
+Daýym anbar saçar güli türkmeniň.
+
+Tireler gardaşdyr, urug ýarydyr,
+Ykballar ters gelmez — hakyň nurudyr,
+Mertler ata çyksa söweş sarydyr,
+Ýow üstüne ýörer ýoly türkmeniň.
+
+Serhoş bolup çykar, jiger daglanmaz,
+Daşlary syndyrar, ýoly baglanmaz,
+Gözi gaýra düşmez, köňül eglenmez,
+Magtymguly, sözlär tili türkmeniň.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Depe nedir, düz nedir',
+    'Ýaşy ýeten arap atyň şanynda
+          Mälim bolmaz, depe nedir, düz nedir;
+          Ýüňi ýeten goç ýigidiň ýanynda
+          Altmyş nedir, ýetmiş nedir, ýüz nedir...
+
+          Namart ogly gorky çeker meýdandan,
+          Agaç adam bolup görner her ýandan,
+          Muhannesler howply ýerde duşmandan
+          Seçe bilmez, duman nedir, toz nedir.
+
+          Sypa bolup, müner atyn bilmeýen,
+          Aryf1 bolup, öz yzzatyn bilmeýen,
+          Söhbet içre söz lezzetin bilmeýen
+          Aňa bilmez, söhbet nedir, saz nedir.
+
+          Garga ýiter boz balaman2 jeňinde,
+          Görne bilmez ol meýdanyň deňinde,
+          Aç garçygaý algyr laçyn öňünde,
+          Müň ýygylsyn, ördek nedir, gaz nedir.
+
+          Magtymguly, söz joş etgin diliňden,
+          Muhannese ýol bermegil ýeläňden,
+          Bu hünärler geler, gelmez eliňden,
+          Dilden gelen bu jürýetli3 söz nedir.
+1 Aryf   – biliji, her bir zatdan habarly.
+2 Boz balaman – aw guşy.
+3 Jürýet – gaýrat, edenlilik, ýürek edip bilmeklik',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Meýdan ýoluksa',
+    'Bedew ölse, meýdan galar armanly,
+Hak yşkyna at sal, meýdan ýoluksa;
+Ýigit ölse, heňgam galar döwranly,
+Wagtyňy hoş geçir, döwran ýoluksa.
+
+Ýigit bardyr, sözün tapmaz süýrüder,
+Ýigit bardyr, demi daşlar erider,
+Jaý ýerinde gaýra galsa, garrydar,
+Goç ýigidiň aty çaman ýoluksa.
+
+Işi dürüst gelmez köňül çenine,
+Dodagyn dişleýip, «ah» diýr zenine,
+Ýylan zähri bolup, ýaýlar tenine,
+Ýigit garryr, aýal ýaman ýoluksa.
+
+Ýüz namart ýerini tutmaz bir merdiň,
+Mert çeker täsibin, iliň ýuwurdyň,
+Bitiren işini görüň namardyň,
+Jeňdir diýip gaçar, duman ýoluksa.
+
+Magtymguly, öwüt bergil söz bile,
+Eşiden deň bolmaz gören göz bile,
+Mert çykar myhmana güler ýüz bile,
+Namart özün gizlär, myhman ýoluksa.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Eýlär',
+    'Akyl olsaň ýagşylara hemdem bol,
+Akmak özün nadan bile ýar eýlär.
+Hak aşyklar näzli ýaryň jemalyn
+Bir görsem diýip, gije-gündiz zar eýlär.
+
+Syrdaş bolsa, syrym aýdardym merde,
+Kerwen ýata bilmez gorkuly ýerde,
+Uly namyslarda, ýaramaz derde,
+Namart öýde sähel işi ar eýlär.
+
+Namart gussasyndan galyp men derde
+Köňlüm aram tapmaz bir pinhan ýerde,
+Maly köp diýip, myhman bolma namarda,
+Jomart her çent pakyr bolsa, bar eýlär.
+
+Namart öz öýünde merde söz aýdar,
+Kär eýlemez hakyň tanapyn dartar.
+Goç ýigit mal tapsa, hümmeti artar,
+Namart peýda tapsa, köňül dar eýlär.
+
+Magtymguly, imdi özüňni gözle,
+Ýagşyny taryplap, ýamany düzle;
+Az iýip, az uklap, ýene az sözle:
+Köp söz ahyr il içinde har eýlär.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Görüň',
+    'Her ýigidiň aslyn bileý diýseňiz,
+        Märekede otur-turuşyn görüň.
+        Birew bilen aşna bolaý diýseňiz,
+        Ozal ykrarynda duruşyn görüň.
+
+        Uzak, ýakyn ýola barar bolsaňyz,
+        Merdanlyk gylyjyn çalar bolsaňyz,
+        Bir bedewni saýlap alar bolsaňyz,
+        Synasyn, sagrysyn, gerişin görüň.
+
+        Bir pul düşse bir üflisiň goluna,
+        Göwsün açyp gezer gyşyň ýeline,
+        Hyrydar bolsaňyz gyza, geline,
+        Edebin, erkanyn, oturşyn görüň.
+
+        Goç ýigidiň at-ýaragy şaý bolsa,
+        Ýetişer, her ýerde haýda-haý bolsa.
+        Özi Hatam bolup, ýene baý bolsa,
+        Çar tarapdan myhman gelişin görüň.
+
+        Bir niçäni kyldyň maly-bisýary1 ,
+        Bir niçäni kyldyň bir puluň zary.
+        Ýagşy-ýaman hemme adamyň bary
+        Nobat bilen ötüp baryşyn görüň.
+1 Maly-bisýary – köp mally.
+
+        Taňry bizar, biliň, zekatsyz baýdan,
+        Siz hem gaçyň, zynhar1 ol gelen jaýdan,
+        Merde bir iş düşse görer hudaýdan,
+        Namardyň hemradan görüşin görüň.
+
+        Namart ýörer mydam ölümden gaçyp,
+        Öýüne gelende, zährini saçyp,
+        Mert ýigit myhmana göwsüni açyp,
+        Namardyň meýdana baryşyn görüň.
+
+        Zalymlar unudar zikri2 -allany,
+        Arzan alyp, gymmat satar gallany,
+        Süýthor naýynsaplar halal tyllaňy
+        Haram peýdasyna berişin görüň.
+
+        Şeýtan-melgun hergiz tagat etdirmez,
+        Haramdan gaýtarmaz, halal iýdirmez,
+        Roza tutdurmaz, namaz uýdurmaz,
+        Lagnaty şeýtanyň talyşyn görüň.
+
+        Goç ýigidiň işi söhbet-saz bolar,
+        Köňli gyş bolmaýan, daýym ýaz bolar,
+        Ýagşynyň köňlünde kine az bolar,
+        Ýamanyň günde bir uruşyn görüň.
+1 Zynhar – ägä bol, habarly bol!
+2 Zikr – ýatlamak, ýat etmek.
+
+        Gadyrdan gardaşdan uzak daş bolup,
+        Gadyrsyz ýat bilen garyndaş bolup,
+        Magtymguly, näsazlara duş bolup,
+        Hojanyň, seýidiň ýörişin görüň.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Aňlamaz',
+    'Bedasyla beglik ýetse bir günde,
+        Alar awun, salar guşun aňlamaz,
+        Ýarlygy ýörigen nurbatsyz begler
+        Pukaranyň gözde ýaşyn aňlamaz.
+
+        Belet başlar dogry ýoly çen bile,
+        Akyl adam söz başlamaz «men» bile,
+        Namart otyr, geňeş eýlär zen bile,
+        Goç ýigitler zen geňeşin aňlamaz.
+
+        Mertden dileg etseň, aýdar: «hup bolar!»
+        Bir bagşaşdan1 ýetmiş bela dep bolar.
+        Muhannes geňeşi çölde köp bolar,
+        Duşman görse, tutar işin aňlamaz.
+
+        Hak ýoluna her kim haýr-yhsan2 kylar,
+        Kyýamat gün bir ýerine on geler.
+        Namart duşman görse, gussadan öler,
+        Goç ýigitler tördün, bäşin aňlamaz.
+1 Bahşaş – berim.
+2 Yhsan – ýagşylyk, haýyr.
+
+       Magtymguly, beg ýanynda til başlar,
+       Gylyjy-gaýraty bolan il başlar,
+       Mertden bolan ýygyn görse, ýol başlar,
+       Namart ogly deňin-duşun aňlamaz.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Gerekdir',
+    '«Menem» diýen goç ýigide
+Bir mynasyp ýar gerekdir.
+Arap at, ýowly ýigide
+Almaz zülpükar gerekdir.
+
+Ýigit öler ýurt üstünde,
+Janyn berip ar üstünde,
+Goç ýigitler il üstünde
+Namys bilen ar gerekdir.
+
+Bäş gün köňül hoş etmäge,
+Saçak ýazyp, nan dökmäge,
+Abraý alyp, at etmäge,
+Golda bendi-bar gerekdir.
+
+Mekgä baran bolar hajy,
+Aýralyk ölümden ajy.
+Goç ýigide ar galyjy,
+Aşyga didar gerekdir.
+
+Artdyr pelek ahy-zaryň,
+Alar elden ygtyýaryň.
+Magtymguly, söwer ýaryň
+Syýa zülpi tar gerekdir.
+
+                     Ýaşymyz
+
+          Istär elden çyka döwlet humaýym,
+          Doga kylyp, döker bolduk ýaşymyz,
+          Dilegim duş eýle, gözel allahym!
+          Ersgin boldy, gitdi gyzylbaşymyz.
+
+          Hyzyr gezen çölde iller ýaýylsyn,
+          Ýurt binamyz gaýym bolsun, gurulsyn,
+          Çille mest nerlermiz barça aýylsyn
+          Bir sufrada1 eda bolsun aşymyz.
+
+          Derwüşler köňli jem bolsun namaza,
+          Ýigitler ýygylsyn söhbete-saza,
+          Ilimiz ulaşsyn sowulmaz ýaza,
+          Togsan dolup, tamam bolsun gyşymyz.
+
+          Türkmenler, baglasak bir ýere bili,
+          Gurudars Gulzumy, derýaýy-Nili,
+          Teke, ýomut, gökleň, ýazyr, alili —
+          Bir döwlete gulluk etsek bäşimiz.
+
+          Magtymguly, diýdi janyň dirligne,
+          Galmalyň biz gyzylbaşyň horlugna,
+          Rowaç beriň ýomut, gökleň birligne,
+          Ol Kemalhan Owgan bolsun başymyz.
+
+1 Sufra – saçak.
+
+                Öňi-ardy bilinmez
+
+        Ýomut, gökleň tagsyp edip özünden,
+        Çyksa goşun, öňi-ardy bilinmez;
+        Sygmaý çykdy deşdi-sähra düzünden,
+        Ýörän ýoly, gonan ýurdy bilinmez.
+
+        Garga salsaň, tugun bile depişer,
+        Haýbatyndan daglar-daşlar gapyşar,
+        Öli turup, dirilere ýapyşar,
+        Arslany, tilkisi, gurdy bilinmez.
+
+        Üç müň naýzabazy bardyr nökerden,
+        Tört müň pildary bar, gala ýykardan,
+        Teke, salyr ýöriş etse ýokardan,
+        Öňünde oý-çukur, ýerdi bilinmez.
+
+        Ähli iller namys edip gelerler,
+        Galaň ýykyp, tagtyň berbat kylarlar,
+        Dökülerler, galalaryň alalar,
+        Bu kentleriň1 üçi, dördi bilinmez.
+
+        Magtymguly, Alynyňdyr bu meýdan,
+        Ne iş tutar, görüň, bu Omar, Osman,
+        At deminden dolar zeminu-asman,
+        Horasanyň häki-gerdi bilinmez.
+
+1 Kent – oba.
+
+      Gökleň
+
+Çöle çykar bolsa meňzär
+Keýige, gulana gökleň;
+Tagsyp edip söweş etse,
+Döner aç arslana gökleň.
+
+Ilinu-ýurdun byrakmaz,
+Bela bakmaz, närse ýokmaz,
+Alladan emirdir, çykmaz
+Bu sözüm ýalana gökleň.
+
+Ylham etdi möwlam maňa,
+Nazar düşdi senden ýaňa,
+Ýok bolar kast eden saňa,
+Gaýdyp dol Gürgene, gökleň.
+
+Sözüm agzyma hak salar,
+Bir nepes aýdanym bolar,
+Ýamanlyk eýleýen geler
+Nurbat diýp, amana, gökleň.
+
+Hyruç eýläp tursa gowur,
+Permana geler Nişabur,
+Öwrüler bu döwran-döwür
+Ähli musulmana gökleň.
+
+Haraba dönüp Horasan,
+At aýagna galar ýegsan,
+Kese Arkaç, Mazanderan,
+Gelerler permana, gökleň.
+
+Ýoluň açyk gün nury dek,
+Güýji artar Rum zory dek
+Aslyşar sen aç böri dek,
+Yşk edip meýdana, gökleň.
+
+Zor biýr mertleriň söweşe,
+Döwletiň öňünden daşa,
+Gylyç urup gyzylbaşa, –
+Dolar sen Gürgene, gökleň.
+
+Islär men döwletiň artyp,
+Hak iş üçin ýörip, ýortup,
+Pyragy diýr, goşun tartyp,
+Dolar sen Gürgene, gökleň.
+
+                    Reýgan eýledi
+
+         Gaýgy-gamda eziz ömrüm solduryp,
+         Şum pelek azabym reýgan eýledi;
+         Ýazan kitaplarym sile aldyryp,
+         Gözlerim yzynda girýan eýledi.
+
+         Gapyllykda duşman aldy daşymyz,
+         Dargatdy her ýana deňi-duşumyz,
+         Bäş ýylda bir kitap eden işimiz,
+         Gyzylbaşlar alyp, weýran eýledi.
+
+         Bir niçämiz goly bagly gul bolup,
+         Niçeler yzynda sargaryp-solup,
+         Kimi berip, onuň bahasyn alyp.
+         Her kime bir belli baha eýledi.
+
+         Şum pelek birehim, maňa bildirdi,
+         Aglamakdan gül ýüzlerim soldurdy.
+         Golýazma kitabym sile aldyrdy,
+         Duşmanymy jeýhun derýa eýledi...
+
+         Niçeler dünýäde boldy bir kişi,
+         Niçäniň agzyny doldurmaz aşy,
+         Niçäniň matamdan gutulmaz başy,
+         Gije-gündiz «waleýleta!»1 eýledi.
+1 Waleýleta – dat-bidat.
+
+         Köýdürer şum pelek jebri-jepasy
+         Ýalandyr, ynanmaň, ähdi-wepasy,
+         Magtymguly, ýok bu sözüň hatasy,
+         Pelek elip kaddym duta1 eýledi.
+
+1 Duta – iki eplenen, bükük, egri.
+
+     Pukaraýam
+
+Watanymda han idim,
+Hanlara perman idim,
+Dertlere derman idim,
+Misgine dükan idim,
+Jansyzlara jan idim,
+Neýleý, indi biçäreýem.
+
+Gözsüzleriň gözi idim,
+Lallaryň men sözi idim,
+Il-günümniň ýüzi idim,
+Söwer magşuk näzi idim,
+Hatamy Taý özi idim,
+Neýleý, indi pukaraýam.
+
+Erem içre reýhan idim,
+Watanga zerefşan idim,
+Mert ýigitde keman idim,
+Dag başynda duman idim,
+Pyragy diýr, aman idim,
+Indi weýran bir saraýam.
+
+         Türkmen binasy
+
+Gurdugym aslynda bilgil,
+              bu zeminiň myhydyr,
+Erer ol erkin mydam,
+              budur türkmen binasy.
+
+Terki dünýä eýleýir,
+             gelse rakyp gaşyna,
+Bil, polatdan bina bolgan,
+             budur türkmen galasy.
+
+Süleýman, Rüstem Zal,
+           Jemşit oňa bolmuş geda,
+Günde ýüz müň salsa leşger,
+           degmez şanyň belasy.
+
+Daglar ondan alar taglym,
+            leşgerleri sap-sap durar.
+Her salanda zülpükary,
+            artar ýigidiň höwesi.
+
+Teke, ýomut, ýazyr gökleň,
+             Ahal ili bir bolup,
+Kylsa bir jaýga ýöriş,
+             açylar gül lälesi.
+
+        Külli gyzylbaş baryny
+                     atdy dag arkasyna,
+        Gije-saba ýatmaýyr,
+                     geler olarnyň nalasy.
+
+        Her gadam ursa saýýat1 ,
+                    bolmaýyr ol duşugär,
+        Bendi kylyp ala bilmez,
+                    düşmez türkmen balasy.
+
+        Aryflary dem-dem geler,
+                    toýy bardyr her zaman,
+        Merdi-merdan sözlüdir ol,
+                    ýokdur köňül gilesi2 .
+
+        Aýdadyr Magtymguly,
+                    ýokdur köňülde hilesi,
+        Hak sylaýyp kylmyş nazar,
+                    bardyr onuň saýasy.
+
+1 Saýýat – awçy, şikarçy.
+2 Gile – närazyçylyk, göwün-garyn etmeklik, kine.
+
+                     Türkmeniň
+
+         Jeýhun bile bahry-Hazar1 arasy,
+         Çöl üstünden öser ýeli türkmeniň,
+         Gül gunçasy, gara gözüm garasy,
+         Gara dagdan iner sili türkmeniň.
+
+         Hak sylamyş, bardyr onuň saýasy,
+         Çyrpynşar çölünde neri, maýasy,
+         Reňbe-reň gül açar ýaşyl ýaýlasy,
+         Gark bolmuş reýhana çöli türkmeniň.
+
+         Al-ýaşyl bürenip çykar perisi,
+         Kükeýip bark urar anbaryň ysy,
+         Beg, töre, aksakal, ýurduň eýesi.
+         Küren tutar gözel ili türkmeniň.
+
+         Ol merdiň ogludyr, mertdir pederi,
+         Görogly gardaşy, serhoşdyr seri,
+         Dagda, düzde kowsa saýýatlar, diri
+         Ala bilmez, ýolbars ogly turkmeniň.
+
+         Köňüller, ýürekler bir bolup başlar,
+         Tartsa ýygyn, erär topraklar-daşlar,
+         Bir suprada taýýar kylynsa aşlar,
+         Göteriler ol ykbaly türkmeniň.
+1 Bahary-Hazar – Hazar (Kaspi) deňzi.
+
+Köňül howalanar, ata çykanda,
+Daglar lagla döner, gyýa bakanda,
+Bal getirer, joşup derýa akanda,
+Bent tutdurmaz gelse sili türkmeniň.
+
+Gapyl galmaz, döwüş güni har bolmaz,
+Gargyşa, nazara griftar bolmaz,
+Bilbilden aýrylyp, solup saralmaz,
+Daýym anbar saçar güli türkmeniň.
+
+Tireler gardaşdyr, urug ýarydyr,
+Ykballar ters gelmez — hakyň nurudyr,
+Mertler ata çyksa söweş sarydyr,
+Ýow üstüne ýörer ýoly türkmeniň.
+
+Serhoş bolup çykar, jiger daglanmaz,
+Daşlary syndyrar, ýoly baglanmaz,
+Gözi gaýra düşmez, köňül eglenmez,
+Magtymguly, sözlär tili türkmeniň.
+
+                 Depe nedir, düz nedir
+
+          Ýaşy ýeten arap atyň şanynda
+          Mälim bolmaz, depe nedir, düz nedir;
+          Ýüňi ýeten goç ýigidiň ýanynda
+          Altmyş nedir, ýetmiş nedir, ýüz nedir...
+
+          Namart ogly gorky çeker meýdandan,
+          Agaç adam bolup görner her ýandan,
+          Muhannesler howply ýerde duşmandan
+          Seçe bilmez, duman nedir, toz nedir.
+
+          Sypa bolup, müner atyn bilmeýen,
+          Aryf1 bolup, öz yzzatyn bilmeýen,
+          Söhbet içre söz lezzetin bilmeýen
+          Aňa bilmez, söhbet nedir, saz nedir.
+
+          Garga ýiter boz balaman2 jeňinde,
+          Görne bilmez ol meýdanyň deňinde,
+          Aç garçygaý algyr laçyn öňünde,
+          Müň ýygylsyn, ördek nedir, gaz nedir.
+
+          Magtymguly, söz joş etgin diliňden,
+          Muhannese ýol bermegil ýeläňden,
+          Bu hünärler geler, gelmez eliňden,
+          Dilden gelen bu jürýetli3 söz nedir.
+1 Aryf   – biliji, her bir zatdan habarly.
+2 Boz balaman – aw guşy.
+3 Jürýet – gaýrat, edenlilik, ýürek edip bilmeklik
+
+        Meýdan ýoluksa
+
+Bedew ölse, meýdan galar armanly,
+Hak yşkyna at sal, meýdan ýoluksa;
+Ýigit ölse, heňgam galar döwranly,
+Wagtyňy hoş geçir, döwran ýoluksa.
+
+Ýigit bardyr, sözün tapmaz süýrüder,
+Ýigit bardyr, demi daşlar erider,
+Jaý ýerinde gaýra galsa, garrydar,
+Goç ýigidiň aty çaman ýoluksa.
+
+Işi dürüst gelmez köňül çenine,
+Dodagyn dişleýip, «ah» diýr zenine,
+Ýylan zähri bolup, ýaýlar tenine,
+Ýigit garryr, aýal ýaman ýoluksa.
+
+Ýüz namart ýerini tutmaz bir merdiň,
+Mert çeker täsibin, iliň ýuwurdyň,
+Bitiren işini görüň namardyň,
+Jeňdir diýip gaçar, duman ýoluksa.
+
+Magtymguly, öwüt bergil söz bile,
+Eşiden deň bolmaz gören göz bile,
+Mert çykar myhmana güler ýüz bile,
+Namart özün gizlär, myhman ýoluksa.
+
+                Eýlär
+
+Akyl olsaň ýagşylara hemdem bol,
+Akmak özün nadan bile ýar eýlär.
+Hak aşyklar näzli ýaryň jemalyn
+Bir görsem diýip, gije-gündiz zar eýlär.
+
+Syrdaş bolsa, syrym aýdardym merde,
+Kerwen ýata bilmez gorkuly ýerde,
+Uly namyslarda, ýaramaz derde,
+Namart öýde sähel işi ar eýlär.
+
+Namart gussasyndan galyp men derde
+Köňlüm aram tapmaz bir pinhan ýerde,
+Maly köp diýip, myhman bolma namarda,
+Jomart her çent pakyr bolsa, bar eýlär.
+
+Namart öz öýünde merde söz aýdar,
+Kär eýlemez hakyň tanapyn dartar.
+Goç ýigit mal tapsa, hümmeti artar,
+Namart peýda tapsa, köňül dar eýlär.
+
+Magtymguly, imdi özüňni gözle,
+Ýagşyny taryplap, ýamany düzle;
+Az iýip, az uklap, ýene az sözle:
+Köp söz ahyr il içinde har eýlär.
+
+                         Görüň
+
+        Her ýigidiň aslyn bileý diýseňiz,
+        Märekede otur-turuşyn görüň.
+        Birew bilen aşna bolaý diýseňiz,
+        Ozal ykrarynda duruşyn görüň.
+
+        Uzak, ýakyn ýola barar bolsaňyz,
+        Merdanlyk gylyjyn çalar bolsaňyz,
+        Bir bedewni saýlap alar bolsaňyz,
+        Synasyn, sagrysyn, gerişin görüň.
+
+        Bir pul düşse bir üflisiň goluna,
+        Göwsün açyp gezer gyşyň ýeline,
+        Hyrydar bolsaňyz gyza, geline,
+        Edebin, erkanyn, oturşyn görüň.
+
+        Goç ýigidiň at-ýaragy şaý bolsa,
+        Ýetişer, her ýerde haýda-haý bolsa.
+        Özi Hatam bolup, ýene baý bolsa,
+        Çar tarapdan myhman gelişin görüň.
+
+        Bir niçäni kyldyň maly-bisýary1 ,
+        Bir niçäni kyldyň bir puluň zary.
+        Ýagşy-ýaman hemme adamyň bary
+        Nobat bilen ötüp baryşyn görüň.
+1 Maly-bisýary – köp mally.
+
+        Taňry bizar, biliň, zekatsyz baýdan,
+        Siz hem gaçyň, zynhar1 ol gelen jaýdan,
+        Merde bir iş düşse görer hudaýdan,
+        Namardyň hemradan görüşin görüň.
+
+        Namart ýörer mydam ölümden gaçyp,
+        Öýüne gelende, zährini saçyp,
+        Mert ýigit myhmana göwsüni açyp,
+        Namardyň meýdana baryşyn görüň.
+
+        Zalymlar unudar zikri2 -allany,
+        Arzan alyp, gymmat satar gallany,
+        Süýthor naýynsaplar halal tyllaňy
+        Haram peýdasyna berişin görüň.
+
+        Şeýtan-melgun hergiz tagat etdirmez,
+        Haramdan gaýtarmaz, halal iýdirmez,
+        Roza tutdurmaz, namaz uýdurmaz,
+        Lagnaty şeýtanyň talyşyn görüň.
+
+        Goç ýigidiň işi söhbet-saz bolar,
+        Köňli gyş bolmaýan, daýym ýaz bolar,
+        Ýagşynyň köňlünde kine az bolar,
+        Ýamanyň günde bir uruşyn görüň.
+1 Zynhar – ägä bol, habarly bol!
+2 Zikr – ýatlamak, ýat etmek.
+
+        Gadyrdan gardaşdan uzak daş bolup,
+        Gadyrsyz ýat bilen garyndaş bolup,
+        Magtymguly, näsazlara duş bolup,
+        Hojanyň, seýidiň ýörişin görüň.
+
+                       Aňlamaz
+
+        Bedasyla beglik ýetse bir günde,
+        Alar awun, salar guşun aňlamaz,
+        Ýarlygy ýörigen nurbatsyz begler
+        Pukaranyň gözde ýaşyn aňlamaz.
+
+        Belet başlar dogry ýoly çen bile,
+        Akyl adam söz başlamaz «men» bile,
+        Namart otyr, geňeş eýlär zen bile,
+        Goç ýigitler zen geňeşin aňlamaz.
+
+        Mertden dileg etseň, aýdar: «hup bolar!»
+        Bir bagşaşdan1 ýetmiş bela dep bolar.
+        Muhannes geňeşi çölde köp bolar,
+        Duşman görse, tutar işin aňlamaz.
+
+        Hak ýoluna her kim haýr-yhsan2 kylar,
+        Kyýamat gün bir ýerine on geler.
+        Namart duşman görse, gussadan öler,
+        Goç ýigitler tördün, bäşin aňlamaz.
+1 Bahşaş – berim.
+2 Yhsan – ýagşylyk, haýyr.
+
+       Magtymguly, beg ýanynda til başlar,
+       Gylyjy-gaýraty bolan il başlar,
+       Mertden bolan ýygyn görse, ýol başlar,
+       Namart ogly deňin-duşun aňlamaz.
+
+                    Gerekdir
+
+       Mert oldur ki, bolsa köňli rehimli,
+       Göwresi giň gerek, özi pähimli,
+       Giň ýerde garga deý bolsun wehimli1 ,
+       Ýerinde hünäri, işi gerekdir.
+
+       Gaplaň kimin arlap girse meýdana,
+       Tilki kimin bazy berse her ýana,
+       Duranda gaýa dek durup merdana,
+       Alar ýerden at salyşy gerekdir.
+
+       Ýigidiň hyýaly bolsa serinde,
+       Çykar bir gün, çöküp galmaz garynda,
+       Hile hem bir batyrlykdyr ýerinde,
+       Ony başarmaga kişi gerekdir.
+
+       At gerek gaçarga, kowsa ýeterge,
+       Ýowny gorkudarga, tirik tutarga,
+       Meýdanda sangysyz köp iş bitirge,
+       Ýigrimi-otuzly ýaşy gerekdir.
+1 Wehim – gorky.
+
+       Bürgüt guş dek ganat kakyp dügülden,
+       Muhannesler geçer jandan, oguldan,
+       Gurt dek girip, goýun kimin dagyldan,
+       Är ýigidiň mert ýoldaşy gerekdir.
+
+       Magtymguly, goç ýigitler çapylyp,
+       Gök damardan gyrmyz ganlar sepilip,
+       At salanda, doňuz kimin topulyp,
+       Aýy kimin asylyşy gerekdir.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Baş üstüne',
+    'Namart kimdir, biler bolsaň,
+            Ne diýseň, diýr: «Baş üstüne!»
+            Ezmaýyşyn1 kylar bolsaň,
+            Hiç tapylmaz iş üstünde.
+
+            Murtun towlap, her ýan tartar,
+            Haýbaty peleňden artar,
+            Gök dek gürläp, damak ýyrtar
+            Taýýar bolan aş üstünde.
+
+            Aş üstünde it dek arlar,
+            Ýersiz ýere har dek harlar,
+            Her tilki bir şir dek gürlär
+            Murdar ölen läş üstünde.
+1 Ezmaýyş – synag.
+
+              Çöl ýerde göwre galdyrma,
+              Ol-da hoşdur, syr bildirme,
+              Lap edip, dahan doldurma,
+              Jeň nan degil diş üstünde.
+
+              Diýseler: «Atlan-ha, atlan!»
+              Mert ýigit — ot çeýnär syrtlan1 .
+              Ýow güni gaýrata gatlan,
+              Lagnat goýma riş2 üstünde.
+
+              Ynsabyn elden byrakmaz,
+              Akyl3 adamlykdan çykmaz.
+              Bu sözüm haýwana ýokmaz,
+              Adam saklar güwş üstünde.
+
+              Magtymguly, söweş bolar,
+              Ýigidiň syry paş bolar,
+              Ýa başyn biýr, ýa baş alar
+              Goç ýigit ýoldaş üstünde.
+
+1 «Süňk çeýnäp iýr arda syrtlan» diýen nusgasy hem bar.
+2 Riş – sakgal.
+3 Akyl (aakyl) – akylly.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Gerek',
+    'dir
+
+«Menem» diýen goç ýigide
+Bir mynasyp ýar gerekdir.
+Arap at, ýowly ýigide
+Almaz zülpükar gerekdir.
+
+Ýigit öler ýurt üstünde,
+Janyn berip ar üstünde,
+Goç ýigitler il üstünde
+Namys bilen ar gerekdir.
+
+Bäş gün köňül hoş etmäge,
+Saçak ýazyp, nan dökmäge,
+Abraý alyp, at etmäge,
+Golda bendi-bar gerekdir.
+
+Mekgä baran bolar hajy,
+Aýralyk ölümden ajy.
+Goç ýigide ar galyjy,
+Aşyga didar gerekdir.
+
+Artdyr pelek ahy-zaryň,
+Alar elden ygtyýaryň.
+Magtymguly, söwer ýaryň
+Syýa zülpi tar gerekdir.
+
+                     Ýaşymyz
+
+          Istär elden çyka döwlet humaýym,
+          Doga kylyp, döker bolduk ýaşymyz,
+          Dilegim duş eýle, gözel allahym!
+          Ersgin boldy, gitdi gyzylbaşymyz.
+
+          Hyzyr gezen çölde iller ýaýylsyn,
+          Ýurt binamyz gaýym bolsun, gurulsyn,
+          Çille mest nerlermiz barça aýylsyn
+          Bir sufrada1 eda bolsun aşymyz.
+
+          Derwüşler köňli jem bolsun namaza,
+          Ýigitler ýygylsyn söhbete-saza,
+          Ilimiz ulaşsyn sowulmaz ýaza,
+          Togsan dolup, tamam bolsun gyşymyz.
+
+          Türkmenler, baglasak bir ýere bili,
+          Gurudars Gulzumy, derýaýy-Nili,
+          Teke, ýomut, gökleň, ýazyr, alili —
+          Bir döwlete gulluk etsek bäşimiz.
+
+          Magtymguly, diýdi janyň dirligne,
+          Galmalyň biz gyzylbaşyň horlugna,
+          Rowaç beriň ýomut, gökleň birligne,
+          Ol Kemalhan Owgan bolsun başymyz.
+
+1 Sufra – saçak.
+
+                Öňi-ardy bilinmez
+
+        Ýomut, gökleň tagsyp edip özünden,
+        Çyksa goşun, öňi-ardy bilinmez;
+        Sygmaý çykdy deşdi-sähra düzünden,
+        Ýörän ýoly, gonan ýurdy bilinmez.
+
+        Garga salsaň, tugun bile depişer,
+        Haýbatyndan daglar-daşlar gapyşar,
+        Öli turup, dirilere ýapyşar,
+        Arslany, tilkisi, gurdy bilinmez.
+
+        Üç müň naýzabazy bardyr nökerden,
+        Tört müň pildary bar, gala ýykardan,
+        Teke, salyr ýöriş etse ýokardan,
+        Öňünde oý-çukur, ýerdi bilinmez.
+
+        Ähli iller namys edip gelerler,
+        Galaň ýykyp, tagtyň berbat kylarlar,
+        Dökülerler, galalaryň alalar,
+        Bu kentleriň1 üçi, dördi bilinmez.
+
+        Magtymguly, Alynyňdyr bu meýdan,
+        Ne iş tutar, görüň, bu Omar, Osman,
+        At deminden dolar zeminu-asman,
+        Horasanyň häki-gerdi bilinmez.
+
+1 Kent – oba.
+
+      Gökleň
+
+Çöle çykar bolsa meňzär
+Keýige, gulana gökleň;
+Tagsyp edip söweş etse,
+Döner aç arslana gökleň.
+
+Ilinu-ýurdun byrakmaz,
+Bela bakmaz, närse ýokmaz,
+Alladan emirdir, çykmaz
+Bu sözüm ýalana gökleň.
+
+Ylham etdi möwlam maňa,
+Nazar düşdi senden ýaňa,
+Ýok bolar kast eden saňa,
+Gaýdyp dol Gürgene, gökleň.
+
+Sözüm agzyma hak salar,
+Bir nepes aýdanym bolar,
+Ýamanlyk eýleýen geler
+Nurbat diýp, amana, gökleň.
+
+Hyruç eýläp tursa gowur,
+Permana geler Nişabur,
+Öwrüler bu döwran-döwür
+Ähli musulmana gökleň.
+
+Haraba dönüp Horasan,
+At aýagna galar ýegsan,
+Kese Arkaç, Mazanderan,
+Gelerler permana, gökleň.
+
+Ýoluň açyk gün nury dek,
+Güýji artar Rum zory dek
+Aslyşar sen aç böri dek,
+Yşk edip meýdana, gökleň.
+
+Zor biýr mertleriň söweşe,
+Döwletiň öňünden daşa,
+Gylyç urup gyzylbaşa, –
+Dolar sen Gürgene, gökleň.
+
+Islär men döwletiň artyp,
+Hak iş üçin ýörip, ýortup,
+Pyragy diýr, goşun tartyp,
+Dolar sen Gürgene, gökleň.
+
+                    Reýgan eýledi
+
+         Gaýgy-gamda eziz ömrüm solduryp,
+         Şum pelek azabym reýgan eýledi;
+         Ýazan kitaplarym sile aldyryp,
+         Gözlerim yzynda girýan eýledi.
+
+         Gapyllykda duşman aldy daşymyz,
+         Dargatdy her ýana deňi-duşumyz,
+         Bäş ýylda bir kitap eden işimiz,
+         Gyzylbaşlar alyp, weýran eýledi.
+
+         Bir niçämiz goly bagly gul bolup,
+         Niçeler yzynda sargaryp-solup,
+         Kimi berip, onuň bahasyn alyp.
+         Her kime bir belli baha eýledi.
+
+         Şum pelek birehim, maňa bildirdi,
+         Aglamakdan gül ýüzlerim soldurdy.
+         Golýazma kitabym sile aldyrdy,
+         Duşmanymy jeýhun derýa eýledi...
+
+         Niçeler dünýäde boldy bir kişi,
+         Niçäniň agzyny doldurmaz aşy,
+         Niçäniň matamdan gutulmaz başy,
+         Gije-gündiz «waleýleta!»1 eýledi.
+1 Waleýleta – dat-bidat.
+
+         Köýdürer şum pelek jebri-jepasy
+         Ýalandyr, ynanmaň, ähdi-wepasy,
+         Magtymguly, ýok bu sözüň hatasy,
+         Pelek elip kaddym duta1 eýledi.
+
+1 Duta – iki eplenen, bükük, egri.
+
+     Pukaraýam
+
+Watanymda han idim,
+Hanlara perman idim,
+Dertlere derman idim,
+Misgine dükan idim,
+Jansyzlara jan idim,
+Neýleý, indi biçäreýem.
+
+Gözsüzleriň gözi idim,
+Lallaryň men sözi idim,
+Il-günümniň ýüzi idim,
+Söwer magşuk näzi idim,
+Hatamy Taý özi idim,
+Neýleý, indi pukaraýam.
+
+Erem içre reýhan idim,
+Watanga zerefşan idim,
+Mert ýigitde keman idim,
+Dag başynda duman idim,
+Pyragy diýr, aman idim,
+Indi weýran bir saraýam.
+
+         Türkmen binasy
+
+Gurdugym aslynda bilgil,
+              bu zeminiň myhydyr,
+Erer ol erkin mydam,
+              budur türkmen binasy.
+
+Terki dünýä eýleýir,
+             gelse rakyp gaşyna,
+Bil, polatdan bina bolgan,
+             budur türkmen galasy.
+
+Süleýman, Rüstem Zal,
+           Jemşit oňa bolmuş geda,
+Günde ýüz müň salsa leşger,
+           degmez şanyň belasy.
+
+Daglar ondan alar taglym,
+            leşgerleri sap-sap durar.
+Her salanda zülpükary,
+            artar ýigidiň höwesi.
+
+Teke, ýomut, ýazyr gökleň,
+             Ahal ili bir bolup,
+Kylsa bir jaýga ýöriş,
+             açylar gül lälesi.
+
+        Külli gyzylbaş baryny
+                     atdy dag arkasyna,
+        Gije-saba ýatmaýyr,
+                     geler olarnyň nalasy.
+
+        Her gadam ursa saýýat1 ,
+                    bolmaýyr ol duşugär,
+        Bendi kylyp ala bilmez,
+                    düşmez türkmen balasy.
+
+        Aryflary dem-dem geler,
+                    toýy bardyr her zaman,
+        Merdi-merdan sözlüdir ol,
+                    ýokdur köňül gilesi2 .
+
+        Aýdadyr Magtymguly,
+                    ýokdur köňülde hilesi,
+        Hak sylaýyp kylmyş nazar,
+                    bardyr onuň saýasy.
+
+1 Saýýat – awçy, şikarçy.
+2 Gile – närazyçylyk, göwün-garyn etmeklik, kine.
+
+                     Türkmeniň
+
+         Jeýhun bile bahry-Hazar1 arasy,
+         Çöl üstünden öser ýeli türkmeniň,
+         Gül gunçasy, gara gözüm garasy,
+         Gara dagdan iner sili türkmeniň.
+
+         Hak sylamyş, bardyr onuň saýasy,
+         Çyrpynşar çölünde neri, maýasy,
+         Reňbe-reň gül açar ýaşyl ýaýlasy,
+         Gark bolmuş reýhana çöli türkmeniň.
+
+         Al-ýaşyl bürenip çykar perisi,
+         Kükeýip bark urar anbaryň ysy,
+         Beg, töre, aksakal, ýurduň eýesi.
+         Küren tutar gözel ili türkmeniň.
+
+         Ol merdiň ogludyr, mertdir pederi,
+         Görogly gardaşy, serhoşdyr seri,
+         Dagda, düzde kowsa saýýatlar, diri
+         Ala bilmez, ýolbars ogly turkmeniň.
+
+         Köňüller, ýürekler bir bolup başlar,
+         Tartsa ýygyn, erär topraklar-daşlar,
+         Bir suprada taýýar kylynsa aşlar,
+         Göteriler ol ykbaly türkmeniň.
+1 Bahary-Hazar – Hazar (Kaspi) deňzi.
+
+Köňül howalanar, ata çykanda,
+Daglar lagla döner, gyýa bakanda,
+Bal getirer, joşup derýa akanda,
+Bent tutdurmaz gelse sili türkmeniň.
+
+Gapyl galmaz, döwüş güni har bolmaz,
+Gargyşa, nazara griftar bolmaz,
+Bilbilden aýrylyp, solup saralmaz,
+Daýym anbar saçar güli türkmeniň.
+
+Tireler gardaşdyr, urug ýarydyr,
+Ykballar ters gelmez — hakyň nurudyr,
+Mertler ata çyksa söweş sarydyr,
+Ýow üstüne ýörer ýoly türkmeniň.
+
+Serhoş bolup çykar, jiger daglanmaz,
+Daşlary syndyrar, ýoly baglanmaz,
+Gözi gaýra düşmez, köňül eglenmez,
+Magtymguly, sözlär tili türkmeniň.
+
+                 Depe nedir, düz nedir
+
+          Ýaşy ýeten arap atyň şanynda
+          Mälim bolmaz, depe nedir, düz nedir;
+          Ýüňi ýeten goç ýigidiň ýanynda
+          Altmyş nedir, ýetmiş nedir, ýüz nedir...
+
+          Namart ogly gorky çeker meýdandan,
+          Agaç adam bolup görner her ýandan,
+          Muhannesler howply ýerde duşmandan
+          Seçe bilmez, duman nedir, toz nedir.
+
+          Sypa bolup, müner atyn bilmeýen,
+          Aryf1 bolup, öz yzzatyn bilmeýen,
+          Söhbet içre söz lezzetin bilmeýen
+          Aňa bilmez, söhbet nedir, saz nedir.
+
+          Garga ýiter boz balaman2 jeňinde,
+          Görne bilmez ol meýdanyň deňinde,
+          Aç garçygaý algyr laçyn öňünde,
+          Müň ýygylsyn, ördek nedir, gaz nedir.
+
+          Magtymguly, söz joş etgin diliňden,
+          Muhannese ýol bermegil ýeläňden,
+          Bu hünärler geler, gelmez eliňden,
+          Dilden gelen bu jürýetli3 söz nedir.
+1 Aryf   – biliji, her bir zatdan habarly.
+2 Boz balaman – aw guşy.
+3 Jürýet – gaýrat, edenlilik, ýürek edip bilmeklik
+
+        Meýdan ýoluksa
+
+Bedew ölse, meýdan galar armanly,
+Hak yşkyna at sal, meýdan ýoluksa;
+Ýigit ölse, heňgam galar döwranly,
+Wagtyňy hoş geçir, döwran ýoluksa.
+
+Ýigit bardyr, sözün tapmaz süýrüder,
+Ýigit bardyr, demi daşlar erider,
+Jaý ýerinde gaýra galsa, garrydar,
+Goç ýigidiň aty çaman ýoluksa.
+
+Işi dürüst gelmez köňül çenine,
+Dodagyn dişleýip, «ah» diýr zenine,
+Ýylan zähri bolup, ýaýlar tenine,
+Ýigit garryr, aýal ýaman ýoluksa.
+
+Ýüz namart ýerini tutmaz bir merdiň,
+Mert çeker täsibin, iliň ýuwurdyň,
+Bitiren işini görüň namardyň,
+Jeňdir diýip gaçar, duman ýoluksa.
+
+Magtymguly, öwüt bergil söz bile,
+Eşiden deň bolmaz gören göz bile,
+Mert çykar myhmana güler ýüz bile,
+Namart özün gizlär, myhman ýoluksa.
+
+                Eýlär
+
+Akyl olsaň ýagşylara hemdem bol,
+Akmak özün nadan bile ýar eýlär.
+Hak aşyklar näzli ýaryň jemalyn
+Bir görsem diýip, gije-gündiz zar eýlär.
+
+Syrdaş bolsa, syrym aýdardym merde,
+Kerwen ýata bilmez gorkuly ýerde,
+Uly namyslarda, ýaramaz derde,
+Namart öýde sähel işi ar eýlär.
+
+Namart gussasyndan galyp men derde
+Köňlüm aram tapmaz bir pinhan ýerde,
+Maly köp diýip, myhman bolma namarda,
+Jomart her çent pakyr bolsa, bar eýlär.
+
+Namart öz öýünde merde söz aýdar,
+Kär eýlemez hakyň tanapyn dartar.
+Goç ýigit mal tapsa, hümmeti artar,
+Namart peýda tapsa, köňül dar eýlär.
+
+Magtymguly, imdi özüňni gözle,
+Ýagşyny taryplap, ýamany düzle;
+Az iýip, az uklap, ýene az sözle:
+Köp söz ahyr il içinde har eýlär.
+
+                         Görüň
+
+        Her ýigidiň aslyn bileý diýseňiz,
+        Märekede otur-turuşyn görüň.
+        Birew bilen aşna bolaý diýseňiz,
+        Ozal ykrarynda duruşyn görüň.
+
+        Uzak, ýakyn ýola barar bolsaňyz,
+        Merdanlyk gylyjyn çalar bolsaňyz,
+        Bir bedewni saýlap alar bolsaňyz,
+        Synasyn, sagrysyn, gerişin görüň.
+
+        Bir pul düşse bir üflisiň goluna,
+        Göwsün açyp gezer gyşyň ýeline,
+        Hyrydar bolsaňyz gyza, geline,
+        Edebin, erkanyn, oturşyn görüň.
+
+        Goç ýigidiň at-ýaragy şaý bolsa,
+        Ýetişer, her ýerde haýda-haý bolsa.
+        Özi Hatam bolup, ýene baý bolsa,
+        Çar tarapdan myhman gelişin görüň.
+
+        Bir niçäni kyldyň maly-bisýary1 ,
+        Bir niçäni kyldyň bir puluň zary.
+        Ýagşy-ýaman hemme adamyň bary
+        Nobat bilen ötüp baryşyn görüň.
+1 Maly-bisýary – köp mally.
+
+        Taňry bizar, biliň, zekatsyz baýdan,
+        Siz hem gaçyň, zynhar1 ol gelen jaýdan,
+        Merde bir iş düşse görer hudaýdan,
+        Namardyň hemradan görüşin görüň.
+
+        Namart ýörer mydam ölümden gaçyp,
+        Öýüne gelende, zährini saçyp,
+        Mert ýigit myhmana göwsüni açyp,
+        Namardyň meýdana baryşyn görüň.
+
+        Zalymlar unudar zikri2 -allany,
+        Arzan alyp, gymmat satar gallany,
+        Süýthor naýynsaplar halal tyllaňy
+        Haram peýdasyna berişin görüň.
+
+        Şeýtan-melgun hergiz tagat etdirmez,
+        Haramdan gaýtarmaz, halal iýdirmez,
+        Roza tutdurmaz, namaz uýdurmaz,
+        Lagnaty şeýtanyň talyşyn görüň.
+
+        Goç ýigidiň işi söhbet-saz bolar,
+        Köňli gyş bolmaýan, daýym ýaz bolar,
+        Ýagşynyň köňlünde kine az bolar,
+        Ýamanyň günde bir uruşyn görüň.
+1 Zynhar – ägä bol, habarly bol!
+2 Zikr – ýatlamak, ýat etmek.
+
+        Gadyrdan gardaşdan uzak daş bolup,
+        Gadyrsyz ýat bilen garyndaş bolup,
+        Magtymguly, näsazlara duş bolup,
+        Hojanyň, seýidiň ýörişin görüň.
+
+                       Aňlamaz
+
+        Bedasyla beglik ýetse bir günde,
+        Alar awun, salar guşun aňlamaz,
+        Ýarlygy ýörigen nurbatsyz begler
+        Pukaranyň gözde ýaşyn aňlamaz.
+
+        Belet başlar dogry ýoly çen bile,
+        Akyl adam söz başlamaz «men» bile,
+        Namart otyr, geňeş eýlär zen bile,
+        Goç ýigitler zen geňeşin aňlamaz.
+
+        Mertden dileg etseň, aýdar: «hup bolar!»
+        Bir bagşaşdan1 ýetmiş bela dep bolar.
+        Muhannes geňeşi çölde köp bolar,
+        Duşman görse, tutar işin aňlamaz.
+
+        Hak ýoluna her kim haýr-yhsan2 kylar,
+        Kyýamat gün bir ýerine on geler.
+        Namart duşman görse, gussadan öler,
+        Goç ýigitler tördün, bäşin aňlamaz.
+1 Bahşaş – berim.
+2 Yhsan – ýagşylyk, haýyr.
+
+       Magtymguly, beg ýanynda til başlar,
+       Gylyjy-gaýraty bolan il başlar,
+       Mertden bolan ýygyn görse, ýol başlar,
+       Namart ogly deňin-duşun aňlamaz.
+
+                    Gerekdir
+
+       Mert oldur ki, bolsa köňli rehimli,
+       Göwresi giň gerek, özi pähimli,
+       Giň ýerde garga deý bolsun wehimli1 ,
+       Ýerinde hünäri, işi gerekdir.
+
+       Gaplaň kimin arlap girse meýdana,
+       Tilki kimin bazy berse her ýana,
+       Duranda gaýa dek durup merdana,
+       Alar ýerden at salyşy gerekdir.
+
+       Ýigidiň hyýaly bolsa serinde,
+       Çykar bir gün, çöküp galmaz garynda,
+       Hile hem bir batyrlykdyr ýerinde,
+       Ony başarmaga kişi gerekdir.
+
+       At gerek gaçarga, kowsa ýeterge,
+       Ýowny gorkudarga, tirik tutarga,
+       Meýdanda sangysyz köp iş bitirge,
+       Ýigrimi-otuzly ýaşy gerekdir.
+1 Wehim – gorky.
+
+       Bürgüt guş dek ganat kakyp dügülden,
+       Muhannesler geçer jandan, oguldan,
+       Gurt dek girip, goýun kimin dagyldan,
+       Är ýigidiň mert ýoldaşy gerekdir.
+
+       Magtymguly, goç ýigitler çapylyp,
+       Gök damardan gyrmyz ganlar sepilip,
+       At salanda, doňuz kimin topulyp,
+       Aýy kimin asylyşy gerekdir.
+
+                     Baş üstüne
+
+            Namart kimdir, biler bolsaň,
+            Ne diýseň, diýr: «Baş üstüne!»
+            Ezmaýyşyn1 kylar bolsaň,
+            Hiç tapylmaz iş üstünde.
+
+            Murtun towlap, her ýan tartar,
+            Haýbaty peleňden artar,
+            Gök dek gürläp, damak ýyrtar
+            Taýýar bolan aş üstünde.
+
+            Aş üstünde it dek arlar,
+            Ýersiz ýere har dek harlar,
+            Her tilki bir şir dek gürlär
+            Murdar ölen läş üstünde.
+1 Ezmaýyş – synag.
+
+              Çöl ýerde göwre galdyrma,
+              Ol-da hoşdur, syr bildirme,
+              Lap edip, dahan doldurma,
+              Jeň nan degil diş üstünde.
+
+              Diýseler: «Atlan-ha, atlan!»
+              Mert ýigit — ot çeýnär syrtlan1 .
+              Ýow güni gaýrata gatlan,
+              Lagnat goýma riş2 üstünde.
+
+              Ynsabyn elden byrakmaz,
+              Akyl3 adamlykdan çykmaz.
+              Bu sözüm haýwana ýokmaz,
+              Adam saklar güwş üstünde.
+
+              Magtymguly, söweş bolar,
+              Ýigidiň syry paş bolar,
+              Ýa başyn biýr, ýa baş alar
+              Goç ýigit ýoldaş üstünde.
+
+1 «Süňk çeýnäp iýr arda syrtlan» diýen nusgasy hem bar.
+2 Riş – sakgal.
+3 Akyl (aakyl) – akylly.
+
+          Gerek
+
+At gazanar goç ýigidiň
+Owal bedew aty gerek;
+Gelene garşy çykmaga
+Ýagşy muhapbeti gerek.
+
+Mert gerek jepa çekmäge,
+At gerek dere sökmäge,
+Supra ýaýyp, nan dökmäge,
+Köňlüniň hümmeti gerek.
+
+El götergil ham hyýaldan,
+Saňa yssy ýokdur maldan,
+Rozugär geçse halaldan,
+Aryflar söhbeti gerek.
+
+Ýöriseň gulluk kylmaga,
+Pygamber ýolun bilmäge,
+Derwüşler köňlün almaga
+Elinde döwleti gerek.
+
+Magtymguly, bir gedaýdyr,
+Barçany saklan hudaýdyr,
+Eger misgin, eger baýdyr, —
+Gelene hyzmaty gerek.
+
+                Oglum – Azadym
+
+      Azady:
+      — Paş eýle syryňny, saklama pinhan,
+      Emma ki sözümden çykmagyl, oglum!
+      Günde ýüz köý geler, geçer bu başa,
+      Agyrtma, sözümi ýykmagyl, oglum.
+
+      Magtymguly:
+      — Utanardym, syrym paş eýlemezdim,
+      Paş ederin, habar alsaň, Azadym!
+      Ýüz köý geler, geçer her gün bu başa,
+      Köňül istär, sapar kylsak, Azadym.
+
+      — Jepa urma özüň, goýma watany1 ,
+      Arzuwlama hany, begi, soltany.
+      Besdir bize ol taňrynyň bereni,
+      Azdyrma köňlüňni, gitmegil, oglum.
+
+      — Gidenmiz ýok alty bile, bäş bile,
+      Seýran etsek niçe deňi-duş bile,
+      Meger, gitsek, halkyň köňli hoş bola,
+      Köňül galkar, karar etmez, Azadym.
+1 «Subhany» diýen nusgasy hem bar.
+
+       — Bilgeşleýin özüň nirä atar sen?
+       Niçik işdir, muny beýle tutar sen?
+       Diýgil ahyr: kimiň bile gider sen?
+       Dem tartyp, her ýana bakmagyl, oglum.
+
+       — Jylawdary bolam Ýazyrhan piriň,
+       Köňül guşy perwaz urar pakyryň...
+       Bu gün niçe gündür, aglaşar iliň,
+       Şat eýle köňlümi, goýber, Azadym.
+
+       — Werzişiň1 ýok, ýaş sen, gidebilmer sen,
+       Şöwür bar, şowhun bar, çydabilmer sen,
+       Her işe baş goşup, edebilmer sen,
+       Gitmeklik ýagdaýyn etmegil, oglum.
+
+       — Kişi sözlemeýen, syry paş olmaz,
+       Ýagşydan, ýamandan aňlan ýaş olmaz,
+       Şu gez ibermesin, köňlüm hoş olmaz,
+       Raýymyz gaýtarma, goýber, Azadym.
+
+       — Bizi beýle niçik terk edesiň bar?
+       Bu ýol beýhudadyr, sen gidesiň bar,
+       Gel gitmegil, oglum, çoh terhosym bar,
+       Gaýgy-harajata batmagyl, oglum.
+1 Werziş – türgenlik, tejribe.
+
+— Kalbyma giripdir gitmek höwesi,
+Ýene bizden bolar halkyň tamasy,
+Köňlüm narow etme, kylma terhosy,
+Bir sapar işidir, goýber, Azadym.
+
+— Azady diýr, bile sapa süreli,
+Eýsem ibereli, synap göreli,
+«Ämin» diý, tur, oglum, pata bereli,
+Bir taňry ýar olsun saňa, git, oglum!
+
+— Magtymguly aýdar, galmyşam çohdan
+Köňül talwas urar, gezer yrakdan,
+Her ýerde saglygym iste ol hakdan,
+Doga kylyp, haka ýalbar, Azadym!
+
+                II
+
+AHLAKY-DIDAKTIKI HÄSIÝETLI ESERLER
+                         Neýläýin
+
+          Köňlüm istär, gezsem dünýä-älemi,
+          Ganatym ýok, uça bilmen, neýläýin!
+          Okyr men, görer men barça kelamy,
+          Manysyny saça bilmen, neýläýin!
+
+          Köpler onda guwwas1 bolup ýüzerler,
+          Maňa zahyr2 , halkdan pinhan gezerler,
+          Gül badada gülgün şerap ezerler,
+          El uzadyp, içe bilmen, neýläýin!
+
+          Öý daşyndan şerap ysyn noş kyldym,
+          Gitdi aklym, özüm bilmeý, joş kyldym,
+          Meý mest boldum, dersiz3 gapa duş geldim
+          Rugsat bolmaý, aça bilmen, neýläýin!
+
+          Ýitdi ýolum, dag kaýsydyr, düz kaýsy,
+          Aňmaz köňlüm, magny kaýsy, söz kaýsy;
+          Pähm eýlemez, ýol kaýsydyr, yz kaýsy,
+          Umyt üzüp, gaça bilmen, neýläýin!
+
+          Magtymguly, bu dünýäniň namysyn,
+          Ýygyp-düýrüp, ýele berdim hamysyn!
+          Pikir derýasyna aklyň gämisin
+          Batyrmyşam, çyka bilmen, neýläýin!
+1 Guwwas – suwa çümüji, wodolaz.
+2 Zahyr – açyk, aýan.
+3 Dersiz – gapysyz, işiksiz.
+
+                      Bilmezmiň
+
+Galam alyp, namany1 gönderdigim bilmezmiň?
+Efsun2 urup, hüthütni inderdigim bilmezmiň?
+Arş üstüne galdyryp, mündürdigim bilmezmiň?
+Tört gije, üç gün aglap, diňdirdigim bilmezmiň?
+Eşek münüp, Isa dek ýeldirdigim3 bilmezmiň?
+
+Mejnun kibi sährada aglaý-aglaý gezdigim,
+Gözüm ýaşyn merjen deý düzüm-düzüm düzdügim,
+Warka kimin Gülşadan ölüp, umyt üzdügim
+Joşgun berip yşk odun, gaýnap-gaýnap gyzdygym,
+Şibli kibi bir dagy ýandyrdygym bilmezmiň?
+
+Hüthüt kimin Pereňden Çyn-Maçyn diýp bardygym,
+Bag içinde Bylkysyň saçyn açyp gördügim,
+Süleýmanyň tagtyndan sözläp, habar berdigim,
+Guş gonsun diýp başymga, bilbil heňin gurdugym,
+Çarşenbe gün çaş wagty gondurdygym bilmezmiň?
+
+Surahnyň4 arkasynda Mejnun gurdy jadyny,
+Bismilla diýp başlady, çagyrdy ustadyny,
+Hakdan gaýry bir kimse eşitmedi dadyny,
+Kyrk aşyk nagra çekip, şugla urdy oduny,
+Göz ýaşymdan suw alyp, söndürdigim bilmezmiň?
+1 Nama – hat.
+2 Efsun – owsun.
+3 Elmek – ýüwürmek, çapmak, ylgamak.
+4 Surah – gowak, gädik, deşik.
+
+Şirwan hanyň söwdasy ne ajaýyp söwdadyr!
+Gyldan bir ýan agdyrsa, kyýamat gün ryswadyr,
+Ýüz ýigrimi sap gurlup, her sapda bir gowgadyr,
+Aşyklygyň joşguny akmaz uýgun derýadyr,
+Bir jurgadan1 kyrk aşyk gandyrdygym bilmezmiň?
+
+Ýetilmemiş şunkarym, gamyş ganat-ak türpek,
+Dünýä meni taýdyrdy, bir ýanym etdi urpak,
+Jany jiger köýüban, tartar, gan goýmaz torpak,
+Her tikenden ýüz gunça, her kyrk gülden bir ýarpak,
+Dagy-daşy eleýip, öndürdigim bilmezmiň?
+
+Magtymguly, sözleýir, dokuz pelek Zöhresi,
+Ýedi ýyldyz gardaşy, Aýyň, Günüň parasy,
+Nury-didäm2 ýagtysy, ak gözümiň garasy,
+Aby-zemzem çeşmesi, Sapa, Merwe arasy;
+Süleýman dek ähdimni syndyrdygym bilmezmiň?
+
+1 Jurga – owurt suw, damja.
+2 Dide – göz.
+
+                          Islärin
+
+                Kerem etseň, kadyr alla,
+                Dünýälikde at islärin.
+                Talygym1 ukuda galmyş,
+                Bir açylgan bagt islärin.
+
+                Ýoksullyk bir ýaman ýoldur,
+                Pakyr menem, golum galdyr,
+                Halal ryzk, bir kesp bildir,
+                Kimýa2 atly ot islärin.
+
+                Ýalan dünýäde ýörmäge,
+                Döwlet ber, aşret sürmäge,
+                Ömür ekläp, gün görmäge,
+                Segsen ýyl pursat islärin.
+
+                Pyragy, yşka ugraşdym,
+                Derýa girdim, möwje3 düşdüm,
+                Hor galmasyn puştdan-puşdum
+                Berkarar döwlet islärin.
+
+1 Talyg – täleý, ykbal.
+2 Kimýa – alhimiýa.
+3 Möwç – tolkun.
+
+                      Joşa düşüp sen
+
+           Gel, köňül, gözlegil älem-jahany,
+           Näden üçin beýle joşa düşüp sen?
+           Älemde bir sen dek ýokmy dahanly1 !
+           Syryň destan eýläp, paşa düşüp sen.
+
+           Seniň kimin ýokmy? – diýip, – dünýäde
+           Sökseler, neýlär sen, sen namyrada!
+           Şeýle güýçlendimi yşkyň zyýada?
+           Hetdiň bilmeý, aşa-aşa düşüp sen!
+
+           Gadam goýsaň sähralara, çöllere,
+           Köňül gaýnap, söz joş eder tillere,
+           Iller saňa haýran, sen hem – illere,
+           Ýa aklyň aldyryp, çaşa düşüp sen!
+
+           Baka2 ýokdur söhbediňe, sazyňa,
+           Ygtybar ýok, gyş günüňe, ýazyňa,
+           Sen bu derdi ýowutmazdyň özüňe,
+           Owwaly gerek däl nişe düşüp sen.
+
+           Magtymguly, hemme ýola baş urduň,
+           Çohlar bilen gezdiň, oturdyň, turduň,
+           Ýalançydan ne hezl etdiň, ne gördüň?
+           Imdi gör: otuz tört ýaşa düşüp sen.
+
+1 Dahan – agyz.
+2 Baka – hemişelik.
+
+               Ýyglap geçer halymga
+
+           Giň göwrämi gam basypdyr özünden,
+           Baş hem gelse, ýyglap geçer halymga;
+           Bagyr ýaşyn köňül döker gözünden,
+           Gaş hem gelse, ýyglap geçer halymga.
+
+           Garrylyga döndär ýigit çaglary,
+           Geda eýlär täç eýesi begleri,
+           Gurşun dek eridir Kap dek daglary,
+           Daş hem gelse, ýyglap geçer halymga.
+
+           Älem içre bir ah ursam, bir zarba,
+           Eda bolmaz ynsan gelmez bir gurba,
+           Gaplaň güýçden galar, däner gurt gürbä1
+           Guş hem gelse, ýyglap geçer halymga.
+
+           Puşmanda men eden-etmiş kärimden,
+           Biperwaýam bolan-bolmuş barymdan,
+           Ýoldaş bolan ýata bilmez zarymdan,
+           Daş hem gelse, ýyglap geçer halymga.
+
+           Hak yşykdyr bizni goýan közlere,
+           Bu közlerdir kysmat bolan bizlere,
+           Bilbil tilsiz galar, barsam ýazlara,
+           Gyş hem gelse, ýyglap geçer halymga.
+1 Gürbe – pişik.
+
+          Aňlamaýan yşk derdiniň käninden1 ,
+          Bir söz geçmez, herne etseň ýanyndan,
+          Yşka düşen umyt üzer janyndan,
+          Läş hem gelse, ýyglap geçer halymga.
+
+          Pähm eýleýen Magtymguly sözüni,
+          Derde düşüp, ýaşa doldyr gözüni,
+          Şat gelenler tuta bilmez özüni,
+          Hoş hem gelse, ýyglap geçer halymga.
+
+                      Baradyr
+
+          Gam dumany basyp garyp köňlümni,
+          Göz ýaşyn saklamaý, döküp baradyr;
+          Kimdir rehm eýleýip soran halymny?
+          Bozuk köňlüm erkin ýykyp baradyr...
+
+          Gerçe ot ýaksalar aşyk ýagyndan,
+          Ölüm asan erer dost pyragyndan2 ,
+          Hijran meni goýdy sabyr dagyndan,
+          Pyrak bogum-bogum söküp baradyr...
+
+          Ol döwri-döwranym çarh bulaşdyrdy,
+          Gam meni guratdy, ot tutaşdyrdy,
+          Yşk meni ýandyrdy, hetden aşdyrdy,
+          Ýüregim içimden çykyp baradyr...
+1 Kän – hazyna, magdan.
+2 Dost pyragyndan – dostdan aýrylmakdan.
+
+           Parahat ýatyrdym, nebsimi besläp,
+           Turdy köňlüm, ýar jemalyn höwesläp,
+           Hakdan hajat diläp, myradyn isläp,
+           Gözüm ol ýollara bakyp baradyr...
+
+           Magtymguly, mejalym1 ýok, sözläýin,
+           Dostlarga derdimni beýan eýläýin.
+           Eý ýaranlar, ýyglamaýyn neýläýin?
+           Yşk meni ýandyryp, ýakyp baradyr...
+
+                       Galyp men
+
+           Jahyllygyň joşy çykdy başymdan,
+           Men ol joşdan haly2 bolup galyp men.
+           Bir gama ulaşdym, gitdim huşumdan,
+           Bu dert bilen doly bolup galyp men.
+
+           Başym ýüz höwesde, köňlüm joşgunda,
+           Girdaba düşüp men däli-daşgynda,
+           Nejt dagyna gezem Mejnun yşkynda
+           Ýanar otly Leýli bolup galyp men.
+1 Mejal – pursat, hal, ýagdaý.
+2 Haly – boş.
+
+           Ýigitlik paslyny gyşa ýetirdim,
+           Kämillik keştisin1 derýa batyrdym,
+           Beýik pikre galdym, aklym ýitirdim.
+           Tirik erken, öli bolup galyp men.
+
+           Bu dünýäni göçüp bargan göç bildim,
+           Işini bet aňdym, özün puç bildim,
+           Öňün oýun gördüm, soňun hiç bildim,
+           Halk içinde däli bolup galyp men.
+
+           Magtymguly, paş eýlegil sözüňni,
+           Pelek muşty häk2 etmeýen gözüňni,
+           Bu wagta deň ýaş bilirdiň özüňni,
+           Imdi gör-bak: uly bolup galyp men.
+
+                     Daşlar bile
+
+              Köňül aýdar halkdan galyp,
+              Gezsem daglar, daşlar bile;
+              Ýazygymny ýada salyp,
+              Ýüzüm ýuwsam ýaşlar bile.
+
+              Kimni görsem bir pişede,
+              Meniň köňlüm endişede,
+              Gähi ser, içre köşede,
+              Otursam agaçlar bile.
+1 Keşti – gämi.
+2 Muşty häk – gysym gum.
+
+              Garry dünýä al içinde,
+              Adamzat hyýal içinde,
+              Jahan galmagal içinde,
+              Her kim ýüz talaşlar bile.
+
+              Alla yşkyda ser mestler,
+              Duwuş gelmez zeberdestler1 ,
+              Köňül perwaz eder, dostlar,
+              Durmaz ýüz alaçlar bile.
+
+              Köp köýler bile oturdym,
+              Bilmedim, ne iş bitirdim,
+              Gümra bolup, ýol ýitirdim,
+              Oturdym biweçler bile.
+
+              Bikär goýma ömür tagty,
+              Oýandyrsak oýmuş2 bagty;
+              Doga kylyp säher wagty,
+              Nalyş kylsam guşlar bile.
+
+              Magtymguly, towpyk3 alsam,
+              Bir är tapsam, gulluk kylsam,
+              Ýürek aýdar: ýoldaş bolsam
+              Dem çeken derwüşler bile.
+
+1 Zeberdest – eli üstün, güýçli, başarjaň.
+2 Oýmuş – uklan, ýatan.
+3 Towpyk – kömek.
+
+                      Ýar bizim sary
+
+         Gulzumy1 gyrsanyp kyrk ýol geçer men,
+         Eger ki meýl etse ýar bizim sary;
+         Gadam ýerne ganat baglap uçar men,
+         Diýse dilber: «Aşyk, ýör bizim sary».
+
+         Kyrk ýyl gol gowşuryp, gullukda dursam,
+         Alty günçe görmen, altmyş ýyl ýörsem,
+         Bir şunçakly bolsa, görsem, jan bersem,
+         Jemalyn arz etse bir bizim sary.
+
+         Ne laýykly ýüzüm bardyr tutarga,
+         Ne aýry gapym bar onda giterge?
+         Umyt bar goýnunda bile ýatarga,
+         Dergahyndan açsa der2 bizim sary...
+
+         Bir kimse ýolukdy desti3 şeraply,
+         Ýelden jaýnamazly4 , suwdan mähraply,
+         Egni ak redaly5 ýaşyl nykaply
+         Ugraşdy bir ajap är bizim sary.
+1 Gulzum – Müsür bilen Arabystan aralygynda bolan Gyzyl deňiz.
+2 Der – gapy, işik.
+3 Dest – el.
+4 Jaýnamaz – namazlyk.
+5 Reda – don.
+
+         Ýoldaş bolup bile ýördüm bir meýdan,
+         Meýdan içre dolup oturmyş merdan,
+         Bir eýwan üstünde çyrlap tört ýerden,
+         Diýdiler: «Goluňny ber bizim sary!».
+
+         «Pyragy!» diýp çagyrdylar, eltdiler,
+         «Kandadyň?» diýp, gulagymdan tutdular,
+         Istihanym1 altmyş para etdiler,
+         Diýdiler: «Mert olsaň, ýör bizim sary!»
+
+         Magtymguly bäş gün aşret sürmäge,
+         Jaý imesdir eglenmäge, durmaga,
+         Kararym ýok oturmaga, turmaga
+         Agzyn açyp durmuş ýer bizim sary.
+
+                      Bolmasa
+
+           Her kim suluw men diýr, ygtybar olmaz,
+           Sünbül saçy, gylça bili bolmasa;
+           Ýürekleri at başy dek batyrlar,
+           Hatynça ýok, at-ýaragy bolmasa.
+
+           Näler görejekdir bu şum köňüller.
+           Hazan ursa, solar açylan güller,
+           Bag içre saýraşan şeýda bilbiller,
+           Torgaýça ýok, gonar güli bolmasa.
+1 Istihan – süňk.
+
+Sözleseň, her ýana öwser bu tiller,
+Ýel urpakdan aşsa, şuwlar şemallar,
+Ýaşylbaş sonalar, gazlar garkyllar,
+Haly-harap düşer köli bolmasa.
+
+Guşlar uça bilmez guruk-ganatsyz,
+Aşyk ýara ýetmez dady-perýatsyz,
+Bir bedew hanazat bolar syýaksyz,
+Gurugy, käkili, ýaly bolmasa.
+
+Ahyrzaman bolsa, şyhdan päl gaçar,
+Kelamnyň ýüzünden hat galman öçer,
+Meýdandaky suwsuz aryga ogşar –
+Her kimniň sahawat-haýry bolmasa.
+
+Başyň goşma gadyr bilmez bezzada,
+Goşsaň, goşgul aşyň bir asylzada,
+Howada ýagmazak meňzär buluda, –
+Her kimiň hümmeti, haýry bolmasa.
+
+Magtymguly, biliň, şundag zamandyr,
+Şindi haýyr bolsa, soňra zyýandyr,
+Är ýigidiň içi doly armandyr, –
+Gara göz, inçe bil ýary bolmasa.
+
+                 Mala seretmez
+
+         Owwal-a mal ýagşy, maldan baş ýagşy,
+         Baş döwletin tapan mala seretmez;
+         Dogmadyk oguldan dogan är ýagşy1 ,
+         Nadan ogul atasyna seretmez.
+
+         Atda aýak bolsa, özge syn bolmaz,
+         Ärde gaýrat bolsa, işi kyn bolmaz,
+         Söweş güni goç ýigitde müýn bolmaz,
+         Garşy bakar, peýkam-ýaýa seretmez.
+
+         Alaman öňüni serdary başlar,
+         Goç ýigitler naýza urar, gylyçlar,
+         Kimseler bukulyp, kimse at uşlar,
+         Abyraý tapmasa, paýa seretmez.
+
+         Är-dostdan gaçarlar, adam aç galsa,
+         Ýar-ýardan aýrylar, ara daş galsa,
+         Ýaman hatyn ýagşy ýigide duş bolsa,
+         Başyny terk eder, daýa seretmez.
+
+         Köne dünýä muhannesiň öýüdir,
+         Süýthor bolan kesiň dowzah jaýydyr,
+         Altyn, kümüş gözlerimiň maýydyr2 ,
+         Goç ýigitler bozuk jaýa seretmez.
+1 «Dogmadyk oguldan duşman är ýagşy» diýen nusga hem bar.
+2 Maý – ýag.
+
+          Dünýä görki näzeninler, ne janlar,
+          Nadana ýolukdy türpe1 jenanlar.
+          Ýardan galan, äri ölen juwanlar
+          Goç ýigidi gözlär, baýa seretmez.
+
+          Magtymguly, garyp göwnün baý edip,
+          Kanagat ülkesin bendi-jaý edip,
+          Her kim öz ýaryny dogan aý edip,
+          Aýyn gözlär, özge aýa seretmez.
+
+                 Duz hem bolmasa
+
+          Togsan dürli tagam bolsa gaşynda,
+          Ne lezzet, içinde duz hem bolmasa;
+          Näbiler sen ne iş bardyr başynda,
+          Müşgil işdir, başda göz hem bolmasa...
+
+          Aýak bar ýörmäge, el bar almaga,
+          Kany bende, saglyk şükrün kylmaga,
+          Gulak bardyr eşitgenin bilmäge,
+          Kim düzeder, dilde söz hem bolmasa?
+
+          Ýok ýerden jan berip ýetirdi nany,
+          Göwün bostanyda bitger imany,
+          Adyň bende bolsa, eýäňi tany,
+          Gelip saňa ýüzbe-ýüz hem bolmasa.
+1 Türpe (turpa) – gözel, ter.
+
+          Kysmatyn hak bilen ryzkyn yzlamaz,
+          Söz bilenler bilen sözün gizlemez,
+          Köňül joşa gelmez, dil hem sözlemez,
+          Her ýürekde yşkdan göz hem bolmasa.
+
+          Ýyl-ýyldan pezihat1 artar eýýama,
+          Hakyň özi getirmese enjama,
+          Dünýä sözi meňzär duzsuz tagama,
+          Söz içinde gelin-gyz hem bolmasa.
+
+          Ýum gözüňi, gysyp gezgin dişiňni,
+          Ýaza ýetseň unutmagyn gyşyňny,
+          Töwekgel et, taňra tabşyr işiňni,
+          Sabyr bilen biter, tiz hem bolmasa.
+
+          Magtymguly, hyýal düşüp özüme,
+          Köp tomaşa gelip geçer gözüme,
+          Eşidenler aýp etmesin sözüme,
+          Iller kimin sözüm uz hem bolmasa.
+
+1 Pezihat – erbetçilik, biabraýlyk, masgaralyk.
+
+                        Çykypdyr
+
+          Hak tagala, bu ne-niçik ahwaldyr,
+          Dury diýip içdigim gumly çykypdyr;
+          Ne ýeser beýhuda şum keç ykbaldyr,
+          Halal diýip iýdigim jimli çykypdyr.
+
+          Kimse syrym bilmez, özün öldürse,
+          Pakyr bendelerge taňry bildirse,
+          Ile şatlyk, şadymanlyk güldürse,
+          Maňa hemra bolan gamly çykypdyr.
+
+          Amuhta1 men örtenmäge, bişmäge,
+          Kişi ýok sözleşip, dert aýdyşmaga,
+          Oba ujundan barsam öý soraşmaga,
+          Ýa laldyr, ýa agzy mumly çykypdyr.
+
+          Menden şikat eder elim gerenim,
+          Galbyrdan2 şal çykar syrym berenim,
+          Pir diýip paşmagna elim uranym,
+          Deprenende, döwden demli çykypdyr.
+
+          Magtymguly, hasaby ýok görenim,
+          Tama edip, umyt elim gerenim,
+          Obasyna ärmiş diýip baranym
+          Etegne el ursam.., çykypdyr.
+
+1 Amuhta – taýar, çulum, öwrenişikli, endikli.
+2 Galbyr – elek.
+
+        Bary bolmasa
+
+Zamana beýledir, göze ilmezler,
+Her ýigidiň golda bary bolmasa.
+Ýüz tümenlik sözün şaýa almazlar,
+Her kişiniň ygtybary bolmasa!
+
+Ten bir dar kapasdyr, jan bir wagşydyr,
+Tile gelen sözler köňül nagşydyr,
+Otly, suwly tamug andan ýagşydyr,
+Her ýuwurdyň bir bazary bolmasa.
+
+Begzadalar galdy çopan tährine,
+Ten haçan döz getir ýylan zährine,
+Bibat olup döner Lutuň şährine,
+Her ülkäniň häkim äri bolmasa.
+
+Dünýäde aňlardan aňlamaz kändir,
+Bilmezler beladyr, bilenler jandyr,
+Ol ýigitler adam tilli haýwandyr,
+Söz aňmasa hem ykrary bolmasa.
+
+Ýigide ýoksullyk ýaman beladyr,
+Sözüni deň-duşdan gaýra saladyr,
+Ýaman gylyk dosty duşman kyladyr,
+Guryp galsyn, il derkary bolmasa.
+
+                 Hak her kime bir ýagşy ýar bermändir, —
+                 Sözi akdyr, içi doly armandyr,
+                 Ýüz ýaşasa, bäş gün döwran sürmändir,
+                 Her kimniň mynasyp ýary bolmasa.
+
+                 Magtymguly, haka tabşyr özüňni,
+                 Her namarda sarartmagyl ýüzüňni,
+                 Terhosym bar, gel terk eýle sözüňni, —
+                 Näge gerek, hyrydary bolmasa.
+
+                         Düýşüne degmez
+
+                 Ýoksuzlykda niçeleriň döwrany,
+                 Ýatyp ýagşy gören düýşüne degmez;
+                 Niçeler hasretde tapyp höşk1 nany,
+                 Bir lezzetli tagam dişine degmez.
+
+                 Soran bolsa, synam içre sözler bar,
+                 Müň tümenden ýegdir, niçe ýüzler bar.
+                 Neýsansyz2 , nebatsyz3 niçe ýazlar bar, –
+                 Hoşluk bilen geçen gyşyna degmez.
+       1 Xöşk – gury.
+       2 Neýsan — ýaz wagtynda ýagýan ýagyş; grekçe aýlarynyň biriniň
+
+ady.
+       3 Nebat – ot, ösümlik.
+
+          Akyllar bar, başa baglap keçeler,
+          Içgin-içgin sorsaň, magny saçalar,
+          Akmaklykda özün bezäp niçeler, –
+          Kellesine saran peşine degmez.
+
+          Aňlamaza aýat sözlerin diýseň,
+          Pygamber hadysyn öňünde goýsaň,
+          Gyýmazlykdan köp söz beýnine guýsaň,
+          Bu sözler gulagnyň daşyna degmez.
+
+          Ynjatsa ogul-gyz, ene-atasyn,
+          Toba kylmaý taňrym geçmez hatasyn,
+          Döwran gelse, bilmez ne iş tutasyn,
+          Her kimiň her işden başyna degmez.
+
+          Niçeler mal tapmaz, teňňi-dest1 bolar,
+          Niçeler bar, dünýälikde mest bolar,
+          Niçeler bar, ýigitlikde nist2 bolar,
+          Niçeler bar, süren ýaşyna degmez.
+
+          Magtymguly, gerçe işim namazdyr,
+          Köňlüm perişandyr, sähwüm3 derazdyr4 ,
+          Adam bar, müň tümen iýdirseň azdyr,
+          Adam bardyr, iýen aşyna degmez.
+
+1 Teňňi-dest – eli gysga, goly teň, pes
+2 Nist – ýok.
+3 Sähw – ýalňyş.
+4 Deraz – uzyn, köp.
+
+        Görner
+
+Dogry bakmazlar julluýa,
+Göze gyzyl donly görner;
+Söze pähm etmez akmaklar,
+Öz ýanyndan tilli görner.
+
+Başa degmänkä gurtlar.
+Kast etmäň, gerekdir ýurtlar,
+Ýagyda tanalar mertler,
+Il içinde mally görner.
+
+Pikr et, başa iş düşende.
+Yssy ýokdur, soň puşmanda,
+At meýdanda, är duşmanda,
+Toýda tirme-şally görner.
+
+Jany sagyň sözlär tili,
+Jomardyň dek durmaz eli.
+Her kişiniň öz akyly
+Özüne kemally görner.
+
+Gadymdan setdir ýagşylyk,
+Ýagşy zatdyr ýagşy gylyk,
+Mert ýigide az ýagşylyk,
+Az hem söýgüli görner.
+
+               Gel, akyl dolandyr indi,
+               Ýürek peýwendi, jan bendi,
+               Her kişiniň öz perzendi
+               Özüne jemally görner.
+
+               Magtymguly, söz binýadyň1
+               Agzynda ýakynyň-ýadyň;
+               Hünär ýok söz bilen adyň
+               Halk içinde belli görner.
+
+                        Tapylmasa
+
+            Dok dalaşar sebze2 halgat3 geýmäge,
+            Kilim gözel zatdyr, don tapylmasa.
+            Aç dyrjaşar gury nany iýmäge,
+            Müşgildir, bişirge un tapylmasa.
+
+            Hasyl umydy bar ekin ekene,
+            Bu işler maglumdyr mähnet çekene,
+            Ýalaň aýak dözmez, basmaz tikene, —
+            Neýlesin geýerge gön tapylmasa.
+1 Binýat – guralyş, dikeliş, esas.
+2 Sebze, sebz — gök, ýaşyl.
+3 Halgat – halat, geýim.
+
+          Akylsyzlar iş ahyryn garamaz,
+          Çulap1 çigidinden garpyz döremez,
+          Agyr mejlislere çopan ýaramaz,
+          Neýlesin, otyrga jem tapylmasa.
+
+          Ýigitlikde her kim aşretde ýaýlar,
+          Başyna ne geler, gelmez bu köýler.
+          Dişsizler nan tapsa çäresin eýlär,
+          Müşgildir suprada nan tapylmasa.
+
+          Magtymguly, söýmez jedeli-jeňi,
+          Ahyret azm2 etdi köp dosty-deňi.
+          Dünýäde ne iş bar, bolmasa soňy,
+          Muşakgatdyr tende jan tapylmasa.
+
+                  Malyna degmez
+
+        Baýlar bardyr, garyplara rehm eýlär,
+        Bardyr baýlar, dünýä malyna degmez;
+        Gözel bardyr dünýä malyn iýdirsiň,
+        Bardyr gözel, iýen nanyna degmez.
+
+        Dünýäde bahylyň ýüzüni görme,
+        Aşyň, nanyň, suwuň alyşyp berme.
+        Gul diýip, ýigidiň aslyny sorma,
+        Hojasy bar, belki, guluna degmez.
+1 Çulap – miwe ady.
+2 Azm etmek – ugramak, gitmek.
+
+        Dünýä malyn berseň, eýesi satmaz,
+        Şa istese, anyň dilegi bitmez,
+        Bedew bar, pul berseň, bahasy ýitmez,
+        Bedew bardyr, salan juluňa degmez.
+
+        Döwletli är gerek, söweşde serhoş,
+        Ýat bilen baryşsaň, bolar sen gardaş,
+        Ýagşy ogul, ýagşy aýal, gyz syrdaş,
+        Bu döwlet her kimiň eline degmez.
+
+        Magtymguly, bu dünýäniň eşreti, –
+        Iýmek, içmek, münmek, guçmak, söhbeti.
+        Bir niçeler mydam kylar tagaty,
+        Niçeleriň sežde alnyna degmez.
+
+                         Bolgul
+
+        Bir bidöwlet bile birge bolynçaň,
+        Döwletliniň gapysynda gul bolgul;
+        Bedasyl beg gullugynda ýörinçäň,
+        Asyl begiň saýasynda kül bolgul.
+
+        Ýamany goý, ýagşylara göz ildir,
+        Kelhemeç1 hem «öz oglanym gözel» diýr,
+        Gargyş gurduň zürýadyny azaldyr,
+        Goýun kibi çar tarapa il bolgul.
+1 Kelhemeç – dazzarkel, çaýkel.
+
+        Süleýman sen — mura1 bir gulak goýgul,
+        Sözüni diňlegil, jogabyn aýgyl,
+        Häkim bolsaň halky gün kibi çoýgul,
+        Akarda suw, ýa öserde ýel bolgul.
+
+        Ýaman işdir öz nebsiňi besleseň,
+        Akmaklykdyr özüň ýagşy toslasaň,
+        Her bazarda rowaç bolmak isleseň,
+        Ýagşylaryň potasynda2 pul bolgul.
+
+        Magtymguly bardyr demiň hesibi,
+        Ir, giç ýeter her bendäniň nesibi,
+        Kişi bolsaň, goýgul gury täsibi,
+        Ýagşy, ýaman barçalarga del bolgul.
+
+           Görüm görülmegen ýerde
+
+             Yzzat, hormat, syn etmegin
+             Görüm görülmegen ýerde;
+             Akyl bolsaň, söz aýtmagyn
+             Nobat berilmegen ýerde.
+
+             Akly ýagşylar unutmaz,
+             Gury agaja ýaprak bitmez,
+             Akylly är mesgen tutmaz
+             Hulky söýülmegen ýerde.
+1 Mur – garynja.
+2 Pota – bu ýerde jübi, kise manysynda
+
+             Gömlüp galan aryk akmaz.
+             Her naşydan kerem1 çykmaz,
+             It gözlemez, pişik bakmaz
+             Saçak ýazylmagan ýerde.
+
+             Haç eýleseň jara döner,
+             Gül açylsa zara döner,
+             Hyzmat etmek hara döner
+             Gadryň bilinmegen ýerde.
+
+             Namart goş üstünde harlar,
+             Iýmit, aş üstünde gürlär,
+             Söweş gurup, gylyç parlar
+             Duşman görülmegen ýerde.
+
+             Öý içinde hara döner,
+             Muhannes bir nere döner,
+             Tilki, şagal şire döner
+             Söweş gurulmagan ýerde.
+
+             Parasat kyl bakyp akla,
+             Goç ýigidiň sözün hakla,
+             Magtymguly, tiliň sakla
+             Habar soralmagan ýerde.
+
+1 Kerem – ýagşylyk.
+
+                 Är ýanynda bellidir
+
+                 Ýagşylygy – pis bilmez, –
+                 Är ýanynda bellidir.
+                 Görer gözüň gymmaty
+                 Kör ýanynda bellýadir.
+
+                 Däli köňül daýanjy,
+                 Ýokdur dünýä ynanjy,
+                 Sag gulagyň guwanjy
+                 Ker ýanynda bellidir.
+
+                 Eger pir1 sen, eger ýaş,
+                 Kylma syryň halka paş,
+                 Syr saklaýan mähek2 daş
+                 Zer ýanynda bellidir.
+
+                 Bu dünýäniň myrady, –
+                 At, zagyfdyr3 , zürýady.
+                 Arwananyň kuwwaty
+                 Ner ýanynda bellidir.
+
+                 Bolsa gamdan halasym,
+                 Ýaza dönse gyş paslym,
+                 Magtymguly, yhlasym
+                 Ýar ýanynda bellidir.
+1 Pir – garry.
+2 Mähek – gyzyl, kümüşiň hilini kesgitlemek üçin ulanylýan daş.
+3 Zagyf (zagyfa) – aýal.
+
+                   Sazyna degmez
+
+           Oýunyň lezzetin bilmeýän adam
+           Hünärli ýigidiň sazyna degmez;
+           Bet syýakly1 , bethüý bolan pis adam
+           Perizadyň eden näzine degmez.
+
+           Bimagnynyň sözi janyňdan öter,
+           Gybat edip, özi günäge batar,
+           Ýamanyň zyýany iline ýeter,
+           Nadanyň peýdasy özüne degmez.
+
+           Adam bardyr, ony şalar çagyrdar,
+           Adam bar, zulm edip, garyp agyrdar,
+           Adam bardyr, körpe ýanyn agyrdar,
+           Adam bardyr, şal kiz2 ýanyna degmez.
+
+           Muhannesiň bolmaz namysy, aňy,
+           Bir söweş gününde eýlemez jeňi,
+           Aga-begler, muhannesiň on müňi
+           Mert ähliniň3 alty ýüzüne degmez.
+1 Syýak – sypat.
+2 Kiz – keçe.
+3 Mert ähli – mert adamlar
+
+          Magtymguly, döwran soňudyr adem1 ,
+          Lahat atly öýge goýar sen gadam.
+          Many söz aňlamaz, biakyl adam
+          Danalaryň aýdan sözüne degmez.
+
+                   Sarp eýleýir aşyny
+
+         Hak nazaryn salan bir serhoş ýigit
+         Ynsan üçin sarp eýleýir aşyny;
+         Namysly, gaýratly, arly goç ýigit
+         Söweş güni gurban eder başyny.
+
+         Bir niçeler gezer zerbap don bilen,
+         Bir niçeler gezer gury san bilen,
+         Adamzady tanyp bolmaz syn bilen,
+         Synaşmagan bilmez kişi kişini.
+
+         Ýigidiň abraýy ýagşy zagyfdyr,
+         Ýagşy zagyf näkes äre haýypdyr,
+         Ýigide gallaçlyk külli aýypdyr,
+         Her ýan gezer, bilmez eder işini.
+
+         Magtymguly, aýdaý ýaryn sypatyn,
+         Täze depder bilen ýazaý zer hatyn.
+         Dowzah nyşanasy bir ýaman hatyn
+         Her kime duş bolsa, alar huşuny.
+1 Adem – ýokluk.
+
+        Ärden
+
+Hiç köňül şatlygy çykmaz
+Bir köňül ýykmaýan ärden;
+Ýagşylyk tamasyn etmäň
+Ýamanlyk çykmaýan ärden.
+
+Her kim ile beglik eder,
+Bir söý bilen ýola gider,
+Kethudalyk ýyrak gider, –
+Ýaman söz çekmeýen ärden.
+
+Ýagşy är il aýbyn açmaz,
+Göre-bile haram içmez,
+Ýaradan ýazygyn geçmez
+Göz ýaşyn dökmeýen ärden.
+
+Eglenmez, eýýam öwrüler,
+Wagt täzeler, nyrh çöwrüler,
+Agyr döwletler aýrylar
+Bir agza bakmaýan ärden.
+
+Öz-özünden akly ýetmez,
+Akyllar sözüni tutmaz,
+Garyplyk ýok bolup gitmez
+On iş terk etmeýen ärden.
+
+     Ýigitlere ýasaw güni –
+     Gurda goýmaz şir awuny,
+     Pygamber bizar ýow güni
+     Ýoldaşa bakmaýan ärden.
+
+     Magtymguly, ýangyl, öçgül,
+     Ýa lal otur, ýa dür saçgyl!
+     Bir guýruksyz itdir, gaçgyl, –
+     Nesihat ýokmaýan ärden.
+
+            Bilmedim
+
+Pelek maňa gam badasyn bereli
+Wysal kaýsy, hijran kaýsy, bilmedim;
+Hak işine ten bermişem göreli,
+Arzuw kaýsy, arman kaýsy, bilmedim.
+
+Bende bolsaň gözle hakyň ryzasyn,
+Jebr eýlese, çekewergil jezasyn,
+Ajal bir gün atar tiri-kazasyn,
+Kiriş kaýsy, keman kaýsy, bilmedim.
+
+Aryf bolsaň, gulak goýgul sözüme.
+Bir suratam bu gün bakmaň özüme,
+Dünýä düýbi ýok görüner gözüme,
+Döwür kaýsy, döwran kaýsy, bilmedim.
+
+        Az ömrümi köp söwdaga satyp men,
+        Özüm bilmeý, ol derýaga atyp men,
+        Ne ummandyr, ne talapdyr, ýatyp men,
+        Zemin kaýsy, zaman kaýsy, bilmedim.
+
+        Her kim girse ol talaba, ummana,
+        Başyn alyp çyka bilmez bir ýana,
+        Gadam goýdum ol sähraýa-meýdana,
+        Jan kaýsydyr, jahan kaýsy, bilmedim.
+
+        Bu dünýäni asmandaky reň bildim,
+        Yssy-yssy asylyşdym, soň bildim,
+        Imdi anyň baryn-ýogun deň bildim,
+        Sut1 kaýsydyr, zyýan kaýsy, bilmedim.
+
+        Magtymguly, ýoluň öňi-ardy bar,
+        Çeker ýüküň, her kişiniň merdi bar,
+        Ýüregimde pinhan yşkyň derdi bar,
+        Dert kaýsydyr, derman kaýsy, bilmedim.
+
+1 Sut (sud) – peýda, haýyr.
+
+       Öýlengin
+
+Ýigit halyň garrylyga
+Salaýyn diýseň, öýlengin;
+Kethudalyk endişesin
+Kylaýyn diýseň, öýlengin.
+
+Kethudalyk gözel ýoldur,
+Gaýgy garrydar, gam öldir,
+Ýigitlik bir gyzyl güldür, –
+Solaýyn diýseň öýlengin.
+
+Öý-il gerek, ýorgan-düşek,
+Perzent bentdir, aýal – duşak,
+Ýüke werziş bir boz eşek
+Bolaýyn diýseň, öýlengin.
+
+Gezer sen oýnap, dalaşyp,
+Galar sen, derde dolaşyp,
+Gaýgydan gama ulaşyp
+Galaýyn diýseň, öýlengin.
+
+Joşgun eder sen özüňden,
+Aýrylar sen hoş ýazyňdan-,
+Tükenmez derdiň yzyndan
+Ýeleýin diýseň, öýlengin.
+
+              Açyp ýigitlik dumanyn,
+              Getir sen gaýgy zamanyn,
+              Dünýäniň ýagşy-ýamanyn
+              Bileýin diýseň, öýlengin.
+
+              Magtymguly, gezip her taý.
+              Etmediň jahandan perwaý,
+              Pygamber sünnetin berjaý
+              Kylaýyn diýseň, öýlengin.
+
+                   Kyly-kal bolar
+
+           Her kişiniň iki bolsa aýaly,
+           Gije-gündiz işi kyly-kal1 bolar;
+           Her biriniň bardyr ýüz müň hyýaly,
+           Owkat sürüp görejigi hal2 bolar...
+
+           Birin söýüp, birin eýlese naçar,
+           Ile ryswa bolup, öz aýbyn açar,
+           Akly haýran bolup, baryndan geçer,
+           Deň tutmasa ýaryn, bikemal bolar.
+
+           Gähi bilbil kimin saýrar tilleri,
+           Tomaşadan häzir eder illeri,
+           Gähi ýer ýumruklar, gähi külleri,
+           Ärin göre bilse, tilsiz lal bolar.
+1 Kyly-kal – galmagal, gowga.
+2 Hal – bu ýerde kyn manysynda.
+
+             Gahar eýläp gelmez bolsa ýanyna,
+             Söz aýtmasa her biriniň şanyna,
+             Beýle är goşulmaz adam sanyna, —
+             Iki hatyn, bir är — üç aýal bolar.
+
+             Magtymguly, kimse bilmez batyny1 ,
+             Öýlenseňiz, garap alyň zatyny2 ,
+             Eýäm görkezmesin ýaman hatyny,
+             Adam özün bilmez, ham hyýal bolar.
+
+                     Ykrarsyz ärden
+
+                Gördük saýy, köňül sowar
+                Sabyrsyz, kararsyz ärden;
+                Yssy beren köpek ýegdir3
+                Uýatsyz, ykrarsyz ärden.
+
+                Aýlandykça döwran-döwür,
+                Ykbalyň ýüwürse, öwür,
+                Dura-bara dosty sowyr
+                Garyp galan barsyz ärden.
+1 Batyn – gizlilik, syr, içki dünýä.
+2 Zat – asyl.
+3 Eg – oňat, gowy.
+
+Ite zer dök, minnet çekmez.
+Aňlamaza sözüm ýakmaz,
+Köňlüň istän işler çykmaz
+Nan ýagysy, kärsiz ärden.
+
+Her göz säherde bidardyr, —
+Eýesinden ülüş bardyr,
+Hak, pygamber, halk bizardyr
+Düýbi ygtybarsyz ärden.
+
+Magtymguly, magny saçar,
+Her kim söz lezzetin içer,
+Bara-bara köňül geçer
+Tagsyby ýok, arsyz ärden.
+
+     Diş gitmek
+
+Tagamnyň lezzetin alyr,
+Dahanyňdan diş gitmek;
+Aňyrsyzy azdyryr
+Götin döwlet baş gitmek.
+
+Şeýtan ýolun bek eýlär,
+Gara ýüzün ak eýlär,
+Ýüz müň bela ýok eýlär
+Säher turup ýaş dökmek.
+
+Peltesiz ýag çyraga,
+Yşyk salmaz gyraga,
+Ilin salar aýaga
+Aýak galyp, baş gitmek.
+
+Niçe pese zar bolup,
+Ýatandan bimar bolup,
+Hoşdur ýagşa ýar bolup,
+Bir ýamandan daş gitmek.
+
+Ulaşmaganlar gama
+Şükr etmezler bu deme,
+Abyraýdyr adama
+Ýagşy gelip, hoş gitmek.
+
+Ýaman til dost ýitirer,
+Hoş til rahmet getirer,
+Äre sangy ýetirer
+Kyrkdan agyp, ýaş gitmek.
+
+Pyragy, dünýä düýşdür,
+Düýş görseň, düýbi hiçdir.
+Jahanda ýaman işdir
+Gury gelip, boş gitmek.
+
+                         Eldim tut
+
+     Dünýe görmeý, tutgun galsaň bir künçde,
+     Bady-paý1 dek ýer ýüzüne ýeldim tut;
+     Çyn-Maçynda, Rumda, Hindde, Hebeşde
+     Bolan-bolmuş hünärleri bildim tut.
+
+     Aç hem bolsaň, barma ile dilege,
+     Diý: köşkde men, başym barmyş pelege,
+     Çölde galsaň, hiç tapmaýan kölege,
+     Erem bagy içre gamsyz galdym tut.
+
+     Aş görende, özüň atma dillenip,
+     Gerçe aç hem bolsaň, halka bellenip,
+     Zerler döküp, çyn gullarny gollanyp,
+     Tiz hem ölseň, Nuh ýaşyna geldim tut.
+
+     Mätäçligiň hakdan özge bilmese,
+     Ol rozugär2 besdir, açdan ölmese,
+     Hindi kimin egin örtiň bolmasa,
+     Patyşalyk puşeş3 çigne saldym tut.
+1 Bady-paý – el aýak, ýyndam at.
+2 Rozygär – rysgal, durmuş.
+3 Puşeş – eşik, geýim.
+
+     Suwa, ýele hökmi geçen Süleýman,
+     Bak: olardan ne nam galdy, ne nyşan!
+     Teşne1 galyp, jaýyň bolsa çölüstan
+     Derýa içre men Isgender boldum tut.
+
+     Ýoldaş bolsaň dile düşmez mur bile —
+     Ýer tapmaýyn, bile ýatsaň mar bile,
+     Ýigrim alty keret2 ýüz müň är bile
+     Karun hazynasyn ele aldym tüt.
+
+     Magtymguly, çekseň jepa-jebir, bil –
+     Hudaga hoş geler, şükür-sabyr, bil,
+     Gylça jana gyzyl teni gabyr bil,
+     Gyzyl tiliň sözlär eken, öldüm tut.
+
+                      Joş gelse
+
+     Dünýäde niçe iş bardyr, ýamandyr,
+     Biri oldur, ýersiz gahra joş gelse;
+     Aşyklara şol gün ahyrzamandyr,
+     Ýardan yrak düşüp, ara daş gelse.
+
+     Dostuňny egleme, nepden galmasyn,
+     Duşmanyň saklama, syryň bilmesin,
+     Açda algyn, bege bergiň bolmasyn,
+     Iş müşgildir, aňlamaza duş gelse.
+1 Teşne – suwsuz, suwsan.
+2 Keret – gezek.
+
+     Zemin seni häli-häli ýutarmy,
+     Akyl bolan munda bigam ýatarmy?
+     Hiý bir masgaralyk mundan ötermi, —
+     Giden gury gitse, gelen boş gelse!
+
+     On gat öýüň bolsa demir galadan,
+     Ajal tapar emir1 bolsa alladan,
+     Hakyky är ýüz döndermez beladan,
+     Hak ryzasy bilen başa daş gelse.
+
+     Aryf men diýp, lap urarlar ýalandan,
+     Bellisini aýdar sorsaň bilenden,
+     Il gözlügin ýüz ýyl tagat kylandan,
+     Ýagşydyr bir säher gözden ýaş gelse.
+
+     Baýlar baglap sahawatyň gapysyn,
+     Köpelder tamugnyň möýün, apysyn2 ,
+     Görüň bu eýýamyň pirin, sopusyn —
+     Dannamaýyn tykar otyr, aş gelse.
+
+     Magtymguly, söýle aklyň ýetinçä,
+     Tetärigiň gazan, bikar ýatynça,
+     Tamugdadyr, tä dünýäden ötinçä, —
+     Ýaman hatyn ýagşy äre duş gelse.
+
+1 Emir (emr) – buýruk, höküm.
+2 Apy (afy) – zäherli ýylanyň bir görnüşi.
+
+                         Ýigide
+
+                Ulalanda, iş hoş gelmez
+                Ýaşlykda köýmän ýigide;
+                Döwlet gelse özün bilmez
+                Dogaly doýman ýigide.
+
+                Ýamana öwüt hebesdir,
+                Ýagşy äre bir söz besdir,
+                Ýörişini ýalňyş basdyr
+                Ýaňy don geýmän ýigide.
+
+                Jüpbe jöwşen1 , zere-sowut2 ,
+                Keserli gylyç, arap at,
+                Söweş güni gider uýat
+                Gaýraty bolman ýigide.
+
+                Çopan adam çoka bolmaz,
+                Ala garga oka gelmez,
+                Köp ýygylsa, terhos almaz
+                Aňrysy bolman ýigide.
+
+                Gulluk ýetirgin janyňdan,
+                Aýama parça nanyňdan,
+                Ganly bolsa, geç ganyňdan
+                Bir garyp myhman ýigide.
+1 Jöwşen – harby eşik, enjamlar.
+2 Sowut – demir don.
+
+Dünýäde hiç kim galmandyr,
+Mal jana ýoldaş bolmandyr,
+Göýä bu dünýä gelmändir
+Bir zürýat goýman ýigide.
+
+Almaz, kümüş mis görüner
+Dula gyrnak tüýs görüner,
+Perizat hatyn pis görüner
+Bir hulky söýmän ýigide.
+
+Mal döner çiýan-çirmäge,
+Durar et-ganyň sormaga,
+Malyndan zekat bermäge
+Gözleri gyýman ýigide.
+
+Magtymguly, ýeldan çykmaz,
+Ýagşy söz ýamana ýakmaz,
+Müň söz aýtsaň, biri ýokmaz,
+Taňrysy guýman ýigide.
+
+                     Gidiji bolma
+
+        Gel, köňlüm, men saňa nesihat kylaý,
+        Watany terk edip gidiji bolma;
+        Özüňden egsik bir gaýry namardyň
+        Hyzmatynda gulluk ediji bolma.
+
+        Hyzmat kylsaň, bolsun bir asylzada,
+        Ata-babasyndan beýik begzada,
+        Eger her çent bolsa aç hem üftada,
+        Ýanyndan bir zaman gidiji bolma.
+
+        Akmaýan galmazdyr bir akan aryk,
+        Bir tende adam ki semiz, kä aryk;
+        Bir ýüzi çirikdir1 , bir ýüzi çaryk,
+        Çirik diýp, gaty söz aýdyjy bolma.
+
+        Ýagşylardan hergiz çykmaz ýamanlyk,
+        Asly ýaman bolsa, çykmaz ýagşylyk,
+        Aslyna tartadyr ýüwrük, çamanlyk,
+        Ýüwrükni çamanga satyjy bolma.
+
+        Çakylyk, habarsyz bir ýere barsaň,
+        Imtiýaz2 eýlegil otursaň, tursaň,
+        Bir nesihat bereý, pendimi alsaň,
+        Kişi aşynyň duzun dadyjy bolma.
+1 Çirik – bu ýerde garalyk, hapa manyda.
+2 Imtiýaz – salykatlylyk, seljermek, artykmaçlyk.
+
+        Çagyrlan ýere bar, otur-da turma,
+        Çagrylmadyk ýere barma, görünme,
+        Utanmaz adam dek süýrenip ýörme,
+        Buýrulmagan işni ediji bolma.
+
+        Eger sen hem bolsaň nermi-mylaýym,
+        Mylaýym sen bolsaň, guluň bolaýym,
+        Gulagymga beren pendiň alaýym,
+        Kişige gaty söz aýdyjy bolma.
+
+        Gökden nem düşmese, ýer ot getirmez,
+        Ýygylsa müň gaýgy, bir iş bitirmez,
+        Är ýigit köňlüne gaýgy getirmez,
+        Namardyň ogly dek gaçyjy bolma.
+
+        Mert ogludyr ile ýazar desterhan,
+        Dogry söz üstünde berer şirin jan,
+        Ömrüni ötgerer, diýmez bir ýalan,
+        Jäht eýläp, ýalan söz aýdyjy bodma.
+
+        Sahty-dil1 ýüregi hergiz boş bolmaz,
+        Her niçe gynansa köňli hoş bolmaz.
+        Bir-birewge iki ýagşy duş bolmaz,
+        Ýagşyny ýamana satyjy bolma.
+1 Sahty-dil – gaty, doň ýürek.
+
+        Töwekgel ner bolar, endişe — maýa,
+        Köňlüňni iberme her kaýsy jaýa,
+        Barçanyň daýanjy kadyr allaýa,
+        Alladan özgäge söýenji bolma.
+
+        Okyr bolsaň, ok ur nebsiň gözüne,
+        Gara, çyn göz bilen meshap1 ýüzüne,
+        Aldanyp girmegil şeýtan sözüne,
+        Ýagşylygy hiç wagt goýujy bolma.
+
+        Eger bolsun diýseň ýeňil-agyrlar,
+        Kelçik sözläp agyrtmagyl bagyrlar,
+        Ýoluksa gözüňe güňi-sagyrlar,
+        Olarnyň halyna gülüji bolma.
+
+        Tapsaň-da dünýäde mülki-Isgender,
+        Karunyň maly hem bolsa miýesser,
+        Ahyry bolar sen ýerge barabar,
+        Köňlüňde men-menlik satyjy bolma.
+
+        Aýdarlar: ýyrtyk don görse it gapar,
+        Päli ýaman bende hudadan tapar,
+        Ahyry bir güni kylar sen sapar,
+        Dar köňüllik işi ediji bolma.
+1 Meshap – kitap, tom, kodeks.
+
+        Eger çendi ki bol sahyby-mansap1 ,
+        Sözün diňle, adalatly bol deňläp,
+        Söz tapsaň sözlegil, tapmasaň bol hap,
+        Goldan gelmez işni ediji bolma.
+
+        Garrylyk gitgisi bir gün apaty,
+        Ýigidiň gitgisi bir gün kuwwaty,
+        Ganymat bil, gapyl adam, pursaty,
+        Murda dek uzanyp ýatyjy bolma.
+
+        Maksat, bu sözlere kylgyl ygtybar,
+        Çyn adama her wagt adamlyk derkar,
+        Aňlamaý söýleme: «tamda gulak bar»,
+        Iç syryň kişige aýdyjy bolma.
+
+        Daň atanda molla çagyrar azan,
+        Bozulmazmyş hergiz kysmatda ýazan,
+        Ýigitlik bostandyr, garrylyk — kazan,
+        Bostany hazana satyjy bolma.
+
+        Kitabyn açyban okan molla diýr,
+        Gögerer ýagmyryň suwy birle ýer,
+        Alkyşy, patyha, doga birle är,
+        Mazluma sütemlik ediji bolma.
+1 Sahyby-mansap – derejeli, emeldar.
+
+        Döwletli ogullar ýaşda baş bolar,
+        Ýaşaganda, bidöwletler ýaş bolar,
+        Rehimsiz zalymlar bagry daş bolar
+        Barar ýere kesek atyjy bolma.
+
+        Är ýigit balasy bara pur1 bolar,
+        Gamçysy elinde ýaman zor bolar,
+        Märeke görmegen ýigit har bolar,
+        Bolar-bolmaz sözi aýdyjy bolma.
+
+        Eý köňül, gel imdi haky tapaly,
+        Nesibe merkebin2 münüp çapaly,
+        Aýdarlar: hak ermiş mähri-wepaly,
+        Hergiz öz sözüňden gaýdyjy bolma.
+
+        Men diýdim bir niçe pendi-nesihat,
+        Bilseň nesihatdyr, ýogsa — pesihat3 ,
+        Pesihat bilmegil, barça nesihat,
+        Ýalgançy sözleri aýdyjy bolma.
+
+        Magtymguly, göwnüňdedir köp arman,
+        Tapmady derdine akybet derman,
+        Ýetişer bir güni hakdan bu perman,
+        Gaflat düşeginde ýatyjy bolma.
+
+1 Pur – doly.
+2 Merkep – ulag.
+3 Pesihat – owadan söz.
+
+            Seni
+
+Içki syryň aýtma her bir namarda,
+Syryň ile ýaýyp, paş eder seni.
+Ogry-kezzap bilen obadaş bolma,
+Malyndan aýyryp, aç eder seni.
+
+Sam-sam adam bilen oturma, turma,
+Zynhar, namart bilen hemsöhbet gurma,
+Gadyrdan dostuňdan ýüzüň öwürme,
+Barsaň depesine täç eder seni.
+
+Bir goç ýigit näzenine ýar bolsa,
+Jemalyny bir görmäge zar bolsa,
+Aralykda bir şum rakyp bar bolsa,
+Ýagşy dostuň bilen öç eder seni.
+
+Sopular ýaňylyp, aýtmaz senany,
+Säher tursaň geçjek barça günäni,
+Aýtmawer gyýbat söz, etme zynany,
+Dowzahyň oduna duş eder seni.
+
+Magtymguly, ile ýaýdym nesihat,
+Zynhar, ýaman bilen bolmagyl ülpet,
+Hudaý berse sagadatly bir perzent,
+Garrygan çagyňda ýaş eder seni.
+
+                    Daşy syndyrar
+
+           Ykbalyň oýansa, döwlet ýar bolsa,
+           Daga azy ursaň, daşy syndyrar;
+           Täleýiň ters gelse, bagtyň şor bolsa,
+           Paludanyň peri dişi syndyrar.
+
+           Ajalyňdan gorkup, girseň ummana,
+           Gorkudan ne peýda gidejek jana,
+           Ömrüň ahyr bolup, dolsa peýmana, —
+           Haşhaşyň samany başy syndyrar.
+
+           Bar sözüne gulak goýgul bileniň,
+           Ahyry hiç ýere ýetmez ýalanyň,
+           Ömri-saly artar alkyş alanyň,
+           Gargyş galyndyrmaz, ýaşy syndyrar.
+
+           Akylyň sözünden köňül söýüner,
+           Akmagyň işinden zehin käýiner.
+           Muhannes giň ýerde akyl saýynar,
+           Dar ýerde akyly-huşy syndyrar.
+
+           Magtymguly, çölde gezen naşyny,
+           Bilik sorma, köp sürdi diýp ýaşyny,
+           Dar mejlisde doly berseň aşyny,
+           Aşny iýe bilmez, käşi1 syndyrar.
+
+1 Käşi – syrçaly gap.
+
+                     Gitmezmiş
+
+              Iller heý, Mejnun dagynyň
+              Serinden duman gitmezmiş;
+              Müňküre bilin bereniň
+              Köňlünden güman gitmezmiş.
+
+              Goýna gardaş bolmaz gurtdan,
+              Dileg etme her namartdan,
+              Tä ölinçä goç ýigitden
+              Parh ýeter, zyýan ýetmezmiş.
+
+              Gapyl adam ogly bilmez,
+              Ölümini ýada salmaz,
+              Maly-mülküň peýda kylmaz,
+              Ýanyňdan iman gitmezmiş.
+
+              Aşyklar terki-jan etsin,
+              Gözde ýaşyn rowan etsin,
+              Goç ýigitler yhsan1 etsin,
+              Yhsany reýgan2 gitmezmiş.
+
+              Magtymguly, galdyň derde,
+              Işiň düşmesin namarda,
+              Kyýamat güni jomarda
+              Dowzahdan zyýan ýetmezmiş.
+
+1 Yhsan – haýyr
+2 Reýgan — biderek, zaýa; mugt.
+
+       Olmasyn
+
+Eý ýaranlar, musulmanlar,
+Däli köňül joş olmasyn;
+Ýene bir ýagşy ýigide
+Ýaman hatyn duş olmasyn.
+
+Her kim alsa hakdan rehnet,
+Gider gaýgy, galmaz mähnet,
+Arslan bolsa durmaz döwlet, —
+Hiç ülke bibaş olmasyn.
+
+Täsip edip at besläne,
+Ýoldaş bolsun haýr aslyna,
+Haram aşap, şer isläne
+Uzak ömür ýaş olmasyn.
+
+Her kimiň öz synasynda,
+Akyl görner beýnisinde,
+Iki dostuň arasynda
+Ýaman-ýowuz iş olmasyn.
+
+Her kişiniň öz zürýaty —
+Jan hoşy, köňül kuwwaty;
+Artsyn jomardyň döwleti,
+Muhannesde aş olmasyn.
+
+Bir yşk düşse adam serne,
+Uky gaçyp, köňül urna,
+Iki söwgüli bir-birne
+Ýakyn olsun, daş olmasyn.
+
+Sözüm sözlense her çaklar,
+Akyly bolan gerçekler,
+Bir iş düşende goçaklar
+Iş görmedik ýaş olmasyn.
+
+Il içinde özün öwer,
+Dag-dumany başdan agar,
+Ýigide nogsany deger,
+Namartlar ýoldaş olmasyn.
+
+Sözle heý, aşygym, sözle,
+Gel, kyýamatlygyň gözle,
+Magtymguly, syryň gizle,
+Her namarda paş olmasyn.
+
+                      Läle getirmiş
+
+         Asmanyň ýüzleri minewwer1 bolsa,
+         Zemin ýaşyl geýip, läle getirmiş;
+         Huda buýrugyndan aýrylan juwan
+         Oýnaşyndan haram küle getirmiş.
+
+         Ozal akan ýerden akarmyş aryk,
+         Özün öwen ýigdiň tanapy çüýrük,
+         Mertden aşna tutsaň, abraýyňa şärik,
+         Namart aşnasyna hile getirmiş.
+
+         Her kim öz adyna möhür gazdyrar,
+         Ýazylan takdyry kimse bozdurar?
+         Ikiniň sylagy birni azdyrar,
+         Taýak bir dälini ýola getirmiş.
+
+         Magtymguly, ger doýursaň bir ajy,
+         Mälimdir, tapar sen bu ýerde hajy,
+         Bir ýagşylyk etse adam biweji, –
+         Her mejlisde ýüz ýol tile getirmiş.
+
+1 Minewwer – ýagty.
+
+                    Biwepalardan
+
+         Gözläp köňül berme biwepalarga,
+         Bak: kim wepa görmüş biwepalardan?
+         Goýma özüň ýersiz bu jepalarga,
+         Kim bähre tapypdyr bu jepalardan?
+
+         Yşkyň owazasyn diňle daşyndan,
+         Jan jebrinden gorksaň, barma başyndan,
+         Serişdäň kem bolsa yşkyň işinden,
+         Bar, habar al gören mübtelalardan.
+
+         Sözüm nesihatdyr, bir gulak salyň,
+         Bendesi men söze hyrydar guluň,
+         Kyrk oýnaşly hatyn ýagşydyr, biliň, –
+         Şereňňiz1 , köp tilli kethudalardan.
+
+         Ýatma, Magtymguly, aşretiň söýüp,
+         Munça ýatajak sen kepeniň geýip,
+         Hajatyn tiz bitir — hojany goýup,
+         Dileg eder kimse gul-gedalardan.
+
+1 Şereňňiz – şerçi, dawa-jenjel agtarýan, dawakeş.
+
+                           Näbilsin
+
+          Harazban eline düşse algyr baz,
+          Ganatdan aýyrar, gadryn näbilsin,
+          Bir çopan goluna degse bir almaz,
+          Çakmakdaşy eder, gadryn näbilsin.
+
+          Kämil bolmaz ol şerbetden datmagan
+          Pähim eýlemez söz magnyga ýetmegen.
+          Däli-Mejnun yşk eseri etmegen
+          Perizat Leýliniň gadryn näbilsin.
+
+          Dynçlygyň gadryny bilmez armagan.
+          Beglik ede bilmez berim bermegen
+          Çölde açlyk muşakgatyn görmegen
+          Öýde yssyg nanyň gadryn näbilsin.
+
+          Ötenden soň, adam aňlar döwletin,
+          Bilmez döwlet bilen geçen nobatyn,
+          Çekmän kişi bimarlygyň zähmetin,
+          Bu gözel saglygyň gadryn näbilsin.
+
+          Rismanyn1 berk edip, labyr2 salmaýan,
+          Girdaba ugraşar häzir bolmaýan,
+          Keştisi kölegde bendil almaýan,
+          Gury gara ýeriň gadryn näbilsin.
+1 Risman – ýüp, tanap.
+2 Labyr – leňňer, ýakor.
+
+Garry, ýigit bir ykrarda durmasa,
+Ulag gadryn bilmez, kişi armasa,
+Ördek, guba gazlar çöli görmese,
+Ser-çemenli köl gadryn näbilsin.
+
+Aýralyk oduna ýanyp-bişmeýen,
+Zalymlar elinden ülke aşmaýan,
+Watandan aýrylyp, ýalňyz düşmeýen
+Ülkesinde il gadryn näbilsin.
+
+Magtymguly diýer, ýaru-hemdemge,
+Geliň şükr edeliň, dostlar, bu demge,
+Zatynda söz pähmin bilmez adamga
+Müň many söz diýseň, gadryn näbilsin.
+
+     At ýanynda bellidir
+
+Eşek özün egsik saýmaz bedewden,
+Gymmat etseň, at ýanynda bellidir;
+Bedew diýgeç, hemme bedew deň bolmaz,
+Çyn bedewler meýdanynda bellidir.
+
+Oglanlykda bilmez idiň, beg idiň,
+Ýamana hiç ýokmaz sözüň-öwüdiň,
+Aryf bolsaň, aslyn sorma ýigidiň,
+Edebinde, erkanynda bellidir.
+
+         Bu jahandan doýmaz gözüň, siýr1 olmaz,
+         Her tilkiden ýolbars olmaz, şir olmaz,
+         Ýigit diýgeç, hemme ýigit bir olmaz,
+         Goç ýigitler myhmanynda bellidir.
+
+         Döwlet bolsa goç ýigidiň başynda,
+         Hemaýatly ili gerek daşynda,
+         Ýigit özün maglum eder işinde,
+         Gylyjynda, zybanynda bellidir.
+
+         Magtymguly, garyplaryň gözýaşy
+         Daglary ýandyrar, erider daşy...
+         Pakyra jebr eden zalymyň işi
+         Ruzy-magşar diwanynda bellidir.
+
+                          Il biläni
+
+              Belent daglaryň başynda
+              Bulut oýnar sil biläni;
+              Goç ýigide toýdur-baýram,
+              Her iş gelse il biläni.
+
+              Dil bilenler gün bolupdyr,
+              Altyn, kümüş zeň bolupdyr,
+              Peşe kaçan deň bolupdyr,
+              Ugraşanda pil biläni.
+1 Siýr bolmak – doýmak.
+
+                 Otlaga gaçar buzawlar,
+                 Öňün başlar ýagşy gäwler1
+                 Tanalar ol has bedewler
+                 Köne ýyrtyk jul biläni.
+
+                 Hak bendesi haka çapar,
+                 Ýaman öz pälinden tapar,
+                 Magtymguly, aýbyn ýapar
+                 Iş kylyjy dil biläni.
+
+                        Ili gözlär
+
+                 Ilinden aýra düşen
+                 Ah urar, ili gözlär;
+                 Ýolundan aýra düşen
+                 Jäht eder, ýoly gözlär.
+
+                 Gökde pelek gerdandyr,
+                 Halk ýerde sergerdandyr,
+                 Ne bazygär2 jahandyr, —
+                 Göz açan maly gözlär.
+
+                 Kimlerde altyn täçdir,
+                 Kimler saýyl-mähtäçdir,
+                 Kimler düýpden gallaçdyr.
+                 Kim ýüpek haly gözlär.
+1 Gäw – sygyr.
+2 Bazygär – oýunçy.
+
+                Kim nan tapmaz iýmäge,
+                Kim ýer tapmaz goýmaga,
+                Kim don tapmaz geýmäge.
+                Kim tirme-şaly gözlär
+
+                Bu jahan bir puştadyr,
+                Kim zende, kim küştedir1 .
+                Her bende bir işdedir.
+                Her kim bir haly gözlär.
+
+                Heňňam2 uzyn, ömür az.
+                Çahar3 pasla başdyr ýaz.
+                Gökde ganat ýaýan gaz
+                Gözleri köli gözlär...
+
+                Magtymguly, huş eýläp,
+                Gezgin, didäň ýaş eýläp,
+                Däli köňül joş eýläp,
+                Ýüz müň hyýaly gözlär.
+
+1 Küşte – heläk bolan, öli
+2 Heňňam – döwür.
+3 Çahar (çar) – dört
+
+                        Don gerek
+
+                Ne bela sen, adamzat,
+                Çyplak dogduň, don gerek;
+                Ak süýt emdiň, ulaldyň,
+                Hem aglar sen, nan gerek.
+
+                Ataň hoşnut1 bolmaga,
+                Eneň mährin salmaga,
+                Ýediňde din bilmäge,
+                Okyrsyň, kuran gerek.
+
+                Saraldar sen dilbendiň,
+                Ýognalar biliň-bendiň,
+                On bäşde arzuwmendiň –
+                Gyz gerek, juwan gerek.
+
+                Juwan gerek guçmaga,
+                Aýşy-aşret açmaga,
+                Ondan soň iýp-içmäge,
+                Bir tükenmez nan gerek.
+
+                Köňlün ynjydyp halkyň,
+                Hoşnut etseň öz hulkuň,
+                Rum, Pereň bolsa mülküň,
+                «Heniz azdyr», kän gerek.
+1 Hoşnut – şat, razy.
+
+               Ýatsaň düşekde bimar1 ,
+               Yssy etmese timar,
+               Zer dökseň harwar-harwar2 ,
+               Göze ilmez, jan gerek.
+
+               Doga bilen är dörär,
+               Ýagmyr bilen ýer gögär,
+               Är oldur – alkyş alar,
+               Ýerlerge baran gerek.
+
+               Ajal geler, oýda ýok,
+               Görmek ýylda-aýda ýok,
+               Hiç bir zatdan peýda ýok,
+               Bir nury iman gerek.
+
+               Magtymguly, ýol gitmäge,
+               Söz aslyn pikr etmäge,
+               Bir magny pähm etmäge,
+               Akylly ýaran gerek.
+
+1 Bimar – syrkaw, hassa.
+2 Harwar – eşek ýüki.
+
+                         Dag saýar
+
+                   Daglar ýeriň myhydyr,
+                   Depe özün dag saýar;
+                   Çekik aýdar: «bilbil men»,
+                   Çarlak özün zag saýar.
+
+                   Güýjünden-kuwwatyndan,
+                   Dünýäniň nobatyndan,
+                   Her kişi yzzatyndan,
+                   Bedasyl özün beg saýar.
+
+                   Nadanam, zat bilmenem,
+                   Bir kemine gul menem,
+                   Sirke1 aýdar: «bal menem»,
+                   Nebit özün ýag saýar.
+
+                   Habar alsaň birewden,
+                   Özün kem saýmaz döwden.
+                   Öz ýanynda bedewden
+                   Eşek özün ýeg saýar.
+
+                   Magtymguly, bir guldur,
+                   Gullugyna kaýyldyr,
+                   Ahmak özün akyl diýr,
+                   Tentek özün sag saýar.
+
+1 Sirke – uksus.
+
+                    Ata meňzär
+
+              Oba daşyndaky depe
+              Eýerlenen ata meňzär;
+              Ýaramaz ärler zer bilen
+              Ýazylan bet hata meňzär.
+
+              Bu dünýä bir düýpsüz derýa,
+              Gark eder, bolma biperwa,
+              Magrur olma, pany dünýä
+              Gezekli nobata meňzär.
+
+              Gardaşsyza kuwwat ýokdur,
+              Ogulsyza döwlet ýokdur,
+              Aýalsyza aşret ýokdur,
+              Hoş günüň hasrata meňzär.
+
+              Ýamandan ýagşy set bolmaz,
+              Asly ýagşylar bet bolmaz,
+              Dünýälikden döwlet bolmaz,
+              Ogul çyn döwlete meňzär.
+
+              Ýatan ýeri – ýylan goýny.
+              Asylany – itiň boýny,
+              Pis äriň ýagşy hatyny
+              Dürri-bigymmata1 meňzär.
+1 Dürri-bigymmat – gymmaty, gadry bilinmeýän dür.
+
+Burç bilen duz täze ýara
+Awy gatar rozugäre,
+Ýaman hatyn ýagşy äre, –
+Tükenmez töhmete meňzär.
+
+Magtymguly, namyradam,
+Iller hoşdur, men naşadam,
+Söz manysyn aňmaz adam
+Bir guruksyz ite meňzär.
+
+       Ýalydyr
+
+Ýaman ýagşa ýoldaş bolsa,
+Awulyk içen ýalydyr;
+Aýryla bilse, awusy
+Içinden öçen ýalydyr.
+
+Adam aýrylsa huşundan,
+Gorkar ýatanda düýşünden,
+Eýýama baksaň, işinden
+Şu köňlüm geçen ýalydyr.
+
+Bedasyl ykbaly ýörmek,
+Öýsüz eline mal bermek,
+Akmaga syryňny bermek
+Öz aýbyň açan ýalydyr.
+
+Öter ömrüň – dünýä seýlin,
+Hak ýoluna bagla biliň,
+Agzy ala bolan iliň
+Döwleti gaçan ýalydyr.
+
+Aňlamasaň, görde gizlen,
+Akyldyr iş soňun gözlän,
+Gepin tapyp, ýagşy sözlän
+Misli dür seçen ýalydyr.
+
+Ärden gitse ygtybarlar,
+Sowar ondan dosty-ýarlar,
+Hünärli, ykbally ärler
+Malu-pul guçan ýalydyr.
+
+Magtymguly, yllatly göz,
+Haraba döner degse duz,
+Märekede bir jaýsyz söz
+Çermenip... ýalydyr.
+
+         Hasy näbilsin
+
+Öz gadryny özi bilmez adamdan,–
+Aňlamazlar amu-hasy näbilsin?
+Ne tama bar çakyr içen gedemden,
+Buzahor ýagşyny, ýasy näbilsin?
+
+Ýamana ýagşy söz ýokmaz, taşlanar,
+Aňlar äriň oýlanmasy güýçlener,
+It ýalyň topraga dökseň, hoşlanar,
+Topragy, tabagy, tasy näbilsin?
+
+Aňla sözüm, ner zarbyny ner tanar,
+Har bakan har tanar, zergar zer tanar,
+Eý ýaranlar, är ýigidi är tanar,
+Namartlar ýagşyny, pisi näbilsin.
+
+Magtymguly aýdar: sözlerim hakdyr,
+Emma ki hak söze ten beren ýokdur,
+Bir gözli diýmese: garadyr, akdyr,
+Kör pakyr kümüşi, misi näbilsin?
+
+        Çatyp bolmaýyr
+
+Beýik dagyň başyndaky üç agaç,
+Düýbi bir bolmasa, çatyp bolmaýyr,
+Düýe ýaly dagda ýatan daşlary
+Gol bilen göterip, atyp bolmaýyr.
+
+Kelte diňden bolmaz beýik minara,
+Ýaman heleý duşsa bir ýagşy äre,
+Başyn kesip, ganyn döküp kenara,
+Ýa öldurip, ýa-da satyp bolmaýyr.
+
+Il içinde seniň ulalsa adyň,
+Seni ýaman görmez ýakynyň, ýadyň,
+Golunda bolmasa bir gerek zadyň,
+Meniňki diýip, başyn tutup bolmaýyr.
+
+Pakyrlar mal istär, baýlar zer diýer,
+Ýekeje eşekli: atym –ner diýer,
+Dünýäge doýmak ýok, ýene ber diýer,
+Köňül maksadyna ýetip bolmaýyr.
+
+Magtymguly, sözüň diňlän bolmasa,
+Nesihata gulak salan bolmasa,
+Ýigit köňül söýenini almasa,
+Dynç alyp, parahat ýatyp bolmaýyr.
+
+                       Ýagşy
+
+        Hoş günüňde hoşlaşyban gezmäge,
+        Baryşmaga, gelişmäge ýat ýagşy.
+        Gam günüňde, galmagalyň üstünde
+        Dogan ýagşy, gardaş ýagşy, zat ýagşy.
+
+        Halal işle, ahyretden wehmiň bar,
+        Pakyry ynjytma, köňül rehmiň bar,
+        Aşyk aýdar, azda-köpde pähmiň bar,
+        Akyl bolsaň, söze gulak tut ýagşy.
+
+        Ýürek daýanjydyr ogul-zürýaty,
+        Şirin mahbup erer süňňüň kuwwaty.
+        Ýigidiň dünýäde üçdür myrady:
+        Mahbup gerek, ýarag gerek, at ýagşy.
+
+        Mollalar ahyret sözün söýlärler:
+        «Müňkür olma, geljek işdir, eýlärler»
+        Kim biler ki ahyretde neýlärler,–
+        Iýip, içip, münüp, guçup öt-ýagşy.
+
+        Nefg1 almaýan kişi sözden, öwütden,
+        Aýralygy ýokdur gury söwütden,
+        Deň-duş bilmez, magny aňmaz ýigitden
+        Agylynda yssy beren it ýagşy.
+1 Nefg – nep, peýda.
+
+        Magtymguly, dostdan syryň gizleme,
+        Biwepadyr, nämähremi gözleme.
+        Ümsüm otur, halk içinde sözleme,
+        Sözlär bolsaň, söz aslyna ýet ýagşy.
+
+                  Gelen-de bardyr
+
+        Günde ýüz müň göç hem bolsa ol dünýä,
+        Ol mukdar bu dünýä gelen-de bardyr.
+        Ýüz müň akmak bolup gitse raýyna,
+        Ýüz müň özün ýola salan-da bardyr.
+
+        Ýüz müň derwüş syna daglap oturan,
+        Ryýazatda1 bilin baglap oturan,
+        Niçe ýerde görseň, ýyglap oturan,
+        Ýüz müň ýerde bigam gülen-de bardyr.
+
+        Seýran etseň bu dünýäniň tört burçun,
+        Garyşypdyr halal, haram, arwah, jyn...
+        Nijeler tämizläp ýol giderler çyn,
+        Nije ýüz müň gümra bolan-da bardyr.
+
+        Ugursyz eýýamlar, aňlamaz ärler,
+        Käşki soran bolsa, saçaýdym dürler..
+        Kany ol Süleýman, Rüstemler, şirler
+        Diýmäň, busup, sypyp galan-da bardyr.
+1 Ryýazat – terkidünýälik, durmuşdan el çekmek.
+
+        Magtymguly, köňle gaýgy getirme,
+        Bu bir iş wagtydyr, özüň ýitirme,
+        «Sözüm aňlan ýok» diýp, ümsüm oturma,
+        Jahan giňdir, çendan bilen-de bardyr.
+
+                   Ykbal bolmady
+
+        Köp ýigitler gelip geçdi jahandan,
+        Niýetine görä ykbal bolmady.
+        Gerdişi keç gahba pelek elinden
+        Ertiri şat bolan öýlän gülmedi.
+
+        Günde kepen biçer bu ajal-haýat1 ,
+        Bir beladyr, hiç gutarmaz bu saýýat.
+        Pelle-pelle aşak düşer adamzat,
+        Bu gün görenleriň ertä galmady.
+
+        Bir degişhanadyr dünýäniň ýüzi,
+        Nesihatym diňle, eşit bu sözi.
+        Ajal ýetip adam ýumulsa gözi,
+        Göýä bu dünýäge geldi, gelmedi...
+
+        Hemaýun gorganyn saldyran Harun,
+        Dünýäni tört bölen kany Peridun?
+        Kyrk şähri gyzyldan dolduran Karun —
+        Gözi gumdan doldy, puldan dolmady.
+1 Haýat – biçimçi, geýim tiken.
+
+        Magtymguly haýran, her ýana bakar,
+        Bu ne gudrat işdir: suwdan ot çykar,
+        Ýagşy oguldan rahmet arygy akar,
+        Lagnatkerde ogul boldy, bolmady.
+
+                Köňül hoşundadyr
+
+              Köňül bir beden şahydyr,
+              Her söz köňül hoşundadyr,
+              Ýedi yklymnyň tagtynda
+              Her biri bir işindedir.
+
+              Daglaryň çykyp-inmesi,
+              Çohlaryň göçüp-gonmasy,
+              Dünýäniň agyp-dönmesi
+              Pelegiň gerdişindedir.
+
+              Kimdir bu dünýäde galan?
+              Maňa çyndyr, size ýalan,–
+              Bir akdyr, bir gara ýylan1
+              Her kimsäniň başyndadyr.
+
+              Degresi zümerret daşly,
+              Ner babatly, kerk gardaşly,
+              Altyn tagtly, almaz täçli
+              Döw begleri daşyndadyr.
+1 Bir akdyr, bir gara ýylan — gije-gündiz manysynda.
+
+     Aýlanar geçer eýýamlar,
+     Gojalar gurlan eýwanlar,
+     Gündiz gören aşna janlar ?
+     Gije ýatsa düýşündedir...
+
+     Üç essesi däli derýa,
+     Bir esse ýerde müň gowga,
+     Kim biler, bu köne dünýä,
+     Ýa reb, niçe ýaşyndadyr?..
+
+     Magtymguly diýr, haraýdyr,
+     Ajal okdur, pelek ýaýdyr,
+     Dünýä bir köne saraýdyr,
+     Adamzadyň gaşyndadyr.
+
+        Pygan eglenmez
+
+Bilbil hüjüm eden howaly baglar,
+Bilbil senden gider, pygan eglenmez,
+Ýagyşly, ýagmyrly ümürli daglar,
+Siller senden gider, duman eglenmez.
+
+Adam ýaradylmyş belentli-pesli,
+Akylly, pikirli, aňly, paýhasly,
+Ýigitlik – göýä bir ýaz günnüň pasly,
+Bahar senden gider, zaman eglenmez.
+
+Gelene garşy çyk, bolsa mejalyň,
+Ýagşy tutawergil niýetiň-päliň.
+Dünýä döwranynda açyk tut eliň,
+Döwür senden gider, döwran eglenmez,
+
+Bu dünýä gowgadyr, bir galmagaldyr,
+Kimi berhä-berdir, kim alha-aldyr.
+Ýigitler, bu dünýä şuňa mysaldyr,
+Bark urar asmanda, baran eglenmez.
+
+Bir menzildir, üç gün iýip-içensoň,
+Ornaşyp, giňirnip, bilin açansoň,
+Üzeňňiň çekerler, tört gün geçensoň,
+Bäş günden ýokary myhman eglenmez.
+
+Goýnun açar bir gün, ýer seni gizlär,
+Gara gumdan dolar bu gara gözler,
+Adyňa buýsanma, çemenli düzler!
+Çemen senden gider, seýran eglenmez.
+
+Magtymguly aýdar aryf dostuna,
+Kim galar düşmeýen ajal destine?
+Pelek bir gün salar ýeriň astyna,
+Agyzdan til gider, zyban eglenmez.
+
+       Göze myhmandyr
+
+Gara daşdan gara gyly saýlan göz,
+Çöňňeler görejiň, göze myhmandyr.
+Gelen aş diýp gelmez, turşutmagyl ýüz.
+Nana mähtäç däldir, söze myhmandyr.
+
+Agyrdyr heňňamlar, uzakdyr ýollar,
+Soraşsa ýigitler, sözleşse tiller,
+Baharda açylan reňbe-reň güller
+Bir pasyl açylar, ýaza myhmandyr.
+
+Ne azym hünärler, ne syrly işler,
+Ne howaly daglar, belent agaçlar,
+Altmyş elwan, ýetmiş dürli iýmişler
+Agaçdan aýrylar, güýze myhmandyr.
+
+Ýigidiň bolmasa ýaragy, aty,
+Şony belli biliň, ýokdur gaýraty!
+Gojaldykça, gider süňňüň kuwwaty,
+Ýigitligiň zory dyza myhmandyr.
+
+Bu dünýä ýüzüňe gülüm-gülümdir,
+Jepasy köp bolar, jebri zulumdyr,
+Her niçe ýaşasaň, ahyr ölümdir,
+Eziz janlar tende bize myhmandyr.
+
+Haky ýada salsaň hakdan gorkyňa,
+Şeýtan ara düşer, goýmaz erkiňe.
+Guba juwan, guwanmagyl görküňe,
+Gojalar sen, görküň ýüze myhmandyr.
+
+Magtymguly aýdar, iller, özümde,
+Ölüm ýadymdadyr, gorky gözümde,
+Her niçe ýaşasaň ýeriň ýüzünde,
+Adam ogly bäş gün duza myhmandyr.
+
+           Dünýä heý
+
+Suw ýüzünde gezen nije gämini,
+Bir gün agdarar sen saly, dünýä heý!
+Adam ogly barmaz bolsa yzyňdan,
+Munda diýp aldar sen maly, dünýä heý!
+
+Kimse bilmez haçan tükener demiň,
+Gabyr bolar bir gün basan gadamyň,
+Döwran gerdişinde gapyl adamyň
+Üstünden salar sen ýoly, dünýä heý!
+
+Habarsyz geler sen, ýaka tutar sen,
+Ýagşy eýläp, ýaman eýläp öter sen,
+Bir gün aşymyza awy gatar sen,
+Owal aldap biýr sen baly, dünýä heý!
+
+        Aramyň ýok, kararyň ýok, dynmaz sen,
+        Gije-gündiz gan içer sen, ganmaz sen,
+        Ahyr ne belaň bar, soňun sanmaz sen,
+        Ýykylgyn, ýumrulgyn, loly dünýä heý!
+
+        Aýlanar gyş geçer, ýaz, tomus güýz hem,
+        Tap getirmez oňa dag, deňiz, düz hem,
+        Ahyry geçermiz üstüňden biz hem,
+        Guwgaryp galar sen haly, dünýä heý!
+
+        Köpleri ýok etdiň, känini tutduň,
+        Muhammet hak resul janyny ýutduň,
+        Nemrut, Karun, Süleýmanyny nätdiň?
+        Şumudy etgeniň häli, dünýä heý!
+
+        Hemme adamlary salyp sen gama,
+        Ýaş, garry yzyňda, sergerdan heme,
+        Bir mada1 eşek sen, gelip sen deme,
+        Gasygy gam bilen doly, dünýä heý!
+
+        Magtymguly, dünýä syryn duýmaz sen,
+        Bu gün gördügimiz ertä goýmaz sen,
+        Nije wagtdan bäri iýip doýmaz sen,
+        Aklyny aldyran däli, dünýä heý!
+
+1 Mada – urkaçy.
+
+       Berme pelege
+
+Pelek bazy bermiş jümle jahana,
+Meniň ygtyýarym berme pelege,
+Köňül guşy uçup gitse her ýana,
+Mähtäç etme ganat, guruk-ýelege.
+
+Bidöwlet ynanjaň, käsip käýinjeň,
+Ýedi ýeser bolsa, biri göwünjeň,
+Baý halky ýaňra bor, garry – öwünjeň,
+Çalyp bolmaz çal agarsa çelege.
+
+Orda başy bolmak äre kyn bolar,
+Parça geýse, gyz-oglana syn bolar,
+Dul gözüne garry näzenin bolar,
+Ýene gözün aýlar köre, çolaga.
+
+Çepine aýlanan çarhy pelekdir,
+Dünýä gelen adam ogly heläkdir,
+Ýetmiş iki millet bölek-bölekdir,
+Bu bölekden goşman özge bölege.
+
+Ýol üstünde ölsem, ýola atsalar,
+Razy men, üstümden basyp ötseler,
+«Magtymguly» diýip, adym tutsalar,
+Gören göz jort atar, eşden gulaga.
+
+    Çaldy gitdi
+
+Bu dünýä bazygärdir,
+Bazysyn çaldy gitdi;
+Gümra edip nijäni,
+Ýoldaş diýp aldy gitdi.
+
+Akyl, pikr et her haçan,
+Ýüz gonan bar, ýüz göçen,
+Tagty asmandan uçan
+Süleýman öldi gitdi.
+
+Ýa mürewwetli şahym,
+Umydym, kyblagähim,
+Munça ýygnap Ybrahym
+Niçäni aldy gitdi.
+
+Jigerin daglaý-daglaý,
+Zünnaryn baglaý-baglaý,
+Nijeler aglaý-aglaý,
+Nijeler güldi gitdi.
+
+Nijeler güle dönmüş,
+Gül ýanyp küle dönmüş,
+Nijeler guma dönmüş,
+Nijeler soldy gitdi.
+
+      Akmaklyk bilen özüm,
+      Bilmedim sözlän sözüm,
+      Magtymguly, diýr, gözüm
+      Gan ýaşa doldy gitdi.
+
+              Iliňi
+
+Gel, köňül, men saňa öwüt bereýin:
+Yrak kylma görer gözüň-iliňni;
+Gymmatyn gaçyrma, ýerinde sözle,
+Uzatmagyl her näkese tiliňni.
+
+Doga eýle, bir söz diýseň aşagyn,
+Hormatlagyl gözel iliň uşagyn,
+Ýazdyrmagyl, mäkäm eýle guşagyň,
+Ýeri bardyr, ajap sakla biliňni.
+
+Çagyrylmaz jaýda görünme, barma,
+Başarsaň, sopynyň ýüzüni görme,
+Pikir-zikriň dünýä malyna berme,
+Karuna ogşatma tutan päliňni.
+
+Sözüne ber jowap, her kes sorasa,
+Özüň yrak eýle, namart ýörese,
+Bir misgin telmuryp, ýyglap garasa,
+Baha gurma, mugt berginiň malyňny.
+
+Gorkma namartlaryň köp diýp sanyndan,
+Gara görse, bary geçer janyndan,
+Ugrun tapsaň ötmäwergil ýanyndan,
+Bahyllardan yrak eýle ýoluňny.
+
+Akylly baş köpdür, akyl kesen azdyr,
+Datma şerap, uzak içseň ol azdyr,
+Mert köňlünde daýym bahardyr-ýazdyr,
+Mejnun umman içre salma salyňny.
+
+Magtymguly, akyl başymdan uçdy,
+Ykbalym ýatypdyr, döwletim göçdi,
+Pir-kazylar para istäp, gol açdy,
+Haram eýle, emma berme puluňny.
+
+       Bagtym garadyr
+
+Bu ne bela, bu ne hasrat, ne gowga!
+Rehm eden bolmady, bagtym garadyr;
+Nalyş etsem, arzym ýetmez ol huda,
+Rehm eden bolmady, bagtym garadyr.
+
+Pelek dost bolupdyr ala göz bile,
+Derdimi diňlemez, diýsem söz bile,
+Ilimni ugratdy dagy-düz bile,
+Rehm eden bolmady, bagtym garadyr.
+
+Görogly dek gaýratymdan aýryldym,
+Gojalyp men kuwwatymdan aýryldym,
+Iki didäm – zürýatymdan aýryldym,
+Rehm eden bolmady, bagtym garadyr.
+
+Şamu-säher ýata bilmän parahat,
+Ýüregim telmurar, köňül bitakat,
+Käbäm, kyblam, gardaş – boldular wepat,
+Rehm eden bolmady, bagtym garadyr.
+
+Pelege duş gelse gaçyp gutulmaz,
+Tartar oky adam ogly, atylmaz,
+Ýeke äriň ömür ady tutulmaz,
+Rehm eden bolmady, bagtym garadyr.
+
+Deňim-duşum her bir käre bulaşdy,
+Dostlar yrak düşdi, hijran dalaşdy.
+Yhlasym, myradym gama ulaşdy,
+Rehm eden bolmady, bagtym garadyr.
+
+Başyma şum pelek her gün sürüner,
+Ýowuz düşen göwre kime direner,
+Ýamanlar gözüne eziz görüner,
+Rehm eden bolmady, bagtym garadyr.
+
+Serwanym azaşdy, dargady malym,
+Ykbalym keç turdy, gitdi hyýalym,
+Altmyşa azm urdy gartaşan salym,
+Rehm eden bolmady, bagtym garadyr.
+
+         Gama erkim berdim, huşum dargatdym,
+         Saraý weýran, kerwenimi ugratdym,
+         Meňli hanym, yşk söwdasyn unutdym,
+         Rehm eden bolmady, bagtym garadyr.
+
+         Bu dünýä çohlara bipaýan boldy,
+         Garyp golun serdi, gury san boldy,
+         Namartlar mert boldy, ile han boldy,
+         Rehm eden bolmady, bagtym garadyr.
+
+         Ah, neýleý ötürdim ýigitlik çagym,
+         Daragty gurady, boş galdy bagym,
+         Dumany sowuldy, eredi dagym,
+         Rehm eden bolmady, bagtym garadyr.
+
+         Magtymguly, ýetmez ýyglap kararym,
+         Boş galdy dükanym, dargady barym,
+         Paý1 astyna düşdi namysym, arym,
+         Rehm eden bolmady, bagtym garadyr.
+
+1 Paý – aýak.
+
+          III
+
+SOSIAL-TANKYDY ESERLER
+                      Gaça başlady
+
+            Indi bildim zamananyň azanyn,
+            Ýamanlar ýagşydan gaça başlady;
+            Gaýta bedasyllar asylzadadan
+            Pisint etmän, töre geçe başlady.
+
+            Ryýa1 boldy köpüň okan namazy,
+            Taňry hiç birinden bolmady razy,
+            Pygamber ornunda oturan kazy
+            Para üçin elin aça başlady.
+
+            Şalarda galmady hökmi-adalat,
+            Bir pul üçin müfti berer rowaýat,
+            Bil: bu işler – nyşanydyr kyýamat,
+            Zalymlar bitoba öte başlady.
+
+            Pakyrlar horlanyp, ýüzün sarardyp,
+            Kim töresin tapyp, reňgin gyzardyp,
+            Zalymlar mazluma syrtyn gabardyp,
+            Gamçysyndan ganlar saça başlady.
+
+            Alymlar sözüne amal bolmady,
+            Mynapyklar2 ýaradany bilmedi,
+            Sopular pirinden taglym almady,
+            Dünýä üçin dinden geçe başlady.
+1 Ryýa – ikiýüzli, ýalan.
+2 Mynapyk – hudaýsyz, pidul.
+
+           Bir para sopular «sopy men» diýer,
+           Soramaz, zalymlar tagamyn iýer,
+           «Bizi ýagşy kişi diýsinler» diýer,
+           Her işikde halka gura başlady.
+
+           Garryga aýlandy biz gören ýaşlar,
+           Dolandy aýaga biz gören başlar,
+           Bimahal ýük baglap indi argyşlar
+           Ahyret kastyna göçe başlady.
+
+           Akyl bolan gamda ýüregin ezip,
+           Derdiniň dermanyn soraglap gezip,
+           Zamananyň pisat1 bolanyn ýazyp.
+           Panydan bakyýa geçe başlady.
+
+           Asylsyz begleriň nobaty ýetdi,
+           Gaýta şugul haramyga söz ýetdi,
+           Dünýäde kim galyp myrada ýetdi?
+           Muhapbet2 çyragy öçe başlady.
+
+           Kazy bolan bir jowapda durmady,
+           Gije mähnet tartyp, kitap görmedi,
+           Şerigat ugrunda dogry ýörmedi,
+           Nebs üçin imansyz öte başlady.
+1 Pisat – erbet, bozuk.
+2 Muhapbet – söýgi, yşk.
+
+           Magtymguly aýdar, barha ýol tany,
+           Bäş gün synamaga iberdi seni,
+           Senden ozal öten jananlar kany?
+           Her kim nobatynda öte başlady.
+
+               Aý-günüňiz batmaga
+
+                      (Sopular)
+
+           Altmyş ýaşan, ýetmiş ýylky sopular,
+           Az galypdyr aý-günüňiz batmaga,
+           Çöl ýerlerde tazy görmän, tilkiler
+           Hyýal eder ýatan şiri atmaga.
+
+           Garga diýer, ýokdur men dek şabaza,
+           Müň garga ýygnansa degmez bir baza,
+           Güne gargyş eden sary kelpeze1 ,
+           Dem çekedir aždarhany ýutmaga.
+
+           Agsak keýik müň garsaga ýetdirmez,
+           Şir beçesi togsan tilkä atdyrmaz,
+           Öli ýylan müň kelpezä ýutdurmaz,
+           Akyl gerek bu işlere ýetmäge.
+1 Kelpeze – hažžyk.
+
+               Ýetmiş ýaşap, ýat etmezler tobany,
+               Hormat bilen oýnadarlar gahbany1 ,
+               Müňkürler jem bolup, ýykdy Käbäni,
+               Ýezit gitdi agaçlaryn satmaga.
+
+               Görüň bu eýýamy, pelek gerdişi –
+               Pakyra zulm etmek boldy werdişi,
+               Hak ýolunda dogry gezen derwüşi
+               Goýmadylar öz halyna ýatmaga.
+
+               Ýüregim sabyrdan, gitdi karardan,
+               Ýaman işdir bogaz bolmak är-ärden2 ,
+               Bizara gelip men beýle diýardan,
+               Jür bolup men başym alyp gitmäge.
+
+               Magtymguly, bildim: bagtym biweçdir,
+               Ganymym güýçlüdir, ykbalym keçdir,
+               Niýetim Käbedir, hyýalym haçdyr,
+               Ykrarym bar haç towabyn etmäge.
+
+   1 Gahba – loly.
+    2 Är-ärden – bir adamdan bir adamyň ýaman gep eşitmegi, ýüregi
+
+çişmegi.
+
+                          Başlady
+
+            Gömüldi derýalar, ýykyldy daglar,
+            Ýetimler göz ýaşyn döke başlady;
+            Orramsydan bolan haramhor begler
+            Ýurdy bir ýanyndan ýyka başlady.
+
+            Jemagatsyz azan bir gury sesdir,
+            Niçe mollaň okan ylmy hebesdir,
+            Kazylaryň käri çaý bile nasdyr,
+            Bir bozuk nyşana tuta başlady.
+
+            Işanlary her gapyda tapylar,
+            Mollalarna ýok myjabat ýapylar,
+            «Öwliýä men» diýip, jögi sopular
+            Gygyryp, asmana böke başlady.
+
+            Çykar beýewana gyzy-gelini,
+            Ak ýüzüne ýapar gara telini1 ,
+            Kemçinlik eýleýip ýygan puluny,
+            Düzedip özüne daka başlady.
+
+            Dünýäde süýthoryň pul ýygma derdi,
+            Baýlaryň mallary bizekat erdi,
+            Toba ediň, gözüm bir ýaman gördi,
+            Dost dostuň köňlüni ýyka başlady.
+1 Tel – tar, saçyň bölegi, zülp.
+
+Magtymguly, başa baglap selleler,
+Aç böri deý ýortup niçe mollalar,
+Halaldan, haramdan ýygnap gallalar,
+Herne tapsa, dynmaý dyka başlady.
+
+        Aglar men
+
+   Eý ýaranlar, ömrümden
+   Geçdi diýip aglar men.
+   Gitdi aklym ornundan,
+   Çaşdy diýip aglar men.
+
+   Giden dönmez ýolundan,
+   Düşmez ýaman pälinden,
+   Diýanat halk elinden
+   Uçdy diýip aglar men.
+
+   Häzir biziň zamanda
+   Ýaman sözler zybanda,
+   Zulum işler jahanda
+   Joşdy diýip aglar men.
+
+   Bu eýýamda betkärler
+   Ýüz til bilen aldarlar,
+   Hany niçe dildarlar? –
+   Göçdi diýip aglar men...
+
+      Niçe sada deň-duşlar,
+      Şeýtan biligin başlar,
+      Ýüz öwürip gardaşlar
+      Gaçdy diýip aglar men.
+
+      Görüň pelegiň oýnun:
+      Üzer alymyň boýnun,
+      Niçe janlar ýer goýnun
+      Guçdy diýip aglar men...
+
+      Magtymguly, diýr merde,
+      Dünýä bentdir, ten perde,
+      Bu başym sansyz derde
+      Düşdi diýip aglar men.
+
+            Galmady
+
+Bir sözüm bar, diýsem şaha, soltana.
+Dostlar meňgi bolup, daman galmady;
+Döwletli baýlaryň duz hareminde,
+Desterhan kesilip, myhman galmady.
+
+Gaýta gybatkeşler özün düzetdi,
+Süýthor dünýä bilen özün göz etdi,
+Taňrydan bihabar goşun uzatdy,
+Taňryny bir bilen merdan galmady.
+
+        Nirde şugul bolsa, boldy mugteber1 ,
+        Dünýäni baky diýip, ýygnady çoh zer,
+        Aýdyp, ötüp gitdi ol Haýrul-beşer
+        Taňrydan gorkunçly myhman galmady.
+
+        Bahyl bolan baý adyny göterdi,
+        Pasyklar2 pysk ile ömrün ötürdi,
+        Ähli-dil3 dünýäden özün gutardy,
+        Dertliler derdine derman galmady.
+
+        Halaýyk barçasy jesethor boldy,
+        Alymlar ylmyndan galdy, kör boldy,
+        Sypahy4 barysy parahor boldy,
+        Şa aldynda adyl diwan galmady.
+
+        Müfti öz sözüne kylmady amal,
+        Şerigat işine eýledi haýal,
+        Halk içine düşdi hyrs atly kesel,
+        Taňryny bir bilen ynsan galmady.
+
+        Gyzlar, juwanlarda galmady haýa,
+        Ýerden götermedi bereket-giýa5 ,
+        Derwüşler tagatyn eýledi ryýa,
+        Ýurtda keramatly işan galmady.
+1 Mugteber – ygtybarly.
+2 Pasyk – bozuk
+3 Ähli-dil – ýürekdeş adamlar.
+4 Sypahy – emeldar, harby gullukçy.
+5 Giýa – ot, ösümlik.
+
+        Magtymguly aýdar, barha ýol tany,
+        Burunky1 hemneşin2 dostlaryň kany?
+        Abraý bile tabşyrawer bu jany,
+        Munda gelen ýary-ýaran galmady.
+
+                       Fetdah
+
+      Eýran, Turan indi goluň astynda,
+      «Sürgün» indi bu döwrany, sen fetdah!
+      Külli türkmen oýnar çölüň üstünde,
+      Dökme, bilgil, nahak gany, sen fetdah!
+
+      Bu gün şa sen, erte geda bolar sen,
+      Ilden-günden, dilden jyda bolar sen,
+      Bir gün janyň çykyp, pida bolar sen,
+      Gazanypsyň çoh günäni, sen fetdah!
+
+      Gözüm ýetýär, bilseň, başym alar sen,
+      Ýa kündeläp meni çaýa salar sen,
+      Men hak diýdim, sen çoh günä galar sen,
+      Bu alyşyň bilen jany, sen fetdah!
+
+      Sen türkmeniň ilin, gülün soldurdyň,
+      Ganlar döküp, gözel ýurdum doldurdyň,
+      Şehit bolanlaryň serin galdyrdyň,
+      Unudar sen tagty-käni, sen fetdah!
+1 Burunky – öňki.
+2 Hemneşin – gürrüňdeş, ýürekdeş
+
+Halkyň öji çohdur, ykbalyň ýaman,
+Ýa öler sen, ýa zyndandyr bigüman,
+Tagtyň synyp, diýme galar men aman,
+Çüňki zäher kyldyň nany, sen fetdah!
+
+Permanyňdan talaň düşdi illere,
+Goluň urduň nähak, gözde sillere,
+Kyrk gamçydan buýurdyň näzik billere,
+Derýa etdiň gözde huny, sen fetdah!
+
+Aýyrdyň atadan, ene, gardaşdan,
+Gollardan, aýakdan, sakaldan, saçdan,
+Dendandan, zybandan, akyldan, huşdan,
+Zyndan etdiň bu jahany, sen fetdah!
+
+Aýyrdyň, aglaýyp galdy ýarlarmyz,
+Pelege ýetendir tartan zarlarmyz,
+Adamlar asylgy durýar darlarmyz,
+Ýüzden tutduň, bil, gassaby, sen fetdah!
+
+Pyragy, dert aýdyp, derde ýanmaly.
+Gan ýuwudyp, zalym fetdah ganmaly,
+Diri özüm, läkin öli sanmaly, –
+Aňsa öldir, bu destany ol fetdah.
+
+    Ýörmeli boldy
+
+Eý ýaranlar, musulmanlar,
+Jebirde ýörmeli boldy.
+Nije zähmet çeken janlar
+Jepany görmeli boldy.
+
+Jahan giňdir, melamat kän,
+Arada köýdi şirin jan,
+Üstümizde rehimsiz han
+Bil, ahyr urmaly boldy.
+
+Azypdyr gökleň hanlary,
+Kän görer bize hallary,
+Goýman sürdi bar mallary,
+Göz dikip durmaly boldy.
+
+Magtymguly, aýama jan,
+Biliň guşa, geý gazap don,
+Hetden aşdy, bu zalym han
+Ahyr tor gurmaly boldy.
+
+       IV
+
+DURMUŞY GOŞGULAR
+                             Çilim
+
+        Dostlarym, duşman biliň,
+                     her kimsede bardyr çilim.–
+        Ile mahub eýlemäň,
+                     bir lagnaty kärdir çilim,
+        Sözleýen haly demi
+                     bir apyýy1 mardyr çilim,
+        Tartar özün özüne,
+                     owsunçy zeňgardyr2 çilim,
+        Nirde bolsa pasykylar,
+                     ortada bardyr çilim.
+
+        Düşgeç ol mejlis era,
+                     kim çeker, bimar eder,
+        Al bilen aldap seni,
+                     her dem özüne zar eder,
+        Sag-salamat goýmagy
+                     indi özüne ar eder,
+        Gol-aýagyn şel kylyp,
+                     halk içre any har eder,
+        Bu sypatlar birle ol,
+                     çekmäň ki, betkärdir çilim.
+1 Apy – zäherli uly ýylan.
+2 Zaňgar – zeňli, posly, jirimli.
+
+       Kah-kah eýläp her zaman,
+                   ol görkezer bet roýuny
+       Burnuňyzdan ysgadar,
+                   almaň oşol bet boýuny1 ,
+       Eý musulmanlar, halal diýip,
+                   kylmaňyz hiç oýuny2 ,
+       Ahyretniň oýun etseň,
+                   tiz goýuň bu oýuny,
+       Ahyretniň oýun
+                   etmezlerge derkardyr çilim.
+
+       Her kişi hoşhal olupdyr jimi,
+                    lam, mim atyga,
+       Nige pikr etmez oşol
+                    kim bu pelidiň zatyga,
+       Mundürer göýä any
+                    her dem şeýatyn3 atyga,
+       Syhr edip her dem
+                     any tartar özüniň zatyga,
+       Çünki betkärler gözüge
+                    daýyma bardyr5 çilim.
+1 Boý(buý) – ys.
+2 Oýuny – oý-pikirini.
+3 Şeýatyn – şeýtanlar.
+4 Syhr etmek – jadylamak.
+5 Bar – miwe, bu ýerde ýakymly manyda.
+
+       Gul-gul eýläp, her säher
+                    ol agzyndan otlar saçar,
+       Her kişiniň akly bardyr
+                    beýle betboýdan gaçar,
+       Kim any elge alar,
+                      göwsün onuň sary1 açar,
+       Ygtykat etse halal diýip,
+                    dini yslamdan geçer,
+       Dini-yslamdan geçerge
+                    bir sebäpkärdir çilim.
+
+       Şeýle duşmandyr ki tanla,
+                   başyňyzny aýlaýyr,
+       Wagty ýetmän solduryp,
+                   bu jismiňiz läş eýleýir,
+       Gaýgy, hasret ýok ekenler,
+                   çeşmiňiz ýaş eýleýir,
+       Her zaman düýt3 ýutduryp
+                   öýkeniňiz daş eýleýir,
+       Bary gapyl olmaňyzlar
+                   şeýle betkärdir çilim.
+1 Sary – tarap.
+2 Ygtykat etmek – ynanmak, uýmak.
+3 Düýt – tüsse.
+
+       Eý ýaranlar,
+                     nehi1 kylmyşdyr any bizge ahat2
+       Pikir edip, zikir eýledi
+                     kim halk era abdy3 samat4
+       Tebdil etmek5 ,
+                     nehi kylgan işini bizge ne hat?
+       Kim ki müňkürdir,
+                     anyň aldynda bardyr ol lahat6 .
+       Aýdadyr Magtymguly,
+                     bu bendege nardyr çilim.
+
+                       Çilimkeş
+
+          Hak seni raýyňa goýmuş jahanda,
+          Ede bileniň etgil munda, çilimkeş;
+          Diwan gurlan güni, hasap jaýynda,
+          Jogabyň nämedir anda, çilimkeş.
+
+          Kuwwatyň kemelder, güýjüň azdyrar,
+          Keýpi kellä gelse, aklyň azdyrar,
+          Süňňüňi syzdyrar, etiň gyzdyrar,
+          Bir nyşana budur sende, çilimkeş.
+1 Nehi – gadagan.
+2 Ahat – bir, ýalňyz, bu ýerde hudaý manysynda.
+3 Abd – bende.
+4 Samat (samad) – hemişelik, hökümdar.
+5 Tebdil etmek – çalşyrmak, özgertmek.
+6 Lahat – gör.
+
+         El götergil beýle nahak talaşdan,
+         Puluň köýer, janyň ýanar bu başdan1 ,
+         Erte garnyň doldurarlar ataşdan,
+         Zahmy2 çykmaz, galar janda, çilimkeş.
+
+         Iki dünýä ýagşylyk ýok egriýe, -
+         Kişi bolsaň, gadam goýgul dogryýa,
+         Binamaza, gybatkeşe, ogryýa,
+         Ýeldaş bolar ýowuz günde çilimkeş.
+
+         Magtymguly, möwlam jandan ýakyndyr,
+         Çilim bir şor suwdur, ten bir zemindir
+         Iman bir tilkidir, göwre bir hindir,
+         Tilki tüssä dözmez hinde, çilimkeş.
+
+1 Bu ýerde baş goşan işiňden manyda
+2 3ahym — ýara, baş.
+
+                      Halyň seniň
+
+  Ogry bolsaň, diňlegil, bolgaý niçik
+                                   halyň seniň;
+  Kişi malyga gider köňlüň, gözüň,
+                                   päliň seniň;
+  Misli şeýtan aldagydyr
+                            mekiriň-alyň seniň,
+  Bu ýalançylyk bile ötgeý
+                            mahy-salyň1 seniň,
+  Dowzaha dogry barar, billa, giden
+                                   ýoluň seniň.
+
+  Erte-magşar it bolup, yňranyp iýgeý
+                                  sen etiň,
+  Ýüzüni görmez Muhammet sen kibi pis
+                                  ymmatyň,
+  Hem o dünýä şefgatyň2 bolmaz bu dünýä
+                                         döwletiň,
+  Her zaman, her sagat içre artdyrarlar
+                                     mähnetiň,
+  Bu jahym3 içre tutar möýler
+                              sagu-soluň seniň.
+1 Mah bilen sal — aý bilen ýyl (ýaş).
+2 Şefgat – halaslyk, kömek, ýardam manysynda.
+3 Jahym – jähennem.
+
+  Aglaýyr sen, gözleriňden ýaş ýerine
+                                  gan gidip,
+  Munça mähnetler çekip, göwsüň dilip,
+                                  weýran edip.
+  Yssy etmez başyňa, toprak döküp,
+                                  haýran edip;
+  Gylça yssy görmegeý sen, dag gadar
+                                  puşman edip,
+  Döküler gaýdyp dahanyndan
+                             pohuň-bowluň seniň.
+
+  Ol Muhammet garşysynda hem uýalgaý
+                                   sen o gün,
+  Gör ölüm bolsa idi, istärdiň ölgeý
+                                   sen o gün,
+  Gürzi astynda melek1 zarbynda galgaý
+                                   sen o gün.
+  Ol huraýyş atlyg ýylanga lukma bolgaý
+                                   sen o gün.
+  Maýmynyň suratyda bolgaý ki
+                                   tymsalyň seniň.
+1 Melek – perişde.
+
+  Aýdadyr Magtymguly, görseň günähiň,
+                                  eý gözüm,
+  Çekiler gyldan-gyla magşar hasabyň,
+                                  eý gözüm.
+  Ýüz gara, til gysgadyr, bolmaz jogabyň,
+                                  eý gözüm.
+  Mal ýerine bialaç biýr sen sowabyň,
+                                  eý gözüm.
+  Hem günähiň boýnuňa goýgaý,
+                                  budur halyň seniň!
+
+                          Gybatkeş
+
+          Rozy-magşar şikwe1 eder tiliňden,
+          Ryswalygyň budur seniň, gybatkeş;
+          Ömrüň ýele berme, azma ýoluňdan,
+          Agyrtmagyl iliň-günüň, gybatkeş.
+
+          Bulut dek kükreýip, bark2 kimin gürlär,
+          Gähi buzdan tagtlar, ataşdan öýler,
+          Gatyr dek içýanlar, bugra dek möýler
+          Bedeniňden sorar ganyň, gybatkeş.
+1 Şikwe – şikaýat, arz.
+2 Bark – ýyldyrym.
+
+         Halyň görüp, purkan1 bolup aglarlar,
+         Özüň syjjyn atly jaýda baglarlar,
+         Tiliň çekip, demir bilen daglarlar,
+         Gara bolar şol gün ýüzüň, gybatkeş.
+
+         Ýaman söz aýyrar ýagşy dostuňdan,
+         Günähiň agramy basar üstüňden,
+         Jähennem içinde tamug astyndan
+         Peleklere çykar üýnüň, gybatkeş.
+
+         Magtymguly aýdar, iliň gözünden
+         Düşüban, hor bolsaň, görgül özüňden,
+         Tiliňni çekmeseň haram sözüňden,
+         Belli bibat bolar diniň, gybatkeş.
+
+                       Görüner
+
+              Seýil edeliň bu jahana,
+              Jahanda näler görüner,—
+              Isgender, Jemşit saldyran
+              Beýik binalar görüner.
+
+              Meşeleri şir-peleňli,
+              Gülgüzar nowça bileňli,
+              Gün düşmedik ter öleňli
+              Çeşmeli çaýlar görüner.
+1 Purkan bolmak – bilip aňlamaklyk, saýgarmaklyk.
+
+Ýaradan bar etdi ýokdan,
+Daglar, dünýä sürer çohdan,
+Sorsaň habar berer Nuhdan,
+Garrygan awlar görüner.
+
+Çaglan, ýalan dünýä, çaglan!
+Ne gülen galar, ne aglan...
+Gar ýagmyrlap burjy baglan
+Kemerli daglar görüner.
+
+Serinden dumany gitmez,
+Eýýam geçip, ýere batmaz,
+Garryp galmaz, ölmez, ýitmez
+Gorganly daglar görüner.
+
+Ne watan galar, ne çeten,
+Senemler seýl edip ýeten,
+Toty, bilbil mesgen tutan
+Howaly baglar gerüner.
+
+Magtymguly, kim bar ölmez?
+Ajal doýmaz, zemin dolmaz,
+Asman inmez, ýer çöwrülmez,
+Gün ýörir, aýlar görüner...
+
+                          Soňudagy
+
+                   Eý söwdügim, Soňudagy,
+                   Dagdanlydyr biliň seniň;
+                   Duşman görse döwdüleşer
+                   Ýomut, gökleň iliň seniň.
+
+                   Kesgin-kesgin ýoluň geçer,
+                   Gyzyl baýyr göwün açar,
+                   Sowuk çeşme suwuň içer
+                   Dürli-dümen malyň seniň.
+
+                   Dürli-dümen otuň biter,
+                   Her deräň bir ile ýeter,
+                   Hatarlanşyp kerwen öter,
+                   Naýbadaýdyr ýoluň seniň.
+
+                   Oýlukda ýaýlany gursak,
+                   At çapdyryp, baýrak bersek,
+                   Töreýitde harman gursak,
+                   Nan dökmek hyýalyň seniň.
+
+                   Magtymguly, set açandyr,
+                   Bu döwran senden geçendir,
+                   Üstüňden iliň göçendir,
+                   Niçik geçer halyň seniň?1
+
+    1 Bagşylar bu goşgyny «Jenan ýarym» diýip aýdýarlar. Sary bag-
+
+şynyň beren maglumatyna görä, Magtymgulynyň ýaşaýan ýeri bolan
+
+                       Ýaýlahlary bar
+
+               Sapar edip barsak Nuha mülküne,
+               Köňül isläni dek ýaýlahlary bar;
+               Seýran etsek gunçasyna, gülüne,
+               Bakjasynda bilbil oýnahlary bar.
+
+               Ýeri sazdyr, hasta bolan sagalar,
+               Arryk, müflis, garyp bolan oňalar,
+               Serçemen agajy bile deňeler,
+               Ajap guş salmaly awlahlary bar.
+
+               Meýdany doludyr şeker gamyşdan,
+               Dileg etmez hergiz gardaş-gardaşdan,
+               Üsti ýapylgydyr kümüş kerpiçden,
+               Her kimniň özi üçin suwlahlary bar.
+
+               Baş goşmandyr, arryk, agsak şa bile,
+               Atdyryp dükanbyl sary ýaý bile,
+               Şirwan galasydyr, any kim bile,
+               Her buruçda altyn baýdahlary bar.
+
+               Magtymguly, sazdyr, söhbetdir işiň,
+               Ajaldan, gaýrydan bolmaz teşwişiň,
+               Baýlaryň, pakyryň ähli derwüşiň
+               Ýurdy bolar ýaly persahlary bar.
+Soňudaga Eýran şasynyň goşunlary hüjüm eden wagtlarynda, şahyr ýa-
+şaýan ýerini mejbury taşlap, Garrygala göçmeli bolupdyr. Bu goşguda
+onuň ýaşan ýeri Soňudag bile hoşlaşygy görkezilýär.
+
+                        Jahan peýda
+
+  Gelse nowruz äleme, reň kylar jahan peýda,
+  Ebrler1 awaz urup, dag kylyr duman peýda.
+  Bijanlar jana girip, ederler dahan peýda,
+  Görmedigiň giýalar2 , gögerip rowan peýda,
+  Aýdarlar haýwanatga, hem sudy-zyýan peýda,
+  Ýer ýüzüne ýaýylyp, ýörirler nahan peýda,
+  Wabeste3 dahan4 guşlar, kylarlar zyban peýda.
+
+  Çöl tarapyn berk edip, der5 açar suwa harçeň6 ,
+  Zemin sebzezar olup, teninden aýrylar zeň.
+  Sebze içre sandugaç7 ýüz tilde kylar eheň,
+  Jünbendeler8 mest olup, göýä içmiş arak, beň,
+  Her aşýanaň özüne öz owazy bolar geň,
+  Zemin hazarpuş9 olup, gül bitirmiş reňbe-reň,
+  Hyruja gelip älem, kylarlar pygan peýda.
+1 Ebr – bulut.
+2 Giýa – ot, ösümlik.
+3 Wabeste – bagly, bek, ýapyk.
+4 Dahan – agyz.
+5 Der – gapy.
+6 Harçeň – leňňeç.
+7 Sandugaç – garlawaç.
+8 Jünbende – hereket edýän, mör-möjek.
+9 Hazarpuş – gök, ýaşyl geýnen.
+
+  Serweri seda birle, jahan ýüzi abatdyr,
+  Magrury-serwer olma, sany serwer bibatdyr,
+  Hak yşkynda zindeler, biliň, baky-haýýatdyr.
+  Her tende yşk bolmasa, rozy ezel mematdyr1 ,
+  Ýaz ýetinçä ýer-gögi. günden-güne zyýatdyr.
+  Bir heşri2 -kyýamatdyr, bir ýowmy3 -arasatdyr4 ,
+  Dähr içre bolar her dem, jahan içre jan peýda.
+
+  Zerbaba zowkun olma, baka ýokdur döwletde,
+  Ömrüňni bada berme sen bu daryl-mähnetde5 ,
+  Ýeter saňa iru-giç, ne ýazylsa kysmatda,
+  Janyňa jepa eýläp, munça gezme hasratda,
+  Sogap ýagşy amalda, ýa hut ýagşy niýetde,
+  Älem barça hyzmatda, adam ýatyp gaflatda,
+  Hasylyň ataş bolgaý, eýleseň ýaman peýda.
+
+  Magtymguly, ýyglar men, bu bagty syýahymdan,
+  Gorkar men jan äpeti, el-aýak güwähimden,
+  Umydym hasyl olmaz bu ömri tebahymdan6 ,
+  Jan köýdi jeset içre bu ataşy-ahymdan,
+  Elim sunup dilär men hajatym ylahymdan,
+  Mende bir umyt oldur, ol keremli şahymdan,
+  Eýlegeý arasatda, gül kibi iman peýda.
+1 Memat – öli.
+2 Heşir – mähelle, märeke, ýygnanyşyk.
+3 Ýowm – gün.
+4 Arasat – söweş meýdany.
+5 Dary-mähnet – jepa öýi
+6 Ömri-tebah – bozulan ömür, haýyp geçen ömür.
+
+                         Içinde
+
+                 Pikir kyldym ýer-göge,
+                 Akylsyz jan içinde.
+                 Gördüm: jan hem alla diýr
+                 Et, siňir, gan içinde.
+
+                 Ýörir ýoluň bilmeseň,
+                 Dogry ýola gelmeseň,
+                 Haky ýada salmasaň,
+                 Galdyň arman içinde.
+
+                 Ýerden çykan nebatlar,
+                 Gyzyl güller, gök otlar,
+                 Gapyl adam, bu zatlar
+                 Külli perman içinde.
+
+                 Nebsiň aýdar: joş bolsam,
+                 Gerçeklere duş bolsam,
+                 Iýsem, içsem, hoş bolsam,
+                 Ýatsam eýwan içinde.
+
+                 Köňül sen bir bazar sen,
+                 Her işe bir gyzar sen,
+                 Tutsam, diýer gezer sen,
+                 Jürmi1 -usýan2 içinde.
+1 Jürm – günä.
+2 Usýan – boýun egmezlik, baş götermek, gozgalaň
+
+Ýaýylar ganat-perler,
+Hup açylar depderler,
+Bölek-bölek kepderler
+Hüw diýr harman içinde.
+
+Bilbil aýdar: köşküm bar,
+Bahar gözleşigim bar,
+Gülzar üçin yşkym bar
+Bagy-bostan içinde.
+
+Ýarganat diýr: ýa möwla,
+Saldyň meni bu ýola,
+Berme aý-güne, ýele,
+Sakla pinhan içinde.
+
+Anka aýdar: ýolçyýam,
+Hüthüt aýdar: ilçiýem,
+Süleýmana sawçyýam,
+Ýalan jahan içinde.
+
+Bezgek galyp haýrana,
+Haýran bakyp her ýana,
+Dem-dem çykyp seýrana,
+Gezer döwran içinde.
+
+Durna aýdar: uçar men,
+Bagdat suwun içer men,
+Gyş Hindistan göçer men
+Läle-zaran içinde.
+
+                 Baýguş aýdar: derdim bar,
+                 Tesbyhym bar, werdim1 bar,
+                 Weýranada ýurdum bar
+                 Zary-girýan içinde.
+
+                 Ishak aýdar: pakyr men,
+                 Gullugymda hakyr2 men,
+                 Hak ýadyny okyr men
+                 Şam-Şebistan içinde.
+
+                 Musyja diýr: giter men,
+                 Geldim, bildim — öter men,
+                 Üç agaçny çatar men,
+                 Guzlap weýran içinde.
+
+                 Laçyn aýdar: joşumdan,
+                 Mest boldum öz huşumdan,
+                 Galdym taňry işimden,
+                 Bendi-zyndan içinde.
+
+                 Turaç tili senada,
+                 Ördek tili penada,
+                 Gazlar galkyp howada,
+                 Gözi umman içinde.
+1 Werd – namaz, doga, üznüksiz doga, namazy gaýtalap oturmak.
+2 Hakyr – ejiz, pukara, kiçi göwünli
+
+                  Gumrular owaz bilen,
+                  Tawus işi näz bilen,
+                  Kaknus guş müň saz bilen
+                  Şol Hindistan içinde.
+
+                  Toty guşlar zarlaşyp,
+                  Emri-hakny gözleşip,
+                  Adam tilin sözleşip,
+                  Gezer ynsan içinde.
+
+                  Keýik aýdar: aglar men,
+                  Haka sydkym1 baglar men,
+                  Balalarym derdinden
+                  Ýüregim gan içinde.
+
+                  Gurt aýdar: üzer men,
+                  Nirden kylsam güzer men.
+                  Ryzkym awlap gezer men
+                  Çöl-beýeban içinde.
+
+                  At aýdar: aslym zordur,
+                  Munça gymmatym bardyr,
+                  Üstüme münen ärdir,
+                  Daglarda-daş içinde.
+1 Sydk – yhlas.
+
+Ýaby aýdar: men gende,
+Üstüme münen bende;
+Azabym köpdür günde,
+Özüm hyzmat içinde.
+
+Eşek aýdar: aslym daş,
+Hyzmat bilen bagrym baş,
+Saman tapsam, köňlüm hoş,
+Mydam aýaz içinde.
+
+Düýe aýdar: otlar men,
+Otlan ýerim ýatlar men,
+Elmydama botlar men
+Selin, sazak içinde.
+
+Ýedi ýer bolmuş bina,
+Her zat okyr bir sena,
+Otlar hem diýr «rebbena»
+Nowruz-baran içinde.
+
+Kyýamat gün eliňden,
+Habar sorar halyňdan.
+Gaýyt ýaman päliňden,
+Gördüň purkan içinde.
+
+Umytly bol Ýusup dek,
+Sabyrly bol Eýýup dek,
+Ger ugrasa Ýakup dek
+Derdi-Kengan içinde.
+
+       Janym, jurga joş eýle,
+       Nebsim aýdar, hoş eýle,
+       Keremiňni duş eýle,
+       Taňla diwan içinde.
+
+       Magtymguly, özüňe
+       Bak, ýaş getir gözüňe,
+       Aýyplaşmaň sözüme
+       Ýary, ýaran içinde.
+
+        Düşen günlerim
+
+Dokuz aý ýatmyşam enem garnynda,
+Göz açyp, dünýäge düşen günlerim;
+Dört aýakda gezdim enem elinde,
+Sekiz aýda hem gülüşen günlerim.
+
+Birimde bilmedim ýagşy-ýamany,
+Ikimde tanydym ata-enäni,
+Üç ýaşymda taňry berdi zybany,
+Dört ýaşymda daş atyşan günlerim.
+
+Bäşimi ötürdim bahar-ýaz bilen,
+Alty ýaşda kowalaşdym saz bilen,
+Ýedi ýaşda işim bolmaz gyz bilen,
+Sekizimde dişim düşen günlerim.
+
+Dokuzymda berdim taňry salamy,
+Onumda boýnumda hakyň kelamy,
+On birimde tutdum döwet-galamy,
+Okyp-okyp magny saçan günlerim.
+
+On ikimden gitdim on üç ýaşyma,
+On tördümde eser urdy başyma,
+On bäşimde gyzlar girdi düýşüme,
+On altymda gaýnap joşan günlerim.
+
+Ýigrimimde mestan-mestan gezerdim,
+Ýigrim bäşde ganym okun düzerdim,
+Otuzymda atlar münüp gezerdim,
+Otuz bäşde ters söweşen günlerim.
+
+Kyrkymda goýulyp, käsäm dolmuşam,
+Ellimde elime tesbyh almyşam,
+Altmyşymda pire mürit bolmuşam,
+Pygamber ýaşyny ýaşan günlerim.
+
+Ýetmişimde agyry indi dyzyma,
+Segsenimde gubar indi gözüme,
+Togsanymda huş galmady özüme,
+Akyl-huşdan jyda düşen günlerim.
+
+Ýüz ýaşa ýetirmän, alarlar janyň,
+Uzadyp goýarlar, biçerler donuň,
+Magtymguly, hemra bolsun imanyň,
+Jan jesetden aýra düşen günlerim.
+
+                  Gözel Şirgazy
+
+        Mekan eýläp, üç ýyl iýdim duzuňy,
+        Gider boldum, hoş gal, gözel Şirgazy1 !
+        Ötürdim gyşyňy, nowruz-ýazyňy,
+        Gider boldum, hoş gal, gözel Şirgazy!
+
+        Hakdan bize buýruk baglydyr bilim,
+        Sende taglym aldy, açyldy dilim,
+        Gelsin diýip garar ol gerkez ilim,
+        Gider boldum, hoş gal, gözel Şirgazy
+
+        Seljerer men indi agy-garany,
+        Dost, rakyp, gardaşym, haky, ýarany,
+        Okydym, göterdim kitap kurany,
+        Gider boldum, hoş gal, gözel Şirgazy!
+
+        Aklym gysga erdi, käsäm gaýnady,
+        Jiger talwas urdy, göwün oýnady,
+        . . . . . . . . . . . . . . . . . . . . . . . . . . .
+                .
+        Gider boldum, hoş gal, gözel Şirgazy!
+
+        Joşgun ýüregimde möwç urar, ýatmaz,
+        Gaýnar, gazaplanar, hiç laýa batmaz,
+        Ylym-taglym algan seni unutmaz,
+        Gider boldum, hoş gal, gözel Şirgazy!
+1 Şirgazy – Magtymgulynyň Hywadaky okan medresesiniň ady.
+
+         Peýman dolmaý, gelsek takat ýetmeýen,
+         Pinhan zahyr kylmaz akyl gitmeýen,
+         Bady-paý atlanyp, seýran etmeýen,
+         Gider boldum, hoş gal, gözel Şirgazy!
+
+         Rige1 girsem-de, guwwas ýüzer men,
+         Bihasret ýaýnaýam, bigam gezer men,
+         Dahan içre asal-zyban ezer men,
+         Gider boldum, hoş gal, gözel Şirgazy!
+
+         Kämil bolup serenjamlyk kylyp men,
+         Muşakgatdan, ol pederden galyp men,
+         Käbämden aýrylyp jyda bolup men,
+         Gider boldum, hoş gal, gözel Şirgazy!
+
+         Kutbda2 saý gözläp, ummana duşdum,
+         Neýsan guýdy, umman gaýnadym-joşdum,
+         Hoş gal, bu gün Jeýhun bahrydan aşdym,
+         Gider boldum, hoş gal, gözel Şirgazy!
+
+         Magtymguly taşlap göwün hapasyn,
+         Sylady pirini, molla, sopusyn...
+         Daýym unutmaz men tylla gapysyn,
+         Gider boldum, hoş gal, gözel Şirgazy!
+
+1 Rig – ownuk daş, çagyl.
+2 Kutb – polýus, deňiz.
+
+     V
+
+YŞKY ESERLER
+        Her ýana
+
+Ýarsyzlykdan ýaman iş ýok,
+Göz salyp gezsem her ýana;
+Ýa ýaradan, bir hemra ber,
+Köp muşakgat degdi jana...
+
+Bir ýar bergil etli, ganly,
+Dil bilen, akly kemally,
+Köňli giň, göwsi meýdanly,
+Ýüzi hem bolsun görkana!
+
+Gadyr bilenden daş etme,
+Nägadyra ýoldaş etme,
+Til bilmez bela duş etme,
+Sada dil bolsun türkana.
+
+Keremi güýçlüdir, görgül,
+Doga kylyp, eliň gergil,
+Berseň-de, tizräk bergil,
+Ygtybar ýokdur bu jana...
+
+Boýy uzyn, pes bolmasyn,
+Hetden aşa mes bolmasyn,
+Akylsyz näkes bolmasyn,
+Sadadan bolsun türkana.
+
+               Ýagşy aýal ele gelmez,
+               Nadan ýagşyň gadryn bilmez,
+               Aýalsyza mydar bolmaz,
+               Dönseň hökmi-Süleýmana.
+
+               Magtymguly, ýansam-bişsem,
+               Ynanmazlar, oda düşsem,
+               Höwesim bar, bir ýar guçsam,
+               Diýsem sözlerim erkana...
+
+                          Gaşy ýaý
+
+  Bir dilbere duş boldum, gamzasy ok, gaşy ýaý;
+  Gün haýrandyr görkünden, hyjalatda dolgan aý,
+  Janyň berseň, jaýyzdyr1 beýle sypat mahbuba;
+  Hiç görmedim anyň deý başy dogry, göwsi taý.
+  Gulgula düşdi bize, hem düşdi jeňi-jeňe,
+  Jeň şowkundan ol nigar, ne nalaga düşdi naý.
+
+  Ne aşretdir aşyga, jennet içre jemaly,
+  Aýralyknyň ataşy tamug içre weýil-waý.
+  Ol dideýi-dildardan bolma ýene bibähre,
+  Galmagaý sen meniň deý – akly azu-görke baý.
+1 Jaýyz – laýyk, jaýly.
+
+  Isteseler alymlarny, şeýtan aýdar: ol dilber
+  Halagana Halyl dek, oglanyna berer paý.
+  Magtymguly, mydama doga kylar dergaha,
+  Saýyl men, mahrum etme dergahyndan,
+                                          ýa hudaý!
+
+                       Bu derdi
+
+       Keşt eýledim, gezdim yşkyň dagyndan,
+       Ne beladyr, kimse çeker bu derdi?
+       Yşk dagyn assalar gögüň boýnundan,
+       Gök titreýip, çeke bilmez bu derdi.
+
+       Yşk eser etmese, ýanmaz çyraglar,
+       Yşka düşse, guşlar eňrär, gurt aglar,
+       Egiler haýbatly, kuwwatly daglar,
+       Daşlar eräp, çeke bilmez bu derdi.
+
+       Kimdir yşkyň ýükün çeken merdana?
+       Pelek gördi — gorkup düşdi gerdana,
+       Zemin1 jünbüş eýläp2 , oldy lerzana,
+       Çöller-düzler çeke bilmez bu derdi.
+1 Zemin – ýer.
+2 Jünbüş eýlemek – hereket etmek, titremek.
+
+       Behişt gaçyp çykmyş arşyň öýüne,
+       Tamüg gorkup inmiş ýeriň teýine;
+       Gaçdy derýa, aldy adam boýuna,
+       Tört ýüz ýyllap çeke bilmez bu derdi.
+
+       Magtymguly, çekseň derdi-düwünden,
+       Asy1 bolup, şikat2 etme bu günden.
+       Bu ölmek, aýrylmak galypdyr öňden,
+       Peder3 bize miras goýmuş bu derdi...
+
+                     Näme sen
+
+       Asla seni görmemişem, dildarym!
+       Gumrumy sen, bilbilmi sen, näme sen?
+       Gamgyn köňlüm hyýalynda aldaram,
+       Bag içinde gül-gülmi sen, näme sen?
+
+       Garakçymyň, ýa seýitmiň, hojamyň,
+       Ýa sakymyň, ýa şerapmyň, ýa jammyň,
+       Ýa ýylmy sen, ýa gündizmiň, gijemiň,
+       Ýa aýmy sen, ýa günmi sen, näme sen?
+1 Asy – günäkär.
+2 Şikat – şikaýat.
+3 Peder – ata.
+
+       Ýa müşkmi sen, ýa kokunar anbarmyň,
+       Aýda bilmen, ýa çarhmy sen, çenbermiň,
+       Ýa derýamyň, ýa möwçmi sen, lenbermiň,
+       Ýa girdapmyň, ýa burgunmyň, näme sen?
+
+       Altynmy sen, kümüşmi sen, zermi sen,
+       Ýa arşmy sen, ýa kürsmi sen, ýermi sem,
+       Ýa ýakutmyň, ýa merjenmiň, dürmi sen,
+       Ýa çyragmyň, ýa röwşenmiň, näme sen?
+
+       Magtymguly, geç namysdan, aryňdan,
+       El götergil bu wepasyz käriňden,
+       Jahan doly, sen gapyl sen ýaryňdan,
+       Ýa mestmi sen, ýa şeýdamyň1 , näme sen?
+
+1 Şeýda – joşgunly, saýraýjy, däli-diwana.
+
+                         Gördüňmi
+
+          Ýagty salar gider zulmat tününde,
+          Meniň sahypjemalymny gördüňmi?
+          Bahar eýýamynda, heýhat gününde
+          Meniň sahypjemalymny gördüňmi?
+
+          Anka sypat «huw» diýp, asman uçan guş,
+          Gijesi tirikdir, gündizi beýhuş,
+          Nowaýy jindeli1 , egni hyrkapuş2 ,
+          Meniň sahypjemalymny gördüňmi?
+
+          Gan edipdir pelek, bagrym pyrakda,
+          Elmydam gezer men «ýar» diýp sorakda,
+          Käbe tarapynda, Şamda, Yrakda
+          Meniň sahypjemalymny gördüňmi?
+
+          Rumda, Gypjakda, Çyny-Maçynda,
+          Zumaýyl ornunda, arşyň içinde,
+          Galam degresinde, pelek burçunda
+          Meniň sahypjemalymny gördüňmi?
+
+          Aşyklar ahynda, Gulzum döwründe,
+          Kütbetil-yslamda, Jeýhun bahrynda,
+          Sedre sährasynda, Isa şährinde
+          Meniň sahypjemalymny gördüňmi?
+1 Jinde – ýyrtyk, sal-sal, eleşan.
+2 Hyrkapuş – ýyrtyk-ýirik geýim, derwüşiň geýýän geýimi.
+
+Hazret Aly etgeç äleme dagwy,
+Kapdan Kaba gitdi hazretiň çawy,
+Ýa yklym eýesi, Ahmet Ýasawy!
+Meniň sahypjemalymny gördüňmi?
+
+Mesgen tutmuş gara dagyň burnunda,
+Alynyň mülkünde, Isa ornunda,
+Ýeriň arkasynda, gögüň garnynda
+Meniň sahypjemalymny gördüňmi?
+
+Magtymguly, çeker ýaryň gamyny,
+Gezip tapa bilmez roýy-zemini.
+Ýa ady Jebraýyl, hakyň emini!
+Meniň sahypjemalymny gördüňmi?
+
+       Bagrym dilenim
+
+Dertli dilber, dilleşer sen, gel bäri!
+Dullukdyr meniň-de bagrym dilenim.
+Soraýyr men, men hem sen deý bir ýary,
+Seni soramakdyr, ýokdur ýalanym.
+
+Eger geňeş salsam ýada-bilişe,
+Diýrler: şirin asal ýaga gelişe,
+Säher ýazygym çün tursam nalyşa,
+Owwal bir ýar bolar ýada salanym.
+
+Bilen ýanda meňzär gymmat düre sen,
+Tanymaza duşup, degme ýere sen,
+Kadyr kysmat etse, maňa bara sen,
+Seniň kimin ýardyr meniň ölenim.
+
+Her dilber kim köňlüm öýün ýarydyr,
+Ýatan bagtym ol ýaradan ýörüdir.
+Gargyşym daşlarny mum deý eridir,
+Pür-pudak ýaýradyr alkyş kylanym.
+
+Gözel görküň gökde günden aýynmaz,
+Güli, desdenbili ysgan doýunmaz.
+Magtymguly, baş bermese baýynmaz,
+Mährimi inderip nazar salanym.
+
+            Islärin
+
+    Owal başda, kadyr alla,
+    Senden bir kömek islärin.
+    Badam gabak, alma ýaňak,
+    Bir ziba senem islärin.
+
+    Taňry bermese nädäli?
+    Baş alyp, nirä gidäli?
+    Oturyp-turşy edaly,
+    Gaşlary galam islärin.
+
+                 Özüne hormat getiren,
+                 Äriniň hyzmatyn bitiren,
+                 Gaşyny çytman oturan,
+                 Maňlaýy gülen islärin.
+
+                 Ýigrimi ýaş ötdi menden,
+                 Hezl etmedim, dünýä, senden.
+                 Tili süýji, lebi handan,
+                 Bir goýna salan islärin...
+
+                 Pyragy, geldim jahana,
+                 Bir ýar bergil akly-dana1 ,
+                 Duşdum üm bilmez nadana,
+                 Bir gadrym bilen islärin.
+
+                      Gözüm düşdi
+
+                    Şükür, alhamdililla,
+                    Janana gözüm düşdi.
+                    Meýhanada meý içdim,
+                    Mestana gözüm düşdi.
+
+                    Eý zülpi, saçy anbar!
+                    Mehrap ki, ýüzüň menber,
+                    Eý lagly2 -lebi göwher,
+                    Ummana gözüm düşdi.
+1 Dana – bilgir, akylly.
+2 Lagl – gymmatbaha daş, rubin.
+
+                  Eý gözleri ahramy1 ,
+                  Gel görgeli ýaramy,
+                  Eý köňlümniň aramy!
+                  Imana gözüm düşdi.
+
+                  Eý jady-jeren gözli.
+                  Eý şähdi-şeker sözli,
+                  Eý şemsi-kamar2 ýüzli,
+                  Tabana3 gözüm düşdi.
+
+                  Arzuwda gezer iller,
+                  Hyzmatga geler gullar,
+                  Täze açylgan güller,
+                  Bostana gözüm düşdi.
+
+                  Her saçlary bir sünbül.
+                  Göýäki men hem bilbil.
+                  Eý jennet era bir gül,
+                  Ryzwana4 gözüm düşdi.
+
+                  Bu derdime sen derman,
+                  Köýüňde bolam nalan.
+                  Magtymguly diýr, eý jan,
+                  Janana gözüm düşdi.
+
+1 Ahram – jadyly, humarly.
+2 Şemsi-kamar – aý-gün.
+3 Taban – dolan aý, ýagty.
+4 Ryzwan – fantastik jennet gapysynyň sakçysy; behişt.
+
+                      Sataşdym
+
+           Säher wagty seýran edip gezerkäm,
+           Ajap menzil, ajap jaýa sataşdym.
+           Ugrum bilmeý, ýoldan-ýola azarkam,
+           Hup mekana, hup saraýa sataşdym.
+
+           Ustasyz işlenen, kirşsiz gatylan,
+           Gymmatsyz satylan, elsiz tutulýan,
+           Gol degmeý çekilen, oksuz atylan,
+           Çillesiz1 gurulan ýaýa sataşdym.
+
+           Niçe dostlar bilen seýranda eken,
+           Hatardan azaşdym, kerwende eken,
+           Jandan umyt üzüp, haýranda eken,
+           Ýyldyzdan ýol ýasap, aýa sataşdym.
+
+           Köňlüm gitdi, dostlar içen şerbetde,
+           Olar ýüz sapada, men müň hasrata.
+           Aýrylyp näzliden, galdym gurbatda2 ,
+           Çeşmeden suw istäp, çaýa sataşdym.
+
+           Ne tende kuwwat bar, ne içde jan bar,
+           Bu işde ne sut bar, bilmen zyýan bar,
+           Ne hasap, ne hesip, ne belli san bar,
+           Kişi bilmez, ne söwdaýa sataşdym...
+1 Çille – kiriş.
+2 Gurbat – aýralyk, daşa düşmeklik.
+
+         Başa baglap diwanalyk kemendin,
+         Segredip ýetişdim yşkyň semendin1 ,
+         Al şeraba el uzatdym, emendim,
+         Durusyn içmişler, laýa sataşdym.
+
+         Magtymguly diýrler meniň adyma,
+         Bir ah ursam, älem ýanar oduma.
+         Eý ýaranlar, kim ýetişer dadyma?
+         Başym çykmaz köp gowgaýa sataşdym.
+
+                   Aşyk bolmuşam
+
+Eý ýaranlar, bir ýüzi gül, aýa aşyk bolmuşam,
+Barçalar maksady gül ragnaýa2 aşyk bolmuşam,
+Bilbilem bag içre, bir gowgaýa aşyk bolmuşam,
+Özi gaýyp, zülpleri ýeldaýa3 aşyk bolmuşam.
+Menzilim bag içredir, sähraýa aşyk bolmuşam.
+
+Çün pelek saldy bizi ol gün pena topragyna,
+Düşdi seýrim daýyma Mekge, Medine dagyna,
+Bilbil oldum saýradym, girdim Eremniň bagyna,
+Pany-bent oldum o güýa gam iliniň tussagyna,
+Ýüz bela-mähnetli bir söwdaýa aşyk bolmuşam.
+1 Sement – at.
+2 Ragna – owadan, gözel.
+3 Elda – gyryň iň uzyn we tüm garaňky gijesi (22-nji dekabr gijesi).
+
+Göwräm içre ýar gamydyr, menzilim sährad, heý,
+Puşeşim gam-gussadyr, men dönmüşem
+                                   Perhada, heý,
+Saldy yşkyň, dilbera, janu-jigerim oda, heý,
+Wadaryga1 , geçdi ömrüm, zaýa berdim bada2 , heý,
+Ahy köp, efgany köp, bir köýe aşyk bolmuşam.
+
+Bilmenem, ne bahr, ýerdir, bes ne muazzem3
+                                  dagydyr,
+Aldy köňlüm, gitdi aklym ten mydam näçagydyr,
+Nisbet etmek bolmas any, gumry, bilbil zagydyr,
+Aý garaz her zülpüne ýetmiş müň är tussagydyr,
+Kaddy-kamaty belent, zybaýa aşyk bolmuşam.
+
+Dost, howaýy waslyňy men munça çenden isterem,
+Damy4 -zülpüň kasdyna özümni zyndan isterem,
+Diýme: gamdan bir zaman, köňlümni handan
+                                  isterem,
+Bir garyp aşyk menem, ýar, seni senden isterem,
+Gije-gündiz, biliň huw-haýa aşyk bolmuşam.
+1 Wadaryga – haýyp.
+2 Bat – el (bad).
+3 Muazzem – uly, ägirt.
+4 Dam – duzak.
+
+Istemez ýarym meni, ol ýara zarym ýok meniň,
+Galmyşam haýran olup, gaýry mydarym ýok meniň,
+Aldy janym yşkyň ody, ygtyýarym ýok meniň,
+Gelse, aklym dagydar, gitse, kararym ýok meniň,
+Kirpigi ok, gaşlary ol ýaýa aşyk bolmuşam.
+
+Aýdadyr Magtymguly, men anda käne ugradym,
+Seýil edip bardym pelekden, lamekana1 ugradym,
+Çün meni ryswa kylypdyr, yşky käne ugradym,
+Ýetmiş iki şäher ile müň bir dükana ugradym,
+Şunça sergezdan sepilu-zaýa aşyk bolmuşam...
+
+                        Meni
+
+      Yşk ýüregimde gaýnap,
+                         ýandyrdy derdi meni,
+      Tütünim bada berip,
+                         buluda gardy meni.
+      Pelek bilegim towlap,
+                         çarhyna sardy meni.
+      Hyrydar gözi bile
+                         kim gelip gördi meni?
+      Hijran ýagmyry ýagyp,
+                         gam sile berdi meni.
+1 Lamekan – mekansyz.
+
+       Gam sili birlen gidip,
+                           yşk ülkesine baryp,
+       Hyýalym pikre dönüp,
+                           aklymy ýel aparyp,
+       Ol haýrat meýdanyda
+                           men garyp galdym aryp,
+       Yşyk hanjaryn çekip,
+                           hijran ýüregim ýaryp,
+       Äleme destan edip,
+                           abtaba serdi meni.
+
+       Ne jeset içre jan bar,
+                           ne kuwwat galdy tende,
+       Hem serkeşte, hem haýran
+                           bu işe galdym men-de.
+       Ne hastaýam, ne horram,
+                           ne murdaýam1 , ne zende2 ,
+       Gam hüjüm eýläp,
+                           gökden zemin sary inende.
+       Pelek elimden tutup,
+                           howala berdi meni.
+1 Murda – öli.
+2 Zende – diri.
+
+      Bir ahwala duş boldum,
+                          gam hüjm etdi, öldürdi,
+      Bu işiň serişdesin
+                          yşk okadyp bildirdi,
+      Bu hala rehmi gelip,
+                          elim tutup galdyrdy,
+      Jemal bir jilwe berdi,
+                          içim şowka doldurdy,
+      Sözlemeýen neýläýin,
+                          ýaranlar, ýardy meni.
+
+      Magtymguly, begligim
+                          ýar jemaly gul etdi,
+      Wysal umydyn berip,
+                          müň tilli bilbil etdi,
+      Aýralyk oda saldy,
+                          pyrak turdy, ýel etdi,
+      Yşk çekdi zybanasyn1 ,
+                          ýakyp, örtap kül etdi,
+      Hijran elegin eläp,
+                          ýele sowurdy meni.
+
+1 Zybana çekmek – joşmak, ýokary göterilmek, möwç urmak.
+
+                         Döndi
+
+                Ýüzi mahy-tabanym
+                Gün ýaly aýa döndi;
+                Çarh oldy nerdiwanym1 ,
+                Gök paýa-paýa döndi.
+
+                Bir gün aşyk şowh oldy,
+                Gam-gussasy çoh oldy,
+                Her kirpigiň ok oldy,
+                Gaşlaryň ýaýa döndi.
+
+                Aşygy saldyň oda,
+                Goýduň gitdiň uýada,
+                Günorta berdiň wada,
+                Wagt geçdi, saýa döndi.
+
+                Jan galmady bedende,
+                Ýanardym ah edende,
+                Gözüm gelip-gidende,
+                Her günüm aýa döndi.
+
+                Müň söwdam bar, bir başym
+                Goýdum ilim, gardaşym,
+                Aglamakdan göz ýaşym
+                Joşgunly çaýa döndi.
+1 Nerdiwan – basgançak
+
+                    Ýaryň köňli çag oldy,
+                    Aşyklar tussag oldy,
+                    Dalda ýerim dag oldy
+                    Düz ýerim gaýa döndi.
+
+                    Dal pudaklar egildi,
+                    Göçdi bilbil, dagyldy.
+                    Akar suwlar soguldy,
+                    Çöl ýerler guýa döndi.
+
+                    Derman bolmaz alaja,
+                    Zat bermezler mähtaja.
+                    Baýlar döndi gallaja,
+                    Pakyrlar baýa döndi.
+
+                    Magtymguly, gezende,
+                    Rumy-kaýsar1 düzünde,
+                    Gözel ýaryň yzynda
+                    Ömrümiz zaýa döndi.
+
+   1 Rum – Wizantiýa döwleti, Balkan ýarym adasy we Kiçi Aziýa.
+
+Kaýsar — Rum patyşasy
+
+                     Boldum
+
+         Yşk derýasy doldy, daşdy, gaýnady,
+         Täze hyruç eýläp gyzmaly boldum;
+         Köňül tagty möwç üstüne oýnady,
+         Onda guwwas bolup ýüzmeli boldum.
+
+         Ýatyrdym, düýş görüp, tisginip turdum.
+         Yşk bir müşgil işdir, okadym gördüm,
+         Şowhun şirýan bildim, bu ýola girdim,
+         Imdi çäre ýokdur, dözmeli boldum.
+
+         Ýaryň ýeli ösdi, özi gizlendi,
+         Umyt elin gerdi, şunça gözlendi,
+         Hijran kuwwatlandy, gam täzelendi,
+         Ol gazanda gaýnap gyzmaly boldum.
+
+         Ýolda ýolukdyrdym çeşmi-jadyny,
+         Ölçerdim, el çoýdum yşkyň oduny,
+         Köňül gözgüsine1 ýaryň adyny
+         Suratkeşlik edip çyzmaly boldum.
+
+         Bu pikirden, bu hyýaldan daş bolup,
+         Nebsi-howa mekirinden boş bolup,
+         Ol bazarda yşk-talaňça duş bolup,
+         Belli jandan umyt üzmeli boldum.
+1 Gözgi – aýna
+
+         Gana-gana içdim dostuň zährini,
+         Zährin şypa sansam, salmaz mährini,
+         Göwrede gurulan köňül şährini,
+         Yşka nöker bolup bozmaly boldum.
+
+         Magtymguly, ol menzile, diýara1 ,
+         Giren gaýdyp çyka bilmez kenara,
+         Ýaranlar, bu derde barmydyr çäre?
+         Jöwrenip, örtenip gezmeli boldum.
+
+                           Oldy
+
+         Köňül berdim bir biwepa mahbuba2 ,
+         Çykdy elden, dagy jana dert oldy;
+         Aşyk diýr: bakmanam imdi ol huba,
+         Ýol üstünden düşdi gözüm, tört oldy...
+
+         Menlik bile etdim işimni zaýa,
+         Ykbalym eşegin batyrdym laýa,
+         Ýa bir merde duş et, ýa-da hudaýa,
+         Bende işi baş tutmady, art oldy...
+1 Diýar – ýurt, mekan, ülke.
+2 Mahbup – söýgüli.
+
+         Tugunym1 tor bolup, gaçdy saýýatdan2 ,
+         Göwre gamdan doldy, ýürek hem otdan,
+         Gorkarym: ýar bizi çykarar ýatdan,
+         Aýry ýerde mesgen tutdy, ýurt oldy...
+
+         Sonam el bermedi saldym bazymy3 ,
+         Laçyn kowdy, garga aldy gazymy,
+         Şunça pakyrlyga urdum özümi,
+         Tilkilenip, gezdim, adym gurt oldy.
+
+         Magtymguly, ýüregimde dert dörär,
+         Kim görüpdir, koý içinden gurt dörär?
+         Eý ýaranlar, mert ýigitden mert dörär,
+         Kaçan turdy, namart ogly mert oldy?
+
+1 Tugun – elguş.
+2 Saýýat – awçy.
+3 Baz – gyrgy, algyr.
+
+                        Boldum imdi
+
+    Yşk ataşyna düşdüm,
+                        perwana boldum imdi,
+    Şowkun közüne köýdüm,
+                        birýana1 boldum imdi.
+    Jismim kebaba döndi,
+                        girýana boldum imdi,
+    Genç isteýenler gelsin,
+                        weýrana boldum imdi,
+    Aýryldym agýarlardan,
+                        bigana boldum imdi.
+
+    Çykardym başdan imdi
+                       dünýä höwesin mutlak2 ,
+    Ne perşe aýak basdyň,
+                       dolan bir özüňe bak,
+    Kül bolup, ýelge sowrul,
+                       ol güzerde janyň ýak,
+    Lazym oldy okymak,
+                       analhaku, minelhak,
+    Meý içip meýhanadan,
+                       mestana boldum imdi.
+1 Birýana (birýan) – gowrulan.
+2 Mutlak – asla, düýpden.
+3 Perş – düşek, haly.
+
+Dünýä menden hezl etmez,
+                 men hem bähre almaz men,
+Odum ötgür, derdim köp,
+                 hoş wagt olup gülmez men,
+Agyr baha älemni
+                 alty pulga almaz men,
+Dost kaýsy, duşman kaýsy,
+                 parhyn edip bilmez men,
+Hiç kimse aňmaz halym,
+                 aýana boldum imdi...
+
+Bir mukama duş boldum,
+                   pikr anda pikre batdy,
+Jan anda jandan boldy,
+                   huşundan gidip ýatdy,
+Jeset ýolda ýok boldy,
+                   köňül özün unutdy,
+Yşk goşun ýygyp gelip,
+                   akyl-mülkün dagytdy,
+Talaňa berip aklym,
+                   diwana boldum imdi.
+
+    Magtymguly, her zaman,
+                         neýleýin olmaý girýan?
+    Pikir palçygna batdym,
+                         çyka bilmez men bir ýan,
+    Göwre harap, ten turap1 ,
+                         köňlümiň şähri weýran,
+    Jan jeset, til-akyldan
+                         aýrylyp galdy urýan2 ,
+    Iş geldi, başa düşdi,
+                         merdana boldum imdi.
+
+                         Hökümli
+
+           Köňüller köşgünde hyýalyň hany
+           Öwlady-hüňkara3 meňzär hökümli.
+           Aşyk çekse nalany,
+           Ýasa salar läläni,
+           Ýerde peşe, padşany,
+           Hudaýymyň halany,
+           Gamzaň garakçysy salsa talaňy,
+           Kirpigiň ok, gaşyň ýaýdyr çekimli.
+1 Turap – gum, toprak.
+2 Urýan – ýalaňaç.
+3 Hüňkar – patyşa.
+
+           Gözelleriň waspyn etseler kanda,
+           Älem agzy tamam jem olar sende.
+           Tä jan bardyr bu tende,
+           Arzym meniň ýar sende,
+           Adyň Ruma düşdi, owazyň Hinde.
+           Leýli saňa kenizek,
+           Züleýha saňa bende,
+           Bagda gulçähre1 sen? bulgar bakymly.
+
+           Yşkyň ataşyny saçyp sen düze,
+           Jan polatdan bolsa, dözmez bu köze,
+           Gonsa, dilber, bu köze,
+           Zyban2 gider her söze,
+           Görküň güneşi dogsa,
+           Ne san bardyr ýyldyza?
+           Alma zenahdana, bu kümüş ýüze –
+           Zülpüň syýa, suratkärdir dökümli.
+
+           Humaý oturyşly, laçyn turuşly,
+           Kebuter topukly, maral ýörişli,
+           Täze hilal3 gaşly, merwerit4 dişli,
+           Tawus guş zynatly, dawud duruşly,
+           Terbeza şiweli, käkilik nagyşly,
+           Tugun guş timarly, tarlan bakymly.
+1 Gülçähre – gül ýüzli.
+2 Zyban – dil
+3 Hilal – ýaňy dogan aý.
+4 Merwerit – gymmat baha daş.
+
+           Baglanyban çyksaň şitdeýi1 gülzar,
+           Husnuň hyýalaty älemni aldar.
+           Aşyk aýdar: eý dildar!
+           Görki güne taý didar!
+           Tapar hajyň sowabyn,
+           Her kim bir garyp goldar,
+           Magtymguly, sen dek görmedim dildar,
+           Bu jana ýararly, köňle ýakymly.
+
+                      Dogrusy
+
+        Eý peri, aşygam saňa,
+                          ýanaram, dogrusy;
+        Görmeginçe gül ýüzüň,
+                          bikararam dogrusy.
+
+        Şähriňizde bir peri,
+                               adyň eşitdim men seniň,
+        Bilbili-biçäreýem,
+                               çoh ahy-zaram, dogrusy.
+
+        Men bir bezirgen menem,
+                          yşkyň matasyn sataram;
+        Şähriňizge gelmişem,
+                          bes söwdagärem, dogrusy.
+1 Şitde – guşak
+
+        Gide bilmen şähriňizden –
+                           hyz-haramdan gorkaram;
+        Ýedi pirniň labzydan,
+                           bir ýadygärem, dogrusy.
+
+        Eý peri, zülpüň beri,
+                           walla seniň deý huplary;
+        Aýdadyr Magtymguly,
+                           pişekärem, dogrusy.
+
+                        Gözel sen
+
+           Gün hanjary gökden ýere inende,
+           Güne garşy dogan aýy gözel sen;
+           Usta Jepbar işi, senjap jüpbesi1 ,
+           Ispyhanda gurlan ýaýy gözel sen!
+
+           Saçbagyň ujunyň simdir2 işmesi,
+           Üstünden ýol düşse, kyndyr aşmasy,
+           Agzyň aby-haýat3 , Zemzem çeşmesi,
+           Aýnalbaky4 suwnuň laýy gezel sen!
+1 Jüpbe – eşik ady.
+2 Sim – kümüş.
+3 Aby-haýat – dirilik suwy.
+4 Aýnalbaky – fantastiki ömürlik çeşme.
+
+          Gyzyl diýsem – gyzyl, al diýsem – al sen,
+          Hindistanda – şeker, Bulgarda – bal sen.
+          Yşk bilen açylgan bir täze gül sen,
+          Ýusup-Züleýhanyň taýy gözel sen!
+
+          Her kim güýçli bolsa oňa pir diýrler,
+          Dertli guluň dermanyny biýr diýrler,
+          Gawunyň gowsuny şagal iýr diýrler,
+          Ykbally bendäniň paýy gözel sen!
+
+          Owazyň Çyn-Maçyn, daglar aşasy,
+          Seni görenleriň akly çaşasy,
+          Hindistanyň reňkli gyzyl çüýşesi1 ,
+          Suraýy çilimniň naýy gözel sen!
+
+          Magtymguly, halkdan syryn gizlese,
+          Dişini uşadyň ýalan sözlese,
+          Owalda, ahyrda eýäm gözlese,
+          Garyp biçäräniň paýy gözel sen...
+
+1 Meşewi diýen wariant hem bar.
+
+                Gitseň – bar aman
+
+  Diýdim: «Ýüzi tabana».
+                    Diýdi: «Meňzär Meňli han!»
+  Diýdim: «Goýduň armana».
+                    Diýdi: «Köňüldir weýran».
+  Diýdim: «Ölerem imdi».
+                    Diýdi: «Galar sen aman».
+  Diýdim: «Ok kirpikleriň».
+                    Diýdi: «Gaşlarym keman»
+  Diýdim ki: «Puşeş geýmiş».
+                    Diýdi: «Dony – zerefşan».
+
+  Diýdim: «Ýüzde hallar bar».
+                    Diýdi: «Roýda güller heý»1 .
+  Diýdim: «Gumry zybandyr».
+                    Diýdi: «Şähdi diller heý».
+  Diýdim: «Gel sen, habarlaş».
+                    Diýdi: «Biler iller heý».
+  Diýdim: «Ol ne serwidir».
+                    Diýdi «Inçe biller heý».
+  Diýdim: «Tawus kaýdandyr?»
+                    Diýdi: «Jaýy – Hindistan».
+1 «Heý» diýen ümlügiň ýerine «hem» getirilýän warianty hem bar.
+
+Diýdim: «Gijäň garaňky».
+                  Diýdi: «Ukuda aýym».
+Diýdim: «Kimler ýasawul?».
+                  Diýdi: «Kirpigim-ýaýym».
+Diýdim: «Kaýda mesgeniň?».
+                  Diýdi: «Lamekan jaýym».
+Diýdim: «Zerefşan erer».
+                  Diýdi: «Köwserdir laýym».
+Diýdim: «Ondan ber maňa!»
+                  Diýdi: «Istärmiş bijan».
+
+Diýdim: «Bu ne tütündir?»
+                  Diýdi ki: «Gara marlar».
+Diýdim: «Gorkaram andan».
+                  Diýdi: «Il-u-gün zarlar».
+Diýdim: «Sözüň aslyny»,
+                  diýdi: «Sorar, duýarlar».
+Diýdim: «Syry paş etdin».
+                  Diýdi: «Aýtmyş aýýarlar».
+Diýdim: «Ölüm bar saňa»,
+                  Diýdi: «Saňa hem perman».
+
+Diýdim: «Eý Magtymguly!»
+                   Diýdi: «Gözler ýaş bolar!»
+Diýdim: «Ol ne oglandyr?»
+                   Diýdi: «Sizge baş bolar».
+Diýdim: «Ýakyndyr Käbe».
+                   Diýdi: «Köne daş bolar».
+Diýdim: «Ýagşy zamandyr».
+                   Diýdi «Bu hem düýş bolar».
+Diýdim: «Indi gider men».
+                   Diýdi: «Gitseň – bar aman!»
+
+               Uýat eýleýir
+
+         Meňli hanym golun dişläp,
+         Bizden ki uýat eýleýir;
+         Kä daranyp, uz ýörişläp,
+         Bizden ki uýat eýleýir.
+
+         Aşyk, gulak goýgul söze,
+         Syýa zülp ýaraşar ýüze,
+         Sürme çalyp gara göze,
+         Bizden ki uýat eýleýir.
+
+         Geýipdir gyzyl-ýaşyly,
+         Bilmen nedir ýar hyýaly,
+         Göz edip ýomut, ahaly,
+         Bizden ki uýat eýleýir.
+
+             Ykbal çapmaz ýöreý diýsem,
+             Ýokdur malym, bereý diýsem.
+             «Aç roýuňy – göreý» diýsem,
+             Öwrülip uýat eýleýir.
+
+             Görüşeli Meňli hanym,
+             Istihanym, şirin janym.
+             Pyragy diýr, din-imanym
+             Ýetdirmez, uýat eýleýir.
+
+                 Barmy, ýaranlar
+
+             Yşk ýolun höwes eýläp,
+             Gelen barmy, ýaranlar?
+             Derdimi beýan etsem,
+             Alan barmy, ýaranlar?
+
+             Bolmuşam mesti-şeýda,
+             Hezar1 pişe, set söwda,
+             Älemde men deý ryswa
+             Bolan barmy, ýaranlar?
+
+             Içim dert, daşym birýan,
+             Eder men nala-girýan,
+             Meniň deý mesti-haýran
+             Galan barmy, ýaranlar?
+1 Hezar – müň.
+
+Ýalan dünýäni ýaýnap,
+Gezgil gülüp hem oýnap,
+Yşk gazanynda gaýnap,
+Ölen barmy, ýaranlar?
+
+Yşk duş bolsa bir merde,
+Toz bolar, döner gerde,
+Meniň deý özün derde
+Salan barmy, ýaranlar?
+
+Bardy halym ölümge,
+Tap etmeýen zulumga,
+Ýyglamýan halymga,
+Gülen barmy, ýaranlar?
+
+Magtymguly, jan çekse,
+Rehm etmezler, ýaş dökse,
+Yşkyň ýolunda ýoksa,
+Galan barmy, ýaranlar?
+
+                   Içmeýen jamym
+
+    Dözmenem, doýmanam, durmanam, eý ýar,
+    Bu saky1 döwründen içmeýen jamym.
+    Jamy meý sundugyň görmesin agýar,
+    Gelmenem aklyma, görmeýen känim.
+
+    Bolmuşam guwwas dek, ýüzmüşem köli,
+    Tapmyşam hemramy, tutmuşam ýoly,
+    Şowkuň şerabyndan bolmuşam däli,
+    Bilmen niçik geçer çäştim, şamym...
+
+    Tä nepes tendedir, tende jan bardyr,
+    Til saňa maýyldyr, çeşm intizardyr,
+    Çekdigim pygandyr, werzişim zardyr,
+    Käte bu dert ile geçer eýýamym...
+
+    Gözleriň jellatdyr, tilleriň aýýar,
+    Gamzaň bimar eder, ýüzleriň timar,
+    Mansur belasyna bolsam giriftar,
+    Giderem sen sary, süýreýip hamym.
+
+    Magtymguly, hoş hap2 içre ýatyrdym.
+    Emrine ugradym, iman getirdim,
+    Özümi unutdym, huşum ýitirdim,
+    Pyragy diýp çagyrsyn ol meniň namym.
+
+1 Saky – şerap guýan, içgi paýlaýan.
+2 Hap – uky.
+
+            Ýandyrar
+
+Wagt bolar ki, bir ýel düşer serime,
+Hyýal hüjüm eýläp, joşy ýandyrar;
+Ýüregim joş berse, aklym jem bolsa,
+Pikir basar, gaýgy huşy ýandyrar.
+
+Säher wagty derwüş nalyşa gelse,
+Bilinden ýüp alyp, boýnuna salsa,
+Taňry söýen bende bet doga kylsa,
+Pelegi titreder, arşy ýandyrar.
+
+Akmak özün akyl bilen deň eýlär,
+Bir iş tutar, soňrasyndan jeň eýlär,
+Zehiniň käýider, aklyň teň eýlär,
+Diýdigiň eýlemez, naşy ýandyrar.
+
+Magtymguly, hakdan piýala çekse,
+Piýala joş berse, hyýala çekse,
+Aşyklar bagryndan bir nala çekse,
+Daglary elendir, daşy ýandyrar.
+
+                          Aýryldym
+
+                Bilbilem, ahy-zar çekip,
+                Täze gülzardan aýryldym;
+                Gözden ganly ýaşym döküp,
+                Ol sewer ýardan aýryldym...
+
+                Ýara ýaraşar üç müçe,
+                Sypatyn söýlerem ençe.
+                Lebi şeker, agzy gunça,
+                Ol zülpi-tardan aýryldym.
+
+                Şirin janda ýokdur takat,
+                Jebri anyň jana rahat,
+                Gaşlary pitneýi-apat,
+                Çeşmi-hunhordan aýryldym.
+
+                Aýryldym gunça gülümden.
+                Syýa saçly sünbülimden,
+                Hoş owazly bilbilimden,
+                Şirin güftardan1 aýryldym.
+
+                Däli köňlüm arzymany,
+                Külli gözelleriň hany,
+                Sekiz jennetiň bostany,
+                Bakjaly bardan2 aýryldym.
+1 Şirin güftar – süýji sözli
+2 Bar – miwe.
+
+              Illeri bar diňli-diňli,
+              Sowuk suwly, ter öleňli,
+              Ili — gökleň, ady — Meňli,
+              Näzli dildardan aýryldym.
+
+              Magtymguly, aşyk mestan,
+              Bagladym şanyna destan,
+              Menzilgähi1 bagy-bostan.
+              Almaly nardan aýryldym.
+
+                       Ýa jepbar
+
+       Jan joşguna geldi, ýandym, ýaryldym,
+       Bagyşlasaň neýlär ýarym, ýa jepbar.
+       Sangysyz söýüşdim, öýsüz aýryldym,
+       Bagyşlasaň neýlär ýarym, ýa jepbar.
+
+       Sözleşerdim, syrlaşardym ýar bile,
+       Ýüregimde ýar hyýaly bar bile,
+       Indi läkin aýyrdylar zor bile,
+       Bagyşlasaň neýlär ýarym, ýa jepbar.
+
+       Köňül hoşdur ýada salyp gezmände,
+       Ýadyma salmanda, yşkym gyzmanda,
+       Meni gamda goýdy, özi armanda,
+       Bagyşlasaň neýlär ýarym, ýa jepbar.
+1 Menzilgäh – bolýan ýeri, mekan, öý.
+
+Yhlas bilen söýmüşem men ol ýary,
+Jöwrendi jigerim, gitdi karary,
+Ol anda ah çeker, men munda – zary...
+Bagyşlasaň neýlär ýarym, ýa jepbar.
+
+Bardy pinhan-pinhan şirin sözümiz,
+Bolan işe haýran bolduk özümiz,
+Seýrserap bakmakdan doýmaz gözümiz,
+Bagyşlasaň neýlär ýarym, ýa jepbar.
+
+Sözüm saňa ýetmez, arzym etmäge,
+Işimiň rowajy ýokdur ýetmäge,
+Dilber derdi goýmaz meni ýatmaga.
+Bagyşlasaň neýlär ýarym, ýa jepbar.
+
+Magtymguly, dünýä köne jahandyr,
+Söýüşmeklik bu dessury-zamandyr.
+Jürümim çoh bolsa, keremiň kändir,
+Bagyşlasaň neýlär ýarym, ýa jepbar.
+
+            Nowruzdan seni
+
+Bolmady bizge nesibiň,
+                   istedim güýzden seni,
+Diýdiň: ötsün gyş,
+                   tapar men täze nowruzdan seni,
+Saýladym-seçdim, sonam,
+                   bölejik gyzdan seni,
+Neçün biliň guçmadym,
+                   bildim tapyp uzdan seni,
+Isterem hakdan, gowuşdyrgaý
+                   maňa tizden seni.
+
+Söwdügim, seýa günde her gün ýadyňa
+                   salsaň meni,
+Günde ýüz katla tilär men ýaradan
+                   hakdan seni.
+Başky günde oda saldyň meni parahan
+                   bendeni,
+Hak götersin aradan şeýle rakyp
+                   şermendeni,
+Kyl bahyl bizden ýaňa, ynjytsalar
+                   sözden seni.
+
+Hak katynda sözüm ötmez,
+                   men kibi awara ýok,
+Ili-gün rehm eýlemezler,
+                   men kibi biçäre ýok,
+Ýüregim set paradyr,
+                   belli tenimde ýara ýok,
+Sen garyp sen, men pakyr men,
+                   sende, mende çäre ýok.
+Söwdügim, takdyry-hakdyr aýyrgan
+                   bizden seni.
+
+Bagyna girsem säher,
+                     bilbil bolup salsam oýun,
+Gaflata galsa rakyp,
+                     bir dem salyşsak gol boýun,
+Hakdan özge çäre ýokdur,
+                     ne kylaýmen, neýleýin,
+Inçe bil, şirin zyban,
+                     kepder topuk, sen gaz boýun,
+Saklasyn alla penahynda ýaman
+                     gözden seni.
+
+Haýryny duşman görüp,
+                    dostun çeker jebri-jepaň,
+Şeýle dildarlyk bolarmy
+                    görmeýen zowky-sapaň.
+Salsalar mizana,
+                    Balkan dagy hiç gelmez päheň,
+Aýdadyr Magtymguly,
+                    ähdiň ýalan, ýokdur wepaň,
+Biwepalar hup sowutmyşlar, sonam,
+                    bizden seni.
+
+    VI
+
+ELEGIÝALAR
+                     Azadym kany
+
+         Pelek, idär idim, sen duçar bolduň,
+         Gözümniň nurany – Azadym kany?
+         Ýüregim soguryp, seglere berdiň,
+         Şährimniň soltany – Azadym kany?
+
+         Ymamsyz galandyr, mesjit, mährabym,
+         Dogmady nur saçyp ol mahy-tabym,
+         Ýowuz galdym, sil alypdyr etrapym1 ,
+         Köňlümniň ummany — Azadym kany?
+
+         Şekerlikden zäher boldy sözlerim,
+         Zagpyran dek sargarypdyr ýüzlerim.
+         Kuwwat gitdi, gubarlandy gözlerim,
+         Münberim azany — Azadym kany?
+
+         Tört paslym nar boldy, daglar eridi,
+         Diriler uçdular, öli ýöridi,
+         Giden baryp haka maňlaý diridi,
+         Ilimniň zybany — Azadym kany?
+
+         Topraklar sil boldy, siller gum boldy,
+         Humlar jam boldular, jaýlar hum boldy,
+         Höwesler ýas boldy, pişäm gam boldy.
+         Ýüregim aramy — Azadym kany?
+1 Etrap – töwerek.
+
+Ölüler direlip, arza bardylar,
+Hakdan bir kelamny ýörüp sordular,
+Çoh ýalbaryp, «goýber» diýip durdular,
+Öli-diri döwrany — Azadym kany?
+
+Käpirler bolupdyr ýyglap musulman,
+Haka ýalbarypdyr Hydyr, Süleýman.
+Bug bolup göterlen arşa ol umman,
+Gökleňniň pälwany – Azadym kany?
+
+Armanym ýok, pelek, bir söweş kylsam,
+Ýa ýyksaň, basylsam, ýa seriň alsam.
+Seglere aş eýläp, bazarga salsam,
+Bagrymnyň reýhany – Azadym kany?
+
+Güwşlüler eşitgeç, bary ker boldy,
+Daglar eräp akdy, daşlar ýer boldy.
+Mollalar kuransyz, pirler kör boldy,
+Sahyplar kurany – Azadym kany?
+
+Zemin ýüzün syýa duman eýlediň,
+Diýgil, pelek, kimni aman eýlediň?
+Pyragyny, bak, biiman eýlediň, –
+Namysym, imanym – Azadym kany?
+
+                         Atamyň
+
+          Altmyş ýaşda nowruz güni, lu ýyly
+          Turdy ajal, ýolun tusdy1 atamyň,
+          Bu dünýäniň işi beýlemiş, beli,
+          Ömrüniň tanapyn kesdi atamyň.
+
+          Agyr döwletlere köňül goýmady,
+          Bu jahanyň eşretini söýmedi,
+          Esgýa şaldan artyk puşeş2 geýmedi,
+          Ahyret öýi boldy kasdy atamyň.
+
+          Diýrdi: dünýä durmaz, ömür-baky ýok,
+          Gündiz roza, gije bolsa uky ýok,
+          Müňkür bilmez, muhlyslaryň şeki ýok,
+          Pygamber dostudyr, dosty atamyň.
+
+          Görmesem, söýlemen oý bile çenden,
+          Maksadyna ýeter ýykylan çyndan,
+          Ýarysy melekden, ýarysy jyndan
+          Müjewürsiz bolmaz üsti atamyň.
+
+          Nukba3 diýrler, üç ýüz eren ugraşdy,
+          Çiltende atama nazarym düşdi,
+          Niçe barsam, heftenlere garyşdy,
+          Bular durar çyn peýwesti atamyň.
+1 Tusmak – gadymy türkmen dilinde tutmak.
+2 Puşeş – eşik, lybas, geýim.
+3 Nukba (birlik sany nakyb) – baştutanlar, ýolbaşçylar, serkerdeler.
+
+          Älem içre adam galmaz, at gezer,
+          Bu syrlardan jahan halky ýat gezer.
+          Jany jennet içre, gökde şat gezer,
+          Ýerde hoşwagt ýatar posty1 atamyň.
+
+          Magtymguly, gizle syryň bar içde,
+          Kämil tapsaň, kyl gullugyn her işde,
+          Magşar güni, elbet, girer behişde,
+          Her kim çyndan bolsa dosty atamyň.
+
+                    Mübtela kyldy
+
+                 Eýa dostlar, pelek jebri
+                 Başymny mübtela2 kyldy.
+                 Aýyrdy söwer balamdan,
+                 Ýüregimni ýara kyldy...
+
+                 Ötdi hoş wagt, horram wagtym,
+                 Bozuldy tylladan tagtym.
+                 Ýaňy biten bir daragtym
+                 Hazan bady3 pena kyldy...
+1 Post – deri, ham, jeset.
+2 Mübtela – aladaly, başagaý.
+3 Hazan bady – hazan ýeli.
+
+                 Şum ajala bolmaz çäre,
+                 Jebrinden galdym bu zara,
+                 Ýüregime saldy ýara,
+                 Garyp jismim eda kyldy.
+
+                 Indi bir dem kararym ýok,
+                 Bu menzilde durarym ýok,
+                 Bu sözden hiç habarym ýok,
+                 Habarsyz binowa kyldy.
+
+                 Ýanyp perwana dek her dem,
+                 Ýüregim dolduryp ýüz gam,
+                 Kaddym ham1 , gözlerim pürnem2 ,
+                 Bu janyma jepa kyldy.
+
+                 Gamyndan örtenip suzan3 ,
+                 Çeker men nalaýy-efgan,
+                 Pyrakynda4 gözüm girýan,
+                 Neteý, neýleý, geda kyldy...
+
+                 Magtymguly, çeker perýat,
+                 Meniň ahwalyma heýhat!
+                 Pelekniň elgiden5 müň dat,
+                 Meniň bagtym gara kyldy...
+1 Ham – egri, bükük.
+2 Pürnem – ýaşdan doly.
+3 Suzan – ýakyjy, ýandyryjy.
+4 Pyrak – aýralyk
+5 Elgiden – elinden
+
+               Yzlamaýan bolarmy
+
+         Bir käkilik aldyrsa türpe balasyn,
+         Saýraý-saýraý, yzlamaýan bolarmy?
+         Bir bilbil ýitirse gyzyl lälesin,
+         Hasratyndan sözlemeýen bolarmy?
+
+         Kürresi elinden gitse eşegiň,
+         Telmirip tört ýana gözlär uşagyn,
+         Akmaýa aldyrsa elden köşegin,
+         Bagryn bozup, bozlamaýan bolarmy?
+
+         Bala sesin diňlär, asyp gulagyn,
+         Döke-döke göz ýaşynyň bulagyn,
+         Ak jeren aldyrsa elden owlagyn,
+         Mäleý-mäleý, gözlemeýen bolarmy?
+
+         Agsagyň elinden alsaň agajyn,
+         Ýaman derde düşer, tapmaz alajyn,
+         Bir güýçli duşmana duşsa mekejin,
+         Jojugyny gizlemeýen bolarmy?
+
+         Aýralyga adam ogly neýlesin?
+         Kim galar, görmeýen ajal hilesin?
+         Magtymguly, haýwan bilse balasyn,
+         Ynsan bagryn duzlamaýan bolarmy?1
+
+1 «Adam ogly ýyglamaýan bolarmy?» diýen warianty hem bar.
+
+           Gelmedi
+
+Göçi-gony bile gitdi Abdylla,
+Hemme giden geldi, bular gelmedi.
+Mämmetsapa gitdi kömek bermäge,
+Uzadanlar geldi, bular gelmedi.
+
+Enesinden aýry ýatmaz oglanlar,
+Ýa reb, gören barmy bulardan, iller?
+Aýlanar aýlary, dolanar ýyllar,
+Aýlar, ýyllar geldi, bular gelmedi.
+
+Hasratdan sagaldy zäher dadanlar,
+Hakyn alyp geldi goýun haýdanlar,
+Alty aýlyk ýola – Käbe gidenler
+Hajy bolup geldi, bular gelmedi.
+
+Ýyrakdan, ýakyndan baryp gelenler,
+Barmydyr bulardan görüp-bilenler?
+Hindistana bezirgenlik kylanlar,
+Malyn satyp geldi, bular gelmedi.
+
+Darydy bir doly, ýolukdy baran,
+Birin ýurdy bilen eýledi weýran,
+Birisiniň ýary yzynda haýran,
+Gözleri ýoldadyr, bular gelmedi.
+
+Ýykylanyň bagry ýerden galmazmy?
+Hiç baran gelmezmi, aglan—gülmezmi?
+Ötenden-geçenden sorsaň, bilmezmi?
+Bilinmezler geldi, bular gelmedi.
+
+Magtymguly, derdi goýmaz ýatmaga,
+Ugrun bilmez sorap-sorap gitmäge,
+Ýerden jogap çykmaz habar tutmaga,
+Gören-bilen barmy, bular gelmedi.
+
+  Çekem Ýusup diýe-diýe
+
+   Men Ýakubam, ah-u zary
+   Çekem Ýusup diýe-diýe;
+   Gözlerimden ganly ýaşy
+   Dökem Ýusup diýe-diýe.
+
+   Pelek aglar göz ýaşyma,
+   Ne söwda saldyň başyma,
+   Mejnun bolup, dag başyna
+   Çykam Ýusup diýe-diýe.
+
+   Her tarapdan çülke-çülke,
+   Bulut oýnar, salar kölge,
+   On iki dag, ýedi jülge
+   Sökem Ýusup diýe-diýe.
+
+Gitdi Ýusup, gelmez habar,
+Aglap turar men her säher,
+Gala-gala, şäher-şäher
+Sökem Ýusup diýe-diýe.
+
+Hasratyma pelek aglar,
+Aşyk boldy tilsiz zaglar,
+Perhat kimin beýik daglar
+Ýykam Ýusup diýe-diýe.
+
+Öter eýýam döne-döne,
+Geçer bu jan ýana-ýana,
+Ertir-agşam Aýa, Güne,
+Bakam Ýusup diýe-diýe.
+
+Meger Ýusup düşdi çaýa,
+Jemalyň diýp bakam Aýa,
+Yrak zemin, Kerbelaýa
+Bakam Ýusup diýe-diýe.
+
+Ýusup gezer tilden-tile,
+Şeýda bolup gülden-güle,
+Sorag salyp, ilden-ile
+Çykam Ýusup diýe-diýe.
+
+Magtymguly, dost ýüzünden,
+Durmaz akar ýaş gözünden,
+Bilbil bolup, ýar sözünden
+Okam Ýusup diýe-diýe.
+
+             Abdylla
+
+Sen gideliň dokuz ýyldyr öteni,
+Kaýda watan tutduň, gardaş Abdylla!
+Dolanmazmy ynsanyýetiň gideni,
+Kaýda watan tutduň, gardaş Abdylla!
+
+Daga arzym aýdyp, tutdum habaryň,
+Lal bolupdyr tili, diýmez azaryň,
+Ata-enesiz nedir seniň kararyň?
+Kaýda watan tutduň, gardaş Abdylla!
+
+Gorky peýdasy ýok gidejek jana,
+Ömür ahyr boldy, doldy peýmana,
+Ýa-da sen düşdüňmi düýpsüz ummana?
+Kaýda watan tutduň, gardaş Abdylla?
+
+Üstümize hijran ody sepildi,
+Kuwwatym gidipdir, dyzym epildi,
+Gan ýyglap, atamyň bili büküldi,
+Kaýda watan tutduň, gardaş Abdylla.
+
+Ýüzüm tutup çykdym jandar baryna,
+Özüm rowa geldim hijran daryna,
+Döze bilmen beýtinleriň zaryna,
+Kaýda watan tutduň, gardaş Abdylla.
+
+       Ilde-günde ýokdur meniň kararym,
+       Dert üstüne artdy gaýta azarym,
+       Ýat boldy watanym, öýüm-öwzarym,
+       Kaýda watan tutduň, gardaş Abdylla?
+
+       Güwş1 tutar men her diýilen sözlere,
+       Jepa berdiň hijran bilen bizlere,
+       Özüm urar boldum oda-közlere,
+       Kaýda watan tutduň, gardaş Abdylla?
+
+       Gülüp-oýnamadyk bile şat bolup,
+       Başdan gitdiň, bütin bizden ýat bolup,
+       Magtymguly zar aglapdyr, mat bolup,
+       Kaýda watan tutduň, gardaş Abdylla?
+
+                 Çowdurhan üçin
+
+       Ahmet patyşadan habar almaga,
+       Umyt etdi iller Çowdurhan üçin,
+       Sag baryp, salamat gaýdyp gelmäge,
+       Oňmady ykballar Çowdurhan üçin.
+
+       Ýaplar doňup galdy, ýagyşlar syzman,
+       Bulut bökelek saldy, bu derde dözmän,
+       Zemin zaýa boldy, pelekler perman,
+       Gözde ýaşy siller Çowdurhan üçin.
+1 Güwş – gulak
+
+       Kaza gahra mündi, perin syndyrsa,
+       Pelek hyýal etdi, mährin indirse,
+       Derýa joşa geldi, suwun gandyrsa,
+       Muştak boldy köller Çowdurhan üçin.
+
+       Yzyňda boldular il intizaryň,
+       Umyt bile gezdi Annahal ýaryň,
+       Atanazar boldy çekerge zaryň
+       Gözleý-gözleý ýollar Çowdurhan üçin.
+
+       Barsa, paýy belli soltanda, handa,
+       Iller bilmeý galdy, armany janda,
+       Kazadyr, kysmatdyr Ýeztde, Kirmanda,
+       Meger tartdy ganlar Çowdurhan üçin.
+
+       Gurralar güň boldy, dallar şum boldy,
+       Ýaranlar kem boldy, ýollar bim1 boldy,
+       Çeşmeler höşk boldy, daşlar gum boldy,
+       Güwýä2 boldy tiller Çowdurhan üçin.
+
+       Söýle, Magtymguly, älem bilsinler,
+       Jaýy jennetdedir, güwä bolsunlar,
+       «Hak rehmet etsin» diýp, doga kylsynlar
+       Tamam ulus-iller Çowdurhan üçin.
+
+1 Bim – gorkuly.
+2 Güwýä – saýraýan, gepleýän manysynda.
+
+           Geçdi diýdiler
+
+Eý ýaranlar, ýowuz destan tapyldy,
+Bir goçak panydan geçdi diýdiler.
+Ahyrzaman boldy, aý-gün tutuldy,
+Aý-günüň şuglasy ýaşdy diýdiler.
+
+Nägehan ugrady aýralyk dagy,
+Seýdim tarhan çeker derdi pyragy,
+Ömrüniň hasyly, otuz çyragy,
+Bady-hazan urup öçdi diýdiler.
+
+Gitdi Öwez, geldi ýene köp zatlar,
+Pozuldy söhbetler, gam boldy şatlar,
+Gardaşlar, syrdaşlar, ýakynlar, ýatlar
+Gara geýip, gan ýyglaşdy diýdiler.
+
+Bedew atly, bek kemerli, ýaragly,
+Döwleti, zynaty malyna bagly.
+Myhmanly bir ärdir, zatly, otagly,
+Bir belent ordasy çaşdy diýdiler.
+
+Ýigitlik hasraty başdan ötermiş,
+Ogulsyzlyk barça işden betermiş,
+Zürýatsyz ýigidiň orny ýitermiş,
+Ýurdy ýok, kerweni geçdi diýdiler.
+
+Magtymguly diýr, Türküstan töresi,
+Bir goçakdyr ýeriň, suwuň seresi,
+Ýygyn görki, ýow gününiň öresi
+Üşbu gara ýeri guçdy diýdiler...
+
+          Zarlar içinde
+
+Çowdurhan görejim, köňül diregim,
+Sen wepat bolup sen zarlar içinde,
+Gökleňde pälwanym, ile geregim,
+Halky goýup gitdiň narlar içinde.
+
+Gele bilmez idi badyňdan duşman.
+Gelen tapdy gitdi zoruňdan puşman,
+Goja dagdan bäri, gökleňe aşman,
+Bizi goýup gitdiň marlar içinde.
+
+Pelek seniň gül ömrüňi soldurdy,
+Hazan degdi, now gunçaňy ýoldurdy,
+Gara daglar dözmen, serin galdyrdy,
+Çeşmim ýaşy duman-garlar içinde.
+
+Magtymguly, hemdem, akyl syrdaşyň,
+Tutabilmez özün, döküp göz ýaşyn,
+Duman aldy daglar – kemeriň başyn,
+Aý-günler batdylar zarlar içinde.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Neýläýin',
+    'Köňlüm istär, gezsem dünýä-älemi,
+          Ganatym ýok, uça bilmen, neýläýin!
+          Okyr men, görer men barça kelamy,
+          Manysyny saça bilmen, neýläýin!
+
+          Köpler onda guwwas1 bolup ýüzerler,
+          Maňa zahyr2 , halkdan pinhan gezerler,
+          Gül badada gülgün şerap ezerler,
+          El uzadyp, içe bilmen, neýläýin!
+
+          Öý daşyndan şerap ysyn noş kyldym,
+          Gitdi aklym, özüm bilmeý, joş kyldym,
+          Meý mest boldum, dersiz3 gapa duş geldim
+          Rugsat bolmaý, aça bilmen, neýläýin!
+
+          Ýitdi ýolum, dag kaýsydyr, düz kaýsy,
+          Aňmaz köňlüm, magny kaýsy, söz kaýsy;
+          Pähm eýlemez, ýol kaýsydyr, yz kaýsy,
+          Umyt üzüp, gaça bilmen, neýläýin!
+
+          Magtymguly, bu dünýäniň namysyn,
+          Ýygyp-düýrüp, ýele berdim hamysyn!
+          Pikir derýasyna aklyň gämisin
+          Batyrmyşam, çyka bilmen, neýläýin!
+1 Guwwas – suwa çümüji, wodolaz.
+2 Zahyr – açyk, aýan.
+3 Dersiz – gapysyz, işiksiz.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Bilmezmiň',
+    'Galam alyp, namany1 gönderdigim bilmezmiň?
+Efsun2 urup, hüthütni inderdigim bilmezmiň?
+Arş üstüne galdyryp, mündürdigim bilmezmiň?
+Tört gije, üç gün aglap, diňdirdigim bilmezmiň?
+Eşek münüp, Isa dek ýeldirdigim3 bilmezmiň?
+
+Mejnun kibi sährada aglaý-aglaý gezdigim,
+Gözüm ýaşyn merjen deý düzüm-düzüm düzdügim,
+Warka kimin Gülşadan ölüp, umyt üzdügim
+Joşgun berip yşk odun, gaýnap-gaýnap gyzdygym,
+Şibli kibi bir dagy ýandyrdygym bilmezmiň?
+
+Hüthüt kimin Pereňden Çyn-Maçyn diýp bardygym,
+Bag içinde Bylkysyň saçyn açyp gördügim,
+Süleýmanyň tagtyndan sözläp, habar berdigim,
+Guş gonsun diýp başymga, bilbil heňin gurdugym,
+Çarşenbe gün çaş wagty gondurdygym bilmezmiň?
+
+Surahnyň4 arkasynda Mejnun gurdy jadyny,
+Bismilla diýp başlady, çagyrdy ustadyny,
+Hakdan gaýry bir kimse eşitmedi dadyny,
+Kyrk aşyk nagra çekip, şugla urdy oduny,
+Göz ýaşymdan suw alyp, söndürdigim bilmezmiň?
+1 Nama – hat.
+2 Efsun – owsun.
+3 Elmek – ýüwürmek, çapmak, ylgamak.
+4 Surah – gowak, gädik, deşik.
+
+Şirwan hanyň söwdasy ne ajaýyp söwdadyr!
+Gyldan bir ýan agdyrsa, kyýamat gün ryswadyr,
+Ýüz ýigrimi sap gurlup, her sapda bir gowgadyr,
+Aşyklygyň joşguny akmaz uýgun derýadyr,
+Bir jurgadan1 kyrk aşyk gandyrdygym bilmezmiň?
+
+Ýetilmemiş şunkarym, gamyş ganat-ak türpek,
+Dünýä meni taýdyrdy, bir ýanym etdi urpak,
+Jany jiger köýüban, tartar, gan goýmaz torpak,
+Her tikenden ýüz gunça, her kyrk gülden bir ýarpak,
+Dagy-daşy eleýip, öndürdigim bilmezmiň?
+
+Magtymguly, sözleýir, dokuz pelek Zöhresi,
+Ýedi ýyldyz gardaşy, Aýyň, Günüň parasy,
+Nury-didäm2 ýagtysy, ak gözümiň garasy,
+Aby-zemzem çeşmesi, Sapa, Merwe arasy;
+Süleýman dek ähdimni syndyrdygym bilmezmiň?
+
+1 Jurga – owurt suw, damja.
+2 Dide – göz.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Islärin',
+    'Kerem etseň, kadyr alla,
+                Dünýälikde at islärin.
+                Talygym1 ukuda galmyş,
+                Bir açylgan bagt islärin.
+
+                Ýoksullyk bir ýaman ýoldur,
+                Pakyr menem, golum galdyr,
+                Halal ryzk, bir kesp bildir,
+                Kimýa2 atly ot islärin.
+
+                Ýalan dünýäde ýörmäge,
+                Döwlet ber, aşret sürmäge,
+                Ömür ekläp, gün görmäge,
+                Segsen ýyl pursat islärin.
+
+                Pyragy, yşka ugraşdym,
+                Derýa girdim, möwje3 düşdüm,
+                Hor galmasyn puştdan-puşdum
+                Berkarar döwlet islärin.
+
+1 Talyg – täleý, ykbal.
+2 Kimýa – alhimiýa.
+3 Möwç – tolkun.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Joşa düşüp sen',
+    'Gel, köňül, gözlegil älem-jahany,
+           Näden üçin beýle joşa düşüp sen?
+           Älemde bir sen dek ýokmy dahanly1 !
+           Syryň destan eýläp, paşa düşüp sen.
+
+           Seniň kimin ýokmy? – diýip, – dünýäde
+           Sökseler, neýlär sen, sen namyrada!
+           Şeýle güýçlendimi yşkyň zyýada?
+           Hetdiň bilmeý, aşa-aşa düşüp sen!
+
+           Gadam goýsaň sähralara, çöllere,
+           Köňül gaýnap, söz joş eder tillere,
+           Iller saňa haýran, sen hem – illere,
+           Ýa aklyň aldyryp, çaşa düşüp sen!
+
+           Baka2 ýokdur söhbediňe, sazyňa,
+           Ygtybar ýok, gyş günüňe, ýazyňa,
+           Sen bu derdi ýowutmazdyň özüňe,
+           Owwaly gerek däl nişe düşüp sen.
+
+           Magtymguly, hemme ýola baş urduň,
+           Çohlar bilen gezdiň, oturdyň, turduň,
+           Ýalançydan ne hezl etdiň, ne gördüň?
+           Imdi gör: otuz tört ýaşa düşüp sen.
+
+1 Dahan – agyz.
+2 Baka – hemişelik.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Ýyglap geçer halymga',
+    'Giň göwrämi gam basypdyr özünden,
+           Baş hem gelse, ýyglap geçer halymga;
+           Bagyr ýaşyn köňül döker gözünden,
+           Gaş hem gelse, ýyglap geçer halymga.
+
+           Garrylyga döndär ýigit çaglary,
+           Geda eýlär täç eýesi begleri,
+           Gurşun dek eridir Kap dek daglary,
+           Daş hem gelse, ýyglap geçer halymga.
+
+           Älem içre bir ah ursam, bir zarba,
+           Eda bolmaz ynsan gelmez bir gurba,
+           Gaplaň güýçden galar, däner gurt gürbä1
+           Guş hem gelse, ýyglap geçer halymga.
+
+           Puşmanda men eden-etmiş kärimden,
+           Biperwaýam bolan-bolmuş barymdan,
+           Ýoldaş bolan ýata bilmez zarymdan,
+           Daş hem gelse, ýyglap geçer halymga.
+
+           Hak yşykdyr bizni goýan közlere,
+           Bu közlerdir kysmat bolan bizlere,
+           Bilbil tilsiz galar, barsam ýazlara,
+           Gyş hem gelse, ýyglap geçer halymga.
+1 Gürbe – pişik.
+
+          Aňlamaýan yşk derdiniň käninden1 ,
+          Bir söz geçmez, herne etseň ýanyndan,
+          Yşka düşen umyt üzer janyndan,
+          Läş hem gelse, ýyglap geçer halymga.
+
+          Pähm eýleýen Magtymguly sözüni,
+          Derde düşüp, ýaşa doldyr gözüni,
+          Şat gelenler tuta bilmez özüni,
+          Hoş hem gelse, ýyglap geçer halymga.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Baradyr',
+    'Gam dumany basyp garyp köňlümni,
+          Göz ýaşyn saklamaý, döküp baradyr;
+          Kimdir rehm eýleýip soran halymny?
+          Bozuk köňlüm erkin ýykyp baradyr...
+
+          Gerçe ot ýaksalar aşyk ýagyndan,
+          Ölüm asan erer dost pyragyndan2 ,
+          Hijran meni goýdy sabyr dagyndan,
+          Pyrak bogum-bogum söküp baradyr...
+
+          Ol döwri-döwranym çarh bulaşdyrdy,
+          Gam meni guratdy, ot tutaşdyrdy,
+          Yşk meni ýandyrdy, hetden aşdyrdy,
+          Ýüregim içimden çykyp baradyr...
+1 Kän – hazyna, magdan.
+2 Dost pyragyndan – dostdan aýrylmakdan.
+
+           Parahat ýatyrdym, nebsimi besläp,
+           Turdy köňlüm, ýar jemalyn höwesläp,
+           Hakdan hajat diläp, myradyn isläp,
+           Gözüm ol ýollara bakyp baradyr...
+
+           Magtymguly, mejalym1 ýok, sözläýin,
+           Dostlarga derdimni beýan eýläýin.
+           Eý ýaranlar, ýyglamaýyn neýläýin?
+           Yşk meni ýandyryp, ýakyp baradyr...',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Galyp men',
+    'Jahyllygyň joşy çykdy başymdan,
+           Men ol joşdan haly2 bolup galyp men.
+           Bir gama ulaşdym, gitdim huşumdan,
+           Bu dert bilen doly bolup galyp men.
+
+           Başym ýüz höwesde, köňlüm joşgunda,
+           Girdaba düşüp men däli-daşgynda,
+           Nejt dagyna gezem Mejnun yşkynda
+           Ýanar otly Leýli bolup galyp men.
+1 Mejal – pursat, hal, ýagdaý.
+2 Haly – boş.
+
+           Ýigitlik paslyny gyşa ýetirdim,
+           Kämillik keştisin1 derýa batyrdym,
+           Beýik pikre galdym, aklym ýitirdim.
+           Tirik erken, öli bolup galyp men.
+
+           Bu dünýäni göçüp bargan göç bildim,
+           Işini bet aňdym, özün puç bildim,
+           Öňün oýun gördüm, soňun hiç bildim,
+           Halk içinde däli bolup galyp men.
+
+           Magtymguly, paş eýlegil sözüňni,
+           Pelek muşty häk2 etmeýen gözüňni,
+           Bu wagta deň ýaş bilirdiň özüňni,
+           Imdi gör-bak: uly bolup galyp men.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Daşlar bile',
+    'Köňül aýdar halkdan galyp,
+              Gezsem daglar, daşlar bile;
+              Ýazygymny ýada salyp,
+              Ýüzüm ýuwsam ýaşlar bile.
+
+              Kimni görsem bir pişede,
+              Meniň köňlüm endişede,
+              Gähi ser, içre köşede,
+              Otursam agaçlar bile.
+1 Keşti – gämi.
+2 Muşty häk – gysym gum.
+
+              Garry dünýä al içinde,
+              Adamzat hyýal içinde,
+              Jahan galmagal içinde,
+              Her kim ýüz talaşlar bile.
+
+              Alla yşkyda ser mestler,
+              Duwuş gelmez zeberdestler1 ,
+              Köňül perwaz eder, dostlar,
+              Durmaz ýüz alaçlar bile.
+
+              Köp köýler bile oturdym,
+              Bilmedim, ne iş bitirdim,
+              Gümra bolup, ýol ýitirdim,
+              Oturdym biweçler bile.
+
+              Bikär goýma ömür tagty,
+              Oýandyrsak oýmuş2 bagty;
+              Doga kylyp säher wagty,
+              Nalyş kylsam guşlar bile.
+
+              Magtymguly, towpyk3 alsam,
+              Bir är tapsam, gulluk kylsam,
+              Ýürek aýdar: ýoldaş bolsam
+              Dem çeken derwüşler bile.
+
+1 Zeberdest – eli üstün, güýçli, başarjaň.
+2 Oýmuş – uklan, ýatan.
+3 Towpyk – kömek.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Ýar bizim sary',
+    'Gulzumy1 gyrsanyp kyrk ýol geçer men,
+         Eger ki meýl etse ýar bizim sary;
+         Gadam ýerne ganat baglap uçar men,
+         Diýse dilber: «Aşyk, ýör bizim sary».
+
+         Kyrk ýyl gol gowşuryp, gullukda dursam,
+         Alty günçe görmen, altmyş ýyl ýörsem,
+         Bir şunçakly bolsa, görsem, jan bersem,
+         Jemalyn arz etse bir bizim sary.
+
+         Ne laýykly ýüzüm bardyr tutarga,
+         Ne aýry gapym bar onda giterge?
+         Umyt bar goýnunda bile ýatarga,
+         Dergahyndan açsa der2 bizim sary...
+
+         Bir kimse ýolukdy desti3 şeraply,
+         Ýelden jaýnamazly4 , suwdan mähraply,
+         Egni ak redaly5 ýaşyl nykaply
+         Ugraşdy bir ajap är bizim sary.
+1 Gulzum – Müsür bilen Arabystan aralygynda bolan Gyzyl deňiz.
+2 Der – gapy, işik.
+3 Dest – el.
+4 Jaýnamaz – namazlyk.
+5 Reda – don.
+
+         Ýoldaş bolup bile ýördüm bir meýdan,
+         Meýdan içre dolup oturmyş merdan,
+         Bir eýwan üstünde çyrlap tört ýerden,
+         Diýdiler: «Goluňny ber bizim sary!».
+
+         «Pyragy!» diýp çagyrdylar, eltdiler,
+         «Kandadyň?» diýp, gulagymdan tutdular,
+         Istihanym1 altmyş para etdiler,
+         Diýdiler: «Mert olsaň, ýör bizim sary!»
+
+         Magtymguly bäş gün aşret sürmäge,
+         Jaý imesdir eglenmäge, durmaga,
+         Kararym ýok oturmaga, turmaga
+         Agzyn açyp durmuş ýer bizim sary.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Bolmasa',
+    'Her kim suluw men diýr, ygtybar olmaz,
+           Sünbül saçy, gylça bili bolmasa;
+           Ýürekleri at başy dek batyrlar,
+           Hatynça ýok, at-ýaragy bolmasa.
+
+           Näler görejekdir bu şum köňüller.
+           Hazan ursa, solar açylan güller,
+           Bag içre saýraşan şeýda bilbiller,
+           Torgaýça ýok, gonar güli bolmasa.
+1 Istihan – süňk.
+
+Sözleseň, her ýana öwser bu tiller,
+Ýel urpakdan aşsa, şuwlar şemallar,
+Ýaşylbaş sonalar, gazlar garkyllar,
+Haly-harap düşer köli bolmasa.
+
+Guşlar uça bilmez guruk-ganatsyz,
+Aşyk ýara ýetmez dady-perýatsyz,
+Bir bedew hanazat bolar syýaksyz,
+Gurugy, käkili, ýaly bolmasa.
+
+Ahyrzaman bolsa, şyhdan päl gaçar,
+Kelamnyň ýüzünden hat galman öçer,
+Meýdandaky suwsuz aryga ogşar –
+Her kimniň sahawat-haýry bolmasa.
+
+Başyň goşma gadyr bilmez bezzada,
+Goşsaň, goşgul aşyň bir asylzada,
+Howada ýagmazak meňzär buluda, –
+Her kimiň hümmeti, haýry bolmasa.
+
+Magtymguly, biliň, şundag zamandyr,
+Şindi haýyr bolsa, soňra zyýandyr,
+Är ýigidiň içi doly armandyr, –
+Gara göz, inçe bil ýary bolmasa.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Mala seretmez',
+    'Owwal-a mal ýagşy, maldan baş ýagşy,
+         Baş döwletin tapan mala seretmez;
+         Dogmadyk oguldan dogan är ýagşy1 ,
+         Nadan ogul atasyna seretmez.
+
+         Atda aýak bolsa, özge syn bolmaz,
+         Ärde gaýrat bolsa, işi kyn bolmaz,
+         Söweş güni goç ýigitde müýn bolmaz,
+         Garşy bakar, peýkam-ýaýa seretmez.
+
+         Alaman öňüni serdary başlar,
+         Goç ýigitler naýza urar, gylyçlar,
+         Kimseler bukulyp, kimse at uşlar,
+         Abyraý tapmasa, paýa seretmez.
+
+         Är-dostdan gaçarlar, adam aç galsa,
+         Ýar-ýardan aýrylar, ara daş galsa,
+         Ýaman hatyn ýagşy ýigide duş bolsa,
+         Başyny terk eder, daýa seretmez.
+
+         Köne dünýä muhannesiň öýüdir,
+         Süýthor bolan kesiň dowzah jaýydyr,
+         Altyn, kümüş gözlerimiň maýydyr2 ,
+         Goç ýigitler bozuk jaýa seretmez.
+1 «Dogmadyk oguldan duşman är ýagşy» diýen nusga hem bar.
+2 Maý – ýag.
+
+          Dünýä görki näzeninler, ne janlar,
+          Nadana ýolukdy türpe1 jenanlar.
+          Ýardan galan, äri ölen juwanlar
+          Goç ýigidi gözlär, baýa seretmez.
+
+          Magtymguly, garyp göwnün baý edip,
+          Kanagat ülkesin bendi-jaý edip,
+          Her kim öz ýaryny dogan aý edip,
+          Aýyn gözlär, özge aýa seretmez.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Duz hem bolmasa',
+    'Togsan dürli tagam bolsa gaşynda,
+          Ne lezzet, içinde duz hem bolmasa;
+          Näbiler sen ne iş bardyr başynda,
+          Müşgil işdir, başda göz hem bolmasa...
+
+          Aýak bar ýörmäge, el bar almaga,
+          Kany bende, saglyk şükrün kylmaga,
+          Gulak bardyr eşitgenin bilmäge,
+          Kim düzeder, dilde söz hem bolmasa?
+
+          Ýok ýerden jan berip ýetirdi nany,
+          Göwün bostanyda bitger imany,
+          Adyň bende bolsa, eýäňi tany,
+          Gelip saňa ýüzbe-ýüz hem bolmasa.
+1 Türpe (turpa) – gözel, ter.
+
+          Kysmatyn hak bilen ryzkyn yzlamaz,
+          Söz bilenler bilen sözün gizlemez,
+          Köňül joşa gelmez, dil hem sözlemez,
+          Her ýürekde yşkdan göz hem bolmasa.
+
+          Ýyl-ýyldan pezihat1 artar eýýama,
+          Hakyň özi getirmese enjama,
+          Dünýä sözi meňzär duzsuz tagama,
+          Söz içinde gelin-gyz hem bolmasa.
+
+          Ýum gözüňi, gysyp gezgin dişiňni,
+          Ýaza ýetseň unutmagyn gyşyňny,
+          Töwekgel et, taňra tabşyr işiňni,
+          Sabyr bilen biter, tiz hem bolmasa.
+
+          Magtymguly, hyýal düşüp özüme,
+          Köp tomaşa gelip geçer gözüme,
+          Eşidenler aýp etmesin sözüme,
+          Iller kimin sözüm uz hem bolmasa.
+
+1 Pezihat – erbetçilik, biabraýlyk, masgaralyk.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Çykypdyr',
+    'Hak tagala, bu ne-niçik ahwaldyr,
+          Dury diýip içdigim gumly çykypdyr;
+          Ne ýeser beýhuda şum keç ykbaldyr,
+          Halal diýip iýdigim jimli çykypdyr.
+
+          Kimse syrym bilmez, özün öldürse,
+          Pakyr bendelerge taňry bildirse,
+          Ile şatlyk, şadymanlyk güldürse,
+          Maňa hemra bolan gamly çykypdyr.
+
+          Amuhta1 men örtenmäge, bişmäge,
+          Kişi ýok sözleşip, dert aýdyşmaga,
+          Oba ujundan barsam öý soraşmaga,
+          Ýa laldyr, ýa agzy mumly çykypdyr.
+
+          Menden şikat eder elim gerenim,
+          Galbyrdan2 şal çykar syrym berenim,
+          Pir diýip paşmagna elim uranym,
+          Deprenende, döwden demli çykypdyr.
+
+          Magtymguly, hasaby ýok görenim,
+          Tama edip, umyt elim gerenim,
+          Obasyna ärmiş diýip baranym
+          Etegne el ursam.., çykypdyr.
+
+1 Amuhta – taýar, çulum, öwrenişikli, endikli.
+2 Galbyr – elek.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Bary bolmasa',
+    'Zamana beýledir, göze ilmezler,
+Her ýigidiň golda bary bolmasa.
+Ýüz tümenlik sözün şaýa almazlar,
+Her kişiniň ygtybary bolmasa!
+
+Ten bir dar kapasdyr, jan bir wagşydyr,
+Tile gelen sözler köňül nagşydyr,
+Otly, suwly tamug andan ýagşydyr,
+Her ýuwurdyň bir bazary bolmasa.
+
+Begzadalar galdy çopan tährine,
+Ten haçan döz getir ýylan zährine,
+Bibat olup döner Lutuň şährine,
+Her ülkäniň häkim äri bolmasa.
+
+Dünýäde aňlardan aňlamaz kändir,
+Bilmezler beladyr, bilenler jandyr,
+Ol ýigitler adam tilli haýwandyr,
+Söz aňmasa hem ykrary bolmasa.
+
+Ýigide ýoksullyk ýaman beladyr,
+Sözüni deň-duşdan gaýra saladyr,
+Ýaman gylyk dosty duşman kyladyr,
+Guryp galsyn, il derkary bolmasa.
+
+                 Hak her kime bir ýagşy ýar bermändir, —
+                 Sözi akdyr, içi doly armandyr,
+                 Ýüz ýaşasa, bäş gün döwran sürmändir,
+                 Her kimniň mynasyp ýary bolmasa.
+
+                 Magtymguly, haka tabşyr özüňni,
+                 Her namarda sarartmagyl ýüzüňni,
+                 Terhosym bar, gel terk eýle sözüňni, —
+                 Näge gerek, hyrydary bolmasa.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Düýşüne degmez',
+    'Ýoksuzlykda niçeleriň döwrany,
+                 Ýatyp ýagşy gören düýşüne degmez;
+                 Niçeler hasretde tapyp höşk1 nany,
+                 Bir lezzetli tagam dişine degmez.
+
+                 Soran bolsa, synam içre sözler bar,
+                 Müň tümenden ýegdir, niçe ýüzler bar.
+                 Neýsansyz2 , nebatsyz3 niçe ýazlar bar, –
+                 Hoşluk bilen geçen gyşyna degmez.
+       1 Xöşk – gury.
+       2 Neýsan — ýaz wagtynda ýagýan ýagyş; grekçe aýlarynyň biriniň
+
+ady.
+       3 Nebat – ot, ösümlik.
+
+          Akyllar bar, başa baglap keçeler,
+          Içgin-içgin sorsaň, magny saçalar,
+          Akmaklykda özün bezäp niçeler, –
+          Kellesine saran peşine degmez.
+
+          Aňlamaza aýat sözlerin diýseň,
+          Pygamber hadysyn öňünde goýsaň,
+          Gyýmazlykdan köp söz beýnine guýsaň,
+          Bu sözler gulagnyň daşyna degmez.
+
+          Ynjatsa ogul-gyz, ene-atasyn,
+          Toba kylmaý taňrym geçmez hatasyn,
+          Döwran gelse, bilmez ne iş tutasyn,
+          Her kimiň her işden başyna degmez.
+
+          Niçeler mal tapmaz, teňňi-dest1 bolar,
+          Niçeler bar, dünýälikde mest bolar,
+          Niçeler bar, ýigitlikde nist2 bolar,
+          Niçeler bar, süren ýaşyna degmez.
+
+          Magtymguly, gerçe işim namazdyr,
+          Köňlüm perişandyr, sähwüm3 derazdyr4 ,
+          Adam bar, müň tümen iýdirseň azdyr,
+          Adam bardyr, iýen aşyna degmez.
+
+1 Teňňi-dest – eli gysga, goly teň, pes
+2 Nist – ýok.
+3 Sähw – ýalňyş.
+4 Deraz – uzyn, köp.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Görner',
+    'Dogry bakmazlar julluýa,
+Göze gyzyl donly görner;
+Söze pähm etmez akmaklar,
+Öz ýanyndan tilli görner.
+
+Başa degmänkä gurtlar.
+Kast etmäň, gerekdir ýurtlar,
+Ýagyda tanalar mertler,
+Il içinde mally görner.
+
+Pikr et, başa iş düşende.
+Yssy ýokdur, soň puşmanda,
+At meýdanda, är duşmanda,
+Toýda tirme-şally görner.
+
+Jany sagyň sözlär tili,
+Jomardyň dek durmaz eli.
+Her kişiniň öz akyly
+Özüne kemally görner.
+
+Gadymdan setdir ýagşylyk,
+Ýagşy zatdyr ýagşy gylyk,
+Mert ýigide az ýagşylyk,
+Az hem söýgüli görner.
+
+               Gel, akyl dolandyr indi,
+               Ýürek peýwendi, jan bendi,
+               Her kişiniň öz perzendi
+               Özüne jemally görner.
+
+               Magtymguly, söz binýadyň1
+               Agzynda ýakynyň-ýadyň;
+               Hünär ýok söz bilen adyň
+               Halk içinde belli görner.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Tapylmasa',
+    'Dok dalaşar sebze2 halgat3 geýmäge,
+            Kilim gözel zatdyr, don tapylmasa.
+            Aç dyrjaşar gury nany iýmäge,
+            Müşgildir, bişirge un tapylmasa.
+
+            Hasyl umydy bar ekin ekene,
+            Bu işler maglumdyr mähnet çekene,
+            Ýalaň aýak dözmez, basmaz tikene, —
+            Neýlesin geýerge gön tapylmasa.
+1 Binýat – guralyş, dikeliş, esas.
+2 Sebze, sebz — gök, ýaşyl.
+3 Halgat – halat, geýim.
+
+          Akylsyzlar iş ahyryn garamaz,
+          Çulap1 çigidinden garpyz döremez,
+          Agyr mejlislere çopan ýaramaz,
+          Neýlesin, otyrga jem tapylmasa.
+
+          Ýigitlikde her kim aşretde ýaýlar,
+          Başyna ne geler, gelmez bu köýler.
+          Dişsizler nan tapsa çäresin eýlär,
+          Müşgildir suprada nan tapylmasa.
+
+          Magtymguly, söýmez jedeli-jeňi,
+          Ahyret azm2 etdi köp dosty-deňi.
+          Dünýäde ne iş bar, bolmasa soňy,
+          Muşakgatdyr tende jan tapylmasa.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Malyna degmez',
+    'Baýlar bardyr, garyplara rehm eýlär,
+        Bardyr baýlar, dünýä malyna degmez;
+        Gözel bardyr dünýä malyn iýdirsiň,
+        Bardyr gözel, iýen nanyna degmez.
+
+        Dünýäde bahylyň ýüzüni görme,
+        Aşyň, nanyň, suwuň alyşyp berme.
+        Gul diýip, ýigidiň aslyny sorma,
+        Hojasy bar, belki, guluna degmez.
+1 Çulap – miwe ady.
+2 Azm etmek – ugramak, gitmek.
+
+        Dünýä malyn berseň, eýesi satmaz,
+        Şa istese, anyň dilegi bitmez,
+        Bedew bar, pul berseň, bahasy ýitmez,
+        Bedew bardyr, salan juluňa degmez.
+
+        Döwletli är gerek, söweşde serhoş,
+        Ýat bilen baryşsaň, bolar sen gardaş,
+        Ýagşy ogul, ýagşy aýal, gyz syrdaş,
+        Bu döwlet her kimiň eline degmez.
+
+        Magtymguly, bu dünýäniň eşreti, –
+        Iýmek, içmek, münmek, guçmak, söhbeti.
+        Bir niçeler mydam kylar tagaty,
+        Niçeleriň sežde alnyna degmez.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Bolgul',
+    'Bir bidöwlet bile birge bolynçaň,
+        Döwletliniň gapysynda gul bolgul;
+        Bedasyl beg gullugynda ýörinçäň,
+        Asyl begiň saýasynda kül bolgul.
+
+        Ýamany goý, ýagşylara göz ildir,
+        Kelhemeç1 hem «öz oglanym gözel» diýr,
+        Gargyş gurduň zürýadyny azaldyr,
+        Goýun kibi çar tarapa il bolgul.
+1 Kelhemeç – dazzarkel, çaýkel.
+
+        Süleýman sen — mura1 bir gulak goýgul,
+        Sözüni diňlegil, jogabyn aýgyl,
+        Häkim bolsaň halky gün kibi çoýgul,
+        Akarda suw, ýa öserde ýel bolgul.
+
+        Ýaman işdir öz nebsiňi besleseň,
+        Akmaklykdyr özüň ýagşy toslasaň,
+        Her bazarda rowaç bolmak isleseň,
+        Ýagşylaryň potasynda2 pul bolgul.
+
+        Magtymguly bardyr demiň hesibi,
+        Ir, giç ýeter her bendäniň nesibi,
+        Kişi bolsaň, goýgul gury täsibi,
+        Ýagşy, ýaman barçalarga del bolgul.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Görüm görülmegen ýerde',
+    'Yzzat, hormat, syn etmegin
+             Görüm görülmegen ýerde;
+             Akyl bolsaň, söz aýtmagyn
+             Nobat berilmegen ýerde.
+
+             Akly ýagşylar unutmaz,
+             Gury agaja ýaprak bitmez,
+             Akylly är mesgen tutmaz
+             Hulky söýülmegen ýerde.
+1 Mur – garynja.
+2 Pota – bu ýerde jübi, kise manysynda
+
+             Gömlüp galan aryk akmaz.
+             Her naşydan kerem1 çykmaz,
+             It gözlemez, pişik bakmaz
+             Saçak ýazylmagan ýerde.
+
+             Haç eýleseň jara döner,
+             Gül açylsa zara döner,
+             Hyzmat etmek hara döner
+             Gadryň bilinmegen ýerde.
+
+             Namart goş üstünde harlar,
+             Iýmit, aş üstünde gürlär,
+             Söweş gurup, gylyç parlar
+             Duşman görülmegen ýerde.
+
+             Öý içinde hara döner,
+             Muhannes bir nere döner,
+             Tilki, şagal şire döner
+             Söweş gurulmagan ýerde.
+
+             Parasat kyl bakyp akla,
+             Goç ýigidiň sözün hakla,
+             Magtymguly, tiliň sakla
+             Habar soralmagan ýerde.
+
+1 Kerem – ýagşylyk.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Är ýanynda bellidir',
+    'Ýagşylygy – pis bilmez, –
+                 Är ýanynda bellidir.
+                 Görer gözüň gymmaty
+                 Kör ýanynda bellýadir.
+
+                 Däli köňül daýanjy,
+                 Ýokdur dünýä ynanjy,
+                 Sag gulagyň guwanjy
+                 Ker ýanynda bellidir.
+
+                 Eger pir1 sen, eger ýaş,
+                 Kylma syryň halka paş,
+                 Syr saklaýan mähek2 daş
+                 Zer ýanynda bellidir.
+
+                 Bu dünýäniň myrady, –
+                 At, zagyfdyr3 , zürýady.
+                 Arwananyň kuwwaty
+                 Ner ýanynda bellidir.
+
+                 Bolsa gamdan halasym,
+                 Ýaza dönse gyş paslym,
+                 Magtymguly, yhlasym
+                 Ýar ýanynda bellidir.
+1 Pir – garry.
+2 Mähek – gyzyl, kümüşiň hilini kesgitlemek üçin ulanylýan daş.
+3 Zagyf (zagyfa) – aýal.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Sazyna degmez',
+    'Oýunyň lezzetin bilmeýän adam
+           Hünärli ýigidiň sazyna degmez;
+           Bet syýakly1 , bethüý bolan pis adam
+           Perizadyň eden näzine degmez.
+
+           Bimagnynyň sözi janyňdan öter,
+           Gybat edip, özi günäge batar,
+           Ýamanyň zyýany iline ýeter,
+           Nadanyň peýdasy özüne degmez.
+
+           Adam bardyr, ony şalar çagyrdar,
+           Adam bar, zulm edip, garyp agyrdar,
+           Adam bardyr, körpe ýanyn agyrdar,
+           Adam bardyr, şal kiz2 ýanyna degmez.
+
+           Muhannesiň bolmaz namysy, aňy,
+           Bir söweş gününde eýlemez jeňi,
+           Aga-begler, muhannesiň on müňi
+           Mert ähliniň3 alty ýüzüne degmez.
+1 Syýak – sypat.
+2 Kiz – keçe.
+3 Mert ähli – mert adamlar
+
+          Magtymguly, döwran soňudyr adem1 ,
+          Lahat atly öýge goýar sen gadam.
+          Many söz aňlamaz, biakyl adam
+          Danalaryň aýdan sözüne degmez.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Sarp eýleýir aşyny',
+    'Hak nazaryn salan bir serhoş ýigit
+         Ynsan üçin sarp eýleýir aşyny;
+         Namysly, gaýratly, arly goç ýigit
+         Söweş güni gurban eder başyny.
+
+         Bir niçeler gezer zerbap don bilen,
+         Bir niçeler gezer gury san bilen,
+         Adamzady tanyp bolmaz syn bilen,
+         Synaşmagan bilmez kişi kişini.
+
+         Ýigidiň abraýy ýagşy zagyfdyr,
+         Ýagşy zagyf näkes äre haýypdyr,
+         Ýigide gallaçlyk külli aýypdyr,
+         Her ýan gezer, bilmez eder işini.
+
+         Magtymguly, aýdaý ýaryn sypatyn,
+         Täze depder bilen ýazaý zer hatyn.
+         Dowzah nyşanasy bir ýaman hatyn
+         Her kime duş bolsa, alar huşuny.
+1 Adem – ýokluk.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Ärden',
+    'Hiç köňül şatlygy çykmaz
+Bir köňül ýykmaýan ärden;
+Ýagşylyk tamasyn etmäň
+Ýamanlyk çykmaýan ärden.
+
+Her kim ile beglik eder,
+Bir söý bilen ýola gider,
+Kethudalyk ýyrak gider, –
+Ýaman söz çekmeýen ärden.
+
+Ýagşy är il aýbyn açmaz,
+Göre-bile haram içmez,
+Ýaradan ýazygyn geçmez
+Göz ýaşyn dökmeýen ärden.
+
+Eglenmez, eýýam öwrüler,
+Wagt täzeler, nyrh çöwrüler,
+Agyr döwletler aýrylar
+Bir agza bakmaýan ärden.
+
+Öz-özünden akly ýetmez,
+Akyllar sözüni tutmaz,
+Garyplyk ýok bolup gitmez
+On iş terk etmeýen ärden.
+
+     Ýigitlere ýasaw güni –
+     Gurda goýmaz şir awuny,
+     Pygamber bizar ýow güni
+     Ýoldaşa bakmaýan ärden.
+
+     Magtymguly, ýangyl, öçgül,
+     Ýa lal otur, ýa dür saçgyl!
+     Bir guýruksyz itdir, gaçgyl, –
+     Nesihat ýokmaýan ärden.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Bilmedim',
+    ', ne iş bitirdim,
+              Gümra bolup, ýol ýitirdim,
+              Oturdym biweçler bile.
+
+              Bikär goýma ömür tagty,
+              Oýandyrsak oýmuş2 bagty;
+              Doga kylyp säher wagty,
+              Nalyş kylsam guşlar bile.
+
+              Magtymguly, towpyk3 alsam,
+              Bir är tapsam, gulluk kylsam,
+              Ýürek aýdar: ýoldaş bolsam
+              Dem çeken derwüşler bile.
+
+1 Zeberdest – eli üstün, güýçli, başarjaň.
+2 Oýmuş – uklan, ýatan.
+3 Towpyk – kömek.
+
+                      Ýar bizim sary
+
+         Gulzumy1 gyrsanyp kyrk ýol geçer men,
+         Eger ki meýl etse ýar bizim sary;
+         Gadam ýerne ganat baglap uçar men,
+         Diýse dilber: «Aşyk, ýör bizim sary».
+
+         Kyrk ýyl gol gowşuryp, gullukda dursam,
+         Alty günçe görmen, altmyş ýyl ýörsem,
+         Bir şunçakly bolsa, görsem, jan bersem,
+         Jemalyn arz etse bir bizim sary.
+
+         Ne laýykly ýüzüm bardyr tutarga,
+         Ne aýry gapym bar onda giterge?
+         Umyt bar goýnunda bile ýatarga,
+         Dergahyndan açsa der2 bizim sary...
+
+         Bir kimse ýolukdy desti3 şeraply,
+         Ýelden jaýnamazly4 , suwdan mähraply,
+         Egni ak redaly5 ýaşyl nykaply
+         Ugraşdy bir ajap är bizim sary.
+1 Gulzum – Müsür bilen Arabystan aralygynda bolan Gyzyl deňiz.
+2 Der – gapy, işik.
+3 Dest – el.
+4 Jaýnamaz – namazlyk.
+5 Reda – don.
+
+         Ýoldaş bolup bile ýördüm bir meýdan,
+         Meýdan içre dolup oturmyş merdan,
+         Bir eýwan üstünde çyrlap tört ýerden,
+         Diýdiler: «Goluňny ber bizim sary!».
+
+         «Pyragy!» diýp çagyrdylar, eltdiler,
+         «Kandadyň?» diýp, gulagymdan tutdular,
+         Istihanym1 altmyş para etdiler,
+         Diýdiler: «Mert olsaň, ýör bizim sary!»
+
+         Magtymguly bäş gün aşret sürmäge,
+         Jaý imesdir eglenmäge, durmaga,
+         Kararym ýok oturmaga, turmaga
+         Agzyn açyp durmuş ýer bizim sary.
+
+                      Bolmasa
+
+           Her kim suluw men diýr, ygtybar olmaz,
+           Sünbül saçy, gylça bili bolmasa;
+           Ýürekleri at başy dek batyrlar,
+           Hatynça ýok, at-ýaragy bolmasa.
+
+           Näler görejekdir bu şum köňüller.
+           Hazan ursa, solar açylan güller,
+           Bag içre saýraşan şeýda bilbiller,
+           Torgaýça ýok, gonar güli bolmasa.
+1 Istihan – süňk.
+
+Sözleseň, her ýana öwser bu tiller,
+Ýel urpakdan aşsa, şuwlar şemallar,
+Ýaşylbaş sonalar, gazlar garkyllar,
+Haly-harap düşer köli bolmasa.
+
+Guşlar uça bilmez guruk-ganatsyz,
+Aşyk ýara ýetmez dady-perýatsyz,
+Bir bedew hanazat bolar syýaksyz,
+Gurugy, käkili, ýaly bolmasa.
+
+Ahyrzaman bolsa, şyhdan päl gaçar,
+Kelamnyň ýüzünden hat galman öçer,
+Meýdandaky suwsuz aryga ogşar –
+Her kimniň sahawat-haýry bolmasa.
+
+Başyň goşma gadyr bilmez bezzada,
+Goşsaň, goşgul aşyň bir asylzada,
+Howada ýagmazak meňzär buluda, –
+Her kimiň hümmeti, haýry bolmasa.
+
+Magtymguly, biliň, şundag zamandyr,
+Şindi haýyr bolsa, soňra zyýandyr,
+Är ýigidiň içi doly armandyr, –
+Gara göz, inçe bil ýary bolmasa.
+
+                 Mala seretmez
+
+         Owwal-a mal ýagşy, maldan baş ýagşy,
+         Baş döwletin tapan mala seretmez;
+         Dogmadyk oguldan dogan är ýagşy1 ,
+         Nadan ogul atasyna seretmez.
+
+         Atda aýak bolsa, özge syn bolmaz,
+         Ärde gaýrat bolsa, işi kyn bolmaz,
+         Söweş güni goç ýigitde müýn bolmaz,
+         Garşy bakar, peýkam-ýaýa seretmez.
+
+         Alaman öňüni serdary başlar,
+         Goç ýigitler naýza urar, gylyçlar,
+         Kimseler bukulyp, kimse at uşlar,
+         Abyraý tapmasa, paýa seretmez.
+
+         Är-dostdan gaçarlar, adam aç galsa,
+         Ýar-ýardan aýrylar, ara daş galsa,
+         Ýaman hatyn ýagşy ýigide duş bolsa,
+         Başyny terk eder, daýa seretmez.
+
+         Köne dünýä muhannesiň öýüdir,
+         Süýthor bolan kesiň dowzah jaýydyr,
+         Altyn, kümüş gözlerimiň maýydyr2 ,
+         Goç ýigitler bozuk jaýa seretmez.
+1 «Dogmadyk oguldan duşman är ýagşy» diýen nusga hem bar.
+2 Maý – ýag.
+
+          Dünýä görki näzeninler, ne janlar,
+          Nadana ýolukdy türpe1 jenanlar.
+          Ýardan galan, äri ölen juwanlar
+          Goç ýigidi gözlär, baýa seretmez.
+
+          Magtymguly, garyp göwnün baý edip,
+          Kanagat ülkesin bendi-jaý edip,
+          Her kim öz ýaryny dogan aý edip,
+          Aýyn gözlär, özge aýa seretmez.
+
+                 Duz hem bolmasa
+
+          Togsan dürli tagam bolsa gaşynda,
+          Ne lezzet, içinde duz hem bolmasa;
+          Näbiler sen ne iş bardyr başynda,
+          Müşgil işdir, başda göz hem bolmasa...
+
+          Aýak bar ýörmäge, el bar almaga,
+          Kany bende, saglyk şükrün kylmaga,
+          Gulak bardyr eşitgenin bilmäge,
+          Kim düzeder, dilde söz hem bolmasa?
+
+          Ýok ýerden jan berip ýetirdi nany,
+          Göwün bostanyda bitger imany,
+          Adyň bende bolsa, eýäňi tany,
+          Gelip saňa ýüzbe-ýüz hem bolmasa.
+1 Türpe (turpa) – gözel, ter.
+
+          Kysmatyn hak bilen ryzkyn yzlamaz,
+          Söz bilenler bilen sözün gizlemez,
+          Köňül joşa gelmez, dil hem sözlemez,
+          Her ýürekde yşkdan göz hem bolmasa.
+
+          Ýyl-ýyldan pezihat1 artar eýýama,
+          Hakyň özi getirmese enjama,
+          Dünýä sözi meňzär duzsuz tagama,
+          Söz içinde gelin-gyz hem bolmasa.
+
+          Ýum gözüňi, gysyp gezgin dişiňni,
+          Ýaza ýetseň unutmagyn gyşyňny,
+          Töwekgel et, taňra tabşyr işiňni,
+          Sabyr bilen biter, tiz hem bolmasa.
+
+          Magtymguly, hyýal düşüp özüme,
+          Köp tomaşa gelip geçer gözüme,
+          Eşidenler aýp etmesin sözüme,
+          Iller kimin sözüm uz hem bolmasa.
+
+1 Pezihat – erbetçilik, biabraýlyk, masgaralyk.
+
+                        Çykypdyr
+
+          Hak tagala, bu ne-niçik ahwaldyr,
+          Dury diýip içdigim gumly çykypdyr;
+          Ne ýeser beýhuda şum keç ykbaldyr,
+          Halal diýip iýdigim jimli çykypdyr.
+
+          Kimse syrym bilmez, özün öldürse,
+          Pakyr bendelerge taňry bildirse,
+          Ile şatlyk, şadymanlyk güldürse,
+          Maňa hemra bolan gamly çykypdyr.
+
+          Amuhta1 men örtenmäge, bişmäge,
+          Kişi ýok sözleşip, dert aýdyşmaga,
+          Oba ujundan barsam öý soraşmaga,
+          Ýa laldyr, ýa agzy mumly çykypdyr.
+
+          Menden şikat eder elim gerenim,
+          Galbyrdan2 şal çykar syrym berenim,
+          Pir diýip paşmagna elim uranym,
+          Deprenende, döwden demli çykypdyr.
+
+          Magtymguly, hasaby ýok görenim,
+          Tama edip, umyt elim gerenim,
+          Obasyna ärmiş diýip baranym
+          Etegne el ursam.., çykypdyr.
+
+1 Amuhta – taýar, çulum, öwrenişikli, endikli.
+2 Galbyr – elek.
+
+        Bary bolmasa
+
+Zamana beýledir, göze ilmezler,
+Her ýigidiň golda bary bolmasa.
+Ýüz tümenlik sözün şaýa almazlar,
+Her kişiniň ygtybary bolmasa!
+
+Ten bir dar kapasdyr, jan bir wagşydyr,
+Tile gelen sözler köňül nagşydyr,
+Otly, suwly tamug andan ýagşydyr,
+Her ýuwurdyň bir bazary bolmasa.
+
+Begzadalar galdy çopan tährine,
+Ten haçan döz getir ýylan zährine,
+Bibat olup döner Lutuň şährine,
+Her ülkäniň häkim äri bolmasa.
+
+Dünýäde aňlardan aňlamaz kändir,
+Bilmezler beladyr, bilenler jandyr,
+Ol ýigitler adam tilli haýwandyr,
+Söz aňmasa hem ykrary bolmasa.
+
+Ýigide ýoksullyk ýaman beladyr,
+Sözüni deň-duşdan gaýra saladyr,
+Ýaman gylyk dosty duşman kyladyr,
+Guryp galsyn, il derkary bolmasa.
+
+                 Hak her kime bir ýagşy ýar bermändir, —
+                 Sözi akdyr, içi doly armandyr,
+                 Ýüz ýaşasa, bäş gün döwran sürmändir,
+                 Her kimniň mynasyp ýary bolmasa.
+
+                 Magtymguly, haka tabşyr özüňni,
+                 Her namarda sarartmagyl ýüzüňni,
+                 Terhosym bar, gel terk eýle sözüňni, —
+                 Näge gerek, hyrydary bolmasa.
+
+                         Düýşüne degmez
+
+                 Ýoksuzlykda niçeleriň döwrany,
+                 Ýatyp ýagşy gören düýşüne degmez;
+                 Niçeler hasretde tapyp höşk1 nany,
+                 Bir lezzetli tagam dişine degmez.
+
+                 Soran bolsa, synam içre sözler bar,
+                 Müň tümenden ýegdir, niçe ýüzler bar.
+                 Neýsansyz2 , nebatsyz3 niçe ýazlar bar, –
+                 Hoşluk bilen geçen gyşyna degmez.
+       1 Xöşk – gury.
+       2 Neýsan — ýaz wagtynda ýagýan ýagyş; grekçe aýlarynyň biriniň
+
+ady.
+       3 Nebat – ot, ösümlik.
+
+          Akyllar bar, başa baglap keçeler,
+          Içgin-içgin sorsaň, magny saçalar,
+          Akmaklykda özün bezäp niçeler, –
+          Kellesine saran peşine degmez.
+
+          Aňlamaza aýat sözlerin diýseň,
+          Pygamber hadysyn öňünde goýsaň,
+          Gyýmazlykdan köp söz beýnine guýsaň,
+          Bu sözler gulagnyň daşyna degmez.
+
+          Ynjatsa ogul-gyz, ene-atasyn,
+          Toba kylmaý taňrym geçmez hatasyn,
+          Döwran gelse, bilmez ne iş tutasyn,
+          Her kimiň her işden başyna degmez.
+
+          Niçeler mal tapmaz, teňňi-dest1 bolar,
+          Niçeler bar, dünýälikde mest bolar,
+          Niçeler bar, ýigitlikde nist2 bolar,
+          Niçeler bar, süren ýaşyna degmez.
+
+          Magtymguly, gerçe işim namazdyr,
+          Köňlüm perişandyr, sähwüm3 derazdyr4 ,
+          Adam bar, müň tümen iýdirseň azdyr,
+          Adam bardyr, iýen aşyna degmez.
+
+1 Teňňi-dest – eli gysga, goly teň, pes
+2 Nist – ýok.
+3 Sähw – ýalňyş.
+4 Deraz – uzyn, köp.
+
+        Görner
+
+Dogry bakmazlar julluýa,
+Göze gyzyl donly görner;
+Söze pähm etmez akmaklar,
+Öz ýanyndan tilli görner.
+
+Başa degmänkä gurtlar.
+Kast etmäň, gerekdir ýurtlar,
+Ýagyda tanalar mertler,
+Il içinde mally görner.
+
+Pikr et, başa iş düşende.
+Yssy ýokdur, soň puşmanda,
+At meýdanda, är duşmanda,
+Toýda tirme-şally görner.
+
+Jany sagyň sözlär tili,
+Jomardyň dek durmaz eli.
+Her kişiniň öz akyly
+Özüne kemally görner.
+
+Gadymdan setdir ýagşylyk,
+Ýagşy zatdyr ýagşy gylyk,
+Mert ýigide az ýagşylyk,
+Az hem söýgüli görner.
+
+               Gel, akyl dolandyr indi,
+               Ýürek peýwendi, jan bendi,
+               Her kişiniň öz perzendi
+               Özüne jemally görner.
+
+               Magtymguly, söz binýadyň1
+               Agzynda ýakynyň-ýadyň;
+               Hünär ýok söz bilen adyň
+               Halk içinde belli görner.
+
+                        Tapylmasa
+
+            Dok dalaşar sebze2 halgat3 geýmäge,
+            Kilim gözel zatdyr, don tapylmasa.
+            Aç dyrjaşar gury nany iýmäge,
+            Müşgildir, bişirge un tapylmasa.
+
+            Hasyl umydy bar ekin ekene,
+            Bu işler maglumdyr mähnet çekene,
+            Ýalaň aýak dözmez, basmaz tikene, —
+            Neýlesin geýerge gön tapylmasa.
+1 Binýat – guralyş, dikeliş, esas.
+2 Sebze, sebz — gök, ýaşyl.
+3 Halgat – halat, geýim.
+
+          Akylsyzlar iş ahyryn garamaz,
+          Çulap1 çigidinden garpyz döremez,
+          Agyr mejlislere çopan ýaramaz,
+          Neýlesin, otyrga jem tapylmasa.
+
+          Ýigitlikde her kim aşretde ýaýlar,
+          Başyna ne geler, gelmez bu köýler.
+          Dişsizler nan tapsa çäresin eýlär,
+          Müşgildir suprada nan tapylmasa.
+
+          Magtymguly, söýmez jedeli-jeňi,
+          Ahyret azm2 etdi köp dosty-deňi.
+          Dünýäde ne iş bar, bolmasa soňy,
+          Muşakgatdyr tende jan tapylmasa.
+
+                  Malyna degmez
+
+        Baýlar bardyr, garyplara rehm eýlär,
+        Bardyr baýlar, dünýä malyna degmez;
+        Gözel bardyr dünýä malyn iýdirsiň,
+        Bardyr gözel, iýen nanyna degmez.
+
+        Dünýäde bahylyň ýüzüni görme,
+        Aşyň, nanyň, suwuň alyşyp berme.
+        Gul diýip, ýigidiň aslyny sorma,
+        Hojasy bar, belki, guluna degmez.
+1 Çulap – miwe ady.
+2 Azm etmek – ugramak, gitmek.
+
+        Dünýä malyn berseň, eýesi satmaz,
+        Şa istese, anyň dilegi bitmez,
+        Bedew bar, pul berseň, bahasy ýitmez,
+        Bedew bardyr, salan juluňa degmez.
+
+        Döwletli är gerek, söweşde serhoş,
+        Ýat bilen baryşsaň, bolar sen gardaş,
+        Ýagşy ogul, ýagşy aýal, gyz syrdaş,
+        Bu döwlet her kimiň eline degmez.
+
+        Magtymguly, bu dünýäniň eşreti, –
+        Iýmek, içmek, münmek, guçmak, söhbeti.
+        Bir niçeler mydam kylar tagaty,
+        Niçeleriň sežde alnyna degmez.
+
+                         Bolgul
+
+        Bir bidöwlet bile birge bolynçaň,
+        Döwletliniň gapysynda gul bolgul;
+        Bedasyl beg gullugynda ýörinçäň,
+        Asyl begiň saýasynda kül bolgul.
+
+        Ýamany goý, ýagşylara göz ildir,
+        Kelhemeç1 hem «öz oglanym gözel» diýr,
+        Gargyş gurduň zürýadyny azaldyr,
+        Goýun kibi çar tarapa il bolgul.
+1 Kelhemeç – dazzarkel, çaýkel.
+
+        Süleýman sen — mura1 bir gulak goýgul,
+        Sözüni diňlegil, jogabyn aýgyl,
+        Häkim bolsaň halky gün kibi çoýgul,
+        Akarda suw, ýa öserde ýel bolgul.
+
+        Ýaman işdir öz nebsiňi besleseň,
+        Akmaklykdyr özüň ýagşy toslasaň,
+        Her bazarda rowaç bolmak isleseň,
+        Ýagşylaryň potasynda2 pul bolgul.
+
+        Magtymguly bardyr demiň hesibi,
+        Ir, giç ýeter her bendäniň nesibi,
+        Kişi bolsaň, goýgul gury täsibi,
+        Ýagşy, ýaman barçalarga del bolgul.
+
+           Görüm görülmegen ýerde
+
+             Yzzat, hormat, syn etmegin
+             Görüm görülmegen ýerde;
+             Akyl bolsaň, söz aýtmagyn
+             Nobat berilmegen ýerde.
+
+             Akly ýagşylar unutmaz,
+             Gury agaja ýaprak bitmez,
+             Akylly är mesgen tutmaz
+             Hulky söýülmegen ýerde.
+1 Mur – garynja.
+2 Pota – bu ýerde jübi, kise manysynda
+
+             Gömlüp galan aryk akmaz.
+             Her naşydan kerem1 çykmaz,
+             It gözlemez, pişik bakmaz
+             Saçak ýazylmagan ýerde.
+
+             Haç eýleseň jara döner,
+             Gül açylsa zara döner,
+             Hyzmat etmek hara döner
+             Gadryň bilinmegen ýerde.
+
+             Namart goş üstünde harlar,
+             Iýmit, aş üstünde gürlär,
+             Söweş gurup, gylyç parlar
+             Duşman görülmegen ýerde.
+
+             Öý içinde hara döner,
+             Muhannes bir nere döner,
+             Tilki, şagal şire döner
+             Söweş gurulmagan ýerde.
+
+             Parasat kyl bakyp akla,
+             Goç ýigidiň sözün hakla,
+             Magtymguly, tiliň sakla
+             Habar soralmagan ýerde.
+
+1 Kerem – ýagşylyk.
+
+                 Är ýanynda bellidir
+
+                 Ýagşylygy – pis bilmez, –
+                 Är ýanynda bellidir.
+                 Görer gözüň gymmaty
+                 Kör ýanynda bellýadir.
+
+                 Däli köňül daýanjy,
+                 Ýokdur dünýä ynanjy,
+                 Sag gulagyň guwanjy
+                 Ker ýanynda bellidir.
+
+                 Eger pir1 sen, eger ýaş,
+                 Kylma syryň halka paş,
+                 Syr saklaýan mähek2 daş
+                 Zer ýanynda bellidir.
+
+                 Bu dünýäniň myrady, –
+                 At, zagyfdyr3 , zürýady.
+                 Arwananyň kuwwaty
+                 Ner ýanynda bellidir.
+
+                 Bolsa gamdan halasym,
+                 Ýaza dönse gyş paslym,
+                 Magtymguly, yhlasym
+                 Ýar ýanynda bellidir.
+1 Pir – garry.
+2 Mähek – gyzyl, kümüşiň hilini kesgitlemek üçin ulanylýan daş.
+3 Zagyf (zagyfa) – aýal.
+
+                   Sazyna degmez
+
+           Oýunyň lezzetin bilmeýän adam
+           Hünärli ýigidiň sazyna degmez;
+           Bet syýakly1 , bethüý bolan pis adam
+           Perizadyň eden näzine degmez.
+
+           Bimagnynyň sözi janyňdan öter,
+           Gybat edip, özi günäge batar,
+           Ýamanyň zyýany iline ýeter,
+           Nadanyň peýdasy özüne degmez.
+
+           Adam bardyr, ony şalar çagyrdar,
+           Adam bar, zulm edip, garyp agyrdar,
+           Adam bardyr, körpe ýanyn agyrdar,
+           Adam bardyr, şal kiz2 ýanyna degmez.
+
+           Muhannesiň bolmaz namysy, aňy,
+           Bir söweş gününde eýlemez jeňi,
+           Aga-begler, muhannesiň on müňi
+           Mert ähliniň3 alty ýüzüne degmez.
+1 Syýak – sypat.
+2 Kiz – keçe.
+3 Mert ähli – mert adamlar
+
+          Magtymguly, döwran soňudyr adem1 ,
+          Lahat atly öýge goýar sen gadam.
+          Many söz aňlamaz, biakyl adam
+          Danalaryň aýdan sözüne degmez.
+
+                   Sarp eýleýir aşyny
+
+         Hak nazaryn salan bir serhoş ýigit
+         Ynsan üçin sarp eýleýir aşyny;
+         Namysly, gaýratly, arly goç ýigit
+         Söweş güni gurban eder başyny.
+
+         Bir niçeler gezer zerbap don bilen,
+         Bir niçeler gezer gury san bilen,
+         Adamzady tanyp bolmaz syn bilen,
+         Synaşmagan bilmez kişi kişini.
+
+         Ýigidiň abraýy ýagşy zagyfdyr,
+         Ýagşy zagyf näkes äre haýypdyr,
+         Ýigide gallaçlyk külli aýypdyr,
+         Her ýan gezer, bilmez eder işini.
+
+         Magtymguly, aýdaý ýaryn sypatyn,
+         Täze depder bilen ýazaý zer hatyn.
+         Dowzah nyşanasy bir ýaman hatyn
+         Her kime duş bolsa, alar huşuny.
+1 Adem – ýokluk.
+
+        Ärden
+
+Hiç köňül şatlygy çykmaz
+Bir köňül ýykmaýan ärden;
+Ýagşylyk tamasyn etmäň
+Ýamanlyk çykmaýan ärden.
+
+Her kim ile beglik eder,
+Bir söý bilen ýola gider,
+Kethudalyk ýyrak gider, –
+Ýaman söz çekmeýen ärden.
+
+Ýagşy är il aýbyn açmaz,
+Göre-bile haram içmez,
+Ýaradan ýazygyn geçmez
+Göz ýaşyn dökmeýen ärden.
+
+Eglenmez, eýýam öwrüler,
+Wagt täzeler, nyrh çöwrüler,
+Agyr döwletler aýrylar
+Bir agza bakmaýan ärden.
+
+Öz-özünden akly ýetmez,
+Akyllar sözüni tutmaz,
+Garyplyk ýok bolup gitmez
+On iş terk etmeýen ärden.
+
+     Ýigitlere ýasaw güni –
+     Gurda goýmaz şir awuny,
+     Pygamber bizar ýow güni
+     Ýoldaşa bakmaýan ärden.
+
+     Magtymguly, ýangyl, öçgül,
+     Ýa lal otur, ýa dür saçgyl!
+     Bir guýruksyz itdir, gaçgyl, –
+     Nesihat ýokmaýan ärden.
+
+            Bilmedim
+
+Pelek maňa gam badasyn bereli
+Wysal kaýsy, hijran kaýsy, bilmedim;
+Hak işine ten bermişem göreli,
+Arzuw kaýsy, arman kaýsy, bilmedim.
+
+Bende bolsaň gözle hakyň ryzasyn,
+Jebr eýlese, çekewergil jezasyn,
+Ajal bir gün atar tiri-kazasyn,
+Kiriş kaýsy, keman kaýsy, bilmedim.
+
+Aryf bolsaň, gulak goýgul sözüme.
+Bir suratam bu gün bakmaň özüme,
+Dünýä düýbi ýok görüner gözüme,
+Döwür kaýsy, döwran kaýsy, bilmedim.
+
+        Az ömrümi köp söwdaga satyp men,
+        Özüm bilmeý, ol derýaga atyp men,
+        Ne ummandyr, ne talapdyr, ýatyp men,
+        Zemin kaýsy, zaman kaýsy, bilmedim.
+
+        Her kim girse ol talaba, ummana,
+        Başyn alyp çyka bilmez bir ýana,
+        Gadam goýdum ol sähraýa-meýdana,
+        Jan kaýsydyr, jahan kaýsy, bilmedim.
+
+        Bu dünýäni asmandaky reň bildim,
+        Yssy-yssy asylyşdym, soň bildim,
+        Imdi anyň baryn-ýogun deň bildim,
+        Sut1 kaýsydyr, zyýan kaýsy, bilmedim.
+
+        Magtymguly, ýoluň öňi-ardy bar,
+        Çeker ýüküň, her kişiniň merdi bar,
+        Ýüregimde pinhan yşkyň derdi bar,
+        Dert kaýsydyr, derman kaýsy, bilmedim.
+
+1 Sut (sud) – peýda, haýyr.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Öýlengin',
+    'Ýigit halyň garrylyga
+Salaýyn diýseň, öýlengin;
+Kethudalyk endişesin
+Kylaýyn diýseň, öýlengin.
+
+Kethudalyk gözel ýoldur,
+Gaýgy garrydar, gam öldir,
+Ýigitlik bir gyzyl güldür, –
+Solaýyn diýseň öýlengin.
+
+Öý-il gerek, ýorgan-düşek,
+Perzent bentdir, aýal – duşak,
+Ýüke werziş bir boz eşek
+Bolaýyn diýseň, öýlengin.
+
+Gezer sen oýnap, dalaşyp,
+Galar sen, derde dolaşyp,
+Gaýgydan gama ulaşyp
+Galaýyn diýseň, öýlengin.
+
+Joşgun eder sen özüňden,
+Aýrylar sen hoş ýazyňdan-,
+Tükenmez derdiň yzyndan
+Ýeleýin diýseň, öýlengin.
+
+              Açyp ýigitlik dumanyn,
+              Getir sen gaýgy zamanyn,
+              Dünýäniň ýagşy-ýamanyn
+              Bileýin diýseň, öýlengin.
+
+              Magtymguly, gezip her taý.
+              Etmediň jahandan perwaý,
+              Pygamber sünnetin berjaý
+              Kylaýyn diýseň, öýlengin.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Kyly-kal bolar',
+    'Her kişiniň iki bolsa aýaly,
+           Gije-gündiz işi kyly-kal1 bolar;
+           Her biriniň bardyr ýüz müň hyýaly,
+           Owkat sürüp görejigi hal2 bolar...
+
+           Birin söýüp, birin eýlese naçar,
+           Ile ryswa bolup, öz aýbyn açar,
+           Akly haýran bolup, baryndan geçer,
+           Deň tutmasa ýaryn, bikemal bolar.
+
+           Gähi bilbil kimin saýrar tilleri,
+           Tomaşadan häzir eder illeri,
+           Gähi ýer ýumruklar, gähi külleri,
+           Ärin göre bilse, tilsiz lal bolar.
+1 Kyly-kal – galmagal, gowga.
+2 Hal – bu ýerde kyn manysynda.
+
+             Gahar eýläp gelmez bolsa ýanyna,
+             Söz aýtmasa her biriniň şanyna,
+             Beýle är goşulmaz adam sanyna, —
+             Iki hatyn, bir är — üç aýal bolar.
+
+             Magtymguly, kimse bilmez batyny1 ,
+             Öýlenseňiz, garap alyň zatyny2 ,
+             Eýäm görkezmesin ýaman hatyny,
+             Adam özün bilmez, ham hyýal bolar.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Ykrarsyz ärden',
+    'Gördük saýy, köňül sowar
+                Sabyrsyz, kararsyz ärden;
+                Yssy beren köpek ýegdir3
+                Uýatsyz, ykrarsyz ärden.
+
+                Aýlandykça döwran-döwür,
+                Ykbalyň ýüwürse, öwür,
+                Dura-bara dosty sowyr
+                Garyp galan barsyz ärden.
+1 Batyn – gizlilik, syr, içki dünýä.
+2 Zat – asyl.
+3 Eg – oňat, gowy.
+
+Ite zer dök, minnet çekmez.
+Aňlamaza sözüm ýakmaz,
+Köňlüň istän işler çykmaz
+Nan ýagysy, kärsiz ärden.
+
+Her göz säherde bidardyr, —
+Eýesinden ülüş bardyr,
+Hak, pygamber, halk bizardyr
+Düýbi ygtybarsyz ärden.
+
+Magtymguly, magny saçar,
+Her kim söz lezzetin içer,
+Bara-bara köňül geçer
+Tagsyby ýok, arsyz ärden.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Diş gitmek',
+    'Tagamnyň lezzetin alyr,
+Dahanyňdan diş gitmek;
+Aňyrsyzy azdyryr
+Götin döwlet baş gitmek.
+
+Şeýtan ýolun bek eýlär,
+Gara ýüzün ak eýlär,
+Ýüz müň bela ýok eýlär
+Säher turup ýaş dökmek.
+
+Peltesiz ýag çyraga,
+Yşyk salmaz gyraga,
+Ilin salar aýaga
+Aýak galyp, baş gitmek.
+
+Niçe pese zar bolup,
+Ýatandan bimar bolup,
+Hoşdur ýagşa ýar bolup,
+Bir ýamandan daş gitmek.
+
+Ulaşmaganlar gama
+Şükr etmezler bu deme,
+Abyraýdyr adama
+Ýagşy gelip, hoş gitmek.
+
+Ýaman til dost ýitirer,
+Hoş til rahmet getirer,
+Äre sangy ýetirer
+Kyrkdan agyp, ýaş gitmek.
+
+Pyragy, dünýä düýşdür,
+Düýş görseň, düýbi hiçdir.
+Jahanda ýaman işdir
+Gury gelip, boş gitmek.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Eldim tut',
+    'Dünýe görmeý, tutgun galsaň bir künçde,
+     Bady-paý1 dek ýer ýüzüne ýeldim tut;
+     Çyn-Maçynda, Rumda, Hindde, Hebeşde
+     Bolan-bolmuş hünärleri bildim tut.
+
+     Aç hem bolsaň, barma ile dilege,
+     Diý: köşkde men, başym barmyş pelege,
+     Çölde galsaň, hiç tapmaýan kölege,
+     Erem bagy içre gamsyz galdym tut.
+
+     Aş görende, özüň atma dillenip,
+     Gerçe aç hem bolsaň, halka bellenip,
+     Zerler döküp, çyn gullarny gollanyp,
+     Tiz hem ölseň, Nuh ýaşyna geldim tut.
+
+     Mätäçligiň hakdan özge bilmese,
+     Ol rozugär2 besdir, açdan ölmese,
+     Hindi kimin egin örtiň bolmasa,
+     Patyşalyk puşeş3 çigne saldym tut.
+1 Bady-paý – el aýak, ýyndam at.
+2 Rozygär – rysgal, durmuş.
+3 Puşeş – eşik, geýim.
+
+     Suwa, ýele hökmi geçen Süleýman,
+     Bak: olardan ne nam galdy, ne nyşan!
+     Teşne1 galyp, jaýyň bolsa çölüstan
+     Derýa içre men Isgender boldum tut.
+
+     Ýoldaş bolsaň dile düşmez mur bile —
+     Ýer tapmaýyn, bile ýatsaň mar bile,
+     Ýigrim alty keret2 ýüz müň är bile
+     Karun hazynasyn ele aldym tüt.
+
+     Magtymguly, çekseň jepa-jebir, bil –
+     Hudaga hoş geler, şükür-sabyr, bil,
+     Gylça jana gyzyl teni gabyr bil,
+     Gyzyl tiliň sözlär eken, öldüm tut.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Joş gelse',
+    'Dünýäde niçe iş bardyr, ýamandyr,
+     Biri oldur, ýersiz gahra joş gelse;
+     Aşyklara şol gün ahyrzamandyr,
+     Ýardan yrak düşüp, ara daş gelse.
+
+     Dostuňny egleme, nepden galmasyn,
+     Duşmanyň saklama, syryň bilmesin,
+     Açda algyn, bege bergiň bolmasyn,
+     Iş müşgildir, aňlamaza duş gelse.
+1 Teşne – suwsuz, suwsan.
+2 Keret – gezek.
+
+     Zemin seni häli-häli ýutarmy,
+     Akyl bolan munda bigam ýatarmy?
+     Hiý bir masgaralyk mundan ötermi, —
+     Giden gury gitse, gelen boş gelse!
+
+     On gat öýüň bolsa demir galadan,
+     Ajal tapar emir1 bolsa alladan,
+     Hakyky är ýüz döndermez beladan,
+     Hak ryzasy bilen başa daş gelse.
+
+     Aryf men diýp, lap urarlar ýalandan,
+     Bellisini aýdar sorsaň bilenden,
+     Il gözlügin ýüz ýyl tagat kylandan,
+     Ýagşydyr bir säher gözden ýaş gelse.
+
+     Baýlar baglap sahawatyň gapysyn,
+     Köpelder tamugnyň möýün, apysyn2 ,
+     Görüň bu eýýamyň pirin, sopusyn —
+     Dannamaýyn tykar otyr, aş gelse.
+
+     Magtymguly, söýle aklyň ýetinçä,
+     Tetärigiň gazan, bikar ýatynça,
+     Tamugdadyr, tä dünýäden ötinçä, —
+     Ýaman hatyn ýagşy äre duş gelse.
+
+1 Emir (emr) – buýruk, höküm.
+2 Apy (afy) – zäherli ýylanyň bir görnüşi.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Ýigide',
+    'ýoksullyk ýaman beladyr,
+Sözüni deň-duşdan gaýra saladyr,
+Ýaman gylyk dosty duşman kyladyr,
+Guryp galsyn, il derkary bolmasa.
+
+                 Hak her kime bir ýagşy ýar bermändir, —
+                 Sözi akdyr, içi doly armandyr,
+                 Ýüz ýaşasa, bäş gün döwran sürmändir,
+                 Her kimniň mynasyp ýary bolmasa.
+
+                 Magtymguly, haka tabşyr özüňni,
+                 Her namarda sarartmagyl ýüzüňni,
+                 Terhosym bar, gel terk eýle sözüňni, —
+                 Näge gerek, hyrydary bolmasa.
+
+                         Düýşüne degmez
+
+                 Ýoksuzlykda niçeleriň döwrany,
+                 Ýatyp ýagşy gören düýşüne degmez;
+                 Niçeler hasretde tapyp höşk1 nany,
+                 Bir lezzetli tagam dişine degmez.
+
+                 Soran bolsa, synam içre sözler bar,
+                 Müň tümenden ýegdir, niçe ýüzler bar.
+                 Neýsansyz2 , nebatsyz3 niçe ýazlar bar, –
+                 Hoşluk bilen geçen gyşyna degmez.
+       1 Xöşk – gury.
+       2 Neýsan — ýaz wagtynda ýagýan ýagyş; grekçe aýlarynyň biriniň
+
+ady.
+       3 Nebat – ot, ösümlik.
+
+          Akyllar bar, başa baglap keçeler,
+          Içgin-içgin sorsaň, magny saçalar,
+          Akmaklykda özün bezäp niçeler, –
+          Kellesine saran peşine degmez.
+
+          Aňlamaza aýat sözlerin diýseň,
+          Pygamber hadysyn öňünde goýsaň,
+          Gyýmazlykdan köp söz beýnine guýsaň,
+          Bu sözler gulagnyň daşyna degmez.
+
+          Ynjatsa ogul-gyz, ene-atasyn,
+          Toba kylmaý taňrym geçmez hatasyn,
+          Döwran gelse, bilmez ne iş tutasyn,
+          Her kimiň her işden başyna degmez.
+
+          Niçeler mal tapmaz, teňňi-dest1 bolar,
+          Niçeler bar, dünýälikde mest bolar,
+          Niçeler bar, ýigitlikde nist2 bolar,
+          Niçeler bar, süren ýaşyna degmez.
+
+          Magtymguly, gerçe işim namazdyr,
+          Köňlüm perişandyr, sähwüm3 derazdyr4 ,
+          Adam bar, müň tümen iýdirseň azdyr,
+          Adam bardyr, iýen aşyna degmez.
+
+1 Teňňi-dest – eli gysga, goly teň, pes
+2 Nist – ýok.
+3 Sähw – ýalňyş.
+4 Deraz – uzyn, köp.
+
+        Görner
+
+Dogry bakmazlar julluýa,
+Göze gyzyl donly görner;
+Söze pähm etmez akmaklar,
+Öz ýanyndan tilli görner.
+
+Başa degmänkä gurtlar.
+Kast etmäň, gerekdir ýurtlar,
+Ýagyda tanalar mertler,
+Il içinde mally görner.
+
+Pikr et, başa iş düşende.
+Yssy ýokdur, soň puşmanda,
+At meýdanda, är duşmanda,
+Toýda tirme-şally görner.
+
+Jany sagyň sözlär tili,
+Jomardyň dek durmaz eli.
+Her kişiniň öz akyly
+Özüne kemally görner.
+
+Gadymdan setdir ýagşylyk,
+Ýagşy zatdyr ýagşy gylyk,
+Mert ýigide az ýagşylyk,
+Az hem söýgüli görner.
+
+               Gel, akyl dolandyr indi,
+               Ýürek peýwendi, jan bendi,
+               Her kişiniň öz perzendi
+               Özüne jemally görner.
+
+               Magtymguly, söz binýadyň1
+               Agzynda ýakynyň-ýadyň;
+               Hünär ýok söz bilen adyň
+               Halk içinde belli görner.
+
+                        Tapylmasa
+
+            Dok dalaşar sebze2 halgat3 geýmäge,
+            Kilim gözel zatdyr, don tapylmasa.
+            Aç dyrjaşar gury nany iýmäge,
+            Müşgildir, bişirge un tapylmasa.
+
+            Hasyl umydy bar ekin ekene,
+            Bu işler maglumdyr mähnet çekene,
+            Ýalaň aýak dözmez, basmaz tikene, —
+            Neýlesin geýerge gön tapylmasa.
+1 Binýat – guralyş, dikeliş, esas.
+2 Sebze, sebz — gök, ýaşyl.
+3 Halgat – halat, geýim.
+
+          Akylsyzlar iş ahyryn garamaz,
+          Çulap1 çigidinden garpyz döremez,
+          Agyr mejlislere çopan ýaramaz,
+          Neýlesin, otyrga jem tapylmasa.
+
+          Ýigitlikde her kim aşretde ýaýlar,
+          Başyna ne geler, gelmez bu köýler.
+          Dişsizler nan tapsa çäresin eýlär,
+          Müşgildir suprada nan tapylmasa.
+
+          Magtymguly, söýmez jedeli-jeňi,
+          Ahyret azm2 etdi köp dosty-deňi.
+          Dünýäde ne iş bar, bolmasa soňy,
+          Muşakgatdyr tende jan tapylmasa.
+
+                  Malyna degmez
+
+        Baýlar bardyr, garyplara rehm eýlär,
+        Bardyr baýlar, dünýä malyna degmez;
+        Gözel bardyr dünýä malyn iýdirsiň,
+        Bardyr gözel, iýen nanyna degmez.
+
+        Dünýäde bahylyň ýüzüni görme,
+        Aşyň, nanyň, suwuň alyşyp berme.
+        Gul diýip, ýigidiň aslyny sorma,
+        Hojasy bar, belki, guluna degmez.
+1 Çulap – miwe ady.
+2 Azm etmek – ugramak, gitmek.
+
+        Dünýä malyn berseň, eýesi satmaz,
+        Şa istese, anyň dilegi bitmez,
+        Bedew bar, pul berseň, bahasy ýitmez,
+        Bedew bardyr, salan juluňa degmez.
+
+        Döwletli är gerek, söweşde serhoş,
+        Ýat bilen baryşsaň, bolar sen gardaş,
+        Ýagşy ogul, ýagşy aýal, gyz syrdaş,
+        Bu döwlet her kimiň eline degmez.
+
+        Magtymguly, bu dünýäniň eşreti, –
+        Iýmek, içmek, münmek, guçmak, söhbeti.
+        Bir niçeler mydam kylar tagaty,
+        Niçeleriň sežde alnyna degmez.
+
+                         Bolgul
+
+        Bir bidöwlet bile birge bolynçaň,
+        Döwletliniň gapysynda gul bolgul;
+        Bedasyl beg gullugynda ýörinçäň,
+        Asyl begiň saýasynda kül bolgul.
+
+        Ýamany goý, ýagşylara göz ildir,
+        Kelhemeç1 hem «öz oglanym gözel» diýr,
+        Gargyş gurduň zürýadyny azaldyr,
+        Goýun kibi çar tarapa il bolgul.
+1 Kelhemeç – dazzarkel, çaýkel.
+
+        Süleýman sen — mura1 bir gulak goýgul,
+        Sözüni diňlegil, jogabyn aýgyl,
+        Häkim bolsaň halky gün kibi çoýgul,
+        Akarda suw, ýa öserde ýel bolgul.
+
+        Ýaman işdir öz nebsiňi besleseň,
+        Akmaklykdyr özüň ýagşy toslasaň,
+        Her bazarda rowaç bolmak isleseň,
+        Ýagşylaryň potasynda2 pul bolgul.
+
+        Magtymguly bardyr demiň hesibi,
+        Ir, giç ýeter her bendäniň nesibi,
+        Kişi bolsaň, goýgul gury täsibi,
+        Ýagşy, ýaman barçalarga del bolgul.
+
+           Görüm görülmegen ýerde
+
+             Yzzat, hormat, syn etmegin
+             Görüm görülmegen ýerde;
+             Akyl bolsaň, söz aýtmagyn
+             Nobat berilmegen ýerde.
+
+             Akly ýagşylar unutmaz,
+             Gury agaja ýaprak bitmez,
+             Akylly är mesgen tutmaz
+             Hulky söýülmegen ýerde.
+1 Mur – garynja.
+2 Pota – bu ýerde jübi, kise manysynda
+
+             Gömlüp galan aryk akmaz.
+             Her naşydan kerem1 çykmaz,
+             It gözlemez, pişik bakmaz
+             Saçak ýazylmagan ýerde.
+
+             Haç eýleseň jara döner,
+             Gül açylsa zara döner,
+             Hyzmat etmek hara döner
+             Gadryň bilinmegen ýerde.
+
+             Namart goş üstünde harlar,
+             Iýmit, aş üstünde gürlär,
+             Söweş gurup, gylyç parlar
+             Duşman görülmegen ýerde.
+
+             Öý içinde hara döner,
+             Muhannes bir nere döner,
+             Tilki, şagal şire döner
+             Söweş gurulmagan ýerde.
+
+             Parasat kyl bakyp akla,
+             Goç ýigidiň sözün hakla,
+             Magtymguly, tiliň sakla
+             Habar soralmagan ýerde.
+
+1 Kerem – ýagşylyk.
+
+                 Är ýanynda bellidir
+
+                 Ýagşylygy – pis bilmez, –
+                 Är ýanynda bellidir.
+                 Görer gözüň gymmaty
+                 Kör ýanynda bellýadir.
+
+                 Däli köňül daýanjy,
+                 Ýokdur dünýä ynanjy,
+                 Sag gulagyň guwanjy
+                 Ker ýanynda bellidir.
+
+                 Eger pir1 sen, eger ýaş,
+                 Kylma syryň halka paş,
+                 Syr saklaýan mähek2 daş
+                 Zer ýanynda bellidir.
+
+                 Bu dünýäniň myrady, –
+                 At, zagyfdyr3 , zürýady.
+                 Arwananyň kuwwaty
+                 Ner ýanynda bellidir.
+
+                 Bolsa gamdan halasym,
+                 Ýaza dönse gyş paslym,
+                 Magtymguly, yhlasym
+                 Ýar ýanynda bellidir.
+1 Pir – garry.
+2 Mähek – gyzyl, kümüşiň hilini kesgitlemek üçin ulanylýan daş.
+3 Zagyf (zagyfa) – aýal.
+
+                   Sazyna degmez
+
+           Oýunyň lezzetin bilmeýän adam
+           Hünärli ýigidiň sazyna degmez;
+           Bet syýakly1 , bethüý bolan pis adam
+           Perizadyň eden näzine degmez.
+
+           Bimagnynyň sözi janyňdan öter,
+           Gybat edip, özi günäge batar,
+           Ýamanyň zyýany iline ýeter,
+           Nadanyň peýdasy özüne degmez.
+
+           Adam bardyr, ony şalar çagyrdar,
+           Adam bar, zulm edip, garyp agyrdar,
+           Adam bardyr, körpe ýanyn agyrdar,
+           Adam bardyr, şal kiz2 ýanyna degmez.
+
+           Muhannesiň bolmaz namysy, aňy,
+           Bir söweş gününde eýlemez jeňi,
+           Aga-begler, muhannesiň on müňi
+           Mert ähliniň3 alty ýüzüne degmez.
+1 Syýak – sypat.
+2 Kiz – keçe.
+3 Mert ähli – mert adamlar
+
+          Magtymguly, döwran soňudyr adem1 ,
+          Lahat atly öýge goýar sen gadam.
+          Many söz aňlamaz, biakyl adam
+          Danalaryň aýdan sözüne degmez.
+
+                   Sarp eýleýir aşyny
+
+         Hak nazaryn salan bir serhoş ýigit
+         Ynsan üçin sarp eýleýir aşyny;
+         Namysly, gaýratly, arly goç ýigit
+         Söweş güni gurban eder başyny.
+
+         Bir niçeler gezer zerbap don bilen,
+         Bir niçeler gezer gury san bilen,
+         Adamzady tanyp bolmaz syn bilen,
+         Synaşmagan bilmez kişi kişini.
+
+         Ýigidiň abraýy ýagşy zagyfdyr,
+         Ýagşy zagyf näkes äre haýypdyr,
+         Ýigide gallaçlyk külli aýypdyr,
+         Her ýan gezer, bilmez eder işini.
+
+         Magtymguly, aýdaý ýaryn sypatyn,
+         Täze depder bilen ýazaý zer hatyn.
+         Dowzah nyşanasy bir ýaman hatyn
+         Her kime duş bolsa, alar huşuny.
+1 Adem – ýokluk.
+
+        Ärden
+
+Hiç köňül şatlygy çykmaz
+Bir köňül ýykmaýan ärden;
+Ýagşylyk tamasyn etmäň
+Ýamanlyk çykmaýan ärden.
+
+Her kim ile beglik eder,
+Bir söý bilen ýola gider,
+Kethudalyk ýyrak gider, –
+Ýaman söz çekmeýen ärden.
+
+Ýagşy är il aýbyn açmaz,
+Göre-bile haram içmez,
+Ýaradan ýazygyn geçmez
+Göz ýaşyn dökmeýen ärden.
+
+Eglenmez, eýýam öwrüler,
+Wagt täzeler, nyrh çöwrüler,
+Agyr döwletler aýrylar
+Bir agza bakmaýan ärden.
+
+Öz-özünden akly ýetmez,
+Akyllar sözüni tutmaz,
+Garyplyk ýok bolup gitmez
+On iş terk etmeýen ärden.
+
+     Ýigitlere ýasaw güni –
+     Gurda goýmaz şir awuny,
+     Pygamber bizar ýow güni
+     Ýoldaşa bakmaýan ärden.
+
+     Magtymguly, ýangyl, öçgül,
+     Ýa lal otur, ýa dür saçgyl!
+     Bir guýruksyz itdir, gaçgyl, –
+     Nesihat ýokmaýan ärden.
+
+            Bilmedim
+
+Pelek maňa gam badasyn bereli
+Wysal kaýsy, hijran kaýsy, bilmedim;
+Hak işine ten bermişem göreli,
+Arzuw kaýsy, arman kaýsy, bilmedim.
+
+Bende bolsaň gözle hakyň ryzasyn,
+Jebr eýlese, çekewergil jezasyn,
+Ajal bir gün atar tiri-kazasyn,
+Kiriş kaýsy, keman kaýsy, bilmedim.
+
+Aryf bolsaň, gulak goýgul sözüme.
+Bir suratam bu gün bakmaň özüme,
+Dünýä düýbi ýok görüner gözüme,
+Döwür kaýsy, döwran kaýsy, bilmedim.
+
+        Az ömrümi köp söwdaga satyp men,
+        Özüm bilmeý, ol derýaga atyp men,
+        Ne ummandyr, ne talapdyr, ýatyp men,
+        Zemin kaýsy, zaman kaýsy, bilmedim.
+
+        Her kim girse ol talaba, ummana,
+        Başyn alyp çyka bilmez bir ýana,
+        Gadam goýdum ol sähraýa-meýdana,
+        Jan kaýsydyr, jahan kaýsy, bilmedim.
+
+        Bu dünýäni asmandaky reň bildim,
+        Yssy-yssy asylyşdym, soň bildim,
+        Imdi anyň baryn-ýogun deň bildim,
+        Sut1 kaýsydyr, zyýan kaýsy, bilmedim.
+
+        Magtymguly, ýoluň öňi-ardy bar,
+        Çeker ýüküň, her kişiniň merdi bar,
+        Ýüregimde pinhan yşkyň derdi bar,
+        Dert kaýsydyr, derman kaýsy, bilmedim.
+
+1 Sut (sud) – peýda, haýyr.
+
+       Öýlengin
+
+Ýigit halyň garrylyga
+Salaýyn diýseň, öýlengin;
+Kethudalyk endişesin
+Kylaýyn diýseň, öýlengin.
+
+Kethudalyk gözel ýoldur,
+Gaýgy garrydar, gam öldir,
+Ýigitlik bir gyzyl güldür, –
+Solaýyn diýseň öýlengin.
+
+Öý-il gerek, ýorgan-düşek,
+Perzent bentdir, aýal – duşak,
+Ýüke werziş bir boz eşek
+Bolaýyn diýseň, öýlengin.
+
+Gezer sen oýnap, dalaşyp,
+Galar sen, derde dolaşyp,
+Gaýgydan gama ulaşyp
+Galaýyn diýseň, öýlengin.
+
+Joşgun eder sen özüňden,
+Aýrylar sen hoş ýazyňdan-,
+Tükenmez derdiň yzyndan
+Ýeleýin diýseň, öýlengin.
+
+              Açyp ýigitlik dumanyn,
+              Getir sen gaýgy zamanyn,
+              Dünýäniň ýagşy-ýamanyn
+              Bileýin diýseň, öýlengin.
+
+              Magtymguly, gezip her taý.
+              Etmediň jahandan perwaý,
+              Pygamber sünnetin berjaý
+              Kylaýyn diýseň, öýlengin.
+
+                   Kyly-kal bolar
+
+           Her kişiniň iki bolsa aýaly,
+           Gije-gündiz işi kyly-kal1 bolar;
+           Her biriniň bardyr ýüz müň hyýaly,
+           Owkat sürüp görejigi hal2 bolar...
+
+           Birin söýüp, birin eýlese naçar,
+           Ile ryswa bolup, öz aýbyn açar,
+           Akly haýran bolup, baryndan geçer,
+           Deň tutmasa ýaryn, bikemal bolar.
+
+           Gähi bilbil kimin saýrar tilleri,
+           Tomaşadan häzir eder illeri,
+           Gähi ýer ýumruklar, gähi külleri,
+           Ärin göre bilse, tilsiz lal bolar.
+1 Kyly-kal – galmagal, gowga.
+2 Hal – bu ýerde kyn manysynda.
+
+             Gahar eýläp gelmez bolsa ýanyna,
+             Söz aýtmasa her biriniň şanyna,
+             Beýle är goşulmaz adam sanyna, —
+             Iki hatyn, bir är — üç aýal bolar.
+
+             Magtymguly, kimse bilmez batyny1 ,
+             Öýlenseňiz, garap alyň zatyny2 ,
+             Eýäm görkezmesin ýaman hatyny,
+             Adam özün bilmez, ham hyýal bolar.
+
+                     Ykrarsyz ärden
+
+                Gördük saýy, köňül sowar
+                Sabyrsyz, kararsyz ärden;
+                Yssy beren köpek ýegdir3
+                Uýatsyz, ykrarsyz ärden.
+
+                Aýlandykça döwran-döwür,
+                Ykbalyň ýüwürse, öwür,
+                Dura-bara dosty sowyr
+                Garyp galan barsyz ärden.
+1 Batyn – gizlilik, syr, içki dünýä.
+2 Zat – asyl.
+3 Eg – oňat, gowy.
+
+Ite zer dök, minnet çekmez.
+Aňlamaza sözüm ýakmaz,
+Köňlüň istän işler çykmaz
+Nan ýagysy, kärsiz ärden.
+
+Her göz säherde bidardyr, —
+Eýesinden ülüş bardyr,
+Hak, pygamber, halk bizardyr
+Düýbi ygtybarsyz ärden.
+
+Magtymguly, magny saçar,
+Her kim söz lezzetin içer,
+Bara-bara köňül geçer
+Tagsyby ýok, arsyz ärden.
+
+     Diş gitmek
+
+Tagamnyň lezzetin alyr,
+Dahanyňdan diş gitmek;
+Aňyrsyzy azdyryr
+Götin döwlet baş gitmek.
+
+Şeýtan ýolun bek eýlär,
+Gara ýüzün ak eýlär,
+Ýüz müň bela ýok eýlär
+Säher turup ýaş dökmek.
+
+Peltesiz ýag çyraga,
+Yşyk salmaz gyraga,
+Ilin salar aýaga
+Aýak galyp, baş gitmek.
+
+Niçe pese zar bolup,
+Ýatandan bimar bolup,
+Hoşdur ýagşa ýar bolup,
+Bir ýamandan daş gitmek.
+
+Ulaşmaganlar gama
+Şükr etmezler bu deme,
+Abyraýdyr adama
+Ýagşy gelip, hoş gitmek.
+
+Ýaman til dost ýitirer,
+Hoş til rahmet getirer,
+Äre sangy ýetirer
+Kyrkdan agyp, ýaş gitmek.
+
+Pyragy, dünýä düýşdür,
+Düýş görseň, düýbi hiçdir.
+Jahanda ýaman işdir
+Gury gelip, boş gitmek.
+
+                         Eldim tut
+
+     Dünýe görmeý, tutgun galsaň bir künçde,
+     Bady-paý1 dek ýer ýüzüne ýeldim tut;
+     Çyn-Maçynda, Rumda, Hindde, Hebeşde
+     Bolan-bolmuş hünärleri bildim tut.
+
+     Aç hem bolsaň, barma ile dilege,
+     Diý: köşkde men, başym barmyş pelege,
+     Çölde galsaň, hiç tapmaýan kölege,
+     Erem bagy içre gamsyz galdym tut.
+
+     Aş görende, özüň atma dillenip,
+     Gerçe aç hem bolsaň, halka bellenip,
+     Zerler döküp, çyn gullarny gollanyp,
+     Tiz hem ölseň, Nuh ýaşyna geldim tut.
+
+     Mätäçligiň hakdan özge bilmese,
+     Ol rozugär2 besdir, açdan ölmese,
+     Hindi kimin egin örtiň bolmasa,
+     Patyşalyk puşeş3 çigne saldym tut.
+1 Bady-paý – el aýak, ýyndam at.
+2 Rozygär – rysgal, durmuş.
+3 Puşeş – eşik, geýim.
+
+     Suwa, ýele hökmi geçen Süleýman,
+     Bak: olardan ne nam galdy, ne nyşan!
+     Teşne1 galyp, jaýyň bolsa çölüstan
+     Derýa içre men Isgender boldum tut.
+
+     Ýoldaş bolsaň dile düşmez mur bile —
+     Ýer tapmaýyn, bile ýatsaň mar bile,
+     Ýigrim alty keret2 ýüz müň är bile
+     Karun hazynasyn ele aldym tüt.
+
+     Magtymguly, çekseň jepa-jebir, bil –
+     Hudaga hoş geler, şükür-sabyr, bil,
+     Gylça jana gyzyl teni gabyr bil,
+     Gyzyl tiliň sözlär eken, öldüm tut.
+
+                      Joş gelse
+
+     Dünýäde niçe iş bardyr, ýamandyr,
+     Biri oldur, ýersiz gahra joş gelse;
+     Aşyklara şol gün ahyrzamandyr,
+     Ýardan yrak düşüp, ara daş gelse.
+
+     Dostuňny egleme, nepden galmasyn,
+     Duşmanyň saklama, syryň bilmesin,
+     Açda algyn, bege bergiň bolmasyn,
+     Iş müşgildir, aňlamaza duş gelse.
+1 Teşne – suwsuz, suwsan.
+2 Keret – gezek.
+
+     Zemin seni häli-häli ýutarmy,
+     Akyl bolan munda bigam ýatarmy?
+     Hiý bir masgaralyk mundan ötermi, —
+     Giden gury gitse, gelen boş gelse!
+
+     On gat öýüň bolsa demir galadan,
+     Ajal tapar emir1 bolsa alladan,
+     Hakyky är ýüz döndermez beladan,
+     Hak ryzasy bilen başa daş gelse.
+
+     Aryf men diýp, lap urarlar ýalandan,
+     Bellisini aýdar sorsaň bilenden,
+     Il gözlügin ýüz ýyl tagat kylandan,
+     Ýagşydyr bir säher gözden ýaş gelse.
+
+     Baýlar baglap sahawatyň gapysyn,
+     Köpelder tamugnyň möýün, apysyn2 ,
+     Görüň bu eýýamyň pirin, sopusyn —
+     Dannamaýyn tykar otyr, aş gelse.
+
+     Magtymguly, söýle aklyň ýetinçä,
+     Tetärigiň gazan, bikar ýatynça,
+     Tamugdadyr, tä dünýäden ötinçä, —
+     Ýaman hatyn ýagşy äre duş gelse.
+
+1 Emir (emr) – buýruk, höküm.
+2 Apy (afy) – zäherli ýylanyň bir görnüşi.
+
+                         Ýigide
+
+                Ulalanda, iş hoş gelmez
+                Ýaşlykda köýmän ýigide;
+                Döwlet gelse özün bilmez
+                Dogaly doýman ýigide.
+
+                Ýamana öwüt hebesdir,
+                Ýagşy äre bir söz besdir,
+                Ýörişini ýalňyş basdyr
+                Ýaňy don geýmän ýigide.
+
+                Jüpbe jöwşen1 , zere-sowut2 ,
+                Keserli gylyç, arap at,
+                Söweş güni gider uýat
+                Gaýraty bolman ýigide.
+
+                Çopan adam çoka bolmaz,
+                Ala garga oka gelmez,
+                Köp ýygylsa, terhos almaz
+                Aňrysy bolman ýigide.
+
+                Gulluk ýetirgin janyňdan,
+                Aýama parça nanyňdan,
+                Ganly bolsa, geç ganyňdan
+                Bir garyp myhman ýigide.
+1 Jöwşen – harby eşik, enjamlar.
+2 Sowut – demir don.
+
+Dünýäde hiç kim galmandyr,
+Mal jana ýoldaş bolmandyr,
+Göýä bu dünýä gelmändir
+Bir zürýat goýman ýigide.
+
+Almaz, kümüş mis görüner
+Dula gyrnak tüýs görüner,
+Perizat hatyn pis görüner
+Bir hulky söýmän ýigide.
+
+Mal döner çiýan-çirmäge,
+Durar et-ganyň sormaga,
+Malyndan zekat bermäge
+Gözleri gyýman ýigide.
+
+Magtymguly, ýeldan çykmaz,
+Ýagşy söz ýamana ýakmaz,
+Müň söz aýtsaň, biri ýokmaz,
+Taňrysy guýman ýigide.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Gidiji bolma',
+    'Gel, köňlüm, men saňa nesihat kylaý,
+        Watany terk edip gidiji bolma;
+        Özüňden egsik bir gaýry namardyň
+        Hyzmatynda gulluk ediji bolma.
+
+        Hyzmat kylsaň, bolsun bir asylzada,
+        Ata-babasyndan beýik begzada,
+        Eger her çent bolsa aç hem üftada,
+        Ýanyndan bir zaman gidiji bolma.
+
+        Akmaýan galmazdyr bir akan aryk,
+        Bir tende adam ki semiz, kä aryk;
+        Bir ýüzi çirikdir1 , bir ýüzi çaryk,
+        Çirik diýp, gaty söz aýdyjy bolma.
+
+        Ýagşylardan hergiz çykmaz ýamanlyk,
+        Asly ýaman bolsa, çykmaz ýagşylyk,
+        Aslyna tartadyr ýüwrük, çamanlyk,
+        Ýüwrükni çamanga satyjy bolma.
+
+        Çakylyk, habarsyz bir ýere barsaň,
+        Imtiýaz2 eýlegil otursaň, tursaň,
+        Bir nesihat bereý, pendimi alsaň,
+        Kişi aşynyň duzun dadyjy bolma.
+1 Çirik – bu ýerde garalyk, hapa manyda.
+2 Imtiýaz – salykatlylyk, seljermek, artykmaçlyk.
+
+        Çagyrlan ýere bar, otur-da turma,
+        Çagrylmadyk ýere barma, görünme,
+        Utanmaz adam dek süýrenip ýörme,
+        Buýrulmagan işni ediji bolma.
+
+        Eger sen hem bolsaň nermi-mylaýym,
+        Mylaýym sen bolsaň, guluň bolaýym,
+        Gulagymga beren pendiň alaýym,
+        Kişige gaty söz aýdyjy bolma.
+
+        Gökden nem düşmese, ýer ot getirmez,
+        Ýygylsa müň gaýgy, bir iş bitirmez,
+        Är ýigit köňlüne gaýgy getirmez,
+        Namardyň ogly dek gaçyjy bolma.
+
+        Mert ogludyr ile ýazar desterhan,
+        Dogry söz üstünde berer şirin jan,
+        Ömrüni ötgerer, diýmez bir ýalan,
+        Jäht eýläp, ýalan söz aýdyjy bodma.
+
+        Sahty-dil1 ýüregi hergiz boş bolmaz,
+        Her niçe gynansa köňli hoş bolmaz.
+        Bir-birewge iki ýagşy duş bolmaz,
+        Ýagşyny ýamana satyjy bolma.
+1 Sahty-dil – gaty, doň ýürek.
+
+        Töwekgel ner bolar, endişe — maýa,
+        Köňlüňni iberme her kaýsy jaýa,
+        Barçanyň daýanjy kadyr allaýa,
+        Alladan özgäge söýenji bolma.
+
+        Okyr bolsaň, ok ur nebsiň gözüne,
+        Gara, çyn göz bilen meshap1 ýüzüne,
+        Aldanyp girmegil şeýtan sözüne,
+        Ýagşylygy hiç wagt goýujy bolma.
+
+        Eger bolsun diýseň ýeňil-agyrlar,
+        Kelçik sözläp agyrtmagyl bagyrlar,
+        Ýoluksa gözüňe güňi-sagyrlar,
+        Olarnyň halyna gülüji bolma.
+
+        Tapsaň-da dünýäde mülki-Isgender,
+        Karunyň maly hem bolsa miýesser,
+        Ahyry bolar sen ýerge barabar,
+        Köňlüňde men-menlik satyjy bolma.
+
+        Aýdarlar: ýyrtyk don görse it gapar,
+        Päli ýaman bende hudadan tapar,
+        Ahyry bir güni kylar sen sapar,
+        Dar köňüllik işi ediji bolma.
+1 Meshap – kitap, tom, kodeks.
+
+        Eger çendi ki bol sahyby-mansap1 ,
+        Sözün diňle, adalatly bol deňläp,
+        Söz tapsaň sözlegil, tapmasaň bol hap,
+        Goldan gelmez işni ediji bolma.
+
+        Garrylyk gitgisi bir gün apaty,
+        Ýigidiň gitgisi bir gün kuwwaty,
+        Ganymat bil, gapyl adam, pursaty,
+        Murda dek uzanyp ýatyjy bolma.
+
+        Maksat, bu sözlere kylgyl ygtybar,
+        Çyn adama her wagt adamlyk derkar,
+        Aňlamaý söýleme: «tamda gulak bar»,
+        Iç syryň kişige aýdyjy bolma.
+
+        Daň atanda molla çagyrar azan,
+        Bozulmazmyş hergiz kysmatda ýazan,
+        Ýigitlik bostandyr, garrylyk — kazan,
+        Bostany hazana satyjy bolma.
+
+        Kitabyn açyban okan molla diýr,
+        Gögerer ýagmyryň suwy birle ýer,
+        Alkyşy, patyha, doga birle är,
+        Mazluma sütemlik ediji bolma.
+1 Sahyby-mansap – derejeli, emeldar.
+
+        Döwletli ogullar ýaşda baş bolar,
+        Ýaşaganda, bidöwletler ýaş bolar,
+        Rehimsiz zalymlar bagry daş bolar
+        Barar ýere kesek atyjy bolma.
+
+        Är ýigit balasy bara pur1 bolar,
+        Gamçysy elinde ýaman zor bolar,
+        Märeke görmegen ýigit har bolar,
+        Bolar-bolmaz sözi aýdyjy bolma.
+
+        Eý köňül, gel imdi haky tapaly,
+        Nesibe merkebin2 münüp çapaly,
+        Aýdarlar: hak ermiş mähri-wepaly,
+        Hergiz öz sözüňden gaýdyjy bolma.
+
+        Men diýdim bir niçe pendi-nesihat,
+        Bilseň nesihatdyr, ýogsa — pesihat3 ,
+        Pesihat bilmegil, barça nesihat,
+        Ýalgançy sözleri aýdyjy bolma.
+
+        Magtymguly, göwnüňdedir köp arman,
+        Tapmady derdine akybet derman,
+        Ýetişer bir güni hakdan bu perman,
+        Gaflat düşeginde ýatyjy bolma.
+
+1 Pur – doly.
+2 Merkep – ulag.
+3 Pesihat – owadan söz.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Seni',
+    'ň kimin ýokmy? – diýip, – dünýäde
+           Sökseler, neýlär sen, sen namyrada!
+           Şeýle güýçlendimi yşkyň zyýada?
+           Hetdiň bilmeý, aşa-aşa düşüp sen!
+
+           Gadam goýsaň sähralara, çöllere,
+           Köňül gaýnap, söz joş eder tillere,
+           Iller saňa haýran, sen hem – illere,
+           Ýa aklyň aldyryp, çaşa düşüp sen!
+
+           Baka2 ýokdur söhbediňe, sazyňa,
+           Ygtybar ýok, gyş günüňe, ýazyňa,
+           Sen bu derdi ýowutmazdyň özüňe,
+           Owwaly gerek däl nişe düşüp sen.
+
+           Magtymguly, hemme ýola baş urduň,
+           Çohlar bilen gezdiň, oturdyň, turduň,
+           Ýalançydan ne hezl etdiň, ne gördüň?
+           Imdi gör: otuz tört ýaşa düşüp sen.
+
+1 Dahan – agyz.
+2 Baka – hemişelik.
+
+               Ýyglap geçer halymga
+
+           Giň göwrämi gam basypdyr özünden,
+           Baş hem gelse, ýyglap geçer halymga;
+           Bagyr ýaşyn köňül döker gözünden,
+           Gaş hem gelse, ýyglap geçer halymga.
+
+           Garrylyga döndär ýigit çaglary,
+           Geda eýlär täç eýesi begleri,
+           Gurşun dek eridir Kap dek daglary,
+           Daş hem gelse, ýyglap geçer halymga.
+
+           Älem içre bir ah ursam, bir zarba,
+           Eda bolmaz ynsan gelmez bir gurba,
+           Gaplaň güýçden galar, däner gurt gürbä1
+           Guş hem gelse, ýyglap geçer halymga.
+
+           Puşmanda men eden-etmiş kärimden,
+           Biperwaýam bolan-bolmuş barymdan,
+           Ýoldaş bolan ýata bilmez zarymdan,
+           Daş hem gelse, ýyglap geçer halymga.
+
+           Hak yşykdyr bizni goýan közlere,
+           Bu közlerdir kysmat bolan bizlere,
+           Bilbil tilsiz galar, barsam ýazlara,
+           Gyş hem gelse, ýyglap geçer halymga.
+1 Gürbe – pişik.
+
+          Aňlamaýan yşk derdiniň käninden1 ,
+          Bir söz geçmez, herne etseň ýanyndan,
+          Yşka düşen umyt üzer janyndan,
+          Läş hem gelse, ýyglap geçer halymga.
+
+          Pähm eýleýen Magtymguly sözüni,
+          Derde düşüp, ýaşa doldyr gözüni,
+          Şat gelenler tuta bilmez özüni,
+          Hoş hem gelse, ýyglap geçer halymga.
+
+                      Baradyr
+
+          Gam dumany basyp garyp köňlümni,
+          Göz ýaşyn saklamaý, döküp baradyr;
+          Kimdir rehm eýleýip soran halymny?
+          Bozuk köňlüm erkin ýykyp baradyr...
+
+          Gerçe ot ýaksalar aşyk ýagyndan,
+          Ölüm asan erer dost pyragyndan2 ,
+          Hijran meni goýdy sabyr dagyndan,
+          Pyrak bogum-bogum söküp baradyr...
+
+          Ol döwri-döwranym çarh bulaşdyrdy,
+          Gam meni guratdy, ot tutaşdyrdy,
+          Yşk meni ýandyrdy, hetden aşdyrdy,
+          Ýüregim içimden çykyp baradyr...
+1 Kän – hazyna, magdan.
+2 Dost pyragyndan – dostdan aýrylmakdan.
+
+           Parahat ýatyrdym, nebsimi besläp,
+           Turdy köňlüm, ýar jemalyn höwesläp,
+           Hakdan hajat diläp, myradyn isläp,
+           Gözüm ol ýollara bakyp baradyr...
+
+           Magtymguly, mejalym1 ýok, sözläýin,
+           Dostlarga derdimni beýan eýläýin.
+           Eý ýaranlar, ýyglamaýyn neýläýin?
+           Yşk meni ýandyryp, ýakyp baradyr...
+
+                       Galyp men
+
+           Jahyllygyň joşy çykdy başymdan,
+           Men ol joşdan haly2 bolup galyp men.
+           Bir gama ulaşdym, gitdim huşumdan,
+           Bu dert bilen doly bolup galyp men.
+
+           Başym ýüz höwesde, köňlüm joşgunda,
+           Girdaba düşüp men däli-daşgynda,
+           Nejt dagyna gezem Mejnun yşkynda
+           Ýanar otly Leýli bolup galyp men.
+1 Mejal – pursat, hal, ýagdaý.
+2 Haly – boş.
+
+           Ýigitlik paslyny gyşa ýetirdim,
+           Kämillik keştisin1 derýa batyrdym,
+           Beýik pikre galdym, aklym ýitirdim.
+           Tirik erken, öli bolup galyp men.
+
+           Bu dünýäni göçüp bargan göç bildim,
+           Işini bet aňdym, özün puç bildim,
+           Öňün oýun gördüm, soňun hiç bildim,
+           Halk içinde däli bolup galyp men.
+
+           Magtymguly, paş eýlegil sözüňni,
+           Pelek muşty häk2 etmeýen gözüňni,
+           Bu wagta deň ýaş bilirdiň özüňni,
+           Imdi gör-bak: uly bolup galyp men.
+
+                     Daşlar bile
+
+              Köňül aýdar halkdan galyp,
+              Gezsem daglar, daşlar bile;
+              Ýazygymny ýada salyp,
+              Ýüzüm ýuwsam ýaşlar bile.
+
+              Kimni görsem bir pişede,
+              Meniň köňlüm endişede,
+              Gähi ser, içre köşede,
+              Otursam agaçlar bile.
+1 Keşti – gämi.
+2 Muşty häk – gysym gum.
+
+              Garry dünýä al içinde,
+              Adamzat hyýal içinde,
+              Jahan galmagal içinde,
+              Her kim ýüz talaşlar bile.
+
+              Alla yşkyda ser mestler,
+              Duwuş gelmez zeberdestler1 ,
+              Köňül perwaz eder, dostlar,
+              Durmaz ýüz alaçlar bile.
+
+              Köp köýler bile oturdym,
+              Bilmedim, ne iş bitirdim,
+              Gümra bolup, ýol ýitirdim,
+              Oturdym biweçler bile.
+
+              Bikär goýma ömür tagty,
+              Oýandyrsak oýmuş2 bagty;
+              Doga kylyp säher wagty,
+              Nalyş kylsam guşlar bile.
+
+              Magtymguly, towpyk3 alsam,
+              Bir är tapsam, gulluk kylsam,
+              Ýürek aýdar: ýoldaş bolsam
+              Dem çeken derwüşler bile.
+
+1 Zeberdest – eli üstün, güýçli, başarjaň.
+2 Oýmuş – uklan, ýatan.
+3 Towpyk – kömek.
+
+                      Ýar bizim sary
+
+         Gulzumy1 gyrsanyp kyrk ýol geçer men,
+         Eger ki meýl etse ýar bizim sary;
+         Gadam ýerne ganat baglap uçar men,
+         Diýse dilber: «Aşyk, ýör bizim sary».
+
+         Kyrk ýyl gol gowşuryp, gullukda dursam,
+         Alty günçe görmen, altmyş ýyl ýörsem,
+         Bir şunçakly bolsa, görsem, jan bersem,
+         Jemalyn arz etse bir bizim sary.
+
+         Ne laýykly ýüzüm bardyr tutarga,
+         Ne aýry gapym bar onda giterge?
+         Umyt bar goýnunda bile ýatarga,
+         Dergahyndan açsa der2 bizim sary...
+
+         Bir kimse ýolukdy desti3 şeraply,
+         Ýelden jaýnamazly4 , suwdan mähraply,
+         Egni ak redaly5 ýaşyl nykaply
+         Ugraşdy bir ajap är bizim sary.
+1 Gulzum – Müsür bilen Arabystan aralygynda bolan Gyzyl deňiz.
+2 Der – gapy, işik.
+3 Dest – el.
+4 Jaýnamaz – namazlyk.
+5 Reda – don.
+
+         Ýoldaş bolup bile ýördüm bir meýdan,
+         Meýdan içre dolup oturmyş merdan,
+         Bir eýwan üstünde çyrlap tört ýerden,
+         Diýdiler: «Goluňny ber bizim sary!».
+
+         «Pyragy!» diýp çagyrdylar, eltdiler,
+         «Kandadyň?» diýp, gulagymdan tutdular,
+         Istihanym1 altmyş para etdiler,
+         Diýdiler: «Mert olsaň, ýör bizim sary!»
+
+         Magtymguly bäş gün aşret sürmäge,
+         Jaý imesdir eglenmäge, durmaga,
+         Kararym ýok oturmaga, turmaga
+         Agzyn açyp durmuş ýer bizim sary.
+
+                      Bolmasa
+
+           Her kim suluw men diýr, ygtybar olmaz,
+           Sünbül saçy, gylça bili bolmasa;
+           Ýürekleri at başy dek batyrlar,
+           Hatynça ýok, at-ýaragy bolmasa.
+
+           Näler görejekdir bu şum köňüller.
+           Hazan ursa, solar açylan güller,
+           Bag içre saýraşan şeýda bilbiller,
+           Torgaýça ýok, gonar güli bolmasa.
+1 Istihan – süňk.
+
+Sözleseň, her ýana öwser bu tiller,
+Ýel urpakdan aşsa, şuwlar şemallar,
+Ýaşylbaş sonalar, gazlar garkyllar,
+Haly-harap düşer köli bolmasa.
+
+Guşlar uça bilmez guruk-ganatsyz,
+Aşyk ýara ýetmez dady-perýatsyz,
+Bir bedew hanazat bolar syýaksyz,
+Gurugy, käkili, ýaly bolmasa.
+
+Ahyrzaman bolsa, şyhdan päl gaçar,
+Kelamnyň ýüzünden hat galman öçer,
+Meýdandaky suwsuz aryga ogşar –
+Her kimniň sahawat-haýry bolmasa.
+
+Başyň goşma gadyr bilmez bezzada,
+Goşsaň, goşgul aşyň bir asylzada,
+Howada ýagmazak meňzär buluda, –
+Her kimiň hümmeti, haýry bolmasa.
+
+Magtymguly, biliň, şundag zamandyr,
+Şindi haýyr bolsa, soňra zyýandyr,
+Är ýigidiň içi doly armandyr, –
+Gara göz, inçe bil ýary bolmasa.
+
+                 Mala seretmez
+
+         Owwal-a mal ýagşy, maldan baş ýagşy,
+         Baş döwletin tapan mala seretmez;
+         Dogmadyk oguldan dogan är ýagşy1 ,
+         Nadan ogul atasyna seretmez.
+
+         Atda aýak bolsa, özge syn bolmaz,
+         Ärde gaýrat bolsa, işi kyn bolmaz,
+         Söweş güni goç ýigitde müýn bolmaz,
+         Garşy bakar, peýkam-ýaýa seretmez.
+
+         Alaman öňüni serdary başlar,
+         Goç ýigitler naýza urar, gylyçlar,
+         Kimseler bukulyp, kimse at uşlar,
+         Abyraý tapmasa, paýa seretmez.
+
+         Är-dostdan gaçarlar, adam aç galsa,
+         Ýar-ýardan aýrylar, ara daş galsa,
+         Ýaman hatyn ýagşy ýigide duş bolsa,
+         Başyny terk eder, daýa seretmez.
+
+         Köne dünýä muhannesiň öýüdir,
+         Süýthor bolan kesiň dowzah jaýydyr,
+         Altyn, kümüş gözlerimiň maýydyr2 ,
+         Goç ýigitler bozuk jaýa seretmez.
+1 «Dogmadyk oguldan duşman är ýagşy» diýen nusga hem bar.
+2 Maý – ýag.
+
+          Dünýä görki näzeninler, ne janlar,
+          Nadana ýolukdy türpe1 jenanlar.
+          Ýardan galan, äri ölen juwanlar
+          Goç ýigidi gözlär, baýa seretmez.
+
+          Magtymguly, garyp göwnün baý edip,
+          Kanagat ülkesin bendi-jaý edip,
+          Her kim öz ýaryny dogan aý edip,
+          Aýyn gözlär, özge aýa seretmez.
+
+                 Duz hem bolmasa
+
+          Togsan dürli tagam bolsa gaşynda,
+          Ne lezzet, içinde duz hem bolmasa;
+          Näbiler sen ne iş bardyr başynda,
+          Müşgil işdir, başda göz hem bolmasa...
+
+          Aýak bar ýörmäge, el bar almaga,
+          Kany bende, saglyk şükrün kylmaga,
+          Gulak bardyr eşitgenin bilmäge,
+          Kim düzeder, dilde söz hem bolmasa?
+
+          Ýok ýerden jan berip ýetirdi nany,
+          Göwün bostanyda bitger imany,
+          Adyň bende bolsa, eýäňi tany,
+          Gelip saňa ýüzbe-ýüz hem bolmasa.
+1 Türpe (turpa) – gözel, ter.
+
+          Kysmatyn hak bilen ryzkyn yzlamaz,
+          Söz bilenler bilen sözün gizlemez,
+          Köňül joşa gelmez, dil hem sözlemez,
+          Her ýürekde yşkdan göz hem bolmasa.
+
+          Ýyl-ýyldan pezihat1 artar eýýama,
+          Hakyň özi getirmese enjama,
+          Dünýä sözi meňzär duzsuz tagama,
+          Söz içinde gelin-gyz hem bolmasa.
+
+          Ýum gözüňi, gysyp gezgin dişiňni,
+          Ýaza ýetseň unutmagyn gyşyňny,
+          Töwekgel et, taňra tabşyr işiňni,
+          Sabyr bilen biter, tiz hem bolmasa.
+
+          Magtymguly, hyýal düşüp özüme,
+          Köp tomaşa gelip geçer gözüme,
+          Eşidenler aýp etmesin sözüme,
+          Iller kimin sözüm uz hem bolmasa.
+
+1 Pezihat – erbetçilik, biabraýlyk, masgaralyk.
+
+                        Çykypdyr
+
+          Hak tagala, bu ne-niçik ahwaldyr,
+          Dury diýip içdigim gumly çykypdyr;
+          Ne ýeser beýhuda şum keç ykbaldyr,
+          Halal diýip iýdigim jimli çykypdyr.
+
+          Kimse syrym bilmez, özün öldürse,
+          Pakyr bendelerge taňry bildirse,
+          Ile şatlyk, şadymanlyk güldürse,
+          Maňa hemra bolan gamly çykypdyr.
+
+          Amuhta1 men örtenmäge, bişmäge,
+          Kişi ýok sözleşip, dert aýdyşmaga,
+          Oba ujundan barsam öý soraşmaga,
+          Ýa laldyr, ýa agzy mumly çykypdyr.
+
+          Menden şikat eder elim gerenim,
+          Galbyrdan2 şal çykar syrym berenim,
+          Pir diýip paşmagna elim uranym,
+          Deprenende, döwden demli çykypdyr.
+
+          Magtymguly, hasaby ýok görenim,
+          Tama edip, umyt elim gerenim,
+          Obasyna ärmiş diýip baranym
+          Etegne el ursam.., çykypdyr.
+
+1 Amuhta – taýar, çulum, öwrenişikli, endikli.
+2 Galbyr – elek.
+
+        Bary bolmasa
+
+Zamana beýledir, göze ilmezler,
+Her ýigidiň golda bary bolmasa.
+Ýüz tümenlik sözün şaýa almazlar,
+Her kişiniň ygtybary bolmasa!
+
+Ten bir dar kapasdyr, jan bir wagşydyr,
+Tile gelen sözler köňül nagşydyr,
+Otly, suwly tamug andan ýagşydyr,
+Her ýuwurdyň bir bazary bolmasa.
+
+Begzadalar galdy çopan tährine,
+Ten haçan döz getir ýylan zährine,
+Bibat olup döner Lutuň şährine,
+Her ülkäniň häkim äri bolmasa.
+
+Dünýäde aňlardan aňlamaz kändir,
+Bilmezler beladyr, bilenler jandyr,
+Ol ýigitler adam tilli haýwandyr,
+Söz aňmasa hem ykrary bolmasa.
+
+Ýigide ýoksullyk ýaman beladyr,
+Sözüni deň-duşdan gaýra saladyr,
+Ýaman gylyk dosty duşman kyladyr,
+Guryp galsyn, il derkary bolmasa.
+
+                 Hak her kime bir ýagşy ýar bermändir, —
+                 Sözi akdyr, içi doly armandyr,
+                 Ýüz ýaşasa, bäş gün döwran sürmändir,
+                 Her kimniň mynasyp ýary bolmasa.
+
+                 Magtymguly, haka tabşyr özüňni,
+                 Her namarda sarartmagyl ýüzüňni,
+                 Terhosym bar, gel terk eýle sözüňni, —
+                 Näge gerek, hyrydary bolmasa.
+
+                         Düýşüne degmez
+
+                 Ýoksuzlykda niçeleriň döwrany,
+                 Ýatyp ýagşy gören düýşüne degmez;
+                 Niçeler hasretde tapyp höşk1 nany,
+                 Bir lezzetli tagam dişine degmez.
+
+                 Soran bolsa, synam içre sözler bar,
+                 Müň tümenden ýegdir, niçe ýüzler bar.
+                 Neýsansyz2 , nebatsyz3 niçe ýazlar bar, –
+                 Hoşluk bilen geçen gyşyna degmez.
+       1 Xöşk – gury.
+       2 Neýsan — ýaz wagtynda ýagýan ýagyş; grekçe aýlarynyň biriniň
+
+ady.
+       3 Nebat – ot, ösümlik.
+
+          Akyllar bar, başa baglap keçeler,
+          Içgin-içgin sorsaň, magny saçalar,
+          Akmaklykda özün bezäp niçeler, –
+          Kellesine saran peşine degmez.
+
+          Aňlamaza aýat sözlerin diýseň,
+          Pygamber hadysyn öňünde goýsaň,
+          Gyýmazlykdan köp söz beýnine guýsaň,
+          Bu sözler gulagnyň daşyna degmez.
+
+          Ynjatsa ogul-gyz, ene-atasyn,
+          Toba kylmaý taňrym geçmez hatasyn,
+          Döwran gelse, bilmez ne iş tutasyn,
+          Her kimiň her işden başyna degmez.
+
+          Niçeler mal tapmaz, teňňi-dest1 bolar,
+          Niçeler bar, dünýälikde mest bolar,
+          Niçeler bar, ýigitlikde nist2 bolar,
+          Niçeler bar, süren ýaşyna degmez.
+
+          Magtymguly, gerçe işim namazdyr,
+          Köňlüm perişandyr, sähwüm3 derazdyr4 ,
+          Adam bar, müň tümen iýdirseň azdyr,
+          Adam bardyr, iýen aşyna degmez.
+
+1 Teňňi-dest – eli gysga, goly teň, pes
+2 Nist – ýok.
+3 Sähw – ýalňyş.
+4 Deraz – uzyn, köp.
+
+        Görner
+
+Dogry bakmazlar julluýa,
+Göze gyzyl donly görner;
+Söze pähm etmez akmaklar,
+Öz ýanyndan tilli görner.
+
+Başa degmänkä gurtlar.
+Kast etmäň, gerekdir ýurtlar,
+Ýagyda tanalar mertler,
+Il içinde mally görner.
+
+Pikr et, başa iş düşende.
+Yssy ýokdur, soň puşmanda,
+At meýdanda, är duşmanda,
+Toýda tirme-şally görner.
+
+Jany sagyň sözlär tili,
+Jomardyň dek durmaz eli.
+Her kişiniň öz akyly
+Özüne kemally görner.
+
+Gadymdan setdir ýagşylyk,
+Ýagşy zatdyr ýagşy gylyk,
+Mert ýigide az ýagşylyk,
+Az hem söýgüli görner.
+
+               Gel, akyl dolandyr indi,
+               Ýürek peýwendi, jan bendi,
+               Her kişiniň öz perzendi
+               Özüne jemally görner.
+
+               Magtymguly, söz binýadyň1
+               Agzynda ýakynyň-ýadyň;
+               Hünär ýok söz bilen adyň
+               Halk içinde belli görner.
+
+                        Tapylmasa
+
+            Dok dalaşar sebze2 halgat3 geýmäge,
+            Kilim gözel zatdyr, don tapylmasa.
+            Aç dyrjaşar gury nany iýmäge,
+            Müşgildir, bişirge un tapylmasa.
+
+            Hasyl umydy bar ekin ekene,
+            Bu işler maglumdyr mähnet çekene,
+            Ýalaň aýak dözmez, basmaz tikene, —
+            Neýlesin geýerge gön tapylmasa.
+1 Binýat – guralyş, dikeliş, esas.
+2 Sebze, sebz — gök, ýaşyl.
+3 Halgat – halat, geýim.
+
+          Akylsyzlar iş ahyryn garamaz,
+          Çulap1 çigidinden garpyz döremez,
+          Agyr mejlislere çopan ýaramaz,
+          Neýlesin, otyrga jem tapylmasa.
+
+          Ýigitlikde her kim aşretde ýaýlar,
+          Başyna ne geler, gelmez bu köýler.
+          Dişsizler nan tapsa çäresin eýlär,
+          Müşgildir suprada nan tapylmasa.
+
+          Magtymguly, söýmez jedeli-jeňi,
+          Ahyret azm2 etdi köp dosty-deňi.
+          Dünýäde ne iş bar, bolmasa soňy,
+          Muşakgatdyr tende jan tapylmasa.
+
+                  Malyna degmez
+
+        Baýlar bardyr, garyplara rehm eýlär,
+        Bardyr baýlar, dünýä malyna degmez;
+        Gözel bardyr dünýä malyn iýdirsiň,
+        Bardyr gözel, iýen nanyna degmez.
+
+        Dünýäde bahylyň ýüzüni görme,
+        Aşyň, nanyň, suwuň alyşyp berme.
+        Gul diýip, ýigidiň aslyny sorma,
+        Hojasy bar, belki, guluna degmez.
+1 Çulap – miwe ady.
+2 Azm etmek – ugramak, gitmek.
+
+        Dünýä malyn berseň, eýesi satmaz,
+        Şa istese, anyň dilegi bitmez,
+        Bedew bar, pul berseň, bahasy ýitmez,
+        Bedew bardyr, salan juluňa degmez.
+
+        Döwletli är gerek, söweşde serhoş,
+        Ýat bilen baryşsaň, bolar sen gardaş,
+        Ýagşy ogul, ýagşy aýal, gyz syrdaş,
+        Bu döwlet her kimiň eline degmez.
+
+        Magtymguly, bu dünýäniň eşreti, –
+        Iýmek, içmek, münmek, guçmak, söhbeti.
+        Bir niçeler mydam kylar tagaty,
+        Niçeleriň sežde alnyna degmez.
+
+                         Bolgul
+
+        Bir bidöwlet bile birge bolynçaň,
+        Döwletliniň gapysynda gul bolgul;
+        Bedasyl beg gullugynda ýörinçäň,
+        Asyl begiň saýasynda kül bolgul.
+
+        Ýamany goý, ýagşylara göz ildir,
+        Kelhemeç1 hem «öz oglanym gözel» diýr,
+        Gargyş gurduň zürýadyny azaldyr,
+        Goýun kibi çar tarapa il bolgul.
+1 Kelhemeç – dazzarkel, çaýkel.
+
+        Süleýman sen — mura1 bir gulak goýgul,
+        Sözüni diňlegil, jogabyn aýgyl,
+        Häkim bolsaň halky gün kibi çoýgul,
+        Akarda suw, ýa öserde ýel bolgul.
+
+        Ýaman işdir öz nebsiňi besleseň,
+        Akmaklykdyr özüň ýagşy toslasaň,
+        Her bazarda rowaç bolmak isleseň,
+        Ýagşylaryň potasynda2 pul bolgul.
+
+        Magtymguly bardyr demiň hesibi,
+        Ir, giç ýeter her bendäniň nesibi,
+        Kişi bolsaň, goýgul gury täsibi,
+        Ýagşy, ýaman barçalarga del bolgul.
+
+           Görüm görülmegen ýerde
+
+             Yzzat, hormat, syn etmegin
+             Görüm görülmegen ýerde;
+             Akyl bolsaň, söz aýtmagyn
+             Nobat berilmegen ýerde.
+
+             Akly ýagşylar unutmaz,
+             Gury agaja ýaprak bitmez,
+             Akylly är mesgen tutmaz
+             Hulky söýülmegen ýerde.
+1 Mur – garynja.
+2 Pota – bu ýerde jübi, kise manysynda
+
+             Gömlüp galan aryk akmaz.
+             Her naşydan kerem1 çykmaz,
+             It gözlemez, pişik bakmaz
+             Saçak ýazylmagan ýerde.
+
+             Haç eýleseň jara döner,
+             Gül açylsa zara döner,
+             Hyzmat etmek hara döner
+             Gadryň bilinmegen ýerde.
+
+             Namart goş üstünde harlar,
+             Iýmit, aş üstünde gürlär,
+             Söweş gurup, gylyç parlar
+             Duşman görülmegen ýerde.
+
+             Öý içinde hara döner,
+             Muhannes bir nere döner,
+             Tilki, şagal şire döner
+             Söweş gurulmagan ýerde.
+
+             Parasat kyl bakyp akla,
+             Goç ýigidiň sözün hakla,
+             Magtymguly, tiliň sakla
+             Habar soralmagan ýerde.
+
+1 Kerem – ýagşylyk.
+
+                 Är ýanynda bellidir
+
+                 Ýagşylygy – pis bilmez, –
+                 Är ýanynda bellidir.
+                 Görer gözüň gymmaty
+                 Kör ýanynda bellýadir.
+
+                 Däli köňül daýanjy,
+                 Ýokdur dünýä ynanjy,
+                 Sag gulagyň guwanjy
+                 Ker ýanynda bellidir.
+
+                 Eger pir1 sen, eger ýaş,
+                 Kylma syryň halka paş,
+                 Syr saklaýan mähek2 daş
+                 Zer ýanynda bellidir.
+
+                 Bu dünýäniň myrady, –
+                 At, zagyfdyr3 , zürýady.
+                 Arwananyň kuwwaty
+                 Ner ýanynda bellidir.
+
+                 Bolsa gamdan halasym,
+                 Ýaza dönse gyş paslym,
+                 Magtymguly, yhlasym
+                 Ýar ýanynda bellidir.
+1 Pir – garry.
+2 Mähek – gyzyl, kümüşiň hilini kesgitlemek üçin ulanylýan daş.
+3 Zagyf (zagyfa) – aýal.
+
+                   Sazyna degmez
+
+           Oýunyň lezzetin bilmeýän adam
+           Hünärli ýigidiň sazyna degmez;
+           Bet syýakly1 , bethüý bolan pis adam
+           Perizadyň eden näzine degmez.
+
+           Bimagnynyň sözi janyňdan öter,
+           Gybat edip, özi günäge batar,
+           Ýamanyň zyýany iline ýeter,
+           Nadanyň peýdasy özüne degmez.
+
+           Adam bardyr, ony şalar çagyrdar,
+           Adam bar, zulm edip, garyp agyrdar,
+           Adam bardyr, körpe ýanyn agyrdar,
+           Adam bardyr, şal kiz2 ýanyna degmez.
+
+           Muhannesiň bolmaz namysy, aňy,
+           Bir söweş gününde eýlemez jeňi,
+           Aga-begler, muhannesiň on müňi
+           Mert ähliniň3 alty ýüzüne degmez.
+1 Syýak – sypat.
+2 Kiz – keçe.
+3 Mert ähli – mert adamlar
+
+          Magtymguly, döwran soňudyr adem1 ,
+          Lahat atly öýge goýar sen gadam.
+          Many söz aňlamaz, biakyl adam
+          Danalaryň aýdan sözüne degmez.
+
+                   Sarp eýleýir aşyny
+
+         Hak nazaryn salan bir serhoş ýigit
+         Ynsan üçin sarp eýleýir aşyny;
+         Namysly, gaýratly, arly goç ýigit
+         Söweş güni gurban eder başyny.
+
+         Bir niçeler gezer zerbap don bilen,
+         Bir niçeler gezer gury san bilen,
+         Adamzady tanyp bolmaz syn bilen,
+         Synaşmagan bilmez kişi kişini.
+
+         Ýigidiň abraýy ýagşy zagyfdyr,
+         Ýagşy zagyf näkes äre haýypdyr,
+         Ýigide gallaçlyk külli aýypdyr,
+         Her ýan gezer, bilmez eder işini.
+
+         Magtymguly, aýdaý ýaryn sypatyn,
+         Täze depder bilen ýazaý zer hatyn.
+         Dowzah nyşanasy bir ýaman hatyn
+         Her kime duş bolsa, alar huşuny.
+1 Adem – ýokluk.
+
+        Ärden
+
+Hiç köňül şatlygy çykmaz
+Bir köňül ýykmaýan ärden;
+Ýagşylyk tamasyn etmäň
+Ýamanlyk çykmaýan ärden.
+
+Her kim ile beglik eder,
+Bir söý bilen ýola gider,
+Kethudalyk ýyrak gider, –
+Ýaman söz çekmeýen ärden.
+
+Ýagşy är il aýbyn açmaz,
+Göre-bile haram içmez,
+Ýaradan ýazygyn geçmez
+Göz ýaşyn dökmeýen ärden.
+
+Eglenmez, eýýam öwrüler,
+Wagt täzeler, nyrh çöwrüler,
+Agyr döwletler aýrylar
+Bir agza bakmaýan ärden.
+
+Öz-özünden akly ýetmez,
+Akyllar sözüni tutmaz,
+Garyplyk ýok bolup gitmez
+On iş terk etmeýen ärden.
+
+     Ýigitlere ýasaw güni –
+     Gurda goýmaz şir awuny,
+     Pygamber bizar ýow güni
+     Ýoldaşa bakmaýan ärden.
+
+     Magtymguly, ýangyl, öçgül,
+     Ýa lal otur, ýa dür saçgyl!
+     Bir guýruksyz itdir, gaçgyl, –
+     Nesihat ýokmaýan ärden.
+
+            Bilmedim
+
+Pelek maňa gam badasyn bereli
+Wysal kaýsy, hijran kaýsy, bilmedim;
+Hak işine ten bermişem göreli,
+Arzuw kaýsy, arman kaýsy, bilmedim.
+
+Bende bolsaň gözle hakyň ryzasyn,
+Jebr eýlese, çekewergil jezasyn,
+Ajal bir gün atar tiri-kazasyn,
+Kiriş kaýsy, keman kaýsy, bilmedim.
+
+Aryf bolsaň, gulak goýgul sözüme.
+Bir suratam bu gün bakmaň özüme,
+Dünýä düýbi ýok görüner gözüme,
+Döwür kaýsy, döwran kaýsy, bilmedim.
+
+        Az ömrümi köp söwdaga satyp men,
+        Özüm bilmeý, ol derýaga atyp men,
+        Ne ummandyr, ne talapdyr, ýatyp men,
+        Zemin kaýsy, zaman kaýsy, bilmedim.
+
+        Her kim girse ol talaba, ummana,
+        Başyn alyp çyka bilmez bir ýana,
+        Gadam goýdum ol sähraýa-meýdana,
+        Jan kaýsydyr, jahan kaýsy, bilmedim.
+
+        Bu dünýäni asmandaky reň bildim,
+        Yssy-yssy asylyşdym, soň bildim,
+        Imdi anyň baryn-ýogun deň bildim,
+        Sut1 kaýsydyr, zyýan kaýsy, bilmedim.
+
+        Magtymguly, ýoluň öňi-ardy bar,
+        Çeker ýüküň, her kişiniň merdi bar,
+        Ýüregimde pinhan yşkyň derdi bar,
+        Dert kaýsydyr, derman kaýsy, bilmedim.
+
+1 Sut (sud) – peýda, haýyr.
+
+       Öýlengin
+
+Ýigit halyň garrylyga
+Salaýyn diýseň, öýlengin;
+Kethudalyk endişesin
+Kylaýyn diýseň, öýlengin.
+
+Kethudalyk gözel ýoldur,
+Gaýgy garrydar, gam öldir,
+Ýigitlik bir gyzyl güldür, –
+Solaýyn diýseň öýlengin.
+
+Öý-il gerek, ýorgan-düşek,
+Perzent bentdir, aýal – duşak,
+Ýüke werziş bir boz eşek
+Bolaýyn diýseň, öýlengin.
+
+Gezer sen oýnap, dalaşyp,
+Galar sen, derde dolaşyp,
+Gaýgydan gama ulaşyp
+Galaýyn diýseň, öýlengin.
+
+Joşgun eder sen özüňden,
+Aýrylar sen hoş ýazyňdan-,
+Tükenmez derdiň yzyndan
+Ýeleýin diýseň, öýlengin.
+
+              Açyp ýigitlik dumanyn,
+              Getir sen gaýgy zamanyn,
+              Dünýäniň ýagşy-ýamanyn
+              Bileýin diýseň, öýlengin.
+
+              Magtymguly, gezip her taý.
+              Etmediň jahandan perwaý,
+              Pygamber sünnetin berjaý
+              Kylaýyn diýseň, öýlengin.
+
+                   Kyly-kal bolar
+
+           Her kişiniň iki bolsa aýaly,
+           Gije-gündiz işi kyly-kal1 bolar;
+           Her biriniň bardyr ýüz müň hyýaly,
+           Owkat sürüp görejigi hal2 bolar...
+
+           Birin söýüp, birin eýlese naçar,
+           Ile ryswa bolup, öz aýbyn açar,
+           Akly haýran bolup, baryndan geçer,
+           Deň tutmasa ýaryn, bikemal bolar.
+
+           Gähi bilbil kimin saýrar tilleri,
+           Tomaşadan häzir eder illeri,
+           Gähi ýer ýumruklar, gähi külleri,
+           Ärin göre bilse, tilsiz lal bolar.
+1 Kyly-kal – galmagal, gowga.
+2 Hal – bu ýerde kyn manysynda.
+
+             Gahar eýläp gelmez bolsa ýanyna,
+             Söz aýtmasa her biriniň şanyna,
+             Beýle är goşulmaz adam sanyna, —
+             Iki hatyn, bir är — üç aýal bolar.
+
+             Magtymguly, kimse bilmez batyny1 ,
+             Öýlenseňiz, garap alyň zatyny2 ,
+             Eýäm görkezmesin ýaman hatyny,
+             Adam özün bilmez, ham hyýal bolar.
+
+                     Ykrarsyz ärden
+
+                Gördük saýy, köňül sowar
+                Sabyrsyz, kararsyz ärden;
+                Yssy beren köpek ýegdir3
+                Uýatsyz, ykrarsyz ärden.
+
+                Aýlandykça döwran-döwür,
+                Ykbalyň ýüwürse, öwür,
+                Dura-bara dosty sowyr
+                Garyp galan barsyz ärden.
+1 Batyn – gizlilik, syr, içki dünýä.
+2 Zat – asyl.
+3 Eg – oňat, gowy.
+
+Ite zer dök, minnet çekmez.
+Aňlamaza sözüm ýakmaz,
+Köňlüň istän işler çykmaz
+Nan ýagysy, kärsiz ärden.
+
+Her göz säherde bidardyr, —
+Eýesinden ülüş bardyr,
+Hak, pygamber, halk bizardyr
+Düýbi ygtybarsyz ärden.
+
+Magtymguly, magny saçar,
+Her kim söz lezzetin içer,
+Bara-bara köňül geçer
+Tagsyby ýok, arsyz ärden.
+
+     Diş gitmek
+
+Tagamnyň lezzetin alyr,
+Dahanyňdan diş gitmek;
+Aňyrsyzy azdyryr
+Götin döwlet baş gitmek.
+
+Şeýtan ýolun bek eýlär,
+Gara ýüzün ak eýlär,
+Ýüz müň bela ýok eýlär
+Säher turup ýaş dökmek.
+
+Peltesiz ýag çyraga,
+Yşyk salmaz gyraga,
+Ilin salar aýaga
+Aýak galyp, baş gitmek.
+
+Niçe pese zar bolup,
+Ýatandan bimar bolup,
+Hoşdur ýagşa ýar bolup,
+Bir ýamandan daş gitmek.
+
+Ulaşmaganlar gama
+Şükr etmezler bu deme,
+Abyraýdyr adama
+Ýagşy gelip, hoş gitmek.
+
+Ýaman til dost ýitirer,
+Hoş til rahmet getirer,
+Äre sangy ýetirer
+Kyrkdan agyp, ýaş gitmek.
+
+Pyragy, dünýä düýşdür,
+Düýş görseň, düýbi hiçdir.
+Jahanda ýaman işdir
+Gury gelip, boş gitmek.
+
+                         Eldim tut
+
+     Dünýe görmeý, tutgun galsaň bir künçde,
+     Bady-paý1 dek ýer ýüzüne ýeldim tut;
+     Çyn-Maçynda, Rumda, Hindde, Hebeşde
+     Bolan-bolmuş hünärleri bildim tut.
+
+     Aç hem bolsaň, barma ile dilege,
+     Diý: köşkde men, başym barmyş pelege,
+     Çölde galsaň, hiç tapmaýan kölege,
+     Erem bagy içre gamsyz galdym tut.
+
+     Aş görende, özüň atma dillenip,
+     Gerçe aç hem bolsaň, halka bellenip,
+     Zerler döküp, çyn gullarny gollanyp,
+     Tiz hem ölseň, Nuh ýaşyna geldim tut.
+
+     Mätäçligiň hakdan özge bilmese,
+     Ol rozugär2 besdir, açdan ölmese,
+     Hindi kimin egin örtiň bolmasa,
+     Patyşalyk puşeş3 çigne saldym tut.
+1 Bady-paý – el aýak, ýyndam at.
+2 Rozygär – rysgal, durmuş.
+3 Puşeş – eşik, geýim.
+
+     Suwa, ýele hökmi geçen Süleýman,
+     Bak: olardan ne nam galdy, ne nyşan!
+     Teşne1 galyp, jaýyň bolsa çölüstan
+     Derýa içre men Isgender boldum tut.
+
+     Ýoldaş bolsaň dile düşmez mur bile —
+     Ýer tapmaýyn, bile ýatsaň mar bile,
+     Ýigrim alty keret2 ýüz müň är bile
+     Karun hazynasyn ele aldym tüt.
+
+     Magtymguly, çekseň jepa-jebir, bil –
+     Hudaga hoş geler, şükür-sabyr, bil,
+     Gylça jana gyzyl teni gabyr bil,
+     Gyzyl tiliň sözlär eken, öldüm tut.
+
+                      Joş gelse
+
+     Dünýäde niçe iş bardyr, ýamandyr,
+     Biri oldur, ýersiz gahra joş gelse;
+     Aşyklara şol gün ahyrzamandyr,
+     Ýardan yrak düşüp, ara daş gelse.
+
+     Dostuňny egleme, nepden galmasyn,
+     Duşmanyň saklama, syryň bilmesin,
+     Açda algyn, bege bergiň bolmasyn,
+     Iş müşgildir, aňlamaza duş gelse.
+1 Teşne – suwsuz, suwsan.
+2 Keret – gezek.
+
+     Zemin seni häli-häli ýutarmy,
+     Akyl bolan munda bigam ýatarmy?
+     Hiý bir masgaralyk mundan ötermi, —
+     Giden gury gitse, gelen boş gelse!
+
+     On gat öýüň bolsa demir galadan,
+     Ajal tapar emir1 bolsa alladan,
+     Hakyky är ýüz döndermez beladan,
+     Hak ryzasy bilen başa daş gelse.
+
+     Aryf men diýp, lap urarlar ýalandan,
+     Bellisini aýdar sorsaň bilenden,
+     Il gözlügin ýüz ýyl tagat kylandan,
+     Ýagşydyr bir säher gözden ýaş gelse.
+
+     Baýlar baglap sahawatyň gapysyn,
+     Köpelder tamugnyň möýün, apysyn2 ,
+     Görüň bu eýýamyň pirin, sopusyn —
+     Dannamaýyn tykar otyr, aş gelse.
+
+     Magtymguly, söýle aklyň ýetinçä,
+     Tetärigiň gazan, bikar ýatynça,
+     Tamugdadyr, tä dünýäden ötinçä, —
+     Ýaman hatyn ýagşy äre duş gelse.
+
+1 Emir (emr) – buýruk, höküm.
+2 Apy (afy) – zäherli ýylanyň bir görnüşi.
+
+                         Ýigide
+
+                Ulalanda, iş hoş gelmez
+                Ýaşlykda köýmän ýigide;
+                Döwlet gelse özün bilmez
+                Dogaly doýman ýigide.
+
+                Ýamana öwüt hebesdir,
+                Ýagşy äre bir söz besdir,
+                Ýörişini ýalňyş basdyr
+                Ýaňy don geýmän ýigide.
+
+                Jüpbe jöwşen1 , zere-sowut2 ,
+                Keserli gylyç, arap at,
+                Söweş güni gider uýat
+                Gaýraty bolman ýigide.
+
+                Çopan adam çoka bolmaz,
+                Ala garga oka gelmez,
+                Köp ýygylsa, terhos almaz
+                Aňrysy bolman ýigide.
+
+                Gulluk ýetirgin janyňdan,
+                Aýama parça nanyňdan,
+                Ganly bolsa, geç ganyňdan
+                Bir garyp myhman ýigide.
+1 Jöwşen – harby eşik, enjamlar.
+2 Sowut – demir don.
+
+Dünýäde hiç kim galmandyr,
+Mal jana ýoldaş bolmandyr,
+Göýä bu dünýä gelmändir
+Bir zürýat goýman ýigide.
+
+Almaz, kümüş mis görüner
+Dula gyrnak tüýs görüner,
+Perizat hatyn pis görüner
+Bir hulky söýmän ýigide.
+
+Mal döner çiýan-çirmäge,
+Durar et-ganyň sormaga,
+Malyndan zekat bermäge
+Gözleri gyýman ýigide.
+
+Magtymguly, ýeldan çykmaz,
+Ýagşy söz ýamana ýakmaz,
+Müň söz aýtsaň, biri ýokmaz,
+Taňrysy guýman ýigide.
+
+                     Gidiji bolma
+
+        Gel, köňlüm, men saňa nesihat kylaý,
+        Watany terk edip gidiji bolma;
+        Özüňden egsik bir gaýry namardyň
+        Hyzmatynda gulluk ediji bolma.
+
+        Hyzmat kylsaň, bolsun bir asylzada,
+        Ata-babasyndan beýik begzada,
+        Eger her çent bolsa aç hem üftada,
+        Ýanyndan bir zaman gidiji bolma.
+
+        Akmaýan galmazdyr bir akan aryk,
+        Bir tende adam ki semiz, kä aryk;
+        Bir ýüzi çirikdir1 , bir ýüzi çaryk,
+        Çirik diýp, gaty söz aýdyjy bolma.
+
+        Ýagşylardan hergiz çykmaz ýamanlyk,
+        Asly ýaman bolsa, çykmaz ýagşylyk,
+        Aslyna tartadyr ýüwrük, çamanlyk,
+        Ýüwrükni çamanga satyjy bolma.
+
+        Çakylyk, habarsyz bir ýere barsaň,
+        Imtiýaz2 eýlegil otursaň, tursaň,
+        Bir nesihat bereý, pendimi alsaň,
+        Kişi aşynyň duzun dadyjy bolma.
+1 Çirik – bu ýerde garalyk, hapa manyda.
+2 Imtiýaz – salykatlylyk, seljermek, artykmaçlyk.
+
+        Çagyrlan ýere bar, otur-da turma,
+        Çagrylmadyk ýere barma, görünme,
+        Utanmaz adam dek süýrenip ýörme,
+        Buýrulmagan işni ediji bolma.
+
+        Eger sen hem bolsaň nermi-mylaýym,
+        Mylaýym sen bolsaň, guluň bolaýym,
+        Gulagymga beren pendiň alaýym,
+        Kişige gaty söz aýdyjy bolma.
+
+        Gökden nem düşmese, ýer ot getirmez,
+        Ýygylsa müň gaýgy, bir iş bitirmez,
+        Är ýigit köňlüne gaýgy getirmez,
+        Namardyň ogly dek gaçyjy bolma.
+
+        Mert ogludyr ile ýazar desterhan,
+        Dogry söz üstünde berer şirin jan,
+        Ömrüni ötgerer, diýmez bir ýalan,
+        Jäht eýläp, ýalan söz aýdyjy bodma.
+
+        Sahty-dil1 ýüregi hergiz boş bolmaz,
+        Her niçe gynansa köňli hoş bolmaz.
+        Bir-birewge iki ýagşy duş bolmaz,
+        Ýagşyny ýamana satyjy bolma.
+1 Sahty-dil – gaty, doň ýürek.
+
+        Töwekgel ner bolar, endişe — maýa,
+        Köňlüňni iberme her kaýsy jaýa,
+        Barçanyň daýanjy kadyr allaýa,
+        Alladan özgäge söýenji bolma.
+
+        Okyr bolsaň, ok ur nebsiň gözüne,
+        Gara, çyn göz bilen meshap1 ýüzüne,
+        Aldanyp girmegil şeýtan sözüne,
+        Ýagşylygy hiç wagt goýujy bolma.
+
+        Eger bolsun diýseň ýeňil-agyrlar,
+        Kelçik sözläp agyrtmagyl bagyrlar,
+        Ýoluksa gözüňe güňi-sagyrlar,
+        Olarnyň halyna gülüji bolma.
+
+        Tapsaň-da dünýäde mülki-Isgender,
+        Karunyň maly hem bolsa miýesser,
+        Ahyry bolar sen ýerge barabar,
+        Köňlüňde men-menlik satyjy bolma.
+
+        Aýdarlar: ýyrtyk don görse it gapar,
+        Päli ýaman bende hudadan tapar,
+        Ahyry bir güni kylar sen sapar,
+        Dar köňüllik işi ediji bolma.
+1 Meshap – kitap, tom, kodeks.
+
+        Eger çendi ki bol sahyby-mansap1 ,
+        Sözün diňle, adalatly bol deňläp,
+        Söz tapsaň sözlegil, tapmasaň bol hap,
+        Goldan gelmez işni ediji bolma.
+
+        Garrylyk gitgisi bir gün apaty,
+        Ýigidiň gitgisi bir gün kuwwaty,
+        Ganymat bil, gapyl adam, pursaty,
+        Murda dek uzanyp ýatyjy bolma.
+
+        Maksat, bu sözlere kylgyl ygtybar,
+        Çyn adama her wagt adamlyk derkar,
+        Aňlamaý söýleme: «tamda gulak bar»,
+        Iç syryň kişige aýdyjy bolma.
+
+        Daň atanda molla çagyrar azan,
+        Bozulmazmyş hergiz kysmatda ýazan,
+        Ýigitlik bostandyr, garrylyk — kazan,
+        Bostany hazana satyjy bolma.
+
+        Kitabyn açyban okan molla diýr,
+        Gögerer ýagmyryň suwy birle ýer,
+        Alkyşy, patyha, doga birle är,
+        Mazluma sütemlik ediji bolma.
+1 Sahyby-mansap – derejeli, emeldar.
+
+        Döwletli ogullar ýaşda baş bolar,
+        Ýaşaganda, bidöwletler ýaş bolar,
+        Rehimsiz zalymlar bagry daş bolar
+        Barar ýere kesek atyjy bolma.
+
+        Är ýigit balasy bara pur1 bolar,
+        Gamçysy elinde ýaman zor bolar,
+        Märeke görmegen ýigit har bolar,
+        Bolar-bolmaz sözi aýdyjy bolma.
+
+        Eý köňül, gel imdi haky tapaly,
+        Nesibe merkebin2 münüp çapaly,
+        Aýdarlar: hak ermiş mähri-wepaly,
+        Hergiz öz sözüňden gaýdyjy bolma.
+
+        Men diýdim bir niçe pendi-nesihat,
+        Bilseň nesihatdyr, ýogsa — pesihat3 ,
+        Pesihat bilmegil, barça nesihat,
+        Ýalgançy sözleri aýdyjy bolma.
+
+        Magtymguly, göwnüňdedir köp arman,
+        Tapmady derdine akybet derman,
+        Ýetişer bir güni hakdan bu perman,
+        Gaflat düşeginde ýatyjy bolma.
+
+1 Pur – doly.
+2 Merkep – ulag.
+3 Pesihat – owadan söz.
+
+            Seni
+
+Içki syryň aýtma her bir namarda,
+Syryň ile ýaýyp, paş eder seni.
+Ogry-kezzap bilen obadaş bolma,
+Malyndan aýyryp, aç eder seni.
+
+Sam-sam adam bilen oturma, turma,
+Zynhar, namart bilen hemsöhbet gurma,
+Gadyrdan dostuňdan ýüzüň öwürme,
+Barsaň depesine täç eder seni.
+
+Bir goç ýigit näzenine ýar bolsa,
+Jemalyny bir görmäge zar bolsa,
+Aralykda bir şum rakyp bar bolsa,
+Ýagşy dostuň bilen öç eder seni.
+
+Sopular ýaňylyp, aýtmaz senany,
+Säher tursaň geçjek barça günäni,
+Aýtmawer gyýbat söz, etme zynany,
+Dowzahyň oduna duş eder seni.
+
+Magtymguly, ile ýaýdym nesihat,
+Zynhar, ýaman bilen bolmagyl ülpet,
+Hudaý berse sagadatly bir perzent,
+Garrygan çagyňda ýaş eder seni.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Daşy syndyrar',
+    'Ykbalyň oýansa, döwlet ýar bolsa,
+           Daga azy ursaň, daşy syndyrar;
+           Täleýiň ters gelse, bagtyň şor bolsa,
+           Paludanyň peri dişi syndyrar.
+
+           Ajalyňdan gorkup, girseň ummana,
+           Gorkudan ne peýda gidejek jana,
+           Ömrüň ahyr bolup, dolsa peýmana, —
+           Haşhaşyň samany başy syndyrar.
+
+           Bar sözüne gulak goýgul bileniň,
+           Ahyry hiç ýere ýetmez ýalanyň,
+           Ömri-saly artar alkyş alanyň,
+           Gargyş galyndyrmaz, ýaşy syndyrar.
+
+           Akylyň sözünden köňül söýüner,
+           Akmagyň işinden zehin käýiner.
+           Muhannes giň ýerde akyl saýynar,
+           Dar ýerde akyly-huşy syndyrar.
+
+           Magtymguly, çölde gezen naşyny,
+           Bilik sorma, köp sürdi diýp ýaşyny,
+           Dar mejlisde doly berseň aşyny,
+           Aşny iýe bilmez, käşi1 syndyrar.
+
+1 Käşi – syrçaly gap.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Gitmezmiş',
+    'Iller heý, Mejnun dagynyň
+              Serinden duman gitmezmiş;
+              Müňküre bilin bereniň
+              Köňlünden güman gitmezmiş.
+
+              Goýna gardaş bolmaz gurtdan,
+              Dileg etme her namartdan,
+              Tä ölinçä goç ýigitden
+              Parh ýeter, zyýan ýetmezmiş.
+
+              Gapyl adam ogly bilmez,
+              Ölümini ýada salmaz,
+              Maly-mülküň peýda kylmaz,
+              Ýanyňdan iman gitmezmiş.
+
+              Aşyklar terki-jan etsin,
+              Gözde ýaşyn rowan etsin,
+              Goç ýigitler yhsan1 etsin,
+              Yhsany reýgan2 gitmezmiş.
+
+              Magtymguly, galdyň derde,
+              Işiň düşmesin namarda,
+              Kyýamat güni jomarda
+              Dowzahdan zyýan ýetmezmiş.
+
+1 Yhsan – haýyr
+2 Reýgan — biderek, zaýa; mugt.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Olmasyn',
+    'Eý ýaranlar, musulmanlar,
+Däli köňül joş olmasyn;
+Ýene bir ýagşy ýigide
+Ýaman hatyn duş olmasyn.
+
+Her kim alsa hakdan rehnet,
+Gider gaýgy, galmaz mähnet,
+Arslan bolsa durmaz döwlet, —
+Hiç ülke bibaş olmasyn.
+
+Täsip edip at besläne,
+Ýoldaş bolsun haýr aslyna,
+Haram aşap, şer isläne
+Uzak ömür ýaş olmasyn.
+
+Her kimiň öz synasynda,
+Akyl görner beýnisinde,
+Iki dostuň arasynda
+Ýaman-ýowuz iş olmasyn.
+
+Her kişiniň öz zürýaty —
+Jan hoşy, köňül kuwwaty;
+Artsyn jomardyň döwleti,
+Muhannesde aş olmasyn.
+
+Bir yşk düşse adam serne,
+Uky gaçyp, köňül urna,
+Iki söwgüli bir-birne
+Ýakyn olsun, daş olmasyn.
+
+Sözüm sözlense her çaklar,
+Akyly bolan gerçekler,
+Bir iş düşende goçaklar
+Iş görmedik ýaş olmasyn.
+
+Il içinde özün öwer,
+Dag-dumany başdan agar,
+Ýigide nogsany deger,
+Namartlar ýoldaş olmasyn.
+
+Sözle heý, aşygym, sözle,
+Gel, kyýamatlygyň gözle,
+Magtymguly, syryň gizle,
+Her namarda paş olmasyn.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Läle getirmiş',
+    'Asmanyň ýüzleri minewwer1 bolsa,
+         Zemin ýaşyl geýip, läle getirmiş;
+         Huda buýrugyndan aýrylan juwan
+         Oýnaşyndan haram küle getirmiş.
+
+         Ozal akan ýerden akarmyş aryk,
+         Özün öwen ýigdiň tanapy çüýrük,
+         Mertden aşna tutsaň, abraýyňa şärik,
+         Namart aşnasyna hile getirmiş.
+
+         Her kim öz adyna möhür gazdyrar,
+         Ýazylan takdyry kimse bozdurar?
+         Ikiniň sylagy birni azdyrar,
+         Taýak bir dälini ýola getirmiş.
+
+         Magtymguly, ger doýursaň bir ajy,
+         Mälimdir, tapar sen bu ýerde hajy,
+         Bir ýagşylyk etse adam biweji, –
+         Her mejlisde ýüz ýol tile getirmiş.
+
+1 Minewwer – ýagty.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Biwepalardan',
+    'Gözläp köňül berme biwepalarga,
+         Bak: kim wepa görmüş biwepalardan?
+         Goýma özüň ýersiz bu jepalarga,
+         Kim bähre tapypdyr bu jepalardan?
+
+         Yşkyň owazasyn diňle daşyndan,
+         Jan jebrinden gorksaň, barma başyndan,
+         Serişdäň kem bolsa yşkyň işinden,
+         Bar, habar al gören mübtelalardan.
+
+         Sözüm nesihatdyr, bir gulak salyň,
+         Bendesi men söze hyrydar guluň,
+         Kyrk oýnaşly hatyn ýagşydyr, biliň, –
+         Şereňňiz1 , köp tilli kethudalardan.
+
+         Ýatma, Magtymguly, aşretiň söýüp,
+         Munça ýatajak sen kepeniň geýip,
+         Hajatyn tiz bitir — hojany goýup,
+         Dileg eder kimse gul-gedalardan.
+
+1 Şereňňiz – şerçi, dawa-jenjel agtarýan, dawakeş.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Näbilsin',
+    'Harazban eline düşse algyr baz,
+          Ganatdan aýyrar, gadryn näbilsin,
+          Bir çopan goluna degse bir almaz,
+          Çakmakdaşy eder, gadryn näbilsin.
+
+          Kämil bolmaz ol şerbetden datmagan
+          Pähim eýlemez söz magnyga ýetmegen.
+          Däli-Mejnun yşk eseri etmegen
+          Perizat Leýliniň gadryn näbilsin.
+
+          Dynçlygyň gadryny bilmez armagan.
+          Beglik ede bilmez berim bermegen
+          Çölde açlyk muşakgatyn görmegen
+          Öýde yssyg nanyň gadryn näbilsin.
+
+          Ötenden soň, adam aňlar döwletin,
+          Bilmez döwlet bilen geçen nobatyn,
+          Çekmän kişi bimarlygyň zähmetin,
+          Bu gözel saglygyň gadryn näbilsin.
+
+          Rismanyn1 berk edip, labyr2 salmaýan,
+          Girdaba ugraşar häzir bolmaýan,
+          Keştisi kölegde bendil almaýan,
+          Gury gara ýeriň gadryn näbilsin.
+1 Risman – ýüp, tanap.
+2 Labyr – leňňer, ýakor.
+
+Garry, ýigit bir ykrarda durmasa,
+Ulag gadryn bilmez, kişi armasa,
+Ördek, guba gazlar çöli görmese,
+Ser-çemenli köl gadryn näbilsin.
+
+Aýralyk oduna ýanyp-bişmeýen,
+Zalymlar elinden ülke aşmaýan,
+Watandan aýrylyp, ýalňyz düşmeýen
+Ülkesinde il gadryn näbilsin.
+
+Magtymguly diýer, ýaru-hemdemge,
+Geliň şükr edeliň, dostlar, bu demge,
+Zatynda söz pähmin bilmez adamga
+Müň many söz diýseň, gadryn näbilsin.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'At ýanynda bellidir',
+    'Eşek özün egsik saýmaz bedewden,
+Gymmat etseň, at ýanynda bellidir;
+Bedew diýgeç, hemme bedew deň bolmaz,
+Çyn bedewler meýdanynda bellidir.
+
+Oglanlykda bilmez idiň, beg idiň,
+Ýamana hiç ýokmaz sözüň-öwüdiň,
+Aryf bolsaň, aslyn sorma ýigidiň,
+Edebinde, erkanynda bellidir.
+
+         Bu jahandan doýmaz gözüň, siýr1 olmaz,
+         Her tilkiden ýolbars olmaz, şir olmaz,
+         Ýigit diýgeç, hemme ýigit bir olmaz,
+         Goç ýigitler myhmanynda bellidir.
+
+         Döwlet bolsa goç ýigidiň başynda,
+         Hemaýatly ili gerek daşynda,
+         Ýigit özün maglum eder işinde,
+         Gylyjynda, zybanynda bellidir.
+
+         Magtymguly, garyplaryň gözýaşy
+         Daglary ýandyrar, erider daşy...
+         Pakyra jebr eden zalymyň işi
+         Ruzy-magşar diwanynda bellidir.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Il biläni',
+    'Belent daglaryň başynda
+              Bulut oýnar sil biläni;
+              Goç ýigide toýdur-baýram,
+              Her iş gelse il biläni.
+
+              Dil bilenler gün bolupdyr,
+              Altyn, kümüş zeň bolupdyr,
+              Peşe kaçan deň bolupdyr,
+              Ugraşanda pil biläni.
+1 Siýr bolmak – doýmak.
+
+                 Otlaga gaçar buzawlar,
+                 Öňün başlar ýagşy gäwler1
+                 Tanalar ol has bedewler
+                 Köne ýyrtyk jul biläni.
+
+                 Hak bendesi haka çapar,
+                 Ýaman öz pälinden tapar,
+                 Magtymguly, aýbyn ýapar
+                 Iş kylyjy dil biläni.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Ili gözlär',
+    'Ilinden aýra düşen
+                 Ah urar, ili gözlär;
+                 Ýolundan aýra düşen
+                 Jäht eder, ýoly gözlär.
+
+                 Gökde pelek gerdandyr,
+                 Halk ýerde sergerdandyr,
+                 Ne bazygär2 jahandyr, —
+                 Göz açan maly gözlär.
+
+                 Kimlerde altyn täçdir,
+                 Kimler saýyl-mähtäçdir,
+                 Kimler düýpden gallaçdyr.
+                 Kim ýüpek haly gözlär.
+1 Gäw – sygyr.
+2 Bazygär – oýunçy.
+
+                Kim nan tapmaz iýmäge,
+                Kim ýer tapmaz goýmaga,
+                Kim don tapmaz geýmäge.
+                Kim tirme-şaly gözlär
+
+                Bu jahan bir puştadyr,
+                Kim zende, kim küştedir1 .
+                Her bende bir işdedir.
+                Her kim bir haly gözlär.
+
+                Heňňam2 uzyn, ömür az.
+                Çahar3 pasla başdyr ýaz.
+                Gökde ganat ýaýan gaz
+                Gözleri köli gözlär...
+
+                Magtymguly, huş eýläp,
+                Gezgin, didäň ýaş eýläp,
+                Däli köňül joş eýläp,
+                Ýüz müň hyýaly gözlär.
+
+1 Küşte – heläk bolan, öli
+2 Heňňam – döwür.
+3 Çahar (çar) – dört',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Don gerek',
+    'Ne bela sen, adamzat,
+                Çyplak dogduň, don gerek;
+                Ak süýt emdiň, ulaldyň,
+                Hem aglar sen, nan gerek.
+
+                Ataň hoşnut1 bolmaga,
+                Eneň mährin salmaga,
+                Ýediňde din bilmäge,
+                Okyrsyň, kuran gerek.
+
+                Saraldar sen dilbendiň,
+                Ýognalar biliň-bendiň,
+                On bäşde arzuwmendiň –
+                Gyz gerek, juwan gerek.
+
+                Juwan gerek guçmaga,
+                Aýşy-aşret açmaga,
+                Ondan soň iýp-içmäge,
+                Bir tükenmez nan gerek.
+
+                Köňlün ynjydyp halkyň,
+                Hoşnut etseň öz hulkuň,
+                Rum, Pereň bolsa mülküň,
+                «Heniz azdyr», kän gerek.
+1 Hoşnut – şat, razy.
+
+               Ýatsaň düşekde bimar1 ,
+               Yssy etmese timar,
+               Zer dökseň harwar-harwar2 ,
+               Göze ilmez, jan gerek.
+
+               Doga bilen är dörär,
+               Ýagmyr bilen ýer gögär,
+               Är oldur – alkyş alar,
+               Ýerlerge baran gerek.
+
+               Ajal geler, oýda ýok,
+               Görmek ýylda-aýda ýok,
+               Hiç bir zatdan peýda ýok,
+               Bir nury iman gerek.
+
+               Magtymguly, ýol gitmäge,
+               Söz aslyn pikr etmäge,
+               Bir magny pähm etmäge,
+               Akylly ýaran gerek.
+
+1 Bimar – syrkaw, hassa.
+2 Harwar – eşek ýüki.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Dag saýar',
+    'Daglar ýeriň myhydyr,
+                   Depe özün dag saýar;
+                   Çekik aýdar: «bilbil men»,
+                   Çarlak özün zag saýar.
+
+                   Güýjünden-kuwwatyndan,
+                   Dünýäniň nobatyndan,
+                   Her kişi yzzatyndan,
+                   Bedasyl özün beg saýar.
+
+                   Nadanam, zat bilmenem,
+                   Bir kemine gul menem,
+                   Sirke1 aýdar: «bal menem»,
+                   Nebit özün ýag saýar.
+
+                   Habar alsaň birewden,
+                   Özün kem saýmaz döwden.
+                   Öz ýanynda bedewden
+                   Eşek özün ýeg saýar.
+
+                   Magtymguly, bir guldur,
+                   Gullugyna kaýyldyr,
+                   Ahmak özün akyl diýr,
+                   Tentek özün sag saýar.
+
+1 Sirke – uksus.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Ata meňzär',
+    'Oba daşyndaky depe
+              Eýerlenen ata meňzär;
+              Ýaramaz ärler zer bilen
+              Ýazylan bet hata meňzär.
+
+              Bu dünýä bir düýpsüz derýa,
+              Gark eder, bolma biperwa,
+              Magrur olma, pany dünýä
+              Gezekli nobata meňzär.
+
+              Gardaşsyza kuwwat ýokdur,
+              Ogulsyza döwlet ýokdur,
+              Aýalsyza aşret ýokdur,
+              Hoş günüň hasrata meňzär.
+
+              Ýamandan ýagşy set bolmaz,
+              Asly ýagşylar bet bolmaz,
+              Dünýälikden döwlet bolmaz,
+              Ogul çyn döwlete meňzär.
+
+              Ýatan ýeri – ýylan goýny.
+              Asylany – itiň boýny,
+              Pis äriň ýagşy hatyny
+              Dürri-bigymmata1 meňzär.
+1 Dürri-bigymmat – gymmaty, gadry bilinmeýän dür.
+
+Burç bilen duz täze ýara
+Awy gatar rozugäre,
+Ýaman hatyn ýagşy äre, –
+Tükenmez töhmete meňzär.
+
+Magtymguly, namyradam,
+Iller hoşdur, men naşadam,
+Söz manysyn aňmaz adam
+Bir guruksyz ite meňzär.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Ýalydyr',
+    'Ýaman ýagşa ýoldaş bolsa,
+Awulyk içen ýalydyr;
+Aýryla bilse, awusy
+Içinden öçen ýalydyr.
+
+Adam aýrylsa huşundan,
+Gorkar ýatanda düýşünden,
+Eýýama baksaň, işinden
+Şu köňlüm geçen ýalydyr.
+
+Bedasyl ykbaly ýörmek,
+Öýsüz eline mal bermek,
+Akmaga syryňny bermek
+Öz aýbyň açan ýalydyr.
+
+Öter ömrüň – dünýä seýlin,
+Hak ýoluna bagla biliň,
+Agzy ala bolan iliň
+Döwleti gaçan ýalydyr.
+
+Aňlamasaň, görde gizlen,
+Akyldyr iş soňun gözlän,
+Gepin tapyp, ýagşy sözlän
+Misli dür seçen ýalydyr.
+
+Ärden gitse ygtybarlar,
+Sowar ondan dosty-ýarlar,
+Hünärli, ykbally ärler
+Malu-pul guçan ýalydyr.
+
+Magtymguly, yllatly göz,
+Haraba döner degse duz,
+Märekede bir jaýsyz söz
+Çermenip... ýalydyr.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Hasy näbilsin',
+    'Öz gadryny özi bilmez adamdan,–
+Aňlamazlar amu-hasy näbilsin?
+Ne tama bar çakyr içen gedemden,
+Buzahor ýagşyny, ýasy näbilsin?
+
+Ýamana ýagşy söz ýokmaz, taşlanar,
+Aňlar äriň oýlanmasy güýçlener,
+It ýalyň topraga dökseň, hoşlanar,
+Topragy, tabagy, tasy näbilsin?
+
+Aňla sözüm, ner zarbyny ner tanar,
+Har bakan har tanar, zergar zer tanar,
+Eý ýaranlar, är ýigidi är tanar,
+Namartlar ýagşyny, pisi näbilsin.
+
+Magtymguly aýdar: sözlerim hakdyr,
+Emma ki hak söze ten beren ýokdur,
+Bir gözli diýmese: garadyr, akdyr,
+Kör pakyr kümüşi, misi näbilsin?',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Çatyp bolmaýyr',
+    'Beýik dagyň başyndaky üç agaç,
+Düýbi bir bolmasa, çatyp bolmaýyr,
+Düýe ýaly dagda ýatan daşlary
+Gol bilen göterip, atyp bolmaýyr.
+
+Kelte diňden bolmaz beýik minara,
+Ýaman heleý duşsa bir ýagşy äre,
+Başyn kesip, ganyn döküp kenara,
+Ýa öldurip, ýa-da satyp bolmaýyr.
+
+Il içinde seniň ulalsa adyň,
+Seni ýaman görmez ýakynyň, ýadyň,
+Golunda bolmasa bir gerek zadyň,
+Meniňki diýip, başyn tutup bolmaýyr.
+
+Pakyrlar mal istär, baýlar zer diýer,
+Ýekeje eşekli: atym –ner diýer,
+Dünýäge doýmak ýok, ýene ber diýer,
+Köňül maksadyna ýetip bolmaýyr.
+
+Magtymguly, sözüň diňlän bolmasa,
+Nesihata gulak salan bolmasa,
+Ýigit köňül söýenini almasa,
+Dynç alyp, parahat ýatyp bolmaýyr.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Ýagşy',
+    'ny taryplap, ýamany düzle;
+Az iýip, az uklap, ýene az sözle:
+Köp söz ahyr il içinde har eýlär.
+
+                         Görüň
+
+        Her ýigidiň aslyn bileý diýseňiz,
+        Märekede otur-turuşyn görüň.
+        Birew bilen aşna bolaý diýseňiz,
+        Ozal ykrarynda duruşyn görüň.
+
+        Uzak, ýakyn ýola barar bolsaňyz,
+        Merdanlyk gylyjyn çalar bolsaňyz,
+        Bir bedewni saýlap alar bolsaňyz,
+        Synasyn, sagrysyn, gerişin görüň.
+
+        Bir pul düşse bir üflisiň goluna,
+        Göwsün açyp gezer gyşyň ýeline,
+        Hyrydar bolsaňyz gyza, geline,
+        Edebin, erkanyn, oturşyn görüň.
+
+        Goç ýigidiň at-ýaragy şaý bolsa,
+        Ýetişer, her ýerde haýda-haý bolsa.
+        Özi Hatam bolup, ýene baý bolsa,
+        Çar tarapdan myhman gelişin görüň.
+
+        Bir niçäni kyldyň maly-bisýary1 ,
+        Bir niçäni kyldyň bir puluň zary.
+        Ýagşy-ýaman hemme adamyň bary
+        Nobat bilen ötüp baryşyn görüň.
+1 Maly-bisýary – köp mally.
+
+        Taňry bizar, biliň, zekatsyz baýdan,
+        Siz hem gaçyň, zynhar1 ol gelen jaýdan,
+        Merde bir iş düşse görer hudaýdan,
+        Namardyň hemradan görüşin görüň.
+
+        Namart ýörer mydam ölümden gaçyp,
+        Öýüne gelende, zährini saçyp,
+        Mert ýigit myhmana göwsüni açyp,
+        Namardyň meýdana baryşyn görüň.
+
+        Zalymlar unudar zikri2 -allany,
+        Arzan alyp, gymmat satar gallany,
+        Süýthor naýynsaplar halal tyllaňy
+        Haram peýdasyna berişin görüň.
+
+        Şeýtan-melgun hergiz tagat etdirmez,
+        Haramdan gaýtarmaz, halal iýdirmez,
+        Roza tutdurmaz, namaz uýdurmaz,
+        Lagnaty şeýtanyň talyşyn görüň.
+
+        Goç ýigidiň işi söhbet-saz bolar,
+        Köňli gyş bolmaýan, daýym ýaz bolar,
+        Ýagşynyň köňlünde kine az bolar,
+        Ýamanyň günde bir uruşyn görüň.
+1 Zynhar – ägä bol, habarly bol!
+2 Zikr – ýatlamak, ýat etmek.
+
+        Gadyrdan gardaşdan uzak daş bolup,
+        Gadyrsyz ýat bilen garyndaş bolup,
+        Magtymguly, näsazlara duş bolup,
+        Hojanyň, seýidiň ýörişin görüň.
+
+                       Aňlamaz
+
+        Bedasyla beglik ýetse bir günde,
+        Alar awun, salar guşun aňlamaz,
+        Ýarlygy ýörigen nurbatsyz begler
+        Pukaranyň gözde ýaşyn aňlamaz.
+
+        Belet başlar dogry ýoly çen bile,
+        Akyl adam söz başlamaz «men» bile,
+        Namart otyr, geňeş eýlär zen bile,
+        Goç ýigitler zen geňeşin aňlamaz.
+
+        Mertden dileg etseň, aýdar: «hup bolar!»
+        Bir bagşaşdan1 ýetmiş bela dep bolar.
+        Muhannes geňeşi çölde köp bolar,
+        Duşman görse, tutar işin aňlamaz.
+
+        Hak ýoluna her kim haýr-yhsan2 kylar,
+        Kyýamat gün bir ýerine on geler.
+        Namart duşman görse, gussadan öler,
+        Goç ýigitler tördün, bäşin aňlamaz.
+1 Bahşaş – berim.
+2 Yhsan – ýagşylyk, haýyr.
+
+       Magtymguly, beg ýanynda til başlar,
+       Gylyjy-gaýraty bolan il başlar,
+       Mertden bolan ýygyn görse, ýol başlar,
+       Namart ogly deňin-duşun aňlamaz.
+
+                    Gerekdir
+
+       Mert oldur ki, bolsa köňli rehimli,
+       Göwresi giň gerek, özi pähimli,
+       Giň ýerde garga deý bolsun wehimli1 ,
+       Ýerinde hünäri, işi gerekdir.
+
+       Gaplaň kimin arlap girse meýdana,
+       Tilki kimin bazy berse her ýana,
+       Duranda gaýa dek durup merdana,
+       Alar ýerden at salyşy gerekdir.
+
+       Ýigidiň hyýaly bolsa serinde,
+       Çykar bir gün, çöküp galmaz garynda,
+       Hile hem bir batyrlykdyr ýerinde,
+       Ony başarmaga kişi gerekdir.
+
+       At gerek gaçarga, kowsa ýeterge,
+       Ýowny gorkudarga, tirik tutarga,
+       Meýdanda sangysyz köp iş bitirge,
+       Ýigrimi-otuzly ýaşy gerekdir.
+1 Wehim – gorky.
+
+       Bürgüt guş dek ganat kakyp dügülden,
+       Muhannesler geçer jandan, oguldan,
+       Gurt dek girip, goýun kimin dagyldan,
+       Är ýigidiň mert ýoldaşy gerekdir.
+
+       Magtymguly, goç ýigitler çapylyp,
+       Gök damardan gyrmyz ganlar sepilip,
+       At salanda, doňuz kimin topulyp,
+       Aýy kimin asylyşy gerekdir.
+
+                     Baş üstüne
+
+            Namart kimdir, biler bolsaň,
+            Ne diýseň, diýr: «Baş üstüne!»
+            Ezmaýyşyn1 kylar bolsaň,
+            Hiç tapylmaz iş üstünde.
+
+            Murtun towlap, her ýan tartar,
+            Haýbaty peleňden artar,
+            Gök dek gürläp, damak ýyrtar
+            Taýýar bolan aş üstünde.
+
+            Aş üstünde it dek arlar,
+            Ýersiz ýere har dek harlar,
+            Her tilki bir şir dek gürlär
+            Murdar ölen läş üstünde.
+1 Ezmaýyş – synag.
+
+              Çöl ýerde göwre galdyrma,
+              Ol-da hoşdur, syr bildirme,
+              Lap edip, dahan doldurma,
+              Jeň nan degil diş üstünde.
+
+              Diýseler: «Atlan-ha, atlan!»
+              Mert ýigit — ot çeýnär syrtlan1 .
+              Ýow güni gaýrata gatlan,
+              Lagnat goýma riş2 üstünde.
+
+              Ynsabyn elden byrakmaz,
+              Akyl3 adamlykdan çykmaz.
+              Bu sözüm haýwana ýokmaz,
+              Adam saklar güwş üstünde.
+
+              Magtymguly, söweş bolar,
+              Ýigidiň syry paş bolar,
+              Ýa başyn biýr, ýa baş alar
+              Goç ýigit ýoldaş üstünde.
+
+1 «Süňk çeýnäp iýr arda syrtlan» diýen nusgasy hem bar.
+2 Riş – sakgal.
+3 Akyl (aakyl) – akylly.
+
+          Gerek
+
+At gazanar goç ýigidiň
+Owal bedew aty gerek;
+Gelene garşy çykmaga
+Ýagşy muhapbeti gerek.
+
+Mert gerek jepa çekmäge,
+At gerek dere sökmäge,
+Supra ýaýyp, nan dökmäge,
+Köňlüniň hümmeti gerek.
+
+El götergil ham hyýaldan,
+Saňa yssy ýokdur maldan,
+Rozugär geçse halaldan,
+Aryflar söhbeti gerek.
+
+Ýöriseň gulluk kylmaga,
+Pygamber ýolun bilmäge,
+Derwüşler köňlün almaga
+Elinde döwleti gerek.
+
+Magtymguly, bir gedaýdyr,
+Barçany saklan hudaýdyr,
+Eger misgin, eger baýdyr, —
+Gelene hyzmaty gerek.
+
+                Oglum – Azadym
+
+      Azady:
+      — Paş eýle syryňny, saklama pinhan,
+      Emma ki sözümden çykmagyl, oglum!
+      Günde ýüz köý geler, geçer bu başa,
+      Agyrtma, sözümi ýykmagyl, oglum.
+
+      Magtymguly:
+      — Utanardym, syrym paş eýlemezdim,
+      Paş ederin, habar alsaň, Azadym!
+      Ýüz köý geler, geçer her gün bu başa,
+      Köňül istär, sapar kylsak, Azadym.
+
+      — Jepa urma özüň, goýma watany1 ,
+      Arzuwlama hany, begi, soltany.
+      Besdir bize ol taňrynyň bereni,
+      Azdyrma köňlüňni, gitmegil, oglum.
+
+      — Gidenmiz ýok alty bile, bäş bile,
+      Seýran etsek niçe deňi-duş bile,
+      Meger, gitsek, halkyň köňli hoş bola,
+      Köňül galkar, karar etmez, Azadym.
+1 «Subhany» diýen nusgasy hem bar.
+
+       — Bilgeşleýin özüň nirä atar sen?
+       Niçik işdir, muny beýle tutar sen?
+       Diýgil ahyr: kimiň bile gider sen?
+       Dem tartyp, her ýana bakmagyl, oglum.
+
+       — Jylawdary bolam Ýazyrhan piriň,
+       Köňül guşy perwaz urar pakyryň...
+       Bu gün niçe gündür, aglaşar iliň,
+       Şat eýle köňlümi, goýber, Azadym.
+
+       — Werzişiň1 ýok, ýaş sen, gidebilmer sen,
+       Şöwür bar, şowhun bar, çydabilmer sen,
+       Her işe baş goşup, edebilmer sen,
+       Gitmeklik ýagdaýyn etmegil, oglum.
+
+       — Kişi sözlemeýen, syry paş olmaz,
+       Ýagşydan, ýamandan aňlan ýaş olmaz,
+       Şu gez ibermesin, köňlüm hoş olmaz,
+       Raýymyz gaýtarma, goýber, Azadym.
+
+       — Bizi beýle niçik terk edesiň bar?
+       Bu ýol beýhudadyr, sen gidesiň bar,
+       Gel gitmegil, oglum, çoh terhosym bar,
+       Gaýgy-harajata batmagyl, oglum.
+1 Werziş – türgenlik, tejribe.
+
+— Kalbyma giripdir gitmek höwesi,
+Ýene bizden bolar halkyň tamasy,
+Köňlüm narow etme, kylma terhosy,
+Bir sapar işidir, goýber, Azadym.
+
+— Azady diýr, bile sapa süreli,
+Eýsem ibereli, synap göreli,
+«Ämin» diý, tur, oglum, pata bereli,
+Bir taňry ýar olsun saňa, git, oglum!
+
+— Magtymguly aýdar, galmyşam çohdan
+Köňül talwas urar, gezer yrakdan,
+Her ýerde saglygym iste ol hakdan,
+Doga kylyp, haka ýalbar, Azadym!
+
+                II
+
+AHLAKY-DIDAKTIKI HÄSIÝETLI ESERLER
+                         Neýläýin
+
+          Köňlüm istär, gezsem dünýä-älemi,
+          Ganatym ýok, uça bilmen, neýläýin!
+          Okyr men, görer men barça kelamy,
+          Manysyny saça bilmen, neýläýin!
+
+          Köpler onda guwwas1 bolup ýüzerler,
+          Maňa zahyr2 , halkdan pinhan gezerler,
+          Gül badada gülgün şerap ezerler,
+          El uzadyp, içe bilmen, neýläýin!
+
+          Öý daşyndan şerap ysyn noş kyldym,
+          Gitdi aklym, özüm bilmeý, joş kyldym,
+          Meý mest boldum, dersiz3 gapa duş geldim
+          Rugsat bolmaý, aça bilmen, neýläýin!
+
+          Ýitdi ýolum, dag kaýsydyr, düz kaýsy,
+          Aňmaz köňlüm, magny kaýsy, söz kaýsy;
+          Pähm eýlemez, ýol kaýsydyr, yz kaýsy,
+          Umyt üzüp, gaça bilmen, neýläýin!
+
+          Magtymguly, bu dünýäniň namysyn,
+          Ýygyp-düýrüp, ýele berdim hamysyn!
+          Pikir derýasyna aklyň gämisin
+          Batyrmyşam, çyka bilmen, neýläýin!
+1 Guwwas – suwa çümüji, wodolaz.
+2 Zahyr – açyk, aýan.
+3 Dersiz – gapysyz, işiksiz.
+
+                      Bilmezmiň
+
+Galam alyp, namany1 gönderdigim bilmezmiň?
+Efsun2 urup, hüthütni inderdigim bilmezmiň?
+Arş üstüne galdyryp, mündürdigim bilmezmiň?
+Tört gije, üç gün aglap, diňdirdigim bilmezmiň?
+Eşek münüp, Isa dek ýeldirdigim3 bilmezmiň?
+
+Mejnun kibi sährada aglaý-aglaý gezdigim,
+Gözüm ýaşyn merjen deý düzüm-düzüm düzdügim,
+Warka kimin Gülşadan ölüp, umyt üzdügim
+Joşgun berip yşk odun, gaýnap-gaýnap gyzdygym,
+Şibli kibi bir dagy ýandyrdygym bilmezmiň?
+
+Hüthüt kimin Pereňden Çyn-Maçyn diýp bardygym,
+Bag içinde Bylkysyň saçyn açyp gördügim,
+Süleýmanyň tagtyndan sözläp, habar berdigim,
+Guş gonsun diýp başymga, bilbil heňin gurdugym,
+Çarşenbe gün çaş wagty gondurdygym bilmezmiň?
+
+Surahnyň4 arkasynda Mejnun gurdy jadyny,
+Bismilla diýp başlady, çagyrdy ustadyny,
+Hakdan gaýry bir kimse eşitmedi dadyny,
+Kyrk aşyk nagra çekip, şugla urdy oduny,
+Göz ýaşymdan suw alyp, söndürdigim bilmezmiň?
+1 Nama – hat.
+2 Efsun – owsun.
+3 Elmek – ýüwürmek, çapmak, ylgamak.
+4 Surah – gowak, gädik, deşik.
+
+Şirwan hanyň söwdasy ne ajaýyp söwdadyr!
+Gyldan bir ýan agdyrsa, kyýamat gün ryswadyr,
+Ýüz ýigrimi sap gurlup, her sapda bir gowgadyr,
+Aşyklygyň joşguny akmaz uýgun derýadyr,
+Bir jurgadan1 kyrk aşyk gandyrdygym bilmezmiň?
+
+Ýetilmemiş şunkarym, gamyş ganat-ak türpek,
+Dünýä meni taýdyrdy, bir ýanym etdi urpak,
+Jany jiger köýüban, tartar, gan goýmaz torpak,
+Her tikenden ýüz gunça, her kyrk gülden bir ýarpak,
+Dagy-daşy eleýip, öndürdigim bilmezmiň?
+
+Magtymguly, sözleýir, dokuz pelek Zöhresi,
+Ýedi ýyldyz gardaşy, Aýyň, Günüň parasy,
+Nury-didäm2 ýagtysy, ak gözümiň garasy,
+Aby-zemzem çeşmesi, Sapa, Merwe arasy;
+Süleýman dek ähdimni syndyrdygym bilmezmiň?
+
+1 Jurga – owurt suw, damja.
+2 Dide – göz.
+
+                          Islärin
+
+                Kerem etseň, kadyr alla,
+                Dünýälikde at islärin.
+                Talygym1 ukuda galmyş,
+                Bir açylgan bagt islärin.
+
+                Ýoksullyk bir ýaman ýoldur,
+                Pakyr menem, golum galdyr,
+                Halal ryzk, bir kesp bildir,
+                Kimýa2 atly ot islärin.
+
+                Ýalan dünýäde ýörmäge,
+                Döwlet ber, aşret sürmäge,
+                Ömür ekläp, gün görmäge,
+                Segsen ýyl pursat islärin.
+
+                Pyragy, yşka ugraşdym,
+                Derýa girdim, möwje3 düşdüm,
+                Hor galmasyn puştdan-puşdum
+                Berkarar döwlet islärin.
+
+1 Talyg – täleý, ykbal.
+2 Kimýa – alhimiýa.
+3 Möwç – tolkun.
+
+                      Joşa düşüp sen
+
+           Gel, köňül, gözlegil älem-jahany,
+           Näden üçin beýle joşa düşüp sen?
+           Älemde bir sen dek ýokmy dahanly1 !
+           Syryň destan eýläp, paşa düşüp sen.
+
+           Seniň kimin ýokmy? – diýip, – dünýäde
+           Sökseler, neýlär sen, sen namyrada!
+           Şeýle güýçlendimi yşkyň zyýada?
+           Hetdiň bilmeý, aşa-aşa düşüp sen!
+
+           Gadam goýsaň sähralara, çöllere,
+           Köňül gaýnap, söz joş eder tillere,
+           Iller saňa haýran, sen hem – illere,
+           Ýa aklyň aldyryp, çaşa düşüp sen!
+
+           Baka2 ýokdur söhbediňe, sazyňa,
+           Ygtybar ýok, gyş günüňe, ýazyňa,
+           Sen bu derdi ýowutmazdyň özüňe,
+           Owwaly gerek däl nişe düşüp sen.
+
+           Magtymguly, hemme ýola baş urduň,
+           Çohlar bilen gezdiň, oturdyň, turduň,
+           Ýalançydan ne hezl etdiň, ne gördüň?
+           Imdi gör: otuz tört ýaşa düşüp sen.
+
+1 Dahan – agyz.
+2 Baka – hemişelik.
+
+               Ýyglap geçer halymga
+
+           Giň göwrämi gam basypdyr özünden,
+           Baş hem gelse, ýyglap geçer halymga;
+           Bagyr ýaşyn köňül döker gözünden,
+           Gaş hem gelse, ýyglap geçer halymga.
+
+           Garrylyga döndär ýigit çaglary,
+           Geda eýlär täç eýesi begleri,
+           Gurşun dek eridir Kap dek daglary,
+           Daş hem gelse, ýyglap geçer halymga.
+
+           Älem içre bir ah ursam, bir zarba,
+           Eda bolmaz ynsan gelmez bir gurba,
+           Gaplaň güýçden galar, däner gurt gürbä1
+           Guş hem gelse, ýyglap geçer halymga.
+
+           Puşmanda men eden-etmiş kärimden,
+           Biperwaýam bolan-bolmuş barymdan,
+           Ýoldaş bolan ýata bilmez zarymdan,
+           Daş hem gelse, ýyglap geçer halymga.
+
+           Hak yşykdyr bizni goýan közlere,
+           Bu közlerdir kysmat bolan bizlere,
+           Bilbil tilsiz galar, barsam ýazlara,
+           Gyş hem gelse, ýyglap geçer halymga.
+1 Gürbe – pişik.
+
+          Aňlamaýan yşk derdiniň käninden1 ,
+          Bir söz geçmez, herne etseň ýanyndan,
+          Yşka düşen umyt üzer janyndan,
+          Läş hem gelse, ýyglap geçer halymga.
+
+          Pähm eýleýen Magtymguly sözüni,
+          Derde düşüp, ýaşa doldyr gözüni,
+          Şat gelenler tuta bilmez özüni,
+          Hoş hem gelse, ýyglap geçer halymga.
+
+                      Baradyr
+
+          Gam dumany basyp garyp köňlümni,
+          Göz ýaşyn saklamaý, döküp baradyr;
+          Kimdir rehm eýleýip soran halymny?
+          Bozuk köňlüm erkin ýykyp baradyr...
+
+          Gerçe ot ýaksalar aşyk ýagyndan,
+          Ölüm asan erer dost pyragyndan2 ,
+          Hijran meni goýdy sabyr dagyndan,
+          Pyrak bogum-bogum söküp baradyr...
+
+          Ol döwri-döwranym çarh bulaşdyrdy,
+          Gam meni guratdy, ot tutaşdyrdy,
+          Yşk meni ýandyrdy, hetden aşdyrdy,
+          Ýüregim içimden çykyp baradyr...
+1 Kän – hazyna, magdan.
+2 Dost pyragyndan – dostdan aýrylmakdan.
+
+           Parahat ýatyrdym, nebsimi besläp,
+           Turdy köňlüm, ýar jemalyn höwesläp,
+           Hakdan hajat diläp, myradyn isläp,
+           Gözüm ol ýollara bakyp baradyr...
+
+           Magtymguly, mejalym1 ýok, sözläýin,
+           Dostlarga derdimni beýan eýläýin.
+           Eý ýaranlar, ýyglamaýyn neýläýin?
+           Yşk meni ýandyryp, ýakyp baradyr...
+
+                       Galyp men
+
+           Jahyllygyň joşy çykdy başymdan,
+           Men ol joşdan haly2 bolup galyp men.
+           Bir gama ulaşdym, gitdim huşumdan,
+           Bu dert bilen doly bolup galyp men.
+
+           Başym ýüz höwesde, köňlüm joşgunda,
+           Girdaba düşüp men däli-daşgynda,
+           Nejt dagyna gezem Mejnun yşkynda
+           Ýanar otly Leýli bolup galyp men.
+1 Mejal – pursat, hal, ýagdaý.
+2 Haly – boş.
+
+           Ýigitlik paslyny gyşa ýetirdim,
+           Kämillik keştisin1 derýa batyrdym,
+           Beýik pikre galdym, aklym ýitirdim.
+           Tirik erken, öli bolup galyp men.
+
+           Bu dünýäni göçüp bargan göç bildim,
+           Işini bet aňdym, özün puç bildim,
+           Öňün oýun gördüm, soňun hiç bildim,
+           Halk içinde däli bolup galyp men.
+
+           Magtymguly, paş eýlegil sözüňni,
+           Pelek muşty häk2 etmeýen gözüňni,
+           Bu wagta deň ýaş bilirdiň özüňni,
+           Imdi gör-bak: uly bolup galyp men.
+
+                     Daşlar bile
+
+              Köňül aýdar halkdan galyp,
+              Gezsem daglar, daşlar bile;
+              Ýazygymny ýada salyp,
+              Ýüzüm ýuwsam ýaşlar bile.
+
+              Kimni görsem bir pişede,
+              Meniň köňlüm endişede,
+              Gähi ser, içre köşede,
+              Otursam agaçlar bile.
+1 Keşti – gämi.
+2 Muşty häk – gysym gum.
+
+              Garry dünýä al içinde,
+              Adamzat hyýal içinde,
+              Jahan galmagal içinde,
+              Her kim ýüz talaşlar bile.
+
+              Alla yşkyda ser mestler,
+              Duwuş gelmez zeberdestler1 ,
+              Köňül perwaz eder, dostlar,
+              Durmaz ýüz alaçlar bile.
+
+              Köp köýler bile oturdym,
+              Bilmedim, ne iş bitirdim,
+              Gümra bolup, ýol ýitirdim,
+              Oturdym biweçler bile.
+
+              Bikär goýma ömür tagty,
+              Oýandyrsak oýmuş2 bagty;
+              Doga kylyp säher wagty,
+              Nalyş kylsam guşlar bile.
+
+              Magtymguly, towpyk3 alsam,
+              Bir är tapsam, gulluk kylsam,
+              Ýürek aýdar: ýoldaş bolsam
+              Dem çeken derwüşler bile.
+
+1 Zeberdest – eli üstün, güýçli, başarjaň.
+2 Oýmuş – uklan, ýatan.
+3 Towpyk – kömek.
+
+                      Ýar bizim sary
+
+         Gulzumy1 gyrsanyp kyrk ýol geçer men,
+         Eger ki meýl etse ýar bizim sary;
+         Gadam ýerne ganat baglap uçar men,
+         Diýse dilber: «Aşyk, ýör bizim sary».
+
+         Kyrk ýyl gol gowşuryp, gullukda dursam,
+         Alty günçe görmen, altmyş ýyl ýörsem,
+         Bir şunçakly bolsa, görsem, jan bersem,
+         Jemalyn arz etse bir bizim sary.
+
+         Ne laýykly ýüzüm bardyr tutarga,
+         Ne aýry gapym bar onda giterge?
+         Umyt bar goýnunda bile ýatarga,
+         Dergahyndan açsa der2 bizim sary...
+
+         Bir kimse ýolukdy desti3 şeraply,
+         Ýelden jaýnamazly4 , suwdan mähraply,
+         Egni ak redaly5 ýaşyl nykaply
+         Ugraşdy bir ajap är bizim sary.
+1 Gulzum – Müsür bilen Arabystan aralygynda bolan Gyzyl deňiz.
+2 Der – gapy, işik.
+3 Dest – el.
+4 Jaýnamaz – namazlyk.
+5 Reda – don.
+
+         Ýoldaş bolup bile ýördüm bir meýdan,
+         Meýdan içre dolup oturmyş merdan,
+         Bir eýwan üstünde çyrlap tört ýerden,
+         Diýdiler: «Goluňny ber bizim sary!».
+
+         «Pyragy!» diýp çagyrdylar, eltdiler,
+         «Kandadyň?» diýp, gulagymdan tutdular,
+         Istihanym1 altmyş para etdiler,
+         Diýdiler: «Mert olsaň, ýör bizim sary!»
+
+         Magtymguly bäş gün aşret sürmäge,
+         Jaý imesdir eglenmäge, durmaga,
+         Kararym ýok oturmaga, turmaga
+         Agzyn açyp durmuş ýer bizim sary.
+
+                      Bolmasa
+
+           Her kim suluw men diýr, ygtybar olmaz,
+           Sünbül saçy, gylça bili bolmasa;
+           Ýürekleri at başy dek batyrlar,
+           Hatynça ýok, at-ýaragy bolmasa.
+
+           Näler görejekdir bu şum köňüller.
+           Hazan ursa, solar açylan güller,
+           Bag içre saýraşan şeýda bilbiller,
+           Torgaýça ýok, gonar güli bolmasa.
+1 Istihan – süňk.
+
+Sözleseň, her ýana öwser bu tiller,
+Ýel urpakdan aşsa, şuwlar şemallar,
+Ýaşylbaş sonalar, gazlar garkyllar,
+Haly-harap düşer köli bolmasa.
+
+Guşlar uça bilmez guruk-ganatsyz,
+Aşyk ýara ýetmez dady-perýatsyz,
+Bir bedew hanazat bolar syýaksyz,
+Gurugy, käkili, ýaly bolmasa.
+
+Ahyrzaman bolsa, şyhdan päl gaçar,
+Kelamnyň ýüzünden hat galman öçer,
+Meýdandaky suwsuz aryga ogşar –
+Her kimniň sahawat-haýry bolmasa.
+
+Başyň goşma gadyr bilmez bezzada,
+Goşsaň, goşgul aşyň bir asylzada,
+Howada ýagmazak meňzär buluda, –
+Her kimiň hümmeti, haýry bolmasa.
+
+Magtymguly, biliň, şundag zamandyr,
+Şindi haýyr bolsa, soňra zyýandyr,
+Är ýigidiň içi doly armandyr, –
+Gara göz, inçe bil ýary bolmasa.
+
+                 Mala seretmez
+
+         Owwal-a mal ýagşy, maldan baş ýagşy,
+         Baş döwletin tapan mala seretmez;
+         Dogmadyk oguldan dogan är ýagşy1 ,
+         Nadan ogul atasyna seretmez.
+
+         Atda aýak bolsa, özge syn bolmaz,
+         Ärde gaýrat bolsa, işi kyn bolmaz,
+         Söweş güni goç ýigitde müýn bolmaz,
+         Garşy bakar, peýkam-ýaýa seretmez.
+
+         Alaman öňüni serdary başlar,
+         Goç ýigitler naýza urar, gylyçlar,
+         Kimseler bukulyp, kimse at uşlar,
+         Abyraý tapmasa, paýa seretmez.
+
+         Är-dostdan gaçarlar, adam aç galsa,
+         Ýar-ýardan aýrylar, ara daş galsa,
+         Ýaman hatyn ýagşy ýigide duş bolsa,
+         Başyny terk eder, daýa seretmez.
+
+         Köne dünýä muhannesiň öýüdir,
+         Süýthor bolan kesiň dowzah jaýydyr,
+         Altyn, kümüş gözlerimiň maýydyr2 ,
+         Goç ýigitler bozuk jaýa seretmez.
+1 «Dogmadyk oguldan duşman är ýagşy» diýen nusga hem bar.
+2 Maý – ýag.
+
+          Dünýä görki näzeninler, ne janlar,
+          Nadana ýolukdy türpe1 jenanlar.
+          Ýardan galan, äri ölen juwanlar
+          Goç ýigidi gözlär, baýa seretmez.
+
+          Magtymguly, garyp göwnün baý edip,
+          Kanagat ülkesin bendi-jaý edip,
+          Her kim öz ýaryny dogan aý edip,
+          Aýyn gözlär, özge aýa seretmez.
+
+                 Duz hem bolmasa
+
+          Togsan dürli tagam bolsa gaşynda,
+          Ne lezzet, içinde duz hem bolmasa;
+          Näbiler sen ne iş bardyr başynda,
+          Müşgil işdir, başda göz hem bolmasa...
+
+          Aýak bar ýörmäge, el bar almaga,
+          Kany bende, saglyk şükrün kylmaga,
+          Gulak bardyr eşitgenin bilmäge,
+          Kim düzeder, dilde söz hem bolmasa?
+
+          Ýok ýerden jan berip ýetirdi nany,
+          Göwün bostanyda bitger imany,
+          Adyň bende bolsa, eýäňi tany,
+          Gelip saňa ýüzbe-ýüz hem bolmasa.
+1 Türpe (turpa) – gözel, ter.
+
+          Kysmatyn hak bilen ryzkyn yzlamaz,
+          Söz bilenler bilen sözün gizlemez,
+          Köňül joşa gelmez, dil hem sözlemez,
+          Her ýürekde yşkdan göz hem bolmasa.
+
+          Ýyl-ýyldan pezihat1 artar eýýama,
+          Hakyň özi getirmese enjama,
+          Dünýä sözi meňzär duzsuz tagama,
+          Söz içinde gelin-gyz hem bolmasa.
+
+          Ýum gözüňi, gysyp gezgin dişiňni,
+          Ýaza ýetseň unutmagyn gyşyňny,
+          Töwekgel et, taňra tabşyr işiňni,
+          Sabyr bilen biter, tiz hem bolmasa.
+
+          Magtymguly, hyýal düşüp özüme,
+          Köp tomaşa gelip geçer gözüme,
+          Eşidenler aýp etmesin sözüme,
+          Iller kimin sözüm uz hem bolmasa.
+
+1 Pezihat – erbetçilik, biabraýlyk, masgaralyk.
+
+                        Çykypdyr
+
+          Hak tagala, bu ne-niçik ahwaldyr,
+          Dury diýip içdigim gumly çykypdyr;
+          Ne ýeser beýhuda şum keç ykbaldyr,
+          Halal diýip iýdigim jimli çykypdyr.
+
+          Kimse syrym bilmez, özün öldürse,
+          Pakyr bendelerge taňry bildirse,
+          Ile şatlyk, şadymanlyk güldürse,
+          Maňa hemra bolan gamly çykypdyr.
+
+          Amuhta1 men örtenmäge, bişmäge,
+          Kişi ýok sözleşip, dert aýdyşmaga,
+          Oba ujundan barsam öý soraşmaga,
+          Ýa laldyr, ýa agzy mumly çykypdyr.
+
+          Menden şikat eder elim gerenim,
+          Galbyrdan2 şal çykar syrym berenim,
+          Pir diýip paşmagna elim uranym,
+          Deprenende, döwden demli çykypdyr.
+
+          Magtymguly, hasaby ýok görenim,
+          Tama edip, umyt elim gerenim,
+          Obasyna ärmiş diýip baranym
+          Etegne el ursam.., çykypdyr.
+
+1 Amuhta – taýar, çulum, öwrenişikli, endikli.
+2 Galbyr – elek.
+
+        Bary bolmasa
+
+Zamana beýledir, göze ilmezler,
+Her ýigidiň golda bary bolmasa.
+Ýüz tümenlik sözün şaýa almazlar,
+Her kişiniň ygtybary bolmasa!
+
+Ten bir dar kapasdyr, jan bir wagşydyr,
+Tile gelen sözler köňül nagşydyr,
+Otly, suwly tamug andan ýagşydyr,
+Her ýuwurdyň bir bazary bolmasa.
+
+Begzadalar galdy çopan tährine,
+Ten haçan döz getir ýylan zährine,
+Bibat olup döner Lutuň şährine,
+Her ülkäniň häkim äri bolmasa.
+
+Dünýäde aňlardan aňlamaz kändir,
+Bilmezler beladyr, bilenler jandyr,
+Ol ýigitler adam tilli haýwandyr,
+Söz aňmasa hem ykrary bolmasa.
+
+Ýigide ýoksullyk ýaman beladyr,
+Sözüni deň-duşdan gaýra saladyr,
+Ýaman gylyk dosty duşman kyladyr,
+Guryp galsyn, il derkary bolmasa.
+
+                 Hak her kime bir ýagşy ýar bermändir, —
+                 Sözi akdyr, içi doly armandyr,
+                 Ýüz ýaşasa, bäş gün döwran sürmändir,
+                 Her kimniň mynasyp ýary bolmasa.
+
+                 Magtymguly, haka tabşyr özüňni,
+                 Her namarda sarartmagyl ýüzüňni,
+                 Terhosym bar, gel terk eýle sözüňni, —
+                 Näge gerek, hyrydary bolmasa.
+
+                         Düýşüne degmez
+
+                 Ýoksuzlykda niçeleriň döwrany,
+                 Ýatyp ýagşy gören düýşüne degmez;
+                 Niçeler hasretde tapyp höşk1 nany,
+                 Bir lezzetli tagam dişine degmez.
+
+                 Soran bolsa, synam içre sözler bar,
+                 Müň tümenden ýegdir, niçe ýüzler bar.
+                 Neýsansyz2 , nebatsyz3 niçe ýazlar bar, –
+                 Hoşluk bilen geçen gyşyna degmez.
+       1 Xöşk – gury.
+       2 Neýsan — ýaz wagtynda ýagýan ýagyş; grekçe aýlarynyň biriniň
+
+ady.
+       3 Nebat – ot, ösümlik.
+
+          Akyllar bar, başa baglap keçeler,
+          Içgin-içgin sorsaň, magny saçalar,
+          Akmaklykda özün bezäp niçeler, –
+          Kellesine saran peşine degmez.
+
+          Aňlamaza aýat sözlerin diýseň,
+          Pygamber hadysyn öňünde goýsaň,
+          Gyýmazlykdan köp söz beýnine guýsaň,
+          Bu sözler gulagnyň daşyna degmez.
+
+          Ynjatsa ogul-gyz, ene-atasyn,
+          Toba kylmaý taňrym geçmez hatasyn,
+          Döwran gelse, bilmez ne iş tutasyn,
+          Her kimiň her işden başyna degmez.
+
+          Niçeler mal tapmaz, teňňi-dest1 bolar,
+          Niçeler bar, dünýälikde mest bolar,
+          Niçeler bar, ýigitlikde nist2 bolar,
+          Niçeler bar, süren ýaşyna degmez.
+
+          Magtymguly, gerçe işim namazdyr,
+          Köňlüm perişandyr, sähwüm3 derazdyr4 ,
+          Adam bar, müň tümen iýdirseň azdyr,
+          Adam bardyr, iýen aşyna degmez.
+
+1 Teňňi-dest – eli gysga, goly teň, pes
+2 Nist – ýok.
+3 Sähw – ýalňyş.
+4 Deraz – uzyn, köp.
+
+        Görner
+
+Dogry bakmazlar julluýa,
+Göze gyzyl donly görner;
+Söze pähm etmez akmaklar,
+Öz ýanyndan tilli görner.
+
+Başa degmänkä gurtlar.
+Kast etmäň, gerekdir ýurtlar,
+Ýagyda tanalar mertler,
+Il içinde mally görner.
+
+Pikr et, başa iş düşende.
+Yssy ýokdur, soň puşmanda,
+At meýdanda, är duşmanda,
+Toýda tirme-şally görner.
+
+Jany sagyň sözlär tili,
+Jomardyň dek durmaz eli.
+Her kişiniň öz akyly
+Özüne kemally görner.
+
+Gadymdan setdir ýagşylyk,
+Ýagşy zatdyr ýagşy gylyk,
+Mert ýigide az ýagşylyk,
+Az hem söýgüli görner.
+
+               Gel, akyl dolandyr indi,
+               Ýürek peýwendi, jan bendi,
+               Her kişiniň öz perzendi
+               Özüne jemally görner.
+
+               Magtymguly, söz binýadyň1
+               Agzynda ýakynyň-ýadyň;
+               Hünär ýok söz bilen adyň
+               Halk içinde belli görner.
+
+                        Tapylmasa
+
+            Dok dalaşar sebze2 halgat3 geýmäge,
+            Kilim gözel zatdyr, don tapylmasa.
+            Aç dyrjaşar gury nany iýmäge,
+            Müşgildir, bişirge un tapylmasa.
+
+            Hasyl umydy bar ekin ekene,
+            Bu işler maglumdyr mähnet çekene,
+            Ýalaň aýak dözmez, basmaz tikene, —
+            Neýlesin geýerge gön tapylmasa.
+1 Binýat – guralyş, dikeliş, esas.
+2 Sebze, sebz — gök, ýaşyl.
+3 Halgat – halat, geýim.
+
+          Akylsyzlar iş ahyryn garamaz,
+          Çulap1 çigidinden garpyz döremez,
+          Agyr mejlislere çopan ýaramaz,
+          Neýlesin, otyrga jem tapylmasa.
+
+          Ýigitlikde her kim aşretde ýaýlar,
+          Başyna ne geler, gelmez bu köýler.
+          Dişsizler nan tapsa çäresin eýlär,
+          Müşgildir suprada nan tapylmasa.
+
+          Magtymguly, söýmez jedeli-jeňi,
+          Ahyret azm2 etdi köp dosty-deňi.
+          Dünýäde ne iş bar, bolmasa soňy,
+          Muşakgatdyr tende jan tapylmasa.
+
+                  Malyna degmez
+
+        Baýlar bardyr, garyplara rehm eýlär,
+        Bardyr baýlar, dünýä malyna degmez;
+        Gözel bardyr dünýä malyn iýdirsiň,
+        Bardyr gözel, iýen nanyna degmez.
+
+        Dünýäde bahylyň ýüzüni görme,
+        Aşyň, nanyň, suwuň alyşyp berme.
+        Gul diýip, ýigidiň aslyny sorma,
+        Hojasy bar, belki, guluna degmez.
+1 Çulap – miwe ady.
+2 Azm etmek – ugramak, gitmek.
+
+        Dünýä malyn berseň, eýesi satmaz,
+        Şa istese, anyň dilegi bitmez,
+        Bedew bar, pul berseň, bahasy ýitmez,
+        Bedew bardyr, salan juluňa degmez.
+
+        Döwletli är gerek, söweşde serhoş,
+        Ýat bilen baryşsaň, bolar sen gardaş,
+        Ýagşy ogul, ýagşy aýal, gyz syrdaş,
+        Bu döwlet her kimiň eline degmez.
+
+        Magtymguly, bu dünýäniň eşreti, –
+        Iýmek, içmek, münmek, guçmak, söhbeti.
+        Bir niçeler mydam kylar tagaty,
+        Niçeleriň sežde alnyna degmez.
+
+                         Bolgul
+
+        Bir bidöwlet bile birge bolynçaň,
+        Döwletliniň gapysynda gul bolgul;
+        Bedasyl beg gullugynda ýörinçäň,
+        Asyl begiň saýasynda kül bolgul.
+
+        Ýamany goý, ýagşylara göz ildir,
+        Kelhemeç1 hem «öz oglanym gözel» diýr,
+        Gargyş gurduň zürýadyny azaldyr,
+        Goýun kibi çar tarapa il bolgul.
+1 Kelhemeç – dazzarkel, çaýkel.
+
+        Süleýman sen — mura1 bir gulak goýgul,
+        Sözüni diňlegil, jogabyn aýgyl,
+        Häkim bolsaň halky gün kibi çoýgul,
+        Akarda suw, ýa öserde ýel bolgul.
+
+        Ýaman işdir öz nebsiňi besleseň,
+        Akmaklykdyr özüň ýagşy toslasaň,
+        Her bazarda rowaç bolmak isleseň,
+        Ýagşylaryň potasynda2 pul bolgul.
+
+        Magtymguly bardyr demiň hesibi,
+        Ir, giç ýeter her bendäniň nesibi,
+        Kişi bolsaň, goýgul gury täsibi,
+        Ýagşy, ýaman barçalarga del bolgul.
+
+           Görüm görülmegen ýerde
+
+             Yzzat, hormat, syn etmegin
+             Görüm görülmegen ýerde;
+             Akyl bolsaň, söz aýtmagyn
+             Nobat berilmegen ýerde.
+
+             Akly ýagşylar unutmaz,
+             Gury agaja ýaprak bitmez,
+             Akylly är mesgen tutmaz
+             Hulky söýülmegen ýerde.
+1 Mur – garynja.
+2 Pota – bu ýerde jübi, kise manysynda
+
+             Gömlüp galan aryk akmaz.
+             Her naşydan kerem1 çykmaz,
+             It gözlemez, pişik bakmaz
+             Saçak ýazylmagan ýerde.
+
+             Haç eýleseň jara döner,
+             Gül açylsa zara döner,
+             Hyzmat etmek hara döner
+             Gadryň bilinmegen ýerde.
+
+             Namart goş üstünde harlar,
+             Iýmit, aş üstünde gürlär,
+             Söweş gurup, gylyç parlar
+             Duşman görülmegen ýerde.
+
+             Öý içinde hara döner,
+             Muhannes bir nere döner,
+             Tilki, şagal şire döner
+             Söweş gurulmagan ýerde.
+
+             Parasat kyl bakyp akla,
+             Goç ýigidiň sözün hakla,
+             Magtymguly, tiliň sakla
+             Habar soralmagan ýerde.
+
+1 Kerem – ýagşylyk.
+
+                 Är ýanynda bellidir
+
+                 Ýagşylygy – pis bilmez, –
+                 Är ýanynda bellidir.
+                 Görer gözüň gymmaty
+                 Kör ýanynda bellýadir.
+
+                 Däli köňül daýanjy,
+                 Ýokdur dünýä ynanjy,
+                 Sag gulagyň guwanjy
+                 Ker ýanynda bellidir.
+
+                 Eger pir1 sen, eger ýaş,
+                 Kylma syryň halka paş,
+                 Syr saklaýan mähek2 daş
+                 Zer ýanynda bellidir.
+
+                 Bu dünýäniň myrady, –
+                 At, zagyfdyr3 , zürýady.
+                 Arwananyň kuwwaty
+                 Ner ýanynda bellidir.
+
+                 Bolsa gamdan halasym,
+                 Ýaza dönse gyş paslym,
+                 Magtymguly, yhlasym
+                 Ýar ýanynda bellidir.
+1 Pir – garry.
+2 Mähek – gyzyl, kümüşiň hilini kesgitlemek üçin ulanylýan daş.
+3 Zagyf (zagyfa) – aýal.
+
+                   Sazyna degmez
+
+           Oýunyň lezzetin bilmeýän adam
+           Hünärli ýigidiň sazyna degmez;
+           Bet syýakly1 , bethüý bolan pis adam
+           Perizadyň eden näzine degmez.
+
+           Bimagnynyň sözi janyňdan öter,
+           Gybat edip, özi günäge batar,
+           Ýamanyň zyýany iline ýeter,
+           Nadanyň peýdasy özüne degmez.
+
+           Adam bardyr, ony şalar çagyrdar,
+           Adam bar, zulm edip, garyp agyrdar,
+           Adam bardyr, körpe ýanyn agyrdar,
+           Adam bardyr, şal kiz2 ýanyna degmez.
+
+           Muhannesiň bolmaz namysy, aňy,
+           Bir söweş gününde eýlemez jeňi,
+           Aga-begler, muhannesiň on müňi
+           Mert ähliniň3 alty ýüzüne degmez.
+1 Syýak – sypat.
+2 Kiz – keçe.
+3 Mert ähli – mert adamlar
+
+          Magtymguly, döwran soňudyr adem1 ,
+          Lahat atly öýge goýar sen gadam.
+          Many söz aňlamaz, biakyl adam
+          Danalaryň aýdan sözüne degmez.
+
+                   Sarp eýleýir aşyny
+
+         Hak nazaryn salan bir serhoş ýigit
+         Ynsan üçin sarp eýleýir aşyny;
+         Namysly, gaýratly, arly goç ýigit
+         Söweş güni gurban eder başyny.
+
+         Bir niçeler gezer zerbap don bilen,
+         Bir niçeler gezer gury san bilen,
+         Adamzady tanyp bolmaz syn bilen,
+         Synaşmagan bilmez kişi kişini.
+
+         Ýigidiň abraýy ýagşy zagyfdyr,
+         Ýagşy zagyf näkes äre haýypdyr,
+         Ýigide gallaçlyk külli aýypdyr,
+         Her ýan gezer, bilmez eder işini.
+
+         Magtymguly, aýdaý ýaryn sypatyn,
+         Täze depder bilen ýazaý zer hatyn.
+         Dowzah nyşanasy bir ýaman hatyn
+         Her kime duş bolsa, alar huşuny.
+1 Adem – ýokluk.
+
+        Ärden
+
+Hiç köňül şatlygy çykmaz
+Bir köňül ýykmaýan ärden;
+Ýagşylyk tamasyn etmäň
+Ýamanlyk çykmaýan ärden.
+
+Her kim ile beglik eder,
+Bir söý bilen ýola gider,
+Kethudalyk ýyrak gider, –
+Ýaman söz çekmeýen ärden.
+
+Ýagşy är il aýbyn açmaz,
+Göre-bile haram içmez,
+Ýaradan ýazygyn geçmez
+Göz ýaşyn dökmeýen ärden.
+
+Eglenmez, eýýam öwrüler,
+Wagt täzeler, nyrh çöwrüler,
+Agyr döwletler aýrylar
+Bir agza bakmaýan ärden.
+
+Öz-özünden akly ýetmez,
+Akyllar sözüni tutmaz,
+Garyplyk ýok bolup gitmez
+On iş terk etmeýen ärden.
+
+     Ýigitlere ýasaw güni –
+     Gurda goýmaz şir awuny,
+     Pygamber bizar ýow güni
+     Ýoldaşa bakmaýan ärden.
+
+     Magtymguly, ýangyl, öçgül,
+     Ýa lal otur, ýa dür saçgyl!
+     Bir guýruksyz itdir, gaçgyl, –
+     Nesihat ýokmaýan ärden.
+
+            Bilmedim
+
+Pelek maňa gam badasyn bereli
+Wysal kaýsy, hijran kaýsy, bilmedim;
+Hak işine ten bermişem göreli,
+Arzuw kaýsy, arman kaýsy, bilmedim.
+
+Bende bolsaň gözle hakyň ryzasyn,
+Jebr eýlese, çekewergil jezasyn,
+Ajal bir gün atar tiri-kazasyn,
+Kiriş kaýsy, keman kaýsy, bilmedim.
+
+Aryf bolsaň, gulak goýgul sözüme.
+Bir suratam bu gün bakmaň özüme,
+Dünýä düýbi ýok görüner gözüme,
+Döwür kaýsy, döwran kaýsy, bilmedim.
+
+        Az ömrümi köp söwdaga satyp men,
+        Özüm bilmeý, ol derýaga atyp men,
+        Ne ummandyr, ne talapdyr, ýatyp men,
+        Zemin kaýsy, zaman kaýsy, bilmedim.
+
+        Her kim girse ol talaba, ummana,
+        Başyn alyp çyka bilmez bir ýana,
+        Gadam goýdum ol sähraýa-meýdana,
+        Jan kaýsydyr, jahan kaýsy, bilmedim.
+
+        Bu dünýäni asmandaky reň bildim,
+        Yssy-yssy asylyşdym, soň bildim,
+        Imdi anyň baryn-ýogun deň bildim,
+        Sut1 kaýsydyr, zyýan kaýsy, bilmedim.
+
+        Magtymguly, ýoluň öňi-ardy bar,
+        Çeker ýüküň, her kişiniň merdi bar,
+        Ýüregimde pinhan yşkyň derdi bar,
+        Dert kaýsydyr, derman kaýsy, bilmedim.
+
+1 Sut (sud) – peýda, haýyr.
+
+       Öýlengin
+
+Ýigit halyň garrylyga
+Salaýyn diýseň, öýlengin;
+Kethudalyk endişesin
+Kylaýyn diýseň, öýlengin.
+
+Kethudalyk gözel ýoldur,
+Gaýgy garrydar, gam öldir,
+Ýigitlik bir gyzyl güldür, –
+Solaýyn diýseň öýlengin.
+
+Öý-il gerek, ýorgan-düşek,
+Perzent bentdir, aýal – duşak,
+Ýüke werziş bir boz eşek
+Bolaýyn diýseň, öýlengin.
+
+Gezer sen oýnap, dalaşyp,
+Galar sen, derde dolaşyp,
+Gaýgydan gama ulaşyp
+Galaýyn diýseň, öýlengin.
+
+Joşgun eder sen özüňden,
+Aýrylar sen hoş ýazyňdan-,
+Tükenmez derdiň yzyndan
+Ýeleýin diýseň, öýlengin.
+
+              Açyp ýigitlik dumanyn,
+              Getir sen gaýgy zamanyn,
+              Dünýäniň ýagşy-ýamanyn
+              Bileýin diýseň, öýlengin.
+
+              Magtymguly, gezip her taý.
+              Etmediň jahandan perwaý,
+              Pygamber sünnetin berjaý
+              Kylaýyn diýseň, öýlengin.
+
+                   Kyly-kal bolar
+
+           Her kişiniň iki bolsa aýaly,
+           Gije-gündiz işi kyly-kal1 bolar;
+           Her biriniň bardyr ýüz müň hyýaly,
+           Owkat sürüp görejigi hal2 bolar...
+
+           Birin söýüp, birin eýlese naçar,
+           Ile ryswa bolup, öz aýbyn açar,
+           Akly haýran bolup, baryndan geçer,
+           Deň tutmasa ýaryn, bikemal bolar.
+
+           Gähi bilbil kimin saýrar tilleri,
+           Tomaşadan häzir eder illeri,
+           Gähi ýer ýumruklar, gähi külleri,
+           Ärin göre bilse, tilsiz lal bolar.
+1 Kyly-kal – galmagal, gowga.
+2 Hal – bu ýerde kyn manysynda.
+
+             Gahar eýläp gelmez bolsa ýanyna,
+             Söz aýtmasa her biriniň şanyna,
+             Beýle är goşulmaz adam sanyna, —
+             Iki hatyn, bir är — üç aýal bolar.
+
+             Magtymguly, kimse bilmez batyny1 ,
+             Öýlenseňiz, garap alyň zatyny2 ,
+             Eýäm görkezmesin ýaman hatyny,
+             Adam özün bilmez, ham hyýal bolar.
+
+                     Ykrarsyz ärden
+
+                Gördük saýy, köňül sowar
+                Sabyrsyz, kararsyz ärden;
+                Yssy beren köpek ýegdir3
+                Uýatsyz, ykrarsyz ärden.
+
+                Aýlandykça döwran-döwür,
+                Ykbalyň ýüwürse, öwür,
+                Dura-bara dosty sowyr
+                Garyp galan barsyz ärden.
+1 Batyn – gizlilik, syr, içki dünýä.
+2 Zat – asyl.
+3 Eg – oňat, gowy.
+
+Ite zer dök, minnet çekmez.
+Aňlamaza sözüm ýakmaz,
+Köňlüň istän işler çykmaz
+Nan ýagysy, kärsiz ärden.
+
+Her göz säherde bidardyr, —
+Eýesinden ülüş bardyr,
+Hak, pygamber, halk bizardyr
+Düýbi ygtybarsyz ärden.
+
+Magtymguly, magny saçar,
+Her kim söz lezzetin içer,
+Bara-bara köňül geçer
+Tagsyby ýok, arsyz ärden.
+
+     Diş gitmek
+
+Tagamnyň lezzetin alyr,
+Dahanyňdan diş gitmek;
+Aňyrsyzy azdyryr
+Götin döwlet baş gitmek.
+
+Şeýtan ýolun bek eýlär,
+Gara ýüzün ak eýlär,
+Ýüz müň bela ýok eýlär
+Säher turup ýaş dökmek.
+
+Peltesiz ýag çyraga,
+Yşyk salmaz gyraga,
+Ilin salar aýaga
+Aýak galyp, baş gitmek.
+
+Niçe pese zar bolup,
+Ýatandan bimar bolup,
+Hoşdur ýagşa ýar bolup,
+Bir ýamandan daş gitmek.
+
+Ulaşmaganlar gama
+Şükr etmezler bu deme,
+Abyraýdyr adama
+Ýagşy gelip, hoş gitmek.
+
+Ýaman til dost ýitirer,
+Hoş til rahmet getirer,
+Äre sangy ýetirer
+Kyrkdan agyp, ýaş gitmek.
+
+Pyragy, dünýä düýşdür,
+Düýş görseň, düýbi hiçdir.
+Jahanda ýaman işdir
+Gury gelip, boş gitmek.
+
+                         Eldim tut
+
+     Dünýe görmeý, tutgun galsaň bir künçde,
+     Bady-paý1 dek ýer ýüzüne ýeldim tut;
+     Çyn-Maçynda, Rumda, Hindde, Hebeşde
+     Bolan-bolmuş hünärleri bildim tut.
+
+     Aç hem bolsaň, barma ile dilege,
+     Diý: köşkde men, başym barmyş pelege,
+     Çölde galsaň, hiç tapmaýan kölege,
+     Erem bagy içre gamsyz galdym tut.
+
+     Aş görende, özüň atma dillenip,
+     Gerçe aç hem bolsaň, halka bellenip,
+     Zerler döküp, çyn gullarny gollanyp,
+     Tiz hem ölseň, Nuh ýaşyna geldim tut.
+
+     Mätäçligiň hakdan özge bilmese,
+     Ol rozugär2 besdir, açdan ölmese,
+     Hindi kimin egin örtiň bolmasa,
+     Patyşalyk puşeş3 çigne saldym tut.
+1 Bady-paý – el aýak, ýyndam at.
+2 Rozygär – rysgal, durmuş.
+3 Puşeş – eşik, geýim.
+
+     Suwa, ýele hökmi geçen Süleýman,
+     Bak: olardan ne nam galdy, ne nyşan!
+     Teşne1 galyp, jaýyň bolsa çölüstan
+     Derýa içre men Isgender boldum tut.
+
+     Ýoldaş bolsaň dile düşmez mur bile —
+     Ýer tapmaýyn, bile ýatsaň mar bile,
+     Ýigrim alty keret2 ýüz müň är bile
+     Karun hazynasyn ele aldym tüt.
+
+     Magtymguly, çekseň jepa-jebir, bil –
+     Hudaga hoş geler, şükür-sabyr, bil,
+     Gylça jana gyzyl teni gabyr bil,
+     Gyzyl tiliň sözlär eken, öldüm tut.
+
+                      Joş gelse
+
+     Dünýäde niçe iş bardyr, ýamandyr,
+     Biri oldur, ýersiz gahra joş gelse;
+     Aşyklara şol gün ahyrzamandyr,
+     Ýardan yrak düşüp, ara daş gelse.
+
+     Dostuňny egleme, nepden galmasyn,
+     Duşmanyň saklama, syryň bilmesin,
+     Açda algyn, bege bergiň bolmasyn,
+     Iş müşgildir, aňlamaza duş gelse.
+1 Teşne – suwsuz, suwsan.
+2 Keret – gezek.
+
+     Zemin seni häli-häli ýutarmy,
+     Akyl bolan munda bigam ýatarmy?
+     Hiý bir masgaralyk mundan ötermi, —
+     Giden gury gitse, gelen boş gelse!
+
+     On gat öýüň bolsa demir galadan,
+     Ajal tapar emir1 bolsa alladan,
+     Hakyky är ýüz döndermez beladan,
+     Hak ryzasy bilen başa daş gelse.
+
+     Aryf men diýp, lap urarlar ýalandan,
+     Bellisini aýdar sorsaň bilenden,
+     Il gözlügin ýüz ýyl tagat kylandan,
+     Ýagşydyr bir säher gözden ýaş gelse.
+
+     Baýlar baglap sahawatyň gapysyn,
+     Köpelder tamugnyň möýün, apysyn2 ,
+     Görüň bu eýýamyň pirin, sopusyn —
+     Dannamaýyn tykar otyr, aş gelse.
+
+     Magtymguly, söýle aklyň ýetinçä,
+     Tetärigiň gazan, bikar ýatynça,
+     Tamugdadyr, tä dünýäden ötinçä, —
+     Ýaman hatyn ýagşy äre duş gelse.
+
+1 Emir (emr) – buýruk, höküm.
+2 Apy (afy) – zäherli ýylanyň bir görnüşi.
+
+                         Ýigide
+
+                Ulalanda, iş hoş gelmez
+                Ýaşlykda köýmän ýigide;
+                Döwlet gelse özün bilmez
+                Dogaly doýman ýigide.
+
+                Ýamana öwüt hebesdir,
+                Ýagşy äre bir söz besdir,
+                Ýörişini ýalňyş basdyr
+                Ýaňy don geýmän ýigide.
+
+                Jüpbe jöwşen1 , zere-sowut2 ,
+                Keserli gylyç, arap at,
+                Söweş güni gider uýat
+                Gaýraty bolman ýigide.
+
+                Çopan adam çoka bolmaz,
+                Ala garga oka gelmez,
+                Köp ýygylsa, terhos almaz
+                Aňrysy bolman ýigide.
+
+                Gulluk ýetirgin janyňdan,
+                Aýama parça nanyňdan,
+                Ganly bolsa, geç ganyňdan
+                Bir garyp myhman ýigide.
+1 Jöwşen – harby eşik, enjamlar.
+2 Sowut – demir don.
+
+Dünýäde hiç kim galmandyr,
+Mal jana ýoldaş bolmandyr,
+Göýä bu dünýä gelmändir
+Bir zürýat goýman ýigide.
+
+Almaz, kümüş mis görüner
+Dula gyrnak tüýs görüner,
+Perizat hatyn pis görüner
+Bir hulky söýmän ýigide.
+
+Mal döner çiýan-çirmäge,
+Durar et-ganyň sormaga,
+Malyndan zekat bermäge
+Gözleri gyýman ýigide.
+
+Magtymguly, ýeldan çykmaz,
+Ýagşy söz ýamana ýakmaz,
+Müň söz aýtsaň, biri ýokmaz,
+Taňrysy guýman ýigide.
+
+                     Gidiji bolma
+
+        Gel, köňlüm, men saňa nesihat kylaý,
+        Watany terk edip gidiji bolma;
+        Özüňden egsik bir gaýry namardyň
+        Hyzmatynda gulluk ediji bolma.
+
+        Hyzmat kylsaň, bolsun bir asylzada,
+        Ata-babasyndan beýik begzada,
+        Eger her çent bolsa aç hem üftada,
+        Ýanyndan bir zaman gidiji bolma.
+
+        Akmaýan galmazdyr bir akan aryk,
+        Bir tende adam ki semiz, kä aryk;
+        Bir ýüzi çirikdir1 , bir ýüzi çaryk,
+        Çirik diýp, gaty söz aýdyjy bolma.
+
+        Ýagşylardan hergiz çykmaz ýamanlyk,
+        Asly ýaman bolsa, çykmaz ýagşylyk,
+        Aslyna tartadyr ýüwrük, çamanlyk,
+        Ýüwrükni çamanga satyjy bolma.
+
+        Çakylyk, habarsyz bir ýere barsaň,
+        Imtiýaz2 eýlegil otursaň, tursaň,
+        Bir nesihat bereý, pendimi alsaň,
+        Kişi aşynyň duzun dadyjy bolma.
+1 Çirik – bu ýerde garalyk, hapa manyda.
+2 Imtiýaz – salykatlylyk, seljermek, artykmaçlyk.
+
+        Çagyrlan ýere bar, otur-da turma,
+        Çagrylmadyk ýere barma, görünme,
+        Utanmaz adam dek süýrenip ýörme,
+        Buýrulmagan işni ediji bolma.
+
+        Eger sen hem bolsaň nermi-mylaýym,
+        Mylaýym sen bolsaň, guluň bolaýym,
+        Gulagymga beren pendiň alaýym,
+        Kişige gaty söz aýdyjy bolma.
+
+        Gökden nem düşmese, ýer ot getirmez,
+        Ýygylsa müň gaýgy, bir iş bitirmez,
+        Är ýigit köňlüne gaýgy getirmez,
+        Namardyň ogly dek gaçyjy bolma.
+
+        Mert ogludyr ile ýazar desterhan,
+        Dogry söz üstünde berer şirin jan,
+        Ömrüni ötgerer, diýmez bir ýalan,
+        Jäht eýläp, ýalan söz aýdyjy bodma.
+
+        Sahty-dil1 ýüregi hergiz boş bolmaz,
+        Her niçe gynansa köňli hoş bolmaz.
+        Bir-birewge iki ýagşy duş bolmaz,
+        Ýagşyny ýamana satyjy bolma.
+1 Sahty-dil – gaty, doň ýürek.
+
+        Töwekgel ner bolar, endişe — maýa,
+        Köňlüňni iberme her kaýsy jaýa,
+        Barçanyň daýanjy kadyr allaýa,
+        Alladan özgäge söýenji bolma.
+
+        Okyr bolsaň, ok ur nebsiň gözüne,
+        Gara, çyn göz bilen meshap1 ýüzüne,
+        Aldanyp girmegil şeýtan sözüne,
+        Ýagşylygy hiç wagt goýujy bolma.
+
+        Eger bolsun diýseň ýeňil-agyrlar,
+        Kelçik sözläp agyrtmagyl bagyrlar,
+        Ýoluksa gözüňe güňi-sagyrlar,
+        Olarnyň halyna gülüji bolma.
+
+        Tapsaň-da dünýäde mülki-Isgender,
+        Karunyň maly hem bolsa miýesser,
+        Ahyry bolar sen ýerge barabar,
+        Köňlüňde men-menlik satyjy bolma.
+
+        Aýdarlar: ýyrtyk don görse it gapar,
+        Päli ýaman bende hudadan tapar,
+        Ahyry bir güni kylar sen sapar,
+        Dar köňüllik işi ediji bolma.
+1 Meshap – kitap, tom, kodeks.
+
+        Eger çendi ki bol sahyby-mansap1 ,
+        Sözün diňle, adalatly bol deňläp,
+        Söz tapsaň sözlegil, tapmasaň bol hap,
+        Goldan gelmez işni ediji bolma.
+
+        Garrylyk gitgisi bir gün apaty,
+        Ýigidiň gitgisi bir gün kuwwaty,
+        Ganymat bil, gapyl adam, pursaty,
+        Murda dek uzanyp ýatyjy bolma.
+
+        Maksat, bu sözlere kylgyl ygtybar,
+        Çyn adama her wagt adamlyk derkar,
+        Aňlamaý söýleme: «tamda gulak bar»,
+        Iç syryň kişige aýdyjy bolma.
+
+        Daň atanda molla çagyrar azan,
+        Bozulmazmyş hergiz kysmatda ýazan,
+        Ýigitlik bostandyr, garrylyk — kazan,
+        Bostany hazana satyjy bolma.
+
+        Kitabyn açyban okan molla diýr,
+        Gögerer ýagmyryň suwy birle ýer,
+        Alkyşy, patyha, doga birle är,
+        Mazluma sütemlik ediji bolma.
+1 Sahyby-mansap – derejeli, emeldar.
+
+        Döwletli ogullar ýaşda baş bolar,
+        Ýaşaganda, bidöwletler ýaş bolar,
+        Rehimsiz zalymlar bagry daş bolar
+        Barar ýere kesek atyjy bolma.
+
+        Är ýigit balasy bara pur1 bolar,
+        Gamçysy elinde ýaman zor bolar,
+        Märeke görmegen ýigit har bolar,
+        Bolar-bolmaz sözi aýdyjy bolma.
+
+        Eý köňül, gel imdi haky tapaly,
+        Nesibe merkebin2 münüp çapaly,
+        Aýdarlar: hak ermiş mähri-wepaly,
+        Hergiz öz sözüňden gaýdyjy bolma.
+
+        Men diýdim bir niçe pendi-nesihat,
+        Bilseň nesihatdyr, ýogsa — pesihat3 ,
+        Pesihat bilmegil, barça nesihat,
+        Ýalgançy sözleri aýdyjy bolma.
+
+        Magtymguly, göwnüňdedir köp arman,
+        Tapmady derdine akybet derman,
+        Ýetişer bir güni hakdan bu perman,
+        Gaflat düşeginde ýatyjy bolma.
+
+1 Pur – doly.
+2 Merkep – ulag.
+3 Pesihat – owadan söz.
+
+            Seni
+
+Içki syryň aýtma her bir namarda,
+Syryň ile ýaýyp, paş eder seni.
+Ogry-kezzap bilen obadaş bolma,
+Malyndan aýyryp, aç eder seni.
+
+Sam-sam adam bilen oturma, turma,
+Zynhar, namart bilen hemsöhbet gurma,
+Gadyrdan dostuňdan ýüzüň öwürme,
+Barsaň depesine täç eder seni.
+
+Bir goç ýigit näzenine ýar bolsa,
+Jemalyny bir görmäge zar bolsa,
+Aralykda bir şum rakyp bar bolsa,
+Ýagşy dostuň bilen öç eder seni.
+
+Sopular ýaňylyp, aýtmaz senany,
+Säher tursaň geçjek barça günäni,
+Aýtmawer gyýbat söz, etme zynany,
+Dowzahyň oduna duş eder seni.
+
+Magtymguly, ile ýaýdym nesihat,
+Zynhar, ýaman bilen bolmagyl ülpet,
+Hudaý berse sagadatly bir perzent,
+Garrygan çagyňda ýaş eder seni.
+
+                    Daşy syndyrar
+
+           Ykbalyň oýansa, döwlet ýar bolsa,
+           Daga azy ursaň, daşy syndyrar;
+           Täleýiň ters gelse, bagtyň şor bolsa,
+           Paludanyň peri dişi syndyrar.
+
+           Ajalyňdan gorkup, girseň ummana,
+           Gorkudan ne peýda gidejek jana,
+           Ömrüň ahyr bolup, dolsa peýmana, —
+           Haşhaşyň samany başy syndyrar.
+
+           Bar sözüne gulak goýgul bileniň,
+           Ahyry hiç ýere ýetmez ýalanyň,
+           Ömri-saly artar alkyş alanyň,
+           Gargyş galyndyrmaz, ýaşy syndyrar.
+
+           Akylyň sözünden köňül söýüner,
+           Akmagyň işinden zehin käýiner.
+           Muhannes giň ýerde akyl saýynar,
+           Dar ýerde akyly-huşy syndyrar.
+
+           Magtymguly, çölde gezen naşyny,
+           Bilik sorma, köp sürdi diýp ýaşyny,
+           Dar mejlisde doly berseň aşyny,
+           Aşny iýe bilmez, käşi1 syndyrar.
+
+1 Käşi – syrçaly gap.
+
+                     Gitmezmiş
+
+              Iller heý, Mejnun dagynyň
+              Serinden duman gitmezmiş;
+              Müňküre bilin bereniň
+              Köňlünden güman gitmezmiş.
+
+              Goýna gardaş bolmaz gurtdan,
+              Dileg etme her namartdan,
+              Tä ölinçä goç ýigitden
+              Parh ýeter, zyýan ýetmezmiş.
+
+              Gapyl adam ogly bilmez,
+              Ölümini ýada salmaz,
+              Maly-mülküň peýda kylmaz,
+              Ýanyňdan iman gitmezmiş.
+
+              Aşyklar terki-jan etsin,
+              Gözde ýaşyn rowan etsin,
+              Goç ýigitler yhsan1 etsin,
+              Yhsany reýgan2 gitmezmiş.
+
+              Magtymguly, galdyň derde,
+              Işiň düşmesin namarda,
+              Kyýamat güni jomarda
+              Dowzahdan zyýan ýetmezmiş.
+
+1 Yhsan – haýyr
+2 Reýgan — biderek, zaýa; mugt.
+
+       Olmasyn
+
+Eý ýaranlar, musulmanlar,
+Däli köňül joş olmasyn;
+Ýene bir ýagşy ýigide
+Ýaman hatyn duş olmasyn.
+
+Her kim alsa hakdan rehnet,
+Gider gaýgy, galmaz mähnet,
+Arslan bolsa durmaz döwlet, —
+Hiç ülke bibaş olmasyn.
+
+Täsip edip at besläne,
+Ýoldaş bolsun haýr aslyna,
+Haram aşap, şer isläne
+Uzak ömür ýaş olmasyn.
+
+Her kimiň öz synasynda,
+Akyl görner beýnisinde,
+Iki dostuň arasynda
+Ýaman-ýowuz iş olmasyn.
+
+Her kişiniň öz zürýaty —
+Jan hoşy, köňül kuwwaty;
+Artsyn jomardyň döwleti,
+Muhannesde aş olmasyn.
+
+Bir yşk düşse adam serne,
+Uky gaçyp, köňül urna,
+Iki söwgüli bir-birne
+Ýakyn olsun, daş olmasyn.
+
+Sözüm sözlense her çaklar,
+Akyly bolan gerçekler,
+Bir iş düşende goçaklar
+Iş görmedik ýaş olmasyn.
+
+Il içinde özün öwer,
+Dag-dumany başdan agar,
+Ýigide nogsany deger,
+Namartlar ýoldaş olmasyn.
+
+Sözle heý, aşygym, sözle,
+Gel, kyýamatlygyň gözle,
+Magtymguly, syryň gizle,
+Her namarda paş olmasyn.
+
+                      Läle getirmiş
+
+         Asmanyň ýüzleri minewwer1 bolsa,
+         Zemin ýaşyl geýip, läle getirmiş;
+         Huda buýrugyndan aýrylan juwan
+         Oýnaşyndan haram küle getirmiş.
+
+         Ozal akan ýerden akarmyş aryk,
+         Özün öwen ýigdiň tanapy çüýrük,
+         Mertden aşna tutsaň, abraýyňa şärik,
+         Namart aşnasyna hile getirmiş.
+
+         Her kim öz adyna möhür gazdyrar,
+         Ýazylan takdyry kimse bozdurar?
+         Ikiniň sylagy birni azdyrar,
+         Taýak bir dälini ýola getirmiş.
+
+         Magtymguly, ger doýursaň bir ajy,
+         Mälimdir, tapar sen bu ýerde hajy,
+         Bir ýagşylyk etse adam biweji, –
+         Her mejlisde ýüz ýol tile getirmiş.
+
+1 Minewwer – ýagty.
+
+                    Biwepalardan
+
+         Gözläp köňül berme biwepalarga,
+         Bak: kim wepa görmüş biwepalardan?
+         Goýma özüň ýersiz bu jepalarga,
+         Kim bähre tapypdyr bu jepalardan?
+
+         Yşkyň owazasyn diňle daşyndan,
+         Jan jebrinden gorksaň, barma başyndan,
+         Serişdäň kem bolsa yşkyň işinden,
+         Bar, habar al gören mübtelalardan.
+
+         Sözüm nesihatdyr, bir gulak salyň,
+         Bendesi men söze hyrydar guluň,
+         Kyrk oýnaşly hatyn ýagşydyr, biliň, –
+         Şereňňiz1 , köp tilli kethudalardan.
+
+         Ýatma, Magtymguly, aşretiň söýüp,
+         Munça ýatajak sen kepeniň geýip,
+         Hajatyn tiz bitir — hojany goýup,
+         Dileg eder kimse gul-gedalardan.
+
+1 Şereňňiz – şerçi, dawa-jenjel agtarýan, dawakeş.
+
+                           Näbilsin
+
+          Harazban eline düşse algyr baz,
+          Ganatdan aýyrar, gadryn näbilsin,
+          Bir çopan goluna degse bir almaz,
+          Çakmakdaşy eder, gadryn näbilsin.
+
+          Kämil bolmaz ol şerbetden datmagan
+          Pähim eýlemez söz magnyga ýetmegen.
+          Däli-Mejnun yşk eseri etmegen
+          Perizat Leýliniň gadryn näbilsin.
+
+          Dynçlygyň gadryny bilmez armagan.
+          Beglik ede bilmez berim bermegen
+          Çölde açlyk muşakgatyn görmegen
+          Öýde yssyg nanyň gadryn näbilsin.
+
+          Ötenden soň, adam aňlar döwletin,
+          Bilmez döwlet bilen geçen nobatyn,
+          Çekmän kişi bimarlygyň zähmetin,
+          Bu gözel saglygyň gadryn näbilsin.
+
+          Rismanyn1 berk edip, labyr2 salmaýan,
+          Girdaba ugraşar häzir bolmaýan,
+          Keştisi kölegde bendil almaýan,
+          Gury gara ýeriň gadryn näbilsin.
+1 Risman – ýüp, tanap.
+2 Labyr – leňňer, ýakor.
+
+Garry, ýigit bir ykrarda durmasa,
+Ulag gadryn bilmez, kişi armasa,
+Ördek, guba gazlar çöli görmese,
+Ser-çemenli köl gadryn näbilsin.
+
+Aýralyk oduna ýanyp-bişmeýen,
+Zalymlar elinden ülke aşmaýan,
+Watandan aýrylyp, ýalňyz düşmeýen
+Ülkesinde il gadryn näbilsin.
+
+Magtymguly diýer, ýaru-hemdemge,
+Geliň şükr edeliň, dostlar, bu demge,
+Zatynda söz pähmin bilmez adamga
+Müň many söz diýseň, gadryn näbilsin.
+
+     At ýanynda bellidir
+
+Eşek özün egsik saýmaz bedewden,
+Gymmat etseň, at ýanynda bellidir;
+Bedew diýgeç, hemme bedew deň bolmaz,
+Çyn bedewler meýdanynda bellidir.
+
+Oglanlykda bilmez idiň, beg idiň,
+Ýamana hiç ýokmaz sözüň-öwüdiň,
+Aryf bolsaň, aslyn sorma ýigidiň,
+Edebinde, erkanynda bellidir.
+
+         Bu jahandan doýmaz gözüň, siýr1 olmaz,
+         Her tilkiden ýolbars olmaz, şir olmaz,
+         Ýigit diýgeç, hemme ýigit bir olmaz,
+         Goç ýigitler myhmanynda bellidir.
+
+         Döwlet bolsa goç ýigidiň başynda,
+         Hemaýatly ili gerek daşynda,
+         Ýigit özün maglum eder işinde,
+         Gylyjynda, zybanynda bellidir.
+
+         Magtymguly, garyplaryň gözýaşy
+         Daglary ýandyrar, erider daşy...
+         Pakyra jebr eden zalymyň işi
+         Ruzy-magşar diwanynda bellidir.
+
+                          Il biläni
+
+              Belent daglaryň başynda
+              Bulut oýnar sil biläni;
+              Goç ýigide toýdur-baýram,
+              Her iş gelse il biläni.
+
+              Dil bilenler gün bolupdyr,
+              Altyn, kümüş zeň bolupdyr,
+              Peşe kaçan deň bolupdyr,
+              Ugraşanda pil biläni.
+1 Siýr bolmak – doýmak.
+
+                 Otlaga gaçar buzawlar,
+                 Öňün başlar ýagşy gäwler1
+                 Tanalar ol has bedewler
+                 Köne ýyrtyk jul biläni.
+
+                 Hak bendesi haka çapar,
+                 Ýaman öz pälinden tapar,
+                 Magtymguly, aýbyn ýapar
+                 Iş kylyjy dil biläni.
+
+                        Ili gözlär
+
+                 Ilinden aýra düşen
+                 Ah urar, ili gözlär;
+                 Ýolundan aýra düşen
+                 Jäht eder, ýoly gözlär.
+
+                 Gökde pelek gerdandyr,
+                 Halk ýerde sergerdandyr,
+                 Ne bazygär2 jahandyr, —
+                 Göz açan maly gözlär.
+
+                 Kimlerde altyn täçdir,
+                 Kimler saýyl-mähtäçdir,
+                 Kimler düýpden gallaçdyr.
+                 Kim ýüpek haly gözlär.
+1 Gäw – sygyr.
+2 Bazygär – oýunçy.
+
+                Kim nan tapmaz iýmäge,
+                Kim ýer tapmaz goýmaga,
+                Kim don tapmaz geýmäge.
+                Kim tirme-şaly gözlär
+
+                Bu jahan bir puştadyr,
+                Kim zende, kim küştedir1 .
+                Her bende bir işdedir.
+                Her kim bir haly gözlär.
+
+                Heňňam2 uzyn, ömür az.
+                Çahar3 pasla başdyr ýaz.
+                Gökde ganat ýaýan gaz
+                Gözleri köli gözlär...
+
+                Magtymguly, huş eýläp,
+                Gezgin, didäň ýaş eýläp,
+                Däli köňül joş eýläp,
+                Ýüz müň hyýaly gözlär.
+
+1 Küşte – heläk bolan, öli
+2 Heňňam – döwür.
+3 Çahar (çar) – dört
+
+                        Don gerek
+
+                Ne bela sen, adamzat,
+                Çyplak dogduň, don gerek;
+                Ak süýt emdiň, ulaldyň,
+                Hem aglar sen, nan gerek.
+
+                Ataň hoşnut1 bolmaga,
+                Eneň mährin salmaga,
+                Ýediňde din bilmäge,
+                Okyrsyň, kuran gerek.
+
+                Saraldar sen dilbendiň,
+                Ýognalar biliň-bendiň,
+                On bäşde arzuwmendiň –
+                Gyz gerek, juwan gerek.
+
+                Juwan gerek guçmaga,
+                Aýşy-aşret açmaga,
+                Ondan soň iýp-içmäge,
+                Bir tükenmez nan gerek.
+
+                Köňlün ynjydyp halkyň,
+                Hoşnut etseň öz hulkuň,
+                Rum, Pereň bolsa mülküň,
+                «Heniz azdyr», kän gerek.
+1 Hoşnut – şat, razy.
+
+               Ýatsaň düşekde bimar1 ,
+               Yssy etmese timar,
+               Zer dökseň harwar-harwar2 ,
+               Göze ilmez, jan gerek.
+
+               Doga bilen är dörär,
+               Ýagmyr bilen ýer gögär,
+               Är oldur – alkyş alar,
+               Ýerlerge baran gerek.
+
+               Ajal geler, oýda ýok,
+               Görmek ýylda-aýda ýok,
+               Hiç bir zatdan peýda ýok,
+               Bir nury iman gerek.
+
+               Magtymguly, ýol gitmäge,
+               Söz aslyn pikr etmäge,
+               Bir magny pähm etmäge,
+               Akylly ýaran gerek.
+
+1 Bimar – syrkaw, hassa.
+2 Harwar – eşek ýüki.
+
+                         Dag saýar
+
+                   Daglar ýeriň myhydyr,
+                   Depe özün dag saýar;
+                   Çekik aýdar: «bilbil men»,
+                   Çarlak özün zag saýar.
+
+                   Güýjünden-kuwwatyndan,
+                   Dünýäniň nobatyndan,
+                   Her kişi yzzatyndan,
+                   Bedasyl özün beg saýar.
+
+                   Nadanam, zat bilmenem,
+                   Bir kemine gul menem,
+                   Sirke1 aýdar: «bal menem»,
+                   Nebit özün ýag saýar.
+
+                   Habar alsaň birewden,
+                   Özün kem saýmaz döwden.
+                   Öz ýanynda bedewden
+                   Eşek özün ýeg saýar.
+
+                   Magtymguly, bir guldur,
+                   Gullugyna kaýyldyr,
+                   Ahmak özün akyl diýr,
+                   Tentek özün sag saýar.
+
+1 Sirke – uksus.
+
+                    Ata meňzär
+
+              Oba daşyndaky depe
+              Eýerlenen ata meňzär;
+              Ýaramaz ärler zer bilen
+              Ýazylan bet hata meňzär.
+
+              Bu dünýä bir düýpsüz derýa,
+              Gark eder, bolma biperwa,
+              Magrur olma, pany dünýä
+              Gezekli nobata meňzär.
+
+              Gardaşsyza kuwwat ýokdur,
+              Ogulsyza döwlet ýokdur,
+              Aýalsyza aşret ýokdur,
+              Hoş günüň hasrata meňzär.
+
+              Ýamandan ýagşy set bolmaz,
+              Asly ýagşylar bet bolmaz,
+              Dünýälikden döwlet bolmaz,
+              Ogul çyn döwlete meňzär.
+
+              Ýatan ýeri – ýylan goýny.
+              Asylany – itiň boýny,
+              Pis äriň ýagşy hatyny
+              Dürri-bigymmata1 meňzär.
+1 Dürri-bigymmat – gymmaty, gadry bilinmeýän dür.
+
+Burç bilen duz täze ýara
+Awy gatar rozugäre,
+Ýaman hatyn ýagşy äre, –
+Tükenmez töhmete meňzär.
+
+Magtymguly, namyradam,
+Iller hoşdur, men naşadam,
+Söz manysyn aňmaz adam
+Bir guruksyz ite meňzär.
+
+       Ýalydyr
+
+Ýaman ýagşa ýoldaş bolsa,
+Awulyk içen ýalydyr;
+Aýryla bilse, awusy
+Içinden öçen ýalydyr.
+
+Adam aýrylsa huşundan,
+Gorkar ýatanda düýşünden,
+Eýýama baksaň, işinden
+Şu köňlüm geçen ýalydyr.
+
+Bedasyl ykbaly ýörmek,
+Öýsüz eline mal bermek,
+Akmaga syryňny bermek
+Öz aýbyň açan ýalydyr.
+
+Öter ömrüň – dünýä seýlin,
+Hak ýoluna bagla biliň,
+Agzy ala bolan iliň
+Döwleti gaçan ýalydyr.
+
+Aňlamasaň, görde gizlen,
+Akyldyr iş soňun gözlän,
+Gepin tapyp, ýagşy sözlän
+Misli dür seçen ýalydyr.
+
+Ärden gitse ygtybarlar,
+Sowar ondan dosty-ýarlar,
+Hünärli, ykbally ärler
+Malu-pul guçan ýalydyr.
+
+Magtymguly, yllatly göz,
+Haraba döner degse duz,
+Märekede bir jaýsyz söz
+Çermenip... ýalydyr.
+
+         Hasy näbilsin
+
+Öz gadryny özi bilmez adamdan,–
+Aňlamazlar amu-hasy näbilsin?
+Ne tama bar çakyr içen gedemden,
+Buzahor ýagşyny, ýasy näbilsin?
+
+Ýamana ýagşy söz ýokmaz, taşlanar,
+Aňlar äriň oýlanmasy güýçlener,
+It ýalyň topraga dökseň, hoşlanar,
+Topragy, tabagy, tasy näbilsin?
+
+Aňla sözüm, ner zarbyny ner tanar,
+Har bakan har tanar, zergar zer tanar,
+Eý ýaranlar, är ýigidi är tanar,
+Namartlar ýagşyny, pisi näbilsin.
+
+Magtymguly aýdar: sözlerim hakdyr,
+Emma ki hak söze ten beren ýokdur,
+Bir gözli diýmese: garadyr, akdyr,
+Kör pakyr kümüşi, misi näbilsin?
+
+        Çatyp bolmaýyr
+
+Beýik dagyň başyndaky üç agaç,
+Düýbi bir bolmasa, çatyp bolmaýyr,
+Düýe ýaly dagda ýatan daşlary
+Gol bilen göterip, atyp bolmaýyr.
+
+Kelte diňden bolmaz beýik minara,
+Ýaman heleý duşsa bir ýagşy äre,
+Başyn kesip, ganyn döküp kenara,
+Ýa öldurip, ýa-da satyp bolmaýyr.
+
+Il içinde seniň ulalsa adyň,
+Seni ýaman görmez ýakynyň, ýadyň,
+Golunda bolmasa bir gerek zadyň,
+Meniňki diýip, başyn tutup bolmaýyr.
+
+Pakyrlar mal istär, baýlar zer diýer,
+Ýekeje eşekli: atym –ner diýer,
+Dünýäge doýmak ýok, ýene ber diýer,
+Köňül maksadyna ýetip bolmaýyr.
+
+Magtymguly, sözüň diňlän bolmasa,
+Nesihata gulak salan bolmasa,
+Ýigit köňül söýenini almasa,
+Dynç alyp, parahat ýatyp bolmaýyr.
+
+                       Ýagşy
+
+        Hoş günüňde hoşlaşyban gezmäge,
+        Baryşmaga, gelişmäge ýat ýagşy.
+        Gam günüňde, galmagalyň üstünde
+        Dogan ýagşy, gardaş ýagşy, zat ýagşy.
+
+        Halal işle, ahyretden wehmiň bar,
+        Pakyry ynjytma, köňül rehmiň bar,
+        Aşyk aýdar, azda-köpde pähmiň bar,
+        Akyl bolsaň, söze gulak tut ýagşy.
+
+        Ýürek daýanjydyr ogul-zürýaty,
+        Şirin mahbup erer süňňüň kuwwaty.
+        Ýigidiň dünýäde üçdür myrady:
+        Mahbup gerek, ýarag gerek, at ýagşy.
+
+        Mollalar ahyret sözün söýlärler:
+        «Müňkür olma, geljek işdir, eýlärler»
+        Kim biler ki ahyretde neýlärler,–
+        Iýip, içip, münüp, guçup öt-ýagşy.
+
+        Nefg1 almaýan kişi sözden, öwütden,
+        Aýralygy ýokdur gury söwütden,
+        Deň-duş bilmez, magny aňmaz ýigitden
+        Agylynda yssy beren it ýagşy.
+1 Nefg – nep, peýda.
+
+        Magtymguly, dostdan syryň gizleme,
+        Biwepadyr, nämähremi gözleme.
+        Ümsüm otur, halk içinde sözleme,
+        Sözlär bolsaň, söz aslyna ýet ýagşy.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Gelen-de bardyr',
+    'Günde ýüz müň göç hem bolsa ol dünýä,
+        Ol mukdar bu dünýä gelen-de bardyr.
+        Ýüz müň akmak bolup gitse raýyna,
+        Ýüz müň özün ýola salan-da bardyr.
+
+        Ýüz müň derwüş syna daglap oturan,
+        Ryýazatda1 bilin baglap oturan,
+        Niçe ýerde görseň, ýyglap oturan,
+        Ýüz müň ýerde bigam gülen-de bardyr.
+
+        Seýran etseň bu dünýäniň tört burçun,
+        Garyşypdyr halal, haram, arwah, jyn...
+        Nijeler tämizläp ýol giderler çyn,
+        Nije ýüz müň gümra bolan-da bardyr.
+
+        Ugursyz eýýamlar, aňlamaz ärler,
+        Käşki soran bolsa, saçaýdym dürler..
+        Kany ol Süleýman, Rüstemler, şirler
+        Diýmäň, busup, sypyp galan-da bardyr.
+1 Ryýazat – terkidünýälik, durmuşdan el çekmek.
+
+        Magtymguly, köňle gaýgy getirme,
+        Bu bir iş wagtydyr, özüň ýitirme,
+        «Sözüm aňlan ýok» diýp, ümsüm oturma,
+        Jahan giňdir, çendan bilen-de bardyr.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Ykbal bolmady',
+    'Köp ýigitler gelip geçdi jahandan,
+        Niýetine görä ykbal bolmady.
+        Gerdişi keç gahba pelek elinden
+        Ertiri şat bolan öýlän gülmedi.
+
+        Günde kepen biçer bu ajal-haýat1 ,
+        Bir beladyr, hiç gutarmaz bu saýýat.
+        Pelle-pelle aşak düşer adamzat,
+        Bu gün görenleriň ertä galmady.
+
+        Bir degişhanadyr dünýäniň ýüzi,
+        Nesihatym diňle, eşit bu sözi.
+        Ajal ýetip adam ýumulsa gözi,
+        Göýä bu dünýäge geldi, gelmedi...
+
+        Hemaýun gorganyn saldyran Harun,
+        Dünýäni tört bölen kany Peridun?
+        Kyrk şähri gyzyldan dolduran Karun —
+        Gözi gumdan doldy, puldan dolmady.
+1 Haýat – biçimçi, geýim tiken.
+
+        Magtymguly haýran, her ýana bakar,
+        Bu ne gudrat işdir: suwdan ot çykar,
+        Ýagşy oguldan rahmet arygy akar,
+        Lagnatkerde ogul boldy, bolmady.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Köňül hoşundadyr',
+    'Köňül bir beden şahydyr,
+              Her söz köňül hoşundadyr,
+              Ýedi yklymnyň tagtynda
+              Her biri bir işindedir.
+
+              Daglaryň çykyp-inmesi,
+              Çohlaryň göçüp-gonmasy,
+              Dünýäniň agyp-dönmesi
+              Pelegiň gerdişindedir.
+
+              Kimdir bu dünýäde galan?
+              Maňa çyndyr, size ýalan,–
+              Bir akdyr, bir gara ýylan1
+              Her kimsäniň başyndadyr.
+
+              Degresi zümerret daşly,
+              Ner babatly, kerk gardaşly,
+              Altyn tagtly, almaz täçli
+              Döw begleri daşyndadyr.
+1 Bir akdyr, bir gara ýylan — gije-gündiz manysynda.
+
+     Aýlanar geçer eýýamlar,
+     Gojalar gurlan eýwanlar,
+     Gündiz gören aşna janlar ?
+     Gije ýatsa düýşündedir...
+
+     Üç essesi däli derýa,
+     Bir esse ýerde müň gowga,
+     Kim biler, bu köne dünýä,
+     Ýa reb, niçe ýaşyndadyr?..
+
+     Magtymguly diýr, haraýdyr,
+     Ajal okdur, pelek ýaýdyr,
+     Dünýä bir köne saraýdyr,
+     Adamzadyň gaşyndadyr.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Pygan eglenmez',
+    'Bilbil hüjüm eden howaly baglar,
+Bilbil senden gider, pygan eglenmez,
+Ýagyşly, ýagmyrly ümürli daglar,
+Siller senden gider, duman eglenmez.
+
+Adam ýaradylmyş belentli-pesli,
+Akylly, pikirli, aňly, paýhasly,
+Ýigitlik – göýä bir ýaz günnüň pasly,
+Bahar senden gider, zaman eglenmez.
+
+Gelene garşy çyk, bolsa mejalyň,
+Ýagşy tutawergil niýetiň-päliň.
+Dünýä döwranynda açyk tut eliň,
+Döwür senden gider, döwran eglenmez,
+
+Bu dünýä gowgadyr, bir galmagaldyr,
+Kimi berhä-berdir, kim alha-aldyr.
+Ýigitler, bu dünýä şuňa mysaldyr,
+Bark urar asmanda, baran eglenmez.
+
+Bir menzildir, üç gün iýip-içensoň,
+Ornaşyp, giňirnip, bilin açansoň,
+Üzeňňiň çekerler, tört gün geçensoň,
+Bäş günden ýokary myhman eglenmez.
+
+Goýnun açar bir gün, ýer seni gizlär,
+Gara gumdan dolar bu gara gözler,
+Adyňa buýsanma, çemenli düzler!
+Çemen senden gider, seýran eglenmez.
+
+Magtymguly aýdar aryf dostuna,
+Kim galar düşmeýen ajal destine?
+Pelek bir gün salar ýeriň astyna,
+Agyzdan til gider, zyban eglenmez.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Göze myhmandyr',
+    'Gara daşdan gara gyly saýlan göz,
+Çöňňeler görejiň, göze myhmandyr.
+Gelen aş diýp gelmez, turşutmagyl ýüz.
+Nana mähtäç däldir, söze myhmandyr.
+
+Agyrdyr heňňamlar, uzakdyr ýollar,
+Soraşsa ýigitler, sözleşse tiller,
+Baharda açylan reňbe-reň güller
+Bir pasyl açylar, ýaza myhmandyr.
+
+Ne azym hünärler, ne syrly işler,
+Ne howaly daglar, belent agaçlar,
+Altmyş elwan, ýetmiş dürli iýmişler
+Agaçdan aýrylar, güýze myhmandyr.
+
+Ýigidiň bolmasa ýaragy, aty,
+Şony belli biliň, ýokdur gaýraty!
+Gojaldykça, gider süňňüň kuwwaty,
+Ýigitligiň zory dyza myhmandyr.
+
+Bu dünýä ýüzüňe gülüm-gülümdir,
+Jepasy köp bolar, jebri zulumdyr,
+Her niçe ýaşasaň, ahyr ölümdir,
+Eziz janlar tende bize myhmandyr.
+
+Haky ýada salsaň hakdan gorkyňa,
+Şeýtan ara düşer, goýmaz erkiňe.
+Guba juwan, guwanmagyl görküňe,
+Gojalar sen, görküň ýüze myhmandyr.
+
+Magtymguly aýdar, iller, özümde,
+Ölüm ýadymdadyr, gorky gözümde,
+Her niçe ýaşasaň ýeriň ýüzünde,
+Adam ogly bäş gün duza myhmandyr.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Dünýä heý',
+    'Suw ýüzünde gezen nije gämini,
+Bir gün agdarar sen saly, dünýä heý!
+Adam ogly barmaz bolsa yzyňdan,
+Munda diýp aldar sen maly, dünýä heý!
+
+Kimse bilmez haçan tükener demiň,
+Gabyr bolar bir gün basan gadamyň,
+Döwran gerdişinde gapyl adamyň
+Üstünden salar sen ýoly, dünýä heý!
+
+Habarsyz geler sen, ýaka tutar sen,
+Ýagşy eýläp, ýaman eýläp öter sen,
+Bir gün aşymyza awy gatar sen,
+Owal aldap biýr sen baly, dünýä heý!
+
+        Aramyň ýok, kararyň ýok, dynmaz sen,
+        Gije-gündiz gan içer sen, ganmaz sen,
+        Ahyr ne belaň bar, soňun sanmaz sen,
+        Ýykylgyn, ýumrulgyn, loly dünýä heý!
+
+        Aýlanar gyş geçer, ýaz, tomus güýz hem,
+        Tap getirmez oňa dag, deňiz, düz hem,
+        Ahyry geçermiz üstüňden biz hem,
+        Guwgaryp galar sen haly, dünýä heý!
+
+        Köpleri ýok etdiň, känini tutduň,
+        Muhammet hak resul janyny ýutduň,
+        Nemrut, Karun, Süleýmanyny nätdiň?
+        Şumudy etgeniň häli, dünýä heý!
+
+        Hemme adamlary salyp sen gama,
+        Ýaş, garry yzyňda, sergerdan heme,
+        Bir mada1 eşek sen, gelip sen deme,
+        Gasygy gam bilen doly, dünýä heý!
+
+        Magtymguly, dünýä syryn duýmaz sen,
+        Bu gün gördügimiz ertä goýmaz sen,
+        Nije wagtdan bäri iýip doýmaz sen,
+        Aklyny aldyran däli, dünýä heý!
+
+1 Mada – urkaçy.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Berme pelege',
+    'Pelek bazy bermiş jümle jahana,
+Meniň ygtyýarym berme pelege,
+Köňül guşy uçup gitse her ýana,
+Mähtäç etme ganat, guruk-ýelege.
+
+Bidöwlet ynanjaň, käsip käýinjeň,
+Ýedi ýeser bolsa, biri göwünjeň,
+Baý halky ýaňra bor, garry – öwünjeň,
+Çalyp bolmaz çal agarsa çelege.
+
+Orda başy bolmak äre kyn bolar,
+Parça geýse, gyz-oglana syn bolar,
+Dul gözüne garry näzenin bolar,
+Ýene gözün aýlar köre, çolaga.
+
+Çepine aýlanan çarhy pelekdir,
+Dünýä gelen adam ogly heläkdir,
+Ýetmiş iki millet bölek-bölekdir,
+Bu bölekden goşman özge bölege.
+
+Ýol üstünde ölsem, ýola atsalar,
+Razy men, üstümden basyp ötseler,
+«Magtymguly» diýip, adym tutsalar,
+Gören göz jort atar, eşden gulaga.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Çaldy gitdi',
+    'Bu dünýä bazygärdir,
+Bazysyn çaldy gitdi;
+Gümra edip nijäni,
+Ýoldaş diýp aldy gitdi.
+
+Akyl, pikr et her haçan,
+Ýüz gonan bar, ýüz göçen,
+Tagty asmandan uçan
+Süleýman öldi gitdi.
+
+Ýa mürewwetli şahym,
+Umydym, kyblagähim,
+Munça ýygnap Ybrahym
+Niçäni aldy gitdi.
+
+Jigerin daglaý-daglaý,
+Zünnaryn baglaý-baglaý,
+Nijeler aglaý-aglaý,
+Nijeler güldi gitdi.
+
+Nijeler güle dönmüş,
+Gül ýanyp küle dönmüş,
+Nijeler guma dönmüş,
+Nijeler soldy gitdi.
+
+      Akmaklyk bilen özüm,
+      Bilmedim sözlän sözüm,
+      Magtymguly, diýr, gözüm
+      Gan ýaşa doldy gitdi.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Iliňi',
+    'Gel, köňül, men saňa öwüt bereýin:
+Yrak kylma görer gözüň-iliňni;
+Gymmatyn gaçyrma, ýerinde sözle,
+Uzatmagyl her näkese tiliňni.
+
+Doga eýle, bir söz diýseň aşagyn,
+Hormatlagyl gözel iliň uşagyn,
+Ýazdyrmagyl, mäkäm eýle guşagyň,
+Ýeri bardyr, ajap sakla biliňni.
+
+Çagyrylmaz jaýda görünme, barma,
+Başarsaň, sopynyň ýüzüni görme,
+Pikir-zikriň dünýä malyna berme,
+Karuna ogşatma tutan päliňni.
+
+Sözüne ber jowap, her kes sorasa,
+Özüň yrak eýle, namart ýörese,
+Bir misgin telmuryp, ýyglap garasa,
+Baha gurma, mugt berginiň malyňny.
+
+Gorkma namartlaryň köp diýp sanyndan,
+Gara görse, bary geçer janyndan,
+Ugrun tapsaň ötmäwergil ýanyndan,
+Bahyllardan yrak eýle ýoluňny.
+
+Akylly baş köpdür, akyl kesen azdyr,
+Datma şerap, uzak içseň ol azdyr,
+Mert köňlünde daýym bahardyr-ýazdyr,
+Mejnun umman içre salma salyňny.
+
+Magtymguly, akyl başymdan uçdy,
+Ykbalym ýatypdyr, döwletim göçdi,
+Pir-kazylar para istäp, gol açdy,
+Haram eýle, emma berme puluňny.
+
+       Bagtym garadyr
+
+Bu ne bela, bu ne hasrat, ne gowga!
+Rehm eden bolmady, bagtym garadyr;
+Nalyş etsem, arzym ýetmez ol huda,
+Rehm eden bolmady, bagtym garadyr.
+
+Pelek dost bolupdyr ala göz bile,
+Derdimi diňlemez, diýsem söz bile,
+Ilimni ugratdy dagy-düz bile,
+Rehm eden bolmady, bagtym garadyr.
+
+Görogly dek gaýratymdan aýryldym,
+Gojalyp men kuwwatymdan aýryldym,
+Iki didäm – zürýatymdan aýryldym,
+Rehm eden bolmady, bagtym garadyr.
+
+Şamu-säher ýata bilmän parahat,
+Ýüregim telmurar, köňül bitakat,
+Käbäm, kyblam, gardaş – boldular wepat,
+Rehm eden bolmady, bagtym garadyr.
+
+Pelege duş gelse gaçyp gutulmaz,
+Tartar oky adam ogly, atylmaz,
+Ýeke äriň ömür ady tutulmaz,
+Rehm eden bolmady, bagtym garadyr.
+
+Deňim-duşum her bir käre bulaşdy,
+Dostlar yrak düşdi, hijran dalaşdy.
+Yhlasym, myradym gama ulaşdy,
+Rehm eden bolmady, bagtym garadyr.
+
+Başyma şum pelek her gün sürüner,
+Ýowuz düşen göwre kime direner,
+Ýamanlar gözüne eziz görüner,
+Rehm eden bolmady, bagtym garadyr.
+
+Serwanym azaşdy, dargady malym,
+Ykbalym keç turdy, gitdi hyýalym,
+Altmyşa azm urdy gartaşan salym,
+Rehm eden bolmady, bagtym garadyr.
+
+         Gama erkim berdim, huşum dargatdym,
+         Saraý weýran, kerwenimi ugratdym,
+         Meňli hanym, yşk söwdasyn unutdym,
+         Rehm eden bolmady, bagtym garadyr.
+
+         Bu dünýä çohlara bipaýan boldy,
+         Garyp golun serdi, gury san boldy,
+         Namartlar mert boldy, ile han boldy,
+         Rehm eden bolmady, bagtym garadyr.
+
+         Ah, neýleý ötürdim ýigitlik çagym,
+         Daragty gurady, boş galdy bagym,
+         Dumany sowuldy, eredi dagym,
+         Rehm eden bolmady, bagtym garadyr.
+
+         Magtymguly, ýetmez ýyglap kararym,
+         Boş galdy dükanym, dargady barym,
+         Paý1 astyna düşdi namysym, arym,
+         Rehm eden bolmady, bagtym garadyr.
+
+1 Paý – aýak.
+
+          III
+
+SOSIAL-TANKYDY ESERLER
+                      Gaça başlady
+
+            Indi bildim zamananyň azanyn,
+            Ýamanlar ýagşydan gaça başlady;
+            Gaýta bedasyllar asylzadadan
+            Pisint etmän, töre geçe başlady.
+
+            Ryýa1 boldy köpüň okan namazy,
+            Taňry hiç birinden bolmady razy,
+            Pygamber ornunda oturan kazy
+            Para üçin elin aça başlady.
+
+            Şalarda galmady hökmi-adalat,
+            Bir pul üçin müfti berer rowaýat,
+            Bil: bu işler – nyşanydyr kyýamat,
+            Zalymlar bitoba öte başlady.
+
+            Pakyrlar horlanyp, ýüzün sarardyp,
+            Kim töresin tapyp, reňgin gyzardyp,
+            Zalymlar mazluma syrtyn gabardyp,
+            Gamçysyndan ganlar saça başlady.
+
+            Alymlar sözüne amal bolmady,
+            Mynapyklar2 ýaradany bilmedi,
+            Sopular pirinden taglym almady,
+            Dünýä üçin dinden geçe başlady.
+1 Ryýa – ikiýüzli, ýalan.
+2 Mynapyk – hudaýsyz, pidul.
+
+           Bir para sopular «sopy men» diýer,
+           Soramaz, zalymlar tagamyn iýer,
+           «Bizi ýagşy kişi diýsinler» diýer,
+           Her işikde halka gura başlady.
+
+           Garryga aýlandy biz gören ýaşlar,
+           Dolandy aýaga biz gören başlar,
+           Bimahal ýük baglap indi argyşlar
+           Ahyret kastyna göçe başlady.
+
+           Akyl bolan gamda ýüregin ezip,
+           Derdiniň dermanyn soraglap gezip,
+           Zamananyň pisat1 bolanyn ýazyp.
+           Panydan bakyýa geçe başlady.
+
+           Asylsyz begleriň nobaty ýetdi,
+           Gaýta şugul haramyga söz ýetdi,
+           Dünýäde kim galyp myrada ýetdi?
+           Muhapbet2 çyragy öçe başlady.
+
+           Kazy bolan bir jowapda durmady,
+           Gije mähnet tartyp, kitap görmedi,
+           Şerigat ugrunda dogry ýörmedi,
+           Nebs üçin imansyz öte başlady.
+1 Pisat – erbet, bozuk.
+2 Muhapbet – söýgi, yşk.
+
+           Magtymguly aýdar, barha ýol tany,
+           Bäş gün synamaga iberdi seni,
+           Senden ozal öten jananlar kany?
+           Her kim nobatynda öte başlady.
+
+               Aý-günüňiz batmaga
+
+                      (Sopular)
+
+           Altmyş ýaşan, ýetmiş ýylky sopular,
+           Az galypdyr aý-günüňiz batmaga,
+           Çöl ýerlerde tazy görmän, tilkiler
+           Hyýal eder ýatan şiri atmaga.
+
+           Garga diýer, ýokdur men dek şabaza,
+           Müň garga ýygnansa degmez bir baza,
+           Güne gargyş eden sary kelpeze1 ,
+           Dem çekedir aždarhany ýutmaga.
+
+           Agsak keýik müň garsaga ýetdirmez,
+           Şir beçesi togsan tilkä atdyrmaz,
+           Öli ýylan müň kelpezä ýutdurmaz,
+           Akyl gerek bu işlere ýetmäge.
+1 Kelpeze – hažžyk.
+
+               Ýetmiş ýaşap, ýat etmezler tobany,
+               Hormat bilen oýnadarlar gahbany1 ,
+               Müňkürler jem bolup, ýykdy Käbäni,
+               Ýezit gitdi agaçlaryn satmaga.
+
+               Görüň bu eýýamy, pelek gerdişi –
+               Pakyra zulm etmek boldy werdişi,
+               Hak ýolunda dogry gezen derwüşi
+               Goýmadylar öz halyna ýatmaga.
+
+               Ýüregim sabyrdan, gitdi karardan,
+               Ýaman işdir bogaz bolmak är-ärden2 ,
+               Bizara gelip men beýle diýardan,
+               Jür bolup men başym alyp gitmäge.
+
+               Magtymguly, bildim: bagtym biweçdir,
+               Ganymym güýçlüdir, ykbalym keçdir,
+               Niýetim Käbedir, hyýalym haçdyr,
+               Ykrarym bar haç towabyn etmäge.
+
+   1 Gahba – loly.
+    2 Är-ärden – bir adamdan bir adamyň ýaman gep eşitmegi, ýüregi
+
+çişmegi.
+
+                          Başlady
+
+            Gömüldi derýalar, ýykyldy daglar,
+            Ýetimler göz ýaşyn döke başlady;
+            Orramsydan bolan haramhor begler
+            Ýurdy bir ýanyndan ýyka başlady.
+
+            Jemagatsyz azan bir gury sesdir,
+            Niçe mollaň okan ylmy hebesdir,
+            Kazylaryň käri çaý bile nasdyr,
+            Bir bozuk nyşana tuta başlady.
+
+            Işanlary her gapyda tapylar,
+            Mollalarna ýok myjabat ýapylar,
+            «Öwliýä men» diýip, jögi sopular
+            Gygyryp, asmana böke başlady.
+
+            Çykar beýewana gyzy-gelini,
+            Ak ýüzüne ýapar gara telini1 ,
+            Kemçinlik eýleýip ýygan puluny,
+            Düzedip özüne daka başlady.
+
+            Dünýäde süýthoryň pul ýygma derdi,
+            Baýlaryň mallary bizekat erdi,
+            Toba ediň, gözüm bir ýaman gördi,
+            Dost dostuň köňlüni ýyka başlady.
+1 Tel – tar, saçyň bölegi, zülp.
+
+Magtymguly, başa baglap selleler,
+Aç böri deý ýortup niçe mollalar,
+Halaldan, haramdan ýygnap gallalar,
+Herne tapsa, dynmaý dyka başlady.
+
+        Aglar men
+
+   Eý ýaranlar, ömrümden
+   Geçdi diýip aglar men.
+   Gitdi aklym ornundan,
+   Çaşdy diýip aglar men.
+
+   Giden dönmez ýolundan,
+   Düşmez ýaman pälinden,
+   Diýanat halk elinden
+   Uçdy diýip aglar men.
+
+   Häzir biziň zamanda
+   Ýaman sözler zybanda,
+   Zulum işler jahanda
+   Joşdy diýip aglar men.
+
+   Bu eýýamda betkärler
+   Ýüz til bilen aldarlar,
+   Hany niçe dildarlar? –
+   Göçdi diýip aglar men...
+
+      Niçe sada deň-duşlar,
+      Şeýtan biligin başlar,
+      Ýüz öwürip gardaşlar
+      Gaçdy diýip aglar men.
+
+      Görüň pelegiň oýnun:
+      Üzer alymyň boýnun,
+      Niçe janlar ýer goýnun
+      Guçdy diýip aglar men...
+
+      Magtymguly, diýr merde,
+      Dünýä bentdir, ten perde,
+      Bu başym sansyz derde
+      Düşdi diýip aglar men.
+
+            Galmady
+
+Bir sözüm bar, diýsem şaha, soltana.
+Dostlar meňgi bolup, daman galmady;
+Döwletli baýlaryň duz hareminde,
+Desterhan kesilip, myhman galmady.
+
+Gaýta gybatkeşler özün düzetdi,
+Süýthor dünýä bilen özün göz etdi,
+Taňrydan bihabar goşun uzatdy,
+Taňryny bir bilen merdan galmady.
+
+        Nirde şugul bolsa, boldy mugteber1 ,
+        Dünýäni baky diýip, ýygnady çoh zer,
+        Aýdyp, ötüp gitdi ol Haýrul-beşer
+        Taňrydan gorkunçly myhman galmady.
+
+        Bahyl bolan baý adyny göterdi,
+        Pasyklar2 pysk ile ömrün ötürdi,
+        Ähli-dil3 dünýäden özün gutardy,
+        Dertliler derdine derman galmady.
+
+        Halaýyk barçasy jesethor boldy,
+        Alymlar ylmyndan galdy, kör boldy,
+        Sypahy4 barysy parahor boldy,
+        Şa aldynda adyl diwan galmady.
+
+        Müfti öz sözüne kylmady amal,
+        Şerigat işine eýledi haýal,
+        Halk içine düşdi hyrs atly kesel,
+        Taňryny bir bilen ynsan galmady.
+
+        Gyzlar, juwanlarda galmady haýa,
+        Ýerden götermedi bereket-giýa5 ,
+        Derwüşler tagatyn eýledi ryýa,
+        Ýurtda keramatly işan galmady.
+1 Mugteber – ygtybarly.
+2 Pasyk – bozuk
+3 Ähli-dil – ýürekdeş adamlar.
+4 Sypahy – emeldar, harby gullukçy.
+5 Giýa – ot, ösümlik.
+
+        Magtymguly aýdar, barha ýol tany,
+        Burunky1 hemneşin2 dostlaryň kany?
+        Abraý bile tabşyrawer bu jany,
+        Munda gelen ýary-ýaran galmady.
+
+                       Fetdah
+
+      Eýran, Turan indi goluň astynda,
+      «Sürgün» indi bu döwrany, sen fetdah!
+      Külli türkmen oýnar çölüň üstünde,
+      Dökme, bilgil, nahak gany, sen fetdah!
+
+      Bu gün şa sen, erte geda bolar sen,
+      Ilden-günden, dilden jyda bolar sen,
+      Bir gün janyň çykyp, pida bolar sen,
+      Gazanypsyň çoh günäni, sen fetdah!
+
+      Gözüm ýetýär, bilseň, başym alar sen,
+      Ýa kündeläp meni çaýa salar sen,
+      Men hak diýdim, sen çoh günä galar sen,
+      Bu alyşyň bilen jany, sen fetdah!
+
+      Sen türkmeniň ilin, gülün soldurdyň,
+      Ganlar döküp, gözel ýurdum doldurdyň,
+      Şehit bolanlaryň serin galdyrdyň,
+      Unudar sen tagty-käni, sen fetdah!
+1 Burunky – öňki.
+2 Hemneşin – gürrüňdeş, ýürekdeş
+
+Halkyň öji çohdur, ykbalyň ýaman,
+Ýa öler sen, ýa zyndandyr bigüman,
+Tagtyň synyp, diýme galar men aman,
+Çüňki zäher kyldyň nany, sen fetdah!
+
+Permanyňdan talaň düşdi illere,
+Goluň urduň nähak, gözde sillere,
+Kyrk gamçydan buýurdyň näzik billere,
+Derýa etdiň gözde huny, sen fetdah!
+
+Aýyrdyň atadan, ene, gardaşdan,
+Gollardan, aýakdan, sakaldan, saçdan,
+Dendandan, zybandan, akyldan, huşdan,
+Zyndan etdiň bu jahany, sen fetdah!
+
+Aýyrdyň, aglaýyp galdy ýarlarmyz,
+Pelege ýetendir tartan zarlarmyz,
+Adamlar asylgy durýar darlarmyz,
+Ýüzden tutduň, bil, gassaby, sen fetdah!
+
+Pyragy, dert aýdyp, derde ýanmaly.
+Gan ýuwudyp, zalym fetdah ganmaly,
+Diri özüm, läkin öli sanmaly, –
+Aňsa öldir, bu destany ol fetdah.
+
+    Ýörmeli boldy
+
+Eý ýaranlar, musulmanlar,
+Jebirde ýörmeli boldy.
+Nije zähmet çeken janlar
+Jepany görmeli boldy.
+
+Jahan giňdir, melamat kän,
+Arada köýdi şirin jan,
+Üstümizde rehimsiz han
+Bil, ahyr urmaly boldy.
+
+Azypdyr gökleň hanlary,
+Kän görer bize hallary,
+Goýman sürdi bar mallary,
+Göz dikip durmaly boldy.
+
+Magtymguly, aýama jan,
+Biliň guşa, geý gazap don,
+Hetden aşdy, bu zalym han
+Ahyr tor gurmaly boldy.
+
+       IV
+
+DURMUŞY GOŞGULAR
+                             Çilim
+
+        Dostlarym, duşman biliň,
+                     her kimsede bardyr çilim.–
+        Ile mahub eýlemäň,
+                     bir lagnaty kärdir çilim,
+        Sözleýen haly demi
+                     bir apyýy1 mardyr çilim,
+        Tartar özün özüne,
+                     owsunçy zeňgardyr2 çilim,
+        Nirde bolsa pasykylar,
+                     ortada bardyr çilim.
+
+        Düşgeç ol mejlis era,
+                     kim çeker, bimar eder,
+        Al bilen aldap seni,
+                     her dem özüne zar eder,
+        Sag-salamat goýmagy
+                     indi özüne ar eder,
+        Gol-aýagyn şel kylyp,
+                     halk içre any har eder,
+        Bu sypatlar birle ol,
+                     çekmäň ki, betkärdir çilim.
+1 Apy – zäherli uly ýylan.
+2 Zaňgar – zeňli, posly, jirimli.
+
+       Kah-kah eýläp her zaman,
+                   ol görkezer bet roýuny
+       Burnuňyzdan ysgadar,
+                   almaň oşol bet boýuny1 ,
+       Eý musulmanlar, halal diýip,
+                   kylmaňyz hiç oýuny2 ,
+       Ahyretniň oýun etseň,
+                   tiz goýuň bu oýuny,
+       Ahyretniň oýun
+                   etmezlerge derkardyr çilim.
+
+       Her kişi hoşhal olupdyr jimi,
+                    lam, mim atyga,
+       Nige pikr etmez oşol
+                    kim bu pelidiň zatyga,
+       Mundürer göýä any
+                    her dem şeýatyn3 atyga,
+       Syhr edip her dem
+                     any tartar özüniň zatyga,
+       Çünki betkärler gözüge
+                    daýyma bardyr5 çilim.
+1 Boý(buý) – ys.
+2 Oýuny – oý-pikirini.
+3 Şeýatyn – şeýtanlar.
+4 Syhr etmek – jadylamak.
+5 Bar – miwe, bu ýerde ýakymly manyda.
+
+       Gul-gul eýläp, her säher
+                    ol agzyndan otlar saçar,
+       Her kişiniň akly bardyr
+                    beýle betboýdan gaçar,
+       Kim any elge alar,
+                      göwsün onuň sary1 açar,
+       Ygtykat etse halal diýip,
+                    dini yslamdan geçer,
+       Dini-yslamdan geçerge
+                    bir sebäpkärdir çilim.
+
+       Şeýle duşmandyr ki tanla,
+                   başyňyzny aýlaýyr,
+       Wagty ýetmän solduryp,
+                   bu jismiňiz läş eýleýir,
+       Gaýgy, hasret ýok ekenler,
+                   çeşmiňiz ýaş eýleýir,
+       Her zaman düýt3 ýutduryp
+                   öýkeniňiz daş eýleýir,
+       Bary gapyl olmaňyzlar
+                   şeýle betkärdir çilim.
+1 Sary – tarap.
+2 Ygtykat etmek – ynanmak, uýmak.
+3 Düýt – tüsse.
+
+       Eý ýaranlar,
+                     nehi1 kylmyşdyr any bizge ahat2
+       Pikir edip, zikir eýledi
+                     kim halk era abdy3 samat4
+       Tebdil etmek5 ,
+                     nehi kylgan işini bizge ne hat?
+       Kim ki müňkürdir,
+                     anyň aldynda bardyr ol lahat6 .
+       Aýdadyr Magtymguly,
+                     bu bendege nardyr çilim.
+
+                       Çilimkeş
+
+          Hak seni raýyňa goýmuş jahanda,
+          Ede bileniň etgil munda, çilimkeş;
+          Diwan gurlan güni, hasap jaýynda,
+          Jogabyň nämedir anda, çilimkeş.
+
+          Kuwwatyň kemelder, güýjüň azdyrar,
+          Keýpi kellä gelse, aklyň azdyrar,
+          Süňňüňi syzdyrar, etiň gyzdyrar,
+          Bir nyşana budur sende, çilimkeş.
+1 Nehi – gadagan.
+2 Ahat – bir, ýalňyz, bu ýerde hudaý manysynda.
+3 Abd – bende.
+4 Samat (samad) – hemişelik, hökümdar.
+5 Tebdil etmek – çalşyrmak, özgertmek.
+6 Lahat – gör.
+
+         El götergil beýle nahak talaşdan,
+         Puluň köýer, janyň ýanar bu başdan1 ,
+         Erte garnyň doldurarlar ataşdan,
+         Zahmy2 çykmaz, galar janda, çilimkeş.
+
+         Iki dünýä ýagşylyk ýok egriýe, -
+         Kişi bolsaň, gadam goýgul dogryýa,
+         Binamaza, gybatkeşe, ogryýa,
+         Ýeldaş bolar ýowuz günde çilimkeş.
+
+         Magtymguly, möwlam jandan ýakyndyr,
+         Çilim bir şor suwdur, ten bir zemindir
+         Iman bir tilkidir, göwre bir hindir,
+         Tilki tüssä dözmez hinde, çilimkeş.
+
+1 Bu ýerde baş goşan işiňden manyda
+2 3ahym — ýara, baş.
+
+                      Halyň seniň
+
+  Ogry bolsaň, diňlegil, bolgaý niçik
+                                   halyň seniň;
+  Kişi malyga gider köňlüň, gözüň,
+                                   päliň seniň;
+  Misli şeýtan aldagydyr
+                            mekiriň-alyň seniň,
+  Bu ýalançylyk bile ötgeý
+                            mahy-salyň1 seniň,
+  Dowzaha dogry barar, billa, giden
+                                   ýoluň seniň.
+
+  Erte-magşar it bolup, yňranyp iýgeý
+                                  sen etiň,
+  Ýüzüni görmez Muhammet sen kibi pis
+                                  ymmatyň,
+  Hem o dünýä şefgatyň2 bolmaz bu dünýä
+                                         döwletiň,
+  Her zaman, her sagat içre artdyrarlar
+                                     mähnetiň,
+  Bu jahym3 içre tutar möýler
+                              sagu-soluň seniň.
+1 Mah bilen sal — aý bilen ýyl (ýaş).
+2 Şefgat – halaslyk, kömek, ýardam manysynda.
+3 Jahym – jähennem.
+
+  Aglaýyr sen, gözleriňden ýaş ýerine
+                                  gan gidip,
+  Munça mähnetler çekip, göwsüň dilip,
+                                  weýran edip.
+  Yssy etmez başyňa, toprak döküp,
+                                  haýran edip;
+  Gylça yssy görmegeý sen, dag gadar
+                                  puşman edip,
+  Döküler gaýdyp dahanyndan
+                             pohuň-bowluň seniň.
+
+  Ol Muhammet garşysynda hem uýalgaý
+                                   sen o gün,
+  Gör ölüm bolsa idi, istärdiň ölgeý
+                                   sen o gün,
+  Gürzi astynda melek1 zarbynda galgaý
+                                   sen o gün.
+  Ol huraýyş atlyg ýylanga lukma bolgaý
+                                   sen o gün.
+  Maýmynyň suratyda bolgaý ki
+                                   tymsalyň seniň.
+1 Melek – perişde.
+
+  Aýdadyr Magtymguly, görseň günähiň,
+                                  eý gözüm,
+  Çekiler gyldan-gyla magşar hasabyň,
+                                  eý gözüm.
+  Ýüz gara, til gysgadyr, bolmaz jogabyň,
+                                  eý gözüm.
+  Mal ýerine bialaç biýr sen sowabyň,
+                                  eý gözüm.
+  Hem günähiň boýnuňa goýgaý,
+                                  budur halyň seniň!
+
+                          Gybatkeş
+
+          Rozy-magşar şikwe1 eder tiliňden,
+          Ryswalygyň budur seniň, gybatkeş;
+          Ömrüň ýele berme, azma ýoluňdan,
+          Agyrtmagyl iliň-günüň, gybatkeş.
+
+          Bulut dek kükreýip, bark2 kimin gürlär,
+          Gähi buzdan tagtlar, ataşdan öýler,
+          Gatyr dek içýanlar, bugra dek möýler
+          Bedeniňden sorar ganyň, gybatkeş.
+1 Şikwe – şikaýat, arz.
+2 Bark – ýyldyrym.
+
+         Halyň görüp, purkan1 bolup aglarlar,
+         Özüň syjjyn atly jaýda baglarlar,
+         Tiliň çekip, demir bilen daglarlar,
+         Gara bolar şol gün ýüzüň, gybatkeş.
+
+         Ýaman söz aýyrar ýagşy dostuňdan,
+         Günähiň agramy basar üstüňden,
+         Jähennem içinde tamug astyndan
+         Peleklere çykar üýnüň, gybatkeş.
+
+         Magtymguly aýdar, iliň gözünden
+         Düşüban, hor bolsaň, görgül özüňden,
+         Tiliňni çekmeseň haram sözüňden,
+         Belli bibat bolar diniň, gybatkeş.
+
+                       Görüner
+
+              Seýil edeliň bu jahana,
+              Jahanda näler görüner,—
+              Isgender, Jemşit saldyran
+              Beýik binalar görüner.
+
+              Meşeleri şir-peleňli,
+              Gülgüzar nowça bileňli,
+              Gün düşmedik ter öleňli
+              Çeşmeli çaýlar görüner.
+1 Purkan bolmak – bilip aňlamaklyk, saýgarmaklyk.
+
+Ýaradan bar etdi ýokdan,
+Daglar, dünýä sürer çohdan,
+Sorsaň habar berer Nuhdan,
+Garrygan awlar görüner.
+
+Çaglan, ýalan dünýä, çaglan!
+Ne gülen galar, ne aglan...
+Gar ýagmyrlap burjy baglan
+Kemerli daglar görüner.
+
+Serinden dumany gitmez,
+Eýýam geçip, ýere batmaz,
+Garryp galmaz, ölmez, ýitmez
+Gorganly daglar görüner.
+
+Ne watan galar, ne çeten,
+Senemler seýl edip ýeten,
+Toty, bilbil mesgen tutan
+Howaly baglar gerüner.
+
+Magtymguly, kim bar ölmez?
+Ajal doýmaz, zemin dolmaz,
+Asman inmez, ýer çöwrülmez,
+Gün ýörir, aýlar görüner...
+
+                          Soňudagy
+
+                   Eý söwdügim, Soňudagy,
+                   Dagdanlydyr biliň seniň;
+                   Duşman görse döwdüleşer
+                   Ýomut, gökleň iliň seniň.
+
+                   Kesgin-kesgin ýoluň geçer,
+                   Gyzyl baýyr göwün açar,
+                   Sowuk çeşme suwuň içer
+                   Dürli-dümen malyň seniň.
+
+                   Dürli-dümen otuň biter,
+                   Her deräň bir ile ýeter,
+                   Hatarlanşyp kerwen öter,
+                   Naýbadaýdyr ýoluň seniň.
+
+                   Oýlukda ýaýlany gursak,
+                   At çapdyryp, baýrak bersek,
+                   Töreýitde harman gursak,
+                   Nan dökmek hyýalyň seniň.
+
+                   Magtymguly, set açandyr,
+                   Bu döwran senden geçendir,
+                   Üstüňden iliň göçendir,
+                   Niçik geçer halyň seniň?1
+
+    1 Bagşylar bu goşgyny «Jenan ýarym» diýip aýdýarlar. Sary bag-
+
+şynyň beren maglumatyna görä, Magtymgulynyň ýaşaýan ýeri bolan
+
+                       Ýaýlahlary bar
+
+               Sapar edip barsak Nuha mülküne,
+               Köňül isläni dek ýaýlahlary bar;
+               Seýran etsek gunçasyna, gülüne,
+               Bakjasynda bilbil oýnahlary bar.
+
+               Ýeri sazdyr, hasta bolan sagalar,
+               Arryk, müflis, garyp bolan oňalar,
+               Serçemen agajy bile deňeler,
+               Ajap guş salmaly awlahlary bar.
+
+               Meýdany doludyr şeker gamyşdan,
+               Dileg etmez hergiz gardaş-gardaşdan,
+               Üsti ýapylgydyr kümüş kerpiçden,
+               Her kimniň özi üçin suwlahlary bar.
+
+               Baş goşmandyr, arryk, agsak şa bile,
+               Atdyryp dükanbyl sary ýaý bile,
+               Şirwan galasydyr, any kim bile,
+               Her buruçda altyn baýdahlary bar.
+
+               Magtymguly, sazdyr, söhbetdir işiň,
+               Ajaldan, gaýrydan bolmaz teşwişiň,
+               Baýlaryň, pakyryň ähli derwüşiň
+               Ýurdy bolar ýaly persahlary bar.
+Soňudaga Eýran şasynyň goşunlary hüjüm eden wagtlarynda, şahyr ýa-
+şaýan ýerini mejbury taşlap, Garrygala göçmeli bolupdyr. Bu goşguda
+onuň ýaşan ýeri Soňudag bile hoşlaşygy görkezilýär.
+
+                        Jahan peýda
+
+  Gelse nowruz äleme, reň kylar jahan peýda,
+  Ebrler1 awaz urup, dag kylyr duman peýda.
+  Bijanlar jana girip, ederler dahan peýda,
+  Görmedigiň giýalar2 , gögerip rowan peýda,
+  Aýdarlar haýwanatga, hem sudy-zyýan peýda,
+  Ýer ýüzüne ýaýylyp, ýörirler nahan peýda,
+  Wabeste3 dahan4 guşlar, kylarlar zyban peýda.
+
+  Çöl tarapyn berk edip, der5 açar suwa harçeň6 ,
+  Zemin sebzezar olup, teninden aýrylar zeň.
+  Sebze içre sandugaç7 ýüz tilde kylar eheň,
+  Jünbendeler8 mest olup, göýä içmiş arak, beň,
+  Her aşýanaň özüne öz owazy bolar geň,
+  Zemin hazarpuş9 olup, gül bitirmiş reňbe-reň,
+  Hyruja gelip älem, kylarlar pygan peýda.
+1 Ebr – bulut.
+2 Giýa – ot, ösümlik.
+3 Wabeste – bagly, bek, ýapyk.
+4 Dahan – agyz.
+5 Der – gapy.
+6 Harçeň – leňňeç.
+7 Sandugaç – garlawaç.
+8 Jünbende – hereket edýän, mör-möjek.
+9 Hazarpuş – gök, ýaşyl geýnen.
+
+  Serweri seda birle, jahan ýüzi abatdyr,
+  Magrury-serwer olma, sany serwer bibatdyr,
+  Hak yşkynda zindeler, biliň, baky-haýýatdyr.
+  Her tende yşk bolmasa, rozy ezel mematdyr1 ,
+  Ýaz ýetinçä ýer-gögi. günden-güne zyýatdyr.
+  Bir heşri2 -kyýamatdyr, bir ýowmy3 -arasatdyr4 ,
+  Dähr içre bolar her dem, jahan içre jan peýda.
+
+  Zerbaba zowkun olma, baka ýokdur döwletde,
+  Ömrüňni bada berme sen bu daryl-mähnetde5 ,
+  Ýeter saňa iru-giç, ne ýazylsa kysmatda,
+  Janyňa jepa eýläp, munça gezme hasratda,
+  Sogap ýagşy amalda, ýa hut ýagşy niýetde,
+  Älem barça hyzmatda, adam ýatyp gaflatda,
+  Hasylyň ataş bolgaý, eýleseň ýaman peýda.
+
+  Magtymguly, ýyglar men, bu bagty syýahymdan,
+  Gorkar men jan äpeti, el-aýak güwähimden,
+  Umydym hasyl olmaz bu ömri tebahymdan6 ,
+  Jan köýdi jeset içre bu ataşy-ahymdan,
+  Elim sunup dilär men hajatym ylahymdan,
+  Mende bir umyt oldur, ol keremli şahymdan,
+  Eýlegeý arasatda, gül kibi iman peýda.
+1 Memat – öli.
+2 Heşir – mähelle, märeke, ýygnanyşyk.
+3 Ýowm – gün.
+4 Arasat – söweş meýdany.
+5 Dary-mähnet – jepa öýi
+6 Ömri-tebah – bozulan ömür, haýyp geçen ömür.
+
+                         Içinde
+
+                 Pikir kyldym ýer-göge,
+                 Akylsyz jan içinde.
+                 Gördüm: jan hem alla diýr
+                 Et, siňir, gan içinde.
+
+                 Ýörir ýoluň bilmeseň,
+                 Dogry ýola gelmeseň,
+                 Haky ýada salmasaň,
+                 Galdyň arman içinde.
+
+                 Ýerden çykan nebatlar,
+                 Gyzyl güller, gök otlar,
+                 Gapyl adam, bu zatlar
+                 Külli perman içinde.
+
+                 Nebsiň aýdar: joş bolsam,
+                 Gerçeklere duş bolsam,
+                 Iýsem, içsem, hoş bolsam,
+                 Ýatsam eýwan içinde.
+
+                 Köňül sen bir bazar sen,
+                 Her işe bir gyzar sen,
+                 Tutsam, diýer gezer sen,
+                 Jürmi1 -usýan2 içinde.
+1 Jürm – günä.
+2 Usýan – boýun egmezlik, baş götermek, gozgalaň
+
+Ýaýylar ganat-perler,
+Hup açylar depderler,
+Bölek-bölek kepderler
+Hüw diýr harman içinde.
+
+Bilbil aýdar: köşküm bar,
+Bahar gözleşigim bar,
+Gülzar üçin yşkym bar
+Bagy-bostan içinde.
+
+Ýarganat diýr: ýa möwla,
+Saldyň meni bu ýola,
+Berme aý-güne, ýele,
+Sakla pinhan içinde.
+
+Anka aýdar: ýolçyýam,
+Hüthüt aýdar: ilçiýem,
+Süleýmana sawçyýam,
+Ýalan jahan içinde.
+
+Bezgek galyp haýrana,
+Haýran bakyp her ýana,
+Dem-dem çykyp seýrana,
+Gezer döwran içinde.
+
+Durna aýdar: uçar men,
+Bagdat suwun içer men,
+Gyş Hindistan göçer men
+Läle-zaran içinde.
+
+                 Baýguş aýdar: derdim bar,
+                 Tesbyhym bar, werdim1 bar,
+                 Weýranada ýurdum bar
+                 Zary-girýan içinde.
+
+                 Ishak aýdar: pakyr men,
+                 Gullugymda hakyr2 men,
+                 Hak ýadyny okyr men
+                 Şam-Şebistan içinde.
+
+                 Musyja diýr: giter men,
+                 Geldim, bildim — öter men,
+                 Üç agaçny çatar men,
+                 Guzlap weýran içinde.
+
+                 Laçyn aýdar: joşumdan,
+                 Mest boldum öz huşumdan,
+                 Galdym taňry işimden,
+                 Bendi-zyndan içinde.
+
+                 Turaç tili senada,
+                 Ördek tili penada,
+                 Gazlar galkyp howada,
+                 Gözi umman içinde.
+1 Werd – namaz, doga, üznüksiz doga, namazy gaýtalap oturmak.
+2 Hakyr – ejiz, pukara, kiçi göwünli
+
+                  Gumrular owaz bilen,
+                  Tawus işi näz bilen,
+                  Kaknus guş müň saz bilen
+                  Şol Hindistan içinde.
+
+                  Toty guşlar zarlaşyp,
+                  Emri-hakny gözleşip,
+                  Adam tilin sözleşip,
+                  Gezer ynsan içinde.
+
+                  Keýik aýdar: aglar men,
+                  Haka sydkym1 baglar men,
+                  Balalarym derdinden
+                  Ýüregim gan içinde.
+
+                  Gurt aýdar: üzer men,
+                  Nirden kylsam güzer men.
+                  Ryzkym awlap gezer men
+                  Çöl-beýeban içinde.
+
+                  At aýdar: aslym zordur,
+                  Munça gymmatym bardyr,
+                  Üstüme münen ärdir,
+                  Daglarda-daş içinde.
+1 Sydk – yhlas.
+
+Ýaby aýdar: men gende,
+Üstüme münen bende;
+Azabym köpdür günde,
+Özüm hyzmat içinde.
+
+Eşek aýdar: aslym daş,
+Hyzmat bilen bagrym baş,
+Saman tapsam, köňlüm hoş,
+Mydam aýaz içinde.
+
+Düýe aýdar: otlar men,
+Otlan ýerim ýatlar men,
+Elmydama botlar men
+Selin, sazak içinde.
+
+Ýedi ýer bolmuş bina,
+Her zat okyr bir sena,
+Otlar hem diýr «rebbena»
+Nowruz-baran içinde.
+
+Kyýamat gün eliňden,
+Habar sorar halyňdan.
+Gaýyt ýaman päliňden,
+Gördüň purkan içinde.
+
+Umytly bol Ýusup dek,
+Sabyrly bol Eýýup dek,
+Ger ugrasa Ýakup dek
+Derdi-Kengan içinde.
+
+       Janym, jurga joş eýle,
+       Nebsim aýdar, hoş eýle,
+       Keremiňni duş eýle,
+       Taňla diwan içinde.
+
+       Magtymguly, özüňe
+       Bak, ýaş getir gözüňe,
+       Aýyplaşmaň sözüme
+       Ýary, ýaran içinde.
+
+        Düşen günlerim
+
+Dokuz aý ýatmyşam enem garnynda,
+Göz açyp, dünýäge düşen günlerim;
+Dört aýakda gezdim enem elinde,
+Sekiz aýda hem gülüşen günlerim.
+
+Birimde bilmedim ýagşy-ýamany,
+Ikimde tanydym ata-enäni,
+Üç ýaşymda taňry berdi zybany,
+Dört ýaşymda daş atyşan günlerim.
+
+Bäşimi ötürdim bahar-ýaz bilen,
+Alty ýaşda kowalaşdym saz bilen,
+Ýedi ýaşda işim bolmaz gyz bilen,
+Sekizimde dişim düşen günlerim.
+
+Dokuzymda berdim taňry salamy,
+Onumda boýnumda hakyň kelamy,
+On birimde tutdum döwet-galamy,
+Okyp-okyp magny saçan günlerim.
+
+On ikimden gitdim on üç ýaşyma,
+On tördümde eser urdy başyma,
+On bäşimde gyzlar girdi düýşüme,
+On altymda gaýnap joşan günlerim.
+
+Ýigrimimde mestan-mestan gezerdim,
+Ýigrim bäşde ganym okun düzerdim,
+Otuzymda atlar münüp gezerdim,
+Otuz bäşde ters söweşen günlerim.
+
+Kyrkymda goýulyp, käsäm dolmuşam,
+Ellimde elime tesbyh almyşam,
+Altmyşymda pire mürit bolmuşam,
+Pygamber ýaşyny ýaşan günlerim.
+
+Ýetmişimde agyry indi dyzyma,
+Segsenimde gubar indi gözüme,
+Togsanymda huş galmady özüme,
+Akyl-huşdan jyda düşen günlerim.
+
+Ýüz ýaşa ýetirmän, alarlar janyň,
+Uzadyp goýarlar, biçerler donuň,
+Magtymguly, hemra bolsun imanyň,
+Jan jesetden aýra düşen günlerim.
+
+                  Gözel Şirgazy
+
+        Mekan eýläp, üç ýyl iýdim duzuňy,
+        Gider boldum, hoş gal, gözel Şirgazy1 !
+        Ötürdim gyşyňy, nowruz-ýazyňy,
+        Gider boldum, hoş gal, gözel Şirgazy!
+
+        Hakdan bize buýruk baglydyr bilim,
+        Sende taglym aldy, açyldy dilim,
+        Gelsin diýip garar ol gerkez ilim,
+        Gider boldum, hoş gal, gözel Şirgazy
+
+        Seljerer men indi agy-garany,
+        Dost, rakyp, gardaşym, haky, ýarany,
+        Okydym, göterdim kitap kurany,
+        Gider boldum, hoş gal, gözel Şirgazy!
+
+        Aklym gysga erdi, käsäm gaýnady,
+        Jiger talwas urdy, göwün oýnady,
+        . . . . . . . . . . . . . . . . . . . . . . . . . . .
+                .
+        Gider boldum, hoş gal, gözel Şirgazy!
+
+        Joşgun ýüregimde möwç urar, ýatmaz,
+        Gaýnar, gazaplanar, hiç laýa batmaz,
+        Ylym-taglym algan seni unutmaz,
+        Gider boldum, hoş gal, gözel Şirgazy!
+1 Şirgazy – Magtymgulynyň Hywadaky okan medresesiniň ady.
+
+         Peýman dolmaý, gelsek takat ýetmeýen,
+         Pinhan zahyr kylmaz akyl gitmeýen,
+         Bady-paý atlanyp, seýran etmeýen,
+         Gider boldum, hoş gal, gözel Şirgazy!
+
+         Rige1 girsem-de, guwwas ýüzer men,
+         Bihasret ýaýnaýam, bigam gezer men,
+         Dahan içre asal-zyban ezer men,
+         Gider boldum, hoş gal, gözel Şirgazy!
+
+         Kämil bolup serenjamlyk kylyp men,
+         Muşakgatdan, ol pederden galyp men,
+         Käbämden aýrylyp jyda bolup men,
+         Gider boldum, hoş gal, gözel Şirgazy!
+
+         Kutbda2 saý gözläp, ummana duşdum,
+         Neýsan guýdy, umman gaýnadym-joşdum,
+         Hoş gal, bu gün Jeýhun bahrydan aşdym,
+         Gider boldum, hoş gal, gözel Şirgazy!
+
+         Magtymguly taşlap göwün hapasyn,
+         Sylady pirini, molla, sopusyn...
+         Daýym unutmaz men tylla gapysyn,
+         Gider boldum, hoş gal, gözel Şirgazy!
+
+1 Rig – ownuk daş, çagyl.
+2 Kutb – polýus, deňiz.
+
+     V
+
+YŞKY ESERLER
+        Her ýana
+
+Ýarsyzlykdan ýaman iş ýok,
+Göz salyp gezsem her ýana;
+Ýa ýaradan, bir hemra ber,
+Köp muşakgat degdi jana...
+
+Bir ýar bergil etli, ganly,
+Dil bilen, akly kemally,
+Köňli giň, göwsi meýdanly,
+Ýüzi hem bolsun görkana!
+
+Gadyr bilenden daş etme,
+Nägadyra ýoldaş etme,
+Til bilmez bela duş etme,
+Sada dil bolsun türkana.
+
+Keremi güýçlüdir, görgül,
+Doga kylyp, eliň gergil,
+Berseň-de, tizräk bergil,
+Ygtybar ýokdur bu jana...
+
+Boýy uzyn, pes bolmasyn,
+Hetden aşa mes bolmasyn,
+Akylsyz näkes bolmasyn,
+Sadadan bolsun türkana.
+
+               Ýagşy aýal ele gelmez,
+               Nadan ýagşyň gadryn bilmez,
+               Aýalsyza mydar bolmaz,
+               Dönseň hökmi-Süleýmana.
+
+               Magtymguly, ýansam-bişsem,
+               Ynanmazlar, oda düşsem,
+               Höwesim bar, bir ýar guçsam,
+               Diýsem sözlerim erkana...
+
+                          Gaşy ýaý
+
+  Bir dilbere duş boldum, gamzasy ok, gaşy ýaý;
+  Gün haýrandyr görkünden, hyjalatda dolgan aý,
+  Janyň berseň, jaýyzdyr1 beýle sypat mahbuba;
+  Hiç görmedim anyň deý başy dogry, göwsi taý.
+  Gulgula düşdi bize, hem düşdi jeňi-jeňe,
+  Jeň şowkundan ol nigar, ne nalaga düşdi naý.
+
+  Ne aşretdir aşyga, jennet içre jemaly,
+  Aýralyknyň ataşy tamug içre weýil-waý.
+  Ol dideýi-dildardan bolma ýene bibähre,
+  Galmagaý sen meniň deý – akly azu-görke baý.
+1 Jaýyz – laýyk, jaýly.
+
+  Isteseler alymlarny, şeýtan aýdar: ol dilber
+  Halagana Halyl dek, oglanyna berer paý.
+  Magtymguly, mydama doga kylar dergaha,
+  Saýyl men, mahrum etme dergahyndan,
+                                          ýa hudaý!
+
+                       Bu derdi
+
+       Keşt eýledim, gezdim yşkyň dagyndan,
+       Ne beladyr, kimse çeker bu derdi?
+       Yşk dagyn assalar gögüň boýnundan,
+       Gök titreýip, çeke bilmez bu derdi.
+
+       Yşk eser etmese, ýanmaz çyraglar,
+       Yşka düşse, guşlar eňrär, gurt aglar,
+       Egiler haýbatly, kuwwatly daglar,
+       Daşlar eräp, çeke bilmez bu derdi.
+
+       Kimdir yşkyň ýükün çeken merdana?
+       Pelek gördi — gorkup düşdi gerdana,
+       Zemin1 jünbüş eýläp2 , oldy lerzana,
+       Çöller-düzler çeke bilmez bu derdi.
+1 Zemin – ýer.
+2 Jünbüş eýlemek – hereket etmek, titremek.
+
+       Behişt gaçyp çykmyş arşyň öýüne,
+       Tamüg gorkup inmiş ýeriň teýine;
+       Gaçdy derýa, aldy adam boýuna,
+       Tört ýüz ýyllap çeke bilmez bu derdi.
+
+       Magtymguly, çekseň derdi-düwünden,
+       Asy1 bolup, şikat2 etme bu günden.
+       Bu ölmek, aýrylmak galypdyr öňden,
+       Peder3 bize miras goýmuş bu derdi...
+
+                     Näme sen
+
+       Asla seni görmemişem, dildarym!
+       Gumrumy sen, bilbilmi sen, näme sen?
+       Gamgyn köňlüm hyýalynda aldaram,
+       Bag içinde gül-gülmi sen, näme sen?
+
+       Garakçymyň, ýa seýitmiň, hojamyň,
+       Ýa sakymyň, ýa şerapmyň, ýa jammyň,
+       Ýa ýylmy sen, ýa gündizmiň, gijemiň,
+       Ýa aýmy sen, ýa günmi sen, näme sen?
+1 Asy – günäkär.
+2 Şikat – şikaýat.
+3 Peder – ata.
+
+       Ýa müşkmi sen, ýa kokunar anbarmyň,
+       Aýda bilmen, ýa çarhmy sen, çenbermiň,
+       Ýa derýamyň, ýa möwçmi sen, lenbermiň,
+       Ýa girdapmyň, ýa burgunmyň, näme sen?
+
+       Altynmy sen, kümüşmi sen, zermi sen,
+       Ýa arşmy sen, ýa kürsmi sen, ýermi sem,
+       Ýa ýakutmyň, ýa merjenmiň, dürmi sen,
+       Ýa çyragmyň, ýa röwşenmiň, näme sen?
+
+       Magtymguly, geç namysdan, aryňdan,
+       El götergil bu wepasyz käriňden,
+       Jahan doly, sen gapyl sen ýaryňdan,
+       Ýa mestmi sen, ýa şeýdamyň1 , näme sen?
+
+1 Şeýda – joşgunly, saýraýjy, däli-diwana.
+
+                         Gördüňmi
+
+          Ýagty salar gider zulmat tününde,
+          Meniň sahypjemalymny gördüňmi?
+          Bahar eýýamynda, heýhat gününde
+          Meniň sahypjemalymny gördüňmi?
+
+          Anka sypat «huw» diýp, asman uçan guş,
+          Gijesi tirikdir, gündizi beýhuş,
+          Nowaýy jindeli1 , egni hyrkapuş2 ,
+          Meniň sahypjemalymny gördüňmi?
+
+          Gan edipdir pelek, bagrym pyrakda,
+          Elmydam gezer men «ýar» diýp sorakda,
+          Käbe tarapynda, Şamda, Yrakda
+          Meniň sahypjemalymny gördüňmi?
+
+          Rumda, Gypjakda, Çyny-Maçynda,
+          Zumaýyl ornunda, arşyň içinde,
+          Galam degresinde, pelek burçunda
+          Meniň sahypjemalymny gördüňmi?
+
+          Aşyklar ahynda, Gulzum döwründe,
+          Kütbetil-yslamda, Jeýhun bahrynda,
+          Sedre sährasynda, Isa şährinde
+          Meniň sahypjemalymny gördüňmi?
+1 Jinde – ýyrtyk, sal-sal, eleşan.
+2 Hyrkapuş – ýyrtyk-ýirik geýim, derwüşiň geýýän geýimi.
+
+Hazret Aly etgeç äleme dagwy,
+Kapdan Kaba gitdi hazretiň çawy,
+Ýa yklym eýesi, Ahmet Ýasawy!
+Meniň sahypjemalymny gördüňmi?
+
+Mesgen tutmuş gara dagyň burnunda,
+Alynyň mülkünde, Isa ornunda,
+Ýeriň arkasynda, gögüň garnynda
+Meniň sahypjemalymny gördüňmi?
+
+Magtymguly, çeker ýaryň gamyny,
+Gezip tapa bilmez roýy-zemini.
+Ýa ady Jebraýyl, hakyň emini!
+Meniň sahypjemalymny gördüňmi?
+
+       Bagrym dilenim
+
+Dertli dilber, dilleşer sen, gel bäri!
+Dullukdyr meniň-de bagrym dilenim.
+Soraýyr men, men hem sen deý bir ýary,
+Seni soramakdyr, ýokdur ýalanym.
+
+Eger geňeş salsam ýada-bilişe,
+Diýrler: şirin asal ýaga gelişe,
+Säher ýazygym çün tursam nalyşa,
+Owwal bir ýar bolar ýada salanym.
+
+Bilen ýanda meňzär gymmat düre sen,
+Tanymaza duşup, degme ýere sen,
+Kadyr kysmat etse, maňa bara sen,
+Seniň kimin ýardyr meniň ölenim.
+
+Her dilber kim köňlüm öýün ýarydyr,
+Ýatan bagtym ol ýaradan ýörüdir.
+Gargyşym daşlarny mum deý eridir,
+Pür-pudak ýaýradyr alkyş kylanym.
+
+Gözel görküň gökde günden aýynmaz,
+Güli, desdenbili ysgan doýunmaz.
+Magtymguly, baş bermese baýynmaz,
+Mährimi inderip nazar salanym.
+
+            Islärin
+
+    Owal başda, kadyr alla,
+    Senden bir kömek islärin.
+    Badam gabak, alma ýaňak,
+    Bir ziba senem islärin.
+
+    Taňry bermese nädäli?
+    Baş alyp, nirä gidäli?
+    Oturyp-turşy edaly,
+    Gaşlary galam islärin.
+
+                 Özüne hormat getiren,
+                 Äriniň hyzmatyn bitiren,
+                 Gaşyny çytman oturan,
+                 Maňlaýy gülen islärin.
+
+                 Ýigrimi ýaş ötdi menden,
+                 Hezl etmedim, dünýä, senden.
+                 Tili süýji, lebi handan,
+                 Bir goýna salan islärin...
+
+                 Pyragy, geldim jahana,
+                 Bir ýar bergil akly-dana1 ,
+                 Duşdum üm bilmez nadana,
+                 Bir gadrym bilen islärin.
+
+                      Gözüm düşdi
+
+                    Şükür, alhamdililla,
+                    Janana gözüm düşdi.
+                    Meýhanada meý içdim,
+                    Mestana gözüm düşdi.
+
+                    Eý zülpi, saçy anbar!
+                    Mehrap ki, ýüzüň menber,
+                    Eý lagly2 -lebi göwher,
+                    Ummana gözüm düşdi.
+1 Dana – bilgir, akylly.
+2 Lagl – gymmatbaha daş, rubin.
+
+                  Eý gözleri ahramy1 ,
+                  Gel görgeli ýaramy,
+                  Eý köňlümniň aramy!
+                  Imana gözüm düşdi.
+
+                  Eý jady-jeren gözli.
+                  Eý şähdi-şeker sözli,
+                  Eý şemsi-kamar2 ýüzli,
+                  Tabana3 gözüm düşdi.
+
+                  Arzuwda gezer iller,
+                  Hyzmatga geler gullar,
+                  Täze açylgan güller,
+                  Bostana gözüm düşdi.
+
+                  Her saçlary bir sünbül.
+                  Göýäki men hem bilbil.
+                  Eý jennet era bir gül,
+                  Ryzwana4 gözüm düşdi.
+
+                  Bu derdime sen derman,
+                  Köýüňde bolam nalan.
+                  Magtymguly diýr, eý jan,
+                  Janana gözüm düşdi.
+
+1 Ahram – jadyly, humarly.
+2 Şemsi-kamar – aý-gün.
+3 Taban – dolan aý, ýagty.
+4 Ryzwan – fantastik jennet gapysynyň sakçysy; behişt.
+
+                      Sataşdym
+
+           Säher wagty seýran edip gezerkäm,
+           Ajap menzil, ajap jaýa sataşdym.
+           Ugrum bilmeý, ýoldan-ýola azarkam,
+           Hup mekana, hup saraýa sataşdym.
+
+           Ustasyz işlenen, kirşsiz gatylan,
+           Gymmatsyz satylan, elsiz tutulýan,
+           Gol degmeý çekilen, oksuz atylan,
+           Çillesiz1 gurulan ýaýa sataşdym.
+
+           Niçe dostlar bilen seýranda eken,
+           Hatardan azaşdym, kerwende eken,
+           Jandan umyt üzüp, haýranda eken,
+           Ýyldyzdan ýol ýasap, aýa sataşdym.
+
+           Köňlüm gitdi, dostlar içen şerbetde,
+           Olar ýüz sapada, men müň hasrata.
+           Aýrylyp näzliden, galdym gurbatda2 ,
+           Çeşmeden suw istäp, çaýa sataşdym.
+
+           Ne tende kuwwat bar, ne içde jan bar,
+           Bu işde ne sut bar, bilmen zyýan bar,
+           Ne hasap, ne hesip, ne belli san bar,
+           Kişi bilmez, ne söwdaýa sataşdym...
+1 Çille – kiriş.
+2 Gurbat – aýralyk, daşa düşmeklik.
+
+         Başa baglap diwanalyk kemendin,
+         Segredip ýetişdim yşkyň semendin1 ,
+         Al şeraba el uzatdym, emendim,
+         Durusyn içmişler, laýa sataşdym.
+
+         Magtymguly diýrler meniň adyma,
+         Bir ah ursam, älem ýanar oduma.
+         Eý ýaranlar, kim ýetişer dadyma?
+         Başym çykmaz köp gowgaýa sataşdym.
+
+                   Aşyk bolmuşam
+
+Eý ýaranlar, bir ýüzi gül, aýa aşyk bolmuşam,
+Barçalar maksady gül ragnaýa2 aşyk bolmuşam,
+Bilbilem bag içre, bir gowgaýa aşyk bolmuşam,
+Özi gaýyp, zülpleri ýeldaýa3 aşyk bolmuşam.
+Menzilim bag içredir, sähraýa aşyk bolmuşam.
+
+Çün pelek saldy bizi ol gün pena topragyna,
+Düşdi seýrim daýyma Mekge, Medine dagyna,
+Bilbil oldum saýradym, girdim Eremniň bagyna,
+Pany-bent oldum o güýa gam iliniň tussagyna,
+Ýüz bela-mähnetli bir söwdaýa aşyk bolmuşam.
+1 Sement – at.
+2 Ragna – owadan, gözel.
+3 Elda – gyryň iň uzyn we tüm garaňky gijesi (22-nji dekabr gijesi).
+
+Göwräm içre ýar gamydyr, menzilim sährad, heý,
+Puşeşim gam-gussadyr, men dönmüşem
+                                   Perhada, heý,
+Saldy yşkyň, dilbera, janu-jigerim oda, heý,
+Wadaryga1 , geçdi ömrüm, zaýa berdim bada2 , heý,
+Ahy köp, efgany köp, bir köýe aşyk bolmuşam.
+
+Bilmenem, ne bahr, ýerdir, bes ne muazzem3
+                                  dagydyr,
+Aldy köňlüm, gitdi aklym ten mydam näçagydyr,
+Nisbet etmek bolmas any, gumry, bilbil zagydyr,
+Aý garaz her zülpüne ýetmiş müň är tussagydyr,
+Kaddy-kamaty belent, zybaýa aşyk bolmuşam.
+
+Dost, howaýy waslyňy men munça çenden isterem,
+Damy4 -zülpüň kasdyna özümni zyndan isterem,
+Diýme: gamdan bir zaman, köňlümni handan
+                                  isterem,
+Bir garyp aşyk menem, ýar, seni senden isterem,
+Gije-gündiz, biliň huw-haýa aşyk bolmuşam.
+1 Wadaryga – haýyp.
+2 Bat – el (bad).
+3 Muazzem – uly, ägirt.
+4 Dam – duzak.
+
+Istemez ýarym meni, ol ýara zarym ýok meniň,
+Galmyşam haýran olup, gaýry mydarym ýok meniň,
+Aldy janym yşkyň ody, ygtyýarym ýok meniň,
+Gelse, aklym dagydar, gitse, kararym ýok meniň,
+Kirpigi ok, gaşlary ol ýaýa aşyk bolmuşam.
+
+Aýdadyr Magtymguly, men anda käne ugradym,
+Seýil edip bardym pelekden, lamekana1 ugradym,
+Çün meni ryswa kylypdyr, yşky käne ugradym,
+Ýetmiş iki şäher ile müň bir dükana ugradym,
+Şunça sergezdan sepilu-zaýa aşyk bolmuşam...
+
+                        Meni
+
+      Yşk ýüregimde gaýnap,
+                         ýandyrdy derdi meni,
+      Tütünim bada berip,
+                         buluda gardy meni.
+      Pelek bilegim towlap,
+                         çarhyna sardy meni.
+      Hyrydar gözi bile
+                         kim gelip gördi meni?
+      Hijran ýagmyry ýagyp,
+                         gam sile berdi meni.
+1 Lamekan – mekansyz.
+
+       Gam sili birlen gidip,
+                           yşk ülkesine baryp,
+       Hyýalym pikre dönüp,
+                           aklymy ýel aparyp,
+       Ol haýrat meýdanyda
+                           men garyp galdym aryp,
+       Yşyk hanjaryn çekip,
+                           hijran ýüregim ýaryp,
+       Äleme destan edip,
+                           abtaba serdi meni.
+
+       Ne jeset içre jan bar,
+                           ne kuwwat galdy tende,
+       Hem serkeşte, hem haýran
+                           bu işe galdym men-de.
+       Ne hastaýam, ne horram,
+                           ne murdaýam1 , ne zende2 ,
+       Gam hüjüm eýläp,
+                           gökden zemin sary inende.
+       Pelek elimden tutup,
+                           howala berdi meni.
+1 Murda – öli.
+2 Zende – diri.
+
+      Bir ahwala duş boldum,
+                          gam hüjm etdi, öldürdi,
+      Bu işiň serişdesin
+                          yşk okadyp bildirdi,
+      Bu hala rehmi gelip,
+                          elim tutup galdyrdy,
+      Jemal bir jilwe berdi,
+                          içim şowka doldurdy,
+      Sözlemeýen neýläýin,
+                          ýaranlar, ýardy meni.
+
+      Magtymguly, begligim
+                          ýar jemaly gul etdi,
+      Wysal umydyn berip,
+                          müň tilli bilbil etdi,
+      Aýralyk oda saldy,
+                          pyrak turdy, ýel etdi,
+      Yşk çekdi zybanasyn1 ,
+                          ýakyp, örtap kül etdi,
+      Hijran elegin eläp,
+                          ýele sowurdy meni.
+
+1 Zybana çekmek – joşmak, ýokary göterilmek, möwç urmak.
+
+                         Döndi
+
+                Ýüzi mahy-tabanym
+                Gün ýaly aýa döndi;
+                Çarh oldy nerdiwanym1 ,
+                Gök paýa-paýa döndi.
+
+                Bir gün aşyk şowh oldy,
+                Gam-gussasy çoh oldy,
+                Her kirpigiň ok oldy,
+                Gaşlaryň ýaýa döndi.
+
+                Aşygy saldyň oda,
+                Goýduň gitdiň uýada,
+                Günorta berdiň wada,
+                Wagt geçdi, saýa döndi.
+
+                Jan galmady bedende,
+                Ýanardym ah edende,
+                Gözüm gelip-gidende,
+                Her günüm aýa döndi.
+
+                Müň söwdam bar, bir başym
+                Goýdum ilim, gardaşym,
+                Aglamakdan göz ýaşym
+                Joşgunly çaýa döndi.
+1 Nerdiwan – basgançak
+
+                    Ýaryň köňli çag oldy,
+                    Aşyklar tussag oldy,
+                    Dalda ýerim dag oldy
+                    Düz ýerim gaýa döndi.
+
+                    Dal pudaklar egildi,
+                    Göçdi bilbil, dagyldy.
+                    Akar suwlar soguldy,
+                    Çöl ýerler guýa döndi.
+
+                    Derman bolmaz alaja,
+                    Zat bermezler mähtaja.
+                    Baýlar döndi gallaja,
+                    Pakyrlar baýa döndi.
+
+                    Magtymguly, gezende,
+                    Rumy-kaýsar1 düzünde,
+                    Gözel ýaryň yzynda
+                    Ömrümiz zaýa döndi.
+
+   1 Rum – Wizantiýa döwleti, Balkan ýarym adasy we Kiçi Aziýa.
+
+Kaýsar — Rum patyşasy
+
+                     Boldum
+
+         Yşk derýasy doldy, daşdy, gaýnady,
+         Täze hyruç eýläp gyzmaly boldum;
+         Köňül tagty möwç üstüne oýnady,
+         Onda guwwas bolup ýüzmeli boldum.
+
+         Ýatyrdym, düýş görüp, tisginip turdum.
+         Yşk bir müşgil işdir, okadym gördüm,
+         Şowhun şirýan bildim, bu ýola girdim,
+         Imdi çäre ýokdur, dözmeli boldum.
+
+         Ýaryň ýeli ösdi, özi gizlendi,
+         Umyt elin gerdi, şunça gözlendi,
+         Hijran kuwwatlandy, gam täzelendi,
+         Ol gazanda gaýnap gyzmaly boldum.
+
+         Ýolda ýolukdyrdym çeşmi-jadyny,
+         Ölçerdim, el çoýdum yşkyň oduny,
+         Köňül gözgüsine1 ýaryň adyny
+         Suratkeşlik edip çyzmaly boldum.
+
+         Bu pikirden, bu hyýaldan daş bolup,
+         Nebsi-howa mekirinden boş bolup,
+         Ol bazarda yşk-talaňça duş bolup,
+         Belli jandan umyt üzmeli boldum.
+1 Gözgi – aýna
+
+         Gana-gana içdim dostuň zährini,
+         Zährin şypa sansam, salmaz mährini,
+         Göwrede gurulan köňül şährini,
+         Yşka nöker bolup bozmaly boldum.
+
+         Magtymguly, ol menzile, diýara1 ,
+         Giren gaýdyp çyka bilmez kenara,
+         Ýaranlar, bu derde barmydyr çäre?
+         Jöwrenip, örtenip gezmeli boldum.
+
+                           Oldy
+
+         Köňül berdim bir biwepa mahbuba2 ,
+         Çykdy elden, dagy jana dert oldy;
+         Aşyk diýr: bakmanam imdi ol huba,
+         Ýol üstünden düşdi gözüm, tört oldy...
+
+         Menlik bile etdim işimni zaýa,
+         Ykbalym eşegin batyrdym laýa,
+         Ýa bir merde duş et, ýa-da hudaýa,
+         Bende işi baş tutmady, art oldy...
+1 Diýar – ýurt, mekan, ülke.
+2 Mahbup – söýgüli.
+
+         Tugunym1 tor bolup, gaçdy saýýatdan2 ,
+         Göwre gamdan doldy, ýürek hem otdan,
+         Gorkarym: ýar bizi çykarar ýatdan,
+         Aýry ýerde mesgen tutdy, ýurt oldy...
+
+         Sonam el bermedi saldym bazymy3 ,
+         Laçyn kowdy, garga aldy gazymy,
+         Şunça pakyrlyga urdum özümi,
+         Tilkilenip, gezdim, adym gurt oldy.
+
+         Magtymguly, ýüregimde dert dörär,
+         Kim görüpdir, koý içinden gurt dörär?
+         Eý ýaranlar, mert ýigitden mert dörär,
+         Kaçan turdy, namart ogly mert oldy?
+
+1 Tugun – elguş.
+2 Saýýat – awçy.
+3 Baz – gyrgy, algyr.
+
+                        Boldum imdi
+
+    Yşk ataşyna düşdüm,
+                        perwana boldum imdi,
+    Şowkun közüne köýdüm,
+                        birýana1 boldum imdi.
+    Jismim kebaba döndi,
+                        girýana boldum imdi,
+    Genç isteýenler gelsin,
+                        weýrana boldum imdi,
+    Aýryldym agýarlardan,
+                        bigana boldum imdi.
+
+    Çykardym başdan imdi
+                       dünýä höwesin mutlak2 ,
+    Ne perşe aýak basdyň,
+                       dolan bir özüňe bak,
+    Kül bolup, ýelge sowrul,
+                       ol güzerde janyň ýak,
+    Lazym oldy okymak,
+                       analhaku, minelhak,
+    Meý içip meýhanadan,
+                       mestana boldum imdi.
+1 Birýana (birýan) – gowrulan.
+2 Mutlak – asla, düýpden.
+3 Perş – düşek, haly.
+
+Dünýä menden hezl etmez,
+                 men hem bähre almaz men,
+Odum ötgür, derdim köp,
+                 hoş wagt olup gülmez men,
+Agyr baha älemni
+                 alty pulga almaz men,
+Dost kaýsy, duşman kaýsy,
+                 parhyn edip bilmez men,
+Hiç kimse aňmaz halym,
+                 aýana boldum imdi...
+
+Bir mukama duş boldum,
+                   pikr anda pikre batdy,
+Jan anda jandan boldy,
+                   huşundan gidip ýatdy,
+Jeset ýolda ýok boldy,
+                   köňül özün unutdy,
+Yşk goşun ýygyp gelip,
+                   akyl-mülkün dagytdy,
+Talaňa berip aklym,
+                   diwana boldum imdi.
+
+    Magtymguly, her zaman,
+                         neýleýin olmaý girýan?
+    Pikir palçygna batdym,
+                         çyka bilmez men bir ýan,
+    Göwre harap, ten turap1 ,
+                         köňlümiň şähri weýran,
+    Jan jeset, til-akyldan
+                         aýrylyp galdy urýan2 ,
+    Iş geldi, başa düşdi,
+                         merdana boldum imdi.
+
+                         Hökümli
+
+           Köňüller köşgünde hyýalyň hany
+           Öwlady-hüňkara3 meňzär hökümli.
+           Aşyk çekse nalany,
+           Ýasa salar läläni,
+           Ýerde peşe, padşany,
+           Hudaýymyň halany,
+           Gamzaň garakçysy salsa talaňy,
+           Kirpigiň ok, gaşyň ýaýdyr çekimli.
+1 Turap – gum, toprak.
+2 Urýan – ýalaňaç.
+3 Hüňkar – patyşa.
+
+           Gözelleriň waspyn etseler kanda,
+           Älem agzy tamam jem olar sende.
+           Tä jan bardyr bu tende,
+           Arzym meniň ýar sende,
+           Adyň Ruma düşdi, owazyň Hinde.
+           Leýli saňa kenizek,
+           Züleýha saňa bende,
+           Bagda gulçähre1 sen? bulgar bakymly.
+
+           Yşkyň ataşyny saçyp sen düze,
+           Jan polatdan bolsa, dözmez bu köze,
+           Gonsa, dilber, bu köze,
+           Zyban2 gider her söze,
+           Görküň güneşi dogsa,
+           Ne san bardyr ýyldyza?
+           Alma zenahdana, bu kümüş ýüze –
+           Zülpüň syýa, suratkärdir dökümli.
+
+           Humaý oturyşly, laçyn turuşly,
+           Kebuter topukly, maral ýörişli,
+           Täze hilal3 gaşly, merwerit4 dişli,
+           Tawus guş zynatly, dawud duruşly,
+           Terbeza şiweli, käkilik nagyşly,
+           Tugun guş timarly, tarlan bakymly.
+1 Gülçähre – gül ýüzli.
+2 Zyban – dil
+3 Hilal – ýaňy dogan aý.
+4 Merwerit – gymmat baha daş.
+
+           Baglanyban çyksaň şitdeýi1 gülzar,
+           Husnuň hyýalaty älemni aldar.
+           Aşyk aýdar: eý dildar!
+           Görki güne taý didar!
+           Tapar hajyň sowabyn,
+           Her kim bir garyp goldar,
+           Magtymguly, sen dek görmedim dildar,
+           Bu jana ýararly, köňle ýakymly.
+
+                      Dogrusy
+
+        Eý peri, aşygam saňa,
+                          ýanaram, dogrusy;
+        Görmeginçe gül ýüzüň,
+                          bikararam dogrusy.
+
+        Şähriňizde bir peri,
+                               adyň eşitdim men seniň,
+        Bilbili-biçäreýem,
+                               çoh ahy-zaram, dogrusy.
+
+        Men bir bezirgen menem,
+                          yşkyň matasyn sataram;
+        Şähriňizge gelmişem,
+                          bes söwdagärem, dogrusy.
+1 Şitde – guşak
+
+        Gide bilmen şähriňizden –
+                           hyz-haramdan gorkaram;
+        Ýedi pirniň labzydan,
+                           bir ýadygärem, dogrusy.
+
+        Eý peri, zülpüň beri,
+                           walla seniň deý huplary;
+        Aýdadyr Magtymguly,
+                           pişekärem, dogrusy.
+
+                        Gözel sen
+
+           Gün hanjary gökden ýere inende,
+           Güne garşy dogan aýy gözel sen;
+           Usta Jepbar işi, senjap jüpbesi1 ,
+           Ispyhanda gurlan ýaýy gözel sen!
+
+           Saçbagyň ujunyň simdir2 işmesi,
+           Üstünden ýol düşse, kyndyr aşmasy,
+           Agzyň aby-haýat3 , Zemzem çeşmesi,
+           Aýnalbaky4 suwnuň laýy gezel sen!
+1 Jüpbe – eşik ady.
+2 Sim – kümüş.
+3 Aby-haýat – dirilik suwy.
+4 Aýnalbaky – fantastiki ömürlik çeşme.
+
+          Gyzyl diýsem – gyzyl, al diýsem – al sen,
+          Hindistanda – şeker, Bulgarda – bal sen.
+          Yşk bilen açylgan bir täze gül sen,
+          Ýusup-Züleýhanyň taýy gözel sen!
+
+          Her kim güýçli bolsa oňa pir diýrler,
+          Dertli guluň dermanyny biýr diýrler,
+          Gawunyň gowsuny şagal iýr diýrler,
+          Ykbally bendäniň paýy gözel sen!
+
+          Owazyň Çyn-Maçyn, daglar aşasy,
+          Seni görenleriň akly çaşasy,
+          Hindistanyň reňkli gyzyl çüýşesi1 ,
+          Suraýy çilimniň naýy gözel sen!
+
+          Magtymguly, halkdan syryn gizlese,
+          Dişini uşadyň ýalan sözlese,
+          Owalda, ahyrda eýäm gözlese,
+          Garyp biçäräniň paýy gözel sen...
+
+1 Meşewi diýen wariant hem bar.
+
+                Gitseň – bar aman
+
+  Diýdim: «Ýüzi tabana».
+                    Diýdi: «Meňzär Meňli han!»
+  Diýdim: «Goýduň armana».
+                    Diýdi: «Köňüldir weýran».
+  Diýdim: «Ölerem imdi».
+                    Diýdi: «Galar sen aman».
+  Diýdim: «Ok kirpikleriň».
+                    Diýdi: «Gaşlarym keman»
+  Diýdim ki: «Puşeş geýmiş».
+                    Diýdi: «Dony – zerefşan».
+
+  Diýdim: «Ýüzde hallar bar».
+                    Diýdi: «Roýda güller heý»1 .
+  Diýdim: «Gumry zybandyr».
+                    Diýdi: «Şähdi diller heý».
+  Diýdim: «Gel sen, habarlaş».
+                    Diýdi: «Biler iller heý».
+  Diýdim: «Ol ne serwidir».
+                    Diýdi «Inçe biller heý».
+  Diýdim: «Tawus kaýdandyr?»
+                    Diýdi: «Jaýy – Hindistan».
+1 «Heý» diýen ümlügiň ýerine «hem» getirilýän warianty hem bar.
+
+Diýdim: «Gijäň garaňky».
+                  Diýdi: «Ukuda aýym».
+Diýdim: «Kimler ýasawul?».
+                  Diýdi: «Kirpigim-ýaýym».
+Diýdim: «Kaýda mesgeniň?».
+                  Diýdi: «Lamekan jaýym».
+Diýdim: «Zerefşan erer».
+                  Diýdi: «Köwserdir laýym».
+Diýdim: «Ondan ber maňa!»
+                  Diýdi: «Istärmiş bijan».
+
+Diýdim: «Bu ne tütündir?»
+                  Diýdi ki: «Gara marlar».
+Diýdim: «Gorkaram andan».
+                  Diýdi: «Il-u-gün zarlar».
+Diýdim: «Sözüň aslyny»,
+                  diýdi: «Sorar, duýarlar».
+Diýdim: «Syry paş etdin».
+                  Diýdi: «Aýtmyş aýýarlar».
+Diýdim: «Ölüm bar saňa»,
+                  Diýdi: «Saňa hem perman».
+
+Diýdim: «Eý Magtymguly!»
+                   Diýdi: «Gözler ýaş bolar!»
+Diýdim: «Ol ne oglandyr?»
+                   Diýdi: «Sizge baş bolar».
+Diýdim: «Ýakyndyr Käbe».
+                   Diýdi: «Köne daş bolar».
+Diýdim: «Ýagşy zamandyr».
+                   Diýdi «Bu hem düýş bolar».
+Diýdim: «Indi gider men».
+                   Diýdi: «Gitseň – bar aman!»
+
+               Uýat eýleýir
+
+         Meňli hanym golun dişläp,
+         Bizden ki uýat eýleýir;
+         Kä daranyp, uz ýörişläp,
+         Bizden ki uýat eýleýir.
+
+         Aşyk, gulak goýgul söze,
+         Syýa zülp ýaraşar ýüze,
+         Sürme çalyp gara göze,
+         Bizden ki uýat eýleýir.
+
+         Geýipdir gyzyl-ýaşyly,
+         Bilmen nedir ýar hyýaly,
+         Göz edip ýomut, ahaly,
+         Bizden ki uýat eýleýir.
+
+             Ykbal çapmaz ýöreý diýsem,
+             Ýokdur malym, bereý diýsem.
+             «Aç roýuňy – göreý» diýsem,
+             Öwrülip uýat eýleýir.
+
+             Görüşeli Meňli hanym,
+             Istihanym, şirin janym.
+             Pyragy diýr, din-imanym
+             Ýetdirmez, uýat eýleýir.
+
+                 Barmy, ýaranlar
+
+             Yşk ýolun höwes eýläp,
+             Gelen barmy, ýaranlar?
+             Derdimi beýan etsem,
+             Alan barmy, ýaranlar?
+
+             Bolmuşam mesti-şeýda,
+             Hezar1 pişe, set söwda,
+             Älemde men deý ryswa
+             Bolan barmy, ýaranlar?
+
+             Içim dert, daşym birýan,
+             Eder men nala-girýan,
+             Meniň deý mesti-haýran
+             Galan barmy, ýaranlar?
+1 Hezar – müň.
+
+Ýalan dünýäni ýaýnap,
+Gezgil gülüp hem oýnap,
+Yşk gazanynda gaýnap,
+Ölen barmy, ýaranlar?
+
+Yşk duş bolsa bir merde,
+Toz bolar, döner gerde,
+Meniň deý özün derde
+Salan barmy, ýaranlar?
+
+Bardy halym ölümge,
+Tap etmeýen zulumga,
+Ýyglamýan halymga,
+Gülen barmy, ýaranlar?
+
+Magtymguly, jan çekse,
+Rehm etmezler, ýaş dökse,
+Yşkyň ýolunda ýoksa,
+Galan barmy, ýaranlar?
+
+                   Içmeýen jamym
+
+    Dözmenem, doýmanam, durmanam, eý ýar,
+    Bu saky1 döwründen içmeýen jamym.
+    Jamy meý sundugyň görmesin agýar,
+    Gelmenem aklyma, görmeýen känim.
+
+    Bolmuşam guwwas dek, ýüzmüşem köli,
+    Tapmyşam hemramy, tutmuşam ýoly,
+    Şowkuň şerabyndan bolmuşam däli,
+    Bilmen niçik geçer çäştim, şamym...
+
+    Tä nepes tendedir, tende jan bardyr,
+    Til saňa maýyldyr, çeşm intizardyr,
+    Çekdigim pygandyr, werzişim zardyr,
+    Käte bu dert ile geçer eýýamym...
+
+    Gözleriň jellatdyr, tilleriň aýýar,
+    Gamzaň bimar eder, ýüzleriň timar,
+    Mansur belasyna bolsam giriftar,
+    Giderem sen sary, süýreýip hamym.
+
+    Magtymguly, hoş hap2 içre ýatyrdym.
+    Emrine ugradym, iman getirdim,
+    Özümi unutdym, huşum ýitirdim,
+    Pyragy diýp çagyrsyn ol meniň namym.
+
+1 Saky – şerap guýan, içgi paýlaýan.
+2 Hap – uky.
+
+            Ýandyrar
+
+Wagt bolar ki, bir ýel düşer serime,
+Hyýal hüjüm eýläp, joşy ýandyrar;
+Ýüregim joş berse, aklym jem bolsa,
+Pikir basar, gaýgy huşy ýandyrar.
+
+Säher wagty derwüş nalyşa gelse,
+Bilinden ýüp alyp, boýnuna salsa,
+Taňry söýen bende bet doga kylsa,
+Pelegi titreder, arşy ýandyrar.
+
+Akmak özün akyl bilen deň eýlär,
+Bir iş tutar, soňrasyndan jeň eýlär,
+Zehiniň käýider, aklyň teň eýlär,
+Diýdigiň eýlemez, naşy ýandyrar.
+
+Magtymguly, hakdan piýala çekse,
+Piýala joş berse, hyýala çekse,
+Aşyklar bagryndan bir nala çekse,
+Daglary elendir, daşy ýandyrar.
+
+                          Aýryldym
+
+                Bilbilem, ahy-zar çekip,
+                Täze gülzardan aýryldym;
+                Gözden ganly ýaşym döküp,
+                Ol sewer ýardan aýryldym...
+
+                Ýara ýaraşar üç müçe,
+                Sypatyn söýlerem ençe.
+                Lebi şeker, agzy gunça,
+                Ol zülpi-tardan aýryldym.
+
+                Şirin janda ýokdur takat,
+                Jebri anyň jana rahat,
+                Gaşlary pitneýi-apat,
+                Çeşmi-hunhordan aýryldym.
+
+                Aýryldym gunça gülümden.
+                Syýa saçly sünbülimden,
+                Hoş owazly bilbilimden,
+                Şirin güftardan1 aýryldym.
+
+                Däli köňlüm arzymany,
+                Külli gözelleriň hany,
+                Sekiz jennetiň bostany,
+                Bakjaly bardan2 aýryldym.
+1 Şirin güftar – süýji sözli
+2 Bar – miwe.
+
+              Illeri bar diňli-diňli,
+              Sowuk suwly, ter öleňli,
+              Ili — gökleň, ady — Meňli,
+              Näzli dildardan aýryldym.
+
+              Magtymguly, aşyk mestan,
+              Bagladym şanyna destan,
+              Menzilgähi1 bagy-bostan.
+              Almaly nardan aýryldym.
+
+                       Ýa jepbar
+
+       Jan joşguna geldi, ýandym, ýaryldym,
+       Bagyşlasaň neýlär ýarym, ýa jepbar.
+       Sangysyz söýüşdim, öýsüz aýryldym,
+       Bagyşlasaň neýlär ýarym, ýa jepbar.
+
+       Sözleşerdim, syrlaşardym ýar bile,
+       Ýüregimde ýar hyýaly bar bile,
+       Indi läkin aýyrdylar zor bile,
+       Bagyşlasaň neýlär ýarym, ýa jepbar.
+
+       Köňül hoşdur ýada salyp gezmände,
+       Ýadyma salmanda, yşkym gyzmanda,
+       Meni gamda goýdy, özi armanda,
+       Bagyşlasaň neýlär ýarym, ýa jepbar.
+1 Menzilgäh – bolýan ýeri, mekan, öý.
+
+Yhlas bilen söýmüşem men ol ýary,
+Jöwrendi jigerim, gitdi karary,
+Ol anda ah çeker, men munda – zary...
+Bagyşlasaň neýlär ýarym, ýa jepbar.
+
+Bardy pinhan-pinhan şirin sözümiz,
+Bolan işe haýran bolduk özümiz,
+Seýrserap bakmakdan doýmaz gözümiz,
+Bagyşlasaň neýlär ýarym, ýa jepbar.
+
+Sözüm saňa ýetmez, arzym etmäge,
+Işimiň rowajy ýokdur ýetmäge,
+Dilber derdi goýmaz meni ýatmaga.
+Bagyşlasaň neýlär ýarym, ýa jepbar.
+
+Magtymguly, dünýä köne jahandyr,
+Söýüşmeklik bu dessury-zamandyr.
+Jürümim çoh bolsa, keremiň kändir,
+Bagyşlasaň neýlär ýarym, ýa jepbar.
+
+            Nowruzdan seni
+
+Bolmady bizge nesibiň,
+                   istedim güýzden seni,
+Diýdiň: ötsün gyş,
+                   tapar men täze nowruzdan seni,
+Saýladym-seçdim, sonam,
+                   bölejik gyzdan seni,
+Neçün biliň guçmadym,
+                   bildim tapyp uzdan seni,
+Isterem hakdan, gowuşdyrgaý
+                   maňa tizden seni.
+
+Söwdügim, seýa günde her gün ýadyňa
+                   salsaň meni,
+Günde ýüz katla tilär men ýaradan
+                   hakdan seni.
+Başky günde oda saldyň meni parahan
+                   bendeni,
+Hak götersin aradan şeýle rakyp
+                   şermendeni,
+Kyl bahyl bizden ýaňa, ynjytsalar
+                   sözden seni.
+
+Hak katynda sözüm ötmez,
+                   men kibi awara ýok,
+Ili-gün rehm eýlemezler,
+                   men kibi biçäre ýok,
+Ýüregim set paradyr,
+                   belli tenimde ýara ýok,
+Sen garyp sen, men pakyr men,
+                   sende, mende çäre ýok.
+Söwdügim, takdyry-hakdyr aýyrgan
+                   bizden seni.
+
+Bagyna girsem säher,
+                     bilbil bolup salsam oýun,
+Gaflata galsa rakyp,
+                     bir dem salyşsak gol boýun,
+Hakdan özge çäre ýokdur,
+                     ne kylaýmen, neýleýin,
+Inçe bil, şirin zyban,
+                     kepder topuk, sen gaz boýun,
+Saklasyn alla penahynda ýaman
+                     gözden seni.
+
+Haýryny duşman görüp,
+                    dostun çeker jebri-jepaň,
+Şeýle dildarlyk bolarmy
+                    görmeýen zowky-sapaň.
+Salsalar mizana,
+                    Balkan dagy hiç gelmez päheň,
+Aýdadyr Magtymguly,
+                    ähdiň ýalan, ýokdur wepaň,
+Biwepalar hup sowutmyşlar, sonam,
+                    bizden seni.
+
+    VI
+
+ELEGIÝALAR
+                     Azadym kany
+
+         Pelek, idär idim, sen duçar bolduň,
+         Gözümniň nurany – Azadym kany?
+         Ýüregim soguryp, seglere berdiň,
+         Şährimniň soltany – Azadym kany?
+
+         Ymamsyz galandyr, mesjit, mährabym,
+         Dogmady nur saçyp ol mahy-tabym,
+         Ýowuz galdym, sil alypdyr etrapym1 ,
+         Köňlümniň ummany — Azadym kany?
+
+         Şekerlikden zäher boldy sözlerim,
+         Zagpyran dek sargarypdyr ýüzlerim.
+         Kuwwat gitdi, gubarlandy gözlerim,
+         Münberim azany — Azadym kany?
+
+         Tört paslym nar boldy, daglar eridi,
+         Diriler uçdular, öli ýöridi,
+         Giden baryp haka maňlaý diridi,
+         Ilimniň zybany — Azadym kany?
+
+         Topraklar sil boldy, siller gum boldy,
+         Humlar jam boldular, jaýlar hum boldy,
+         Höwesler ýas boldy, pişäm gam boldy.
+         Ýüregim aramy — Azadym kany?
+1 Etrap – töwerek.
+
+Ölüler direlip, arza bardylar,
+Hakdan bir kelamny ýörüp sordular,
+Çoh ýalbaryp, «goýber» diýip durdular,
+Öli-diri döwrany — Azadym kany?
+
+Käpirler bolupdyr ýyglap musulman,
+Haka ýalbarypdyr Hydyr, Süleýman.
+Bug bolup göterlen arşa ol umman,
+Gökleňniň pälwany – Azadym kany?
+
+Armanym ýok, pelek, bir söweş kylsam,
+Ýa ýyksaň, basylsam, ýa seriň alsam.
+Seglere aş eýläp, bazarga salsam,
+Bagrymnyň reýhany – Azadym kany?
+
+Güwşlüler eşitgeç, bary ker boldy,
+Daglar eräp akdy, daşlar ýer boldy.
+Mollalar kuransyz, pirler kör boldy,
+Sahyplar kurany – Azadym kany?
+
+Zemin ýüzün syýa duman eýlediň,
+Diýgil, pelek, kimni aman eýlediň?
+Pyragyny, bak, biiman eýlediň, –
+Namysym, imanym – Azadym kany?
+
+                         Atamyň
+
+          Altmyş ýaşda nowruz güni, lu ýyly
+          Turdy ajal, ýolun tusdy1 atamyň,
+          Bu dünýäniň işi beýlemiş, beli,
+          Ömrüniň tanapyn kesdi atamyň.
+
+          Agyr döwletlere köňül goýmady,
+          Bu jahanyň eşretini söýmedi,
+          Esgýa şaldan artyk puşeş2 geýmedi,
+          Ahyret öýi boldy kasdy atamyň.
+
+          Diýrdi: dünýä durmaz, ömür-baky ýok,
+          Gündiz roza, gije bolsa uky ýok,
+          Müňkür bilmez, muhlyslaryň şeki ýok,
+          Pygamber dostudyr, dosty atamyň.
+
+          Görmesem, söýlemen oý bile çenden,
+          Maksadyna ýeter ýykylan çyndan,
+          Ýarysy melekden, ýarysy jyndan
+          Müjewürsiz bolmaz üsti atamyň.
+
+          Nukba3 diýrler, üç ýüz eren ugraşdy,
+          Çiltende atama nazarym düşdi,
+          Niçe barsam, heftenlere garyşdy,
+          Bular durar çyn peýwesti atamyň.
+1 Tusmak – gadymy türkmen dilinde tutmak.
+2 Puşeş – eşik, lybas, geýim.
+3 Nukba (birlik sany nakyb) – baştutanlar, ýolbaşçylar, serkerdeler.
+
+          Älem içre adam galmaz, at gezer,
+          Bu syrlardan jahan halky ýat gezer.
+          Jany jennet içre, gökde şat gezer,
+          Ýerde hoşwagt ýatar posty1 atamyň.
+
+          Magtymguly, gizle syryň bar içde,
+          Kämil tapsaň, kyl gullugyn her işde,
+          Magşar güni, elbet, girer behişde,
+          Her kim çyndan bolsa dosty atamyň.
+
+                    Mübtela kyldy
+
+                 Eýa dostlar, pelek jebri
+                 Başymny mübtela2 kyldy.
+                 Aýyrdy söwer balamdan,
+                 Ýüregimni ýara kyldy...
+
+                 Ötdi hoş wagt, horram wagtym,
+                 Bozuldy tylladan tagtym.
+                 Ýaňy biten bir daragtym
+                 Hazan bady3 pena kyldy...
+1 Post – deri, ham, jeset.
+2 Mübtela – aladaly, başagaý.
+3 Hazan bady – hazan ýeli.
+
+                 Şum ajala bolmaz çäre,
+                 Jebrinden galdym bu zara,
+                 Ýüregime saldy ýara,
+                 Garyp jismim eda kyldy.
+
+                 Indi bir dem kararym ýok,
+                 Bu menzilde durarym ýok,
+                 Bu sözden hiç habarym ýok,
+                 Habarsyz binowa kyldy.
+
+                 Ýanyp perwana dek her dem,
+                 Ýüregim dolduryp ýüz gam,
+                 Kaddym ham1 , gözlerim pürnem2 ,
+                 Bu janyma jepa kyldy.
+
+                 Gamyndan örtenip suzan3 ,
+                 Çeker men nalaýy-efgan,
+                 Pyrakynda4 gözüm girýan,
+                 Neteý, neýleý, geda kyldy...
+
+                 Magtymguly, çeker perýat,
+                 Meniň ahwalyma heýhat!
+                 Pelekniň elgiden5 müň dat,
+                 Meniň bagtym gara kyldy...
+1 Ham – egri, bükük.
+2 Pürnem – ýaşdan doly.
+3 Suzan – ýakyjy, ýandyryjy.
+4 Pyrak – aýralyk
+5 Elgiden – elinden
+
+               Yzlamaýan bolarmy
+
+         Bir käkilik aldyrsa türpe balasyn,
+         Saýraý-saýraý, yzlamaýan bolarmy?
+         Bir bilbil ýitirse gyzyl lälesin,
+         Hasratyndan sözlemeýen bolarmy?
+
+         Kürresi elinden gitse eşegiň,
+         Telmirip tört ýana gözlär uşagyn,
+         Akmaýa aldyrsa elden köşegin,
+         Bagryn bozup, bozlamaýan bolarmy?
+
+         Bala sesin diňlär, asyp gulagyn,
+         Döke-döke göz ýaşynyň bulagyn,
+         Ak jeren aldyrsa elden owlagyn,
+         Mäleý-mäleý, gözlemeýen bolarmy?
+
+         Agsagyň elinden alsaň agajyn,
+         Ýaman derde düşer, tapmaz alajyn,
+         Bir güýçli duşmana duşsa mekejin,
+         Jojugyny gizlemeýen bolarmy?
+
+         Aýralyga adam ogly neýlesin?
+         Kim galar, görmeýen ajal hilesin?
+         Magtymguly, haýwan bilse balasyn,
+         Ynsan bagryn duzlamaýan bolarmy?1
+
+1 «Adam ogly ýyglamaýan bolarmy?» diýen warianty hem bar.
+
+           Gelmedi
+
+Göçi-gony bile gitdi Abdylla,
+Hemme giden geldi, bular gelmedi.
+Mämmetsapa gitdi kömek bermäge,
+Uzadanlar geldi, bular gelmedi.
+
+Enesinden aýry ýatmaz oglanlar,
+Ýa reb, gören barmy bulardan, iller?
+Aýlanar aýlary, dolanar ýyllar,
+Aýlar, ýyllar geldi, bular gelmedi.
+
+Hasratdan sagaldy zäher dadanlar,
+Hakyn alyp geldi goýun haýdanlar,
+Alty aýlyk ýola – Käbe gidenler
+Hajy bolup geldi, bular gelmedi.
+
+Ýyrakdan, ýakyndan baryp gelenler,
+Barmydyr bulardan görüp-bilenler?
+Hindistana bezirgenlik kylanlar,
+Malyn satyp geldi, bular gelmedi.
+
+Darydy bir doly, ýolukdy baran,
+Birin ýurdy bilen eýledi weýran,
+Birisiniň ýary yzynda haýran,
+Gözleri ýoldadyr, bular gelmedi.
+
+Ýykylanyň bagry ýerden galmazmy?
+Hiç baran gelmezmi, aglan—gülmezmi?
+Ötenden-geçenden sorsaň, bilmezmi?
+Bilinmezler geldi, bular gelmedi.
+
+Magtymguly, derdi goýmaz ýatmaga,
+Ugrun bilmez sorap-sorap gitmäge,
+Ýerden jogap çykmaz habar tutmaga,
+Gören-bilen barmy, bular gelmedi.
+
+  Çekem Ýusup diýe-diýe
+
+   Men Ýakubam, ah-u zary
+   Çekem Ýusup diýe-diýe;
+   Gözlerimden ganly ýaşy
+   Dökem Ýusup diýe-diýe.
+
+   Pelek aglar göz ýaşyma,
+   Ne söwda saldyň başyma,
+   Mejnun bolup, dag başyna
+   Çykam Ýusup diýe-diýe.
+
+   Her tarapdan çülke-çülke,
+   Bulut oýnar, salar kölge,
+   On iki dag, ýedi jülge
+   Sökem Ýusup diýe-diýe.
+
+Gitdi Ýusup, gelmez habar,
+Aglap turar men her säher,
+Gala-gala, şäher-şäher
+Sökem Ýusup diýe-diýe.
+
+Hasratyma pelek aglar,
+Aşyk boldy tilsiz zaglar,
+Perhat kimin beýik daglar
+Ýykam Ýusup diýe-diýe.
+
+Öter eýýam döne-döne,
+Geçer bu jan ýana-ýana,
+Ertir-agşam Aýa, Güne,
+Bakam Ýusup diýe-diýe.
+
+Meger Ýusup düşdi çaýa,
+Jemalyň diýp bakam Aýa,
+Yrak zemin, Kerbelaýa
+Bakam Ýusup diýe-diýe.
+
+Ýusup gezer tilden-tile,
+Şeýda bolup gülden-güle,
+Sorag salyp, ilden-ile
+Çykam Ýusup diýe-diýe.
+
+Magtymguly, dost ýüzünden,
+Durmaz akar ýaş gözünden,
+Bilbil bolup, ýar sözünden
+Okam Ýusup diýe-diýe.
+
+             Abdylla
+
+Sen gideliň dokuz ýyldyr öteni,
+Kaýda watan tutduň, gardaş Abdylla!
+Dolanmazmy ynsanyýetiň gideni,
+Kaýda watan tutduň, gardaş Abdylla!
+
+Daga arzym aýdyp, tutdum habaryň,
+Lal bolupdyr tili, diýmez azaryň,
+Ata-enesiz nedir seniň kararyň?
+Kaýda watan tutduň, gardaş Abdylla!
+
+Gorky peýdasy ýok gidejek jana,
+Ömür ahyr boldy, doldy peýmana,
+Ýa-da sen düşdüňmi düýpsüz ummana?
+Kaýda watan tutduň, gardaş Abdylla?
+
+Üstümize hijran ody sepildi,
+Kuwwatym gidipdir, dyzym epildi,
+Gan ýyglap, atamyň bili büküldi,
+Kaýda watan tutduň, gardaş Abdylla.
+
+Ýüzüm tutup çykdym jandar baryna,
+Özüm rowa geldim hijran daryna,
+Döze bilmen beýtinleriň zaryna,
+Kaýda watan tutduň, gardaş Abdylla.
+
+       Ilde-günde ýokdur meniň kararym,
+       Dert üstüne artdy gaýta azarym,
+       Ýat boldy watanym, öýüm-öwzarym,
+       Kaýda watan tutduň, gardaş Abdylla?
+
+       Güwş1 tutar men her diýilen sözlere,
+       Jepa berdiň hijran bilen bizlere,
+       Özüm urar boldum oda-közlere,
+       Kaýda watan tutduň, gardaş Abdylla?
+
+       Gülüp-oýnamadyk bile şat bolup,
+       Başdan gitdiň, bütin bizden ýat bolup,
+       Magtymguly zar aglapdyr, mat bolup,
+       Kaýda watan tutduň, gardaş Abdylla?
+
+                 Çowdurhan üçin
+
+       Ahmet patyşadan habar almaga,
+       Umyt etdi iller Çowdurhan üçin,
+       Sag baryp, salamat gaýdyp gelmäge,
+       Oňmady ykballar Çowdurhan üçin.
+
+       Ýaplar doňup galdy, ýagyşlar syzman,
+       Bulut bökelek saldy, bu derde dözmän,
+       Zemin zaýa boldy, pelekler perman,
+       Gözde ýaşy siller Çowdurhan üçin.
+1 Güwş – gulak
+
+       Kaza gahra mündi, perin syndyrsa,
+       Pelek hyýal etdi, mährin indirse,
+       Derýa joşa geldi, suwun gandyrsa,
+       Muştak boldy köller Çowdurhan üçin.
+
+       Yzyňda boldular il intizaryň,
+       Umyt bile gezdi Annahal ýaryň,
+       Atanazar boldy çekerge zaryň
+       Gözleý-gözleý ýollar Çowdurhan üçin.
+
+       Barsa, paýy belli soltanda, handa,
+       Iller bilmeý galdy, armany janda,
+       Kazadyr, kysmatdyr Ýeztde, Kirmanda,
+       Meger tartdy ganlar Çowdurhan üçin.
+
+       Gurralar güň boldy, dallar şum boldy,
+       Ýaranlar kem boldy, ýollar bim1 boldy,
+       Çeşmeler höşk boldy, daşlar gum boldy,
+       Güwýä2 boldy tiller Çowdurhan üçin.
+
+       Söýle, Magtymguly, älem bilsinler,
+       Jaýy jennetdedir, güwä bolsunlar,
+       «Hak rehmet etsin» diýp, doga kylsynlar
+       Tamam ulus-iller Çowdurhan üçin.
+
+1 Bim – gorkuly.
+2 Güwýä – saýraýan, gepleýän manysynda.
+
+           Geçdi diýdiler
+
+Eý ýaranlar, ýowuz destan tapyldy,
+Bir goçak panydan geçdi diýdiler.
+Ahyrzaman boldy, aý-gün tutuldy,
+Aý-günüň şuglasy ýaşdy diýdiler.
+
+Nägehan ugrady aýralyk dagy,
+Seýdim tarhan çeker derdi pyragy,
+Ömrüniň hasyly, otuz çyragy,
+Bady-hazan urup öçdi diýdiler.
+
+Gitdi Öwez, geldi ýene köp zatlar,
+Pozuldy söhbetler, gam boldy şatlar,
+Gardaşlar, syrdaşlar, ýakynlar, ýatlar
+Gara geýip, gan ýyglaşdy diýdiler.
+
+Bedew atly, bek kemerli, ýaragly,
+Döwleti, zynaty malyna bagly.
+Myhmanly bir ärdir, zatly, otagly,
+Bir belent ordasy çaşdy diýdiler.
+
+Ýigitlik hasraty başdan ötermiş,
+Ogulsyzlyk barça işden betermiş,
+Zürýatsyz ýigidiň orny ýitermiş,
+Ýurdy ýok, kerweni geçdi diýdiler.
+
+Magtymguly diýr, Türküstan töresi,
+Bir goçakdyr ýeriň, suwuň seresi,
+Ýygyn görki, ýow gününiň öresi
+Üşbu gara ýeri guçdy diýdiler...
+
+          Zarlar içinde
+
+Çowdurhan görejim, köňül diregim,
+Sen wepat bolup sen zarlar içinde,
+Gökleňde pälwanym, ile geregim,
+Halky goýup gitdiň narlar içinde.
+
+Gele bilmez idi badyňdan duşman.
+Gelen tapdy gitdi zoruňdan puşman,
+Goja dagdan bäri, gökleňe aşman,
+Bizi goýup gitdiň marlar içinde.
+
+Pelek seniň gül ömrüňi soldurdy,
+Hazan degdi, now gunçaňy ýoldurdy,
+Gara daglar dözmen, serin galdyrdy,
+Çeşmim ýaşy duman-garlar içinde.
+
+Magtymguly, hemdem, akyl syrdaşyň,
+Tutabilmez özün, döküp göz ýaşyn,
+Duman aldy daglar – kemeriň başyn,
+Aý-günler batdylar zarlar içinde.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Gaça başlady',
+    'Indi bildim zamananyň azanyn,
+            Ýamanlar ýagşydan gaça başlady;
+            Gaýta bedasyllar asylzadadan
+            Pisint etmän, töre geçe başlady.
+
+            Ryýa1 boldy köpüň okan namazy,
+            Taňry hiç birinden bolmady razy,
+            Pygamber ornunda oturan kazy
+            Para üçin elin aça başlady.
+
+            Şalarda galmady hökmi-adalat,
+            Bir pul üçin müfti berer rowaýat,
+            Bil: bu işler – nyşanydyr kyýamat,
+            Zalymlar bitoba öte başlady.
+
+            Pakyrlar horlanyp, ýüzün sarardyp,
+            Kim töresin tapyp, reňgin gyzardyp,
+            Zalymlar mazluma syrtyn gabardyp,
+            Gamçysyndan ganlar saça başlady.
+
+            Alymlar sözüne amal bolmady,
+            Mynapyklar2 ýaradany bilmedi,
+            Sopular pirinden taglym almady,
+            Dünýä üçin dinden geçe başlady.
+1 Ryýa – ikiýüzli, ýalan.
+2 Mynapyk – hudaýsyz, pidul.
+
+           Bir para sopular «sopy men» diýer,
+           Soramaz, zalymlar tagamyn iýer,
+           «Bizi ýagşy kişi diýsinler» diýer,
+           Her işikde halka gura başlady.
+
+           Garryga aýlandy biz gören ýaşlar,
+           Dolandy aýaga biz gören başlar,
+           Bimahal ýük baglap indi argyşlar
+           Ahyret kastyna göçe başlady.
+
+           Akyl bolan gamda ýüregin ezip,
+           Derdiniň dermanyn soraglap gezip,
+           Zamananyň pisat1 bolanyn ýazyp.
+           Panydan bakyýa geçe başlady.
+
+           Asylsyz begleriň nobaty ýetdi,
+           Gaýta şugul haramyga söz ýetdi,
+           Dünýäde kim galyp myrada ýetdi?
+           Muhapbet2 çyragy öçe başlady.
+
+           Kazy bolan bir jowapda durmady,
+           Gije mähnet tartyp, kitap görmedi,
+           Şerigat ugrunda dogry ýörmedi,
+           Nebs üçin imansyz öte başlady.
+1 Pisat – erbet, bozuk.
+2 Muhapbet – söýgi, yşk.
+
+           Magtymguly aýdar, barha ýol tany,
+           Bäş gün synamaga iberdi seni,
+           Senden ozal öten jananlar kany?
+           Her kim nobatynda öte başlady.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Aý-günüňiz batmaga',
+    '(Sopular)
+
+           Altmyş ýaşan, ýetmiş ýylky sopular,
+           Az galypdyr aý-günüňiz batmaga,
+           Çöl ýerlerde tazy görmän, tilkiler
+           Hyýal eder ýatan şiri atmaga.
+
+           Garga diýer, ýokdur men dek şabaza,
+           Müň garga ýygnansa degmez bir baza,
+           Güne gargyş eden sary kelpeze1 ,
+           Dem çekedir aždarhany ýutmaga.
+
+           Agsak keýik müň garsaga ýetdirmez,
+           Şir beçesi togsan tilkä atdyrmaz,
+           Öli ýylan müň kelpezä ýutdurmaz,
+           Akyl gerek bu işlere ýetmäge.
+1 Kelpeze – hažžyk.
+
+               Ýetmiş ýaşap, ýat etmezler tobany,
+               Hormat bilen oýnadarlar gahbany1 ,
+               Müňkürler jem bolup, ýykdy Käbäni,
+               Ýezit gitdi agaçlaryn satmaga.
+
+               Görüň bu eýýamy, pelek gerdişi –
+               Pakyra zulm etmek boldy werdişi,
+               Hak ýolunda dogry gezen derwüşi
+               Goýmadylar öz halyna ýatmaga.
+
+               Ýüregim sabyrdan, gitdi karardan,
+               Ýaman işdir bogaz bolmak är-ärden2 ,
+               Bizara gelip men beýle diýardan,
+               Jür bolup men başym alyp gitmäge.
+
+               Magtymguly, bildim: bagtym biweçdir,
+               Ganymym güýçlüdir, ykbalym keçdir,
+               Niýetim Käbedir, hyýalym haçdyr,
+               Ykrarym bar haç towabyn etmäge.
+
+   1 Gahba – loly.
+    2 Är-ärden – bir adamdan bir adamyň ýaman gep eşitmegi, ýüregi
+
+çişmegi.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Başlady',
+    'Gömüldi derýalar, ýykyldy daglar,
+            Ýetimler göz ýaşyn döke başlady;
+            Orramsydan bolan haramhor begler
+            Ýurdy bir ýanyndan ýyka başlady.
+
+            Jemagatsyz azan bir gury sesdir,
+            Niçe mollaň okan ylmy hebesdir,
+            Kazylaryň käri çaý bile nasdyr,
+            Bir bozuk nyşana tuta başlady.
+
+            Işanlary her gapyda tapylar,
+            Mollalarna ýok myjabat ýapylar,
+            «Öwliýä men» diýip, jögi sopular
+            Gygyryp, asmana böke başlady.
+
+            Çykar beýewana gyzy-gelini,
+            Ak ýüzüne ýapar gara telini1 ,
+            Kemçinlik eýleýip ýygan puluny,
+            Düzedip özüne daka başlady.
+
+            Dünýäde süýthoryň pul ýygma derdi,
+            Baýlaryň mallary bizekat erdi,
+            Toba ediň, gözüm bir ýaman gördi,
+            Dost dostuň köňlüni ýyka başlady.
+1 Tel – tar, saçyň bölegi, zülp.
+
+Magtymguly, başa baglap selleler,
+Aç böri deý ýortup niçe mollalar,
+Halaldan, haramdan ýygnap gallalar,
+Herne tapsa, dynmaý dyka başlady.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Aglar men',
+    'Eý ýaranlar, ömrümden
+   Geçdi diýip aglar men.
+   Gitdi aklym ornundan,
+   Çaşdy diýip aglar men.
+
+   Giden dönmez ýolundan,
+   Düşmez ýaman pälinden,
+   Diýanat halk elinden
+   Uçdy diýip aglar men.
+
+   Häzir biziň zamanda
+   Ýaman sözler zybanda,
+   Zulum işler jahanda
+   Joşdy diýip aglar men.
+
+   Bu eýýamda betkärler
+   Ýüz til bilen aldarlar,
+   Hany niçe dildarlar? –
+   Göçdi diýip aglar men...
+
+      Niçe sada deň-duşlar,
+      Şeýtan biligin başlar,
+      Ýüz öwürip gardaşlar
+      Gaçdy diýip aglar men.
+
+      Görüň pelegiň oýnun:
+      Üzer alymyň boýnun,
+      Niçe janlar ýer goýnun
+      Guçdy diýip aglar men...
+
+      Magtymguly, diýr merde,
+      Dünýä bentdir, ten perde,
+      Bu başym sansyz derde
+      Düşdi diýip aglar men.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Galmady',
+    'Bir sözüm bar, diýsem şaha, soltana.
+Dostlar meňgi bolup, daman galmady;
+Döwletli baýlaryň duz hareminde,
+Desterhan kesilip, myhman galmady.
+
+Gaýta gybatkeşler özün düzetdi,
+Süýthor dünýä bilen özün göz etdi,
+Taňrydan bihabar goşun uzatdy,
+Taňryny bir bilen merdan galmady.
+
+        Nirde şugul bolsa, boldy mugteber1 ,
+        Dünýäni baky diýip, ýygnady çoh zer,
+        Aýdyp, ötüp gitdi ol Haýrul-beşer
+        Taňrydan gorkunçly myhman galmady.
+
+        Bahyl bolan baý adyny göterdi,
+        Pasyklar2 pysk ile ömrün ötürdi,
+        Ähli-dil3 dünýäden özün gutardy,
+        Dertliler derdine derman galmady.
+
+        Halaýyk barçasy jesethor boldy,
+        Alymlar ylmyndan galdy, kör boldy,
+        Sypahy4 barysy parahor boldy,
+        Şa aldynda adyl diwan galmady.
+
+        Müfti öz sözüne kylmady amal,
+        Şerigat işine eýledi haýal,
+        Halk içine düşdi hyrs atly kesel,
+        Taňryny bir bilen ynsan galmady.
+
+        Gyzlar, juwanlarda galmady haýa,
+        Ýerden götermedi bereket-giýa5 ,
+        Derwüşler tagatyn eýledi ryýa,
+        Ýurtda keramatly işan galmady.
+1 Mugteber – ygtybarly.
+2 Pasyk – bozuk
+3 Ähli-dil – ýürekdeş adamlar.
+4 Sypahy – emeldar, harby gullukçy.
+5 Giýa – ot, ösümlik.
+
+        Magtymguly aýdar, barha ýol tany,
+        Burunky1 hemneşin2 dostlaryň kany?
+        Abraý bile tabşyrawer bu jany,
+        Munda gelen ýary-ýaran galmady.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Fetdah',
+    'Eýran, Turan indi goluň astynda,
+      «Sürgün» indi bu döwrany, sen fetdah!
+      Külli türkmen oýnar çölüň üstünde,
+      Dökme, bilgil, nahak gany, sen fetdah!
+
+      Bu gün şa sen, erte geda bolar sen,
+      Ilden-günden, dilden jyda bolar sen,
+      Bir gün janyň çykyp, pida bolar sen,
+      Gazanypsyň çoh günäni, sen fetdah!
+
+      Gözüm ýetýär, bilseň, başym alar sen,
+      Ýa kündeläp meni çaýa salar sen,
+      Men hak diýdim, sen çoh günä galar sen,
+      Bu alyşyň bilen jany, sen fetdah!
+
+      Sen türkmeniň ilin, gülün soldurdyň,
+      Ganlar döküp, gözel ýurdum doldurdyň,
+      Şehit bolanlaryň serin galdyrdyň,
+      Unudar sen tagty-käni, sen fetdah!
+1 Burunky – öňki.
+2 Hemneşin – gürrüňdeş, ýürekdeş
+
+Halkyň öji çohdur, ykbalyň ýaman,
+Ýa öler sen, ýa zyndandyr bigüman,
+Tagtyň synyp, diýme galar men aman,
+Çüňki zäher kyldyň nany, sen fetdah!
+
+Permanyňdan talaň düşdi illere,
+Goluň urduň nähak, gözde sillere,
+Kyrk gamçydan buýurdyň näzik billere,
+Derýa etdiň gözde huny, sen fetdah!
+
+Aýyrdyň atadan, ene, gardaşdan,
+Gollardan, aýakdan, sakaldan, saçdan,
+Dendandan, zybandan, akyldan, huşdan,
+Zyndan etdiň bu jahany, sen fetdah!
+
+Aýyrdyň, aglaýyp galdy ýarlarmyz,
+Pelege ýetendir tartan zarlarmyz,
+Adamlar asylgy durýar darlarmyz,
+Ýüzden tutduň, bil, gassaby, sen fetdah!
+
+Pyragy, dert aýdyp, derde ýanmaly.
+Gan ýuwudyp, zalym fetdah ganmaly,
+Diri özüm, läkin öli sanmaly, –
+Aňsa öldir, bu destany ol fetdah.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Ýörmeli boldy',
+    'Eý ýaranlar, musulmanlar,
+Jebirde ýörmeli boldy.
+Nije zähmet çeken janlar
+Jepany görmeli boldy.
+
+Jahan giňdir, melamat kän,
+Arada köýdi şirin jan,
+Üstümizde rehimsiz han
+Bil, ahyr urmaly boldy.
+
+Azypdyr gökleň hanlary,
+Kän görer bize hallary,
+Goýman sürdi bar mallary,
+Göz dikip durmaly boldy.
+
+Magtymguly, aýama jan,
+Biliň guşa, geý gazap don,
+Hetden aşdy, bu zalym han
+Ahyr tor gurmaly boldy.
+
+       IV
+
+DURMUŞY GOŞGULAR',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Çilim',
+    'Dostlarym, duşman biliň,
+                     her kimsede bardyr çilim.–
+        Ile mahub eýlemäň,
+                     bir lagnaty kärdir çilim,
+        Sözleýen haly demi
+                     bir apyýy1 mardyr çilim,
+        Tartar özün özüne,
+                     owsunçy zeňgardyr2 çilim,
+        Nirde bolsa pasykylar,
+                     ortada bardyr çilim.
+
+        Düşgeç ol mejlis era,
+                     kim çeker, bimar eder,
+        Al bilen aldap seni,
+                     her dem özüne zar eder,
+        Sag-salamat goýmagy
+                     indi özüne ar eder,
+        Gol-aýagyn şel kylyp,
+                     halk içre any har eder,
+        Bu sypatlar birle ol,
+                     çekmäň ki, betkärdir çilim.
+1 Apy – zäherli uly ýylan.
+2 Zaňgar – zeňli, posly, jirimli.
+
+       Kah-kah eýläp her zaman,
+                   ol görkezer bet roýuny
+       Burnuňyzdan ysgadar,
+                   almaň oşol bet boýuny1 ,
+       Eý musulmanlar, halal diýip,
+                   kylmaňyz hiç oýuny2 ,
+       Ahyretniň oýun etseň,
+                   tiz goýuň bu oýuny,
+       Ahyretniň oýun
+                   etmezlerge derkardyr çilim.
+
+       Her kişi hoşhal olupdyr jimi,
+                    lam, mim atyga,
+       Nige pikr etmez oşol
+                    kim bu pelidiň zatyga,
+       Mundürer göýä any
+                    her dem şeýatyn3 atyga,
+       Syhr edip her dem
+                     any tartar özüniň zatyga,
+       Çünki betkärler gözüge
+                    daýyma bardyr5 çilim.
+1 Boý(buý) – ys.
+2 Oýuny – oý-pikirini.
+3 Şeýatyn – şeýtanlar.
+4 Syhr etmek – jadylamak.
+5 Bar – miwe, bu ýerde ýakymly manyda.
+
+       Gul-gul eýläp, her säher
+                    ol agzyndan otlar saçar,
+       Her kişiniň akly bardyr
+                    beýle betboýdan gaçar,
+       Kim any elge alar,
+                      göwsün onuň sary1 açar,
+       Ygtykat etse halal diýip,
+                    dini yslamdan geçer,
+       Dini-yslamdan geçerge
+                    bir sebäpkärdir çilim.
+
+       Şeýle duşmandyr ki tanla,
+                   başyňyzny aýlaýyr,
+       Wagty ýetmän solduryp,
+                   bu jismiňiz läş eýleýir,
+       Gaýgy, hasret ýok ekenler,
+                   çeşmiňiz ýaş eýleýir,
+       Her zaman düýt3 ýutduryp
+                   öýkeniňiz daş eýleýir,
+       Bary gapyl olmaňyzlar
+                   şeýle betkärdir çilim.
+1 Sary – tarap.
+2 Ygtykat etmek – ynanmak, uýmak.
+3 Düýt – tüsse.
+
+       Eý ýaranlar,
+                     nehi1 kylmyşdyr any bizge ahat2
+       Pikir edip, zikir eýledi
+                     kim halk era abdy3 samat4
+       Tebdil etmek5 ,
+                     nehi kylgan işini bizge ne hat?
+       Kim ki müňkürdir,
+                     anyň aldynda bardyr ol lahat6 .
+       Aýdadyr Magtymguly,
+                     bu bendege nardyr çilim.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Çilimkeş',
+    'Hak seni raýyňa goýmuş jahanda,
+          Ede bileniň etgil munda, çilimkeş;
+          Diwan gurlan güni, hasap jaýynda,
+          Jogabyň nämedir anda, çilimkeş.
+
+          Kuwwatyň kemelder, güýjüň azdyrar,
+          Keýpi kellä gelse, aklyň azdyrar,
+          Süňňüňi syzdyrar, etiň gyzdyrar,
+          Bir nyşana budur sende, çilimkeş.
+1 Nehi – gadagan.
+2 Ahat – bir, ýalňyz, bu ýerde hudaý manysynda.
+3 Abd – bende.
+4 Samat (samad) – hemişelik, hökümdar.
+5 Tebdil etmek – çalşyrmak, özgertmek.
+6 Lahat – gör.
+
+         El götergil beýle nahak talaşdan,
+         Puluň köýer, janyň ýanar bu başdan1 ,
+         Erte garnyň doldurarlar ataşdan,
+         Zahmy2 çykmaz, galar janda, çilimkeş.
+
+         Iki dünýä ýagşylyk ýok egriýe, -
+         Kişi bolsaň, gadam goýgul dogryýa,
+         Binamaza, gybatkeşe, ogryýa,
+         Ýeldaş bolar ýowuz günde çilimkeş.
+
+         Magtymguly, möwlam jandan ýakyndyr,
+         Çilim bir şor suwdur, ten bir zemindir
+         Iman bir tilkidir, göwre bir hindir,
+         Tilki tüssä dözmez hinde, çilimkeş.
+
+1 Bu ýerde baş goşan işiňden manyda
+2 3ahym — ýara, baş.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Halyň seniň',
+    'Ogry bolsaň, diňlegil, bolgaý niçik
+                                   halyň seniň;
+  Kişi malyga gider köňlüň, gözüň,
+                                   päliň seniň;
+  Misli şeýtan aldagydyr
+                            mekiriň-alyň seniň,
+  Bu ýalançylyk bile ötgeý
+                            mahy-salyň1 seniň,
+  Dowzaha dogry barar, billa, giden
+                                   ýoluň seniň.
+
+  Erte-magşar it bolup, yňranyp iýgeý
+                                  sen etiň,
+  Ýüzüni görmez Muhammet sen kibi pis
+                                  ymmatyň,
+  Hem o dünýä şefgatyň2 bolmaz bu dünýä
+                                         döwletiň,
+  Her zaman, her sagat içre artdyrarlar
+                                     mähnetiň,
+  Bu jahym3 içre tutar möýler
+                              sagu-soluň seniň.
+1 Mah bilen sal — aý bilen ýyl (ýaş).
+2 Şefgat – halaslyk, kömek, ýardam manysynda.
+3 Jahym – jähennem.
+
+  Aglaýyr sen, gözleriňden ýaş ýerine
+                                  gan gidip,
+  Munça mähnetler çekip, göwsüň dilip,
+                                  weýran edip.
+  Yssy etmez başyňa, toprak döküp,
+                                  haýran edip;
+  Gylça yssy görmegeý sen, dag gadar
+                                  puşman edip,
+  Döküler gaýdyp dahanyndan
+                             pohuň-bowluň seniň.
+
+  Ol Muhammet garşysynda hem uýalgaý
+                                   sen o gün,
+  Gör ölüm bolsa idi, istärdiň ölgeý
+                                   sen o gün,
+  Gürzi astynda melek1 zarbynda galgaý
+                                   sen o gün.
+  Ol huraýyş atlyg ýylanga lukma bolgaý
+                                   sen o gün.
+  Maýmynyň suratyda bolgaý ki
+                                   tymsalyň seniň.
+1 Melek – perişde.
+
+  Aýdadyr Magtymguly, görseň günähiň,
+                                  eý gözüm,
+  Çekiler gyldan-gyla magşar hasabyň,
+                                  eý gözüm.
+  Ýüz gara, til gysgadyr, bolmaz jogabyň,
+                                  eý gözüm.
+  Mal ýerine bialaç biýr sen sowabyň,
+                                  eý gözüm.
+  Hem günähiň boýnuňa goýgaý,
+                                  budur halyň seniň!',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Gybatkeş',
+    'Rozy-magşar şikwe1 eder tiliňden,
+          Ryswalygyň budur seniň, gybatkeş;
+          Ömrüň ýele berme, azma ýoluňdan,
+          Agyrtmagyl iliň-günüň, gybatkeş.
+
+          Bulut dek kükreýip, bark2 kimin gürlär,
+          Gähi buzdan tagtlar, ataşdan öýler,
+          Gatyr dek içýanlar, bugra dek möýler
+          Bedeniňden sorar ganyň, gybatkeş.
+1 Şikwe – şikaýat, arz.
+2 Bark – ýyldyrym.
+
+         Halyň görüp, purkan1 bolup aglarlar,
+         Özüň syjjyn atly jaýda baglarlar,
+         Tiliň çekip, demir bilen daglarlar,
+         Gara bolar şol gün ýüzüň, gybatkeş.
+
+         Ýaman söz aýyrar ýagşy dostuňdan,
+         Günähiň agramy basar üstüňden,
+         Jähennem içinde tamug astyndan
+         Peleklere çykar üýnüň, gybatkeş.
+
+         Magtymguly aýdar, iliň gözünden
+         Düşüban, hor bolsaň, görgül özüňden,
+         Tiliňni çekmeseň haram sözüňden,
+         Belli bibat bolar diniň, gybatkeş.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Görüner',
+    'Seýil edeliň bu jahana,
+              Jahanda näler görüner,—
+              Isgender, Jemşit saldyran
+              Beýik binalar görüner.
+
+              Meşeleri şir-peleňli,
+              Gülgüzar nowça bileňli,
+              Gün düşmedik ter öleňli
+              Çeşmeli çaýlar görüner.
+1 Purkan bolmak – bilip aňlamaklyk, saýgarmaklyk.
+
+Ýaradan bar etdi ýokdan,
+Daglar, dünýä sürer çohdan,
+Sorsaň habar berer Nuhdan,
+Garrygan awlar görüner.
+
+Çaglan, ýalan dünýä, çaglan!
+Ne gülen galar, ne aglan...
+Gar ýagmyrlap burjy baglan
+Kemerli daglar görüner.
+
+Serinden dumany gitmez,
+Eýýam geçip, ýere batmaz,
+Garryp galmaz, ölmez, ýitmez
+Gorganly daglar görüner.
+
+Ne watan galar, ne çeten,
+Senemler seýl edip ýeten,
+Toty, bilbil mesgen tutan
+Howaly baglar gerüner.
+
+Magtymguly, kim bar ölmez?
+Ajal doýmaz, zemin dolmaz,
+Asman inmez, ýer çöwrülmez,
+Gün ýörir, aýlar görüner...',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Soňudagy',
+    'Eý söwdügim, Soňudagy,
+                   Dagdanlydyr biliň seniň;
+                   Duşman görse döwdüleşer
+                   Ýomut, gökleň iliň seniň.
+
+                   Kesgin-kesgin ýoluň geçer,
+                   Gyzyl baýyr göwün açar,
+                   Sowuk çeşme suwuň içer
+                   Dürli-dümen malyň seniň.
+
+                   Dürli-dümen otuň biter,
+                   Her deräň bir ile ýeter,
+                   Hatarlanşyp kerwen öter,
+                   Naýbadaýdyr ýoluň seniň.
+
+                   Oýlukda ýaýlany gursak,
+                   At çapdyryp, baýrak bersek,
+                   Töreýitde harman gursak,
+                   Nan dökmek hyýalyň seniň.
+
+                   Magtymguly, set açandyr,
+                   Bu döwran senden geçendir,
+                   Üstüňden iliň göçendir,
+                   Niçik geçer halyň seniň?1
+
+    1 Bagşylar bu goşgyny «Jenan ýarym» diýip aýdýarlar. Sary bag-
+
+şynyň beren maglumatyna görä, Magtymgulynyň ýaşaýan ýeri bolan',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Ýaýlahlary bar',
+    'Sapar edip barsak Nuha mülküne,
+               Köňül isläni dek ýaýlahlary bar;
+               Seýran etsek gunçasyna, gülüne,
+               Bakjasynda bilbil oýnahlary bar.
+
+               Ýeri sazdyr, hasta bolan sagalar,
+               Arryk, müflis, garyp bolan oňalar,
+               Serçemen agajy bile deňeler,
+               Ajap guş salmaly awlahlary bar.
+
+               Meýdany doludyr şeker gamyşdan,
+               Dileg etmez hergiz gardaş-gardaşdan,
+               Üsti ýapylgydyr kümüş kerpiçden,
+               Her kimniň özi üçin suwlahlary bar.
+
+               Baş goşmandyr, arryk, agsak şa bile,
+               Atdyryp dükanbyl sary ýaý bile,
+               Şirwan galasydyr, any kim bile,
+               Her buruçda altyn baýdahlary bar.
+
+               Magtymguly, sazdyr, söhbetdir işiň,
+               Ajaldan, gaýrydan bolmaz teşwişiň,
+               Baýlaryň, pakyryň ähli derwüşiň
+               Ýurdy bolar ýaly persahlary bar.
+Soňudaga Eýran şasynyň goşunlary hüjüm eden wagtlarynda, şahyr ýa-
+şaýan ýerini mejbury taşlap, Garrygala göçmeli bolupdyr. Bu goşguda
+onuň ýaşan ýeri Soňudag bile hoşlaşygy görkezilýär.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Jahan peýda',
+    'Gelse nowruz äleme, reň kylar jahan peýda,
+  Ebrler1 awaz urup, dag kylyr duman peýda.
+  Bijanlar jana girip, ederler dahan peýda,
+  Görmedigiň giýalar2 , gögerip rowan peýda,
+  Aýdarlar haýwanatga, hem sudy-zyýan peýda,
+  Ýer ýüzüne ýaýylyp, ýörirler nahan peýda,
+  Wabeste3 dahan4 guşlar, kylarlar zyban peýda.
+
+  Çöl tarapyn berk edip, der5 açar suwa harçeň6 ,
+  Zemin sebzezar olup, teninden aýrylar zeň.
+  Sebze içre sandugaç7 ýüz tilde kylar eheň,
+  Jünbendeler8 mest olup, göýä içmiş arak, beň,
+  Her aşýanaň özüne öz owazy bolar geň,
+  Zemin hazarpuş9 olup, gül bitirmiş reňbe-reň,
+  Hyruja gelip älem, kylarlar pygan peýda.
+1 Ebr – bulut.
+2 Giýa – ot, ösümlik.
+3 Wabeste – bagly, bek, ýapyk.
+4 Dahan – agyz.
+5 Der – gapy.
+6 Harçeň – leňňeç.
+7 Sandugaç – garlawaç.
+8 Jünbende – hereket edýän, mör-möjek.
+9 Hazarpuş – gök, ýaşyl geýnen.
+
+  Serweri seda birle, jahan ýüzi abatdyr,
+  Magrury-serwer olma, sany serwer bibatdyr,
+  Hak yşkynda zindeler, biliň, baky-haýýatdyr.
+  Her tende yşk bolmasa, rozy ezel mematdyr1 ,
+  Ýaz ýetinçä ýer-gögi. günden-güne zyýatdyr.
+  Bir heşri2 -kyýamatdyr, bir ýowmy3 -arasatdyr4 ,
+  Dähr içre bolar her dem, jahan içre jan peýda.
+
+  Zerbaba zowkun olma, baka ýokdur döwletde,
+  Ömrüňni bada berme sen bu daryl-mähnetde5 ,
+  Ýeter saňa iru-giç, ne ýazylsa kysmatda,
+  Janyňa jepa eýläp, munça gezme hasratda,
+  Sogap ýagşy amalda, ýa hut ýagşy niýetde,
+  Älem barça hyzmatda, adam ýatyp gaflatda,
+  Hasylyň ataş bolgaý, eýleseň ýaman peýda.
+
+  Magtymguly, ýyglar men, bu bagty syýahymdan,
+  Gorkar men jan äpeti, el-aýak güwähimden,
+  Umydym hasyl olmaz bu ömri tebahymdan6 ,
+  Jan köýdi jeset içre bu ataşy-ahymdan,
+  Elim sunup dilär men hajatym ylahymdan,
+  Mende bir umyt oldur, ol keremli şahymdan,
+  Eýlegeý arasatda, gül kibi iman peýda.
+1 Memat – öli.
+2 Heşir – mähelle, märeke, ýygnanyşyk.
+3 Ýowm – gün.
+4 Arasat – söweş meýdany.
+5 Dary-mähnet – jepa öýi
+6 Ömri-tebah – bozulan ömür, haýyp geçen ömür.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Içinde',
+    'n öçen ýalydyr.
+
+Adam aýrylsa huşundan,
+Gorkar ýatanda düýşünden,
+Eýýama baksaň, işinden
+Şu köňlüm geçen ýalydyr.
+
+Bedasyl ykbaly ýörmek,
+Öýsüz eline mal bermek,
+Akmaga syryňny bermek
+Öz aýbyň açan ýalydyr.
+
+Öter ömrüň – dünýä seýlin,
+Hak ýoluna bagla biliň,
+Agzy ala bolan iliň
+Döwleti gaçan ýalydyr.
+
+Aňlamasaň, görde gizlen,
+Akyldyr iş soňun gözlän,
+Gepin tapyp, ýagşy sözlän
+Misli dür seçen ýalydyr.
+
+Ärden gitse ygtybarlar,
+Sowar ondan dosty-ýarlar,
+Hünärli, ykbally ärler
+Malu-pul guçan ýalydyr.
+
+Magtymguly, yllatly göz,
+Haraba döner degse duz,
+Märekede bir jaýsyz söz
+Çermenip... ýalydyr.
+
+         Hasy näbilsin
+
+Öz gadryny özi bilmez adamdan,–
+Aňlamazlar amu-hasy näbilsin?
+Ne tama bar çakyr içen gedemden,
+Buzahor ýagşyny, ýasy näbilsin?
+
+Ýamana ýagşy söz ýokmaz, taşlanar,
+Aňlar äriň oýlanmasy güýçlener,
+It ýalyň topraga dökseň, hoşlanar,
+Topragy, tabagy, tasy näbilsin?
+
+Aňla sözüm, ner zarbyny ner tanar,
+Har bakan har tanar, zergar zer tanar,
+Eý ýaranlar, är ýigidi är tanar,
+Namartlar ýagşyny, pisi näbilsin.
+
+Magtymguly aýdar: sözlerim hakdyr,
+Emma ki hak söze ten beren ýokdur,
+Bir gözli diýmese: garadyr, akdyr,
+Kör pakyr kümüşi, misi näbilsin?
+
+        Çatyp bolmaýyr
+
+Beýik dagyň başyndaky üç agaç,
+Düýbi bir bolmasa, çatyp bolmaýyr,
+Düýe ýaly dagda ýatan daşlary
+Gol bilen göterip, atyp bolmaýyr.
+
+Kelte diňden bolmaz beýik minara,
+Ýaman heleý duşsa bir ýagşy äre,
+Başyn kesip, ganyn döküp kenara,
+Ýa öldurip, ýa-da satyp bolmaýyr.
+
+Il içinde seniň ulalsa adyň,
+Seni ýaman görmez ýakynyň, ýadyň,
+Golunda bolmasa bir gerek zadyň,
+Meniňki diýip, başyn tutup bolmaýyr.
+
+Pakyrlar mal istär, baýlar zer diýer,
+Ýekeje eşekli: atym –ner diýer,
+Dünýäge doýmak ýok, ýene ber diýer,
+Köňül maksadyna ýetip bolmaýyr.
+
+Magtymguly, sözüň diňlän bolmasa,
+Nesihata gulak salan bolmasa,
+Ýigit köňül söýenini almasa,
+Dynç alyp, parahat ýatyp bolmaýyr.
+
+                       Ýagşy
+
+        Hoş günüňde hoşlaşyban gezmäge,
+        Baryşmaga, gelişmäge ýat ýagşy.
+        Gam günüňde, galmagalyň üstünde
+        Dogan ýagşy, gardaş ýagşy, zat ýagşy.
+
+        Halal işle, ahyretden wehmiň bar,
+        Pakyry ynjytma, köňül rehmiň bar,
+        Aşyk aýdar, azda-köpde pähmiň bar,
+        Akyl bolsaň, söze gulak tut ýagşy.
+
+        Ýürek daýanjydyr ogul-zürýaty,
+        Şirin mahbup erer süňňüň kuwwaty.
+        Ýigidiň dünýäde üçdür myrady:
+        Mahbup gerek, ýarag gerek, at ýagşy.
+
+        Mollalar ahyret sözün söýlärler:
+        «Müňkür olma, geljek işdir, eýlärler»
+        Kim biler ki ahyretde neýlärler,–
+        Iýip, içip, münüp, guçup öt-ýagşy.
+
+        Nefg1 almaýan kişi sözden, öwütden,
+        Aýralygy ýokdur gury söwütden,
+        Deň-duş bilmez, magny aňmaz ýigitden
+        Agylynda yssy beren it ýagşy.
+1 Nefg – nep, peýda.
+
+        Magtymguly, dostdan syryň gizleme,
+        Biwepadyr, nämähremi gözleme.
+        Ümsüm otur, halk içinde sözleme,
+        Sözlär bolsaň, söz aslyna ýet ýagşy.
+
+                  Gelen-de bardyr
+
+        Günde ýüz müň göç hem bolsa ol dünýä,
+        Ol mukdar bu dünýä gelen-de bardyr.
+        Ýüz müň akmak bolup gitse raýyna,
+        Ýüz müň özün ýola salan-da bardyr.
+
+        Ýüz müň derwüş syna daglap oturan,
+        Ryýazatda1 bilin baglap oturan,
+        Niçe ýerde görseň, ýyglap oturan,
+        Ýüz müň ýerde bigam gülen-de bardyr.
+
+        Seýran etseň bu dünýäniň tört burçun,
+        Garyşypdyr halal, haram, arwah, jyn...
+        Nijeler tämizläp ýol giderler çyn,
+        Nije ýüz müň gümra bolan-da bardyr.
+
+        Ugursyz eýýamlar, aňlamaz ärler,
+        Käşki soran bolsa, saçaýdym dürler..
+        Kany ol Süleýman, Rüstemler, şirler
+        Diýmäň, busup, sypyp galan-da bardyr.
+1 Ryýazat – terkidünýälik, durmuşdan el çekmek.
+
+        Magtymguly, köňle gaýgy getirme,
+        Bu bir iş wagtydyr, özüň ýitirme,
+        «Sözüm aňlan ýok» diýp, ümsüm oturma,
+        Jahan giňdir, çendan bilen-de bardyr.
+
+                   Ykbal bolmady
+
+        Köp ýigitler gelip geçdi jahandan,
+        Niýetine görä ykbal bolmady.
+        Gerdişi keç gahba pelek elinden
+        Ertiri şat bolan öýlän gülmedi.
+
+        Günde kepen biçer bu ajal-haýat1 ,
+        Bir beladyr, hiç gutarmaz bu saýýat.
+        Pelle-pelle aşak düşer adamzat,
+        Bu gün görenleriň ertä galmady.
+
+        Bir degişhanadyr dünýäniň ýüzi,
+        Nesihatym diňle, eşit bu sözi.
+        Ajal ýetip adam ýumulsa gözi,
+        Göýä bu dünýäge geldi, gelmedi...
+
+        Hemaýun gorganyn saldyran Harun,
+        Dünýäni tört bölen kany Peridun?
+        Kyrk şähri gyzyldan dolduran Karun —
+        Gözi gumdan doldy, puldan dolmady.
+1 Haýat – biçimçi, geýim tiken.
+
+        Magtymguly haýran, her ýana bakar,
+        Bu ne gudrat işdir: suwdan ot çykar,
+        Ýagşy oguldan rahmet arygy akar,
+        Lagnatkerde ogul boldy, bolmady.
+
+                Köňül hoşundadyr
+
+              Köňül bir beden şahydyr,
+              Her söz köňül hoşundadyr,
+              Ýedi yklymnyň tagtynda
+              Her biri bir işindedir.
+
+              Daglaryň çykyp-inmesi,
+              Çohlaryň göçüp-gonmasy,
+              Dünýäniň agyp-dönmesi
+              Pelegiň gerdişindedir.
+
+              Kimdir bu dünýäde galan?
+              Maňa çyndyr, size ýalan,–
+              Bir akdyr, bir gara ýylan1
+              Her kimsäniň başyndadyr.
+
+              Degresi zümerret daşly,
+              Ner babatly, kerk gardaşly,
+              Altyn tagtly, almaz täçli
+              Döw begleri daşyndadyr.
+1 Bir akdyr, bir gara ýylan — gije-gündiz manysynda.
+
+     Aýlanar geçer eýýamlar,
+     Gojalar gurlan eýwanlar,
+     Gündiz gören aşna janlar ?
+     Gije ýatsa düýşündedir...
+
+     Üç essesi däli derýa,
+     Bir esse ýerde müň gowga,
+     Kim biler, bu köne dünýä,
+     Ýa reb, niçe ýaşyndadyr?..
+
+     Magtymguly diýr, haraýdyr,
+     Ajal okdur, pelek ýaýdyr,
+     Dünýä bir köne saraýdyr,
+     Adamzadyň gaşyndadyr.
+
+        Pygan eglenmez
+
+Bilbil hüjüm eden howaly baglar,
+Bilbil senden gider, pygan eglenmez,
+Ýagyşly, ýagmyrly ümürli daglar,
+Siller senden gider, duman eglenmez.
+
+Adam ýaradylmyş belentli-pesli,
+Akylly, pikirli, aňly, paýhasly,
+Ýigitlik – göýä bir ýaz günnüň pasly,
+Bahar senden gider, zaman eglenmez.
+
+Gelene garşy çyk, bolsa mejalyň,
+Ýagşy tutawergil niýetiň-päliň.
+Dünýä döwranynda açyk tut eliň,
+Döwür senden gider, döwran eglenmez,
+
+Bu dünýä gowgadyr, bir galmagaldyr,
+Kimi berhä-berdir, kim alha-aldyr.
+Ýigitler, bu dünýä şuňa mysaldyr,
+Bark urar asmanda, baran eglenmez.
+
+Bir menzildir, üç gün iýip-içensoň,
+Ornaşyp, giňirnip, bilin açansoň,
+Üzeňňiň çekerler, tört gün geçensoň,
+Bäş günden ýokary myhman eglenmez.
+
+Goýnun açar bir gün, ýer seni gizlär,
+Gara gumdan dolar bu gara gözler,
+Adyňa buýsanma, çemenli düzler!
+Çemen senden gider, seýran eglenmez.
+
+Magtymguly aýdar aryf dostuna,
+Kim galar düşmeýen ajal destine?
+Pelek bir gün salar ýeriň astyna,
+Agyzdan til gider, zyban eglenmez.
+
+       Göze myhmandyr
+
+Gara daşdan gara gyly saýlan göz,
+Çöňňeler görejiň, göze myhmandyr.
+Gelen aş diýp gelmez, turşutmagyl ýüz.
+Nana mähtäç däldir, söze myhmandyr.
+
+Agyrdyr heňňamlar, uzakdyr ýollar,
+Soraşsa ýigitler, sözleşse tiller,
+Baharda açylan reňbe-reň güller
+Bir pasyl açylar, ýaza myhmandyr.
+
+Ne azym hünärler, ne syrly işler,
+Ne howaly daglar, belent agaçlar,
+Altmyş elwan, ýetmiş dürli iýmişler
+Agaçdan aýrylar, güýze myhmandyr.
+
+Ýigidiň bolmasa ýaragy, aty,
+Şony belli biliň, ýokdur gaýraty!
+Gojaldykça, gider süňňüň kuwwaty,
+Ýigitligiň zory dyza myhmandyr.
+
+Bu dünýä ýüzüňe gülüm-gülümdir,
+Jepasy köp bolar, jebri zulumdyr,
+Her niçe ýaşasaň, ahyr ölümdir,
+Eziz janlar tende bize myhmandyr.
+
+Haky ýada salsaň hakdan gorkyňa,
+Şeýtan ara düşer, goýmaz erkiňe.
+Guba juwan, guwanmagyl görküňe,
+Gojalar sen, görküň ýüze myhmandyr.
+
+Magtymguly aýdar, iller, özümde,
+Ölüm ýadymdadyr, gorky gözümde,
+Her niçe ýaşasaň ýeriň ýüzünde,
+Adam ogly bäş gün duza myhmandyr.
+
+           Dünýä heý
+
+Suw ýüzünde gezen nije gämini,
+Bir gün agdarar sen saly, dünýä heý!
+Adam ogly barmaz bolsa yzyňdan,
+Munda diýp aldar sen maly, dünýä heý!
+
+Kimse bilmez haçan tükener demiň,
+Gabyr bolar bir gün basan gadamyň,
+Döwran gerdişinde gapyl adamyň
+Üstünden salar sen ýoly, dünýä heý!
+
+Habarsyz geler sen, ýaka tutar sen,
+Ýagşy eýläp, ýaman eýläp öter sen,
+Bir gün aşymyza awy gatar sen,
+Owal aldap biýr sen baly, dünýä heý!
+
+        Aramyň ýok, kararyň ýok, dynmaz sen,
+        Gije-gündiz gan içer sen, ganmaz sen,
+        Ahyr ne belaň bar, soňun sanmaz sen,
+        Ýykylgyn, ýumrulgyn, loly dünýä heý!
+
+        Aýlanar gyş geçer, ýaz, tomus güýz hem,
+        Tap getirmez oňa dag, deňiz, düz hem,
+        Ahyry geçermiz üstüňden biz hem,
+        Guwgaryp galar sen haly, dünýä heý!
+
+        Köpleri ýok etdiň, känini tutduň,
+        Muhammet hak resul janyny ýutduň,
+        Nemrut, Karun, Süleýmanyny nätdiň?
+        Şumudy etgeniň häli, dünýä heý!
+
+        Hemme adamlary salyp sen gama,
+        Ýaş, garry yzyňda, sergerdan heme,
+        Bir mada1 eşek sen, gelip sen deme,
+        Gasygy gam bilen doly, dünýä heý!
+
+        Magtymguly, dünýä syryn duýmaz sen,
+        Bu gün gördügimiz ertä goýmaz sen,
+        Nije wagtdan bäri iýip doýmaz sen,
+        Aklyny aldyran däli, dünýä heý!
+
+1 Mada – urkaçy.
+
+       Berme pelege
+
+Pelek bazy bermiş jümle jahana,
+Meniň ygtyýarym berme pelege,
+Köňül guşy uçup gitse her ýana,
+Mähtäç etme ganat, guruk-ýelege.
+
+Bidöwlet ynanjaň, käsip käýinjeň,
+Ýedi ýeser bolsa, biri göwünjeň,
+Baý halky ýaňra bor, garry – öwünjeň,
+Çalyp bolmaz çal agarsa çelege.
+
+Orda başy bolmak äre kyn bolar,
+Parça geýse, gyz-oglana syn bolar,
+Dul gözüne garry näzenin bolar,
+Ýene gözün aýlar köre, çolaga.
+
+Çepine aýlanan çarhy pelekdir,
+Dünýä gelen adam ogly heläkdir,
+Ýetmiş iki millet bölek-bölekdir,
+Bu bölekden goşman özge bölege.
+
+Ýol üstünde ölsem, ýola atsalar,
+Razy men, üstümden basyp ötseler,
+«Magtymguly» diýip, adym tutsalar,
+Gören göz jort atar, eşden gulaga.
+
+    Çaldy gitdi
+
+Bu dünýä bazygärdir,
+Bazysyn çaldy gitdi;
+Gümra edip nijäni,
+Ýoldaş diýp aldy gitdi.
+
+Akyl, pikr et her haçan,
+Ýüz gonan bar, ýüz göçen,
+Tagty asmandan uçan
+Süleýman öldi gitdi.
+
+Ýa mürewwetli şahym,
+Umydym, kyblagähim,
+Munça ýygnap Ybrahym
+Niçäni aldy gitdi.
+
+Jigerin daglaý-daglaý,
+Zünnaryn baglaý-baglaý,
+Nijeler aglaý-aglaý,
+Nijeler güldi gitdi.
+
+Nijeler güle dönmüş,
+Gül ýanyp küle dönmüş,
+Nijeler guma dönmüş,
+Nijeler soldy gitdi.
+
+      Akmaklyk bilen özüm,
+      Bilmedim sözlän sözüm,
+      Magtymguly, diýr, gözüm
+      Gan ýaşa doldy gitdi.
+
+              Iliňi
+
+Gel, köňül, men saňa öwüt bereýin:
+Yrak kylma görer gözüň-iliňni;
+Gymmatyn gaçyrma, ýerinde sözle,
+Uzatmagyl her näkese tiliňni.
+
+Doga eýle, bir söz diýseň aşagyn,
+Hormatlagyl gözel iliň uşagyn,
+Ýazdyrmagyl, mäkäm eýle guşagyň,
+Ýeri bardyr, ajap sakla biliňni.
+
+Çagyrylmaz jaýda görünme, barma,
+Başarsaň, sopynyň ýüzüni görme,
+Pikir-zikriň dünýä malyna berme,
+Karuna ogşatma tutan päliňni.
+
+Sözüne ber jowap, her kes sorasa,
+Özüň yrak eýle, namart ýörese,
+Bir misgin telmuryp, ýyglap garasa,
+Baha gurma, mugt berginiň malyňny.
+
+Gorkma namartlaryň köp diýp sanyndan,
+Gara görse, bary geçer janyndan,
+Ugrun tapsaň ötmäwergil ýanyndan,
+Bahyllardan yrak eýle ýoluňny.
+
+Akylly baş köpdür, akyl kesen azdyr,
+Datma şerap, uzak içseň ol azdyr,
+Mert köňlünde daýym bahardyr-ýazdyr,
+Mejnun umman içre salma salyňny.
+
+Magtymguly, akyl başymdan uçdy,
+Ykbalym ýatypdyr, döwletim göçdi,
+Pir-kazylar para istäp, gol açdy,
+Haram eýle, emma berme puluňny.
+
+       Bagtym garadyr
+
+Bu ne bela, bu ne hasrat, ne gowga!
+Rehm eden bolmady, bagtym garadyr;
+Nalyş etsem, arzym ýetmez ol huda,
+Rehm eden bolmady, bagtym garadyr.
+
+Pelek dost bolupdyr ala göz bile,
+Derdimi diňlemez, diýsem söz bile,
+Ilimni ugratdy dagy-düz bile,
+Rehm eden bolmady, bagtym garadyr.
+
+Görogly dek gaýratymdan aýryldym,
+Gojalyp men kuwwatymdan aýryldym,
+Iki didäm – zürýatymdan aýryldym,
+Rehm eden bolmady, bagtym garadyr.
+
+Şamu-säher ýata bilmän parahat,
+Ýüregim telmurar, köňül bitakat,
+Käbäm, kyblam, gardaş – boldular wepat,
+Rehm eden bolmady, bagtym garadyr.
+
+Pelege duş gelse gaçyp gutulmaz,
+Tartar oky adam ogly, atylmaz,
+Ýeke äriň ömür ady tutulmaz,
+Rehm eden bolmady, bagtym garadyr.
+
+Deňim-duşum her bir käre bulaşdy,
+Dostlar yrak düşdi, hijran dalaşdy.
+Yhlasym, myradym gama ulaşdy,
+Rehm eden bolmady, bagtym garadyr.
+
+Başyma şum pelek her gün sürüner,
+Ýowuz düşen göwre kime direner,
+Ýamanlar gözüne eziz görüner,
+Rehm eden bolmady, bagtym garadyr.
+
+Serwanym azaşdy, dargady malym,
+Ykbalym keç turdy, gitdi hyýalym,
+Altmyşa azm urdy gartaşan salym,
+Rehm eden bolmady, bagtym garadyr.
+
+         Gama erkim berdim, huşum dargatdym,
+         Saraý weýran, kerwenimi ugratdym,
+         Meňli hanym, yşk söwdasyn unutdym,
+         Rehm eden bolmady, bagtym garadyr.
+
+         Bu dünýä çohlara bipaýan boldy,
+         Garyp golun serdi, gury san boldy,
+         Namartlar mert boldy, ile han boldy,
+         Rehm eden bolmady, bagtym garadyr.
+
+         Ah, neýleý ötürdim ýigitlik çagym,
+         Daragty gurady, boş galdy bagym,
+         Dumany sowuldy, eredi dagym,
+         Rehm eden bolmady, bagtym garadyr.
+
+         Magtymguly, ýetmez ýyglap kararym,
+         Boş galdy dükanym, dargady barym,
+         Paý1 astyna düşdi namysym, arym,
+         Rehm eden bolmady, bagtym garadyr.
+
+1 Paý – aýak.
+
+          III
+
+SOSIAL-TANKYDY ESERLER
+                      Gaça başlady
+
+            Indi bildim zamananyň azanyn,
+            Ýamanlar ýagşydan gaça başlady;
+            Gaýta bedasyllar asylzadadan
+            Pisint etmän, töre geçe başlady.
+
+            Ryýa1 boldy köpüň okan namazy,
+            Taňry hiç birinden bolmady razy,
+            Pygamber ornunda oturan kazy
+            Para üçin elin aça başlady.
+
+            Şalarda galmady hökmi-adalat,
+            Bir pul üçin müfti berer rowaýat,
+            Bil: bu işler – nyşanydyr kyýamat,
+            Zalymlar bitoba öte başlady.
+
+            Pakyrlar horlanyp, ýüzün sarardyp,
+            Kim töresin tapyp, reňgin gyzardyp,
+            Zalymlar mazluma syrtyn gabardyp,
+            Gamçysyndan ganlar saça başlady.
+
+            Alymlar sözüne amal bolmady,
+            Mynapyklar2 ýaradany bilmedi,
+            Sopular pirinden taglym almady,
+            Dünýä üçin dinden geçe başlady.
+1 Ryýa – ikiýüzli, ýalan.
+2 Mynapyk – hudaýsyz, pidul.
+
+           Bir para sopular «sopy men» diýer,
+           Soramaz, zalymlar tagamyn iýer,
+           «Bizi ýagşy kişi diýsinler» diýer,
+           Her işikde halka gura başlady.
+
+           Garryga aýlandy biz gören ýaşlar,
+           Dolandy aýaga biz gören başlar,
+           Bimahal ýük baglap indi argyşlar
+           Ahyret kastyna göçe başlady.
+
+           Akyl bolan gamda ýüregin ezip,
+           Derdiniň dermanyn soraglap gezip,
+           Zamananyň pisat1 bolanyn ýazyp.
+           Panydan bakyýa geçe başlady.
+
+           Asylsyz begleriň nobaty ýetdi,
+           Gaýta şugul haramyga söz ýetdi,
+           Dünýäde kim galyp myrada ýetdi?
+           Muhapbet2 çyragy öçe başlady.
+
+           Kazy bolan bir jowapda durmady,
+           Gije mähnet tartyp, kitap görmedi,
+           Şerigat ugrunda dogry ýörmedi,
+           Nebs üçin imansyz öte başlady.
+1 Pisat – erbet, bozuk.
+2 Muhapbet – söýgi, yşk.
+
+           Magtymguly aýdar, barha ýol tany,
+           Bäş gün synamaga iberdi seni,
+           Senden ozal öten jananlar kany?
+           Her kim nobatynda öte başlady.
+
+               Aý-günüňiz batmaga
+
+                      (Sopular)
+
+           Altmyş ýaşan, ýetmiş ýylky sopular,
+           Az galypdyr aý-günüňiz batmaga,
+           Çöl ýerlerde tazy görmän, tilkiler
+           Hyýal eder ýatan şiri atmaga.
+
+           Garga diýer, ýokdur men dek şabaza,
+           Müň garga ýygnansa degmez bir baza,
+           Güne gargyş eden sary kelpeze1 ,
+           Dem çekedir aždarhany ýutmaga.
+
+           Agsak keýik müň garsaga ýetdirmez,
+           Şir beçesi togsan tilkä atdyrmaz,
+           Öli ýylan müň kelpezä ýutdurmaz,
+           Akyl gerek bu işlere ýetmäge.
+1 Kelpeze – hažžyk.
+
+               Ýetmiş ýaşap, ýat etmezler tobany,
+               Hormat bilen oýnadarlar gahbany1 ,
+               Müňkürler jem bolup, ýykdy Käbäni,
+               Ýezit gitdi agaçlaryn satmaga.
+
+               Görüň bu eýýamy, pelek gerdişi –
+               Pakyra zulm etmek boldy werdişi,
+               Hak ýolunda dogry gezen derwüşi
+               Goýmadylar öz halyna ýatmaga.
+
+               Ýüregim sabyrdan, gitdi karardan,
+               Ýaman işdir bogaz bolmak är-ärden2 ,
+               Bizara gelip men beýle diýardan,
+               Jür bolup men başym alyp gitmäge.
+
+               Magtymguly, bildim: bagtym biweçdir,
+               Ganymym güýçlüdir, ykbalym keçdir,
+               Niýetim Käbedir, hyýalym haçdyr,
+               Ykrarym bar haç towabyn etmäge.
+
+   1 Gahba – loly.
+    2 Är-ärden – bir adamdan bir adamyň ýaman gep eşitmegi, ýüregi
+
+çişmegi.
+
+                          Başlady
+
+            Gömüldi derýalar, ýykyldy daglar,
+            Ýetimler göz ýaşyn döke başlady;
+            Orramsydan bolan haramhor begler
+            Ýurdy bir ýanyndan ýyka başlady.
+
+            Jemagatsyz azan bir gury sesdir,
+            Niçe mollaň okan ylmy hebesdir,
+            Kazylaryň käri çaý bile nasdyr,
+            Bir bozuk nyşana tuta başlady.
+
+            Işanlary her gapyda tapylar,
+            Mollalarna ýok myjabat ýapylar,
+            «Öwliýä men» diýip, jögi sopular
+            Gygyryp, asmana böke başlady.
+
+            Çykar beýewana gyzy-gelini,
+            Ak ýüzüne ýapar gara telini1 ,
+            Kemçinlik eýleýip ýygan puluny,
+            Düzedip özüne daka başlady.
+
+            Dünýäde süýthoryň pul ýygma derdi,
+            Baýlaryň mallary bizekat erdi,
+            Toba ediň, gözüm bir ýaman gördi,
+            Dost dostuň köňlüni ýyka başlady.
+1 Tel – tar, saçyň bölegi, zülp.
+
+Magtymguly, başa baglap selleler,
+Aç böri deý ýortup niçe mollalar,
+Halaldan, haramdan ýygnap gallalar,
+Herne tapsa, dynmaý dyka başlady.
+
+        Aglar men
+
+   Eý ýaranlar, ömrümden
+   Geçdi diýip aglar men.
+   Gitdi aklym ornundan,
+   Çaşdy diýip aglar men.
+
+   Giden dönmez ýolundan,
+   Düşmez ýaman pälinden,
+   Diýanat halk elinden
+   Uçdy diýip aglar men.
+
+   Häzir biziň zamanda
+   Ýaman sözler zybanda,
+   Zulum işler jahanda
+   Joşdy diýip aglar men.
+
+   Bu eýýamda betkärler
+   Ýüz til bilen aldarlar,
+   Hany niçe dildarlar? –
+   Göçdi diýip aglar men...
+
+      Niçe sada deň-duşlar,
+      Şeýtan biligin başlar,
+      Ýüz öwürip gardaşlar
+      Gaçdy diýip aglar men.
+
+      Görüň pelegiň oýnun:
+      Üzer alymyň boýnun,
+      Niçe janlar ýer goýnun
+      Guçdy diýip aglar men...
+
+      Magtymguly, diýr merde,
+      Dünýä bentdir, ten perde,
+      Bu başym sansyz derde
+      Düşdi diýip aglar men.
+
+            Galmady
+
+Bir sözüm bar, diýsem şaha, soltana.
+Dostlar meňgi bolup, daman galmady;
+Döwletli baýlaryň duz hareminde,
+Desterhan kesilip, myhman galmady.
+
+Gaýta gybatkeşler özün düzetdi,
+Süýthor dünýä bilen özün göz etdi,
+Taňrydan bihabar goşun uzatdy,
+Taňryny bir bilen merdan galmady.
+
+        Nirde şugul bolsa, boldy mugteber1 ,
+        Dünýäni baky diýip, ýygnady çoh zer,
+        Aýdyp, ötüp gitdi ol Haýrul-beşer
+        Taňrydan gorkunçly myhman galmady.
+
+        Bahyl bolan baý adyny göterdi,
+        Pasyklar2 pysk ile ömrün ötürdi,
+        Ähli-dil3 dünýäden özün gutardy,
+        Dertliler derdine derman galmady.
+
+        Halaýyk barçasy jesethor boldy,
+        Alymlar ylmyndan galdy, kör boldy,
+        Sypahy4 barysy parahor boldy,
+        Şa aldynda adyl diwan galmady.
+
+        Müfti öz sözüne kylmady amal,
+        Şerigat işine eýledi haýal,
+        Halk içine düşdi hyrs atly kesel,
+        Taňryny bir bilen ynsan galmady.
+
+        Gyzlar, juwanlarda galmady haýa,
+        Ýerden götermedi bereket-giýa5 ,
+        Derwüşler tagatyn eýledi ryýa,
+        Ýurtda keramatly işan galmady.
+1 Mugteber – ygtybarly.
+2 Pasyk – bozuk
+3 Ähli-dil – ýürekdeş adamlar.
+4 Sypahy – emeldar, harby gullukçy.
+5 Giýa – ot, ösümlik.
+
+        Magtymguly aýdar, barha ýol tany,
+        Burunky1 hemneşin2 dostlaryň kany?
+        Abraý bile tabşyrawer bu jany,
+        Munda gelen ýary-ýaran galmady.
+
+                       Fetdah
+
+      Eýran, Turan indi goluň astynda,
+      «Sürgün» indi bu döwrany, sen fetdah!
+      Külli türkmen oýnar çölüň üstünde,
+      Dökme, bilgil, nahak gany, sen fetdah!
+
+      Bu gün şa sen, erte geda bolar sen,
+      Ilden-günden, dilden jyda bolar sen,
+      Bir gün janyň çykyp, pida bolar sen,
+      Gazanypsyň çoh günäni, sen fetdah!
+
+      Gözüm ýetýär, bilseň, başym alar sen,
+      Ýa kündeläp meni çaýa salar sen,
+      Men hak diýdim, sen çoh günä galar sen,
+      Bu alyşyň bilen jany, sen fetdah!
+
+      Sen türkmeniň ilin, gülün soldurdyň,
+      Ganlar döküp, gözel ýurdum doldurdyň,
+      Şehit bolanlaryň serin galdyrdyň,
+      Unudar sen tagty-käni, sen fetdah!
+1 Burunky – öňki.
+2 Hemneşin – gürrüňdeş, ýürekdeş
+
+Halkyň öji çohdur, ykbalyň ýaman,
+Ýa öler sen, ýa zyndandyr bigüman,
+Tagtyň synyp, diýme galar men aman,
+Çüňki zäher kyldyň nany, sen fetdah!
+
+Permanyňdan talaň düşdi illere,
+Goluň urduň nähak, gözde sillere,
+Kyrk gamçydan buýurdyň näzik billere,
+Derýa etdiň gözde huny, sen fetdah!
+
+Aýyrdyň atadan, ene, gardaşdan,
+Gollardan, aýakdan, sakaldan, saçdan,
+Dendandan, zybandan, akyldan, huşdan,
+Zyndan etdiň bu jahany, sen fetdah!
+
+Aýyrdyň, aglaýyp galdy ýarlarmyz,
+Pelege ýetendir tartan zarlarmyz,
+Adamlar asylgy durýar darlarmyz,
+Ýüzden tutduň, bil, gassaby, sen fetdah!
+
+Pyragy, dert aýdyp, derde ýanmaly.
+Gan ýuwudyp, zalym fetdah ganmaly,
+Diri özüm, läkin öli sanmaly, –
+Aňsa öldir, bu destany ol fetdah.
+
+    Ýörmeli boldy
+
+Eý ýaranlar, musulmanlar,
+Jebirde ýörmeli boldy.
+Nije zähmet çeken janlar
+Jepany görmeli boldy.
+
+Jahan giňdir, melamat kän,
+Arada köýdi şirin jan,
+Üstümizde rehimsiz han
+Bil, ahyr urmaly boldy.
+
+Azypdyr gökleň hanlary,
+Kän görer bize hallary,
+Goýman sürdi bar mallary,
+Göz dikip durmaly boldy.
+
+Magtymguly, aýama jan,
+Biliň guşa, geý gazap don,
+Hetden aşdy, bu zalym han
+Ahyr tor gurmaly boldy.
+
+       IV
+
+DURMUŞY GOŞGULAR
+                             Çilim
+
+        Dostlarym, duşman biliň,
+                     her kimsede bardyr çilim.–
+        Ile mahub eýlemäň,
+                     bir lagnaty kärdir çilim,
+        Sözleýen haly demi
+                     bir apyýy1 mardyr çilim,
+        Tartar özün özüne,
+                     owsunçy zeňgardyr2 çilim,
+        Nirde bolsa pasykylar,
+                     ortada bardyr çilim.
+
+        Düşgeç ol mejlis era,
+                     kim çeker, bimar eder,
+        Al bilen aldap seni,
+                     her dem özüne zar eder,
+        Sag-salamat goýmagy
+                     indi özüne ar eder,
+        Gol-aýagyn şel kylyp,
+                     halk içre any har eder,
+        Bu sypatlar birle ol,
+                     çekmäň ki, betkärdir çilim.
+1 Apy – zäherli uly ýylan.
+2 Zaňgar – zeňli, posly, jirimli.
+
+       Kah-kah eýläp her zaman,
+                   ol görkezer bet roýuny
+       Burnuňyzdan ysgadar,
+                   almaň oşol bet boýuny1 ,
+       Eý musulmanlar, halal diýip,
+                   kylmaňyz hiç oýuny2 ,
+       Ahyretniň oýun etseň,
+                   tiz goýuň bu oýuny,
+       Ahyretniň oýun
+                   etmezlerge derkardyr çilim.
+
+       Her kişi hoşhal olupdyr jimi,
+                    lam, mim atyga,
+       Nige pikr etmez oşol
+                    kim bu pelidiň zatyga,
+       Mundürer göýä any
+                    her dem şeýatyn3 atyga,
+       Syhr edip her dem
+                     any tartar özüniň zatyga,
+       Çünki betkärler gözüge
+                    daýyma bardyr5 çilim.
+1 Boý(buý) – ys.
+2 Oýuny – oý-pikirini.
+3 Şeýatyn – şeýtanlar.
+4 Syhr etmek – jadylamak.
+5 Bar – miwe, bu ýerde ýakymly manyda.
+
+       Gul-gul eýläp, her säher
+                    ol agzyndan otlar saçar,
+       Her kişiniň akly bardyr
+                    beýle betboýdan gaçar,
+       Kim any elge alar,
+                      göwsün onuň sary1 açar,
+       Ygtykat etse halal diýip,
+                    dini yslamdan geçer,
+       Dini-yslamdan geçerge
+                    bir sebäpkärdir çilim.
+
+       Şeýle duşmandyr ki tanla,
+                   başyňyzny aýlaýyr,
+       Wagty ýetmän solduryp,
+                   bu jismiňiz läş eýleýir,
+       Gaýgy, hasret ýok ekenler,
+                   çeşmiňiz ýaş eýleýir,
+       Her zaman düýt3 ýutduryp
+                   öýkeniňiz daş eýleýir,
+       Bary gapyl olmaňyzlar
+                   şeýle betkärdir çilim.
+1 Sary – tarap.
+2 Ygtykat etmek – ynanmak, uýmak.
+3 Düýt – tüsse.
+
+       Eý ýaranlar,
+                     nehi1 kylmyşdyr any bizge ahat2
+       Pikir edip, zikir eýledi
+                     kim halk era abdy3 samat4
+       Tebdil etmek5 ,
+                     nehi kylgan işini bizge ne hat?
+       Kim ki müňkürdir,
+                     anyň aldynda bardyr ol lahat6 .
+       Aýdadyr Magtymguly,
+                     bu bendege nardyr çilim.
+
+                       Çilimkeş
+
+          Hak seni raýyňa goýmuş jahanda,
+          Ede bileniň etgil munda, çilimkeş;
+          Diwan gurlan güni, hasap jaýynda,
+          Jogabyň nämedir anda, çilimkeş.
+
+          Kuwwatyň kemelder, güýjüň azdyrar,
+          Keýpi kellä gelse, aklyň azdyrar,
+          Süňňüňi syzdyrar, etiň gyzdyrar,
+          Bir nyşana budur sende, çilimkeş.
+1 Nehi – gadagan.
+2 Ahat – bir, ýalňyz, bu ýerde hudaý manysynda.
+3 Abd – bende.
+4 Samat (samad) – hemişelik, hökümdar.
+5 Tebdil etmek – çalşyrmak, özgertmek.
+6 Lahat – gör.
+
+         El götergil beýle nahak talaşdan,
+         Puluň köýer, janyň ýanar bu başdan1 ,
+         Erte garnyň doldurarlar ataşdan,
+         Zahmy2 çykmaz, galar janda, çilimkeş.
+
+         Iki dünýä ýagşylyk ýok egriýe, -
+         Kişi bolsaň, gadam goýgul dogryýa,
+         Binamaza, gybatkeşe, ogryýa,
+         Ýeldaş bolar ýowuz günde çilimkeş.
+
+         Magtymguly, möwlam jandan ýakyndyr,
+         Çilim bir şor suwdur, ten bir zemindir
+         Iman bir tilkidir, göwre bir hindir,
+         Tilki tüssä dözmez hinde, çilimkeş.
+
+1 Bu ýerde baş goşan işiňden manyda
+2 3ahym — ýara, baş.
+
+                      Halyň seniň
+
+  Ogry bolsaň, diňlegil, bolgaý niçik
+                                   halyň seniň;
+  Kişi malyga gider köňlüň, gözüň,
+                                   päliň seniň;
+  Misli şeýtan aldagydyr
+                            mekiriň-alyň seniň,
+  Bu ýalançylyk bile ötgeý
+                            mahy-salyň1 seniň,
+  Dowzaha dogry barar, billa, giden
+                                   ýoluň seniň.
+
+  Erte-magşar it bolup, yňranyp iýgeý
+                                  sen etiň,
+  Ýüzüni görmez Muhammet sen kibi pis
+                                  ymmatyň,
+  Hem o dünýä şefgatyň2 bolmaz bu dünýä
+                                         döwletiň,
+  Her zaman, her sagat içre artdyrarlar
+                                     mähnetiň,
+  Bu jahym3 içre tutar möýler
+                              sagu-soluň seniň.
+1 Mah bilen sal — aý bilen ýyl (ýaş).
+2 Şefgat – halaslyk, kömek, ýardam manysynda.
+3 Jahym – jähennem.
+
+  Aglaýyr sen, gözleriňden ýaş ýerine
+                                  gan gidip,
+  Munça mähnetler çekip, göwsüň dilip,
+                                  weýran edip.
+  Yssy etmez başyňa, toprak döküp,
+                                  haýran edip;
+  Gylça yssy görmegeý sen, dag gadar
+                                  puşman edip,
+  Döküler gaýdyp dahanyndan
+                             pohuň-bowluň seniň.
+
+  Ol Muhammet garşysynda hem uýalgaý
+                                   sen o gün,
+  Gör ölüm bolsa idi, istärdiň ölgeý
+                                   sen o gün,
+  Gürzi astynda melek1 zarbynda galgaý
+                                   sen o gün.
+  Ol huraýyş atlyg ýylanga lukma bolgaý
+                                   sen o gün.
+  Maýmynyň suratyda bolgaý ki
+                                   tymsalyň seniň.
+1 Melek – perişde.
+
+  Aýdadyr Magtymguly, görseň günähiň,
+                                  eý gözüm,
+  Çekiler gyldan-gyla magşar hasabyň,
+                                  eý gözüm.
+  Ýüz gara, til gysgadyr, bolmaz jogabyň,
+                                  eý gözüm.
+  Mal ýerine bialaç biýr sen sowabyň,
+                                  eý gözüm.
+  Hem günähiň boýnuňa goýgaý,
+                                  budur halyň seniň!
+
+                          Gybatkeş
+
+          Rozy-magşar şikwe1 eder tiliňden,
+          Ryswalygyň budur seniň, gybatkeş;
+          Ömrüň ýele berme, azma ýoluňdan,
+          Agyrtmagyl iliň-günüň, gybatkeş.
+
+          Bulut dek kükreýip, bark2 kimin gürlär,
+          Gähi buzdan tagtlar, ataşdan öýler,
+          Gatyr dek içýanlar, bugra dek möýler
+          Bedeniňden sorar ganyň, gybatkeş.
+1 Şikwe – şikaýat, arz.
+2 Bark – ýyldyrym.
+
+         Halyň görüp, purkan1 bolup aglarlar,
+         Özüň syjjyn atly jaýda baglarlar,
+         Tiliň çekip, demir bilen daglarlar,
+         Gara bolar şol gün ýüzüň, gybatkeş.
+
+         Ýaman söz aýyrar ýagşy dostuňdan,
+         Günähiň agramy basar üstüňden,
+         Jähennem içinde tamug astyndan
+         Peleklere çykar üýnüň, gybatkeş.
+
+         Magtymguly aýdar, iliň gözünden
+         Düşüban, hor bolsaň, görgül özüňden,
+         Tiliňni çekmeseň haram sözüňden,
+         Belli bibat bolar diniň, gybatkeş.
+
+                       Görüner
+
+              Seýil edeliň bu jahana,
+              Jahanda näler görüner,—
+              Isgender, Jemşit saldyran
+              Beýik binalar görüner.
+
+              Meşeleri şir-peleňli,
+              Gülgüzar nowça bileňli,
+              Gün düşmedik ter öleňli
+              Çeşmeli çaýlar görüner.
+1 Purkan bolmak – bilip aňlamaklyk, saýgarmaklyk.
+
+Ýaradan bar etdi ýokdan,
+Daglar, dünýä sürer çohdan,
+Sorsaň habar berer Nuhdan,
+Garrygan awlar görüner.
+
+Çaglan, ýalan dünýä, çaglan!
+Ne gülen galar, ne aglan...
+Gar ýagmyrlap burjy baglan
+Kemerli daglar görüner.
+
+Serinden dumany gitmez,
+Eýýam geçip, ýere batmaz,
+Garryp galmaz, ölmez, ýitmez
+Gorganly daglar görüner.
+
+Ne watan galar, ne çeten,
+Senemler seýl edip ýeten,
+Toty, bilbil mesgen tutan
+Howaly baglar gerüner.
+
+Magtymguly, kim bar ölmez?
+Ajal doýmaz, zemin dolmaz,
+Asman inmez, ýer çöwrülmez,
+Gün ýörir, aýlar görüner...
+
+                          Soňudagy
+
+                   Eý söwdügim, Soňudagy,
+                   Dagdanlydyr biliň seniň;
+                   Duşman görse döwdüleşer
+                   Ýomut, gökleň iliň seniň.
+
+                   Kesgin-kesgin ýoluň geçer,
+                   Gyzyl baýyr göwün açar,
+                   Sowuk çeşme suwuň içer
+                   Dürli-dümen malyň seniň.
+
+                   Dürli-dümen otuň biter,
+                   Her deräň bir ile ýeter,
+                   Hatarlanşyp kerwen öter,
+                   Naýbadaýdyr ýoluň seniň.
+
+                   Oýlukda ýaýlany gursak,
+                   At çapdyryp, baýrak bersek,
+                   Töreýitde harman gursak,
+                   Nan dökmek hyýalyň seniň.
+
+                   Magtymguly, set açandyr,
+                   Bu döwran senden geçendir,
+                   Üstüňden iliň göçendir,
+                   Niçik geçer halyň seniň?1
+
+    1 Bagşylar bu goşgyny «Jenan ýarym» diýip aýdýarlar. Sary bag-
+
+şynyň beren maglumatyna görä, Magtymgulynyň ýaşaýan ýeri bolan
+
+                       Ýaýlahlary bar
+
+               Sapar edip barsak Nuha mülküne,
+               Köňül isläni dek ýaýlahlary bar;
+               Seýran etsek gunçasyna, gülüne,
+               Bakjasynda bilbil oýnahlary bar.
+
+               Ýeri sazdyr, hasta bolan sagalar,
+               Arryk, müflis, garyp bolan oňalar,
+               Serçemen agajy bile deňeler,
+               Ajap guş salmaly awlahlary bar.
+
+               Meýdany doludyr şeker gamyşdan,
+               Dileg etmez hergiz gardaş-gardaşdan,
+               Üsti ýapylgydyr kümüş kerpiçden,
+               Her kimniň özi üçin suwlahlary bar.
+
+               Baş goşmandyr, arryk, agsak şa bile,
+               Atdyryp dükanbyl sary ýaý bile,
+               Şirwan galasydyr, any kim bile,
+               Her buruçda altyn baýdahlary bar.
+
+               Magtymguly, sazdyr, söhbetdir işiň,
+               Ajaldan, gaýrydan bolmaz teşwişiň,
+               Baýlaryň, pakyryň ähli derwüşiň
+               Ýurdy bolar ýaly persahlary bar.
+Soňudaga Eýran şasynyň goşunlary hüjüm eden wagtlarynda, şahyr ýa-
+şaýan ýerini mejbury taşlap, Garrygala göçmeli bolupdyr. Bu goşguda
+onuň ýaşan ýeri Soňudag bile hoşlaşygy görkezilýär.
+
+                        Jahan peýda
+
+  Gelse nowruz äleme, reň kylar jahan peýda,
+  Ebrler1 awaz urup, dag kylyr duman peýda.
+  Bijanlar jana girip, ederler dahan peýda,
+  Görmedigiň giýalar2 , gögerip rowan peýda,
+  Aýdarlar haýwanatga, hem sudy-zyýan peýda,
+  Ýer ýüzüne ýaýylyp, ýörirler nahan peýda,
+  Wabeste3 dahan4 guşlar, kylarlar zyban peýda.
+
+  Çöl tarapyn berk edip, der5 açar suwa harçeň6 ,
+  Zemin sebzezar olup, teninden aýrylar zeň.
+  Sebze içre sandugaç7 ýüz tilde kylar eheň,
+  Jünbendeler8 mest olup, göýä içmiş arak, beň,
+  Her aşýanaň özüne öz owazy bolar geň,
+  Zemin hazarpuş9 olup, gül bitirmiş reňbe-reň,
+  Hyruja gelip älem, kylarlar pygan peýda.
+1 Ebr – bulut.
+2 Giýa – ot, ösümlik.
+3 Wabeste – bagly, bek, ýapyk.
+4 Dahan – agyz.
+5 Der – gapy.
+6 Harçeň – leňňeç.
+7 Sandugaç – garlawaç.
+8 Jünbende – hereket edýän, mör-möjek.
+9 Hazarpuş – gök, ýaşyl geýnen.
+
+  Serweri seda birle, jahan ýüzi abatdyr,
+  Magrury-serwer olma, sany serwer bibatdyr,
+  Hak yşkynda zindeler, biliň, baky-haýýatdyr.
+  Her tende yşk bolmasa, rozy ezel mematdyr1 ,
+  Ýaz ýetinçä ýer-gögi. günden-güne zyýatdyr.
+  Bir heşri2 -kyýamatdyr, bir ýowmy3 -arasatdyr4 ,
+  Dähr içre bolar her dem, jahan içre jan peýda.
+
+  Zerbaba zowkun olma, baka ýokdur döwletde,
+  Ömrüňni bada berme sen bu daryl-mähnetde5 ,
+  Ýeter saňa iru-giç, ne ýazylsa kysmatda,
+  Janyňa jepa eýläp, munça gezme hasratda,
+  Sogap ýagşy amalda, ýa hut ýagşy niýetde,
+  Älem barça hyzmatda, adam ýatyp gaflatda,
+  Hasylyň ataş bolgaý, eýleseň ýaman peýda.
+
+  Magtymguly, ýyglar men, bu bagty syýahymdan,
+  Gorkar men jan äpeti, el-aýak güwähimden,
+  Umydym hasyl olmaz bu ömri tebahymdan6 ,
+  Jan köýdi jeset içre bu ataşy-ahymdan,
+  Elim sunup dilär men hajatym ylahymdan,
+  Mende bir umyt oldur, ol keremli şahymdan,
+  Eýlegeý arasatda, gül kibi iman peýda.
+1 Memat – öli.
+2 Heşir – mähelle, märeke, ýygnanyşyk.
+3 Ýowm – gün.
+4 Arasat – söweş meýdany.
+5 Dary-mähnet – jepa öýi
+6 Ömri-tebah – bozulan ömür, haýyp geçen ömür.
+
+                         Içinde
+
+                 Pikir kyldym ýer-göge,
+                 Akylsyz jan içinde.
+                 Gördüm: jan hem alla diýr
+                 Et, siňir, gan içinde.
+
+                 Ýörir ýoluň bilmeseň,
+                 Dogry ýola gelmeseň,
+                 Haky ýada salmasaň,
+                 Galdyň arman içinde.
+
+                 Ýerden çykan nebatlar,
+                 Gyzyl güller, gök otlar,
+                 Gapyl adam, bu zatlar
+                 Külli perman içinde.
+
+                 Nebsiň aýdar: joş bolsam,
+                 Gerçeklere duş bolsam,
+                 Iýsem, içsem, hoş bolsam,
+                 Ýatsam eýwan içinde.
+
+                 Köňül sen bir bazar sen,
+                 Her işe bir gyzar sen,
+                 Tutsam, diýer gezer sen,
+                 Jürmi1 -usýan2 içinde.
+1 Jürm – günä.
+2 Usýan – boýun egmezlik, baş götermek, gozgalaň
+
+Ýaýylar ganat-perler,
+Hup açylar depderler,
+Bölek-bölek kepderler
+Hüw diýr harman içinde.
+
+Bilbil aýdar: köşküm bar,
+Bahar gözleşigim bar,
+Gülzar üçin yşkym bar
+Bagy-bostan içinde.
+
+Ýarganat diýr: ýa möwla,
+Saldyň meni bu ýola,
+Berme aý-güne, ýele,
+Sakla pinhan içinde.
+
+Anka aýdar: ýolçyýam,
+Hüthüt aýdar: ilçiýem,
+Süleýmana sawçyýam,
+Ýalan jahan içinde.
+
+Bezgek galyp haýrana,
+Haýran bakyp her ýana,
+Dem-dem çykyp seýrana,
+Gezer döwran içinde.
+
+Durna aýdar: uçar men,
+Bagdat suwun içer men,
+Gyş Hindistan göçer men
+Läle-zaran içinde.
+
+                 Baýguş aýdar: derdim bar,
+                 Tesbyhym bar, werdim1 bar,
+                 Weýranada ýurdum bar
+                 Zary-girýan içinde.
+
+                 Ishak aýdar: pakyr men,
+                 Gullugymda hakyr2 men,
+                 Hak ýadyny okyr men
+                 Şam-Şebistan içinde.
+
+                 Musyja diýr: giter men,
+                 Geldim, bildim — öter men,
+                 Üç agaçny çatar men,
+                 Guzlap weýran içinde.
+
+                 Laçyn aýdar: joşumdan,
+                 Mest boldum öz huşumdan,
+                 Galdym taňry işimden,
+                 Bendi-zyndan içinde.
+
+                 Turaç tili senada,
+                 Ördek tili penada,
+                 Gazlar galkyp howada,
+                 Gözi umman içinde.
+1 Werd – namaz, doga, üznüksiz doga, namazy gaýtalap oturmak.
+2 Hakyr – ejiz, pukara, kiçi göwünli
+
+                  Gumrular owaz bilen,
+                  Tawus işi näz bilen,
+                  Kaknus guş müň saz bilen
+                  Şol Hindistan içinde.
+
+                  Toty guşlar zarlaşyp,
+                  Emri-hakny gözleşip,
+                  Adam tilin sözleşip,
+                  Gezer ynsan içinde.
+
+                  Keýik aýdar: aglar men,
+                  Haka sydkym1 baglar men,
+                  Balalarym derdinden
+                  Ýüregim gan içinde.
+
+                  Gurt aýdar: üzer men,
+                  Nirden kylsam güzer men.
+                  Ryzkym awlap gezer men
+                  Çöl-beýeban içinde.
+
+                  At aýdar: aslym zordur,
+                  Munça gymmatym bardyr,
+                  Üstüme münen ärdir,
+                  Daglarda-daş içinde.
+1 Sydk – yhlas.
+
+Ýaby aýdar: men gende,
+Üstüme münen bende;
+Azabym köpdür günde,
+Özüm hyzmat içinde.
+
+Eşek aýdar: aslym daş,
+Hyzmat bilen bagrym baş,
+Saman tapsam, köňlüm hoş,
+Mydam aýaz içinde.
+
+Düýe aýdar: otlar men,
+Otlan ýerim ýatlar men,
+Elmydama botlar men
+Selin, sazak içinde.
+
+Ýedi ýer bolmuş bina,
+Her zat okyr bir sena,
+Otlar hem diýr «rebbena»
+Nowruz-baran içinde.
+
+Kyýamat gün eliňden,
+Habar sorar halyňdan.
+Gaýyt ýaman päliňden,
+Gördüň purkan içinde.
+
+Umytly bol Ýusup dek,
+Sabyrly bol Eýýup dek,
+Ger ugrasa Ýakup dek
+Derdi-Kengan içinde.
+
+       Janym, jurga joş eýle,
+       Nebsim aýdar, hoş eýle,
+       Keremiňni duş eýle,
+       Taňla diwan içinde.
+
+       Magtymguly, özüňe
+       Bak, ýaş getir gözüňe,
+       Aýyplaşmaň sözüme
+       Ýary, ýaran içinde.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Düşen günlerim',
+    'Dokuz aý ýatmyşam enem garnynda,
+Göz açyp, dünýäge düşen günlerim;
+Dört aýakda gezdim enem elinde,
+Sekiz aýda hem gülüşen günlerim.
+
+Birimde bilmedim ýagşy-ýamany,
+Ikimde tanydym ata-enäni,
+Üç ýaşymda taňry berdi zybany,
+Dört ýaşymda daş atyşan günlerim.
+
+Bäşimi ötürdim bahar-ýaz bilen,
+Alty ýaşda kowalaşdym saz bilen,
+Ýedi ýaşda işim bolmaz gyz bilen,
+Sekizimde dişim düşen günlerim.
+
+Dokuzymda berdim taňry salamy,
+Onumda boýnumda hakyň kelamy,
+On birimde tutdum döwet-galamy,
+Okyp-okyp magny saçan günlerim.
+
+On ikimden gitdim on üç ýaşyma,
+On tördümde eser urdy başyma,
+On bäşimde gyzlar girdi düýşüme,
+On altymda gaýnap joşan günlerim.
+
+Ýigrimimde mestan-mestan gezerdim,
+Ýigrim bäşde ganym okun düzerdim,
+Otuzymda atlar münüp gezerdim,
+Otuz bäşde ters söweşen günlerim.
+
+Kyrkymda goýulyp, käsäm dolmuşam,
+Ellimde elime tesbyh almyşam,
+Altmyşymda pire mürit bolmuşam,
+Pygamber ýaşyny ýaşan günlerim.
+
+Ýetmişimde agyry indi dyzyma,
+Segsenimde gubar indi gözüme,
+Togsanymda huş galmady özüme,
+Akyl-huşdan jyda düşen günlerim.
+
+Ýüz ýaşa ýetirmän, alarlar janyň,
+Uzadyp goýarlar, biçerler donuň,
+Magtymguly, hemra bolsun imanyň,
+Jan jesetden aýra düşen günlerim.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Gözel Şirgazy',
+    'Mekan eýläp, üç ýyl iýdim duzuňy,
+        Gider boldum, hoş gal, gözel Şirgazy1 !
+        Ötürdim gyşyňy, nowruz-ýazyňy,
+        Gider boldum, hoş gal, gözel Şirgazy!
+
+        Hakdan bize buýruk baglydyr bilim,
+        Sende taglym aldy, açyldy dilim,
+        Gelsin diýip garar ol gerkez ilim,
+        Gider boldum, hoş gal, gözel Şirgazy
+
+        Seljerer men indi agy-garany,
+        Dost, rakyp, gardaşym, haky, ýarany,
+        Okydym, göterdim kitap kurany,
+        Gider boldum, hoş gal, gözel Şirgazy!
+
+        Aklym gysga erdi, käsäm gaýnady,
+        Jiger talwas urdy, göwün oýnady,
+        . . . . . . . . . . . . . . . . . . . . . . . . . . .
+                .
+        Gider boldum, hoş gal, gözel Şirgazy!
+
+        Joşgun ýüregimde möwç urar, ýatmaz,
+        Gaýnar, gazaplanar, hiç laýa batmaz,
+        Ylym-taglym algan seni unutmaz,
+        Gider boldum, hoş gal, gözel Şirgazy!
+1 Şirgazy – Magtymgulynyň Hywadaky okan medresesiniň ady.
+
+         Peýman dolmaý, gelsek takat ýetmeýen,
+         Pinhan zahyr kylmaz akyl gitmeýen,
+         Bady-paý atlanyp, seýran etmeýen,
+         Gider boldum, hoş gal, gözel Şirgazy!
+
+         Rige1 girsem-de, guwwas ýüzer men,
+         Bihasret ýaýnaýam, bigam gezer men,
+         Dahan içre asal-zyban ezer men,
+         Gider boldum, hoş gal, gözel Şirgazy!
+
+         Kämil bolup serenjamlyk kylyp men,
+         Muşakgatdan, ol pederden galyp men,
+         Käbämden aýrylyp jyda bolup men,
+         Gider boldum, hoş gal, gözel Şirgazy!
+
+         Kutbda2 saý gözläp, ummana duşdum,
+         Neýsan guýdy, umman gaýnadym-joşdum,
+         Hoş gal, bu gün Jeýhun bahrydan aşdym,
+         Gider boldum, hoş gal, gözel Şirgazy!
+
+         Magtymguly taşlap göwün hapasyn,
+         Sylady pirini, molla, sopusyn...
+         Daýym unutmaz men tylla gapysyn,
+         Gider boldum, hoş gal, gözel Şirgazy!
+
+1 Rig – ownuk daş, çagyl.
+2 Kutb – polýus, deňiz.
+
+     V
+
+YŞKY ESERLER',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Her ýana',
+    'Ýarsyzlykdan ýaman iş ýok,
+Göz salyp gezsem her ýana;
+Ýa ýaradan, bir hemra ber,
+Köp muşakgat degdi jana...
+
+Bir ýar bergil etli, ganly,
+Dil bilen, akly kemally,
+Köňli giň, göwsi meýdanly,
+Ýüzi hem bolsun görkana!
+
+Gadyr bilenden daş etme,
+Nägadyra ýoldaş etme,
+Til bilmez bela duş etme,
+Sada dil bolsun türkana.
+
+Keremi güýçlüdir, görgül,
+Doga kylyp, eliň gergil,
+Berseň-de, tizräk bergil,
+Ygtybar ýokdur bu jana...
+
+Boýy uzyn, pes bolmasyn,
+Hetden aşa mes bolmasyn,
+Akylsyz näkes bolmasyn,
+Sadadan bolsun türkana.
+
+               Ýagşy aýal ele gelmez,
+               Nadan ýagşyň gadryn bilmez,
+               Aýalsyza mydar bolmaz,
+               Dönseň hökmi-Süleýmana.
+
+               Magtymguly, ýansam-bişsem,
+               Ynanmazlar, oda düşsem,
+               Höwesim bar, bir ýar guçsam,
+               Diýsem sözlerim erkana...',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Gaşy ýaý',
+    'Bir dilbere duş boldum, gamzasy ok, gaşy ýaý;
+  Gün haýrandyr görkünden, hyjalatda dolgan aý,
+  Janyň berseň, jaýyzdyr1 beýle sypat mahbuba;
+  Hiç görmedim anyň deý başy dogry, göwsi taý.
+  Gulgula düşdi bize, hem düşdi jeňi-jeňe,
+  Jeň şowkundan ol nigar, ne nalaga düşdi naý.
+
+  Ne aşretdir aşyga, jennet içre jemaly,
+  Aýralyknyň ataşy tamug içre weýil-waý.
+  Ol dideýi-dildardan bolma ýene bibähre,
+  Galmagaý sen meniň deý – akly azu-görke baý.
+1 Jaýyz – laýyk, jaýly.
+
+  Isteseler alymlarny, şeýtan aýdar: ol dilber
+  Halagana Halyl dek, oglanyna berer paý.
+  Magtymguly, mydama doga kylar dergaha,
+  Saýyl men, mahrum etme dergahyndan,
+                                          ýa hudaý!',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Bu derdi',
+    'Keşt eýledim, gezdim yşkyň dagyndan,
+       Ne beladyr, kimse çeker bu derdi?
+       Yşk dagyn assalar gögüň boýnundan,
+       Gök titreýip, çeke bilmez bu derdi.
+
+       Yşk eser etmese, ýanmaz çyraglar,
+       Yşka düşse, guşlar eňrär, gurt aglar,
+       Egiler haýbatly, kuwwatly daglar,
+       Daşlar eräp, çeke bilmez bu derdi.
+
+       Kimdir yşkyň ýükün çeken merdana?
+       Pelek gördi — gorkup düşdi gerdana,
+       Zemin1 jünbüş eýläp2 , oldy lerzana,
+       Çöller-düzler çeke bilmez bu derdi.
+1 Zemin – ýer.
+2 Jünbüş eýlemek – hereket etmek, titremek.
+
+       Behişt gaçyp çykmyş arşyň öýüne,
+       Tamüg gorkup inmiş ýeriň teýine;
+       Gaçdy derýa, aldy adam boýuna,
+       Tört ýüz ýyllap çeke bilmez bu derdi.
+
+       Magtymguly, çekseň derdi-düwünden,
+       Asy1 bolup, şikat2 etme bu günden.
+       Bu ölmek, aýrylmak galypdyr öňden,
+       Peder3 bize miras goýmuş bu derdi...',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Näme sen',
+    'Asla seni görmemişem, dildarym!
+       Gumrumy sen, bilbilmi sen, näme sen?
+       Gamgyn köňlüm hyýalynda aldaram,
+       Bag içinde gül-gülmi sen, näme sen?
+
+       Garakçymyň, ýa seýitmiň, hojamyň,
+       Ýa sakymyň, ýa şerapmyň, ýa jammyň,
+       Ýa ýylmy sen, ýa gündizmiň, gijemiň,
+       Ýa aýmy sen, ýa günmi sen, näme sen?
+1 Asy – günäkär.
+2 Şikat – şikaýat.
+3 Peder – ata.
+
+       Ýa müşkmi sen, ýa kokunar anbarmyň,
+       Aýda bilmen, ýa çarhmy sen, çenbermiň,
+       Ýa derýamyň, ýa möwçmi sen, lenbermiň,
+       Ýa girdapmyň, ýa burgunmyň, näme sen?
+
+       Altynmy sen, kümüşmi sen, zermi sen,
+       Ýa arşmy sen, ýa kürsmi sen, ýermi sem,
+       Ýa ýakutmyň, ýa merjenmiň, dürmi sen,
+       Ýa çyragmyň, ýa röwşenmiň, näme sen?
+
+       Magtymguly, geç namysdan, aryňdan,
+       El götergil bu wepasyz käriňden,
+       Jahan doly, sen gapyl sen ýaryňdan,
+       Ýa mestmi sen, ýa şeýdamyň1 , näme sen?
+
+1 Şeýda – joşgunly, saýraýjy, däli-diwana.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Gördüňmi',
+    'Ýagty salar gider zulmat tününde,
+          Meniň sahypjemalymny gördüňmi?
+          Bahar eýýamynda, heýhat gününde
+          Meniň sahypjemalymny gördüňmi?
+
+          Anka sypat «huw» diýp, asman uçan guş,
+          Gijesi tirikdir, gündizi beýhuş,
+          Nowaýy jindeli1 , egni hyrkapuş2 ,
+          Meniň sahypjemalymny gördüňmi?
+
+          Gan edipdir pelek, bagrym pyrakda,
+          Elmydam gezer men «ýar» diýp sorakda,
+          Käbe tarapynda, Şamda, Yrakda
+          Meniň sahypjemalymny gördüňmi?
+
+          Rumda, Gypjakda, Çyny-Maçynda,
+          Zumaýyl ornunda, arşyň içinde,
+          Galam degresinde, pelek burçunda
+          Meniň sahypjemalymny gördüňmi?
+
+          Aşyklar ahynda, Gulzum döwründe,
+          Kütbetil-yslamda, Jeýhun bahrynda,
+          Sedre sährasynda, Isa şährinde
+          Meniň sahypjemalymny gördüňmi?
+1 Jinde – ýyrtyk, sal-sal, eleşan.
+2 Hyrkapuş – ýyrtyk-ýirik geýim, derwüşiň geýýän geýimi.
+
+Hazret Aly etgeç äleme dagwy,
+Kapdan Kaba gitdi hazretiň çawy,
+Ýa yklym eýesi, Ahmet Ýasawy!
+Meniň sahypjemalymny gördüňmi?
+
+Mesgen tutmuş gara dagyň burnunda,
+Alynyň mülkünde, Isa ornunda,
+Ýeriň arkasynda, gögüň garnynda
+Meniň sahypjemalymny gördüňmi?
+
+Magtymguly, çeker ýaryň gamyny,
+Gezip tapa bilmez roýy-zemini.
+Ýa ady Jebraýyl, hakyň emini!
+Meniň sahypjemalymny gördüňmi?',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Bagrym dilenim',
+    'Dertli dilber, dilleşer sen, gel bäri!
+Dullukdyr meniň-de bagrym dilenim.
+Soraýyr men, men hem sen deý bir ýary,
+Seni soramakdyr, ýokdur ýalanym.
+
+Eger geňeş salsam ýada-bilişe,
+Diýrler: şirin asal ýaga gelişe,
+Säher ýazygym çün tursam nalyşa,
+Owwal bir ýar bolar ýada salanym.
+
+Bilen ýanda meňzär gymmat düre sen,
+Tanymaza duşup, degme ýere sen,
+Kadyr kysmat etse, maňa bara sen,
+Seniň kimin ýardyr meniň ölenim.
+
+Her dilber kim köňlüm öýün ýarydyr,
+Ýatan bagtym ol ýaradan ýörüdir.
+Gargyşym daşlarny mum deý eridir,
+Pür-pudak ýaýradyr alkyş kylanym.
+
+Gözel görküň gökde günden aýynmaz,
+Güli, desdenbili ysgan doýunmaz.
+Magtymguly, baş bermese baýynmaz,
+Mährimi inderip nazar salanym.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Islärin',
+    'Kerem etseň, kadyr alla,
+                Dünýälikde at islärin.
+                Talygym1 ukuda galmyş,
+                Bir açylgan bagt islärin.
+
+                Ýoksullyk bir ýaman ýoldur,
+                Pakyr menem, golum galdyr,
+                Halal ryzk, bir kesp bildir,
+                Kimýa2 atly ot islärin.
+
+                Ýalan dünýäde ýörmäge,
+                Döwlet ber, aşret sürmäge,
+                Ömür ekläp, gün görmäge,
+                Segsen ýyl pursat islärin.
+
+                Pyragy, yşka ugraşdym,
+                Derýa girdim, möwje3 düşdüm,
+                Hor galmasyn puştdan-puşdum
+                Berkarar döwlet islärin.
+
+1 Talyg – täleý, ykbal.
+2 Kimýa – alhimiýa.
+3 Möwç – tolkun.
+
+                      Joşa düşüp sen
+
+           Gel, köňül, gözlegil älem-jahany,
+           Näden üçin beýle joşa düşüp sen?
+           Älemde bir sen dek ýokmy dahanly1 !
+           Syryň destan eýläp, paşa düşüp sen.
+
+           Seniň kimin ýokmy? – diýip, – dünýäde
+           Sökseler, neýlär sen, sen namyrada!
+           Şeýle güýçlendimi yşkyň zyýada?
+           Hetdiň bilmeý, aşa-aşa düşüp sen!
+
+           Gadam goýsaň sähralara, çöllere,
+           Köňül gaýnap, söz joş eder tillere,
+           Iller saňa haýran, sen hem – illere,
+           Ýa aklyň aldyryp, çaşa düşüp sen!
+
+           Baka2 ýokdur söhbediňe, sazyňa,
+           Ygtybar ýok, gyş günüňe, ýazyňa,
+           Sen bu derdi ýowutmazdyň özüňe,
+           Owwaly gerek däl nişe düşüp sen.
+
+           Magtymguly, hemme ýola baş urduň,
+           Çohlar bilen gezdiň, oturdyň, turduň,
+           Ýalançydan ne hezl etdiň, ne gördüň?
+           Imdi gör: otuz tört ýaşa düşüp sen.
+
+1 Dahan – agyz.
+2 Baka – hemişelik.
+
+               Ýyglap geçer halymga
+
+           Giň göwrämi gam basypdyr özünden,
+           Baş hem gelse, ýyglap geçer halymga;
+           Bagyr ýaşyn köňül döker gözünden,
+           Gaş hem gelse, ýyglap geçer halymga.
+
+           Garrylyga döndär ýigit çaglary,
+           Geda eýlär täç eýesi begleri,
+           Gurşun dek eridir Kap dek daglary,
+           Daş hem gelse, ýyglap geçer halymga.
+
+           Älem içre bir ah ursam, bir zarba,
+           Eda bolmaz ynsan gelmez bir gurba,
+           Gaplaň güýçden galar, däner gurt gürbä1
+           Guş hem gelse, ýyglap geçer halymga.
+
+           Puşmanda men eden-etmiş kärimden,
+           Biperwaýam bolan-bolmuş barymdan,
+           Ýoldaş bolan ýata bilmez zarymdan,
+           Daş hem gelse, ýyglap geçer halymga.
+
+           Hak yşykdyr bizni goýan közlere,
+           Bu közlerdir kysmat bolan bizlere,
+           Bilbil tilsiz galar, barsam ýazlara,
+           Gyş hem gelse, ýyglap geçer halymga.
+1 Gürbe – pişik.
+
+          Aňlamaýan yşk derdiniň käninden1 ,
+          Bir söz geçmez, herne etseň ýanyndan,
+          Yşka düşen umyt üzer janyndan,
+          Läş hem gelse, ýyglap geçer halymga.
+
+          Pähm eýleýen Magtymguly sözüni,
+          Derde düşüp, ýaşa doldyr gözüni,
+          Şat gelenler tuta bilmez özüni,
+          Hoş hem gelse, ýyglap geçer halymga.
+
+                      Baradyr
+
+          Gam dumany basyp garyp köňlümni,
+          Göz ýaşyn saklamaý, döküp baradyr;
+          Kimdir rehm eýleýip soran halymny?
+          Bozuk köňlüm erkin ýykyp baradyr...
+
+          Gerçe ot ýaksalar aşyk ýagyndan,
+          Ölüm asan erer dost pyragyndan2 ,
+          Hijran meni goýdy sabyr dagyndan,
+          Pyrak bogum-bogum söküp baradyr...
+
+          Ol döwri-döwranym çarh bulaşdyrdy,
+          Gam meni guratdy, ot tutaşdyrdy,
+          Yşk meni ýandyrdy, hetden aşdyrdy,
+          Ýüregim içimden çykyp baradyr...
+1 Kän – hazyna, magdan.
+2 Dost pyragyndan – dostdan aýrylmakdan.
+
+           Parahat ýatyrdym, nebsimi besläp,
+           Turdy köňlüm, ýar jemalyn höwesläp,
+           Hakdan hajat diläp, myradyn isläp,
+           Gözüm ol ýollara bakyp baradyr...
+
+           Magtymguly, mejalym1 ýok, sözläýin,
+           Dostlarga derdimni beýan eýläýin.
+           Eý ýaranlar, ýyglamaýyn neýläýin?
+           Yşk meni ýandyryp, ýakyp baradyr...
+
+                       Galyp men
+
+           Jahyllygyň joşy çykdy başymdan,
+           Men ol joşdan haly2 bolup galyp men.
+           Bir gama ulaşdym, gitdim huşumdan,
+           Bu dert bilen doly bolup galyp men.
+
+           Başym ýüz höwesde, köňlüm joşgunda,
+           Girdaba düşüp men däli-daşgynda,
+           Nejt dagyna gezem Mejnun yşkynda
+           Ýanar otly Leýli bolup galyp men.
+1 Mejal – pursat, hal, ýagdaý.
+2 Haly – boş.
+
+           Ýigitlik paslyny gyşa ýetirdim,
+           Kämillik keştisin1 derýa batyrdym,
+           Beýik pikre galdym, aklym ýitirdim.
+           Tirik erken, öli bolup galyp men.
+
+           Bu dünýäni göçüp bargan göç bildim,
+           Işini bet aňdym, özün puç bildim,
+           Öňün oýun gördüm, soňun hiç bildim,
+           Halk içinde däli bolup galyp men.
+
+           Magtymguly, paş eýlegil sözüňni,
+           Pelek muşty häk2 etmeýen gözüňni,
+           Bu wagta deň ýaş bilirdiň özüňni,
+           Imdi gör-bak: uly bolup galyp men.
+
+                     Daşlar bile
+
+              Köňül aýdar halkdan galyp,
+              Gezsem daglar, daşlar bile;
+              Ýazygymny ýada salyp,
+              Ýüzüm ýuwsam ýaşlar bile.
+
+              Kimni görsem bir pişede,
+              Meniň köňlüm endişede,
+              Gähi ser, içre köşede,
+              Otursam agaçlar bile.
+1 Keşti – gämi.
+2 Muşty häk – gysym gum.
+
+              Garry dünýä al içinde,
+              Adamzat hyýal içinde,
+              Jahan galmagal içinde,
+              Her kim ýüz talaşlar bile.
+
+              Alla yşkyda ser mestler,
+              Duwuş gelmez zeberdestler1 ,
+              Köňül perwaz eder, dostlar,
+              Durmaz ýüz alaçlar bile.
+
+              Köp köýler bile oturdym,
+              Bilmedim, ne iş bitirdim,
+              Gümra bolup, ýol ýitirdim,
+              Oturdym biweçler bile.
+
+              Bikär goýma ömür tagty,
+              Oýandyrsak oýmuş2 bagty;
+              Doga kylyp säher wagty,
+              Nalyş kylsam guşlar bile.
+
+              Magtymguly, towpyk3 alsam,
+              Bir är tapsam, gulluk kylsam,
+              Ýürek aýdar: ýoldaş bolsam
+              Dem çeken derwüşler bile.
+
+1 Zeberdest – eli üstün, güýçli, başarjaň.
+2 Oýmuş – uklan, ýatan.
+3 Towpyk – kömek.
+
+                      Ýar bizim sary
+
+         Gulzumy1 gyrsanyp kyrk ýol geçer men,
+         Eger ki meýl etse ýar bizim sary;
+         Gadam ýerne ganat baglap uçar men,
+         Diýse dilber: «Aşyk, ýör bizim sary».
+
+         Kyrk ýyl gol gowşuryp, gullukda dursam,
+         Alty günçe görmen, altmyş ýyl ýörsem,
+         Bir şunçakly bolsa, görsem, jan bersem,
+         Jemalyn arz etse bir bizim sary.
+
+         Ne laýykly ýüzüm bardyr tutarga,
+         Ne aýry gapym bar onda giterge?
+         Umyt bar goýnunda bile ýatarga,
+         Dergahyndan açsa der2 bizim sary...
+
+         Bir kimse ýolukdy desti3 şeraply,
+         Ýelden jaýnamazly4 , suwdan mähraply,
+         Egni ak redaly5 ýaşyl nykaply
+         Ugraşdy bir ajap är bizim sary.
+1 Gulzum – Müsür bilen Arabystan aralygynda bolan Gyzyl deňiz.
+2 Der – gapy, işik.
+3 Dest – el.
+4 Jaýnamaz – namazlyk.
+5 Reda – don.
+
+         Ýoldaş bolup bile ýördüm bir meýdan,
+         Meýdan içre dolup oturmyş merdan,
+         Bir eýwan üstünde çyrlap tört ýerden,
+         Diýdiler: «Goluňny ber bizim sary!».
+
+         «Pyragy!» diýp çagyrdylar, eltdiler,
+         «Kandadyň?» diýp, gulagymdan tutdular,
+         Istihanym1 altmyş para etdiler,
+         Diýdiler: «Mert olsaň, ýör bizim sary!»
+
+         Magtymguly bäş gün aşret sürmäge,
+         Jaý imesdir eglenmäge, durmaga,
+         Kararym ýok oturmaga, turmaga
+         Agzyn açyp durmuş ýer bizim sary.
+
+                      Bolmasa
+
+           Her kim suluw men diýr, ygtybar olmaz,
+           Sünbül saçy, gylça bili bolmasa;
+           Ýürekleri at başy dek batyrlar,
+           Hatynça ýok, at-ýaragy bolmasa.
+
+           Näler görejekdir bu şum köňüller.
+           Hazan ursa, solar açylan güller,
+           Bag içre saýraşan şeýda bilbiller,
+           Torgaýça ýok, gonar güli bolmasa.
+1 Istihan – süňk.
+
+Sözleseň, her ýana öwser bu tiller,
+Ýel urpakdan aşsa, şuwlar şemallar,
+Ýaşylbaş sonalar, gazlar garkyllar,
+Haly-harap düşer köli bolmasa.
+
+Guşlar uça bilmez guruk-ganatsyz,
+Aşyk ýara ýetmez dady-perýatsyz,
+Bir bedew hanazat bolar syýaksyz,
+Gurugy, käkili, ýaly bolmasa.
+
+Ahyrzaman bolsa, şyhdan päl gaçar,
+Kelamnyň ýüzünden hat galman öçer,
+Meýdandaky suwsuz aryga ogşar –
+Her kimniň sahawat-haýry bolmasa.
+
+Başyň goşma gadyr bilmez bezzada,
+Goşsaň, goşgul aşyň bir asylzada,
+Howada ýagmazak meňzär buluda, –
+Her kimiň hümmeti, haýry bolmasa.
+
+Magtymguly, biliň, şundag zamandyr,
+Şindi haýyr bolsa, soňra zyýandyr,
+Är ýigidiň içi doly armandyr, –
+Gara göz, inçe bil ýary bolmasa.
+
+                 Mala seretmez
+
+         Owwal-a mal ýagşy, maldan baş ýagşy,
+         Baş döwletin tapan mala seretmez;
+         Dogmadyk oguldan dogan är ýagşy1 ,
+         Nadan ogul atasyna seretmez.
+
+         Atda aýak bolsa, özge syn bolmaz,
+         Ärde gaýrat bolsa, işi kyn bolmaz,
+         Söweş güni goç ýigitde müýn bolmaz,
+         Garşy bakar, peýkam-ýaýa seretmez.
+
+         Alaman öňüni serdary başlar,
+         Goç ýigitler naýza urar, gylyçlar,
+         Kimseler bukulyp, kimse at uşlar,
+         Abyraý tapmasa, paýa seretmez.
+
+         Är-dostdan gaçarlar, adam aç galsa,
+         Ýar-ýardan aýrylar, ara daş galsa,
+         Ýaman hatyn ýagşy ýigide duş bolsa,
+         Başyny terk eder, daýa seretmez.
+
+         Köne dünýä muhannesiň öýüdir,
+         Süýthor bolan kesiň dowzah jaýydyr,
+         Altyn, kümüş gözlerimiň maýydyr2 ,
+         Goç ýigitler bozuk jaýa seretmez.
+1 «Dogmadyk oguldan duşman är ýagşy» diýen nusga hem bar.
+2 Maý – ýag.
+
+          Dünýä görki näzeninler, ne janlar,
+          Nadana ýolukdy türpe1 jenanlar.
+          Ýardan galan, äri ölen juwanlar
+          Goç ýigidi gözlär, baýa seretmez.
+
+          Magtymguly, garyp göwnün baý edip,
+          Kanagat ülkesin bendi-jaý edip,
+          Her kim öz ýaryny dogan aý edip,
+          Aýyn gözlär, özge aýa seretmez.
+
+                 Duz hem bolmasa
+
+          Togsan dürli tagam bolsa gaşynda,
+          Ne lezzet, içinde duz hem bolmasa;
+          Näbiler sen ne iş bardyr başynda,
+          Müşgil işdir, başda göz hem bolmasa...
+
+          Aýak bar ýörmäge, el bar almaga,
+          Kany bende, saglyk şükrün kylmaga,
+          Gulak bardyr eşitgenin bilmäge,
+          Kim düzeder, dilde söz hem bolmasa?
+
+          Ýok ýerden jan berip ýetirdi nany,
+          Göwün bostanyda bitger imany,
+          Adyň bende bolsa, eýäňi tany,
+          Gelip saňa ýüzbe-ýüz hem bolmasa.
+1 Türpe (turpa) – gözel, ter.
+
+          Kysmatyn hak bilen ryzkyn yzlamaz,
+          Söz bilenler bilen sözün gizlemez,
+          Köňül joşa gelmez, dil hem sözlemez,
+          Her ýürekde yşkdan göz hem bolmasa.
+
+          Ýyl-ýyldan pezihat1 artar eýýama,
+          Hakyň özi getirmese enjama,
+          Dünýä sözi meňzär duzsuz tagama,
+          Söz içinde gelin-gyz hem bolmasa.
+
+          Ýum gözüňi, gysyp gezgin dişiňni,
+          Ýaza ýetseň unutmagyn gyşyňny,
+          Töwekgel et, taňra tabşyr işiňni,
+          Sabyr bilen biter, tiz hem bolmasa.
+
+          Magtymguly, hyýal düşüp özüme,
+          Köp tomaşa gelip geçer gözüme,
+          Eşidenler aýp etmesin sözüme,
+          Iller kimin sözüm uz hem bolmasa.
+
+1 Pezihat – erbetçilik, biabraýlyk, masgaralyk.
+
+                        Çykypdyr
+
+          Hak tagala, bu ne-niçik ahwaldyr,
+          Dury diýip içdigim gumly çykypdyr;
+          Ne ýeser beýhuda şum keç ykbaldyr,
+          Halal diýip iýdigim jimli çykypdyr.
+
+          Kimse syrym bilmez, özün öldürse,
+          Pakyr bendelerge taňry bildirse,
+          Ile şatlyk, şadymanlyk güldürse,
+          Maňa hemra bolan gamly çykypdyr.
+
+          Amuhta1 men örtenmäge, bişmäge,
+          Kişi ýok sözleşip, dert aýdyşmaga,
+          Oba ujundan barsam öý soraşmaga,
+          Ýa laldyr, ýa agzy mumly çykypdyr.
+
+          Menden şikat eder elim gerenim,
+          Galbyrdan2 şal çykar syrym berenim,
+          Pir diýip paşmagna elim uranym,
+          Deprenende, döwden demli çykypdyr.
+
+          Magtymguly, hasaby ýok görenim,
+          Tama edip, umyt elim gerenim,
+          Obasyna ärmiş diýip baranym
+          Etegne el ursam.., çykypdyr.
+
+1 Amuhta – taýar, çulum, öwrenişikli, endikli.
+2 Galbyr – elek.
+
+        Bary bolmasa
+
+Zamana beýledir, göze ilmezler,
+Her ýigidiň golda bary bolmasa.
+Ýüz tümenlik sözün şaýa almazlar,
+Her kişiniň ygtybary bolmasa!
+
+Ten bir dar kapasdyr, jan bir wagşydyr,
+Tile gelen sözler köňül nagşydyr,
+Otly, suwly tamug andan ýagşydyr,
+Her ýuwurdyň bir bazary bolmasa.
+
+Begzadalar galdy çopan tährine,
+Ten haçan döz getir ýylan zährine,
+Bibat olup döner Lutuň şährine,
+Her ülkäniň häkim äri bolmasa.
+
+Dünýäde aňlardan aňlamaz kändir,
+Bilmezler beladyr, bilenler jandyr,
+Ol ýigitler adam tilli haýwandyr,
+Söz aňmasa hem ykrary bolmasa.
+
+Ýigide ýoksullyk ýaman beladyr,
+Sözüni deň-duşdan gaýra saladyr,
+Ýaman gylyk dosty duşman kyladyr,
+Guryp galsyn, il derkary bolmasa.
+
+                 Hak her kime bir ýagşy ýar bermändir, —
+                 Sözi akdyr, içi doly armandyr,
+                 Ýüz ýaşasa, bäş gün döwran sürmändir,
+                 Her kimniň mynasyp ýary bolmasa.
+
+                 Magtymguly, haka tabşyr özüňni,
+                 Her namarda sarartmagyl ýüzüňni,
+                 Terhosym bar, gel terk eýle sözüňni, —
+                 Näge gerek, hyrydary bolmasa.
+
+                         Düýşüne degmez
+
+                 Ýoksuzlykda niçeleriň döwrany,
+                 Ýatyp ýagşy gören düýşüne degmez;
+                 Niçeler hasretde tapyp höşk1 nany,
+                 Bir lezzetli tagam dişine degmez.
+
+                 Soran bolsa, synam içre sözler bar,
+                 Müň tümenden ýegdir, niçe ýüzler bar.
+                 Neýsansyz2 , nebatsyz3 niçe ýazlar bar, –
+                 Hoşluk bilen geçen gyşyna degmez.
+       1 Xöşk – gury.
+       2 Neýsan — ýaz wagtynda ýagýan ýagyş; grekçe aýlarynyň biriniň
+
+ady.
+       3 Nebat – ot, ösümlik.
+
+          Akyllar bar, başa baglap keçeler,
+          Içgin-içgin sorsaň, magny saçalar,
+          Akmaklykda özün bezäp niçeler, –
+          Kellesine saran peşine degmez.
+
+          Aňlamaza aýat sözlerin diýseň,
+          Pygamber hadysyn öňünde goýsaň,
+          Gyýmazlykdan köp söz beýnine guýsaň,
+          Bu sözler gulagnyň daşyna degmez.
+
+          Ynjatsa ogul-gyz, ene-atasyn,
+          Toba kylmaý taňrym geçmez hatasyn,
+          Döwran gelse, bilmez ne iş tutasyn,
+          Her kimiň her işden başyna degmez.
+
+          Niçeler mal tapmaz, teňňi-dest1 bolar,
+          Niçeler bar, dünýälikde mest bolar,
+          Niçeler bar, ýigitlikde nist2 bolar,
+          Niçeler bar, süren ýaşyna degmez.
+
+          Magtymguly, gerçe işim namazdyr,
+          Köňlüm perişandyr, sähwüm3 derazdyr4 ,
+          Adam bar, müň tümen iýdirseň azdyr,
+          Adam bardyr, iýen aşyna degmez.
+
+1 Teňňi-dest – eli gysga, goly teň, pes
+2 Nist – ýok.
+3 Sähw – ýalňyş.
+4 Deraz – uzyn, köp.
+
+        Görner
+
+Dogry bakmazlar julluýa,
+Göze gyzyl donly görner;
+Söze pähm etmez akmaklar,
+Öz ýanyndan tilli görner.
+
+Başa degmänkä gurtlar.
+Kast etmäň, gerekdir ýurtlar,
+Ýagyda tanalar mertler,
+Il içinde mally görner.
+
+Pikr et, başa iş düşende.
+Yssy ýokdur, soň puşmanda,
+At meýdanda, är duşmanda,
+Toýda tirme-şally görner.
+
+Jany sagyň sözlär tili,
+Jomardyň dek durmaz eli.
+Her kişiniň öz akyly
+Özüne kemally görner.
+
+Gadymdan setdir ýagşylyk,
+Ýagşy zatdyr ýagşy gylyk,
+Mert ýigide az ýagşylyk,
+Az hem söýgüli görner.
+
+               Gel, akyl dolandyr indi,
+               Ýürek peýwendi, jan bendi,
+               Her kişiniň öz perzendi
+               Özüne jemally görner.
+
+               Magtymguly, söz binýadyň1
+               Agzynda ýakynyň-ýadyň;
+               Hünär ýok söz bilen adyň
+               Halk içinde belli görner.
+
+                        Tapylmasa
+
+            Dok dalaşar sebze2 halgat3 geýmäge,
+            Kilim gözel zatdyr, don tapylmasa.
+            Aç dyrjaşar gury nany iýmäge,
+            Müşgildir, bişirge un tapylmasa.
+
+            Hasyl umydy bar ekin ekene,
+            Bu işler maglumdyr mähnet çekene,
+            Ýalaň aýak dözmez, basmaz tikene, —
+            Neýlesin geýerge gön tapylmasa.
+1 Binýat – guralyş, dikeliş, esas.
+2 Sebze, sebz — gök, ýaşyl.
+3 Halgat – halat, geýim.
+
+          Akylsyzlar iş ahyryn garamaz,
+          Çulap1 çigidinden garpyz döremez,
+          Agyr mejlislere çopan ýaramaz,
+          Neýlesin, otyrga jem tapylmasa.
+
+          Ýigitlikde her kim aşretde ýaýlar,
+          Başyna ne geler, gelmez bu köýler.
+          Dişsizler nan tapsa çäresin eýlär,
+          Müşgildir suprada nan tapylmasa.
+
+          Magtymguly, söýmez jedeli-jeňi,
+          Ahyret azm2 etdi köp dosty-deňi.
+          Dünýäde ne iş bar, bolmasa soňy,
+          Muşakgatdyr tende jan tapylmasa.
+
+                  Malyna degmez
+
+        Baýlar bardyr, garyplara rehm eýlär,
+        Bardyr baýlar, dünýä malyna degmez;
+        Gözel bardyr dünýä malyn iýdirsiň,
+        Bardyr gözel, iýen nanyna degmez.
+
+        Dünýäde bahylyň ýüzüni görme,
+        Aşyň, nanyň, suwuň alyşyp berme.
+        Gul diýip, ýigidiň aslyny sorma,
+        Hojasy bar, belki, guluna degmez.
+1 Çulap – miwe ady.
+2 Azm etmek – ugramak, gitmek.
+
+        Dünýä malyn berseň, eýesi satmaz,
+        Şa istese, anyň dilegi bitmez,
+        Bedew bar, pul berseň, bahasy ýitmez,
+        Bedew bardyr, salan juluňa degmez.
+
+        Döwletli är gerek, söweşde serhoş,
+        Ýat bilen baryşsaň, bolar sen gardaş,
+        Ýagşy ogul, ýagşy aýal, gyz syrdaş,
+        Bu döwlet her kimiň eline degmez.
+
+        Magtymguly, bu dünýäniň eşreti, –
+        Iýmek, içmek, münmek, guçmak, söhbeti.
+        Bir niçeler mydam kylar tagaty,
+        Niçeleriň sežde alnyna degmez.
+
+                         Bolgul
+
+        Bir bidöwlet bile birge bolynçaň,
+        Döwletliniň gapysynda gul bolgul;
+        Bedasyl beg gullugynda ýörinçäň,
+        Asyl begiň saýasynda kül bolgul.
+
+        Ýamany goý, ýagşylara göz ildir,
+        Kelhemeç1 hem «öz oglanym gözel» diýr,
+        Gargyş gurduň zürýadyny azaldyr,
+        Goýun kibi çar tarapa il bolgul.
+1 Kelhemeç – dazzarkel, çaýkel.
+
+        Süleýman sen — mura1 bir gulak goýgul,
+        Sözüni diňlegil, jogabyn aýgyl,
+        Häkim bolsaň halky gün kibi çoýgul,
+        Akarda suw, ýa öserde ýel bolgul.
+
+        Ýaman işdir öz nebsiňi besleseň,
+        Akmaklykdyr özüň ýagşy toslasaň,
+        Her bazarda rowaç bolmak isleseň,
+        Ýagşylaryň potasynda2 pul bolgul.
+
+        Magtymguly bardyr demiň hesibi,
+        Ir, giç ýeter her bendäniň nesibi,
+        Kişi bolsaň, goýgul gury täsibi,
+        Ýagşy, ýaman barçalarga del bolgul.
+
+           Görüm görülmegen ýerde
+
+             Yzzat, hormat, syn etmegin
+             Görüm görülmegen ýerde;
+             Akyl bolsaň, söz aýtmagyn
+             Nobat berilmegen ýerde.
+
+             Akly ýagşylar unutmaz,
+             Gury agaja ýaprak bitmez,
+             Akylly är mesgen tutmaz
+             Hulky söýülmegen ýerde.
+1 Mur – garynja.
+2 Pota – bu ýerde jübi, kise manysynda
+
+             Gömlüp galan aryk akmaz.
+             Her naşydan kerem1 çykmaz,
+             It gözlemez, pişik bakmaz
+             Saçak ýazylmagan ýerde.
+
+             Haç eýleseň jara döner,
+             Gül açylsa zara döner,
+             Hyzmat etmek hara döner
+             Gadryň bilinmegen ýerde.
+
+             Namart goş üstünde harlar,
+             Iýmit, aş üstünde gürlär,
+             Söweş gurup, gylyç parlar
+             Duşman görülmegen ýerde.
+
+             Öý içinde hara döner,
+             Muhannes bir nere döner,
+             Tilki, şagal şire döner
+             Söweş gurulmagan ýerde.
+
+             Parasat kyl bakyp akla,
+             Goç ýigidiň sözün hakla,
+             Magtymguly, tiliň sakla
+             Habar soralmagan ýerde.
+
+1 Kerem – ýagşylyk.
+
+                 Är ýanynda bellidir
+
+                 Ýagşylygy – pis bilmez, –
+                 Är ýanynda bellidir.
+                 Görer gözüň gymmaty
+                 Kör ýanynda bellýadir.
+
+                 Däli köňül daýanjy,
+                 Ýokdur dünýä ynanjy,
+                 Sag gulagyň guwanjy
+                 Ker ýanynda bellidir.
+
+                 Eger pir1 sen, eger ýaş,
+                 Kylma syryň halka paş,
+                 Syr saklaýan mähek2 daş
+                 Zer ýanynda bellidir.
+
+                 Bu dünýäniň myrady, –
+                 At, zagyfdyr3 , zürýady.
+                 Arwananyň kuwwaty
+                 Ner ýanynda bellidir.
+
+                 Bolsa gamdan halasym,
+                 Ýaza dönse gyş paslym,
+                 Magtymguly, yhlasym
+                 Ýar ýanynda bellidir.
+1 Pir – garry.
+2 Mähek – gyzyl, kümüşiň hilini kesgitlemek üçin ulanylýan daş.
+3 Zagyf (zagyfa) – aýal.
+
+                   Sazyna degmez
+
+           Oýunyň lezzetin bilmeýän adam
+           Hünärli ýigidiň sazyna degmez;
+           Bet syýakly1 , bethüý bolan pis adam
+           Perizadyň eden näzine degmez.
+
+           Bimagnynyň sözi janyňdan öter,
+           Gybat edip, özi günäge batar,
+           Ýamanyň zyýany iline ýeter,
+           Nadanyň peýdasy özüne degmez.
+
+           Adam bardyr, ony şalar çagyrdar,
+           Adam bar, zulm edip, garyp agyrdar,
+           Adam bardyr, körpe ýanyn agyrdar,
+           Adam bardyr, şal kiz2 ýanyna degmez.
+
+           Muhannesiň bolmaz namysy, aňy,
+           Bir söweş gününde eýlemez jeňi,
+           Aga-begler, muhannesiň on müňi
+           Mert ähliniň3 alty ýüzüne degmez.
+1 Syýak – sypat.
+2 Kiz – keçe.
+3 Mert ähli – mert adamlar
+
+          Magtymguly, döwran soňudyr adem1 ,
+          Lahat atly öýge goýar sen gadam.
+          Many söz aňlamaz, biakyl adam
+          Danalaryň aýdan sözüne degmez.
+
+                   Sarp eýleýir aşyny
+
+         Hak nazaryn salan bir serhoş ýigit
+         Ynsan üçin sarp eýleýir aşyny;
+         Namysly, gaýratly, arly goç ýigit
+         Söweş güni gurban eder başyny.
+
+         Bir niçeler gezer zerbap don bilen,
+         Bir niçeler gezer gury san bilen,
+         Adamzady tanyp bolmaz syn bilen,
+         Synaşmagan bilmez kişi kişini.
+
+         Ýigidiň abraýy ýagşy zagyfdyr,
+         Ýagşy zagyf näkes äre haýypdyr,
+         Ýigide gallaçlyk külli aýypdyr,
+         Her ýan gezer, bilmez eder işini.
+
+         Magtymguly, aýdaý ýaryn sypatyn,
+         Täze depder bilen ýazaý zer hatyn.
+         Dowzah nyşanasy bir ýaman hatyn
+         Her kime duş bolsa, alar huşuny.
+1 Adem – ýokluk.
+
+        Ärden
+
+Hiç köňül şatlygy çykmaz
+Bir köňül ýykmaýan ärden;
+Ýagşylyk tamasyn etmäň
+Ýamanlyk çykmaýan ärden.
+
+Her kim ile beglik eder,
+Bir söý bilen ýola gider,
+Kethudalyk ýyrak gider, –
+Ýaman söz çekmeýen ärden.
+
+Ýagşy är il aýbyn açmaz,
+Göre-bile haram içmez,
+Ýaradan ýazygyn geçmez
+Göz ýaşyn dökmeýen ärden.
+
+Eglenmez, eýýam öwrüler,
+Wagt täzeler, nyrh çöwrüler,
+Agyr döwletler aýrylar
+Bir agza bakmaýan ärden.
+
+Öz-özünden akly ýetmez,
+Akyllar sözüni tutmaz,
+Garyplyk ýok bolup gitmez
+On iş terk etmeýen ärden.
+
+     Ýigitlere ýasaw güni –
+     Gurda goýmaz şir awuny,
+     Pygamber bizar ýow güni
+     Ýoldaşa bakmaýan ärden.
+
+     Magtymguly, ýangyl, öçgül,
+     Ýa lal otur, ýa dür saçgyl!
+     Bir guýruksyz itdir, gaçgyl, –
+     Nesihat ýokmaýan ärden.
+
+            Bilmedim
+
+Pelek maňa gam badasyn bereli
+Wysal kaýsy, hijran kaýsy, bilmedim;
+Hak işine ten bermişem göreli,
+Arzuw kaýsy, arman kaýsy, bilmedim.
+
+Bende bolsaň gözle hakyň ryzasyn,
+Jebr eýlese, çekewergil jezasyn,
+Ajal bir gün atar tiri-kazasyn,
+Kiriş kaýsy, keman kaýsy, bilmedim.
+
+Aryf bolsaň, gulak goýgul sözüme.
+Bir suratam bu gün bakmaň özüme,
+Dünýä düýbi ýok görüner gözüme,
+Döwür kaýsy, döwran kaýsy, bilmedim.
+
+        Az ömrümi köp söwdaga satyp men,
+        Özüm bilmeý, ol derýaga atyp men,
+        Ne ummandyr, ne talapdyr, ýatyp men,
+        Zemin kaýsy, zaman kaýsy, bilmedim.
+
+        Her kim girse ol talaba, ummana,
+        Başyn alyp çyka bilmez bir ýana,
+        Gadam goýdum ol sähraýa-meýdana,
+        Jan kaýsydyr, jahan kaýsy, bilmedim.
+
+        Bu dünýäni asmandaky reň bildim,
+        Yssy-yssy asylyşdym, soň bildim,
+        Imdi anyň baryn-ýogun deň bildim,
+        Sut1 kaýsydyr, zyýan kaýsy, bilmedim.
+
+        Magtymguly, ýoluň öňi-ardy bar,
+        Çeker ýüküň, her kişiniň merdi bar,
+        Ýüregimde pinhan yşkyň derdi bar,
+        Dert kaýsydyr, derman kaýsy, bilmedim.
+
+1 Sut (sud) – peýda, haýyr.
+
+       Öýlengin
+
+Ýigit halyň garrylyga
+Salaýyn diýseň, öýlengin;
+Kethudalyk endişesin
+Kylaýyn diýseň, öýlengin.
+
+Kethudalyk gözel ýoldur,
+Gaýgy garrydar, gam öldir,
+Ýigitlik bir gyzyl güldür, –
+Solaýyn diýseň öýlengin.
+
+Öý-il gerek, ýorgan-düşek,
+Perzent bentdir, aýal – duşak,
+Ýüke werziş bir boz eşek
+Bolaýyn diýseň, öýlengin.
+
+Gezer sen oýnap, dalaşyp,
+Galar sen, derde dolaşyp,
+Gaýgydan gama ulaşyp
+Galaýyn diýseň, öýlengin.
+
+Joşgun eder sen özüňden,
+Aýrylar sen hoş ýazyňdan-,
+Tükenmez derdiň yzyndan
+Ýeleýin diýseň, öýlengin.
+
+              Açyp ýigitlik dumanyn,
+              Getir sen gaýgy zamanyn,
+              Dünýäniň ýagşy-ýamanyn
+              Bileýin diýseň, öýlengin.
+
+              Magtymguly, gezip her taý.
+              Etmediň jahandan perwaý,
+              Pygamber sünnetin berjaý
+              Kylaýyn diýseň, öýlengin.
+
+                   Kyly-kal bolar
+
+           Her kişiniň iki bolsa aýaly,
+           Gije-gündiz işi kyly-kal1 bolar;
+           Her biriniň bardyr ýüz müň hyýaly,
+           Owkat sürüp görejigi hal2 bolar...
+
+           Birin söýüp, birin eýlese naçar,
+           Ile ryswa bolup, öz aýbyn açar,
+           Akly haýran bolup, baryndan geçer,
+           Deň tutmasa ýaryn, bikemal bolar.
+
+           Gähi bilbil kimin saýrar tilleri,
+           Tomaşadan häzir eder illeri,
+           Gähi ýer ýumruklar, gähi külleri,
+           Ärin göre bilse, tilsiz lal bolar.
+1 Kyly-kal – galmagal, gowga.
+2 Hal – bu ýerde kyn manysynda.
+
+             Gahar eýläp gelmez bolsa ýanyna,
+             Söz aýtmasa her biriniň şanyna,
+             Beýle är goşulmaz adam sanyna, —
+             Iki hatyn, bir är — üç aýal bolar.
+
+             Magtymguly, kimse bilmez batyny1 ,
+             Öýlenseňiz, garap alyň zatyny2 ,
+             Eýäm görkezmesin ýaman hatyny,
+             Adam özün bilmez, ham hyýal bolar.
+
+                     Ykrarsyz ärden
+
+                Gördük saýy, köňül sowar
+                Sabyrsyz, kararsyz ärden;
+                Yssy beren köpek ýegdir3
+                Uýatsyz, ykrarsyz ärden.
+
+                Aýlandykça döwran-döwür,
+                Ykbalyň ýüwürse, öwür,
+                Dura-bara dosty sowyr
+                Garyp galan barsyz ärden.
+1 Batyn – gizlilik, syr, içki dünýä.
+2 Zat – asyl.
+3 Eg – oňat, gowy.
+
+Ite zer dök, minnet çekmez.
+Aňlamaza sözüm ýakmaz,
+Köňlüň istän işler çykmaz
+Nan ýagysy, kärsiz ärden.
+
+Her göz säherde bidardyr, —
+Eýesinden ülüş bardyr,
+Hak, pygamber, halk bizardyr
+Düýbi ygtybarsyz ärden.
+
+Magtymguly, magny saçar,
+Her kim söz lezzetin içer,
+Bara-bara köňül geçer
+Tagsyby ýok, arsyz ärden.
+
+     Diş gitmek
+
+Tagamnyň lezzetin alyr,
+Dahanyňdan diş gitmek;
+Aňyrsyzy azdyryr
+Götin döwlet baş gitmek.
+
+Şeýtan ýolun bek eýlär,
+Gara ýüzün ak eýlär,
+Ýüz müň bela ýok eýlär
+Säher turup ýaş dökmek.
+
+Peltesiz ýag çyraga,
+Yşyk salmaz gyraga,
+Ilin salar aýaga
+Aýak galyp, baş gitmek.
+
+Niçe pese zar bolup,
+Ýatandan bimar bolup,
+Hoşdur ýagşa ýar bolup,
+Bir ýamandan daş gitmek.
+
+Ulaşmaganlar gama
+Şükr etmezler bu deme,
+Abyraýdyr adama
+Ýagşy gelip, hoş gitmek.
+
+Ýaman til dost ýitirer,
+Hoş til rahmet getirer,
+Äre sangy ýetirer
+Kyrkdan agyp, ýaş gitmek.
+
+Pyragy, dünýä düýşdür,
+Düýş görseň, düýbi hiçdir.
+Jahanda ýaman işdir
+Gury gelip, boş gitmek.
+
+                         Eldim tut
+
+     Dünýe görmeý, tutgun galsaň bir künçde,
+     Bady-paý1 dek ýer ýüzüne ýeldim tut;
+     Çyn-Maçynda, Rumda, Hindde, Hebeşde
+     Bolan-bolmuş hünärleri bildim tut.
+
+     Aç hem bolsaň, barma ile dilege,
+     Diý: köşkde men, başym barmyş pelege,
+     Çölde galsaň, hiç tapmaýan kölege,
+     Erem bagy içre gamsyz galdym tut.
+
+     Aş görende, özüň atma dillenip,
+     Gerçe aç hem bolsaň, halka bellenip,
+     Zerler döküp, çyn gullarny gollanyp,
+     Tiz hem ölseň, Nuh ýaşyna geldim tut.
+
+     Mätäçligiň hakdan özge bilmese,
+     Ol rozugär2 besdir, açdan ölmese,
+     Hindi kimin egin örtiň bolmasa,
+     Patyşalyk puşeş3 çigne saldym tut.
+1 Bady-paý – el aýak, ýyndam at.
+2 Rozygär – rysgal, durmuş.
+3 Puşeş – eşik, geýim.
+
+     Suwa, ýele hökmi geçen Süleýman,
+     Bak: olardan ne nam galdy, ne nyşan!
+     Teşne1 galyp, jaýyň bolsa çölüstan
+     Derýa içre men Isgender boldum tut.
+
+     Ýoldaş bolsaň dile düşmez mur bile —
+     Ýer tapmaýyn, bile ýatsaň mar bile,
+     Ýigrim alty keret2 ýüz müň är bile
+     Karun hazynasyn ele aldym tüt.
+
+     Magtymguly, çekseň jepa-jebir, bil –
+     Hudaga hoş geler, şükür-sabyr, bil,
+     Gylça jana gyzyl teni gabyr bil,
+     Gyzyl tiliň sözlär eken, öldüm tut.
+
+                      Joş gelse
+
+     Dünýäde niçe iş bardyr, ýamandyr,
+     Biri oldur, ýersiz gahra joş gelse;
+     Aşyklara şol gün ahyrzamandyr,
+     Ýardan yrak düşüp, ara daş gelse.
+
+     Dostuňny egleme, nepden galmasyn,
+     Duşmanyň saklama, syryň bilmesin,
+     Açda algyn, bege bergiň bolmasyn,
+     Iş müşgildir, aňlamaza duş gelse.
+1 Teşne – suwsuz, suwsan.
+2 Keret – gezek.
+
+     Zemin seni häli-häli ýutarmy,
+     Akyl bolan munda bigam ýatarmy?
+     Hiý bir masgaralyk mundan ötermi, —
+     Giden gury gitse, gelen boş gelse!
+
+     On gat öýüň bolsa demir galadan,
+     Ajal tapar emir1 bolsa alladan,
+     Hakyky är ýüz döndermez beladan,
+     Hak ryzasy bilen başa daş gelse.
+
+     Aryf men diýp, lap urarlar ýalandan,
+     Bellisini aýdar sorsaň bilenden,
+     Il gözlügin ýüz ýyl tagat kylandan,
+     Ýagşydyr bir säher gözden ýaş gelse.
+
+     Baýlar baglap sahawatyň gapysyn,
+     Köpelder tamugnyň möýün, apysyn2 ,
+     Görüň bu eýýamyň pirin, sopusyn —
+     Dannamaýyn tykar otyr, aş gelse.
+
+     Magtymguly, söýle aklyň ýetinçä,
+     Tetärigiň gazan, bikar ýatynça,
+     Tamugdadyr, tä dünýäden ötinçä, —
+     Ýaman hatyn ýagşy äre duş gelse.
+
+1 Emir (emr) – buýruk, höküm.
+2 Apy (afy) – zäherli ýylanyň bir görnüşi.
+
+                         Ýigide
+
+                Ulalanda, iş hoş gelmez
+                Ýaşlykda köýmän ýigide;
+                Döwlet gelse özün bilmez
+                Dogaly doýman ýigide.
+
+                Ýamana öwüt hebesdir,
+                Ýagşy äre bir söz besdir,
+                Ýörişini ýalňyş basdyr
+                Ýaňy don geýmän ýigide.
+
+                Jüpbe jöwşen1 , zere-sowut2 ,
+                Keserli gylyç, arap at,
+                Söweş güni gider uýat
+                Gaýraty bolman ýigide.
+
+                Çopan adam çoka bolmaz,
+                Ala garga oka gelmez,
+                Köp ýygylsa, terhos almaz
+                Aňrysy bolman ýigide.
+
+                Gulluk ýetirgin janyňdan,
+                Aýama parça nanyňdan,
+                Ganly bolsa, geç ganyňdan
+                Bir garyp myhman ýigide.
+1 Jöwşen – harby eşik, enjamlar.
+2 Sowut – demir don.
+
+Dünýäde hiç kim galmandyr,
+Mal jana ýoldaş bolmandyr,
+Göýä bu dünýä gelmändir
+Bir zürýat goýman ýigide.
+
+Almaz, kümüş mis görüner
+Dula gyrnak tüýs görüner,
+Perizat hatyn pis görüner
+Bir hulky söýmän ýigide.
+
+Mal döner çiýan-çirmäge,
+Durar et-ganyň sormaga,
+Malyndan zekat bermäge
+Gözleri gyýman ýigide.
+
+Magtymguly, ýeldan çykmaz,
+Ýagşy söz ýamana ýakmaz,
+Müň söz aýtsaň, biri ýokmaz,
+Taňrysy guýman ýigide.
+
+                     Gidiji bolma
+
+        Gel, köňlüm, men saňa nesihat kylaý,
+        Watany terk edip gidiji bolma;
+        Özüňden egsik bir gaýry namardyň
+        Hyzmatynda gulluk ediji bolma.
+
+        Hyzmat kylsaň, bolsun bir asylzada,
+        Ata-babasyndan beýik begzada,
+        Eger her çent bolsa aç hem üftada,
+        Ýanyndan bir zaman gidiji bolma.
+
+        Akmaýan galmazdyr bir akan aryk,
+        Bir tende adam ki semiz, kä aryk;
+        Bir ýüzi çirikdir1 , bir ýüzi çaryk,
+        Çirik diýp, gaty söz aýdyjy bolma.
+
+        Ýagşylardan hergiz çykmaz ýamanlyk,
+        Asly ýaman bolsa, çykmaz ýagşylyk,
+        Aslyna tartadyr ýüwrük, çamanlyk,
+        Ýüwrükni çamanga satyjy bolma.
+
+        Çakylyk, habarsyz bir ýere barsaň,
+        Imtiýaz2 eýlegil otursaň, tursaň,
+        Bir nesihat bereý, pendimi alsaň,
+        Kişi aşynyň duzun dadyjy bolma.
+1 Çirik – bu ýerde garalyk, hapa manyda.
+2 Imtiýaz – salykatlylyk, seljermek, artykmaçlyk.
+
+        Çagyrlan ýere bar, otur-da turma,
+        Çagrylmadyk ýere barma, görünme,
+        Utanmaz adam dek süýrenip ýörme,
+        Buýrulmagan işni ediji bolma.
+
+        Eger sen hem bolsaň nermi-mylaýym,
+        Mylaýym sen bolsaň, guluň bolaýym,
+        Gulagymga beren pendiň alaýym,
+        Kişige gaty söz aýdyjy bolma.
+
+        Gökden nem düşmese, ýer ot getirmez,
+        Ýygylsa müň gaýgy, bir iş bitirmez,
+        Är ýigit köňlüne gaýgy getirmez,
+        Namardyň ogly dek gaçyjy bolma.
+
+        Mert ogludyr ile ýazar desterhan,
+        Dogry söz üstünde berer şirin jan,
+        Ömrüni ötgerer, diýmez bir ýalan,
+        Jäht eýläp, ýalan söz aýdyjy bodma.
+
+        Sahty-dil1 ýüregi hergiz boş bolmaz,
+        Her niçe gynansa köňli hoş bolmaz.
+        Bir-birewge iki ýagşy duş bolmaz,
+        Ýagşyny ýamana satyjy bolma.
+1 Sahty-dil – gaty, doň ýürek.
+
+        Töwekgel ner bolar, endişe — maýa,
+        Köňlüňni iberme her kaýsy jaýa,
+        Barçanyň daýanjy kadyr allaýa,
+        Alladan özgäge söýenji bolma.
+
+        Okyr bolsaň, ok ur nebsiň gözüne,
+        Gara, çyn göz bilen meshap1 ýüzüne,
+        Aldanyp girmegil şeýtan sözüne,
+        Ýagşylygy hiç wagt goýujy bolma.
+
+        Eger bolsun diýseň ýeňil-agyrlar,
+        Kelçik sözläp agyrtmagyl bagyrlar,
+        Ýoluksa gözüňe güňi-sagyrlar,
+        Olarnyň halyna gülüji bolma.
+
+        Tapsaň-da dünýäde mülki-Isgender,
+        Karunyň maly hem bolsa miýesser,
+        Ahyry bolar sen ýerge barabar,
+        Köňlüňde men-menlik satyjy bolma.
+
+        Aýdarlar: ýyrtyk don görse it gapar,
+        Päli ýaman bende hudadan tapar,
+        Ahyry bir güni kylar sen sapar,
+        Dar köňüllik işi ediji bolma.
+1 Meshap – kitap, tom, kodeks.
+
+        Eger çendi ki bol sahyby-mansap1 ,
+        Sözün diňle, adalatly bol deňläp,
+        Söz tapsaň sözlegil, tapmasaň bol hap,
+        Goldan gelmez işni ediji bolma.
+
+        Garrylyk gitgisi bir gün apaty,
+        Ýigidiň gitgisi bir gün kuwwaty,
+        Ganymat bil, gapyl adam, pursaty,
+        Murda dek uzanyp ýatyjy bolma.
+
+        Maksat, bu sözlere kylgyl ygtybar,
+        Çyn adama her wagt adamlyk derkar,
+        Aňlamaý söýleme: «tamda gulak bar»,
+        Iç syryň kişige aýdyjy bolma.
+
+        Daň atanda molla çagyrar azan,
+        Bozulmazmyş hergiz kysmatda ýazan,
+        Ýigitlik bostandyr, garrylyk — kazan,
+        Bostany hazana satyjy bolma.
+
+        Kitabyn açyban okan molla diýr,
+        Gögerer ýagmyryň suwy birle ýer,
+        Alkyşy, patyha, doga birle är,
+        Mazluma sütemlik ediji bolma.
+1 Sahyby-mansap – derejeli, emeldar.
+
+        Döwletli ogullar ýaşda baş bolar,
+        Ýaşaganda, bidöwletler ýaş bolar,
+        Rehimsiz zalymlar bagry daş bolar
+        Barar ýere kesek atyjy bolma.
+
+        Är ýigit balasy bara pur1 bolar,
+        Gamçysy elinde ýaman zor bolar,
+        Märeke görmegen ýigit har bolar,
+        Bolar-bolmaz sözi aýdyjy bolma.
+
+        Eý köňül, gel imdi haky tapaly,
+        Nesibe merkebin2 münüp çapaly,
+        Aýdarlar: hak ermiş mähri-wepaly,
+        Hergiz öz sözüňden gaýdyjy bolma.
+
+        Men diýdim bir niçe pendi-nesihat,
+        Bilseň nesihatdyr, ýogsa — pesihat3 ,
+        Pesihat bilmegil, barça nesihat,
+        Ýalgançy sözleri aýdyjy bolma.
+
+        Magtymguly, göwnüňdedir köp arman,
+        Tapmady derdine akybet derman,
+        Ýetişer bir güni hakdan bu perman,
+        Gaflat düşeginde ýatyjy bolma.
+
+1 Pur – doly.
+2 Merkep – ulag.
+3 Pesihat – owadan söz.
+
+            Seni
+
+Içki syryň aýtma her bir namarda,
+Syryň ile ýaýyp, paş eder seni.
+Ogry-kezzap bilen obadaş bolma,
+Malyndan aýyryp, aç eder seni.
+
+Sam-sam adam bilen oturma, turma,
+Zynhar, namart bilen hemsöhbet gurma,
+Gadyrdan dostuňdan ýüzüň öwürme,
+Barsaň depesine täç eder seni.
+
+Bir goç ýigit näzenine ýar bolsa,
+Jemalyny bir görmäge zar bolsa,
+Aralykda bir şum rakyp bar bolsa,
+Ýagşy dostuň bilen öç eder seni.
+
+Sopular ýaňylyp, aýtmaz senany,
+Säher tursaň geçjek barça günäni,
+Aýtmawer gyýbat söz, etme zynany,
+Dowzahyň oduna duş eder seni.
+
+Magtymguly, ile ýaýdym nesihat,
+Zynhar, ýaman bilen bolmagyl ülpet,
+Hudaý berse sagadatly bir perzent,
+Garrygan çagyňda ýaş eder seni.
+
+                    Daşy syndyrar
+
+           Ykbalyň oýansa, döwlet ýar bolsa,
+           Daga azy ursaň, daşy syndyrar;
+           Täleýiň ters gelse, bagtyň şor bolsa,
+           Paludanyň peri dişi syndyrar.
+
+           Ajalyňdan gorkup, girseň ummana,
+           Gorkudan ne peýda gidejek jana,
+           Ömrüň ahyr bolup, dolsa peýmana, —
+           Haşhaşyň samany başy syndyrar.
+
+           Bar sözüne gulak goýgul bileniň,
+           Ahyry hiç ýere ýetmez ýalanyň,
+           Ömri-saly artar alkyş alanyň,
+           Gargyş galyndyrmaz, ýaşy syndyrar.
+
+           Akylyň sözünden köňül söýüner,
+           Akmagyň işinden zehin käýiner.
+           Muhannes giň ýerde akyl saýynar,
+           Dar ýerde akyly-huşy syndyrar.
+
+           Magtymguly, çölde gezen naşyny,
+           Bilik sorma, köp sürdi diýp ýaşyny,
+           Dar mejlisde doly berseň aşyny,
+           Aşny iýe bilmez, käşi1 syndyrar.
+
+1 Käşi – syrçaly gap.
+
+                     Gitmezmiş
+
+              Iller heý, Mejnun dagynyň
+              Serinden duman gitmezmiş;
+              Müňküre bilin bereniň
+              Köňlünden güman gitmezmiş.
+
+              Goýna gardaş bolmaz gurtdan,
+              Dileg etme her namartdan,
+              Tä ölinçä goç ýigitden
+              Parh ýeter, zyýan ýetmezmiş.
+
+              Gapyl adam ogly bilmez,
+              Ölümini ýada salmaz,
+              Maly-mülküň peýda kylmaz,
+              Ýanyňdan iman gitmezmiş.
+
+              Aşyklar terki-jan etsin,
+              Gözde ýaşyn rowan etsin,
+              Goç ýigitler yhsan1 etsin,
+              Yhsany reýgan2 gitmezmiş.
+
+              Magtymguly, galdyň derde,
+              Işiň düşmesin namarda,
+              Kyýamat güni jomarda
+              Dowzahdan zyýan ýetmezmiş.
+
+1 Yhsan – haýyr
+2 Reýgan — biderek, zaýa; mugt.
+
+       Olmasyn
+
+Eý ýaranlar, musulmanlar,
+Däli köňül joş olmasyn;
+Ýene bir ýagşy ýigide
+Ýaman hatyn duş olmasyn.
+
+Her kim alsa hakdan rehnet,
+Gider gaýgy, galmaz mähnet,
+Arslan bolsa durmaz döwlet, —
+Hiç ülke bibaş olmasyn.
+
+Täsip edip at besläne,
+Ýoldaş bolsun haýr aslyna,
+Haram aşap, şer isläne
+Uzak ömür ýaş olmasyn.
+
+Her kimiň öz synasynda,
+Akyl görner beýnisinde,
+Iki dostuň arasynda
+Ýaman-ýowuz iş olmasyn.
+
+Her kişiniň öz zürýaty —
+Jan hoşy, köňül kuwwaty;
+Artsyn jomardyň döwleti,
+Muhannesde aş olmasyn.
+
+Bir yşk düşse adam serne,
+Uky gaçyp, köňül urna,
+Iki söwgüli bir-birne
+Ýakyn olsun, daş olmasyn.
+
+Sözüm sözlense her çaklar,
+Akyly bolan gerçekler,
+Bir iş düşende goçaklar
+Iş görmedik ýaş olmasyn.
+
+Il içinde özün öwer,
+Dag-dumany başdan agar,
+Ýigide nogsany deger,
+Namartlar ýoldaş olmasyn.
+
+Sözle heý, aşygym, sözle,
+Gel, kyýamatlygyň gözle,
+Magtymguly, syryň gizle,
+Her namarda paş olmasyn.
+
+                      Läle getirmiş
+
+         Asmanyň ýüzleri minewwer1 bolsa,
+         Zemin ýaşyl geýip, läle getirmiş;
+         Huda buýrugyndan aýrylan juwan
+         Oýnaşyndan haram küle getirmiş.
+
+         Ozal akan ýerden akarmyş aryk,
+         Özün öwen ýigdiň tanapy çüýrük,
+         Mertden aşna tutsaň, abraýyňa şärik,
+         Namart aşnasyna hile getirmiş.
+
+         Her kim öz adyna möhür gazdyrar,
+         Ýazylan takdyry kimse bozdurar?
+         Ikiniň sylagy birni azdyrar,
+         Taýak bir dälini ýola getirmiş.
+
+         Magtymguly, ger doýursaň bir ajy,
+         Mälimdir, tapar sen bu ýerde hajy,
+         Bir ýagşylyk etse adam biweji, –
+         Her mejlisde ýüz ýol tile getirmiş.
+
+1 Minewwer – ýagty.
+
+                    Biwepalardan
+
+         Gözläp köňül berme biwepalarga,
+         Bak: kim wepa görmüş biwepalardan?
+         Goýma özüň ýersiz bu jepalarga,
+         Kim bähre tapypdyr bu jepalardan?
+
+         Yşkyň owazasyn diňle daşyndan,
+         Jan jebrinden gorksaň, barma başyndan,
+         Serişdäň kem bolsa yşkyň işinden,
+         Bar, habar al gören mübtelalardan.
+
+         Sözüm nesihatdyr, bir gulak salyň,
+         Bendesi men söze hyrydar guluň,
+         Kyrk oýnaşly hatyn ýagşydyr, biliň, –
+         Şereňňiz1 , köp tilli kethudalardan.
+
+         Ýatma, Magtymguly, aşretiň söýüp,
+         Munça ýatajak sen kepeniň geýip,
+         Hajatyn tiz bitir — hojany goýup,
+         Dileg eder kimse gul-gedalardan.
+
+1 Şereňňiz – şerçi, dawa-jenjel agtarýan, dawakeş.
+
+                           Näbilsin
+
+          Harazban eline düşse algyr baz,
+          Ganatdan aýyrar, gadryn näbilsin,
+          Bir çopan goluna degse bir almaz,
+          Çakmakdaşy eder, gadryn näbilsin.
+
+          Kämil bolmaz ol şerbetden datmagan
+          Pähim eýlemez söz magnyga ýetmegen.
+          Däli-Mejnun yşk eseri etmegen
+          Perizat Leýliniň gadryn näbilsin.
+
+          Dynçlygyň gadryny bilmez armagan.
+          Beglik ede bilmez berim bermegen
+          Çölde açlyk muşakgatyn görmegen
+          Öýde yssyg nanyň gadryn näbilsin.
+
+          Ötenden soň, adam aňlar döwletin,
+          Bilmez döwlet bilen geçen nobatyn,
+          Çekmän kişi bimarlygyň zähmetin,
+          Bu gözel saglygyň gadryn näbilsin.
+
+          Rismanyn1 berk edip, labyr2 salmaýan,
+          Girdaba ugraşar häzir bolmaýan,
+          Keştisi kölegde bendil almaýan,
+          Gury gara ýeriň gadryn näbilsin.
+1 Risman – ýüp, tanap.
+2 Labyr – leňňer, ýakor.
+
+Garry, ýigit bir ykrarda durmasa,
+Ulag gadryn bilmez, kişi armasa,
+Ördek, guba gazlar çöli görmese,
+Ser-çemenli köl gadryn näbilsin.
+
+Aýralyk oduna ýanyp-bişmeýen,
+Zalymlar elinden ülke aşmaýan,
+Watandan aýrylyp, ýalňyz düşmeýen
+Ülkesinde il gadryn näbilsin.
+
+Magtymguly diýer, ýaru-hemdemge,
+Geliň şükr edeliň, dostlar, bu demge,
+Zatynda söz pähmin bilmez adamga
+Müň many söz diýseň, gadryn näbilsin.
+
+     At ýanynda bellidir
+
+Eşek özün egsik saýmaz bedewden,
+Gymmat etseň, at ýanynda bellidir;
+Bedew diýgeç, hemme bedew deň bolmaz,
+Çyn bedewler meýdanynda bellidir.
+
+Oglanlykda bilmez idiň, beg idiň,
+Ýamana hiç ýokmaz sözüň-öwüdiň,
+Aryf bolsaň, aslyn sorma ýigidiň,
+Edebinde, erkanynda bellidir.
+
+         Bu jahandan doýmaz gözüň, siýr1 olmaz,
+         Her tilkiden ýolbars olmaz, şir olmaz,
+         Ýigit diýgeç, hemme ýigit bir olmaz,
+         Goç ýigitler myhmanynda bellidir.
+
+         Döwlet bolsa goç ýigidiň başynda,
+         Hemaýatly ili gerek daşynda,
+         Ýigit özün maglum eder işinde,
+         Gylyjynda, zybanynda bellidir.
+
+         Magtymguly, garyplaryň gözýaşy
+         Daglary ýandyrar, erider daşy...
+         Pakyra jebr eden zalymyň işi
+         Ruzy-magşar diwanynda bellidir.
+
+                          Il biläni
+
+              Belent daglaryň başynda
+              Bulut oýnar sil biläni;
+              Goç ýigide toýdur-baýram,
+              Her iş gelse il biläni.
+
+              Dil bilenler gün bolupdyr,
+              Altyn, kümüş zeň bolupdyr,
+              Peşe kaçan deň bolupdyr,
+              Ugraşanda pil biläni.
+1 Siýr bolmak – doýmak.
+
+                 Otlaga gaçar buzawlar,
+                 Öňün başlar ýagşy gäwler1
+                 Tanalar ol has bedewler
+                 Köne ýyrtyk jul biläni.
+
+                 Hak bendesi haka çapar,
+                 Ýaman öz pälinden tapar,
+                 Magtymguly, aýbyn ýapar
+                 Iş kylyjy dil biläni.
+
+                        Ili gözlär
+
+                 Ilinden aýra düşen
+                 Ah urar, ili gözlär;
+                 Ýolundan aýra düşen
+                 Jäht eder, ýoly gözlär.
+
+                 Gökde pelek gerdandyr,
+                 Halk ýerde sergerdandyr,
+                 Ne bazygär2 jahandyr, —
+                 Göz açan maly gözlär.
+
+                 Kimlerde altyn täçdir,
+                 Kimler saýyl-mähtäçdir,
+                 Kimler düýpden gallaçdyr.
+                 Kim ýüpek haly gözlär.
+1 Gäw – sygyr.
+2 Bazygär – oýunçy.
+
+                Kim nan tapmaz iýmäge,
+                Kim ýer tapmaz goýmaga,
+                Kim don tapmaz geýmäge.
+                Kim tirme-şaly gözlär
+
+                Bu jahan bir puştadyr,
+                Kim zende, kim küştedir1 .
+                Her bende bir işdedir.
+                Her kim bir haly gözlär.
+
+                Heňňam2 uzyn, ömür az.
+                Çahar3 pasla başdyr ýaz.
+                Gökde ganat ýaýan gaz
+                Gözleri köli gözlär...
+
+                Magtymguly, huş eýläp,
+                Gezgin, didäň ýaş eýläp,
+                Däli köňül joş eýläp,
+                Ýüz müň hyýaly gözlär.
+
+1 Küşte – heläk bolan, öli
+2 Heňňam – döwür.
+3 Çahar (çar) – dört
+
+                        Don gerek
+
+                Ne bela sen, adamzat,
+                Çyplak dogduň, don gerek;
+                Ak süýt emdiň, ulaldyň,
+                Hem aglar sen, nan gerek.
+
+                Ataň hoşnut1 bolmaga,
+                Eneň mährin salmaga,
+                Ýediňde din bilmäge,
+                Okyrsyň, kuran gerek.
+
+                Saraldar sen dilbendiň,
+                Ýognalar biliň-bendiň,
+                On bäşde arzuwmendiň –
+                Gyz gerek, juwan gerek.
+
+                Juwan gerek guçmaga,
+                Aýşy-aşret açmaga,
+                Ondan soň iýp-içmäge,
+                Bir tükenmez nan gerek.
+
+                Köňlün ynjydyp halkyň,
+                Hoşnut etseň öz hulkuň,
+                Rum, Pereň bolsa mülküň,
+                «Heniz azdyr», kän gerek.
+1 Hoşnut – şat, razy.
+
+               Ýatsaň düşekde bimar1 ,
+               Yssy etmese timar,
+               Zer dökseň harwar-harwar2 ,
+               Göze ilmez, jan gerek.
+
+               Doga bilen är dörär,
+               Ýagmyr bilen ýer gögär,
+               Är oldur – alkyş alar,
+               Ýerlerge baran gerek.
+
+               Ajal geler, oýda ýok,
+               Görmek ýylda-aýda ýok,
+               Hiç bir zatdan peýda ýok,
+               Bir nury iman gerek.
+
+               Magtymguly, ýol gitmäge,
+               Söz aslyn pikr etmäge,
+               Bir magny pähm etmäge,
+               Akylly ýaran gerek.
+
+1 Bimar – syrkaw, hassa.
+2 Harwar – eşek ýüki.
+
+                         Dag saýar
+
+                   Daglar ýeriň myhydyr,
+                   Depe özün dag saýar;
+                   Çekik aýdar: «bilbil men»,
+                   Çarlak özün zag saýar.
+
+                   Güýjünden-kuwwatyndan,
+                   Dünýäniň nobatyndan,
+                   Her kişi yzzatyndan,
+                   Bedasyl özün beg saýar.
+
+                   Nadanam, zat bilmenem,
+                   Bir kemine gul menem,
+                   Sirke1 aýdar: «bal menem»,
+                   Nebit özün ýag saýar.
+
+                   Habar alsaň birewden,
+                   Özün kem saýmaz döwden.
+                   Öz ýanynda bedewden
+                   Eşek özün ýeg saýar.
+
+                   Magtymguly, bir guldur,
+                   Gullugyna kaýyldyr,
+                   Ahmak özün akyl diýr,
+                   Tentek özün sag saýar.
+
+1 Sirke – uksus.
+
+                    Ata meňzär
+
+              Oba daşyndaky depe
+              Eýerlenen ata meňzär;
+              Ýaramaz ärler zer bilen
+              Ýazylan bet hata meňzär.
+
+              Bu dünýä bir düýpsüz derýa,
+              Gark eder, bolma biperwa,
+              Magrur olma, pany dünýä
+              Gezekli nobata meňzär.
+
+              Gardaşsyza kuwwat ýokdur,
+              Ogulsyza döwlet ýokdur,
+              Aýalsyza aşret ýokdur,
+              Hoş günüň hasrata meňzär.
+
+              Ýamandan ýagşy set bolmaz,
+              Asly ýagşylar bet bolmaz,
+              Dünýälikden döwlet bolmaz,
+              Ogul çyn döwlete meňzär.
+
+              Ýatan ýeri – ýylan goýny.
+              Asylany – itiň boýny,
+              Pis äriň ýagşy hatyny
+              Dürri-bigymmata1 meňzär.
+1 Dürri-bigymmat – gymmaty, gadry bilinmeýän dür.
+
+Burç bilen duz täze ýara
+Awy gatar rozugäre,
+Ýaman hatyn ýagşy äre, –
+Tükenmez töhmete meňzär.
+
+Magtymguly, namyradam,
+Iller hoşdur, men naşadam,
+Söz manysyn aňmaz adam
+Bir guruksyz ite meňzär.
+
+       Ýalydyr
+
+Ýaman ýagşa ýoldaş bolsa,
+Awulyk içen ýalydyr;
+Aýryla bilse, awusy
+Içinden öçen ýalydyr.
+
+Adam aýrylsa huşundan,
+Gorkar ýatanda düýşünden,
+Eýýama baksaň, işinden
+Şu köňlüm geçen ýalydyr.
+
+Bedasyl ykbaly ýörmek,
+Öýsüz eline mal bermek,
+Akmaga syryňny bermek
+Öz aýbyň açan ýalydyr.
+
+Öter ömrüň – dünýä seýlin,
+Hak ýoluna bagla biliň,
+Agzy ala bolan iliň
+Döwleti gaçan ýalydyr.
+
+Aňlamasaň, görde gizlen,
+Akyldyr iş soňun gözlän,
+Gepin tapyp, ýagşy sözlän
+Misli dür seçen ýalydyr.
+
+Ärden gitse ygtybarlar,
+Sowar ondan dosty-ýarlar,
+Hünärli, ykbally ärler
+Malu-pul guçan ýalydyr.
+
+Magtymguly, yllatly göz,
+Haraba döner degse duz,
+Märekede bir jaýsyz söz
+Çermenip... ýalydyr.
+
+         Hasy näbilsin
+
+Öz gadryny özi bilmez adamdan,–
+Aňlamazlar amu-hasy näbilsin?
+Ne tama bar çakyr içen gedemden,
+Buzahor ýagşyny, ýasy näbilsin?
+
+Ýamana ýagşy söz ýokmaz, taşlanar,
+Aňlar äriň oýlanmasy güýçlener,
+It ýalyň topraga dökseň, hoşlanar,
+Topragy, tabagy, tasy näbilsin?
+
+Aňla sözüm, ner zarbyny ner tanar,
+Har bakan har tanar, zergar zer tanar,
+Eý ýaranlar, är ýigidi är tanar,
+Namartlar ýagşyny, pisi näbilsin.
+
+Magtymguly aýdar: sözlerim hakdyr,
+Emma ki hak söze ten beren ýokdur,
+Bir gözli diýmese: garadyr, akdyr,
+Kör pakyr kümüşi, misi näbilsin?
+
+        Çatyp bolmaýyr
+
+Beýik dagyň başyndaky üç agaç,
+Düýbi bir bolmasa, çatyp bolmaýyr,
+Düýe ýaly dagda ýatan daşlary
+Gol bilen göterip, atyp bolmaýyr.
+
+Kelte diňden bolmaz beýik minara,
+Ýaman heleý duşsa bir ýagşy äre,
+Başyn kesip, ganyn döküp kenara,
+Ýa öldurip, ýa-da satyp bolmaýyr.
+
+Il içinde seniň ulalsa adyň,
+Seni ýaman görmez ýakynyň, ýadyň,
+Golunda bolmasa bir gerek zadyň,
+Meniňki diýip, başyn tutup bolmaýyr.
+
+Pakyrlar mal istär, baýlar zer diýer,
+Ýekeje eşekli: atym –ner diýer,
+Dünýäge doýmak ýok, ýene ber diýer,
+Köňül maksadyna ýetip bolmaýyr.
+
+Magtymguly, sözüň diňlän bolmasa,
+Nesihata gulak salan bolmasa,
+Ýigit köňül söýenini almasa,
+Dynç alyp, parahat ýatyp bolmaýyr.
+
+                       Ýagşy
+
+        Hoş günüňde hoşlaşyban gezmäge,
+        Baryşmaga, gelişmäge ýat ýagşy.
+        Gam günüňde, galmagalyň üstünde
+        Dogan ýagşy, gardaş ýagşy, zat ýagşy.
+
+        Halal işle, ahyretden wehmiň bar,
+        Pakyry ynjytma, köňül rehmiň bar,
+        Aşyk aýdar, azda-köpde pähmiň bar,
+        Akyl bolsaň, söze gulak tut ýagşy.
+
+        Ýürek daýanjydyr ogul-zürýaty,
+        Şirin mahbup erer süňňüň kuwwaty.
+        Ýigidiň dünýäde üçdür myrady:
+        Mahbup gerek, ýarag gerek, at ýagşy.
+
+        Mollalar ahyret sözün söýlärler:
+        «Müňkür olma, geljek işdir, eýlärler»
+        Kim biler ki ahyretde neýlärler,–
+        Iýip, içip, münüp, guçup öt-ýagşy.
+
+        Nefg1 almaýan kişi sözden, öwütden,
+        Aýralygy ýokdur gury söwütden,
+        Deň-duş bilmez, magny aňmaz ýigitden
+        Agylynda yssy beren it ýagşy.
+1 Nefg – nep, peýda.
+
+        Magtymguly, dostdan syryň gizleme,
+        Biwepadyr, nämähremi gözleme.
+        Ümsüm otur, halk içinde sözleme,
+        Sözlär bolsaň, söz aslyna ýet ýagşy.
+
+                  Gelen-de bardyr
+
+        Günde ýüz müň göç hem bolsa ol dünýä,
+        Ol mukdar bu dünýä gelen-de bardyr.
+        Ýüz müň akmak bolup gitse raýyna,
+        Ýüz müň özün ýola salan-da bardyr.
+
+        Ýüz müň derwüş syna daglap oturan,
+        Ryýazatda1 bilin baglap oturan,
+        Niçe ýerde görseň, ýyglap oturan,
+        Ýüz müň ýerde bigam gülen-de bardyr.
+
+        Seýran etseň bu dünýäniň tört burçun,
+        Garyşypdyr halal, haram, arwah, jyn...
+        Nijeler tämizläp ýol giderler çyn,
+        Nije ýüz müň gümra bolan-da bardyr.
+
+        Ugursyz eýýamlar, aňlamaz ärler,
+        Käşki soran bolsa, saçaýdym dürler..
+        Kany ol Süleýman, Rüstemler, şirler
+        Diýmäň, busup, sypyp galan-da bardyr.
+1 Ryýazat – terkidünýälik, durmuşdan el çekmek.
+
+        Magtymguly, köňle gaýgy getirme,
+        Bu bir iş wagtydyr, özüň ýitirme,
+        «Sözüm aňlan ýok» diýp, ümsüm oturma,
+        Jahan giňdir, çendan bilen-de bardyr.
+
+                   Ykbal bolmady
+
+        Köp ýigitler gelip geçdi jahandan,
+        Niýetine görä ykbal bolmady.
+        Gerdişi keç gahba pelek elinden
+        Ertiri şat bolan öýlän gülmedi.
+
+        Günde kepen biçer bu ajal-haýat1 ,
+        Bir beladyr, hiç gutarmaz bu saýýat.
+        Pelle-pelle aşak düşer adamzat,
+        Bu gün görenleriň ertä galmady.
+
+        Bir degişhanadyr dünýäniň ýüzi,
+        Nesihatym diňle, eşit bu sözi.
+        Ajal ýetip adam ýumulsa gözi,
+        Göýä bu dünýäge geldi, gelmedi...
+
+        Hemaýun gorganyn saldyran Harun,
+        Dünýäni tört bölen kany Peridun?
+        Kyrk şähri gyzyldan dolduran Karun —
+        Gözi gumdan doldy, puldan dolmady.
+1 Haýat – biçimçi, geýim tiken.
+
+        Magtymguly haýran, her ýana bakar,
+        Bu ne gudrat işdir: suwdan ot çykar,
+        Ýagşy oguldan rahmet arygy akar,
+        Lagnatkerde ogul boldy, bolmady.
+
+                Köňül hoşundadyr
+
+              Köňül bir beden şahydyr,
+              Her söz köňül hoşundadyr,
+              Ýedi yklymnyň tagtynda
+              Her biri bir işindedir.
+
+              Daglaryň çykyp-inmesi,
+              Çohlaryň göçüp-gonmasy,
+              Dünýäniň agyp-dönmesi
+              Pelegiň gerdişindedir.
+
+              Kimdir bu dünýäde galan?
+              Maňa çyndyr, size ýalan,–
+              Bir akdyr, bir gara ýylan1
+              Her kimsäniň başyndadyr.
+
+              Degresi zümerret daşly,
+              Ner babatly, kerk gardaşly,
+              Altyn tagtly, almaz täçli
+              Döw begleri daşyndadyr.
+1 Bir akdyr, bir gara ýylan — gije-gündiz manysynda.
+
+     Aýlanar geçer eýýamlar,
+     Gojalar gurlan eýwanlar,
+     Gündiz gören aşna janlar ?
+     Gije ýatsa düýşündedir...
+
+     Üç essesi däli derýa,
+     Bir esse ýerde müň gowga,
+     Kim biler, bu köne dünýä,
+     Ýa reb, niçe ýaşyndadyr?..
+
+     Magtymguly diýr, haraýdyr,
+     Ajal okdur, pelek ýaýdyr,
+     Dünýä bir köne saraýdyr,
+     Adamzadyň gaşyndadyr.
+
+        Pygan eglenmez
+
+Bilbil hüjüm eden howaly baglar,
+Bilbil senden gider, pygan eglenmez,
+Ýagyşly, ýagmyrly ümürli daglar,
+Siller senden gider, duman eglenmez.
+
+Adam ýaradylmyş belentli-pesli,
+Akylly, pikirli, aňly, paýhasly,
+Ýigitlik – göýä bir ýaz günnüň pasly,
+Bahar senden gider, zaman eglenmez.
+
+Gelene garşy çyk, bolsa mejalyň,
+Ýagşy tutawergil niýetiň-päliň.
+Dünýä döwranynda açyk tut eliň,
+Döwür senden gider, döwran eglenmez,
+
+Bu dünýä gowgadyr, bir galmagaldyr,
+Kimi berhä-berdir, kim alha-aldyr.
+Ýigitler, bu dünýä şuňa mysaldyr,
+Bark urar asmanda, baran eglenmez.
+
+Bir menzildir, üç gün iýip-içensoň,
+Ornaşyp, giňirnip, bilin açansoň,
+Üzeňňiň çekerler, tört gün geçensoň,
+Bäş günden ýokary myhman eglenmez.
+
+Goýnun açar bir gün, ýer seni gizlär,
+Gara gumdan dolar bu gara gözler,
+Adyňa buýsanma, çemenli düzler!
+Çemen senden gider, seýran eglenmez.
+
+Magtymguly aýdar aryf dostuna,
+Kim galar düşmeýen ajal destine?
+Pelek bir gün salar ýeriň astyna,
+Agyzdan til gider, zyban eglenmez.
+
+       Göze myhmandyr
+
+Gara daşdan gara gyly saýlan göz,
+Çöňňeler görejiň, göze myhmandyr.
+Gelen aş diýp gelmez, turşutmagyl ýüz.
+Nana mähtäç däldir, söze myhmandyr.
+
+Agyrdyr heňňamlar, uzakdyr ýollar,
+Soraşsa ýigitler, sözleşse tiller,
+Baharda açylan reňbe-reň güller
+Bir pasyl açylar, ýaza myhmandyr.
+
+Ne azym hünärler, ne syrly işler,
+Ne howaly daglar, belent agaçlar,
+Altmyş elwan, ýetmiş dürli iýmişler
+Agaçdan aýrylar, güýze myhmandyr.
+
+Ýigidiň bolmasa ýaragy, aty,
+Şony belli biliň, ýokdur gaýraty!
+Gojaldykça, gider süňňüň kuwwaty,
+Ýigitligiň zory dyza myhmandyr.
+
+Bu dünýä ýüzüňe gülüm-gülümdir,
+Jepasy köp bolar, jebri zulumdyr,
+Her niçe ýaşasaň, ahyr ölümdir,
+Eziz janlar tende bize myhmandyr.
+
+Haky ýada salsaň hakdan gorkyňa,
+Şeýtan ara düşer, goýmaz erkiňe.
+Guba juwan, guwanmagyl görküňe,
+Gojalar sen, görküň ýüze myhmandyr.
+
+Magtymguly aýdar, iller, özümde,
+Ölüm ýadymdadyr, gorky gözümde,
+Her niçe ýaşasaň ýeriň ýüzünde,
+Adam ogly bäş gün duza myhmandyr.
+
+           Dünýä heý
+
+Suw ýüzünde gezen nije gämini,
+Bir gün agdarar sen saly, dünýä heý!
+Adam ogly barmaz bolsa yzyňdan,
+Munda diýp aldar sen maly, dünýä heý!
+
+Kimse bilmez haçan tükener demiň,
+Gabyr bolar bir gün basan gadamyň,
+Döwran gerdişinde gapyl adamyň
+Üstünden salar sen ýoly, dünýä heý!
+
+Habarsyz geler sen, ýaka tutar sen,
+Ýagşy eýläp, ýaman eýläp öter sen,
+Bir gün aşymyza awy gatar sen,
+Owal aldap biýr sen baly, dünýä heý!
+
+        Aramyň ýok, kararyň ýok, dynmaz sen,
+        Gije-gündiz gan içer sen, ganmaz sen,
+        Ahyr ne belaň bar, soňun sanmaz sen,
+        Ýykylgyn, ýumrulgyn, loly dünýä heý!
+
+        Aýlanar gyş geçer, ýaz, tomus güýz hem,
+        Tap getirmez oňa dag, deňiz, düz hem,
+        Ahyry geçermiz üstüňden biz hem,
+        Guwgaryp galar sen haly, dünýä heý!
+
+        Köpleri ýok etdiň, känini tutduň,
+        Muhammet hak resul janyny ýutduň,
+        Nemrut, Karun, Süleýmanyny nätdiň?
+        Şumudy etgeniň häli, dünýä heý!
+
+        Hemme adamlary salyp sen gama,
+        Ýaş, garry yzyňda, sergerdan heme,
+        Bir mada1 eşek sen, gelip sen deme,
+        Gasygy gam bilen doly, dünýä heý!
+
+        Magtymguly, dünýä syryn duýmaz sen,
+        Bu gün gördügimiz ertä goýmaz sen,
+        Nije wagtdan bäri iýip doýmaz sen,
+        Aklyny aldyran däli, dünýä heý!
+
+1 Mada – urkaçy.
+
+       Berme pelege
+
+Pelek bazy bermiş jümle jahana,
+Meniň ygtyýarym berme pelege,
+Köňül guşy uçup gitse her ýana,
+Mähtäç etme ganat, guruk-ýelege.
+
+Bidöwlet ynanjaň, käsip käýinjeň,
+Ýedi ýeser bolsa, biri göwünjeň,
+Baý halky ýaňra bor, garry – öwünjeň,
+Çalyp bolmaz çal agarsa çelege.
+
+Orda başy bolmak äre kyn bolar,
+Parça geýse, gyz-oglana syn bolar,
+Dul gözüne garry näzenin bolar,
+Ýene gözün aýlar köre, çolaga.
+
+Çepine aýlanan çarhy pelekdir,
+Dünýä gelen adam ogly heläkdir,
+Ýetmiş iki millet bölek-bölekdir,
+Bu bölekden goşman özge bölege.
+
+Ýol üstünde ölsem, ýola atsalar,
+Razy men, üstümden basyp ötseler,
+«Magtymguly» diýip, adym tutsalar,
+Gören göz jort atar, eşden gulaga.
+
+    Çaldy gitdi
+
+Bu dünýä bazygärdir,
+Bazysyn çaldy gitdi;
+Gümra edip nijäni,
+Ýoldaş diýp aldy gitdi.
+
+Akyl, pikr et her haçan,
+Ýüz gonan bar, ýüz göçen,
+Tagty asmandan uçan
+Süleýman öldi gitdi.
+
+Ýa mürewwetli şahym,
+Umydym, kyblagähim,
+Munça ýygnap Ybrahym
+Niçäni aldy gitdi.
+
+Jigerin daglaý-daglaý,
+Zünnaryn baglaý-baglaý,
+Nijeler aglaý-aglaý,
+Nijeler güldi gitdi.
+
+Nijeler güle dönmüş,
+Gül ýanyp küle dönmüş,
+Nijeler guma dönmüş,
+Nijeler soldy gitdi.
+
+      Akmaklyk bilen özüm,
+      Bilmedim sözlän sözüm,
+      Magtymguly, diýr, gözüm
+      Gan ýaşa doldy gitdi.
+
+              Iliňi
+
+Gel, köňül, men saňa öwüt bereýin:
+Yrak kylma görer gözüň-iliňni;
+Gymmatyn gaçyrma, ýerinde sözle,
+Uzatmagyl her näkese tiliňni.
+
+Doga eýle, bir söz diýseň aşagyn,
+Hormatlagyl gözel iliň uşagyn,
+Ýazdyrmagyl, mäkäm eýle guşagyň,
+Ýeri bardyr, ajap sakla biliňni.
+
+Çagyrylmaz jaýda görünme, barma,
+Başarsaň, sopynyň ýüzüni görme,
+Pikir-zikriň dünýä malyna berme,
+Karuna ogşatma tutan päliňni.
+
+Sözüne ber jowap, her kes sorasa,
+Özüň yrak eýle, namart ýörese,
+Bir misgin telmuryp, ýyglap garasa,
+Baha gurma, mugt berginiň malyňny.
+
+Gorkma namartlaryň köp diýp sanyndan,
+Gara görse, bary geçer janyndan,
+Ugrun tapsaň ötmäwergil ýanyndan,
+Bahyllardan yrak eýle ýoluňny.
+
+Akylly baş köpdür, akyl kesen azdyr,
+Datma şerap, uzak içseň ol azdyr,
+Mert köňlünde daýym bahardyr-ýazdyr,
+Mejnun umman içre salma salyňny.
+
+Magtymguly, akyl başymdan uçdy,
+Ykbalym ýatypdyr, döwletim göçdi,
+Pir-kazylar para istäp, gol açdy,
+Haram eýle, emma berme puluňny.
+
+       Bagtym garadyr
+
+Bu ne bela, bu ne hasrat, ne gowga!
+Rehm eden bolmady, bagtym garadyr;
+Nalyş etsem, arzym ýetmez ol huda,
+Rehm eden bolmady, bagtym garadyr.
+
+Pelek dost bolupdyr ala göz bile,
+Derdimi diňlemez, diýsem söz bile,
+Ilimni ugratdy dagy-düz bile,
+Rehm eden bolmady, bagtym garadyr.
+
+Görogly dek gaýratymdan aýryldym,
+Gojalyp men kuwwatymdan aýryldym,
+Iki didäm – zürýatymdan aýryldym,
+Rehm eden bolmady, bagtym garadyr.
+
+Şamu-säher ýata bilmän parahat,
+Ýüregim telmurar, köňül bitakat,
+Käbäm, kyblam, gardaş – boldular wepat,
+Rehm eden bolmady, bagtym garadyr.
+
+Pelege duş gelse gaçyp gutulmaz,
+Tartar oky adam ogly, atylmaz,
+Ýeke äriň ömür ady tutulmaz,
+Rehm eden bolmady, bagtym garadyr.
+
+Deňim-duşum her bir käre bulaşdy,
+Dostlar yrak düşdi, hijran dalaşdy.
+Yhlasym, myradym gama ulaşdy,
+Rehm eden bolmady, bagtym garadyr.
+
+Başyma şum pelek her gün sürüner,
+Ýowuz düşen göwre kime direner,
+Ýamanlar gözüne eziz görüner,
+Rehm eden bolmady, bagtym garadyr.
+
+Serwanym azaşdy, dargady malym,
+Ykbalym keç turdy, gitdi hyýalym,
+Altmyşa azm urdy gartaşan salym,
+Rehm eden bolmady, bagtym garadyr.
+
+         Gama erkim berdim, huşum dargatdym,
+         Saraý weýran, kerwenimi ugratdym,
+         Meňli hanym, yşk söwdasyn unutdym,
+         Rehm eden bolmady, bagtym garadyr.
+
+         Bu dünýä çohlara bipaýan boldy,
+         Garyp golun serdi, gury san boldy,
+         Namartlar mert boldy, ile han boldy,
+         Rehm eden bolmady, bagtym garadyr.
+
+         Ah, neýleý ötürdim ýigitlik çagym,
+         Daragty gurady, boş galdy bagym,
+         Dumany sowuldy, eredi dagym,
+         Rehm eden bolmady, bagtym garadyr.
+
+         Magtymguly, ýetmez ýyglap kararym,
+         Boş galdy dükanym, dargady barym,
+         Paý1 astyna düşdi namysym, arym,
+         Rehm eden bolmady, bagtym garadyr.
+
+1 Paý – aýak.
+
+          III
+
+SOSIAL-TANKYDY ESERLER
+                      Gaça başlady
+
+            Indi bildim zamananyň azanyn,
+            Ýamanlar ýagşydan gaça başlady;
+            Gaýta bedasyllar asylzadadan
+            Pisint etmän, töre geçe başlady.
+
+            Ryýa1 boldy köpüň okan namazy,
+            Taňry hiç birinden bolmady razy,
+            Pygamber ornunda oturan kazy
+            Para üçin elin aça başlady.
+
+            Şalarda galmady hökmi-adalat,
+            Bir pul üçin müfti berer rowaýat,
+            Bil: bu işler – nyşanydyr kyýamat,
+            Zalymlar bitoba öte başlady.
+
+            Pakyrlar horlanyp, ýüzün sarardyp,
+            Kim töresin tapyp, reňgin gyzardyp,
+            Zalymlar mazluma syrtyn gabardyp,
+            Gamçysyndan ganlar saça başlady.
+
+            Alymlar sözüne amal bolmady,
+            Mynapyklar2 ýaradany bilmedi,
+            Sopular pirinden taglym almady,
+            Dünýä üçin dinden geçe başlady.
+1 Ryýa – ikiýüzli, ýalan.
+2 Mynapyk – hudaýsyz, pidul.
+
+           Bir para sopular «sopy men» diýer,
+           Soramaz, zalymlar tagamyn iýer,
+           «Bizi ýagşy kişi diýsinler» diýer,
+           Her işikde halka gura başlady.
+
+           Garryga aýlandy biz gören ýaşlar,
+           Dolandy aýaga biz gören başlar,
+           Bimahal ýük baglap indi argyşlar
+           Ahyret kastyna göçe başlady.
+
+           Akyl bolan gamda ýüregin ezip,
+           Derdiniň dermanyn soraglap gezip,
+           Zamananyň pisat1 bolanyn ýazyp.
+           Panydan bakyýa geçe başlady.
+
+           Asylsyz begleriň nobaty ýetdi,
+           Gaýta şugul haramyga söz ýetdi,
+           Dünýäde kim galyp myrada ýetdi?
+           Muhapbet2 çyragy öçe başlady.
+
+           Kazy bolan bir jowapda durmady,
+           Gije mähnet tartyp, kitap görmedi,
+           Şerigat ugrunda dogry ýörmedi,
+           Nebs üçin imansyz öte başlady.
+1 Pisat – erbet, bozuk.
+2 Muhapbet – söýgi, yşk.
+
+           Magtymguly aýdar, barha ýol tany,
+           Bäş gün synamaga iberdi seni,
+           Senden ozal öten jananlar kany?
+           Her kim nobatynda öte başlady.
+
+               Aý-günüňiz batmaga
+
+                      (Sopular)
+
+           Altmyş ýaşan, ýetmiş ýylky sopular,
+           Az galypdyr aý-günüňiz batmaga,
+           Çöl ýerlerde tazy görmän, tilkiler
+           Hyýal eder ýatan şiri atmaga.
+
+           Garga diýer, ýokdur men dek şabaza,
+           Müň garga ýygnansa degmez bir baza,
+           Güne gargyş eden sary kelpeze1 ,
+           Dem çekedir aždarhany ýutmaga.
+
+           Agsak keýik müň garsaga ýetdirmez,
+           Şir beçesi togsan tilkä atdyrmaz,
+           Öli ýylan müň kelpezä ýutdurmaz,
+           Akyl gerek bu işlere ýetmäge.
+1 Kelpeze – hažžyk.
+
+               Ýetmiş ýaşap, ýat etmezler tobany,
+               Hormat bilen oýnadarlar gahbany1 ,
+               Müňkürler jem bolup, ýykdy Käbäni,
+               Ýezit gitdi agaçlaryn satmaga.
+
+               Görüň bu eýýamy, pelek gerdişi –
+               Pakyra zulm etmek boldy werdişi,
+               Hak ýolunda dogry gezen derwüşi
+               Goýmadylar öz halyna ýatmaga.
+
+               Ýüregim sabyrdan, gitdi karardan,
+               Ýaman işdir bogaz bolmak är-ärden2 ,
+               Bizara gelip men beýle diýardan,
+               Jür bolup men başym alyp gitmäge.
+
+               Magtymguly, bildim: bagtym biweçdir,
+               Ganymym güýçlüdir, ykbalym keçdir,
+               Niýetim Käbedir, hyýalym haçdyr,
+               Ykrarym bar haç towabyn etmäge.
+
+   1 Gahba – loly.
+    2 Är-ärden – bir adamdan bir adamyň ýaman gep eşitmegi, ýüregi
+
+çişmegi.
+
+                          Başlady
+
+            Gömüldi derýalar, ýykyldy daglar,
+            Ýetimler göz ýaşyn döke başlady;
+            Orramsydan bolan haramhor begler
+            Ýurdy bir ýanyndan ýyka başlady.
+
+            Jemagatsyz azan bir gury sesdir,
+            Niçe mollaň okan ylmy hebesdir,
+            Kazylaryň käri çaý bile nasdyr,
+            Bir bozuk nyşana tuta başlady.
+
+            Işanlary her gapyda tapylar,
+            Mollalarna ýok myjabat ýapylar,
+            «Öwliýä men» diýip, jögi sopular
+            Gygyryp, asmana böke başlady.
+
+            Çykar beýewana gyzy-gelini,
+            Ak ýüzüne ýapar gara telini1 ,
+            Kemçinlik eýleýip ýygan puluny,
+            Düzedip özüne daka başlady.
+
+            Dünýäde süýthoryň pul ýygma derdi,
+            Baýlaryň mallary bizekat erdi,
+            Toba ediň, gözüm bir ýaman gördi,
+            Dost dostuň köňlüni ýyka başlady.
+1 Tel – tar, saçyň bölegi, zülp.
+
+Magtymguly, başa baglap selleler,
+Aç böri deý ýortup niçe mollalar,
+Halaldan, haramdan ýygnap gallalar,
+Herne tapsa, dynmaý dyka başlady.
+
+        Aglar men
+
+   Eý ýaranlar, ömrümden
+   Geçdi diýip aglar men.
+   Gitdi aklym ornundan,
+   Çaşdy diýip aglar men.
+
+   Giden dönmez ýolundan,
+   Düşmez ýaman pälinden,
+   Diýanat halk elinden
+   Uçdy diýip aglar men.
+
+   Häzir biziň zamanda
+   Ýaman sözler zybanda,
+   Zulum işler jahanda
+   Joşdy diýip aglar men.
+
+   Bu eýýamda betkärler
+   Ýüz til bilen aldarlar,
+   Hany niçe dildarlar? –
+   Göçdi diýip aglar men...
+
+      Niçe sada deň-duşlar,
+      Şeýtan biligin başlar,
+      Ýüz öwürip gardaşlar
+      Gaçdy diýip aglar men.
+
+      Görüň pelegiň oýnun:
+      Üzer alymyň boýnun,
+      Niçe janlar ýer goýnun
+      Guçdy diýip aglar men...
+
+      Magtymguly, diýr merde,
+      Dünýä bentdir, ten perde,
+      Bu başym sansyz derde
+      Düşdi diýip aglar men.
+
+            Galmady
+
+Bir sözüm bar, diýsem şaha, soltana.
+Dostlar meňgi bolup, daman galmady;
+Döwletli baýlaryň duz hareminde,
+Desterhan kesilip, myhman galmady.
+
+Gaýta gybatkeşler özün düzetdi,
+Süýthor dünýä bilen özün göz etdi,
+Taňrydan bihabar goşun uzatdy,
+Taňryny bir bilen merdan galmady.
+
+        Nirde şugul bolsa, boldy mugteber1 ,
+        Dünýäni baky diýip, ýygnady çoh zer,
+        Aýdyp, ötüp gitdi ol Haýrul-beşer
+        Taňrydan gorkunçly myhman galmady.
+
+        Bahyl bolan baý adyny göterdi,
+        Pasyklar2 pysk ile ömrün ötürdi,
+        Ähli-dil3 dünýäden özün gutardy,
+        Dertliler derdine derman galmady.
+
+        Halaýyk barçasy jesethor boldy,
+        Alymlar ylmyndan galdy, kör boldy,
+        Sypahy4 barysy parahor boldy,
+        Şa aldynda adyl diwan galmady.
+
+        Müfti öz sözüne kylmady amal,
+        Şerigat işine eýledi haýal,
+        Halk içine düşdi hyrs atly kesel,
+        Taňryny bir bilen ynsan galmady.
+
+        Gyzlar, juwanlarda galmady haýa,
+        Ýerden götermedi bereket-giýa5 ,
+        Derwüşler tagatyn eýledi ryýa,
+        Ýurtda keramatly işan galmady.
+1 Mugteber – ygtybarly.
+2 Pasyk – bozuk
+3 Ähli-dil – ýürekdeş adamlar.
+4 Sypahy – emeldar, harby gullukçy.
+5 Giýa – ot, ösümlik.
+
+        Magtymguly aýdar, barha ýol tany,
+        Burunky1 hemneşin2 dostlaryň kany?
+        Abraý bile tabşyrawer bu jany,
+        Munda gelen ýary-ýaran galmady.
+
+                       Fetdah
+
+      Eýran, Turan indi goluň astynda,
+      «Sürgün» indi bu döwrany, sen fetdah!
+      Külli türkmen oýnar çölüň üstünde,
+      Dökme, bilgil, nahak gany, sen fetdah!
+
+      Bu gün şa sen, erte geda bolar sen,
+      Ilden-günden, dilden jyda bolar sen,
+      Bir gün janyň çykyp, pida bolar sen,
+      Gazanypsyň çoh günäni, sen fetdah!
+
+      Gözüm ýetýär, bilseň, başym alar sen,
+      Ýa kündeläp meni çaýa salar sen,
+      Men hak diýdim, sen çoh günä galar sen,
+      Bu alyşyň bilen jany, sen fetdah!
+
+      Sen türkmeniň ilin, gülün soldurdyň,
+      Ganlar döküp, gözel ýurdum doldurdyň,
+      Şehit bolanlaryň serin galdyrdyň,
+      Unudar sen tagty-käni, sen fetdah!
+1 Burunky – öňki.
+2 Hemneşin – gürrüňdeş, ýürekdeş
+
+Halkyň öji çohdur, ykbalyň ýaman,
+Ýa öler sen, ýa zyndandyr bigüman,
+Tagtyň synyp, diýme galar men aman,
+Çüňki zäher kyldyň nany, sen fetdah!
+
+Permanyňdan talaň düşdi illere,
+Goluň urduň nähak, gözde sillere,
+Kyrk gamçydan buýurdyň näzik billere,
+Derýa etdiň gözde huny, sen fetdah!
+
+Aýyrdyň atadan, ene, gardaşdan,
+Gollardan, aýakdan, sakaldan, saçdan,
+Dendandan, zybandan, akyldan, huşdan,
+Zyndan etdiň bu jahany, sen fetdah!
+
+Aýyrdyň, aglaýyp galdy ýarlarmyz,
+Pelege ýetendir tartan zarlarmyz,
+Adamlar asylgy durýar darlarmyz,
+Ýüzden tutduň, bil, gassaby, sen fetdah!
+
+Pyragy, dert aýdyp, derde ýanmaly.
+Gan ýuwudyp, zalym fetdah ganmaly,
+Diri özüm, läkin öli sanmaly, –
+Aňsa öldir, bu destany ol fetdah.
+
+    Ýörmeli boldy
+
+Eý ýaranlar, musulmanlar,
+Jebirde ýörmeli boldy.
+Nije zähmet çeken janlar
+Jepany görmeli boldy.
+
+Jahan giňdir, melamat kän,
+Arada köýdi şirin jan,
+Üstümizde rehimsiz han
+Bil, ahyr urmaly boldy.
+
+Azypdyr gökleň hanlary,
+Kän görer bize hallary,
+Goýman sürdi bar mallary,
+Göz dikip durmaly boldy.
+
+Magtymguly, aýama jan,
+Biliň guşa, geý gazap don,
+Hetden aşdy, bu zalym han
+Ahyr tor gurmaly boldy.
+
+       IV
+
+DURMUŞY GOŞGULAR
+                             Çilim
+
+        Dostlarym, duşman biliň,
+                     her kimsede bardyr çilim.–
+        Ile mahub eýlemäň,
+                     bir lagnaty kärdir çilim,
+        Sözleýen haly demi
+                     bir apyýy1 mardyr çilim,
+        Tartar özün özüne,
+                     owsunçy zeňgardyr2 çilim,
+        Nirde bolsa pasykylar,
+                     ortada bardyr çilim.
+
+        Düşgeç ol mejlis era,
+                     kim çeker, bimar eder,
+        Al bilen aldap seni,
+                     her dem özüne zar eder,
+        Sag-salamat goýmagy
+                     indi özüne ar eder,
+        Gol-aýagyn şel kylyp,
+                     halk içre any har eder,
+        Bu sypatlar birle ol,
+                     çekmäň ki, betkärdir çilim.
+1 Apy – zäherli uly ýylan.
+2 Zaňgar – zeňli, posly, jirimli.
+
+       Kah-kah eýläp her zaman,
+                   ol görkezer bet roýuny
+       Burnuňyzdan ysgadar,
+                   almaň oşol bet boýuny1 ,
+       Eý musulmanlar, halal diýip,
+                   kylmaňyz hiç oýuny2 ,
+       Ahyretniň oýun etseň,
+                   tiz goýuň bu oýuny,
+       Ahyretniň oýun
+                   etmezlerge derkardyr çilim.
+
+       Her kişi hoşhal olupdyr jimi,
+                    lam, mim atyga,
+       Nige pikr etmez oşol
+                    kim bu pelidiň zatyga,
+       Mundürer göýä any
+                    her dem şeýatyn3 atyga,
+       Syhr edip her dem
+                     any tartar özüniň zatyga,
+       Çünki betkärler gözüge
+                    daýyma bardyr5 çilim.
+1 Boý(buý) – ys.
+2 Oýuny – oý-pikirini.
+3 Şeýatyn – şeýtanlar.
+4 Syhr etmek – jadylamak.
+5 Bar – miwe, bu ýerde ýakymly manyda.
+
+       Gul-gul eýläp, her säher
+                    ol agzyndan otlar saçar,
+       Her kişiniň akly bardyr
+                    beýle betboýdan gaçar,
+       Kim any elge alar,
+                      göwsün onuň sary1 açar,
+       Ygtykat etse halal diýip,
+                    dini yslamdan geçer,
+       Dini-yslamdan geçerge
+                    bir sebäpkärdir çilim.
+
+       Şeýle duşmandyr ki tanla,
+                   başyňyzny aýlaýyr,
+       Wagty ýetmän solduryp,
+                   bu jismiňiz läş eýleýir,
+       Gaýgy, hasret ýok ekenler,
+                   çeşmiňiz ýaş eýleýir,
+       Her zaman düýt3 ýutduryp
+                   öýkeniňiz daş eýleýir,
+       Bary gapyl olmaňyzlar
+                   şeýle betkärdir çilim.
+1 Sary – tarap.
+2 Ygtykat etmek – ynanmak, uýmak.
+3 Düýt – tüsse.
+
+       Eý ýaranlar,
+                     nehi1 kylmyşdyr any bizge ahat2
+       Pikir edip, zikir eýledi
+                     kim halk era abdy3 samat4
+       Tebdil etmek5 ,
+                     nehi kylgan işini bizge ne hat?
+       Kim ki müňkürdir,
+                     anyň aldynda bardyr ol lahat6 .
+       Aýdadyr Magtymguly,
+                     bu bendege nardyr çilim.
+
+                       Çilimkeş
+
+          Hak seni raýyňa goýmuş jahanda,
+          Ede bileniň etgil munda, çilimkeş;
+          Diwan gurlan güni, hasap jaýynda,
+          Jogabyň nämedir anda, çilimkeş.
+
+          Kuwwatyň kemelder, güýjüň azdyrar,
+          Keýpi kellä gelse, aklyň azdyrar,
+          Süňňüňi syzdyrar, etiň gyzdyrar,
+          Bir nyşana budur sende, çilimkeş.
+1 Nehi – gadagan.
+2 Ahat – bir, ýalňyz, bu ýerde hudaý manysynda.
+3 Abd – bende.
+4 Samat (samad) – hemişelik, hökümdar.
+5 Tebdil etmek – çalşyrmak, özgertmek.
+6 Lahat – gör.
+
+         El götergil beýle nahak talaşdan,
+         Puluň köýer, janyň ýanar bu başdan1 ,
+         Erte garnyň doldurarlar ataşdan,
+         Zahmy2 çykmaz, galar janda, çilimkeş.
+
+         Iki dünýä ýagşylyk ýok egriýe, -
+         Kişi bolsaň, gadam goýgul dogryýa,
+         Binamaza, gybatkeşe, ogryýa,
+         Ýeldaş bolar ýowuz günde çilimkeş.
+
+         Magtymguly, möwlam jandan ýakyndyr,
+         Çilim bir şor suwdur, ten bir zemindir
+         Iman bir tilkidir, göwre bir hindir,
+         Tilki tüssä dözmez hinde, çilimkeş.
+
+1 Bu ýerde baş goşan işiňden manyda
+2 3ahym — ýara, baş.
+
+                      Halyň seniň
+
+  Ogry bolsaň, diňlegil, bolgaý niçik
+                                   halyň seniň;
+  Kişi malyga gider köňlüň, gözüň,
+                                   päliň seniň;
+  Misli şeýtan aldagydyr
+                            mekiriň-alyň seniň,
+  Bu ýalançylyk bile ötgeý
+                            mahy-salyň1 seniň,
+  Dowzaha dogry barar, billa, giden
+                                   ýoluň seniň.
+
+  Erte-magşar it bolup, yňranyp iýgeý
+                                  sen etiň,
+  Ýüzüni görmez Muhammet sen kibi pis
+                                  ymmatyň,
+  Hem o dünýä şefgatyň2 bolmaz bu dünýä
+                                         döwletiň,
+  Her zaman, her sagat içre artdyrarlar
+                                     mähnetiň,
+  Bu jahym3 içre tutar möýler
+                              sagu-soluň seniň.
+1 Mah bilen sal — aý bilen ýyl (ýaş).
+2 Şefgat – halaslyk, kömek, ýardam manysynda.
+3 Jahym – jähennem.
+
+  Aglaýyr sen, gözleriňden ýaş ýerine
+                                  gan gidip,
+  Munça mähnetler çekip, göwsüň dilip,
+                                  weýran edip.
+  Yssy etmez başyňa, toprak döküp,
+                                  haýran edip;
+  Gylça yssy görmegeý sen, dag gadar
+                                  puşman edip,
+  Döküler gaýdyp dahanyndan
+                             pohuň-bowluň seniň.
+
+  Ol Muhammet garşysynda hem uýalgaý
+                                   sen o gün,
+  Gör ölüm bolsa idi, istärdiň ölgeý
+                                   sen o gün,
+  Gürzi astynda melek1 zarbynda galgaý
+                                   sen o gün.
+  Ol huraýyş atlyg ýylanga lukma bolgaý
+                                   sen o gün.
+  Maýmynyň suratyda bolgaý ki
+                                   tymsalyň seniň.
+1 Melek – perişde.
+
+  Aýdadyr Magtymguly, görseň günähiň,
+                                  eý gözüm,
+  Çekiler gyldan-gyla magşar hasabyň,
+                                  eý gözüm.
+  Ýüz gara, til gysgadyr, bolmaz jogabyň,
+                                  eý gözüm.
+  Mal ýerine bialaç biýr sen sowabyň,
+                                  eý gözüm.
+  Hem günähiň boýnuňa goýgaý,
+                                  budur halyň seniň!
+
+                          Gybatkeş
+
+          Rozy-magşar şikwe1 eder tiliňden,
+          Ryswalygyň budur seniň, gybatkeş;
+          Ömrüň ýele berme, azma ýoluňdan,
+          Agyrtmagyl iliň-günüň, gybatkeş.
+
+          Bulut dek kükreýip, bark2 kimin gürlär,
+          Gähi buzdan tagtlar, ataşdan öýler,
+          Gatyr dek içýanlar, bugra dek möýler
+          Bedeniňden sorar ganyň, gybatkeş.
+1 Şikwe – şikaýat, arz.
+2 Bark – ýyldyrym.
+
+         Halyň görüp, purkan1 bolup aglarlar,
+         Özüň syjjyn atly jaýda baglarlar,
+         Tiliň çekip, demir bilen daglarlar,
+         Gara bolar şol gün ýüzüň, gybatkeş.
+
+         Ýaman söz aýyrar ýagşy dostuňdan,
+         Günähiň agramy basar üstüňden,
+         Jähennem içinde tamug astyndan
+         Peleklere çykar üýnüň, gybatkeş.
+
+         Magtymguly aýdar, iliň gözünden
+         Düşüban, hor bolsaň, görgül özüňden,
+         Tiliňni çekmeseň haram sözüňden,
+         Belli bibat bolar diniň, gybatkeş.
+
+                       Görüner
+
+              Seýil edeliň bu jahana,
+              Jahanda näler görüner,—
+              Isgender, Jemşit saldyran
+              Beýik binalar görüner.
+
+              Meşeleri şir-peleňli,
+              Gülgüzar nowça bileňli,
+              Gün düşmedik ter öleňli
+              Çeşmeli çaýlar görüner.
+1 Purkan bolmak – bilip aňlamaklyk, saýgarmaklyk.
+
+Ýaradan bar etdi ýokdan,
+Daglar, dünýä sürer çohdan,
+Sorsaň habar berer Nuhdan,
+Garrygan awlar görüner.
+
+Çaglan, ýalan dünýä, çaglan!
+Ne gülen galar, ne aglan...
+Gar ýagmyrlap burjy baglan
+Kemerli daglar görüner.
+
+Serinden dumany gitmez,
+Eýýam geçip, ýere batmaz,
+Garryp galmaz, ölmez, ýitmez
+Gorganly daglar görüner.
+
+Ne watan galar, ne çeten,
+Senemler seýl edip ýeten,
+Toty, bilbil mesgen tutan
+Howaly baglar gerüner.
+
+Magtymguly, kim bar ölmez?
+Ajal doýmaz, zemin dolmaz,
+Asman inmez, ýer çöwrülmez,
+Gün ýörir, aýlar görüner...
+
+                          Soňudagy
+
+                   Eý söwdügim, Soňudagy,
+                   Dagdanlydyr biliň seniň;
+                   Duşman görse döwdüleşer
+                   Ýomut, gökleň iliň seniň.
+
+                   Kesgin-kesgin ýoluň geçer,
+                   Gyzyl baýyr göwün açar,
+                   Sowuk çeşme suwuň içer
+                   Dürli-dümen malyň seniň.
+
+                   Dürli-dümen otuň biter,
+                   Her deräň bir ile ýeter,
+                   Hatarlanşyp kerwen öter,
+                   Naýbadaýdyr ýoluň seniň.
+
+                   Oýlukda ýaýlany gursak,
+                   At çapdyryp, baýrak bersek,
+                   Töreýitde harman gursak,
+                   Nan dökmek hyýalyň seniň.
+
+                   Magtymguly, set açandyr,
+                   Bu döwran senden geçendir,
+                   Üstüňden iliň göçendir,
+                   Niçik geçer halyň seniň?1
+
+    1 Bagşylar bu goşgyny «Jenan ýarym» diýip aýdýarlar. Sary bag-
+
+şynyň beren maglumatyna görä, Magtymgulynyň ýaşaýan ýeri bolan
+
+                       Ýaýlahlary bar
+
+               Sapar edip barsak Nuha mülküne,
+               Köňül isläni dek ýaýlahlary bar;
+               Seýran etsek gunçasyna, gülüne,
+               Bakjasynda bilbil oýnahlary bar.
+
+               Ýeri sazdyr, hasta bolan sagalar,
+               Arryk, müflis, garyp bolan oňalar,
+               Serçemen agajy bile deňeler,
+               Ajap guş salmaly awlahlary bar.
+
+               Meýdany doludyr şeker gamyşdan,
+               Dileg etmez hergiz gardaş-gardaşdan,
+               Üsti ýapylgydyr kümüş kerpiçden,
+               Her kimniň özi üçin suwlahlary bar.
+
+               Baş goşmandyr, arryk, agsak şa bile,
+               Atdyryp dükanbyl sary ýaý bile,
+               Şirwan galasydyr, any kim bile,
+               Her buruçda altyn baýdahlary bar.
+
+               Magtymguly, sazdyr, söhbetdir işiň,
+               Ajaldan, gaýrydan bolmaz teşwişiň,
+               Baýlaryň, pakyryň ähli derwüşiň
+               Ýurdy bolar ýaly persahlary bar.
+Soňudaga Eýran şasynyň goşunlary hüjüm eden wagtlarynda, şahyr ýa-
+şaýan ýerini mejbury taşlap, Garrygala göçmeli bolupdyr. Bu goşguda
+onuň ýaşan ýeri Soňudag bile hoşlaşygy görkezilýär.
+
+                        Jahan peýda
+
+  Gelse nowruz äleme, reň kylar jahan peýda,
+  Ebrler1 awaz urup, dag kylyr duman peýda.
+  Bijanlar jana girip, ederler dahan peýda,
+  Görmedigiň giýalar2 , gögerip rowan peýda,
+  Aýdarlar haýwanatga, hem sudy-zyýan peýda,
+  Ýer ýüzüne ýaýylyp, ýörirler nahan peýda,
+  Wabeste3 dahan4 guşlar, kylarlar zyban peýda.
+
+  Çöl tarapyn berk edip, der5 açar suwa harçeň6 ,
+  Zemin sebzezar olup, teninden aýrylar zeň.
+  Sebze içre sandugaç7 ýüz tilde kylar eheň,
+  Jünbendeler8 mest olup, göýä içmiş arak, beň,
+  Her aşýanaň özüne öz owazy bolar geň,
+  Zemin hazarpuş9 olup, gül bitirmiş reňbe-reň,
+  Hyruja gelip älem, kylarlar pygan peýda.
+1 Ebr – bulut.
+2 Giýa – ot, ösümlik.
+3 Wabeste – bagly, bek, ýapyk.
+4 Dahan – agyz.
+5 Der – gapy.
+6 Harçeň – leňňeç.
+7 Sandugaç – garlawaç.
+8 Jünbende – hereket edýän, mör-möjek.
+9 Hazarpuş – gök, ýaşyl geýnen.
+
+  Serweri seda birle, jahan ýüzi abatdyr,
+  Magrury-serwer olma, sany serwer bibatdyr,
+  Hak yşkynda zindeler, biliň, baky-haýýatdyr.
+  Her tende yşk bolmasa, rozy ezel mematdyr1 ,
+  Ýaz ýetinçä ýer-gögi. günden-güne zyýatdyr.
+  Bir heşri2 -kyýamatdyr, bir ýowmy3 -arasatdyr4 ,
+  Dähr içre bolar her dem, jahan içre jan peýda.
+
+  Zerbaba zowkun olma, baka ýokdur döwletde,
+  Ömrüňni bada berme sen bu daryl-mähnetde5 ,
+  Ýeter saňa iru-giç, ne ýazylsa kysmatda,
+  Janyňa jepa eýläp, munça gezme hasratda,
+  Sogap ýagşy amalda, ýa hut ýagşy niýetde,
+  Älem barça hyzmatda, adam ýatyp gaflatda,
+  Hasylyň ataş bolgaý, eýleseň ýaman peýda.
+
+  Magtymguly, ýyglar men, bu bagty syýahymdan,
+  Gorkar men jan äpeti, el-aýak güwähimden,
+  Umydym hasyl olmaz bu ömri tebahymdan6 ,
+  Jan köýdi jeset içre bu ataşy-ahymdan,
+  Elim sunup dilär men hajatym ylahymdan,
+  Mende bir umyt oldur, ol keremli şahymdan,
+  Eýlegeý arasatda, gül kibi iman peýda.
+1 Memat – öli.
+2 Heşir – mähelle, märeke, ýygnanyşyk.
+3 Ýowm – gün.
+4 Arasat – söweş meýdany.
+5 Dary-mähnet – jepa öýi
+6 Ömri-tebah – bozulan ömür, haýyp geçen ömür.
+
+                         Içinde
+
+                 Pikir kyldym ýer-göge,
+                 Akylsyz jan içinde.
+                 Gördüm: jan hem alla diýr
+                 Et, siňir, gan içinde.
+
+                 Ýörir ýoluň bilmeseň,
+                 Dogry ýola gelmeseň,
+                 Haky ýada salmasaň,
+                 Galdyň arman içinde.
+
+                 Ýerden çykan nebatlar,
+                 Gyzyl güller, gök otlar,
+                 Gapyl adam, bu zatlar
+                 Külli perman içinde.
+
+                 Nebsiň aýdar: joş bolsam,
+                 Gerçeklere duş bolsam,
+                 Iýsem, içsem, hoş bolsam,
+                 Ýatsam eýwan içinde.
+
+                 Köňül sen bir bazar sen,
+                 Her işe bir gyzar sen,
+                 Tutsam, diýer gezer sen,
+                 Jürmi1 -usýan2 içinde.
+1 Jürm – günä.
+2 Usýan – boýun egmezlik, baş götermek, gozgalaň
+
+Ýaýylar ganat-perler,
+Hup açylar depderler,
+Bölek-bölek kepderler
+Hüw diýr harman içinde.
+
+Bilbil aýdar: köşküm bar,
+Bahar gözleşigim bar,
+Gülzar üçin yşkym bar
+Bagy-bostan içinde.
+
+Ýarganat diýr: ýa möwla,
+Saldyň meni bu ýola,
+Berme aý-güne, ýele,
+Sakla pinhan içinde.
+
+Anka aýdar: ýolçyýam,
+Hüthüt aýdar: ilçiýem,
+Süleýmana sawçyýam,
+Ýalan jahan içinde.
+
+Bezgek galyp haýrana,
+Haýran bakyp her ýana,
+Dem-dem çykyp seýrana,
+Gezer döwran içinde.
+
+Durna aýdar: uçar men,
+Bagdat suwun içer men,
+Gyş Hindistan göçer men
+Läle-zaran içinde.
+
+                 Baýguş aýdar: derdim bar,
+                 Tesbyhym bar, werdim1 bar,
+                 Weýranada ýurdum bar
+                 Zary-girýan içinde.
+
+                 Ishak aýdar: pakyr men,
+                 Gullugymda hakyr2 men,
+                 Hak ýadyny okyr men
+                 Şam-Şebistan içinde.
+
+                 Musyja diýr: giter men,
+                 Geldim, bildim — öter men,
+                 Üç agaçny çatar men,
+                 Guzlap weýran içinde.
+
+                 Laçyn aýdar: joşumdan,
+                 Mest boldum öz huşumdan,
+                 Galdym taňry işimden,
+                 Bendi-zyndan içinde.
+
+                 Turaç tili senada,
+                 Ördek tili penada,
+                 Gazlar galkyp howada,
+                 Gözi umman içinde.
+1 Werd – namaz, doga, üznüksiz doga, namazy gaýtalap oturmak.
+2 Hakyr – ejiz, pukara, kiçi göwünli
+
+                  Gumrular owaz bilen,
+                  Tawus işi näz bilen,
+                  Kaknus guş müň saz bilen
+                  Şol Hindistan içinde.
+
+                  Toty guşlar zarlaşyp,
+                  Emri-hakny gözleşip,
+                  Adam tilin sözleşip,
+                  Gezer ynsan içinde.
+
+                  Keýik aýdar: aglar men,
+                  Haka sydkym1 baglar men,
+                  Balalarym derdinden
+                  Ýüregim gan içinde.
+
+                  Gurt aýdar: üzer men,
+                  Nirden kylsam güzer men.
+                  Ryzkym awlap gezer men
+                  Çöl-beýeban içinde.
+
+                  At aýdar: aslym zordur,
+                  Munça gymmatym bardyr,
+                  Üstüme münen ärdir,
+                  Daglarda-daş içinde.
+1 Sydk – yhlas.
+
+Ýaby aýdar: men gende,
+Üstüme münen bende;
+Azabym köpdür günde,
+Özüm hyzmat içinde.
+
+Eşek aýdar: aslym daş,
+Hyzmat bilen bagrym baş,
+Saman tapsam, köňlüm hoş,
+Mydam aýaz içinde.
+
+Düýe aýdar: otlar men,
+Otlan ýerim ýatlar men,
+Elmydama botlar men
+Selin, sazak içinde.
+
+Ýedi ýer bolmuş bina,
+Her zat okyr bir sena,
+Otlar hem diýr «rebbena»
+Nowruz-baran içinde.
+
+Kyýamat gün eliňden,
+Habar sorar halyňdan.
+Gaýyt ýaman päliňden,
+Gördüň purkan içinde.
+
+Umytly bol Ýusup dek,
+Sabyrly bol Eýýup dek,
+Ger ugrasa Ýakup dek
+Derdi-Kengan içinde.
+
+       Janym, jurga joş eýle,
+       Nebsim aýdar, hoş eýle,
+       Keremiňni duş eýle,
+       Taňla diwan içinde.
+
+       Magtymguly, özüňe
+       Bak, ýaş getir gözüňe,
+       Aýyplaşmaň sözüme
+       Ýary, ýaran içinde.
+
+        Düşen günlerim
+
+Dokuz aý ýatmyşam enem garnynda,
+Göz açyp, dünýäge düşen günlerim;
+Dört aýakda gezdim enem elinde,
+Sekiz aýda hem gülüşen günlerim.
+
+Birimde bilmedim ýagşy-ýamany,
+Ikimde tanydym ata-enäni,
+Üç ýaşymda taňry berdi zybany,
+Dört ýaşymda daş atyşan günlerim.
+
+Bäşimi ötürdim bahar-ýaz bilen,
+Alty ýaşda kowalaşdym saz bilen,
+Ýedi ýaşda işim bolmaz gyz bilen,
+Sekizimde dişim düşen günlerim.
+
+Dokuzymda berdim taňry salamy,
+Onumda boýnumda hakyň kelamy,
+On birimde tutdum döwet-galamy,
+Okyp-okyp magny saçan günlerim.
+
+On ikimden gitdim on üç ýaşyma,
+On tördümde eser urdy başyma,
+On bäşimde gyzlar girdi düýşüme,
+On altymda gaýnap joşan günlerim.
+
+Ýigrimimde mestan-mestan gezerdim,
+Ýigrim bäşde ganym okun düzerdim,
+Otuzymda atlar münüp gezerdim,
+Otuz bäşde ters söweşen günlerim.
+
+Kyrkymda goýulyp, käsäm dolmuşam,
+Ellimde elime tesbyh almyşam,
+Altmyşymda pire mürit bolmuşam,
+Pygamber ýaşyny ýaşan günlerim.
+
+Ýetmişimde agyry indi dyzyma,
+Segsenimde gubar indi gözüme,
+Togsanymda huş galmady özüme,
+Akyl-huşdan jyda düşen günlerim.
+
+Ýüz ýaşa ýetirmän, alarlar janyň,
+Uzadyp goýarlar, biçerler donuň,
+Magtymguly, hemra bolsun imanyň,
+Jan jesetden aýra düşen günlerim.
+
+                  Gözel Şirgazy
+
+        Mekan eýläp, üç ýyl iýdim duzuňy,
+        Gider boldum, hoş gal, gözel Şirgazy1 !
+        Ötürdim gyşyňy, nowruz-ýazyňy,
+        Gider boldum, hoş gal, gözel Şirgazy!
+
+        Hakdan bize buýruk baglydyr bilim,
+        Sende taglym aldy, açyldy dilim,
+        Gelsin diýip garar ol gerkez ilim,
+        Gider boldum, hoş gal, gözel Şirgazy
+
+        Seljerer men indi agy-garany,
+        Dost, rakyp, gardaşym, haky, ýarany,
+        Okydym, göterdim kitap kurany,
+        Gider boldum, hoş gal, gözel Şirgazy!
+
+        Aklym gysga erdi, käsäm gaýnady,
+        Jiger talwas urdy, göwün oýnady,
+        . . . . . . . . . . . . . . . . . . . . . . . . . . .
+                .
+        Gider boldum, hoş gal, gözel Şirgazy!
+
+        Joşgun ýüregimde möwç urar, ýatmaz,
+        Gaýnar, gazaplanar, hiç laýa batmaz,
+        Ylym-taglym algan seni unutmaz,
+        Gider boldum, hoş gal, gözel Şirgazy!
+1 Şirgazy – Magtymgulynyň Hywadaky okan medresesiniň ady.
+
+         Peýman dolmaý, gelsek takat ýetmeýen,
+         Pinhan zahyr kylmaz akyl gitmeýen,
+         Bady-paý atlanyp, seýran etmeýen,
+         Gider boldum, hoş gal, gözel Şirgazy!
+
+         Rige1 girsem-de, guwwas ýüzer men,
+         Bihasret ýaýnaýam, bigam gezer men,
+         Dahan içre asal-zyban ezer men,
+         Gider boldum, hoş gal, gözel Şirgazy!
+
+         Kämil bolup serenjamlyk kylyp men,
+         Muşakgatdan, ol pederden galyp men,
+         Käbämden aýrylyp jyda bolup men,
+         Gider boldum, hoş gal, gözel Şirgazy!
+
+         Kutbda2 saý gözläp, ummana duşdum,
+         Neýsan guýdy, umman gaýnadym-joşdum,
+         Hoş gal, bu gün Jeýhun bahrydan aşdym,
+         Gider boldum, hoş gal, gözel Şirgazy!
+
+         Magtymguly taşlap göwün hapasyn,
+         Sylady pirini, molla, sopusyn...
+         Daýym unutmaz men tylla gapysyn,
+         Gider boldum, hoş gal, gözel Şirgazy!
+
+1 Rig – ownuk daş, çagyl.
+2 Kutb – polýus, deňiz.
+
+     V
+
+YŞKY ESERLER
+        Her ýana
+
+Ýarsyzlykdan ýaman iş ýok,
+Göz salyp gezsem her ýana;
+Ýa ýaradan, bir hemra ber,
+Köp muşakgat degdi jana...
+
+Bir ýar bergil etli, ganly,
+Dil bilen, akly kemally,
+Köňli giň, göwsi meýdanly,
+Ýüzi hem bolsun görkana!
+
+Gadyr bilenden daş etme,
+Nägadyra ýoldaş etme,
+Til bilmez bela duş etme,
+Sada dil bolsun türkana.
+
+Keremi güýçlüdir, görgül,
+Doga kylyp, eliň gergil,
+Berseň-de, tizräk bergil,
+Ygtybar ýokdur bu jana...
+
+Boýy uzyn, pes bolmasyn,
+Hetden aşa mes bolmasyn,
+Akylsyz näkes bolmasyn,
+Sadadan bolsun türkana.
+
+               Ýagşy aýal ele gelmez,
+               Nadan ýagşyň gadryn bilmez,
+               Aýalsyza mydar bolmaz,
+               Dönseň hökmi-Süleýmana.
+
+               Magtymguly, ýansam-bişsem,
+               Ynanmazlar, oda düşsem,
+               Höwesim bar, bir ýar guçsam,
+               Diýsem sözlerim erkana...
+
+                          Gaşy ýaý
+
+  Bir dilbere duş boldum, gamzasy ok, gaşy ýaý;
+  Gün haýrandyr görkünden, hyjalatda dolgan aý,
+  Janyň berseň, jaýyzdyr1 beýle sypat mahbuba;
+  Hiç görmedim anyň deý başy dogry, göwsi taý.
+  Gulgula düşdi bize, hem düşdi jeňi-jeňe,
+  Jeň şowkundan ol nigar, ne nalaga düşdi naý.
+
+  Ne aşretdir aşyga, jennet içre jemaly,
+  Aýralyknyň ataşy tamug içre weýil-waý.
+  Ol dideýi-dildardan bolma ýene bibähre,
+  Galmagaý sen meniň deý – akly azu-görke baý.
+1 Jaýyz – laýyk, jaýly.
+
+  Isteseler alymlarny, şeýtan aýdar: ol dilber
+  Halagana Halyl dek, oglanyna berer paý.
+  Magtymguly, mydama doga kylar dergaha,
+  Saýyl men, mahrum etme dergahyndan,
+                                          ýa hudaý!
+
+                       Bu derdi
+
+       Keşt eýledim, gezdim yşkyň dagyndan,
+       Ne beladyr, kimse çeker bu derdi?
+       Yşk dagyn assalar gögüň boýnundan,
+       Gök titreýip, çeke bilmez bu derdi.
+
+       Yşk eser etmese, ýanmaz çyraglar,
+       Yşka düşse, guşlar eňrär, gurt aglar,
+       Egiler haýbatly, kuwwatly daglar,
+       Daşlar eräp, çeke bilmez bu derdi.
+
+       Kimdir yşkyň ýükün çeken merdana?
+       Pelek gördi — gorkup düşdi gerdana,
+       Zemin1 jünbüş eýläp2 , oldy lerzana,
+       Çöller-düzler çeke bilmez bu derdi.
+1 Zemin – ýer.
+2 Jünbüş eýlemek – hereket etmek, titremek.
+
+       Behişt gaçyp çykmyş arşyň öýüne,
+       Tamüg gorkup inmiş ýeriň teýine;
+       Gaçdy derýa, aldy adam boýuna,
+       Tört ýüz ýyllap çeke bilmez bu derdi.
+
+       Magtymguly, çekseň derdi-düwünden,
+       Asy1 bolup, şikat2 etme bu günden.
+       Bu ölmek, aýrylmak galypdyr öňden,
+       Peder3 bize miras goýmuş bu derdi...
+
+                     Näme sen
+
+       Asla seni görmemişem, dildarym!
+       Gumrumy sen, bilbilmi sen, näme sen?
+       Gamgyn köňlüm hyýalynda aldaram,
+       Bag içinde gül-gülmi sen, näme sen?
+
+       Garakçymyň, ýa seýitmiň, hojamyň,
+       Ýa sakymyň, ýa şerapmyň, ýa jammyň,
+       Ýa ýylmy sen, ýa gündizmiň, gijemiň,
+       Ýa aýmy sen, ýa günmi sen, näme sen?
+1 Asy – günäkär.
+2 Şikat – şikaýat.
+3 Peder – ata.
+
+       Ýa müşkmi sen, ýa kokunar anbarmyň,
+       Aýda bilmen, ýa çarhmy sen, çenbermiň,
+       Ýa derýamyň, ýa möwçmi sen, lenbermiň,
+       Ýa girdapmyň, ýa burgunmyň, näme sen?
+
+       Altynmy sen, kümüşmi sen, zermi sen,
+       Ýa arşmy sen, ýa kürsmi sen, ýermi sem,
+       Ýa ýakutmyň, ýa merjenmiň, dürmi sen,
+       Ýa çyragmyň, ýa röwşenmiň, näme sen?
+
+       Magtymguly, geç namysdan, aryňdan,
+       El götergil bu wepasyz käriňden,
+       Jahan doly, sen gapyl sen ýaryňdan,
+       Ýa mestmi sen, ýa şeýdamyň1 , näme sen?
+
+1 Şeýda – joşgunly, saýraýjy, däli-diwana.
+
+                         Gördüňmi
+
+          Ýagty salar gider zulmat tününde,
+          Meniň sahypjemalymny gördüňmi?
+          Bahar eýýamynda, heýhat gününde
+          Meniň sahypjemalymny gördüňmi?
+
+          Anka sypat «huw» diýp, asman uçan guş,
+          Gijesi tirikdir, gündizi beýhuş,
+          Nowaýy jindeli1 , egni hyrkapuş2 ,
+          Meniň sahypjemalymny gördüňmi?
+
+          Gan edipdir pelek, bagrym pyrakda,
+          Elmydam gezer men «ýar» diýp sorakda,
+          Käbe tarapynda, Şamda, Yrakda
+          Meniň sahypjemalymny gördüňmi?
+
+          Rumda, Gypjakda, Çyny-Maçynda,
+          Zumaýyl ornunda, arşyň içinde,
+          Galam degresinde, pelek burçunda
+          Meniň sahypjemalymny gördüňmi?
+
+          Aşyklar ahynda, Gulzum döwründe,
+          Kütbetil-yslamda, Jeýhun bahrynda,
+          Sedre sährasynda, Isa şährinde
+          Meniň sahypjemalymny gördüňmi?
+1 Jinde – ýyrtyk, sal-sal, eleşan.
+2 Hyrkapuş – ýyrtyk-ýirik geýim, derwüşiň geýýän geýimi.
+
+Hazret Aly etgeç äleme dagwy,
+Kapdan Kaba gitdi hazretiň çawy,
+Ýa yklym eýesi, Ahmet Ýasawy!
+Meniň sahypjemalymny gördüňmi?
+
+Mesgen tutmuş gara dagyň burnunda,
+Alynyň mülkünde, Isa ornunda,
+Ýeriň arkasynda, gögüň garnynda
+Meniň sahypjemalymny gördüňmi?
+
+Magtymguly, çeker ýaryň gamyny,
+Gezip tapa bilmez roýy-zemini.
+Ýa ady Jebraýyl, hakyň emini!
+Meniň sahypjemalymny gördüňmi?
+
+       Bagrym dilenim
+
+Dertli dilber, dilleşer sen, gel bäri!
+Dullukdyr meniň-de bagrym dilenim.
+Soraýyr men, men hem sen deý bir ýary,
+Seni soramakdyr, ýokdur ýalanym.
+
+Eger geňeş salsam ýada-bilişe,
+Diýrler: şirin asal ýaga gelişe,
+Säher ýazygym çün tursam nalyşa,
+Owwal bir ýar bolar ýada salanym.
+
+Bilen ýanda meňzär gymmat düre sen,
+Tanymaza duşup, degme ýere sen,
+Kadyr kysmat etse, maňa bara sen,
+Seniň kimin ýardyr meniň ölenim.
+
+Her dilber kim köňlüm öýün ýarydyr,
+Ýatan bagtym ol ýaradan ýörüdir.
+Gargyşym daşlarny mum deý eridir,
+Pür-pudak ýaýradyr alkyş kylanym.
+
+Gözel görküň gökde günden aýynmaz,
+Güli, desdenbili ysgan doýunmaz.
+Magtymguly, baş bermese baýynmaz,
+Mährimi inderip nazar salanym.
+
+            Islärin
+
+    Owal başda, kadyr alla,
+    Senden bir kömek islärin.
+    Badam gabak, alma ýaňak,
+    Bir ziba senem islärin.
+
+    Taňry bermese nädäli?
+    Baş alyp, nirä gidäli?
+    Oturyp-turşy edaly,
+    Gaşlary galam islärin.
+
+                 Özüne hormat getiren,
+                 Äriniň hyzmatyn bitiren,
+                 Gaşyny çytman oturan,
+                 Maňlaýy gülen islärin.
+
+                 Ýigrimi ýaş ötdi menden,
+                 Hezl etmedim, dünýä, senden.
+                 Tili süýji, lebi handan,
+                 Bir goýna salan islärin...
+
+                 Pyragy, geldim jahana,
+                 Bir ýar bergil akly-dana1 ,
+                 Duşdum üm bilmez nadana,
+                 Bir gadrym bilen islärin.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Gözüm düşdi',
+    'Şükür, alhamdililla,
+                    Janana gözüm düşdi.
+                    Meýhanada meý içdim,
+                    Mestana gözüm düşdi.
+
+                    Eý zülpi, saçy anbar!
+                    Mehrap ki, ýüzüň menber,
+                    Eý lagly2 -lebi göwher,
+                    Ummana gözüm düşdi.
+1 Dana – bilgir, akylly.
+2 Lagl – gymmatbaha daş, rubin.
+
+                  Eý gözleri ahramy1 ,
+                  Gel görgeli ýaramy,
+                  Eý köňlümniň aramy!
+                  Imana gözüm düşdi.
+
+                  Eý jady-jeren gözli.
+                  Eý şähdi-şeker sözli,
+                  Eý şemsi-kamar2 ýüzli,
+                  Tabana3 gözüm düşdi.
+
+                  Arzuwda gezer iller,
+                  Hyzmatga geler gullar,
+                  Täze açylgan güller,
+                  Bostana gözüm düşdi.
+
+                  Her saçlary bir sünbül.
+                  Göýäki men hem bilbil.
+                  Eý jennet era bir gül,
+                  Ryzwana4 gözüm düşdi.
+
+                  Bu derdime sen derman,
+                  Köýüňde bolam nalan.
+                  Magtymguly diýr, eý jan,
+                  Janana gözüm düşdi.
+
+1 Ahram – jadyly, humarly.
+2 Şemsi-kamar – aý-gün.
+3 Taban – dolan aý, ýagty.
+4 Ryzwan – fantastik jennet gapysynyň sakçysy; behişt.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Sataşdym',
+    'Säher wagty seýran edip gezerkäm,
+           Ajap menzil, ajap jaýa sataşdym.
+           Ugrum bilmeý, ýoldan-ýola azarkam,
+           Hup mekana, hup saraýa sataşdym.
+
+           Ustasyz işlenen, kirşsiz gatylan,
+           Gymmatsyz satylan, elsiz tutulýan,
+           Gol degmeý çekilen, oksuz atylan,
+           Çillesiz1 gurulan ýaýa sataşdym.
+
+           Niçe dostlar bilen seýranda eken,
+           Hatardan azaşdym, kerwende eken,
+           Jandan umyt üzüp, haýranda eken,
+           Ýyldyzdan ýol ýasap, aýa sataşdym.
+
+           Köňlüm gitdi, dostlar içen şerbetde,
+           Olar ýüz sapada, men müň hasrata.
+           Aýrylyp näzliden, galdym gurbatda2 ,
+           Çeşmeden suw istäp, çaýa sataşdym.
+
+           Ne tende kuwwat bar, ne içde jan bar,
+           Bu işde ne sut bar, bilmen zyýan bar,
+           Ne hasap, ne hesip, ne belli san bar,
+           Kişi bilmez, ne söwdaýa sataşdym...
+1 Çille – kiriş.
+2 Gurbat – aýralyk, daşa düşmeklik.
+
+         Başa baglap diwanalyk kemendin,
+         Segredip ýetişdim yşkyň semendin1 ,
+         Al şeraba el uzatdym, emendim,
+         Durusyn içmişler, laýa sataşdym.
+
+         Magtymguly diýrler meniň adyma,
+         Bir ah ursam, älem ýanar oduma.
+         Eý ýaranlar, kim ýetişer dadyma?
+         Başym çykmaz köp gowgaýa sataşdym.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Aşyk bolmuşam',
+    'Eý ýaranlar, bir ýüzi gül, aýa aşyk bolmuşam,
+Barçalar maksady gül ragnaýa2 aşyk bolmuşam,
+Bilbilem bag içre, bir gowgaýa aşyk bolmuşam,
+Özi gaýyp, zülpleri ýeldaýa3 aşyk bolmuşam.
+Menzilim bag içredir, sähraýa aşyk bolmuşam.
+
+Çün pelek saldy bizi ol gün pena topragyna,
+Düşdi seýrim daýyma Mekge, Medine dagyna,
+Bilbil oldum saýradym, girdim Eremniň bagyna,
+Pany-bent oldum o güýa gam iliniň tussagyna,
+Ýüz bela-mähnetli bir söwdaýa aşyk bolmuşam.
+1 Sement – at.
+2 Ragna – owadan, gözel.
+3 Elda – gyryň iň uzyn we tüm garaňky gijesi (22-nji dekabr gijesi).
+
+Göwräm içre ýar gamydyr, menzilim sährad, heý,
+Puşeşim gam-gussadyr, men dönmüşem
+                                   Perhada, heý,
+Saldy yşkyň, dilbera, janu-jigerim oda, heý,
+Wadaryga1 , geçdi ömrüm, zaýa berdim bada2 , heý,
+Ahy köp, efgany köp, bir köýe aşyk bolmuşam.
+
+Bilmenem, ne bahr, ýerdir, bes ne muazzem3
+                                  dagydyr,
+Aldy köňlüm, gitdi aklym ten mydam näçagydyr,
+Nisbet etmek bolmas any, gumry, bilbil zagydyr,
+Aý garaz her zülpüne ýetmiş müň är tussagydyr,
+Kaddy-kamaty belent, zybaýa aşyk bolmuşam.
+
+Dost, howaýy waslyňy men munça çenden isterem,
+Damy4 -zülpüň kasdyna özümni zyndan isterem,
+Diýme: gamdan bir zaman, köňlümni handan
+                                  isterem,
+Bir garyp aşyk menem, ýar, seni senden isterem,
+Gije-gündiz, biliň huw-haýa aşyk bolmuşam.
+1 Wadaryga – haýyp.
+2 Bat – el (bad).
+3 Muazzem – uly, ägirt.
+4 Dam – duzak.
+
+Istemez ýarym meni, ol ýara zarym ýok meniň,
+Galmyşam haýran olup, gaýry mydarym ýok meniň,
+Aldy janym yşkyň ody, ygtyýarym ýok meniň,
+Gelse, aklym dagydar, gitse, kararym ýok meniň,
+Kirpigi ok, gaşlary ol ýaýa aşyk bolmuşam.
+
+Aýdadyr Magtymguly, men anda käne ugradym,
+Seýil edip bardym pelekden, lamekana1 ugradym,
+Çün meni ryswa kylypdyr, yşky käne ugradym,
+Ýetmiş iki şäher ile müň bir dükana ugradym,
+Şunça sergezdan sepilu-zaýa aşyk bolmuşam...',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Meni',
+    'ň köňlüm endişede,
+              Gähi ser, içre köşede,
+              Otursam agaçlar bile.
+1 Keşti – gämi.
+2 Muşty häk – gysym gum.
+
+              Garry dünýä al içinde,
+              Adamzat hyýal içinde,
+              Jahan galmagal içinde,
+              Her kim ýüz talaşlar bile.
+
+              Alla yşkyda ser mestler,
+              Duwuş gelmez zeberdestler1 ,
+              Köňül perwaz eder, dostlar,
+              Durmaz ýüz alaçlar bile.
+
+              Köp köýler bile oturdym,
+              Bilmedim, ne iş bitirdim,
+              Gümra bolup, ýol ýitirdim,
+              Oturdym biweçler bile.
+
+              Bikär goýma ömür tagty,
+              Oýandyrsak oýmuş2 bagty;
+              Doga kylyp säher wagty,
+              Nalyş kylsam guşlar bile.
+
+              Magtymguly, towpyk3 alsam,
+              Bir är tapsam, gulluk kylsam,
+              Ýürek aýdar: ýoldaş bolsam
+              Dem çeken derwüşler bile.
+
+1 Zeberdest – eli üstün, güýçli, başarjaň.
+2 Oýmuş – uklan, ýatan.
+3 Towpyk – kömek.
+
+                      Ýar bizim sary
+
+         Gulzumy1 gyrsanyp kyrk ýol geçer men,
+         Eger ki meýl etse ýar bizim sary;
+         Gadam ýerne ganat baglap uçar men,
+         Diýse dilber: «Aşyk, ýör bizim sary».
+
+         Kyrk ýyl gol gowşuryp, gullukda dursam,
+         Alty günçe görmen, altmyş ýyl ýörsem,
+         Bir şunçakly bolsa, görsem, jan bersem,
+         Jemalyn arz etse bir bizim sary.
+
+         Ne laýykly ýüzüm bardyr tutarga,
+         Ne aýry gapym bar onda giterge?
+         Umyt bar goýnunda bile ýatarga,
+         Dergahyndan açsa der2 bizim sary...
+
+         Bir kimse ýolukdy desti3 şeraply,
+         Ýelden jaýnamazly4 , suwdan mähraply,
+         Egni ak redaly5 ýaşyl nykaply
+         Ugraşdy bir ajap är bizim sary.
+1 Gulzum – Müsür bilen Arabystan aralygynda bolan Gyzyl deňiz.
+2 Der – gapy, işik.
+3 Dest – el.
+4 Jaýnamaz – namazlyk.
+5 Reda – don.
+
+         Ýoldaş bolup bile ýördüm bir meýdan,
+         Meýdan içre dolup oturmyş merdan,
+         Bir eýwan üstünde çyrlap tört ýerden,
+         Diýdiler: «Goluňny ber bizim sary!».
+
+         «Pyragy!» diýp çagyrdylar, eltdiler,
+         «Kandadyň?» diýp, gulagymdan tutdular,
+         Istihanym1 altmyş para etdiler,
+         Diýdiler: «Mert olsaň, ýör bizim sary!»
+
+         Magtymguly bäş gün aşret sürmäge,
+         Jaý imesdir eglenmäge, durmaga,
+         Kararym ýok oturmaga, turmaga
+         Agzyn açyp durmuş ýer bizim sary.
+
+                      Bolmasa
+
+           Her kim suluw men diýr, ygtybar olmaz,
+           Sünbül saçy, gylça bili bolmasa;
+           Ýürekleri at başy dek batyrlar,
+           Hatynça ýok, at-ýaragy bolmasa.
+
+           Näler görejekdir bu şum köňüller.
+           Hazan ursa, solar açylan güller,
+           Bag içre saýraşan şeýda bilbiller,
+           Torgaýça ýok, gonar güli bolmasa.
+1 Istihan – süňk.
+
+Sözleseň, her ýana öwser bu tiller,
+Ýel urpakdan aşsa, şuwlar şemallar,
+Ýaşylbaş sonalar, gazlar garkyllar,
+Haly-harap düşer köli bolmasa.
+
+Guşlar uça bilmez guruk-ganatsyz,
+Aşyk ýara ýetmez dady-perýatsyz,
+Bir bedew hanazat bolar syýaksyz,
+Gurugy, käkili, ýaly bolmasa.
+
+Ahyrzaman bolsa, şyhdan päl gaçar,
+Kelamnyň ýüzünden hat galman öçer,
+Meýdandaky suwsuz aryga ogşar –
+Her kimniň sahawat-haýry bolmasa.
+
+Başyň goşma gadyr bilmez bezzada,
+Goşsaň, goşgul aşyň bir asylzada,
+Howada ýagmazak meňzär buluda, –
+Her kimiň hümmeti, haýry bolmasa.
+
+Magtymguly, biliň, şundag zamandyr,
+Şindi haýyr bolsa, soňra zyýandyr,
+Är ýigidiň içi doly armandyr, –
+Gara göz, inçe bil ýary bolmasa.
+
+                 Mala seretmez
+
+         Owwal-a mal ýagşy, maldan baş ýagşy,
+         Baş döwletin tapan mala seretmez;
+         Dogmadyk oguldan dogan är ýagşy1 ,
+         Nadan ogul atasyna seretmez.
+
+         Atda aýak bolsa, özge syn bolmaz,
+         Ärde gaýrat bolsa, işi kyn bolmaz,
+         Söweş güni goç ýigitde müýn bolmaz,
+         Garşy bakar, peýkam-ýaýa seretmez.
+
+         Alaman öňüni serdary başlar,
+         Goç ýigitler naýza urar, gylyçlar,
+         Kimseler bukulyp, kimse at uşlar,
+         Abyraý tapmasa, paýa seretmez.
+
+         Är-dostdan gaçarlar, adam aç galsa,
+         Ýar-ýardan aýrylar, ara daş galsa,
+         Ýaman hatyn ýagşy ýigide duş bolsa,
+         Başyny terk eder, daýa seretmez.
+
+         Köne dünýä muhannesiň öýüdir,
+         Süýthor bolan kesiň dowzah jaýydyr,
+         Altyn, kümüş gözlerimiň maýydyr2 ,
+         Goç ýigitler bozuk jaýa seretmez.
+1 «Dogmadyk oguldan duşman är ýagşy» diýen nusga hem bar.
+2 Maý – ýag.
+
+          Dünýä görki näzeninler, ne janlar,
+          Nadana ýolukdy türpe1 jenanlar.
+          Ýardan galan, äri ölen juwanlar
+          Goç ýigidi gözlär, baýa seretmez.
+
+          Magtymguly, garyp göwnün baý edip,
+          Kanagat ülkesin bendi-jaý edip,
+          Her kim öz ýaryny dogan aý edip,
+          Aýyn gözlär, özge aýa seretmez.
+
+                 Duz hem bolmasa
+
+          Togsan dürli tagam bolsa gaşynda,
+          Ne lezzet, içinde duz hem bolmasa;
+          Näbiler sen ne iş bardyr başynda,
+          Müşgil işdir, başda göz hem bolmasa...
+
+          Aýak bar ýörmäge, el bar almaga,
+          Kany bende, saglyk şükrün kylmaga,
+          Gulak bardyr eşitgenin bilmäge,
+          Kim düzeder, dilde söz hem bolmasa?
+
+          Ýok ýerden jan berip ýetirdi nany,
+          Göwün bostanyda bitger imany,
+          Adyň bende bolsa, eýäňi tany,
+          Gelip saňa ýüzbe-ýüz hem bolmasa.
+1 Türpe (turpa) – gözel, ter.
+
+          Kysmatyn hak bilen ryzkyn yzlamaz,
+          Söz bilenler bilen sözün gizlemez,
+          Köňül joşa gelmez, dil hem sözlemez,
+          Her ýürekde yşkdan göz hem bolmasa.
+
+          Ýyl-ýyldan pezihat1 artar eýýama,
+          Hakyň özi getirmese enjama,
+          Dünýä sözi meňzär duzsuz tagama,
+          Söz içinde gelin-gyz hem bolmasa.
+
+          Ýum gözüňi, gysyp gezgin dişiňni,
+          Ýaza ýetseň unutmagyn gyşyňny,
+          Töwekgel et, taňra tabşyr işiňni,
+          Sabyr bilen biter, tiz hem bolmasa.
+
+          Magtymguly, hyýal düşüp özüme,
+          Köp tomaşa gelip geçer gözüme,
+          Eşidenler aýp etmesin sözüme,
+          Iller kimin sözüm uz hem bolmasa.
+
+1 Pezihat – erbetçilik, biabraýlyk, masgaralyk.
+
+                        Çykypdyr
+
+          Hak tagala, bu ne-niçik ahwaldyr,
+          Dury diýip içdigim gumly çykypdyr;
+          Ne ýeser beýhuda şum keç ykbaldyr,
+          Halal diýip iýdigim jimli çykypdyr.
+
+          Kimse syrym bilmez, özün öldürse,
+          Pakyr bendelerge taňry bildirse,
+          Ile şatlyk, şadymanlyk güldürse,
+          Maňa hemra bolan gamly çykypdyr.
+
+          Amuhta1 men örtenmäge, bişmäge,
+          Kişi ýok sözleşip, dert aýdyşmaga,
+          Oba ujundan barsam öý soraşmaga,
+          Ýa laldyr, ýa agzy mumly çykypdyr.
+
+          Menden şikat eder elim gerenim,
+          Galbyrdan2 şal çykar syrym berenim,
+          Pir diýip paşmagna elim uranym,
+          Deprenende, döwden demli çykypdyr.
+
+          Magtymguly, hasaby ýok görenim,
+          Tama edip, umyt elim gerenim,
+          Obasyna ärmiş diýip baranym
+          Etegne el ursam.., çykypdyr.
+
+1 Amuhta – taýar, çulum, öwrenişikli, endikli.
+2 Galbyr – elek.
+
+        Bary bolmasa
+
+Zamana beýledir, göze ilmezler,
+Her ýigidiň golda bary bolmasa.
+Ýüz tümenlik sözün şaýa almazlar,
+Her kişiniň ygtybary bolmasa!
+
+Ten bir dar kapasdyr, jan bir wagşydyr,
+Tile gelen sözler köňül nagşydyr,
+Otly, suwly tamug andan ýagşydyr,
+Her ýuwurdyň bir bazary bolmasa.
+
+Begzadalar galdy çopan tährine,
+Ten haçan döz getir ýylan zährine,
+Bibat olup döner Lutuň şährine,
+Her ülkäniň häkim äri bolmasa.
+
+Dünýäde aňlardan aňlamaz kändir,
+Bilmezler beladyr, bilenler jandyr,
+Ol ýigitler adam tilli haýwandyr,
+Söz aňmasa hem ykrary bolmasa.
+
+Ýigide ýoksullyk ýaman beladyr,
+Sözüni deň-duşdan gaýra saladyr,
+Ýaman gylyk dosty duşman kyladyr,
+Guryp galsyn, il derkary bolmasa.
+
+                 Hak her kime bir ýagşy ýar bermändir, —
+                 Sözi akdyr, içi doly armandyr,
+                 Ýüz ýaşasa, bäş gün döwran sürmändir,
+                 Her kimniň mynasyp ýary bolmasa.
+
+                 Magtymguly, haka tabşyr özüňni,
+                 Her namarda sarartmagyl ýüzüňni,
+                 Terhosym bar, gel terk eýle sözüňni, —
+                 Näge gerek, hyrydary bolmasa.
+
+                         Düýşüne degmez
+
+                 Ýoksuzlykda niçeleriň döwrany,
+                 Ýatyp ýagşy gören düýşüne degmez;
+                 Niçeler hasretde tapyp höşk1 nany,
+                 Bir lezzetli tagam dişine degmez.
+
+                 Soran bolsa, synam içre sözler bar,
+                 Müň tümenden ýegdir, niçe ýüzler bar.
+                 Neýsansyz2 , nebatsyz3 niçe ýazlar bar, –
+                 Hoşluk bilen geçen gyşyna degmez.
+       1 Xöşk – gury.
+       2 Neýsan — ýaz wagtynda ýagýan ýagyş; grekçe aýlarynyň biriniň
+
+ady.
+       3 Nebat – ot, ösümlik.
+
+          Akyllar bar, başa baglap keçeler,
+          Içgin-içgin sorsaň, magny saçalar,
+          Akmaklykda özün bezäp niçeler, –
+          Kellesine saran peşine degmez.
+
+          Aňlamaza aýat sözlerin diýseň,
+          Pygamber hadysyn öňünde goýsaň,
+          Gyýmazlykdan köp söz beýnine guýsaň,
+          Bu sözler gulagnyň daşyna degmez.
+
+          Ynjatsa ogul-gyz, ene-atasyn,
+          Toba kylmaý taňrym geçmez hatasyn,
+          Döwran gelse, bilmez ne iş tutasyn,
+          Her kimiň her işden başyna degmez.
+
+          Niçeler mal tapmaz, teňňi-dest1 bolar,
+          Niçeler bar, dünýälikde mest bolar,
+          Niçeler bar, ýigitlikde nist2 bolar,
+          Niçeler bar, süren ýaşyna degmez.
+
+          Magtymguly, gerçe işim namazdyr,
+          Köňlüm perişandyr, sähwüm3 derazdyr4 ,
+          Adam bar, müň tümen iýdirseň azdyr,
+          Adam bardyr, iýen aşyna degmez.
+
+1 Teňňi-dest – eli gysga, goly teň, pes
+2 Nist – ýok.
+3 Sähw – ýalňyş.
+4 Deraz – uzyn, köp.
+
+        Görner
+
+Dogry bakmazlar julluýa,
+Göze gyzyl donly görner;
+Söze pähm etmez akmaklar,
+Öz ýanyndan tilli görner.
+
+Başa degmänkä gurtlar.
+Kast etmäň, gerekdir ýurtlar,
+Ýagyda tanalar mertler,
+Il içinde mally görner.
+
+Pikr et, başa iş düşende.
+Yssy ýokdur, soň puşmanda,
+At meýdanda, är duşmanda,
+Toýda tirme-şally görner.
+
+Jany sagyň sözlär tili,
+Jomardyň dek durmaz eli.
+Her kişiniň öz akyly
+Özüne kemally görner.
+
+Gadymdan setdir ýagşylyk,
+Ýagşy zatdyr ýagşy gylyk,
+Mert ýigide az ýagşylyk,
+Az hem söýgüli görner.
+
+               Gel, akyl dolandyr indi,
+               Ýürek peýwendi, jan bendi,
+               Her kişiniň öz perzendi
+               Özüne jemally görner.
+
+               Magtymguly, söz binýadyň1
+               Agzynda ýakynyň-ýadyň;
+               Hünär ýok söz bilen adyň
+               Halk içinde belli görner.
+
+                        Tapylmasa
+
+            Dok dalaşar sebze2 halgat3 geýmäge,
+            Kilim gözel zatdyr, don tapylmasa.
+            Aç dyrjaşar gury nany iýmäge,
+            Müşgildir, bişirge un tapylmasa.
+
+            Hasyl umydy bar ekin ekene,
+            Bu işler maglumdyr mähnet çekene,
+            Ýalaň aýak dözmez, basmaz tikene, —
+            Neýlesin geýerge gön tapylmasa.
+1 Binýat – guralyş, dikeliş, esas.
+2 Sebze, sebz — gök, ýaşyl.
+3 Halgat – halat, geýim.
+
+          Akylsyzlar iş ahyryn garamaz,
+          Çulap1 çigidinden garpyz döremez,
+          Agyr mejlislere çopan ýaramaz,
+          Neýlesin, otyrga jem tapylmasa.
+
+          Ýigitlikde her kim aşretde ýaýlar,
+          Başyna ne geler, gelmez bu köýler.
+          Dişsizler nan tapsa çäresin eýlär,
+          Müşgildir suprada nan tapylmasa.
+
+          Magtymguly, söýmez jedeli-jeňi,
+          Ahyret azm2 etdi köp dosty-deňi.
+          Dünýäde ne iş bar, bolmasa soňy,
+          Muşakgatdyr tende jan tapylmasa.
+
+                  Malyna degmez
+
+        Baýlar bardyr, garyplara rehm eýlär,
+        Bardyr baýlar, dünýä malyna degmez;
+        Gözel bardyr dünýä malyn iýdirsiň,
+        Bardyr gözel, iýen nanyna degmez.
+
+        Dünýäde bahylyň ýüzüni görme,
+        Aşyň, nanyň, suwuň alyşyp berme.
+        Gul diýip, ýigidiň aslyny sorma,
+        Hojasy bar, belki, guluna degmez.
+1 Çulap – miwe ady.
+2 Azm etmek – ugramak, gitmek.
+
+        Dünýä malyn berseň, eýesi satmaz,
+        Şa istese, anyň dilegi bitmez,
+        Bedew bar, pul berseň, bahasy ýitmez,
+        Bedew bardyr, salan juluňa degmez.
+
+        Döwletli är gerek, söweşde serhoş,
+        Ýat bilen baryşsaň, bolar sen gardaş,
+        Ýagşy ogul, ýagşy aýal, gyz syrdaş,
+        Bu döwlet her kimiň eline degmez.
+
+        Magtymguly, bu dünýäniň eşreti, –
+        Iýmek, içmek, münmek, guçmak, söhbeti.
+        Bir niçeler mydam kylar tagaty,
+        Niçeleriň sežde alnyna degmez.
+
+                         Bolgul
+
+        Bir bidöwlet bile birge bolynçaň,
+        Döwletliniň gapysynda gul bolgul;
+        Bedasyl beg gullugynda ýörinçäň,
+        Asyl begiň saýasynda kül bolgul.
+
+        Ýamany goý, ýagşylara göz ildir,
+        Kelhemeç1 hem «öz oglanym gözel» diýr,
+        Gargyş gurduň zürýadyny azaldyr,
+        Goýun kibi çar tarapa il bolgul.
+1 Kelhemeç – dazzarkel, çaýkel.
+
+        Süleýman sen — mura1 bir gulak goýgul,
+        Sözüni diňlegil, jogabyn aýgyl,
+        Häkim bolsaň halky gün kibi çoýgul,
+        Akarda suw, ýa öserde ýel bolgul.
+
+        Ýaman işdir öz nebsiňi besleseň,
+        Akmaklykdyr özüň ýagşy toslasaň,
+        Her bazarda rowaç bolmak isleseň,
+        Ýagşylaryň potasynda2 pul bolgul.
+
+        Magtymguly bardyr demiň hesibi,
+        Ir, giç ýeter her bendäniň nesibi,
+        Kişi bolsaň, goýgul gury täsibi,
+        Ýagşy, ýaman barçalarga del bolgul.
+
+           Görüm görülmegen ýerde
+
+             Yzzat, hormat, syn etmegin
+             Görüm görülmegen ýerde;
+             Akyl bolsaň, söz aýtmagyn
+             Nobat berilmegen ýerde.
+
+             Akly ýagşylar unutmaz,
+             Gury agaja ýaprak bitmez,
+             Akylly är mesgen tutmaz
+             Hulky söýülmegen ýerde.
+1 Mur – garynja.
+2 Pota – bu ýerde jübi, kise manysynda
+
+             Gömlüp galan aryk akmaz.
+             Her naşydan kerem1 çykmaz,
+             It gözlemez, pişik bakmaz
+             Saçak ýazylmagan ýerde.
+
+             Haç eýleseň jara döner,
+             Gül açylsa zara döner,
+             Hyzmat etmek hara döner
+             Gadryň bilinmegen ýerde.
+
+             Namart goş üstünde harlar,
+             Iýmit, aş üstünde gürlär,
+             Söweş gurup, gylyç parlar
+             Duşman görülmegen ýerde.
+
+             Öý içinde hara döner,
+             Muhannes bir nere döner,
+             Tilki, şagal şire döner
+             Söweş gurulmagan ýerde.
+
+             Parasat kyl bakyp akla,
+             Goç ýigidiň sözün hakla,
+             Magtymguly, tiliň sakla
+             Habar soralmagan ýerde.
+
+1 Kerem – ýagşylyk.
+
+                 Är ýanynda bellidir
+
+                 Ýagşylygy – pis bilmez, –
+                 Är ýanynda bellidir.
+                 Görer gözüň gymmaty
+                 Kör ýanynda bellýadir.
+
+                 Däli köňül daýanjy,
+                 Ýokdur dünýä ynanjy,
+                 Sag gulagyň guwanjy
+                 Ker ýanynda bellidir.
+
+                 Eger pir1 sen, eger ýaş,
+                 Kylma syryň halka paş,
+                 Syr saklaýan mähek2 daş
+                 Zer ýanynda bellidir.
+
+                 Bu dünýäniň myrady, –
+                 At, zagyfdyr3 , zürýady.
+                 Arwananyň kuwwaty
+                 Ner ýanynda bellidir.
+
+                 Bolsa gamdan halasym,
+                 Ýaza dönse gyş paslym,
+                 Magtymguly, yhlasym
+                 Ýar ýanynda bellidir.
+1 Pir – garry.
+2 Mähek – gyzyl, kümüşiň hilini kesgitlemek üçin ulanylýan daş.
+3 Zagyf (zagyfa) – aýal.
+
+                   Sazyna degmez
+
+           Oýunyň lezzetin bilmeýän adam
+           Hünärli ýigidiň sazyna degmez;
+           Bet syýakly1 , bethüý bolan pis adam
+           Perizadyň eden näzine degmez.
+
+           Bimagnynyň sözi janyňdan öter,
+           Gybat edip, özi günäge batar,
+           Ýamanyň zyýany iline ýeter,
+           Nadanyň peýdasy özüne degmez.
+
+           Adam bardyr, ony şalar çagyrdar,
+           Adam bar, zulm edip, garyp agyrdar,
+           Adam bardyr, körpe ýanyn agyrdar,
+           Adam bardyr, şal kiz2 ýanyna degmez.
+
+           Muhannesiň bolmaz namysy, aňy,
+           Bir söweş gününde eýlemez jeňi,
+           Aga-begler, muhannesiň on müňi
+           Mert ähliniň3 alty ýüzüne degmez.
+1 Syýak – sypat.
+2 Kiz – keçe.
+3 Mert ähli – mert adamlar
+
+          Magtymguly, döwran soňudyr adem1 ,
+          Lahat atly öýge goýar sen gadam.
+          Many söz aňlamaz, biakyl adam
+          Danalaryň aýdan sözüne degmez.
+
+                   Sarp eýleýir aşyny
+
+         Hak nazaryn salan bir serhoş ýigit
+         Ynsan üçin sarp eýleýir aşyny;
+         Namysly, gaýratly, arly goç ýigit
+         Söweş güni gurban eder başyny.
+
+         Bir niçeler gezer zerbap don bilen,
+         Bir niçeler gezer gury san bilen,
+         Adamzady tanyp bolmaz syn bilen,
+         Synaşmagan bilmez kişi kişini.
+
+         Ýigidiň abraýy ýagşy zagyfdyr,
+         Ýagşy zagyf näkes äre haýypdyr,
+         Ýigide gallaçlyk külli aýypdyr,
+         Her ýan gezer, bilmez eder işini.
+
+         Magtymguly, aýdaý ýaryn sypatyn,
+         Täze depder bilen ýazaý zer hatyn.
+         Dowzah nyşanasy bir ýaman hatyn
+         Her kime duş bolsa, alar huşuny.
+1 Adem – ýokluk.
+
+        Ärden
+
+Hiç köňül şatlygy çykmaz
+Bir köňül ýykmaýan ärden;
+Ýagşylyk tamasyn etmäň
+Ýamanlyk çykmaýan ärden.
+
+Her kim ile beglik eder,
+Bir söý bilen ýola gider,
+Kethudalyk ýyrak gider, –
+Ýaman söz çekmeýen ärden.
+
+Ýagşy är il aýbyn açmaz,
+Göre-bile haram içmez,
+Ýaradan ýazygyn geçmez
+Göz ýaşyn dökmeýen ärden.
+
+Eglenmez, eýýam öwrüler,
+Wagt täzeler, nyrh çöwrüler,
+Agyr döwletler aýrylar
+Bir agza bakmaýan ärden.
+
+Öz-özünden akly ýetmez,
+Akyllar sözüni tutmaz,
+Garyplyk ýok bolup gitmez
+On iş terk etmeýen ärden.
+
+     Ýigitlere ýasaw güni –
+     Gurda goýmaz şir awuny,
+     Pygamber bizar ýow güni
+     Ýoldaşa bakmaýan ärden.
+
+     Magtymguly, ýangyl, öçgül,
+     Ýa lal otur, ýa dür saçgyl!
+     Bir guýruksyz itdir, gaçgyl, –
+     Nesihat ýokmaýan ärden.
+
+            Bilmedim
+
+Pelek maňa gam badasyn bereli
+Wysal kaýsy, hijran kaýsy, bilmedim;
+Hak işine ten bermişem göreli,
+Arzuw kaýsy, arman kaýsy, bilmedim.
+
+Bende bolsaň gözle hakyň ryzasyn,
+Jebr eýlese, çekewergil jezasyn,
+Ajal bir gün atar tiri-kazasyn,
+Kiriş kaýsy, keman kaýsy, bilmedim.
+
+Aryf bolsaň, gulak goýgul sözüme.
+Bir suratam bu gün bakmaň özüme,
+Dünýä düýbi ýok görüner gözüme,
+Döwür kaýsy, döwran kaýsy, bilmedim.
+
+        Az ömrümi köp söwdaga satyp men,
+        Özüm bilmeý, ol derýaga atyp men,
+        Ne ummandyr, ne talapdyr, ýatyp men,
+        Zemin kaýsy, zaman kaýsy, bilmedim.
+
+        Her kim girse ol talaba, ummana,
+        Başyn alyp çyka bilmez bir ýana,
+        Gadam goýdum ol sähraýa-meýdana,
+        Jan kaýsydyr, jahan kaýsy, bilmedim.
+
+        Bu dünýäni asmandaky reň bildim,
+        Yssy-yssy asylyşdym, soň bildim,
+        Imdi anyň baryn-ýogun deň bildim,
+        Sut1 kaýsydyr, zyýan kaýsy, bilmedim.
+
+        Magtymguly, ýoluň öňi-ardy bar,
+        Çeker ýüküň, her kişiniň merdi bar,
+        Ýüregimde pinhan yşkyň derdi bar,
+        Dert kaýsydyr, derman kaýsy, bilmedim.
+
+1 Sut (sud) – peýda, haýyr.
+
+       Öýlengin
+
+Ýigit halyň garrylyga
+Salaýyn diýseň, öýlengin;
+Kethudalyk endişesin
+Kylaýyn diýseň, öýlengin.
+
+Kethudalyk gözel ýoldur,
+Gaýgy garrydar, gam öldir,
+Ýigitlik bir gyzyl güldür, –
+Solaýyn diýseň öýlengin.
+
+Öý-il gerek, ýorgan-düşek,
+Perzent bentdir, aýal – duşak,
+Ýüke werziş bir boz eşek
+Bolaýyn diýseň, öýlengin.
+
+Gezer sen oýnap, dalaşyp,
+Galar sen, derde dolaşyp,
+Gaýgydan gama ulaşyp
+Galaýyn diýseň, öýlengin.
+
+Joşgun eder sen özüňden,
+Aýrylar sen hoş ýazyňdan-,
+Tükenmez derdiň yzyndan
+Ýeleýin diýseň, öýlengin.
+
+              Açyp ýigitlik dumanyn,
+              Getir sen gaýgy zamanyn,
+              Dünýäniň ýagşy-ýamanyn
+              Bileýin diýseň, öýlengin.
+
+              Magtymguly, gezip her taý.
+              Etmediň jahandan perwaý,
+              Pygamber sünnetin berjaý
+              Kylaýyn diýseň, öýlengin.
+
+                   Kyly-kal bolar
+
+           Her kişiniň iki bolsa aýaly,
+           Gije-gündiz işi kyly-kal1 bolar;
+           Her biriniň bardyr ýüz müň hyýaly,
+           Owkat sürüp görejigi hal2 bolar...
+
+           Birin söýüp, birin eýlese naçar,
+           Ile ryswa bolup, öz aýbyn açar,
+           Akly haýran bolup, baryndan geçer,
+           Deň tutmasa ýaryn, bikemal bolar.
+
+           Gähi bilbil kimin saýrar tilleri,
+           Tomaşadan häzir eder illeri,
+           Gähi ýer ýumruklar, gähi külleri,
+           Ärin göre bilse, tilsiz lal bolar.
+1 Kyly-kal – galmagal, gowga.
+2 Hal – bu ýerde kyn manysynda.
+
+             Gahar eýläp gelmez bolsa ýanyna,
+             Söz aýtmasa her biriniň şanyna,
+             Beýle är goşulmaz adam sanyna, —
+             Iki hatyn, bir är — üç aýal bolar.
+
+             Magtymguly, kimse bilmez batyny1 ,
+             Öýlenseňiz, garap alyň zatyny2 ,
+             Eýäm görkezmesin ýaman hatyny,
+             Adam özün bilmez, ham hyýal bolar.
+
+                     Ykrarsyz ärden
+
+                Gördük saýy, köňül sowar
+                Sabyrsyz, kararsyz ärden;
+                Yssy beren köpek ýegdir3
+                Uýatsyz, ykrarsyz ärden.
+
+                Aýlandykça döwran-döwür,
+                Ykbalyň ýüwürse, öwür,
+                Dura-bara dosty sowyr
+                Garyp galan barsyz ärden.
+1 Batyn – gizlilik, syr, içki dünýä.
+2 Zat – asyl.
+3 Eg – oňat, gowy.
+
+Ite zer dök, minnet çekmez.
+Aňlamaza sözüm ýakmaz,
+Köňlüň istän işler çykmaz
+Nan ýagysy, kärsiz ärden.
+
+Her göz säherde bidardyr, —
+Eýesinden ülüş bardyr,
+Hak, pygamber, halk bizardyr
+Düýbi ygtybarsyz ärden.
+
+Magtymguly, magny saçar,
+Her kim söz lezzetin içer,
+Bara-bara köňül geçer
+Tagsyby ýok, arsyz ärden.
+
+     Diş gitmek
+
+Tagamnyň lezzetin alyr,
+Dahanyňdan diş gitmek;
+Aňyrsyzy azdyryr
+Götin döwlet baş gitmek.
+
+Şeýtan ýolun bek eýlär,
+Gara ýüzün ak eýlär,
+Ýüz müň bela ýok eýlär
+Säher turup ýaş dökmek.
+
+Peltesiz ýag çyraga,
+Yşyk salmaz gyraga,
+Ilin salar aýaga
+Aýak galyp, baş gitmek.
+
+Niçe pese zar bolup,
+Ýatandan bimar bolup,
+Hoşdur ýagşa ýar bolup,
+Bir ýamandan daş gitmek.
+
+Ulaşmaganlar gama
+Şükr etmezler bu deme,
+Abyraýdyr adama
+Ýagşy gelip, hoş gitmek.
+
+Ýaman til dost ýitirer,
+Hoş til rahmet getirer,
+Äre sangy ýetirer
+Kyrkdan agyp, ýaş gitmek.
+
+Pyragy, dünýä düýşdür,
+Düýş görseň, düýbi hiçdir.
+Jahanda ýaman işdir
+Gury gelip, boş gitmek.
+
+                         Eldim tut
+
+     Dünýe görmeý, tutgun galsaň bir künçde,
+     Bady-paý1 dek ýer ýüzüne ýeldim tut;
+     Çyn-Maçynda, Rumda, Hindde, Hebeşde
+     Bolan-bolmuş hünärleri bildim tut.
+
+     Aç hem bolsaň, barma ile dilege,
+     Diý: köşkde men, başym barmyş pelege,
+     Çölde galsaň, hiç tapmaýan kölege,
+     Erem bagy içre gamsyz galdym tut.
+
+     Aş görende, özüň atma dillenip,
+     Gerçe aç hem bolsaň, halka bellenip,
+     Zerler döküp, çyn gullarny gollanyp,
+     Tiz hem ölseň, Nuh ýaşyna geldim tut.
+
+     Mätäçligiň hakdan özge bilmese,
+     Ol rozugär2 besdir, açdan ölmese,
+     Hindi kimin egin örtiň bolmasa,
+     Patyşalyk puşeş3 çigne saldym tut.
+1 Bady-paý – el aýak, ýyndam at.
+2 Rozygär – rysgal, durmuş.
+3 Puşeş – eşik, geýim.
+
+     Suwa, ýele hökmi geçen Süleýman,
+     Bak: olardan ne nam galdy, ne nyşan!
+     Teşne1 galyp, jaýyň bolsa çölüstan
+     Derýa içre men Isgender boldum tut.
+
+     Ýoldaş bolsaň dile düşmez mur bile —
+     Ýer tapmaýyn, bile ýatsaň mar bile,
+     Ýigrim alty keret2 ýüz müň är bile
+     Karun hazynasyn ele aldym tüt.
+
+     Magtymguly, çekseň jepa-jebir, bil –
+     Hudaga hoş geler, şükür-sabyr, bil,
+     Gylça jana gyzyl teni gabyr bil,
+     Gyzyl tiliň sözlär eken, öldüm tut.
+
+                      Joş gelse
+
+     Dünýäde niçe iş bardyr, ýamandyr,
+     Biri oldur, ýersiz gahra joş gelse;
+     Aşyklara şol gün ahyrzamandyr,
+     Ýardan yrak düşüp, ara daş gelse.
+
+     Dostuňny egleme, nepden galmasyn,
+     Duşmanyň saklama, syryň bilmesin,
+     Açda algyn, bege bergiň bolmasyn,
+     Iş müşgildir, aňlamaza duş gelse.
+1 Teşne – suwsuz, suwsan.
+2 Keret – gezek.
+
+     Zemin seni häli-häli ýutarmy,
+     Akyl bolan munda bigam ýatarmy?
+     Hiý bir masgaralyk mundan ötermi, —
+     Giden gury gitse, gelen boş gelse!
+
+     On gat öýüň bolsa demir galadan,
+     Ajal tapar emir1 bolsa alladan,
+     Hakyky är ýüz döndermez beladan,
+     Hak ryzasy bilen başa daş gelse.
+
+     Aryf men diýp, lap urarlar ýalandan,
+     Bellisini aýdar sorsaň bilenden,
+     Il gözlügin ýüz ýyl tagat kylandan,
+     Ýagşydyr bir säher gözden ýaş gelse.
+
+     Baýlar baglap sahawatyň gapysyn,
+     Köpelder tamugnyň möýün, apysyn2 ,
+     Görüň bu eýýamyň pirin, sopusyn —
+     Dannamaýyn tykar otyr, aş gelse.
+
+     Magtymguly, söýle aklyň ýetinçä,
+     Tetärigiň gazan, bikar ýatynça,
+     Tamugdadyr, tä dünýäden ötinçä, —
+     Ýaman hatyn ýagşy äre duş gelse.
+
+1 Emir (emr) – buýruk, höküm.
+2 Apy (afy) – zäherli ýylanyň bir görnüşi.
+
+                         Ýigide
+
+                Ulalanda, iş hoş gelmez
+                Ýaşlykda köýmän ýigide;
+                Döwlet gelse özün bilmez
+                Dogaly doýman ýigide.
+
+                Ýamana öwüt hebesdir,
+                Ýagşy äre bir söz besdir,
+                Ýörişini ýalňyş basdyr
+                Ýaňy don geýmän ýigide.
+
+                Jüpbe jöwşen1 , zere-sowut2 ,
+                Keserli gylyç, arap at,
+                Söweş güni gider uýat
+                Gaýraty bolman ýigide.
+
+                Çopan adam çoka bolmaz,
+                Ala garga oka gelmez,
+                Köp ýygylsa, terhos almaz
+                Aňrysy bolman ýigide.
+
+                Gulluk ýetirgin janyňdan,
+                Aýama parça nanyňdan,
+                Ganly bolsa, geç ganyňdan
+                Bir garyp myhman ýigide.
+1 Jöwşen – harby eşik, enjamlar.
+2 Sowut – demir don.
+
+Dünýäde hiç kim galmandyr,
+Mal jana ýoldaş bolmandyr,
+Göýä bu dünýä gelmändir
+Bir zürýat goýman ýigide.
+
+Almaz, kümüş mis görüner
+Dula gyrnak tüýs görüner,
+Perizat hatyn pis görüner
+Bir hulky söýmän ýigide.
+
+Mal döner çiýan-çirmäge,
+Durar et-ganyň sormaga,
+Malyndan zekat bermäge
+Gözleri gyýman ýigide.
+
+Magtymguly, ýeldan çykmaz,
+Ýagşy söz ýamana ýakmaz,
+Müň söz aýtsaň, biri ýokmaz,
+Taňrysy guýman ýigide.
+
+                     Gidiji bolma
+
+        Gel, köňlüm, men saňa nesihat kylaý,
+        Watany terk edip gidiji bolma;
+        Özüňden egsik bir gaýry namardyň
+        Hyzmatynda gulluk ediji bolma.
+
+        Hyzmat kylsaň, bolsun bir asylzada,
+        Ata-babasyndan beýik begzada,
+        Eger her çent bolsa aç hem üftada,
+        Ýanyndan bir zaman gidiji bolma.
+
+        Akmaýan galmazdyr bir akan aryk,
+        Bir tende adam ki semiz, kä aryk;
+        Bir ýüzi çirikdir1 , bir ýüzi çaryk,
+        Çirik diýp, gaty söz aýdyjy bolma.
+
+        Ýagşylardan hergiz çykmaz ýamanlyk,
+        Asly ýaman bolsa, çykmaz ýagşylyk,
+        Aslyna tartadyr ýüwrük, çamanlyk,
+        Ýüwrükni çamanga satyjy bolma.
+
+        Çakylyk, habarsyz bir ýere barsaň,
+        Imtiýaz2 eýlegil otursaň, tursaň,
+        Bir nesihat bereý, pendimi alsaň,
+        Kişi aşynyň duzun dadyjy bolma.
+1 Çirik – bu ýerde garalyk, hapa manyda.
+2 Imtiýaz – salykatlylyk, seljermek, artykmaçlyk.
+
+        Çagyrlan ýere bar, otur-da turma,
+        Çagrylmadyk ýere barma, görünme,
+        Utanmaz adam dek süýrenip ýörme,
+        Buýrulmagan işni ediji bolma.
+
+        Eger sen hem bolsaň nermi-mylaýym,
+        Mylaýym sen bolsaň, guluň bolaýym,
+        Gulagymga beren pendiň alaýym,
+        Kişige gaty söz aýdyjy bolma.
+
+        Gökden nem düşmese, ýer ot getirmez,
+        Ýygylsa müň gaýgy, bir iş bitirmez,
+        Är ýigit köňlüne gaýgy getirmez,
+        Namardyň ogly dek gaçyjy bolma.
+
+        Mert ogludyr ile ýazar desterhan,
+        Dogry söz üstünde berer şirin jan,
+        Ömrüni ötgerer, diýmez bir ýalan,
+        Jäht eýläp, ýalan söz aýdyjy bodma.
+
+        Sahty-dil1 ýüregi hergiz boş bolmaz,
+        Her niçe gynansa köňli hoş bolmaz.
+        Bir-birewge iki ýagşy duş bolmaz,
+        Ýagşyny ýamana satyjy bolma.
+1 Sahty-dil – gaty, doň ýürek.
+
+        Töwekgel ner bolar, endişe — maýa,
+        Köňlüňni iberme her kaýsy jaýa,
+        Barçanyň daýanjy kadyr allaýa,
+        Alladan özgäge söýenji bolma.
+
+        Okyr bolsaň, ok ur nebsiň gözüne,
+        Gara, çyn göz bilen meshap1 ýüzüne,
+        Aldanyp girmegil şeýtan sözüne,
+        Ýagşylygy hiç wagt goýujy bolma.
+
+        Eger bolsun diýseň ýeňil-agyrlar,
+        Kelçik sözläp agyrtmagyl bagyrlar,
+        Ýoluksa gözüňe güňi-sagyrlar,
+        Olarnyň halyna gülüji bolma.
+
+        Tapsaň-da dünýäde mülki-Isgender,
+        Karunyň maly hem bolsa miýesser,
+        Ahyry bolar sen ýerge barabar,
+        Köňlüňde men-menlik satyjy bolma.
+
+        Aýdarlar: ýyrtyk don görse it gapar,
+        Päli ýaman bende hudadan tapar,
+        Ahyry bir güni kylar sen sapar,
+        Dar köňüllik işi ediji bolma.
+1 Meshap – kitap, tom, kodeks.
+
+        Eger çendi ki bol sahyby-mansap1 ,
+        Sözün diňle, adalatly bol deňläp,
+        Söz tapsaň sözlegil, tapmasaň bol hap,
+        Goldan gelmez işni ediji bolma.
+
+        Garrylyk gitgisi bir gün apaty,
+        Ýigidiň gitgisi bir gün kuwwaty,
+        Ganymat bil, gapyl adam, pursaty,
+        Murda dek uzanyp ýatyjy bolma.
+
+        Maksat, bu sözlere kylgyl ygtybar,
+        Çyn adama her wagt adamlyk derkar,
+        Aňlamaý söýleme: «tamda gulak bar»,
+        Iç syryň kişige aýdyjy bolma.
+
+        Daň atanda molla çagyrar azan,
+        Bozulmazmyş hergiz kysmatda ýazan,
+        Ýigitlik bostandyr, garrylyk — kazan,
+        Bostany hazana satyjy bolma.
+
+        Kitabyn açyban okan molla diýr,
+        Gögerer ýagmyryň suwy birle ýer,
+        Alkyşy, patyha, doga birle är,
+        Mazluma sütemlik ediji bolma.
+1 Sahyby-mansap – derejeli, emeldar.
+
+        Döwletli ogullar ýaşda baş bolar,
+        Ýaşaganda, bidöwletler ýaş bolar,
+        Rehimsiz zalymlar bagry daş bolar
+        Barar ýere kesek atyjy bolma.
+
+        Är ýigit balasy bara pur1 bolar,
+        Gamçysy elinde ýaman zor bolar,
+        Märeke görmegen ýigit har bolar,
+        Bolar-bolmaz sözi aýdyjy bolma.
+
+        Eý köňül, gel imdi haky tapaly,
+        Nesibe merkebin2 münüp çapaly,
+        Aýdarlar: hak ermiş mähri-wepaly,
+        Hergiz öz sözüňden gaýdyjy bolma.
+
+        Men diýdim bir niçe pendi-nesihat,
+        Bilseň nesihatdyr, ýogsa — pesihat3 ,
+        Pesihat bilmegil, barça nesihat,
+        Ýalgançy sözleri aýdyjy bolma.
+
+        Magtymguly, göwnüňdedir köp arman,
+        Tapmady derdine akybet derman,
+        Ýetişer bir güni hakdan bu perman,
+        Gaflat düşeginde ýatyjy bolma.
+
+1 Pur – doly.
+2 Merkep – ulag.
+3 Pesihat – owadan söz.
+
+            Seni
+
+Içki syryň aýtma her bir namarda,
+Syryň ile ýaýyp, paş eder seni.
+Ogry-kezzap bilen obadaş bolma,
+Malyndan aýyryp, aç eder seni.
+
+Sam-sam adam bilen oturma, turma,
+Zynhar, namart bilen hemsöhbet gurma,
+Gadyrdan dostuňdan ýüzüň öwürme,
+Barsaň depesine täç eder seni.
+
+Bir goç ýigit näzenine ýar bolsa,
+Jemalyny bir görmäge zar bolsa,
+Aralykda bir şum rakyp bar bolsa,
+Ýagşy dostuň bilen öç eder seni.
+
+Sopular ýaňylyp, aýtmaz senany,
+Säher tursaň geçjek barça günäni,
+Aýtmawer gyýbat söz, etme zynany,
+Dowzahyň oduna duş eder seni.
+
+Magtymguly, ile ýaýdym nesihat,
+Zynhar, ýaman bilen bolmagyl ülpet,
+Hudaý berse sagadatly bir perzent,
+Garrygan çagyňda ýaş eder seni.
+
+                    Daşy syndyrar
+
+           Ykbalyň oýansa, döwlet ýar bolsa,
+           Daga azy ursaň, daşy syndyrar;
+           Täleýiň ters gelse, bagtyň şor bolsa,
+           Paludanyň peri dişi syndyrar.
+
+           Ajalyňdan gorkup, girseň ummana,
+           Gorkudan ne peýda gidejek jana,
+           Ömrüň ahyr bolup, dolsa peýmana, —
+           Haşhaşyň samany başy syndyrar.
+
+           Bar sözüne gulak goýgul bileniň,
+           Ahyry hiç ýere ýetmez ýalanyň,
+           Ömri-saly artar alkyş alanyň,
+           Gargyş galyndyrmaz, ýaşy syndyrar.
+
+           Akylyň sözünden köňül söýüner,
+           Akmagyň işinden zehin käýiner.
+           Muhannes giň ýerde akyl saýynar,
+           Dar ýerde akyly-huşy syndyrar.
+
+           Magtymguly, çölde gezen naşyny,
+           Bilik sorma, köp sürdi diýp ýaşyny,
+           Dar mejlisde doly berseň aşyny,
+           Aşny iýe bilmez, käşi1 syndyrar.
+
+1 Käşi – syrçaly gap.
+
+                     Gitmezmiş
+
+              Iller heý, Mejnun dagynyň
+              Serinden duman gitmezmiş;
+              Müňküre bilin bereniň
+              Köňlünden güman gitmezmiş.
+
+              Goýna gardaş bolmaz gurtdan,
+              Dileg etme her namartdan,
+              Tä ölinçä goç ýigitden
+              Parh ýeter, zyýan ýetmezmiş.
+
+              Gapyl adam ogly bilmez,
+              Ölümini ýada salmaz,
+              Maly-mülküň peýda kylmaz,
+              Ýanyňdan iman gitmezmiş.
+
+              Aşyklar terki-jan etsin,
+              Gözde ýaşyn rowan etsin,
+              Goç ýigitler yhsan1 etsin,
+              Yhsany reýgan2 gitmezmiş.
+
+              Magtymguly, galdyň derde,
+              Işiň düşmesin namarda,
+              Kyýamat güni jomarda
+              Dowzahdan zyýan ýetmezmiş.
+
+1 Yhsan – haýyr
+2 Reýgan — biderek, zaýa; mugt.
+
+       Olmasyn
+
+Eý ýaranlar, musulmanlar,
+Däli köňül joş olmasyn;
+Ýene bir ýagşy ýigide
+Ýaman hatyn duş olmasyn.
+
+Her kim alsa hakdan rehnet,
+Gider gaýgy, galmaz mähnet,
+Arslan bolsa durmaz döwlet, —
+Hiç ülke bibaş olmasyn.
+
+Täsip edip at besläne,
+Ýoldaş bolsun haýr aslyna,
+Haram aşap, şer isläne
+Uzak ömür ýaş olmasyn.
+
+Her kimiň öz synasynda,
+Akyl görner beýnisinde,
+Iki dostuň arasynda
+Ýaman-ýowuz iş olmasyn.
+
+Her kişiniň öz zürýaty —
+Jan hoşy, köňül kuwwaty;
+Artsyn jomardyň döwleti,
+Muhannesde aş olmasyn.
+
+Bir yşk düşse adam serne,
+Uky gaçyp, köňül urna,
+Iki söwgüli bir-birne
+Ýakyn olsun, daş olmasyn.
+
+Sözüm sözlense her çaklar,
+Akyly bolan gerçekler,
+Bir iş düşende goçaklar
+Iş görmedik ýaş olmasyn.
+
+Il içinde özün öwer,
+Dag-dumany başdan agar,
+Ýigide nogsany deger,
+Namartlar ýoldaş olmasyn.
+
+Sözle heý, aşygym, sözle,
+Gel, kyýamatlygyň gözle,
+Magtymguly, syryň gizle,
+Her namarda paş olmasyn.
+
+                      Läle getirmiş
+
+         Asmanyň ýüzleri minewwer1 bolsa,
+         Zemin ýaşyl geýip, läle getirmiş;
+         Huda buýrugyndan aýrylan juwan
+         Oýnaşyndan haram küle getirmiş.
+
+         Ozal akan ýerden akarmyş aryk,
+         Özün öwen ýigdiň tanapy çüýrük,
+         Mertden aşna tutsaň, abraýyňa şärik,
+         Namart aşnasyna hile getirmiş.
+
+         Her kim öz adyna möhür gazdyrar,
+         Ýazylan takdyry kimse bozdurar?
+         Ikiniň sylagy birni azdyrar,
+         Taýak bir dälini ýola getirmiş.
+
+         Magtymguly, ger doýursaň bir ajy,
+         Mälimdir, tapar sen bu ýerde hajy,
+         Bir ýagşylyk etse adam biweji, –
+         Her mejlisde ýüz ýol tile getirmiş.
+
+1 Minewwer – ýagty.
+
+                    Biwepalardan
+
+         Gözläp köňül berme biwepalarga,
+         Bak: kim wepa görmüş biwepalardan?
+         Goýma özüň ýersiz bu jepalarga,
+         Kim bähre tapypdyr bu jepalardan?
+
+         Yşkyň owazasyn diňle daşyndan,
+         Jan jebrinden gorksaň, barma başyndan,
+         Serişdäň kem bolsa yşkyň işinden,
+         Bar, habar al gören mübtelalardan.
+
+         Sözüm nesihatdyr, bir gulak salyň,
+         Bendesi men söze hyrydar guluň,
+         Kyrk oýnaşly hatyn ýagşydyr, biliň, –
+         Şereňňiz1 , köp tilli kethudalardan.
+
+         Ýatma, Magtymguly, aşretiň söýüp,
+         Munça ýatajak sen kepeniň geýip,
+         Hajatyn tiz bitir — hojany goýup,
+         Dileg eder kimse gul-gedalardan.
+
+1 Şereňňiz – şerçi, dawa-jenjel agtarýan, dawakeş.
+
+                           Näbilsin
+
+          Harazban eline düşse algyr baz,
+          Ganatdan aýyrar, gadryn näbilsin,
+          Bir çopan goluna degse bir almaz,
+          Çakmakdaşy eder, gadryn näbilsin.
+
+          Kämil bolmaz ol şerbetden datmagan
+          Pähim eýlemez söz magnyga ýetmegen.
+          Däli-Mejnun yşk eseri etmegen
+          Perizat Leýliniň gadryn näbilsin.
+
+          Dynçlygyň gadryny bilmez armagan.
+          Beglik ede bilmez berim bermegen
+          Çölde açlyk muşakgatyn görmegen
+          Öýde yssyg nanyň gadryn näbilsin.
+
+          Ötenden soň, adam aňlar döwletin,
+          Bilmez döwlet bilen geçen nobatyn,
+          Çekmän kişi bimarlygyň zähmetin,
+          Bu gözel saglygyň gadryn näbilsin.
+
+          Rismanyn1 berk edip, labyr2 salmaýan,
+          Girdaba ugraşar häzir bolmaýan,
+          Keştisi kölegde bendil almaýan,
+          Gury gara ýeriň gadryn näbilsin.
+1 Risman – ýüp, tanap.
+2 Labyr – leňňer, ýakor.
+
+Garry, ýigit bir ykrarda durmasa,
+Ulag gadryn bilmez, kişi armasa,
+Ördek, guba gazlar çöli görmese,
+Ser-çemenli köl gadryn näbilsin.
+
+Aýralyk oduna ýanyp-bişmeýen,
+Zalymlar elinden ülke aşmaýan,
+Watandan aýrylyp, ýalňyz düşmeýen
+Ülkesinde il gadryn näbilsin.
+
+Magtymguly diýer, ýaru-hemdemge,
+Geliň şükr edeliň, dostlar, bu demge,
+Zatynda söz pähmin bilmez adamga
+Müň many söz diýseň, gadryn näbilsin.
+
+     At ýanynda bellidir
+
+Eşek özün egsik saýmaz bedewden,
+Gymmat etseň, at ýanynda bellidir;
+Bedew diýgeç, hemme bedew deň bolmaz,
+Çyn bedewler meýdanynda bellidir.
+
+Oglanlykda bilmez idiň, beg idiň,
+Ýamana hiç ýokmaz sözüň-öwüdiň,
+Aryf bolsaň, aslyn sorma ýigidiň,
+Edebinde, erkanynda bellidir.
+
+         Bu jahandan doýmaz gözüň, siýr1 olmaz,
+         Her tilkiden ýolbars olmaz, şir olmaz,
+         Ýigit diýgeç, hemme ýigit bir olmaz,
+         Goç ýigitler myhmanynda bellidir.
+
+         Döwlet bolsa goç ýigidiň başynda,
+         Hemaýatly ili gerek daşynda,
+         Ýigit özün maglum eder işinde,
+         Gylyjynda, zybanynda bellidir.
+
+         Magtymguly, garyplaryň gözýaşy
+         Daglary ýandyrar, erider daşy...
+         Pakyra jebr eden zalymyň işi
+         Ruzy-magşar diwanynda bellidir.
+
+                          Il biläni
+
+              Belent daglaryň başynda
+              Bulut oýnar sil biläni;
+              Goç ýigide toýdur-baýram,
+              Her iş gelse il biläni.
+
+              Dil bilenler gün bolupdyr,
+              Altyn, kümüş zeň bolupdyr,
+              Peşe kaçan deň bolupdyr,
+              Ugraşanda pil biläni.
+1 Siýr bolmak – doýmak.
+
+                 Otlaga gaçar buzawlar,
+                 Öňün başlar ýagşy gäwler1
+                 Tanalar ol has bedewler
+                 Köne ýyrtyk jul biläni.
+
+                 Hak bendesi haka çapar,
+                 Ýaman öz pälinden tapar,
+                 Magtymguly, aýbyn ýapar
+                 Iş kylyjy dil biläni.
+
+                        Ili gözlär
+
+                 Ilinden aýra düşen
+                 Ah urar, ili gözlär;
+                 Ýolundan aýra düşen
+                 Jäht eder, ýoly gözlär.
+
+                 Gökde pelek gerdandyr,
+                 Halk ýerde sergerdandyr,
+                 Ne bazygär2 jahandyr, —
+                 Göz açan maly gözlär.
+
+                 Kimlerde altyn täçdir,
+                 Kimler saýyl-mähtäçdir,
+                 Kimler düýpden gallaçdyr.
+                 Kim ýüpek haly gözlär.
+1 Gäw – sygyr.
+2 Bazygär – oýunçy.
+
+                Kim nan tapmaz iýmäge,
+                Kim ýer tapmaz goýmaga,
+                Kim don tapmaz geýmäge.
+                Kim tirme-şaly gözlär
+
+                Bu jahan bir puştadyr,
+                Kim zende, kim küştedir1 .
+                Her bende bir işdedir.
+                Her kim bir haly gözlär.
+
+                Heňňam2 uzyn, ömür az.
+                Çahar3 pasla başdyr ýaz.
+                Gökde ganat ýaýan gaz
+                Gözleri köli gözlär...
+
+                Magtymguly, huş eýläp,
+                Gezgin, didäň ýaş eýläp,
+                Däli köňül joş eýläp,
+                Ýüz müň hyýaly gözlär.
+
+1 Küşte – heläk bolan, öli
+2 Heňňam – döwür.
+3 Çahar (çar) – dört
+
+                        Don gerek
+
+                Ne bela sen, adamzat,
+                Çyplak dogduň, don gerek;
+                Ak süýt emdiň, ulaldyň,
+                Hem aglar sen, nan gerek.
+
+                Ataň hoşnut1 bolmaga,
+                Eneň mährin salmaga,
+                Ýediňde din bilmäge,
+                Okyrsyň, kuran gerek.
+
+                Saraldar sen dilbendiň,
+                Ýognalar biliň-bendiň,
+                On bäşde arzuwmendiň –
+                Gyz gerek, juwan gerek.
+
+                Juwan gerek guçmaga,
+                Aýşy-aşret açmaga,
+                Ondan soň iýp-içmäge,
+                Bir tükenmez nan gerek.
+
+                Köňlün ynjydyp halkyň,
+                Hoşnut etseň öz hulkuň,
+                Rum, Pereň bolsa mülküň,
+                «Heniz azdyr», kän gerek.
+1 Hoşnut – şat, razy.
+
+               Ýatsaň düşekde bimar1 ,
+               Yssy etmese timar,
+               Zer dökseň harwar-harwar2 ,
+               Göze ilmez, jan gerek.
+
+               Doga bilen är dörär,
+               Ýagmyr bilen ýer gögär,
+               Är oldur – alkyş alar,
+               Ýerlerge baran gerek.
+
+               Ajal geler, oýda ýok,
+               Görmek ýylda-aýda ýok,
+               Hiç bir zatdan peýda ýok,
+               Bir nury iman gerek.
+
+               Magtymguly, ýol gitmäge,
+               Söz aslyn pikr etmäge,
+               Bir magny pähm etmäge,
+               Akylly ýaran gerek.
+
+1 Bimar – syrkaw, hassa.
+2 Harwar – eşek ýüki.
+
+                         Dag saýar
+
+                   Daglar ýeriň myhydyr,
+                   Depe özün dag saýar;
+                   Çekik aýdar: «bilbil men»,
+                   Çarlak özün zag saýar.
+
+                   Güýjünden-kuwwatyndan,
+                   Dünýäniň nobatyndan,
+                   Her kişi yzzatyndan,
+                   Bedasyl özün beg saýar.
+
+                   Nadanam, zat bilmenem,
+                   Bir kemine gul menem,
+                   Sirke1 aýdar: «bal menem»,
+                   Nebit özün ýag saýar.
+
+                   Habar alsaň birewden,
+                   Özün kem saýmaz döwden.
+                   Öz ýanynda bedewden
+                   Eşek özün ýeg saýar.
+
+                   Magtymguly, bir guldur,
+                   Gullugyna kaýyldyr,
+                   Ahmak özün akyl diýr,
+                   Tentek özün sag saýar.
+
+1 Sirke – uksus.
+
+                    Ata meňzär
+
+              Oba daşyndaky depe
+              Eýerlenen ata meňzär;
+              Ýaramaz ärler zer bilen
+              Ýazylan bet hata meňzär.
+
+              Bu dünýä bir düýpsüz derýa,
+              Gark eder, bolma biperwa,
+              Magrur olma, pany dünýä
+              Gezekli nobata meňzär.
+
+              Gardaşsyza kuwwat ýokdur,
+              Ogulsyza döwlet ýokdur,
+              Aýalsyza aşret ýokdur,
+              Hoş günüň hasrata meňzär.
+
+              Ýamandan ýagşy set bolmaz,
+              Asly ýagşylar bet bolmaz,
+              Dünýälikden döwlet bolmaz,
+              Ogul çyn döwlete meňzär.
+
+              Ýatan ýeri – ýylan goýny.
+              Asylany – itiň boýny,
+              Pis äriň ýagşy hatyny
+              Dürri-bigymmata1 meňzär.
+1 Dürri-bigymmat – gymmaty, gadry bilinmeýän dür.
+
+Burç bilen duz täze ýara
+Awy gatar rozugäre,
+Ýaman hatyn ýagşy äre, –
+Tükenmez töhmete meňzär.
+
+Magtymguly, namyradam,
+Iller hoşdur, men naşadam,
+Söz manysyn aňmaz adam
+Bir guruksyz ite meňzär.
+
+       Ýalydyr
+
+Ýaman ýagşa ýoldaş bolsa,
+Awulyk içen ýalydyr;
+Aýryla bilse, awusy
+Içinden öçen ýalydyr.
+
+Adam aýrylsa huşundan,
+Gorkar ýatanda düýşünden,
+Eýýama baksaň, işinden
+Şu köňlüm geçen ýalydyr.
+
+Bedasyl ykbaly ýörmek,
+Öýsüz eline mal bermek,
+Akmaga syryňny bermek
+Öz aýbyň açan ýalydyr.
+
+Öter ömrüň – dünýä seýlin,
+Hak ýoluna bagla biliň,
+Agzy ala bolan iliň
+Döwleti gaçan ýalydyr.
+
+Aňlamasaň, görde gizlen,
+Akyldyr iş soňun gözlän,
+Gepin tapyp, ýagşy sözlän
+Misli dür seçen ýalydyr.
+
+Ärden gitse ygtybarlar,
+Sowar ondan dosty-ýarlar,
+Hünärli, ykbally ärler
+Malu-pul guçan ýalydyr.
+
+Magtymguly, yllatly göz,
+Haraba döner degse duz,
+Märekede bir jaýsyz söz
+Çermenip... ýalydyr.
+
+         Hasy näbilsin
+
+Öz gadryny özi bilmez adamdan,–
+Aňlamazlar amu-hasy näbilsin?
+Ne tama bar çakyr içen gedemden,
+Buzahor ýagşyny, ýasy näbilsin?
+
+Ýamana ýagşy söz ýokmaz, taşlanar,
+Aňlar äriň oýlanmasy güýçlener,
+It ýalyň topraga dökseň, hoşlanar,
+Topragy, tabagy, tasy näbilsin?
+
+Aňla sözüm, ner zarbyny ner tanar,
+Har bakan har tanar, zergar zer tanar,
+Eý ýaranlar, är ýigidi är tanar,
+Namartlar ýagşyny, pisi näbilsin.
+
+Magtymguly aýdar: sözlerim hakdyr,
+Emma ki hak söze ten beren ýokdur,
+Bir gözli diýmese: garadyr, akdyr,
+Kör pakyr kümüşi, misi näbilsin?
+
+        Çatyp bolmaýyr
+
+Beýik dagyň başyndaky üç agaç,
+Düýbi bir bolmasa, çatyp bolmaýyr,
+Düýe ýaly dagda ýatan daşlary
+Gol bilen göterip, atyp bolmaýyr.
+
+Kelte diňden bolmaz beýik minara,
+Ýaman heleý duşsa bir ýagşy äre,
+Başyn kesip, ganyn döküp kenara,
+Ýa öldurip, ýa-da satyp bolmaýyr.
+
+Il içinde seniň ulalsa adyň,
+Seni ýaman görmez ýakynyň, ýadyň,
+Golunda bolmasa bir gerek zadyň,
+Meniňki diýip, başyn tutup bolmaýyr.
+
+Pakyrlar mal istär, baýlar zer diýer,
+Ýekeje eşekli: atym –ner diýer,
+Dünýäge doýmak ýok, ýene ber diýer,
+Köňül maksadyna ýetip bolmaýyr.
+
+Magtymguly, sözüň diňlän bolmasa,
+Nesihata gulak salan bolmasa,
+Ýigit köňül söýenini almasa,
+Dynç alyp, parahat ýatyp bolmaýyr.
+
+                       Ýagşy
+
+        Hoş günüňde hoşlaşyban gezmäge,
+        Baryşmaga, gelişmäge ýat ýagşy.
+        Gam günüňde, galmagalyň üstünde
+        Dogan ýagşy, gardaş ýagşy, zat ýagşy.
+
+        Halal işle, ahyretden wehmiň bar,
+        Pakyry ynjytma, köňül rehmiň bar,
+        Aşyk aýdar, azda-köpde pähmiň bar,
+        Akyl bolsaň, söze gulak tut ýagşy.
+
+        Ýürek daýanjydyr ogul-zürýaty,
+        Şirin mahbup erer süňňüň kuwwaty.
+        Ýigidiň dünýäde üçdür myrady:
+        Mahbup gerek, ýarag gerek, at ýagşy.
+
+        Mollalar ahyret sözün söýlärler:
+        «Müňkür olma, geljek işdir, eýlärler»
+        Kim biler ki ahyretde neýlärler,–
+        Iýip, içip, münüp, guçup öt-ýagşy.
+
+        Nefg1 almaýan kişi sözden, öwütden,
+        Aýralygy ýokdur gury söwütden,
+        Deň-duş bilmez, magny aňmaz ýigitden
+        Agylynda yssy beren it ýagşy.
+1 Nefg – nep, peýda.
+
+        Magtymguly, dostdan syryň gizleme,
+        Biwepadyr, nämähremi gözleme.
+        Ümsüm otur, halk içinde sözleme,
+        Sözlär bolsaň, söz aslyna ýet ýagşy.
+
+                  Gelen-de bardyr
+
+        Günde ýüz müň göç hem bolsa ol dünýä,
+        Ol mukdar bu dünýä gelen-de bardyr.
+        Ýüz müň akmak bolup gitse raýyna,
+        Ýüz müň özün ýola salan-da bardyr.
+
+        Ýüz müň derwüş syna daglap oturan,
+        Ryýazatda1 bilin baglap oturan,
+        Niçe ýerde görseň, ýyglap oturan,
+        Ýüz müň ýerde bigam gülen-de bardyr.
+
+        Seýran etseň bu dünýäniň tört burçun,
+        Garyşypdyr halal, haram, arwah, jyn...
+        Nijeler tämizläp ýol giderler çyn,
+        Nije ýüz müň gümra bolan-da bardyr.
+
+        Ugursyz eýýamlar, aňlamaz ärler,
+        Käşki soran bolsa, saçaýdym dürler..
+        Kany ol Süleýman, Rüstemler, şirler
+        Diýmäň, busup, sypyp galan-da bardyr.
+1 Ryýazat – terkidünýälik, durmuşdan el çekmek.
+
+        Magtymguly, köňle gaýgy getirme,
+        Bu bir iş wagtydyr, özüň ýitirme,
+        «Sözüm aňlan ýok» diýp, ümsüm oturma,
+        Jahan giňdir, çendan bilen-de bardyr.
+
+                   Ykbal bolmady
+
+        Köp ýigitler gelip geçdi jahandan,
+        Niýetine görä ykbal bolmady.
+        Gerdişi keç gahba pelek elinden
+        Ertiri şat bolan öýlän gülmedi.
+
+        Günde kepen biçer bu ajal-haýat1 ,
+        Bir beladyr, hiç gutarmaz bu saýýat.
+        Pelle-pelle aşak düşer adamzat,
+        Bu gün görenleriň ertä galmady.
+
+        Bir degişhanadyr dünýäniň ýüzi,
+        Nesihatym diňle, eşit bu sözi.
+        Ajal ýetip adam ýumulsa gözi,
+        Göýä bu dünýäge geldi, gelmedi...
+
+        Hemaýun gorganyn saldyran Harun,
+        Dünýäni tört bölen kany Peridun?
+        Kyrk şähri gyzyldan dolduran Karun —
+        Gözi gumdan doldy, puldan dolmady.
+1 Haýat – biçimçi, geýim tiken.
+
+        Magtymguly haýran, her ýana bakar,
+        Bu ne gudrat işdir: suwdan ot çykar,
+        Ýagşy oguldan rahmet arygy akar,
+        Lagnatkerde ogul boldy, bolmady.
+
+                Köňül hoşundadyr
+
+              Köňül bir beden şahydyr,
+              Her söz köňül hoşundadyr,
+              Ýedi yklymnyň tagtynda
+              Her biri bir işindedir.
+
+              Daglaryň çykyp-inmesi,
+              Çohlaryň göçüp-gonmasy,
+              Dünýäniň agyp-dönmesi
+              Pelegiň gerdişindedir.
+
+              Kimdir bu dünýäde galan?
+              Maňa çyndyr, size ýalan,–
+              Bir akdyr, bir gara ýylan1
+              Her kimsäniň başyndadyr.
+
+              Degresi zümerret daşly,
+              Ner babatly, kerk gardaşly,
+              Altyn tagtly, almaz täçli
+              Döw begleri daşyndadyr.
+1 Bir akdyr, bir gara ýylan — gije-gündiz manysynda.
+
+     Aýlanar geçer eýýamlar,
+     Gojalar gurlan eýwanlar,
+     Gündiz gören aşna janlar ?
+     Gije ýatsa düýşündedir...
+
+     Üç essesi däli derýa,
+     Bir esse ýerde müň gowga,
+     Kim biler, bu köne dünýä,
+     Ýa reb, niçe ýaşyndadyr?..
+
+     Magtymguly diýr, haraýdyr,
+     Ajal okdur, pelek ýaýdyr,
+     Dünýä bir köne saraýdyr,
+     Adamzadyň gaşyndadyr.
+
+        Pygan eglenmez
+
+Bilbil hüjüm eden howaly baglar,
+Bilbil senden gider, pygan eglenmez,
+Ýagyşly, ýagmyrly ümürli daglar,
+Siller senden gider, duman eglenmez.
+
+Adam ýaradylmyş belentli-pesli,
+Akylly, pikirli, aňly, paýhasly,
+Ýigitlik – göýä bir ýaz günnüň pasly,
+Bahar senden gider, zaman eglenmez.
+
+Gelene garşy çyk, bolsa mejalyň,
+Ýagşy tutawergil niýetiň-päliň.
+Dünýä döwranynda açyk tut eliň,
+Döwür senden gider, döwran eglenmez,
+
+Bu dünýä gowgadyr, bir galmagaldyr,
+Kimi berhä-berdir, kim alha-aldyr.
+Ýigitler, bu dünýä şuňa mysaldyr,
+Bark urar asmanda, baran eglenmez.
+
+Bir menzildir, üç gün iýip-içensoň,
+Ornaşyp, giňirnip, bilin açansoň,
+Üzeňňiň çekerler, tört gün geçensoň,
+Bäş günden ýokary myhman eglenmez.
+
+Goýnun açar bir gün, ýer seni gizlär,
+Gara gumdan dolar bu gara gözler,
+Adyňa buýsanma, çemenli düzler!
+Çemen senden gider, seýran eglenmez.
+
+Magtymguly aýdar aryf dostuna,
+Kim galar düşmeýen ajal destine?
+Pelek bir gün salar ýeriň astyna,
+Agyzdan til gider, zyban eglenmez.
+
+       Göze myhmandyr
+
+Gara daşdan gara gyly saýlan göz,
+Çöňňeler görejiň, göze myhmandyr.
+Gelen aş diýp gelmez, turşutmagyl ýüz.
+Nana mähtäç däldir, söze myhmandyr.
+
+Agyrdyr heňňamlar, uzakdyr ýollar,
+Soraşsa ýigitler, sözleşse tiller,
+Baharda açylan reňbe-reň güller
+Bir pasyl açylar, ýaza myhmandyr.
+
+Ne azym hünärler, ne syrly işler,
+Ne howaly daglar, belent agaçlar,
+Altmyş elwan, ýetmiş dürli iýmişler
+Agaçdan aýrylar, güýze myhmandyr.
+
+Ýigidiň bolmasa ýaragy, aty,
+Şony belli biliň, ýokdur gaýraty!
+Gojaldykça, gider süňňüň kuwwaty,
+Ýigitligiň zory dyza myhmandyr.
+
+Bu dünýä ýüzüňe gülüm-gülümdir,
+Jepasy köp bolar, jebri zulumdyr,
+Her niçe ýaşasaň, ahyr ölümdir,
+Eziz janlar tende bize myhmandyr.
+
+Haky ýada salsaň hakdan gorkyňa,
+Şeýtan ara düşer, goýmaz erkiňe.
+Guba juwan, guwanmagyl görküňe,
+Gojalar sen, görküň ýüze myhmandyr.
+
+Magtymguly aýdar, iller, özümde,
+Ölüm ýadymdadyr, gorky gözümde,
+Her niçe ýaşasaň ýeriň ýüzünde,
+Adam ogly bäş gün duza myhmandyr.
+
+           Dünýä heý
+
+Suw ýüzünde gezen nije gämini,
+Bir gün agdarar sen saly, dünýä heý!
+Adam ogly barmaz bolsa yzyňdan,
+Munda diýp aldar sen maly, dünýä heý!
+
+Kimse bilmez haçan tükener demiň,
+Gabyr bolar bir gün basan gadamyň,
+Döwran gerdişinde gapyl adamyň
+Üstünden salar sen ýoly, dünýä heý!
+
+Habarsyz geler sen, ýaka tutar sen,
+Ýagşy eýläp, ýaman eýläp öter sen,
+Bir gün aşymyza awy gatar sen,
+Owal aldap biýr sen baly, dünýä heý!
+
+        Aramyň ýok, kararyň ýok, dynmaz sen,
+        Gije-gündiz gan içer sen, ganmaz sen,
+        Ahyr ne belaň bar, soňun sanmaz sen,
+        Ýykylgyn, ýumrulgyn, loly dünýä heý!
+
+        Aýlanar gyş geçer, ýaz, tomus güýz hem,
+        Tap getirmez oňa dag, deňiz, düz hem,
+        Ahyry geçermiz üstüňden biz hem,
+        Guwgaryp galar sen haly, dünýä heý!
+
+        Köpleri ýok etdiň, känini tutduň,
+        Muhammet hak resul janyny ýutduň,
+        Nemrut, Karun, Süleýmanyny nätdiň?
+        Şumudy etgeniň häli, dünýä heý!
+
+        Hemme adamlary salyp sen gama,
+        Ýaş, garry yzyňda, sergerdan heme,
+        Bir mada1 eşek sen, gelip sen deme,
+        Gasygy gam bilen doly, dünýä heý!
+
+        Magtymguly, dünýä syryn duýmaz sen,
+        Bu gün gördügimiz ertä goýmaz sen,
+        Nije wagtdan bäri iýip doýmaz sen,
+        Aklyny aldyran däli, dünýä heý!
+
+1 Mada – urkaçy.
+
+       Berme pelege
+
+Pelek bazy bermiş jümle jahana,
+Meniň ygtyýarym berme pelege,
+Köňül guşy uçup gitse her ýana,
+Mähtäç etme ganat, guruk-ýelege.
+
+Bidöwlet ynanjaň, käsip käýinjeň,
+Ýedi ýeser bolsa, biri göwünjeň,
+Baý halky ýaňra bor, garry – öwünjeň,
+Çalyp bolmaz çal agarsa çelege.
+
+Orda başy bolmak äre kyn bolar,
+Parça geýse, gyz-oglana syn bolar,
+Dul gözüne garry näzenin bolar,
+Ýene gözün aýlar köre, çolaga.
+
+Çepine aýlanan çarhy pelekdir,
+Dünýä gelen adam ogly heläkdir,
+Ýetmiş iki millet bölek-bölekdir,
+Bu bölekden goşman özge bölege.
+
+Ýol üstünde ölsem, ýola atsalar,
+Razy men, üstümden basyp ötseler,
+«Magtymguly» diýip, adym tutsalar,
+Gören göz jort atar, eşden gulaga.
+
+    Çaldy gitdi
+
+Bu dünýä bazygärdir,
+Bazysyn çaldy gitdi;
+Gümra edip nijäni,
+Ýoldaş diýp aldy gitdi.
+
+Akyl, pikr et her haçan,
+Ýüz gonan bar, ýüz göçen,
+Tagty asmandan uçan
+Süleýman öldi gitdi.
+
+Ýa mürewwetli şahym,
+Umydym, kyblagähim,
+Munça ýygnap Ybrahym
+Niçäni aldy gitdi.
+
+Jigerin daglaý-daglaý,
+Zünnaryn baglaý-baglaý,
+Nijeler aglaý-aglaý,
+Nijeler güldi gitdi.
+
+Nijeler güle dönmüş,
+Gül ýanyp küle dönmüş,
+Nijeler guma dönmüş,
+Nijeler soldy gitdi.
+
+      Akmaklyk bilen özüm,
+      Bilmedim sözlän sözüm,
+      Magtymguly, diýr, gözüm
+      Gan ýaşa doldy gitdi.
+
+              Iliňi
+
+Gel, köňül, men saňa öwüt bereýin:
+Yrak kylma görer gözüň-iliňni;
+Gymmatyn gaçyrma, ýerinde sözle,
+Uzatmagyl her näkese tiliňni.
+
+Doga eýle, bir söz diýseň aşagyn,
+Hormatlagyl gözel iliň uşagyn,
+Ýazdyrmagyl, mäkäm eýle guşagyň,
+Ýeri bardyr, ajap sakla biliňni.
+
+Çagyrylmaz jaýda görünme, barma,
+Başarsaň, sopynyň ýüzüni görme,
+Pikir-zikriň dünýä malyna berme,
+Karuna ogşatma tutan päliňni.
+
+Sözüne ber jowap, her kes sorasa,
+Özüň yrak eýle, namart ýörese,
+Bir misgin telmuryp, ýyglap garasa,
+Baha gurma, mugt berginiň malyňny.
+
+Gorkma namartlaryň köp diýp sanyndan,
+Gara görse, bary geçer janyndan,
+Ugrun tapsaň ötmäwergil ýanyndan,
+Bahyllardan yrak eýle ýoluňny.
+
+Akylly baş köpdür, akyl kesen azdyr,
+Datma şerap, uzak içseň ol azdyr,
+Mert köňlünde daýym bahardyr-ýazdyr,
+Mejnun umman içre salma salyňny.
+
+Magtymguly, akyl başymdan uçdy,
+Ykbalym ýatypdyr, döwletim göçdi,
+Pir-kazylar para istäp, gol açdy,
+Haram eýle, emma berme puluňny.
+
+       Bagtym garadyr
+
+Bu ne bela, bu ne hasrat, ne gowga!
+Rehm eden bolmady, bagtym garadyr;
+Nalyş etsem, arzym ýetmez ol huda,
+Rehm eden bolmady, bagtym garadyr.
+
+Pelek dost bolupdyr ala göz bile,
+Derdimi diňlemez, diýsem söz bile,
+Ilimni ugratdy dagy-düz bile,
+Rehm eden bolmady, bagtym garadyr.
+
+Görogly dek gaýratymdan aýryldym,
+Gojalyp men kuwwatymdan aýryldym,
+Iki didäm – zürýatymdan aýryldym,
+Rehm eden bolmady, bagtym garadyr.
+
+Şamu-säher ýata bilmän parahat,
+Ýüregim telmurar, köňül bitakat,
+Käbäm, kyblam, gardaş – boldular wepat,
+Rehm eden bolmady, bagtym garadyr.
+
+Pelege duş gelse gaçyp gutulmaz,
+Tartar oky adam ogly, atylmaz,
+Ýeke äriň ömür ady tutulmaz,
+Rehm eden bolmady, bagtym garadyr.
+
+Deňim-duşum her bir käre bulaşdy,
+Dostlar yrak düşdi, hijran dalaşdy.
+Yhlasym, myradym gama ulaşdy,
+Rehm eden bolmady, bagtym garadyr.
+
+Başyma şum pelek her gün sürüner,
+Ýowuz düşen göwre kime direner,
+Ýamanlar gözüne eziz görüner,
+Rehm eden bolmady, bagtym garadyr.
+
+Serwanym azaşdy, dargady malym,
+Ykbalym keç turdy, gitdi hyýalym,
+Altmyşa azm urdy gartaşan salym,
+Rehm eden bolmady, bagtym garadyr.
+
+         Gama erkim berdim, huşum dargatdym,
+         Saraý weýran, kerwenimi ugratdym,
+         Meňli hanym, yşk söwdasyn unutdym,
+         Rehm eden bolmady, bagtym garadyr.
+
+         Bu dünýä çohlara bipaýan boldy,
+         Garyp golun serdi, gury san boldy,
+         Namartlar mert boldy, ile han boldy,
+         Rehm eden bolmady, bagtym garadyr.
+
+         Ah, neýleý ötürdim ýigitlik çagym,
+         Daragty gurady, boş galdy bagym,
+         Dumany sowuldy, eredi dagym,
+         Rehm eden bolmady, bagtym garadyr.
+
+         Magtymguly, ýetmez ýyglap kararym,
+         Boş galdy dükanym, dargady barym,
+         Paý1 astyna düşdi namysym, arym,
+         Rehm eden bolmady, bagtym garadyr.
+
+1 Paý – aýak.
+
+          III
+
+SOSIAL-TANKYDY ESERLER
+                      Gaça başlady
+
+            Indi bildim zamananyň azanyn,
+            Ýamanlar ýagşydan gaça başlady;
+            Gaýta bedasyllar asylzadadan
+            Pisint etmän, töre geçe başlady.
+
+            Ryýa1 boldy köpüň okan namazy,
+            Taňry hiç birinden bolmady razy,
+            Pygamber ornunda oturan kazy
+            Para üçin elin aça başlady.
+
+            Şalarda galmady hökmi-adalat,
+            Bir pul üçin müfti berer rowaýat,
+            Bil: bu işler – nyşanydyr kyýamat,
+            Zalymlar bitoba öte başlady.
+
+            Pakyrlar horlanyp, ýüzün sarardyp,
+            Kim töresin tapyp, reňgin gyzardyp,
+            Zalymlar mazluma syrtyn gabardyp,
+            Gamçysyndan ganlar saça başlady.
+
+            Alymlar sözüne amal bolmady,
+            Mynapyklar2 ýaradany bilmedi,
+            Sopular pirinden taglym almady,
+            Dünýä üçin dinden geçe başlady.
+1 Ryýa – ikiýüzli, ýalan.
+2 Mynapyk – hudaýsyz, pidul.
+
+           Bir para sopular «sopy men» diýer,
+           Soramaz, zalymlar tagamyn iýer,
+           «Bizi ýagşy kişi diýsinler» diýer,
+           Her işikde halka gura başlady.
+
+           Garryga aýlandy biz gören ýaşlar,
+           Dolandy aýaga biz gören başlar,
+           Bimahal ýük baglap indi argyşlar
+           Ahyret kastyna göçe başlady.
+
+           Akyl bolan gamda ýüregin ezip,
+           Derdiniň dermanyn soraglap gezip,
+           Zamananyň pisat1 bolanyn ýazyp.
+           Panydan bakyýa geçe başlady.
+
+           Asylsyz begleriň nobaty ýetdi,
+           Gaýta şugul haramyga söz ýetdi,
+           Dünýäde kim galyp myrada ýetdi?
+           Muhapbet2 çyragy öçe başlady.
+
+           Kazy bolan bir jowapda durmady,
+           Gije mähnet tartyp, kitap görmedi,
+           Şerigat ugrunda dogry ýörmedi,
+           Nebs üçin imansyz öte başlady.
+1 Pisat – erbet, bozuk.
+2 Muhapbet – söýgi, yşk.
+
+           Magtymguly aýdar, barha ýol tany,
+           Bäş gün synamaga iberdi seni,
+           Senden ozal öten jananlar kany?
+           Her kim nobatynda öte başlady.
+
+               Aý-günüňiz batmaga
+
+                      (Sopular)
+
+           Altmyş ýaşan, ýetmiş ýylky sopular,
+           Az galypdyr aý-günüňiz batmaga,
+           Çöl ýerlerde tazy görmän, tilkiler
+           Hyýal eder ýatan şiri atmaga.
+
+           Garga diýer, ýokdur men dek şabaza,
+           Müň garga ýygnansa degmez bir baza,
+           Güne gargyş eden sary kelpeze1 ,
+           Dem çekedir aždarhany ýutmaga.
+
+           Agsak keýik müň garsaga ýetdirmez,
+           Şir beçesi togsan tilkä atdyrmaz,
+           Öli ýylan müň kelpezä ýutdurmaz,
+           Akyl gerek bu işlere ýetmäge.
+1 Kelpeze – hažžyk.
+
+               Ýetmiş ýaşap, ýat etmezler tobany,
+               Hormat bilen oýnadarlar gahbany1 ,
+               Müňkürler jem bolup, ýykdy Käbäni,
+               Ýezit gitdi agaçlaryn satmaga.
+
+               Görüň bu eýýamy, pelek gerdişi –
+               Pakyra zulm etmek boldy werdişi,
+               Hak ýolunda dogry gezen derwüşi
+               Goýmadylar öz halyna ýatmaga.
+
+               Ýüregim sabyrdan, gitdi karardan,
+               Ýaman işdir bogaz bolmak är-ärden2 ,
+               Bizara gelip men beýle diýardan,
+               Jür bolup men başym alyp gitmäge.
+
+               Magtymguly, bildim: bagtym biweçdir,
+               Ganymym güýçlüdir, ykbalym keçdir,
+               Niýetim Käbedir, hyýalym haçdyr,
+               Ykrarym bar haç towabyn etmäge.
+
+   1 Gahba – loly.
+    2 Är-ärden – bir adamdan bir adamyň ýaman gep eşitmegi, ýüregi
+
+çişmegi.
+
+                          Başlady
+
+            Gömüldi derýalar, ýykyldy daglar,
+            Ýetimler göz ýaşyn döke başlady;
+            Orramsydan bolan haramhor begler
+            Ýurdy bir ýanyndan ýyka başlady.
+
+            Jemagatsyz azan bir gury sesdir,
+            Niçe mollaň okan ylmy hebesdir,
+            Kazylaryň käri çaý bile nasdyr,
+            Bir bozuk nyşana tuta başlady.
+
+            Işanlary her gapyda tapylar,
+            Mollalarna ýok myjabat ýapylar,
+            «Öwliýä men» diýip, jögi sopular
+            Gygyryp, asmana böke başlady.
+
+            Çykar beýewana gyzy-gelini,
+            Ak ýüzüne ýapar gara telini1 ,
+            Kemçinlik eýleýip ýygan puluny,
+            Düzedip özüne daka başlady.
+
+            Dünýäde süýthoryň pul ýygma derdi,
+            Baýlaryň mallary bizekat erdi,
+            Toba ediň, gözüm bir ýaman gördi,
+            Dost dostuň köňlüni ýyka başlady.
+1 Tel – tar, saçyň bölegi, zülp.
+
+Magtymguly, başa baglap selleler,
+Aç böri deý ýortup niçe mollalar,
+Halaldan, haramdan ýygnap gallalar,
+Herne tapsa, dynmaý dyka başlady.
+
+        Aglar men
+
+   Eý ýaranlar, ömrümden
+   Geçdi diýip aglar men.
+   Gitdi aklym ornundan,
+   Çaşdy diýip aglar men.
+
+   Giden dönmez ýolundan,
+   Düşmez ýaman pälinden,
+   Diýanat halk elinden
+   Uçdy diýip aglar men.
+
+   Häzir biziň zamanda
+   Ýaman sözler zybanda,
+   Zulum işler jahanda
+   Joşdy diýip aglar men.
+
+   Bu eýýamda betkärler
+   Ýüz til bilen aldarlar,
+   Hany niçe dildarlar? –
+   Göçdi diýip aglar men...
+
+      Niçe sada deň-duşlar,
+      Şeýtan biligin başlar,
+      Ýüz öwürip gardaşlar
+      Gaçdy diýip aglar men.
+
+      Görüň pelegiň oýnun:
+      Üzer alymyň boýnun,
+      Niçe janlar ýer goýnun
+      Guçdy diýip aglar men...
+
+      Magtymguly, diýr merde,
+      Dünýä bentdir, ten perde,
+      Bu başym sansyz derde
+      Düşdi diýip aglar men.
+
+            Galmady
+
+Bir sözüm bar, diýsem şaha, soltana.
+Dostlar meňgi bolup, daman galmady;
+Döwletli baýlaryň duz hareminde,
+Desterhan kesilip, myhman galmady.
+
+Gaýta gybatkeşler özün düzetdi,
+Süýthor dünýä bilen özün göz etdi,
+Taňrydan bihabar goşun uzatdy,
+Taňryny bir bilen merdan galmady.
+
+        Nirde şugul bolsa, boldy mugteber1 ,
+        Dünýäni baky diýip, ýygnady çoh zer,
+        Aýdyp, ötüp gitdi ol Haýrul-beşer
+        Taňrydan gorkunçly myhman galmady.
+
+        Bahyl bolan baý adyny göterdi,
+        Pasyklar2 pysk ile ömrün ötürdi,
+        Ähli-dil3 dünýäden özün gutardy,
+        Dertliler derdine derman galmady.
+
+        Halaýyk barçasy jesethor boldy,
+        Alymlar ylmyndan galdy, kör boldy,
+        Sypahy4 barysy parahor boldy,
+        Şa aldynda adyl diwan galmady.
+
+        Müfti öz sözüne kylmady amal,
+        Şerigat işine eýledi haýal,
+        Halk içine düşdi hyrs atly kesel,
+        Taňryny bir bilen ynsan galmady.
+
+        Gyzlar, juwanlarda galmady haýa,
+        Ýerden götermedi bereket-giýa5 ,
+        Derwüşler tagatyn eýledi ryýa,
+        Ýurtda keramatly işan galmady.
+1 Mugteber – ygtybarly.
+2 Pasyk – bozuk
+3 Ähli-dil – ýürekdeş adamlar.
+4 Sypahy – emeldar, harby gullukçy.
+5 Giýa – ot, ösümlik.
+
+        Magtymguly aýdar, barha ýol tany,
+        Burunky1 hemneşin2 dostlaryň kany?
+        Abraý bile tabşyrawer bu jany,
+        Munda gelen ýary-ýaran galmady.
+
+                       Fetdah
+
+      Eýran, Turan indi goluň astynda,
+      «Sürgün» indi bu döwrany, sen fetdah!
+      Külli türkmen oýnar çölüň üstünde,
+      Dökme, bilgil, nahak gany, sen fetdah!
+
+      Bu gün şa sen, erte geda bolar sen,
+      Ilden-günden, dilden jyda bolar sen,
+      Bir gün janyň çykyp, pida bolar sen,
+      Gazanypsyň çoh günäni, sen fetdah!
+
+      Gözüm ýetýär, bilseň, başym alar sen,
+      Ýa kündeläp meni çaýa salar sen,
+      Men hak diýdim, sen çoh günä galar sen,
+      Bu alyşyň bilen jany, sen fetdah!
+
+      Sen türkmeniň ilin, gülün soldurdyň,
+      Ganlar döküp, gözel ýurdum doldurdyň,
+      Şehit bolanlaryň serin galdyrdyň,
+      Unudar sen tagty-käni, sen fetdah!
+1 Burunky – öňki.
+2 Hemneşin – gürrüňdeş, ýürekdeş
+
+Halkyň öji çohdur, ykbalyň ýaman,
+Ýa öler sen, ýa zyndandyr bigüman,
+Tagtyň synyp, diýme galar men aman,
+Çüňki zäher kyldyň nany, sen fetdah!
+
+Permanyňdan talaň düşdi illere,
+Goluň urduň nähak, gözde sillere,
+Kyrk gamçydan buýurdyň näzik billere,
+Derýa etdiň gözde huny, sen fetdah!
+
+Aýyrdyň atadan, ene, gardaşdan,
+Gollardan, aýakdan, sakaldan, saçdan,
+Dendandan, zybandan, akyldan, huşdan,
+Zyndan etdiň bu jahany, sen fetdah!
+
+Aýyrdyň, aglaýyp galdy ýarlarmyz,
+Pelege ýetendir tartan zarlarmyz,
+Adamlar asylgy durýar darlarmyz,
+Ýüzden tutduň, bil, gassaby, sen fetdah!
+
+Pyragy, dert aýdyp, derde ýanmaly.
+Gan ýuwudyp, zalym fetdah ganmaly,
+Diri özüm, läkin öli sanmaly, –
+Aňsa öldir, bu destany ol fetdah.
+
+    Ýörmeli boldy
+
+Eý ýaranlar, musulmanlar,
+Jebirde ýörmeli boldy.
+Nije zähmet çeken janlar
+Jepany görmeli boldy.
+
+Jahan giňdir, melamat kän,
+Arada köýdi şirin jan,
+Üstümizde rehimsiz han
+Bil, ahyr urmaly boldy.
+
+Azypdyr gökleň hanlary,
+Kän görer bize hallary,
+Goýman sürdi bar mallary,
+Göz dikip durmaly boldy.
+
+Magtymguly, aýama jan,
+Biliň guşa, geý gazap don,
+Hetden aşdy, bu zalym han
+Ahyr tor gurmaly boldy.
+
+       IV
+
+DURMUŞY GOŞGULAR
+                             Çilim
+
+        Dostlarym, duşman biliň,
+                     her kimsede bardyr çilim.–
+        Ile mahub eýlemäň,
+                     bir lagnaty kärdir çilim,
+        Sözleýen haly demi
+                     bir apyýy1 mardyr çilim,
+        Tartar özün özüne,
+                     owsunçy zeňgardyr2 çilim,
+        Nirde bolsa pasykylar,
+                     ortada bardyr çilim.
+
+        Düşgeç ol mejlis era,
+                     kim çeker, bimar eder,
+        Al bilen aldap seni,
+                     her dem özüne zar eder,
+        Sag-salamat goýmagy
+                     indi özüne ar eder,
+        Gol-aýagyn şel kylyp,
+                     halk içre any har eder,
+        Bu sypatlar birle ol,
+                     çekmäň ki, betkärdir çilim.
+1 Apy – zäherli uly ýylan.
+2 Zaňgar – zeňli, posly, jirimli.
+
+       Kah-kah eýläp her zaman,
+                   ol görkezer bet roýuny
+       Burnuňyzdan ysgadar,
+                   almaň oşol bet boýuny1 ,
+       Eý musulmanlar, halal diýip,
+                   kylmaňyz hiç oýuny2 ,
+       Ahyretniň oýun etseň,
+                   tiz goýuň bu oýuny,
+       Ahyretniň oýun
+                   etmezlerge derkardyr çilim.
+
+       Her kişi hoşhal olupdyr jimi,
+                    lam, mim atyga,
+       Nige pikr etmez oşol
+                    kim bu pelidiň zatyga,
+       Mundürer göýä any
+                    her dem şeýatyn3 atyga,
+       Syhr edip her dem
+                     any tartar özüniň zatyga,
+       Çünki betkärler gözüge
+                    daýyma bardyr5 çilim.
+1 Boý(buý) – ys.
+2 Oýuny – oý-pikirini.
+3 Şeýatyn – şeýtanlar.
+4 Syhr etmek – jadylamak.
+5 Bar – miwe, bu ýerde ýakymly manyda.
+
+       Gul-gul eýläp, her säher
+                    ol agzyndan otlar saçar,
+       Her kişiniň akly bardyr
+                    beýle betboýdan gaçar,
+       Kim any elge alar,
+                      göwsün onuň sary1 açar,
+       Ygtykat etse halal diýip,
+                    dini yslamdan geçer,
+       Dini-yslamdan geçerge
+                    bir sebäpkärdir çilim.
+
+       Şeýle duşmandyr ki tanla,
+                   başyňyzny aýlaýyr,
+       Wagty ýetmän solduryp,
+                   bu jismiňiz läş eýleýir,
+       Gaýgy, hasret ýok ekenler,
+                   çeşmiňiz ýaş eýleýir,
+       Her zaman düýt3 ýutduryp
+                   öýkeniňiz daş eýleýir,
+       Bary gapyl olmaňyzlar
+                   şeýle betkärdir çilim.
+1 Sary – tarap.
+2 Ygtykat etmek – ynanmak, uýmak.
+3 Düýt – tüsse.
+
+       Eý ýaranlar,
+                     nehi1 kylmyşdyr any bizge ahat2
+       Pikir edip, zikir eýledi
+                     kim halk era abdy3 samat4
+       Tebdil etmek5 ,
+                     nehi kylgan işini bizge ne hat?
+       Kim ki müňkürdir,
+                     anyň aldynda bardyr ol lahat6 .
+       Aýdadyr Magtymguly,
+                     bu bendege nardyr çilim.
+
+                       Çilimkeş
+
+          Hak seni raýyňa goýmuş jahanda,
+          Ede bileniň etgil munda, çilimkeş;
+          Diwan gurlan güni, hasap jaýynda,
+          Jogabyň nämedir anda, çilimkeş.
+
+          Kuwwatyň kemelder, güýjüň azdyrar,
+          Keýpi kellä gelse, aklyň azdyrar,
+          Süňňüňi syzdyrar, etiň gyzdyrar,
+          Bir nyşana budur sende, çilimkeş.
+1 Nehi – gadagan.
+2 Ahat – bir, ýalňyz, bu ýerde hudaý manysynda.
+3 Abd – bende.
+4 Samat (samad) – hemişelik, hökümdar.
+5 Tebdil etmek – çalşyrmak, özgertmek.
+6 Lahat – gör.
+
+         El götergil beýle nahak talaşdan,
+         Puluň köýer, janyň ýanar bu başdan1 ,
+         Erte garnyň doldurarlar ataşdan,
+         Zahmy2 çykmaz, galar janda, çilimkeş.
+
+         Iki dünýä ýagşylyk ýok egriýe, -
+         Kişi bolsaň, gadam goýgul dogryýa,
+         Binamaza, gybatkeşe, ogryýa,
+         Ýeldaş bolar ýowuz günde çilimkeş.
+
+         Magtymguly, möwlam jandan ýakyndyr,
+         Çilim bir şor suwdur, ten bir zemindir
+         Iman bir tilkidir, göwre bir hindir,
+         Tilki tüssä dözmez hinde, çilimkeş.
+
+1 Bu ýerde baş goşan işiňden manyda
+2 3ahym — ýara, baş.
+
+                      Halyň seniň
+
+  Ogry bolsaň, diňlegil, bolgaý niçik
+                                   halyň seniň;
+  Kişi malyga gider köňlüň, gözüň,
+                                   päliň seniň;
+  Misli şeýtan aldagydyr
+                            mekiriň-alyň seniň,
+  Bu ýalançylyk bile ötgeý
+                            mahy-salyň1 seniň,
+  Dowzaha dogry barar, billa, giden
+                                   ýoluň seniň.
+
+  Erte-magşar it bolup, yňranyp iýgeý
+                                  sen etiň,
+  Ýüzüni görmez Muhammet sen kibi pis
+                                  ymmatyň,
+  Hem o dünýä şefgatyň2 bolmaz bu dünýä
+                                         döwletiň,
+  Her zaman, her sagat içre artdyrarlar
+                                     mähnetiň,
+  Bu jahym3 içre tutar möýler
+                              sagu-soluň seniň.
+1 Mah bilen sal — aý bilen ýyl (ýaş).
+2 Şefgat – halaslyk, kömek, ýardam manysynda.
+3 Jahym – jähennem.
+
+  Aglaýyr sen, gözleriňden ýaş ýerine
+                                  gan gidip,
+  Munça mähnetler çekip, göwsüň dilip,
+                                  weýran edip.
+  Yssy etmez başyňa, toprak döküp,
+                                  haýran edip;
+  Gylça yssy görmegeý sen, dag gadar
+                                  puşman edip,
+  Döküler gaýdyp dahanyndan
+                             pohuň-bowluň seniň.
+
+  Ol Muhammet garşysynda hem uýalgaý
+                                   sen o gün,
+  Gör ölüm bolsa idi, istärdiň ölgeý
+                                   sen o gün,
+  Gürzi astynda melek1 zarbynda galgaý
+                                   sen o gün.
+  Ol huraýyş atlyg ýylanga lukma bolgaý
+                                   sen o gün.
+  Maýmynyň suratyda bolgaý ki
+                                   tymsalyň seniň.
+1 Melek – perişde.
+
+  Aýdadyr Magtymguly, görseň günähiň,
+                                  eý gözüm,
+  Çekiler gyldan-gyla magşar hasabyň,
+                                  eý gözüm.
+  Ýüz gara, til gysgadyr, bolmaz jogabyň,
+                                  eý gözüm.
+  Mal ýerine bialaç biýr sen sowabyň,
+                                  eý gözüm.
+  Hem günähiň boýnuňa goýgaý,
+                                  budur halyň seniň!
+
+                          Gybatkeş
+
+          Rozy-magşar şikwe1 eder tiliňden,
+          Ryswalygyň budur seniň, gybatkeş;
+          Ömrüň ýele berme, azma ýoluňdan,
+          Agyrtmagyl iliň-günüň, gybatkeş.
+
+          Bulut dek kükreýip, bark2 kimin gürlär,
+          Gähi buzdan tagtlar, ataşdan öýler,
+          Gatyr dek içýanlar, bugra dek möýler
+          Bedeniňden sorar ganyň, gybatkeş.
+1 Şikwe – şikaýat, arz.
+2 Bark – ýyldyrym.
+
+         Halyň görüp, purkan1 bolup aglarlar,
+         Özüň syjjyn atly jaýda baglarlar,
+         Tiliň çekip, demir bilen daglarlar,
+         Gara bolar şol gün ýüzüň, gybatkeş.
+
+         Ýaman söz aýyrar ýagşy dostuňdan,
+         Günähiň agramy basar üstüňden,
+         Jähennem içinde tamug astyndan
+         Peleklere çykar üýnüň, gybatkeş.
+
+         Magtymguly aýdar, iliň gözünden
+         Düşüban, hor bolsaň, görgül özüňden,
+         Tiliňni çekmeseň haram sözüňden,
+         Belli bibat bolar diniň, gybatkeş.
+
+                       Görüner
+
+              Seýil edeliň bu jahana,
+              Jahanda näler görüner,—
+              Isgender, Jemşit saldyran
+              Beýik binalar görüner.
+
+              Meşeleri şir-peleňli,
+              Gülgüzar nowça bileňli,
+              Gün düşmedik ter öleňli
+              Çeşmeli çaýlar görüner.
+1 Purkan bolmak – bilip aňlamaklyk, saýgarmaklyk.
+
+Ýaradan bar etdi ýokdan,
+Daglar, dünýä sürer çohdan,
+Sorsaň habar berer Nuhdan,
+Garrygan awlar görüner.
+
+Çaglan, ýalan dünýä, çaglan!
+Ne gülen galar, ne aglan...
+Gar ýagmyrlap burjy baglan
+Kemerli daglar görüner.
+
+Serinden dumany gitmez,
+Eýýam geçip, ýere batmaz,
+Garryp galmaz, ölmez, ýitmez
+Gorganly daglar görüner.
+
+Ne watan galar, ne çeten,
+Senemler seýl edip ýeten,
+Toty, bilbil mesgen tutan
+Howaly baglar gerüner.
+
+Magtymguly, kim bar ölmez?
+Ajal doýmaz, zemin dolmaz,
+Asman inmez, ýer çöwrülmez,
+Gün ýörir, aýlar görüner...
+
+                          Soňudagy
+
+                   Eý söwdügim, Soňudagy,
+                   Dagdanlydyr biliň seniň;
+                   Duşman görse döwdüleşer
+                   Ýomut, gökleň iliň seniň.
+
+                   Kesgin-kesgin ýoluň geçer,
+                   Gyzyl baýyr göwün açar,
+                   Sowuk çeşme suwuň içer
+                   Dürli-dümen malyň seniň.
+
+                   Dürli-dümen otuň biter,
+                   Her deräň bir ile ýeter,
+                   Hatarlanşyp kerwen öter,
+                   Naýbadaýdyr ýoluň seniň.
+
+                   Oýlukda ýaýlany gursak,
+                   At çapdyryp, baýrak bersek,
+                   Töreýitde harman gursak,
+                   Nan dökmek hyýalyň seniň.
+
+                   Magtymguly, set açandyr,
+                   Bu döwran senden geçendir,
+                   Üstüňden iliň göçendir,
+                   Niçik geçer halyň seniň?1
+
+    1 Bagşylar bu goşgyny «Jenan ýarym» diýip aýdýarlar. Sary bag-
+
+şynyň beren maglumatyna görä, Magtymgulynyň ýaşaýan ýeri bolan
+
+                       Ýaýlahlary bar
+
+               Sapar edip barsak Nuha mülküne,
+               Köňül isläni dek ýaýlahlary bar;
+               Seýran etsek gunçasyna, gülüne,
+               Bakjasynda bilbil oýnahlary bar.
+
+               Ýeri sazdyr, hasta bolan sagalar,
+               Arryk, müflis, garyp bolan oňalar,
+               Serçemen agajy bile deňeler,
+               Ajap guş salmaly awlahlary bar.
+
+               Meýdany doludyr şeker gamyşdan,
+               Dileg etmez hergiz gardaş-gardaşdan,
+               Üsti ýapylgydyr kümüş kerpiçden,
+               Her kimniň özi üçin suwlahlary bar.
+
+               Baş goşmandyr, arryk, agsak şa bile,
+               Atdyryp dükanbyl sary ýaý bile,
+               Şirwan galasydyr, any kim bile,
+               Her buruçda altyn baýdahlary bar.
+
+               Magtymguly, sazdyr, söhbetdir işiň,
+               Ajaldan, gaýrydan bolmaz teşwişiň,
+               Baýlaryň, pakyryň ähli derwüşiň
+               Ýurdy bolar ýaly persahlary bar.
+Soňudaga Eýran şasynyň goşunlary hüjüm eden wagtlarynda, şahyr ýa-
+şaýan ýerini mejbury taşlap, Garrygala göçmeli bolupdyr. Bu goşguda
+onuň ýaşan ýeri Soňudag bile hoşlaşygy görkezilýär.
+
+                        Jahan peýda
+
+  Gelse nowruz äleme, reň kylar jahan peýda,
+  Ebrler1 awaz urup, dag kylyr duman peýda.
+  Bijanlar jana girip, ederler dahan peýda,
+  Görmedigiň giýalar2 , gögerip rowan peýda,
+  Aýdarlar haýwanatga, hem sudy-zyýan peýda,
+  Ýer ýüzüne ýaýylyp, ýörirler nahan peýda,
+  Wabeste3 dahan4 guşlar, kylarlar zyban peýda.
+
+  Çöl tarapyn berk edip, der5 açar suwa harçeň6 ,
+  Zemin sebzezar olup, teninden aýrylar zeň.
+  Sebze içre sandugaç7 ýüz tilde kylar eheň,
+  Jünbendeler8 mest olup, göýä içmiş arak, beň,
+  Her aşýanaň özüne öz owazy bolar geň,
+  Zemin hazarpuş9 olup, gül bitirmiş reňbe-reň,
+  Hyruja gelip älem, kylarlar pygan peýda.
+1 Ebr – bulut.
+2 Giýa – ot, ösümlik.
+3 Wabeste – bagly, bek, ýapyk.
+4 Dahan – agyz.
+5 Der – gapy.
+6 Harçeň – leňňeç.
+7 Sandugaç – garlawaç.
+8 Jünbende – hereket edýän, mör-möjek.
+9 Hazarpuş – gök, ýaşyl geýnen.
+
+  Serweri seda birle, jahan ýüzi abatdyr,
+  Magrury-serwer olma, sany serwer bibatdyr,
+  Hak yşkynda zindeler, biliň, baky-haýýatdyr.
+  Her tende yşk bolmasa, rozy ezel mematdyr1 ,
+  Ýaz ýetinçä ýer-gögi. günden-güne zyýatdyr.
+  Bir heşri2 -kyýamatdyr, bir ýowmy3 -arasatdyr4 ,
+  Dähr içre bolar her dem, jahan içre jan peýda.
+
+  Zerbaba zowkun olma, baka ýokdur döwletde,
+  Ömrüňni bada berme sen bu daryl-mähnetde5 ,
+  Ýeter saňa iru-giç, ne ýazylsa kysmatda,
+  Janyňa jepa eýläp, munça gezme hasratda,
+  Sogap ýagşy amalda, ýa hut ýagşy niýetde,
+  Älem barça hyzmatda, adam ýatyp gaflatda,
+  Hasylyň ataş bolgaý, eýleseň ýaman peýda.
+
+  Magtymguly, ýyglar men, bu bagty syýahymdan,
+  Gorkar men jan äpeti, el-aýak güwähimden,
+  Umydym hasyl olmaz bu ömri tebahymdan6 ,
+  Jan köýdi jeset içre bu ataşy-ahymdan,
+  Elim sunup dilär men hajatym ylahymdan,
+  Mende bir umyt oldur, ol keremli şahymdan,
+  Eýlegeý arasatda, gül kibi iman peýda.
+1 Memat – öli.
+2 Heşir – mähelle, märeke, ýygnanyşyk.
+3 Ýowm – gün.
+4 Arasat – söweş meýdany.
+5 Dary-mähnet – jepa öýi
+6 Ömri-tebah – bozulan ömür, haýyp geçen ömür.
+
+                         Içinde
+
+                 Pikir kyldym ýer-göge,
+                 Akylsyz jan içinde.
+                 Gördüm: jan hem alla diýr
+                 Et, siňir, gan içinde.
+
+                 Ýörir ýoluň bilmeseň,
+                 Dogry ýola gelmeseň,
+                 Haky ýada salmasaň,
+                 Galdyň arman içinde.
+
+                 Ýerden çykan nebatlar,
+                 Gyzyl güller, gök otlar,
+                 Gapyl adam, bu zatlar
+                 Külli perman içinde.
+
+                 Nebsiň aýdar: joş bolsam,
+                 Gerçeklere duş bolsam,
+                 Iýsem, içsem, hoş bolsam,
+                 Ýatsam eýwan içinde.
+
+                 Köňül sen bir bazar sen,
+                 Her işe bir gyzar sen,
+                 Tutsam, diýer gezer sen,
+                 Jürmi1 -usýan2 içinde.
+1 Jürm – günä.
+2 Usýan – boýun egmezlik, baş götermek, gozgalaň
+
+Ýaýylar ganat-perler,
+Hup açylar depderler,
+Bölek-bölek kepderler
+Hüw diýr harman içinde.
+
+Bilbil aýdar: köşküm bar,
+Bahar gözleşigim bar,
+Gülzar üçin yşkym bar
+Bagy-bostan içinde.
+
+Ýarganat diýr: ýa möwla,
+Saldyň meni bu ýola,
+Berme aý-güne, ýele,
+Sakla pinhan içinde.
+
+Anka aýdar: ýolçyýam,
+Hüthüt aýdar: ilçiýem,
+Süleýmana sawçyýam,
+Ýalan jahan içinde.
+
+Bezgek galyp haýrana,
+Haýran bakyp her ýana,
+Dem-dem çykyp seýrana,
+Gezer döwran içinde.
+
+Durna aýdar: uçar men,
+Bagdat suwun içer men,
+Gyş Hindistan göçer men
+Läle-zaran içinde.
+
+                 Baýguş aýdar: derdim bar,
+                 Tesbyhym bar, werdim1 bar,
+                 Weýranada ýurdum bar
+                 Zary-girýan içinde.
+
+                 Ishak aýdar: pakyr men,
+                 Gullugymda hakyr2 men,
+                 Hak ýadyny okyr men
+                 Şam-Şebistan içinde.
+
+                 Musyja diýr: giter men,
+                 Geldim, bildim — öter men,
+                 Üç agaçny çatar men,
+                 Guzlap weýran içinde.
+
+                 Laçyn aýdar: joşumdan,
+                 Mest boldum öz huşumdan,
+                 Galdym taňry işimden,
+                 Bendi-zyndan içinde.
+
+                 Turaç tili senada,
+                 Ördek tili penada,
+                 Gazlar galkyp howada,
+                 Gözi umman içinde.
+1 Werd – namaz, doga, üznüksiz doga, namazy gaýtalap oturmak.
+2 Hakyr – ejiz, pukara, kiçi göwünli
+
+                  Gumrular owaz bilen,
+                  Tawus işi näz bilen,
+                  Kaknus guş müň saz bilen
+                  Şol Hindistan içinde.
+
+                  Toty guşlar zarlaşyp,
+                  Emri-hakny gözleşip,
+                  Adam tilin sözleşip,
+                  Gezer ynsan içinde.
+
+                  Keýik aýdar: aglar men,
+                  Haka sydkym1 baglar men,
+                  Balalarym derdinden
+                  Ýüregim gan içinde.
+
+                  Gurt aýdar: üzer men,
+                  Nirden kylsam güzer men.
+                  Ryzkym awlap gezer men
+                  Çöl-beýeban içinde.
+
+                  At aýdar: aslym zordur,
+                  Munça gymmatym bardyr,
+                  Üstüme münen ärdir,
+                  Daglarda-daş içinde.
+1 Sydk – yhlas.
+
+Ýaby aýdar: men gende,
+Üstüme münen bende;
+Azabym köpdür günde,
+Özüm hyzmat içinde.
+
+Eşek aýdar: aslym daş,
+Hyzmat bilen bagrym baş,
+Saman tapsam, köňlüm hoş,
+Mydam aýaz içinde.
+
+Düýe aýdar: otlar men,
+Otlan ýerim ýatlar men,
+Elmydama botlar men
+Selin, sazak içinde.
+
+Ýedi ýer bolmuş bina,
+Her zat okyr bir sena,
+Otlar hem diýr «rebbena»
+Nowruz-baran içinde.
+
+Kyýamat gün eliňden,
+Habar sorar halyňdan.
+Gaýyt ýaman päliňden,
+Gördüň purkan içinde.
+
+Umytly bol Ýusup dek,
+Sabyrly bol Eýýup dek,
+Ger ugrasa Ýakup dek
+Derdi-Kengan içinde.
+
+       Janym, jurga joş eýle,
+       Nebsim aýdar, hoş eýle,
+       Keremiňni duş eýle,
+       Taňla diwan içinde.
+
+       Magtymguly, özüňe
+       Bak, ýaş getir gözüňe,
+       Aýyplaşmaň sözüme
+       Ýary, ýaran içinde.
+
+        Düşen günlerim
+
+Dokuz aý ýatmyşam enem garnynda,
+Göz açyp, dünýäge düşen günlerim;
+Dört aýakda gezdim enem elinde,
+Sekiz aýda hem gülüşen günlerim.
+
+Birimde bilmedim ýagşy-ýamany,
+Ikimde tanydym ata-enäni,
+Üç ýaşymda taňry berdi zybany,
+Dört ýaşymda daş atyşan günlerim.
+
+Bäşimi ötürdim bahar-ýaz bilen,
+Alty ýaşda kowalaşdym saz bilen,
+Ýedi ýaşda işim bolmaz gyz bilen,
+Sekizimde dişim düşen günlerim.
+
+Dokuzymda berdim taňry salamy,
+Onumda boýnumda hakyň kelamy,
+On birimde tutdum döwet-galamy,
+Okyp-okyp magny saçan günlerim.
+
+On ikimden gitdim on üç ýaşyma,
+On tördümde eser urdy başyma,
+On bäşimde gyzlar girdi düýşüme,
+On altymda gaýnap joşan günlerim.
+
+Ýigrimimde mestan-mestan gezerdim,
+Ýigrim bäşde ganym okun düzerdim,
+Otuzymda atlar münüp gezerdim,
+Otuz bäşde ters söweşen günlerim.
+
+Kyrkymda goýulyp, käsäm dolmuşam,
+Ellimde elime tesbyh almyşam,
+Altmyşymda pire mürit bolmuşam,
+Pygamber ýaşyny ýaşan günlerim.
+
+Ýetmişimde agyry indi dyzyma,
+Segsenimde gubar indi gözüme,
+Togsanymda huş galmady özüme,
+Akyl-huşdan jyda düşen günlerim.
+
+Ýüz ýaşa ýetirmän, alarlar janyň,
+Uzadyp goýarlar, biçerler donuň,
+Magtymguly, hemra bolsun imanyň,
+Jan jesetden aýra düşen günlerim.
+
+                  Gözel Şirgazy
+
+        Mekan eýläp, üç ýyl iýdim duzuňy,
+        Gider boldum, hoş gal, gözel Şirgazy1 !
+        Ötürdim gyşyňy, nowruz-ýazyňy,
+        Gider boldum, hoş gal, gözel Şirgazy!
+
+        Hakdan bize buýruk baglydyr bilim,
+        Sende taglym aldy, açyldy dilim,
+        Gelsin diýip garar ol gerkez ilim,
+        Gider boldum, hoş gal, gözel Şirgazy
+
+        Seljerer men indi agy-garany,
+        Dost, rakyp, gardaşym, haky, ýarany,
+        Okydym, göterdim kitap kurany,
+        Gider boldum, hoş gal, gözel Şirgazy!
+
+        Aklym gysga erdi, käsäm gaýnady,
+        Jiger talwas urdy, göwün oýnady,
+        . . . . . . . . . . . . . . . . . . . . . . . . . . .
+                .
+        Gider boldum, hoş gal, gözel Şirgazy!
+
+        Joşgun ýüregimde möwç urar, ýatmaz,
+        Gaýnar, gazaplanar, hiç laýa batmaz,
+        Ylym-taglym algan seni unutmaz,
+        Gider boldum, hoş gal, gözel Şirgazy!
+1 Şirgazy – Magtymgulynyň Hywadaky okan medresesiniň ady.
+
+         Peýman dolmaý, gelsek takat ýetmeýen,
+         Pinhan zahyr kylmaz akyl gitmeýen,
+         Bady-paý atlanyp, seýran etmeýen,
+         Gider boldum, hoş gal, gözel Şirgazy!
+
+         Rige1 girsem-de, guwwas ýüzer men,
+         Bihasret ýaýnaýam, bigam gezer men,
+         Dahan içre asal-zyban ezer men,
+         Gider boldum, hoş gal, gözel Şirgazy!
+
+         Kämil bolup serenjamlyk kylyp men,
+         Muşakgatdan, ol pederden galyp men,
+         Käbämden aýrylyp jyda bolup men,
+         Gider boldum, hoş gal, gözel Şirgazy!
+
+         Kutbda2 saý gözläp, ummana duşdum,
+         Neýsan guýdy, umman gaýnadym-joşdum,
+         Hoş gal, bu gün Jeýhun bahrydan aşdym,
+         Gider boldum, hoş gal, gözel Şirgazy!
+
+         Magtymguly taşlap göwün hapasyn,
+         Sylady pirini, molla, sopusyn...
+         Daýym unutmaz men tylla gapysyn,
+         Gider boldum, hoş gal, gözel Şirgazy!
+
+1 Rig – ownuk daş, çagyl.
+2 Kutb – polýus, deňiz.
+
+     V
+
+YŞKY ESERLER
+        Her ýana
+
+Ýarsyzlykdan ýaman iş ýok,
+Göz salyp gezsem her ýana;
+Ýa ýaradan, bir hemra ber,
+Köp muşakgat degdi jana...
+
+Bir ýar bergil etli, ganly,
+Dil bilen, akly kemally,
+Köňli giň, göwsi meýdanly,
+Ýüzi hem bolsun görkana!
+
+Gadyr bilenden daş etme,
+Nägadyra ýoldaş etme,
+Til bilmez bela duş etme,
+Sada dil bolsun türkana.
+
+Keremi güýçlüdir, görgül,
+Doga kylyp, eliň gergil,
+Berseň-de, tizräk bergil,
+Ygtybar ýokdur bu jana...
+
+Boýy uzyn, pes bolmasyn,
+Hetden aşa mes bolmasyn,
+Akylsyz näkes bolmasyn,
+Sadadan bolsun türkana.
+
+               Ýagşy aýal ele gelmez,
+               Nadan ýagşyň gadryn bilmez,
+               Aýalsyza mydar bolmaz,
+               Dönseň hökmi-Süleýmana.
+
+               Magtymguly, ýansam-bişsem,
+               Ynanmazlar, oda düşsem,
+               Höwesim bar, bir ýar guçsam,
+               Diýsem sözlerim erkana...
+
+                          Gaşy ýaý
+
+  Bir dilbere duş boldum, gamzasy ok, gaşy ýaý;
+  Gün haýrandyr görkünden, hyjalatda dolgan aý,
+  Janyň berseň, jaýyzdyr1 beýle sypat mahbuba;
+  Hiç görmedim anyň deý başy dogry, göwsi taý.
+  Gulgula düşdi bize, hem düşdi jeňi-jeňe,
+  Jeň şowkundan ol nigar, ne nalaga düşdi naý.
+
+  Ne aşretdir aşyga, jennet içre jemaly,
+  Aýralyknyň ataşy tamug içre weýil-waý.
+  Ol dideýi-dildardan bolma ýene bibähre,
+  Galmagaý sen meniň deý – akly azu-görke baý.
+1 Jaýyz – laýyk, jaýly.
+
+  Isteseler alymlarny, şeýtan aýdar: ol dilber
+  Halagana Halyl dek, oglanyna berer paý.
+  Magtymguly, mydama doga kylar dergaha,
+  Saýyl men, mahrum etme dergahyndan,
+                                          ýa hudaý!
+
+                       Bu derdi
+
+       Keşt eýledim, gezdim yşkyň dagyndan,
+       Ne beladyr, kimse çeker bu derdi?
+       Yşk dagyn assalar gögüň boýnundan,
+       Gök titreýip, çeke bilmez bu derdi.
+
+       Yşk eser etmese, ýanmaz çyraglar,
+       Yşka düşse, guşlar eňrär, gurt aglar,
+       Egiler haýbatly, kuwwatly daglar,
+       Daşlar eräp, çeke bilmez bu derdi.
+
+       Kimdir yşkyň ýükün çeken merdana?
+       Pelek gördi — gorkup düşdi gerdana,
+       Zemin1 jünbüş eýläp2 , oldy lerzana,
+       Çöller-düzler çeke bilmez bu derdi.
+1 Zemin – ýer.
+2 Jünbüş eýlemek – hereket etmek, titremek.
+
+       Behişt gaçyp çykmyş arşyň öýüne,
+       Tamüg gorkup inmiş ýeriň teýine;
+       Gaçdy derýa, aldy adam boýuna,
+       Tört ýüz ýyllap çeke bilmez bu derdi.
+
+       Magtymguly, çekseň derdi-düwünden,
+       Asy1 bolup, şikat2 etme bu günden.
+       Bu ölmek, aýrylmak galypdyr öňden,
+       Peder3 bize miras goýmuş bu derdi...
+
+                     Näme sen
+
+       Asla seni görmemişem, dildarym!
+       Gumrumy sen, bilbilmi sen, näme sen?
+       Gamgyn köňlüm hyýalynda aldaram,
+       Bag içinde gül-gülmi sen, näme sen?
+
+       Garakçymyň, ýa seýitmiň, hojamyň,
+       Ýa sakymyň, ýa şerapmyň, ýa jammyň,
+       Ýa ýylmy sen, ýa gündizmiň, gijemiň,
+       Ýa aýmy sen, ýa günmi sen, näme sen?
+1 Asy – günäkär.
+2 Şikat – şikaýat.
+3 Peder – ata.
+
+       Ýa müşkmi sen, ýa kokunar anbarmyň,
+       Aýda bilmen, ýa çarhmy sen, çenbermiň,
+       Ýa derýamyň, ýa möwçmi sen, lenbermiň,
+       Ýa girdapmyň, ýa burgunmyň, näme sen?
+
+       Altynmy sen, kümüşmi sen, zermi sen,
+       Ýa arşmy sen, ýa kürsmi sen, ýermi sem,
+       Ýa ýakutmyň, ýa merjenmiň, dürmi sen,
+       Ýa çyragmyň, ýa röwşenmiň, näme sen?
+
+       Magtymguly, geç namysdan, aryňdan,
+       El götergil bu wepasyz käriňden,
+       Jahan doly, sen gapyl sen ýaryňdan,
+       Ýa mestmi sen, ýa şeýdamyň1 , näme sen?
+
+1 Şeýda – joşgunly, saýraýjy, däli-diwana.
+
+                         Gördüňmi
+
+          Ýagty salar gider zulmat tününde,
+          Meniň sahypjemalymny gördüňmi?
+          Bahar eýýamynda, heýhat gününde
+          Meniň sahypjemalymny gördüňmi?
+
+          Anka sypat «huw» diýp, asman uçan guş,
+          Gijesi tirikdir, gündizi beýhuş,
+          Nowaýy jindeli1 , egni hyrkapuş2 ,
+          Meniň sahypjemalymny gördüňmi?
+
+          Gan edipdir pelek, bagrym pyrakda,
+          Elmydam gezer men «ýar» diýp sorakda,
+          Käbe tarapynda, Şamda, Yrakda
+          Meniň sahypjemalymny gördüňmi?
+
+          Rumda, Gypjakda, Çyny-Maçynda,
+          Zumaýyl ornunda, arşyň içinde,
+          Galam degresinde, pelek burçunda
+          Meniň sahypjemalymny gördüňmi?
+
+          Aşyklar ahynda, Gulzum döwründe,
+          Kütbetil-yslamda, Jeýhun bahrynda,
+          Sedre sährasynda, Isa şährinde
+          Meniň sahypjemalymny gördüňmi?
+1 Jinde – ýyrtyk, sal-sal, eleşan.
+2 Hyrkapuş – ýyrtyk-ýirik geýim, derwüşiň geýýän geýimi.
+
+Hazret Aly etgeç äleme dagwy,
+Kapdan Kaba gitdi hazretiň çawy,
+Ýa yklym eýesi, Ahmet Ýasawy!
+Meniň sahypjemalymny gördüňmi?
+
+Mesgen tutmuş gara dagyň burnunda,
+Alynyň mülkünde, Isa ornunda,
+Ýeriň arkasynda, gögüň garnynda
+Meniň sahypjemalymny gördüňmi?
+
+Magtymguly, çeker ýaryň gamyny,
+Gezip tapa bilmez roýy-zemini.
+Ýa ady Jebraýyl, hakyň emini!
+Meniň sahypjemalymny gördüňmi?
+
+       Bagrym dilenim
+
+Dertli dilber, dilleşer sen, gel bäri!
+Dullukdyr meniň-de bagrym dilenim.
+Soraýyr men, men hem sen deý bir ýary,
+Seni soramakdyr, ýokdur ýalanym.
+
+Eger geňeş salsam ýada-bilişe,
+Diýrler: şirin asal ýaga gelişe,
+Säher ýazygym çün tursam nalyşa,
+Owwal bir ýar bolar ýada salanym.
+
+Bilen ýanda meňzär gymmat düre sen,
+Tanymaza duşup, degme ýere sen,
+Kadyr kysmat etse, maňa bara sen,
+Seniň kimin ýardyr meniň ölenim.
+
+Her dilber kim köňlüm öýün ýarydyr,
+Ýatan bagtym ol ýaradan ýörüdir.
+Gargyşym daşlarny mum deý eridir,
+Pür-pudak ýaýradyr alkyş kylanym.
+
+Gözel görküň gökde günden aýynmaz,
+Güli, desdenbili ysgan doýunmaz.
+Magtymguly, baş bermese baýynmaz,
+Mährimi inderip nazar salanym.
+
+            Islärin
+
+    Owal başda, kadyr alla,
+    Senden bir kömek islärin.
+    Badam gabak, alma ýaňak,
+    Bir ziba senem islärin.
+
+    Taňry bermese nädäli?
+    Baş alyp, nirä gidäli?
+    Oturyp-turşy edaly,
+    Gaşlary galam islärin.
+
+                 Özüne hormat getiren,
+                 Äriniň hyzmatyn bitiren,
+                 Gaşyny çytman oturan,
+                 Maňlaýy gülen islärin.
+
+                 Ýigrimi ýaş ötdi menden,
+                 Hezl etmedim, dünýä, senden.
+                 Tili süýji, lebi handan,
+                 Bir goýna salan islärin...
+
+                 Pyragy, geldim jahana,
+                 Bir ýar bergil akly-dana1 ,
+                 Duşdum üm bilmez nadana,
+                 Bir gadrym bilen islärin.
+
+                      Gözüm düşdi
+
+                    Şükür, alhamdililla,
+                    Janana gözüm düşdi.
+                    Meýhanada meý içdim,
+                    Mestana gözüm düşdi.
+
+                    Eý zülpi, saçy anbar!
+                    Mehrap ki, ýüzüň menber,
+                    Eý lagly2 -lebi göwher,
+                    Ummana gözüm düşdi.
+1 Dana – bilgir, akylly.
+2 Lagl – gymmatbaha daş, rubin.
+
+                  Eý gözleri ahramy1 ,
+                  Gel görgeli ýaramy,
+                  Eý köňlümniň aramy!
+                  Imana gözüm düşdi.
+
+                  Eý jady-jeren gözli.
+                  Eý şähdi-şeker sözli,
+                  Eý şemsi-kamar2 ýüzli,
+                  Tabana3 gözüm düşdi.
+
+                  Arzuwda gezer iller,
+                  Hyzmatga geler gullar,
+                  Täze açylgan güller,
+                  Bostana gözüm düşdi.
+
+                  Her saçlary bir sünbül.
+                  Göýäki men hem bilbil.
+                  Eý jennet era bir gül,
+                  Ryzwana4 gözüm düşdi.
+
+                  Bu derdime sen derman,
+                  Köýüňde bolam nalan.
+                  Magtymguly diýr, eý jan,
+                  Janana gözüm düşdi.
+
+1 Ahram – jadyly, humarly.
+2 Şemsi-kamar – aý-gün.
+3 Taban – dolan aý, ýagty.
+4 Ryzwan – fantastik jennet gapysynyň sakçysy; behişt.
+
+                      Sataşdym
+
+           Säher wagty seýran edip gezerkäm,
+           Ajap menzil, ajap jaýa sataşdym.
+           Ugrum bilmeý, ýoldan-ýola azarkam,
+           Hup mekana, hup saraýa sataşdym.
+
+           Ustasyz işlenen, kirşsiz gatylan,
+           Gymmatsyz satylan, elsiz tutulýan,
+           Gol degmeý çekilen, oksuz atylan,
+           Çillesiz1 gurulan ýaýa sataşdym.
+
+           Niçe dostlar bilen seýranda eken,
+           Hatardan azaşdym, kerwende eken,
+           Jandan umyt üzüp, haýranda eken,
+           Ýyldyzdan ýol ýasap, aýa sataşdym.
+
+           Köňlüm gitdi, dostlar içen şerbetde,
+           Olar ýüz sapada, men müň hasrata.
+           Aýrylyp näzliden, galdym gurbatda2 ,
+           Çeşmeden suw istäp, çaýa sataşdym.
+
+           Ne tende kuwwat bar, ne içde jan bar,
+           Bu işde ne sut bar, bilmen zyýan bar,
+           Ne hasap, ne hesip, ne belli san bar,
+           Kişi bilmez, ne söwdaýa sataşdym...
+1 Çille – kiriş.
+2 Gurbat – aýralyk, daşa düşmeklik.
+
+         Başa baglap diwanalyk kemendin,
+         Segredip ýetişdim yşkyň semendin1 ,
+         Al şeraba el uzatdym, emendim,
+         Durusyn içmişler, laýa sataşdym.
+
+         Magtymguly diýrler meniň adyma,
+         Bir ah ursam, älem ýanar oduma.
+         Eý ýaranlar, kim ýetişer dadyma?
+         Başym çykmaz köp gowgaýa sataşdym.
+
+                   Aşyk bolmuşam
+
+Eý ýaranlar, bir ýüzi gül, aýa aşyk bolmuşam,
+Barçalar maksady gül ragnaýa2 aşyk bolmuşam,
+Bilbilem bag içre, bir gowgaýa aşyk bolmuşam,
+Özi gaýyp, zülpleri ýeldaýa3 aşyk bolmuşam.
+Menzilim bag içredir, sähraýa aşyk bolmuşam.
+
+Çün pelek saldy bizi ol gün pena topragyna,
+Düşdi seýrim daýyma Mekge, Medine dagyna,
+Bilbil oldum saýradym, girdim Eremniň bagyna,
+Pany-bent oldum o güýa gam iliniň tussagyna,
+Ýüz bela-mähnetli bir söwdaýa aşyk bolmuşam.
+1 Sement – at.
+2 Ragna – owadan, gözel.
+3 Elda – gyryň iň uzyn we tüm garaňky gijesi (22-nji dekabr gijesi).
+
+Göwräm içre ýar gamydyr, menzilim sährad, heý,
+Puşeşim gam-gussadyr, men dönmüşem
+                                   Perhada, heý,
+Saldy yşkyň, dilbera, janu-jigerim oda, heý,
+Wadaryga1 , geçdi ömrüm, zaýa berdim bada2 , heý,
+Ahy köp, efgany köp, bir köýe aşyk bolmuşam.
+
+Bilmenem, ne bahr, ýerdir, bes ne muazzem3
+                                  dagydyr,
+Aldy köňlüm, gitdi aklym ten mydam näçagydyr,
+Nisbet etmek bolmas any, gumry, bilbil zagydyr,
+Aý garaz her zülpüne ýetmiş müň är tussagydyr,
+Kaddy-kamaty belent, zybaýa aşyk bolmuşam.
+
+Dost, howaýy waslyňy men munça çenden isterem,
+Damy4 -zülpüň kasdyna özümni zyndan isterem,
+Diýme: gamdan bir zaman, köňlümni handan
+                                  isterem,
+Bir garyp aşyk menem, ýar, seni senden isterem,
+Gije-gündiz, biliň huw-haýa aşyk bolmuşam.
+1 Wadaryga – haýyp.
+2 Bat – el (bad).
+3 Muazzem – uly, ägirt.
+4 Dam – duzak.
+
+Istemez ýarym meni, ol ýara zarym ýok meniň,
+Galmyşam haýran olup, gaýry mydarym ýok meniň,
+Aldy janym yşkyň ody, ygtyýarym ýok meniň,
+Gelse, aklym dagydar, gitse, kararym ýok meniň,
+Kirpigi ok, gaşlary ol ýaýa aşyk bolmuşam.
+
+Aýdadyr Magtymguly, men anda käne ugradym,
+Seýil edip bardym pelekden, lamekana1 ugradym,
+Çün meni ryswa kylypdyr, yşky käne ugradym,
+Ýetmiş iki şäher ile müň bir dükana ugradym,
+Şunça sergezdan sepilu-zaýa aşyk bolmuşam...
+
+                        Meni
+
+      Yşk ýüregimde gaýnap,
+                         ýandyrdy derdi meni,
+      Tütünim bada berip,
+                         buluda gardy meni.
+      Pelek bilegim towlap,
+                         çarhyna sardy meni.
+      Hyrydar gözi bile
+                         kim gelip gördi meni?
+      Hijran ýagmyry ýagyp,
+                         gam sile berdi meni.
+1 Lamekan – mekansyz.
+
+       Gam sili birlen gidip,
+                           yşk ülkesine baryp,
+       Hyýalym pikre dönüp,
+                           aklymy ýel aparyp,
+       Ol haýrat meýdanyda
+                           men garyp galdym aryp,
+       Yşyk hanjaryn çekip,
+                           hijran ýüregim ýaryp,
+       Äleme destan edip,
+                           abtaba serdi meni.
+
+       Ne jeset içre jan bar,
+                           ne kuwwat galdy tende,
+       Hem serkeşte, hem haýran
+                           bu işe galdym men-de.
+       Ne hastaýam, ne horram,
+                           ne murdaýam1 , ne zende2 ,
+       Gam hüjüm eýläp,
+                           gökden zemin sary inende.
+       Pelek elimden tutup,
+                           howala berdi meni.
+1 Murda – öli.
+2 Zende – diri.
+
+      Bir ahwala duş boldum,
+                          gam hüjm etdi, öldürdi,
+      Bu işiň serişdesin
+                          yşk okadyp bildirdi,
+      Bu hala rehmi gelip,
+                          elim tutup galdyrdy,
+      Jemal bir jilwe berdi,
+                          içim şowka doldurdy,
+      Sözlemeýen neýläýin,
+                          ýaranlar, ýardy meni.
+
+      Magtymguly, begligim
+                          ýar jemaly gul etdi,
+      Wysal umydyn berip,
+                          müň tilli bilbil etdi,
+      Aýralyk oda saldy,
+                          pyrak turdy, ýel etdi,
+      Yşk çekdi zybanasyn1 ,
+                          ýakyp, örtap kül etdi,
+      Hijran elegin eläp,
+                          ýele sowurdy meni.
+
+1 Zybana çekmek – joşmak, ýokary göterilmek, möwç urmak.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Döndi',
+    'Ýüzi mahy-tabanym
+                Gün ýaly aýa döndi;
+                Çarh oldy nerdiwanym1 ,
+                Gök paýa-paýa döndi.
+
+                Bir gün aşyk şowh oldy,
+                Gam-gussasy çoh oldy,
+                Her kirpigiň ok oldy,
+                Gaşlaryň ýaýa döndi.
+
+                Aşygy saldyň oda,
+                Goýduň gitdiň uýada,
+                Günorta berdiň wada,
+                Wagt geçdi, saýa döndi.
+
+                Jan galmady bedende,
+                Ýanardym ah edende,
+                Gözüm gelip-gidende,
+                Her günüm aýa döndi.
+
+                Müň söwdam bar, bir başym
+                Goýdum ilim, gardaşym,
+                Aglamakdan göz ýaşym
+                Joşgunly çaýa döndi.
+1 Nerdiwan – basgançak
+
+                    Ýaryň köňli çag oldy,
+                    Aşyklar tussag oldy,
+                    Dalda ýerim dag oldy
+                    Düz ýerim gaýa döndi.
+
+                    Dal pudaklar egildi,
+                    Göçdi bilbil, dagyldy.
+                    Akar suwlar soguldy,
+                    Çöl ýerler guýa döndi.
+
+                    Derman bolmaz alaja,
+                    Zat bermezler mähtaja.
+                    Baýlar döndi gallaja,
+                    Pakyrlar baýa döndi.
+
+                    Magtymguly, gezende,
+                    Rumy-kaýsar1 düzünde,
+                    Gözel ýaryň yzynda
+                    Ömrümiz zaýa döndi.
+
+   1 Rum – Wizantiýa döwleti, Balkan ýarym adasy we Kiçi Aziýa.
+
+Kaýsar — Rum patyşasy',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Boldum',
+    'Yşk derýasy doldy, daşdy, gaýnady,
+         Täze hyruç eýläp gyzmaly boldum;
+         Köňül tagty möwç üstüne oýnady,
+         Onda guwwas bolup ýüzmeli boldum.
+
+         Ýatyrdym, düýş görüp, tisginip turdum.
+         Yşk bir müşgil işdir, okadym gördüm,
+         Şowhun şirýan bildim, bu ýola girdim,
+         Imdi çäre ýokdur, dözmeli boldum.
+
+         Ýaryň ýeli ösdi, özi gizlendi,
+         Umyt elin gerdi, şunça gözlendi,
+         Hijran kuwwatlandy, gam täzelendi,
+         Ol gazanda gaýnap gyzmaly boldum.
+
+         Ýolda ýolukdyrdym çeşmi-jadyny,
+         Ölçerdim, el çoýdum yşkyň oduny,
+         Köňül gözgüsine1 ýaryň adyny
+         Suratkeşlik edip çyzmaly boldum.
+
+         Bu pikirden, bu hyýaldan daş bolup,
+         Nebsi-howa mekirinden boş bolup,
+         Ol bazarda yşk-talaňça duş bolup,
+         Belli jandan umyt üzmeli boldum.
+1 Gözgi – aýna
+
+         Gana-gana içdim dostuň zährini,
+         Zährin şypa sansam, salmaz mährini,
+         Göwrede gurulan köňül şährini,
+         Yşka nöker bolup bozmaly boldum.
+
+         Magtymguly, ol menzile, diýara1 ,
+         Giren gaýdyp çyka bilmez kenara,
+         Ýaranlar, bu derde barmydyr çäre?
+         Jöwrenip, örtenip gezmeli boldum.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Oldy',
+    'Köňül berdim bir biwepa mahbuba2 ,
+         Çykdy elden, dagy jana dert oldy;
+         Aşyk diýr: bakmanam imdi ol huba,
+         Ýol üstünden düşdi gözüm, tört oldy...
+
+         Menlik bile etdim işimni zaýa,
+         Ykbalym eşegin batyrdym laýa,
+         Ýa bir merde duş et, ýa-da hudaýa,
+         Bende işi baş tutmady, art oldy...
+1 Diýar – ýurt, mekan, ülke.
+2 Mahbup – söýgüli.
+
+         Tugunym1 tor bolup, gaçdy saýýatdan2 ,
+         Göwre gamdan doldy, ýürek hem otdan,
+         Gorkarym: ýar bizi çykarar ýatdan,
+         Aýry ýerde mesgen tutdy, ýurt oldy...
+
+         Sonam el bermedi saldym bazymy3 ,
+         Laçyn kowdy, garga aldy gazymy,
+         Şunça pakyrlyga urdum özümi,
+         Tilkilenip, gezdim, adym gurt oldy.
+
+         Magtymguly, ýüregimde dert dörär,
+         Kim görüpdir, koý içinden gurt dörär?
+         Eý ýaranlar, mert ýigitden mert dörär,
+         Kaçan turdy, namart ogly mert oldy?
+
+1 Tugun – elguş.
+2 Saýýat – awçy.
+3 Baz – gyrgy, algyr.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Boldum imdi',
+    'Yşk ataşyna düşdüm,
+                        perwana boldum imdi,
+    Şowkun közüne köýdüm,
+                        birýana1 boldum imdi.
+    Jismim kebaba döndi,
+                        girýana boldum imdi,
+    Genç isteýenler gelsin,
+                        weýrana boldum imdi,
+    Aýryldym agýarlardan,
+                        bigana boldum imdi.
+
+    Çykardym başdan imdi
+                       dünýä höwesin mutlak2 ,
+    Ne perşe aýak basdyň,
+                       dolan bir özüňe bak,
+    Kül bolup, ýelge sowrul,
+                       ol güzerde janyň ýak,
+    Lazym oldy okymak,
+                       analhaku, minelhak,
+    Meý içip meýhanadan,
+                       mestana boldum imdi.
+1 Birýana (birýan) – gowrulan.
+2 Mutlak – asla, düýpden.
+3 Perş – düşek, haly.
+
+Dünýä menden hezl etmez,
+                 men hem bähre almaz men,
+Odum ötgür, derdim köp,
+                 hoş wagt olup gülmez men,
+Agyr baha älemni
+                 alty pulga almaz men,
+Dost kaýsy, duşman kaýsy,
+                 parhyn edip bilmez men,
+Hiç kimse aňmaz halym,
+                 aýana boldum imdi...
+
+Bir mukama duş boldum,
+                   pikr anda pikre batdy,
+Jan anda jandan boldy,
+                   huşundan gidip ýatdy,
+Jeset ýolda ýok boldy,
+                   köňül özün unutdy,
+Yşk goşun ýygyp gelip,
+                   akyl-mülkün dagytdy,
+Talaňa berip aklym,
+                   diwana boldum imdi.
+
+    Magtymguly, her zaman,
+                         neýleýin olmaý girýan?
+    Pikir palçygna batdym,
+                         çyka bilmez men bir ýan,
+    Göwre harap, ten turap1 ,
+                         köňlümiň şähri weýran,
+    Jan jeset, til-akyldan
+                         aýrylyp galdy urýan2 ,
+    Iş geldi, başa düşdi,
+                         merdana boldum imdi.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Hökümli',
+    'Köňüller köşgünde hyýalyň hany
+           Öwlady-hüňkara3 meňzär hökümli.
+           Aşyk çekse nalany,
+           Ýasa salar läläni,
+           Ýerde peşe, padşany,
+           Hudaýymyň halany,
+           Gamzaň garakçysy salsa talaňy,
+           Kirpigiň ok, gaşyň ýaýdyr çekimli.
+1 Turap – gum, toprak.
+2 Urýan – ýalaňaç.
+3 Hüňkar – patyşa.
+
+           Gözelleriň waspyn etseler kanda,
+           Älem agzy tamam jem olar sende.
+           Tä jan bardyr bu tende,
+           Arzym meniň ýar sende,
+           Adyň Ruma düşdi, owazyň Hinde.
+           Leýli saňa kenizek,
+           Züleýha saňa bende,
+           Bagda gulçähre1 sen? bulgar bakymly.
+
+           Yşkyň ataşyny saçyp sen düze,
+           Jan polatdan bolsa, dözmez bu köze,
+           Gonsa, dilber, bu köze,
+           Zyban2 gider her söze,
+           Görküň güneşi dogsa,
+           Ne san bardyr ýyldyza?
+           Alma zenahdana, bu kümüş ýüze –
+           Zülpüň syýa, suratkärdir dökümli.
+
+           Humaý oturyşly, laçyn turuşly,
+           Kebuter topukly, maral ýörişli,
+           Täze hilal3 gaşly, merwerit4 dişli,
+           Tawus guş zynatly, dawud duruşly,
+           Terbeza şiweli, käkilik nagyşly,
+           Tugun guş timarly, tarlan bakymly.
+1 Gülçähre – gül ýüzli.
+2 Zyban – dil
+3 Hilal – ýaňy dogan aý.
+4 Merwerit – gymmat baha daş.
+
+           Baglanyban çyksaň şitdeýi1 gülzar,
+           Husnuň hyýalaty älemni aldar.
+           Aşyk aýdar: eý dildar!
+           Görki güne taý didar!
+           Tapar hajyň sowabyn,
+           Her kim bir garyp goldar,
+           Magtymguly, sen dek görmedim dildar,
+           Bu jana ýararly, köňle ýakymly.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Dogrusy',
+    'Eý peri, aşygam saňa,
+                          ýanaram, dogrusy;
+        Görmeginçe gül ýüzüň,
+                          bikararam dogrusy.
+
+        Şähriňizde bir peri,
+                               adyň eşitdim men seniň,
+        Bilbili-biçäreýem,
+                               çoh ahy-zaram, dogrusy.
+
+        Men bir bezirgen menem,
+                          yşkyň matasyn sataram;
+        Şähriňizge gelmişem,
+                          bes söwdagärem, dogrusy.
+1 Şitde – guşak
+
+        Gide bilmen şähriňizden –
+                           hyz-haramdan gorkaram;
+        Ýedi pirniň labzydan,
+                           bir ýadygärem, dogrusy.
+
+        Eý peri, zülpüň beri,
+                           walla seniň deý huplary;
+        Aýdadyr Magtymguly,
+                           pişekärem, dogrusy.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Gözel sen',
+    'Gün hanjary gökden ýere inende,
+           Güne garşy dogan aýy gözel sen;
+           Usta Jepbar işi, senjap jüpbesi1 ,
+           Ispyhanda gurlan ýaýy gözel sen!
+
+           Saçbagyň ujunyň simdir2 işmesi,
+           Üstünden ýol düşse, kyndyr aşmasy,
+           Agzyň aby-haýat3 , Zemzem çeşmesi,
+           Aýnalbaky4 suwnuň laýy gezel sen!
+1 Jüpbe – eşik ady.
+2 Sim – kümüş.
+3 Aby-haýat – dirilik suwy.
+4 Aýnalbaky – fantastiki ömürlik çeşme.
+
+          Gyzyl diýsem – gyzyl, al diýsem – al sen,
+          Hindistanda – şeker, Bulgarda – bal sen.
+          Yşk bilen açylgan bir täze gül sen,
+          Ýusup-Züleýhanyň taýy gözel sen!
+
+          Her kim güýçli bolsa oňa pir diýrler,
+          Dertli guluň dermanyny biýr diýrler,
+          Gawunyň gowsuny şagal iýr diýrler,
+          Ykbally bendäniň paýy gözel sen!
+
+          Owazyň Çyn-Maçyn, daglar aşasy,
+          Seni görenleriň akly çaşasy,
+          Hindistanyň reňkli gyzyl çüýşesi1 ,
+          Suraýy çilimniň naýy gözel sen!
+
+          Magtymguly, halkdan syryn gizlese,
+          Dişini uşadyň ýalan sözlese,
+          Owalda, ahyrda eýäm gözlese,
+          Garyp biçäräniň paýy gözel sen...
+
+1 Meşewi diýen wariant hem bar.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Gitseň – bar aman',
+    'Diýdim: «Ýüzi tabana».
+                    Diýdi: «Meňzär Meňli han!»
+  Diýdim: «Goýduň armana».
+                    Diýdi: «Köňüldir weýran».
+  Diýdim: «Ölerem imdi».
+                    Diýdi: «Galar sen aman».
+  Diýdim: «Ok kirpikleriň».
+                    Diýdi: «Gaşlarym keman»
+  Diýdim ki: «Puşeş geýmiş».
+                    Diýdi: «Dony – zerefşan».
+
+  Diýdim: «Ýüzde hallar bar».
+                    Diýdi: «Roýda güller heý»1 .
+  Diýdim: «Gumry zybandyr».
+                    Diýdi: «Şähdi diller heý».
+  Diýdim: «Gel sen, habarlaş».
+                    Diýdi: «Biler iller heý».
+  Diýdim: «Ol ne serwidir».
+                    Diýdi «Inçe biller heý».
+  Diýdim: «Tawus kaýdandyr?»
+                    Diýdi: «Jaýy – Hindistan».
+1 «Heý» diýen ümlügiň ýerine «hem» getirilýän warianty hem bar.
+
+Diýdim: «Gijäň garaňky».
+                  Diýdi: «Ukuda aýym».
+Diýdim: «Kimler ýasawul?».
+                  Diýdi: «Kirpigim-ýaýym».
+Diýdim: «Kaýda mesgeniň?».
+                  Diýdi: «Lamekan jaýym».
+Diýdim: «Zerefşan erer».
+                  Diýdi: «Köwserdir laýym».
+Diýdim: «Ondan ber maňa!»
+                  Diýdi: «Istärmiş bijan».
+
+Diýdim: «Bu ne tütündir?»
+                  Diýdi ki: «Gara marlar».
+Diýdim: «Gorkaram andan».
+                  Diýdi: «Il-u-gün zarlar».
+Diýdim: «Sözüň aslyny»,
+                  diýdi: «Sorar, duýarlar».
+Diýdim: «Syry paş etdin».
+                  Diýdi: «Aýtmyş aýýarlar».
+Diýdim: «Ölüm bar saňa»,
+                  Diýdi: «Saňa hem perman».
+
+Diýdim: «Eý Magtymguly!»
+                   Diýdi: «Gözler ýaş bolar!»
+Diýdim: «Ol ne oglandyr?»
+                   Diýdi: «Sizge baş bolar».
+Diýdim: «Ýakyndyr Käbe».
+                   Diýdi: «Köne daş bolar».
+Diýdim: «Ýagşy zamandyr».
+                   Diýdi «Bu hem düýş bolar».
+Diýdim: «Indi gider men».
+                   Diýdi: «Gitseň – bar aman!»',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Uýat eýleýir',
+    'Meňli hanym golun dişläp,
+         Bizden ki uýat eýleýir;
+         Kä daranyp, uz ýörişläp,
+         Bizden ki uýat eýleýir.
+
+         Aşyk, gulak goýgul söze,
+         Syýa zülp ýaraşar ýüze,
+         Sürme çalyp gara göze,
+         Bizden ki uýat eýleýir.
+
+         Geýipdir gyzyl-ýaşyly,
+         Bilmen nedir ýar hyýaly,
+         Göz edip ýomut, ahaly,
+         Bizden ki uýat eýleýir.
+
+             Ykbal çapmaz ýöreý diýsem,
+             Ýokdur malym, bereý diýsem.
+             «Aç roýuňy – göreý» diýsem,
+             Öwrülip uýat eýleýir.
+
+             Görüşeli Meňli hanym,
+             Istihanym, şirin janym.
+             Pyragy diýr, din-imanym
+             Ýetdirmez, uýat eýleýir.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Barmy, ýaranlar',
+    'Yşk ýolun höwes eýläp,
+             Gelen barmy, ýaranlar?
+             Derdimi beýan etsem,
+             Alan barmy, ýaranlar?
+
+             Bolmuşam mesti-şeýda,
+             Hezar1 pişe, set söwda,
+             Älemde men deý ryswa
+             Bolan barmy, ýaranlar?
+
+             Içim dert, daşym birýan,
+             Eder men nala-girýan,
+             Meniň deý mesti-haýran
+             Galan barmy, ýaranlar?
+1 Hezar – müň.
+
+Ýalan dünýäni ýaýnap,
+Gezgil gülüp hem oýnap,
+Yşk gazanynda gaýnap,
+Ölen barmy, ýaranlar?
+
+Yşk duş bolsa bir merde,
+Toz bolar, döner gerde,
+Meniň deý özün derde
+Salan barmy, ýaranlar?
+
+Bardy halym ölümge,
+Tap etmeýen zulumga,
+Ýyglamýan halymga,
+Gülen barmy, ýaranlar?
+
+Magtymguly, jan çekse,
+Rehm etmezler, ýaş dökse,
+Yşkyň ýolunda ýoksa,
+Galan barmy, ýaranlar?',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Içmeýen jamym',
+    'Dözmenem, doýmanam, durmanam, eý ýar,
+    Bu saky1 döwründen içmeýen jamym.
+    Jamy meý sundugyň görmesin agýar,
+    Gelmenem aklyma, görmeýen känim.
+
+    Bolmuşam guwwas dek, ýüzmüşem köli,
+    Tapmyşam hemramy, tutmuşam ýoly,
+    Şowkuň şerabyndan bolmuşam däli,
+    Bilmen niçik geçer çäştim, şamym...
+
+    Tä nepes tendedir, tende jan bardyr,
+    Til saňa maýyldyr, çeşm intizardyr,
+    Çekdigim pygandyr, werzişim zardyr,
+    Käte bu dert ile geçer eýýamym...
+
+    Gözleriň jellatdyr, tilleriň aýýar,
+    Gamzaň bimar eder, ýüzleriň timar,
+    Mansur belasyna bolsam giriftar,
+    Giderem sen sary, süýreýip hamym.
+
+    Magtymguly, hoş hap2 içre ýatyrdym.
+    Emrine ugradym, iman getirdim,
+    Özümi unutdym, huşum ýitirdim,
+    Pyragy diýp çagyrsyn ol meniň namym.
+
+1 Saky – şerap guýan, içgi paýlaýan.
+2 Hap – uky.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Ýandyrar',
+    'Wagt bolar ki, bir ýel düşer serime,
+Hyýal hüjüm eýläp, joşy ýandyrar;
+Ýüregim joş berse, aklym jem bolsa,
+Pikir basar, gaýgy huşy ýandyrar.
+
+Säher wagty derwüş nalyşa gelse,
+Bilinden ýüp alyp, boýnuna salsa,
+Taňry söýen bende bet doga kylsa,
+Pelegi titreder, arşy ýandyrar.
+
+Akmak özün akyl bilen deň eýlär,
+Bir iş tutar, soňrasyndan jeň eýlär,
+Zehiniň käýider, aklyň teň eýlär,
+Diýdigiň eýlemez, naşy ýandyrar.
+
+Magtymguly, hakdan piýala çekse,
+Piýala joş berse, hyýala çekse,
+Aşyklar bagryndan bir nala çekse,
+Daglary elendir, daşy ýandyrar.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Aýryldym',
+    'agýarlardan,
+                        bigana boldum imdi.
+
+    Çykardym başdan imdi
+                       dünýä höwesin mutlak2 ,
+    Ne perşe aýak basdyň,
+                       dolan bir özüňe bak,
+    Kül bolup, ýelge sowrul,
+                       ol güzerde janyň ýak,
+    Lazym oldy okymak,
+                       analhaku, minelhak,
+    Meý içip meýhanadan,
+                       mestana boldum imdi.
+1 Birýana (birýan) – gowrulan.
+2 Mutlak – asla, düýpden.
+3 Perş – düşek, haly.
+
+Dünýä menden hezl etmez,
+                 men hem bähre almaz men,
+Odum ötgür, derdim köp,
+                 hoş wagt olup gülmez men,
+Agyr baha älemni
+                 alty pulga almaz men,
+Dost kaýsy, duşman kaýsy,
+                 parhyn edip bilmez men,
+Hiç kimse aňmaz halym,
+                 aýana boldum imdi...
+
+Bir mukama duş boldum,
+                   pikr anda pikre batdy,
+Jan anda jandan boldy,
+                   huşundan gidip ýatdy,
+Jeset ýolda ýok boldy,
+                   köňül özün unutdy,
+Yşk goşun ýygyp gelip,
+                   akyl-mülkün dagytdy,
+Talaňa berip aklym,
+                   diwana boldum imdi.
+
+    Magtymguly, her zaman,
+                         neýleýin olmaý girýan?
+    Pikir palçygna batdym,
+                         çyka bilmez men bir ýan,
+    Göwre harap, ten turap1 ,
+                         köňlümiň şähri weýran,
+    Jan jeset, til-akyldan
+                         aýrylyp galdy urýan2 ,
+    Iş geldi, başa düşdi,
+                         merdana boldum imdi.
+
+                         Hökümli
+
+           Köňüller köşgünde hyýalyň hany
+           Öwlady-hüňkara3 meňzär hökümli.
+           Aşyk çekse nalany,
+           Ýasa salar läläni,
+           Ýerde peşe, padşany,
+           Hudaýymyň halany,
+           Gamzaň garakçysy salsa talaňy,
+           Kirpigiň ok, gaşyň ýaýdyr çekimli.
+1 Turap – gum, toprak.
+2 Urýan – ýalaňaç.
+3 Hüňkar – patyşa.
+
+           Gözelleriň waspyn etseler kanda,
+           Älem agzy tamam jem olar sende.
+           Tä jan bardyr bu tende,
+           Arzym meniň ýar sende,
+           Adyň Ruma düşdi, owazyň Hinde.
+           Leýli saňa kenizek,
+           Züleýha saňa bende,
+           Bagda gulçähre1 sen? bulgar bakymly.
+
+           Yşkyň ataşyny saçyp sen düze,
+           Jan polatdan bolsa, dözmez bu köze,
+           Gonsa, dilber, bu köze,
+           Zyban2 gider her söze,
+           Görküň güneşi dogsa,
+           Ne san bardyr ýyldyza?
+           Alma zenahdana, bu kümüş ýüze –
+           Zülpüň syýa, suratkärdir dökümli.
+
+           Humaý oturyşly, laçyn turuşly,
+           Kebuter topukly, maral ýörişli,
+           Täze hilal3 gaşly, merwerit4 dişli,
+           Tawus guş zynatly, dawud duruşly,
+           Terbeza şiweli, käkilik nagyşly,
+           Tugun guş timarly, tarlan bakymly.
+1 Gülçähre – gül ýüzli.
+2 Zyban – dil
+3 Hilal – ýaňy dogan aý.
+4 Merwerit – gymmat baha daş.
+
+           Baglanyban çyksaň şitdeýi1 gülzar,
+           Husnuň hyýalaty älemni aldar.
+           Aşyk aýdar: eý dildar!
+           Görki güne taý didar!
+           Tapar hajyň sowabyn,
+           Her kim bir garyp goldar,
+           Magtymguly, sen dek görmedim dildar,
+           Bu jana ýararly, köňle ýakymly.
+
+                      Dogrusy
+
+        Eý peri, aşygam saňa,
+                          ýanaram, dogrusy;
+        Görmeginçe gül ýüzüň,
+                          bikararam dogrusy.
+
+        Şähriňizde bir peri,
+                               adyň eşitdim men seniň,
+        Bilbili-biçäreýem,
+                               çoh ahy-zaram, dogrusy.
+
+        Men bir bezirgen menem,
+                          yşkyň matasyn sataram;
+        Şähriňizge gelmişem,
+                          bes söwdagärem, dogrusy.
+1 Şitde – guşak
+
+        Gide bilmen şähriňizden –
+                           hyz-haramdan gorkaram;
+        Ýedi pirniň labzydan,
+                           bir ýadygärem, dogrusy.
+
+        Eý peri, zülpüň beri,
+                           walla seniň deý huplary;
+        Aýdadyr Magtymguly,
+                           pişekärem, dogrusy.
+
+                        Gözel sen
+
+           Gün hanjary gökden ýere inende,
+           Güne garşy dogan aýy gözel sen;
+           Usta Jepbar işi, senjap jüpbesi1 ,
+           Ispyhanda gurlan ýaýy gözel sen!
+
+           Saçbagyň ujunyň simdir2 işmesi,
+           Üstünden ýol düşse, kyndyr aşmasy,
+           Agzyň aby-haýat3 , Zemzem çeşmesi,
+           Aýnalbaky4 suwnuň laýy gezel sen!
+1 Jüpbe – eşik ady.
+2 Sim – kümüş.
+3 Aby-haýat – dirilik suwy.
+4 Aýnalbaky – fantastiki ömürlik çeşme.
+
+          Gyzyl diýsem – gyzyl, al diýsem – al sen,
+          Hindistanda – şeker, Bulgarda – bal sen.
+          Yşk bilen açylgan bir täze gül sen,
+          Ýusup-Züleýhanyň taýy gözel sen!
+
+          Her kim güýçli bolsa oňa pir diýrler,
+          Dertli guluň dermanyny biýr diýrler,
+          Gawunyň gowsuny şagal iýr diýrler,
+          Ykbally bendäniň paýy gözel sen!
+
+          Owazyň Çyn-Maçyn, daglar aşasy,
+          Seni görenleriň akly çaşasy,
+          Hindistanyň reňkli gyzyl çüýşesi1 ,
+          Suraýy çilimniň naýy gözel sen!
+
+          Magtymguly, halkdan syryn gizlese,
+          Dişini uşadyň ýalan sözlese,
+          Owalda, ahyrda eýäm gözlese,
+          Garyp biçäräniň paýy gözel sen...
+
+1 Meşewi diýen wariant hem bar.
+
+                Gitseň – bar aman
+
+  Diýdim: «Ýüzi tabana».
+                    Diýdi: «Meňzär Meňli han!»
+  Diýdim: «Goýduň armana».
+                    Diýdi: «Köňüldir weýran».
+  Diýdim: «Ölerem imdi».
+                    Diýdi: «Galar sen aman».
+  Diýdim: «Ok kirpikleriň».
+                    Diýdi: «Gaşlarym keman»
+  Diýdim ki: «Puşeş geýmiş».
+                    Diýdi: «Dony – zerefşan».
+
+  Diýdim: «Ýüzde hallar bar».
+                    Diýdi: «Roýda güller heý»1 .
+  Diýdim: «Gumry zybandyr».
+                    Diýdi: «Şähdi diller heý».
+  Diýdim: «Gel sen, habarlaş».
+                    Diýdi: «Biler iller heý».
+  Diýdim: «Ol ne serwidir».
+                    Diýdi «Inçe biller heý».
+  Diýdim: «Tawus kaýdandyr?»
+                    Diýdi: «Jaýy – Hindistan».
+1 «Heý» diýen ümlügiň ýerine «hem» getirilýän warianty hem bar.
+
+Diýdim: «Gijäň garaňky».
+                  Diýdi: «Ukuda aýym».
+Diýdim: «Kimler ýasawul?».
+                  Diýdi: «Kirpigim-ýaýym».
+Diýdim: «Kaýda mesgeniň?».
+                  Diýdi: «Lamekan jaýym».
+Diýdim: «Zerefşan erer».
+                  Diýdi: «Köwserdir laýym».
+Diýdim: «Ondan ber maňa!»
+                  Diýdi: «Istärmiş bijan».
+
+Diýdim: «Bu ne tütündir?»
+                  Diýdi ki: «Gara marlar».
+Diýdim: «Gorkaram andan».
+                  Diýdi: «Il-u-gün zarlar».
+Diýdim: «Sözüň aslyny»,
+                  diýdi: «Sorar, duýarlar».
+Diýdim: «Syry paş etdin».
+                  Diýdi: «Aýtmyş aýýarlar».
+Diýdim: «Ölüm bar saňa»,
+                  Diýdi: «Saňa hem perman».
+
+Diýdim: «Eý Magtymguly!»
+                   Diýdi: «Gözler ýaş bolar!»
+Diýdim: «Ol ne oglandyr?»
+                   Diýdi: «Sizge baş bolar».
+Diýdim: «Ýakyndyr Käbe».
+                   Diýdi: «Köne daş bolar».
+Diýdim: «Ýagşy zamandyr».
+                   Diýdi «Bu hem düýş bolar».
+Diýdim: «Indi gider men».
+                   Diýdi: «Gitseň – bar aman!»
+
+               Uýat eýleýir
+
+         Meňli hanym golun dişläp,
+         Bizden ki uýat eýleýir;
+         Kä daranyp, uz ýörişläp,
+         Bizden ki uýat eýleýir.
+
+         Aşyk, gulak goýgul söze,
+         Syýa zülp ýaraşar ýüze,
+         Sürme çalyp gara göze,
+         Bizden ki uýat eýleýir.
+
+         Geýipdir gyzyl-ýaşyly,
+         Bilmen nedir ýar hyýaly,
+         Göz edip ýomut, ahaly,
+         Bizden ki uýat eýleýir.
+
+             Ykbal çapmaz ýöreý diýsem,
+             Ýokdur malym, bereý diýsem.
+             «Aç roýuňy – göreý» diýsem,
+             Öwrülip uýat eýleýir.
+
+             Görüşeli Meňli hanym,
+             Istihanym, şirin janym.
+             Pyragy diýr, din-imanym
+             Ýetdirmez, uýat eýleýir.
+
+                 Barmy, ýaranlar
+
+             Yşk ýolun höwes eýläp,
+             Gelen barmy, ýaranlar?
+             Derdimi beýan etsem,
+             Alan barmy, ýaranlar?
+
+             Bolmuşam mesti-şeýda,
+             Hezar1 pişe, set söwda,
+             Älemde men deý ryswa
+             Bolan barmy, ýaranlar?
+
+             Içim dert, daşym birýan,
+             Eder men nala-girýan,
+             Meniň deý mesti-haýran
+             Galan barmy, ýaranlar?
+1 Hezar – müň.
+
+Ýalan dünýäni ýaýnap,
+Gezgil gülüp hem oýnap,
+Yşk gazanynda gaýnap,
+Ölen barmy, ýaranlar?
+
+Yşk duş bolsa bir merde,
+Toz bolar, döner gerde,
+Meniň deý özün derde
+Salan barmy, ýaranlar?
+
+Bardy halym ölümge,
+Tap etmeýen zulumga,
+Ýyglamýan halymga,
+Gülen barmy, ýaranlar?
+
+Magtymguly, jan çekse,
+Rehm etmezler, ýaş dökse,
+Yşkyň ýolunda ýoksa,
+Galan barmy, ýaranlar?
+
+                   Içmeýen jamym
+
+    Dözmenem, doýmanam, durmanam, eý ýar,
+    Bu saky1 döwründen içmeýen jamym.
+    Jamy meý sundugyň görmesin agýar,
+    Gelmenem aklyma, görmeýen känim.
+
+    Bolmuşam guwwas dek, ýüzmüşem köli,
+    Tapmyşam hemramy, tutmuşam ýoly,
+    Şowkuň şerabyndan bolmuşam däli,
+    Bilmen niçik geçer çäştim, şamym...
+
+    Tä nepes tendedir, tende jan bardyr,
+    Til saňa maýyldyr, çeşm intizardyr,
+    Çekdigim pygandyr, werzişim zardyr,
+    Käte bu dert ile geçer eýýamym...
+
+    Gözleriň jellatdyr, tilleriň aýýar,
+    Gamzaň bimar eder, ýüzleriň timar,
+    Mansur belasyna bolsam giriftar,
+    Giderem sen sary, süýreýip hamym.
+
+    Magtymguly, hoş hap2 içre ýatyrdym.
+    Emrine ugradym, iman getirdim,
+    Özümi unutdym, huşum ýitirdim,
+    Pyragy diýp çagyrsyn ol meniň namym.
+
+1 Saky – şerap guýan, içgi paýlaýan.
+2 Hap – uky.
+
+            Ýandyrar
+
+Wagt bolar ki, bir ýel düşer serime,
+Hyýal hüjüm eýläp, joşy ýandyrar;
+Ýüregim joş berse, aklym jem bolsa,
+Pikir basar, gaýgy huşy ýandyrar.
+
+Säher wagty derwüş nalyşa gelse,
+Bilinden ýüp alyp, boýnuna salsa,
+Taňry söýen bende bet doga kylsa,
+Pelegi titreder, arşy ýandyrar.
+
+Akmak özün akyl bilen deň eýlär,
+Bir iş tutar, soňrasyndan jeň eýlär,
+Zehiniň käýider, aklyň teň eýlär,
+Diýdigiň eýlemez, naşy ýandyrar.
+
+Magtymguly, hakdan piýala çekse,
+Piýala joş berse, hyýala çekse,
+Aşyklar bagryndan bir nala çekse,
+Daglary elendir, daşy ýandyrar.
+
+                          Aýryldym
+
+                Bilbilem, ahy-zar çekip,
+                Täze gülzardan aýryldym;
+                Gözden ganly ýaşym döküp,
+                Ol sewer ýardan aýryldym...
+
+                Ýara ýaraşar üç müçe,
+                Sypatyn söýlerem ençe.
+                Lebi şeker, agzy gunça,
+                Ol zülpi-tardan aýryldym.
+
+                Şirin janda ýokdur takat,
+                Jebri anyň jana rahat,
+                Gaşlary pitneýi-apat,
+                Çeşmi-hunhordan aýryldym.
+
+                Aýryldym gunça gülümden.
+                Syýa saçly sünbülimden,
+                Hoş owazly bilbilimden,
+                Şirin güftardan1 aýryldym.
+
+                Däli köňlüm arzymany,
+                Külli gözelleriň hany,
+                Sekiz jennetiň bostany,
+                Bakjaly bardan2 aýryldym.
+1 Şirin güftar – süýji sözli
+2 Bar – miwe.
+
+              Illeri bar diňli-diňli,
+              Sowuk suwly, ter öleňli,
+              Ili — gökleň, ady — Meňli,
+              Näzli dildardan aýryldym.
+
+              Magtymguly, aşyk mestan,
+              Bagladym şanyna destan,
+              Menzilgähi1 bagy-bostan.
+              Almaly nardan aýryldym.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Ýa jepbar',
+    'Jan joşguna geldi, ýandym, ýaryldym,
+       Bagyşlasaň neýlär ýarym, ýa jepbar.
+       Sangysyz söýüşdim, öýsüz aýryldym,
+       Bagyşlasaň neýlär ýarym, ýa jepbar.
+
+       Sözleşerdim, syrlaşardym ýar bile,
+       Ýüregimde ýar hyýaly bar bile,
+       Indi läkin aýyrdylar zor bile,
+       Bagyşlasaň neýlär ýarym, ýa jepbar.
+
+       Köňül hoşdur ýada salyp gezmände,
+       Ýadyma salmanda, yşkym gyzmanda,
+       Meni gamda goýdy, özi armanda,
+       Bagyşlasaň neýlär ýarym, ýa jepbar.
+1 Menzilgäh – bolýan ýeri, mekan, öý.
+
+Yhlas bilen söýmüşem men ol ýary,
+Jöwrendi jigerim, gitdi karary,
+Ol anda ah çeker, men munda – zary...
+Bagyşlasaň neýlär ýarym, ýa jepbar.
+
+Bardy pinhan-pinhan şirin sözümiz,
+Bolan işe haýran bolduk özümiz,
+Seýrserap bakmakdan doýmaz gözümiz,
+Bagyşlasaň neýlär ýarym, ýa jepbar.
+
+Sözüm saňa ýetmez, arzym etmäge,
+Işimiň rowajy ýokdur ýetmäge,
+Dilber derdi goýmaz meni ýatmaga.
+Bagyşlasaň neýlär ýarym, ýa jepbar.
+
+Magtymguly, dünýä köne jahandyr,
+Söýüşmeklik bu dessury-zamandyr.
+Jürümim çoh bolsa, keremiň kändir,
+Bagyşlasaň neýlär ýarym, ýa jepbar.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Nowruzdan seni',
+    'Bolmady bizge nesibiň,
+                   istedim güýzden seni,
+Diýdiň: ötsün gyş,
+                   tapar men täze nowruzdan seni,
+Saýladym-seçdim, sonam,
+                   bölejik gyzdan seni,
+Neçün biliň guçmadym,
+                   bildim tapyp uzdan seni,
+Isterem hakdan, gowuşdyrgaý
+                   maňa tizden seni.
+
+Söwdügim, seýa günde her gün ýadyňa
+                   salsaň meni,
+Günde ýüz katla tilär men ýaradan
+                   hakdan seni.
+Başky günde oda saldyň meni parahan
+                   bendeni,
+Hak götersin aradan şeýle rakyp
+                   şermendeni,
+Kyl bahyl bizden ýaňa, ynjytsalar
+                   sözden seni.
+
+Hak katynda sözüm ötmez,
+                   men kibi awara ýok,
+Ili-gün rehm eýlemezler,
+                   men kibi biçäre ýok,
+Ýüregim set paradyr,
+                   belli tenimde ýara ýok,
+Sen garyp sen, men pakyr men,
+                   sende, mende çäre ýok.
+Söwdügim, takdyry-hakdyr aýyrgan
+                   bizden seni.
+
+Bagyna girsem säher,
+                     bilbil bolup salsam oýun,
+Gaflata galsa rakyp,
+                     bir dem salyşsak gol boýun,
+Hakdan özge çäre ýokdur,
+                     ne kylaýmen, neýleýin,
+Inçe bil, şirin zyban,
+                     kepder topuk, sen gaz boýun,
+Saklasyn alla penahynda ýaman
+                     gözden seni.
+
+Haýryny duşman görüp,
+                    dostun çeker jebri-jepaň,
+Şeýle dildarlyk bolarmy
+                    görmeýen zowky-sapaň.
+Salsalar mizana,
+                    Balkan dagy hiç gelmez päheň,
+Aýdadyr Magtymguly,
+                    ähdiň ýalan, ýokdur wepaň,
+Biwepalar hup sowutmyşlar, sonam,
+                    bizden seni.
+
+    VI
+
+ELEGIÝALAR',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Azadym kany',
+    'Pelek, idär idim, sen duçar bolduň,
+         Gözümniň nurany – Azadym kany?
+         Ýüregim soguryp, seglere berdiň,
+         Şährimniň soltany – Azadym kany?
+
+         Ymamsyz galandyr, mesjit, mährabym,
+         Dogmady nur saçyp ol mahy-tabym,
+         Ýowuz galdym, sil alypdyr etrapym1 ,
+         Köňlümniň ummany — Azadym kany?
+
+         Şekerlikden zäher boldy sözlerim,
+         Zagpyran dek sargarypdyr ýüzlerim.
+         Kuwwat gitdi, gubarlandy gözlerim,
+         Münberim azany — Azadym kany?
+
+         Tört paslym nar boldy, daglar eridi,
+         Diriler uçdular, öli ýöridi,
+         Giden baryp haka maňlaý diridi,
+         Ilimniň zybany — Azadym kany?
+
+         Topraklar sil boldy, siller gum boldy,
+         Humlar jam boldular, jaýlar hum boldy,
+         Höwesler ýas boldy, pişäm gam boldy.
+         Ýüregim aramy — Azadym kany?
+1 Etrap – töwerek.
+
+Ölüler direlip, arza bardylar,
+Hakdan bir kelamny ýörüp sordular,
+Çoh ýalbaryp, «goýber» diýip durdular,
+Öli-diri döwrany — Azadym kany?
+
+Käpirler bolupdyr ýyglap musulman,
+Haka ýalbarypdyr Hydyr, Süleýman.
+Bug bolup göterlen arşa ol umman,
+Gökleňniň pälwany – Azadym kany?
+
+Armanym ýok, pelek, bir söweş kylsam,
+Ýa ýyksaň, basylsam, ýa seriň alsam.
+Seglere aş eýläp, bazarga salsam,
+Bagrymnyň reýhany – Azadym kany?
+
+Güwşlüler eşitgeç, bary ker boldy,
+Daglar eräp akdy, daşlar ýer boldy.
+Mollalar kuransyz, pirler kör boldy,
+Sahyplar kurany – Azadym kany?
+
+Zemin ýüzün syýa duman eýlediň,
+Diýgil, pelek, kimni aman eýlediň?
+Pyragyny, bak, biiman eýlediň, –
+Namysym, imanym – Azadym kany?',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Atamyň',
+    'Altmyş ýaşda nowruz güni, lu ýyly
+          Turdy ajal, ýolun tusdy1 atamyň,
+          Bu dünýäniň işi beýlemiş, beli,
+          Ömrüniň tanapyn kesdi atamyň.
+
+          Agyr döwletlere köňül goýmady,
+          Bu jahanyň eşretini söýmedi,
+          Esgýa şaldan artyk puşeş2 geýmedi,
+          Ahyret öýi boldy kasdy atamyň.
+
+          Diýrdi: dünýä durmaz, ömür-baky ýok,
+          Gündiz roza, gije bolsa uky ýok,
+          Müňkür bilmez, muhlyslaryň şeki ýok,
+          Pygamber dostudyr, dosty atamyň.
+
+          Görmesem, söýlemen oý bile çenden,
+          Maksadyna ýeter ýykylan çyndan,
+          Ýarysy melekden, ýarysy jyndan
+          Müjewürsiz bolmaz üsti atamyň.
+
+          Nukba3 diýrler, üç ýüz eren ugraşdy,
+          Çiltende atama nazarym düşdi,
+          Niçe barsam, heftenlere garyşdy,
+          Bular durar çyn peýwesti atamyň.
+1 Tusmak – gadymy türkmen dilinde tutmak.
+2 Puşeş – eşik, lybas, geýim.
+3 Nukba (birlik sany nakyb) – baştutanlar, ýolbaşçylar, serkerdeler.
+
+          Älem içre adam galmaz, at gezer,
+          Bu syrlardan jahan halky ýat gezer.
+          Jany jennet içre, gökde şat gezer,
+          Ýerde hoşwagt ýatar posty1 atamyň.
+
+          Magtymguly, gizle syryň bar içde,
+          Kämil tapsaň, kyl gullugyn her işde,
+          Magşar güni, elbet, girer behişde,
+          Her kim çyndan bolsa dosty atamyň.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Mübtela kyldy',
+    'Eýa dostlar, pelek jebri
+                 Başymny mübtela2 kyldy.
+                 Aýyrdy söwer balamdan,
+                 Ýüregimni ýara kyldy...
+
+                 Ötdi hoş wagt, horram wagtym,
+                 Bozuldy tylladan tagtym.
+                 Ýaňy biten bir daragtym
+                 Hazan bady3 pena kyldy...
+1 Post – deri, ham, jeset.
+2 Mübtela – aladaly, başagaý.
+3 Hazan bady – hazan ýeli.
+
+                 Şum ajala bolmaz çäre,
+                 Jebrinden galdym bu zara,
+                 Ýüregime saldy ýara,
+                 Garyp jismim eda kyldy.
+
+                 Indi bir dem kararym ýok,
+                 Bu menzilde durarym ýok,
+                 Bu sözden hiç habarym ýok,
+                 Habarsyz binowa kyldy.
+
+                 Ýanyp perwana dek her dem,
+                 Ýüregim dolduryp ýüz gam,
+                 Kaddym ham1 , gözlerim pürnem2 ,
+                 Bu janyma jepa kyldy.
+
+                 Gamyndan örtenip suzan3 ,
+                 Çeker men nalaýy-efgan,
+                 Pyrakynda4 gözüm girýan,
+                 Neteý, neýleý, geda kyldy...
+
+                 Magtymguly, çeker perýat,
+                 Meniň ahwalyma heýhat!
+                 Pelekniň elgiden5 müň dat,
+                 Meniň bagtym gara kyldy...
+1 Ham – egri, bükük.
+2 Pürnem – ýaşdan doly.
+3 Suzan – ýakyjy, ýandyryjy.
+4 Pyrak – aýralyk
+5 Elgiden – elinden',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Yzlamaýan bolarmy',
+    'Bir käkilik aldyrsa türpe balasyn,
+         Saýraý-saýraý, yzlamaýan bolarmy?
+         Bir bilbil ýitirse gyzyl lälesin,
+         Hasratyndan sözlemeýen bolarmy?
+
+         Kürresi elinden gitse eşegiň,
+         Telmirip tört ýana gözlär uşagyn,
+         Akmaýa aldyrsa elden köşegin,
+         Bagryn bozup, bozlamaýan bolarmy?
+
+         Bala sesin diňlär, asyp gulagyn,
+         Döke-döke göz ýaşynyň bulagyn,
+         Ak jeren aldyrsa elden owlagyn,
+         Mäleý-mäleý, gözlemeýen bolarmy?
+
+         Agsagyň elinden alsaň agajyn,
+         Ýaman derde düşer, tapmaz alajyn,
+         Bir güýçli duşmana duşsa mekejin,
+         Jojugyny gizlemeýen bolarmy?
+
+         Aýralyga adam ogly neýlesin?
+         Kim galar, görmeýen ajal hilesin?
+         Magtymguly, haýwan bilse balasyn,
+         Ynsan bagryn duzlamaýan bolarmy?1
+
+1 «Adam ogly ýyglamaýan bolarmy?» diýen warianty hem bar.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Gelmedi',
+    'Göçi-gony bile gitdi Abdylla,
+Hemme giden geldi, bular gelmedi.
+Mämmetsapa gitdi kömek bermäge,
+Uzadanlar geldi, bular gelmedi.
+
+Enesinden aýry ýatmaz oglanlar,
+Ýa reb, gören barmy bulardan, iller?
+Aýlanar aýlary, dolanar ýyllar,
+Aýlar, ýyllar geldi, bular gelmedi.
+
+Hasratdan sagaldy zäher dadanlar,
+Hakyn alyp geldi goýun haýdanlar,
+Alty aýlyk ýola – Käbe gidenler
+Hajy bolup geldi, bular gelmedi.
+
+Ýyrakdan, ýakyndan baryp gelenler,
+Barmydyr bulardan görüp-bilenler?
+Hindistana bezirgenlik kylanlar,
+Malyn satyp geldi, bular gelmedi.
+
+Darydy bir doly, ýolukdy baran,
+Birin ýurdy bilen eýledi weýran,
+Birisiniň ýary yzynda haýran,
+Gözleri ýoldadyr, bular gelmedi.
+
+Ýykylanyň bagry ýerden galmazmy?
+Hiç baran gelmezmi, aglan—gülmezmi?
+Ötenden-geçenden sorsaň, bilmezmi?
+Bilinmezler geldi, bular gelmedi.
+
+Magtymguly, derdi goýmaz ýatmaga,
+Ugrun bilmez sorap-sorap gitmäge,
+Ýerden jogap çykmaz habar tutmaga,
+Gören-bilen barmy, bular gelmedi.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Çekem Ýusup diýe-diýe',
+    'Men Ýakubam, ah-u zary
+   Çekem Ýusup diýe-diýe;
+   Gözlerimden ganly ýaşy
+   Dökem Ýusup diýe-diýe.
+
+   Pelek aglar göz ýaşyma,
+   Ne söwda saldyň başyma,
+   Mejnun bolup, dag başyna
+   Çykam Ýusup diýe-diýe.
+
+   Her tarapdan çülke-çülke,
+   Bulut oýnar, salar kölge,
+   On iki dag, ýedi jülge
+   Sökem Ýusup diýe-diýe.
+
+Gitdi Ýusup, gelmez habar,
+Aglap turar men her säher,
+Gala-gala, şäher-şäher
+Sökem Ýusup diýe-diýe.
+
+Hasratyma pelek aglar,
+Aşyk boldy tilsiz zaglar,
+Perhat kimin beýik daglar
+Ýykam Ýusup diýe-diýe.
+
+Öter eýýam döne-döne,
+Geçer bu jan ýana-ýana,
+Ertir-agşam Aýa, Güne,
+Bakam Ýusup diýe-diýe.
+
+Meger Ýusup düşdi çaýa,
+Jemalyň diýp bakam Aýa,
+Yrak zemin, Kerbelaýa
+Bakam Ýusup diýe-diýe.
+
+Ýusup gezer tilden-tile,
+Şeýda bolup gülden-güle,
+Sorag salyp, ilden-ile
+Çykam Ýusup diýe-diýe.
+
+Magtymguly, dost ýüzünden,
+Durmaz akar ýaş gözünden,
+Bilbil bolup, ýar sözünden
+Okam Ýusup diýe-diýe.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Abdylla',
+    ',
+Hemme giden geldi, bular gelmedi.
+Mämmetsapa gitdi kömek bermäge,
+Uzadanlar geldi, bular gelmedi.
+
+Enesinden aýry ýatmaz oglanlar,
+Ýa reb, gören barmy bulardan, iller?
+Aýlanar aýlary, dolanar ýyllar,
+Aýlar, ýyllar geldi, bular gelmedi.
+
+Hasratdan sagaldy zäher dadanlar,
+Hakyn alyp geldi goýun haýdanlar,
+Alty aýlyk ýola – Käbe gidenler
+Hajy bolup geldi, bular gelmedi.
+
+Ýyrakdan, ýakyndan baryp gelenler,
+Barmydyr bulardan görüp-bilenler?
+Hindistana bezirgenlik kylanlar,
+Malyn satyp geldi, bular gelmedi.
+
+Darydy bir doly, ýolukdy baran,
+Birin ýurdy bilen eýledi weýran,
+Birisiniň ýary yzynda haýran,
+Gözleri ýoldadyr, bular gelmedi.
+
+Ýykylanyň bagry ýerden galmazmy?
+Hiç baran gelmezmi, aglan—gülmezmi?
+Ötenden-geçenden sorsaň, bilmezmi?
+Bilinmezler geldi, bular gelmedi.
+
+Magtymguly, derdi goýmaz ýatmaga,
+Ugrun bilmez sorap-sorap gitmäge,
+Ýerden jogap çykmaz habar tutmaga,
+Gören-bilen barmy, bular gelmedi.
+
+  Çekem Ýusup diýe-diýe
+
+   Men Ýakubam, ah-u zary
+   Çekem Ýusup diýe-diýe;
+   Gözlerimden ganly ýaşy
+   Dökem Ýusup diýe-diýe.
+
+   Pelek aglar göz ýaşyma,
+   Ne söwda saldyň başyma,
+   Mejnun bolup, dag başyna
+   Çykam Ýusup diýe-diýe.
+
+   Her tarapdan çülke-çülke,
+   Bulut oýnar, salar kölge,
+   On iki dag, ýedi jülge
+   Sökem Ýusup diýe-diýe.
+
+Gitdi Ýusup, gelmez habar,
+Aglap turar men her säher,
+Gala-gala, şäher-şäher
+Sökem Ýusup diýe-diýe.
+
+Hasratyma pelek aglar,
+Aşyk boldy tilsiz zaglar,
+Perhat kimin beýik daglar
+Ýykam Ýusup diýe-diýe.
+
+Öter eýýam döne-döne,
+Geçer bu jan ýana-ýana,
+Ertir-agşam Aýa, Güne,
+Bakam Ýusup diýe-diýe.
+
+Meger Ýusup düşdi çaýa,
+Jemalyň diýp bakam Aýa,
+Yrak zemin, Kerbelaýa
+Bakam Ýusup diýe-diýe.
+
+Ýusup gezer tilden-tile,
+Şeýda bolup gülden-güle,
+Sorag salyp, ilden-ile
+Çykam Ýusup diýe-diýe.
+
+Magtymguly, dost ýüzünden,
+Durmaz akar ýaş gözünden,
+Bilbil bolup, ýar sözünden
+Okam Ýusup diýe-diýe.
+
+             Abdylla
+
+Sen gideliň dokuz ýyldyr öteni,
+Kaýda watan tutduň, gardaş Abdylla!
+Dolanmazmy ynsanyýetiň gideni,
+Kaýda watan tutduň, gardaş Abdylla!
+
+Daga arzym aýdyp, tutdum habaryň,
+Lal bolupdyr tili, diýmez azaryň,
+Ata-enesiz nedir seniň kararyň?
+Kaýda watan tutduň, gardaş Abdylla!
+
+Gorky peýdasy ýok gidejek jana,
+Ömür ahyr boldy, doldy peýmana,
+Ýa-da sen düşdüňmi düýpsüz ummana?
+Kaýda watan tutduň, gardaş Abdylla?
+
+Üstümize hijran ody sepildi,
+Kuwwatym gidipdir, dyzym epildi,
+Gan ýyglap, atamyň bili büküldi,
+Kaýda watan tutduň, gardaş Abdylla.
+
+Ýüzüm tutup çykdym jandar baryna,
+Özüm rowa geldim hijran daryna,
+Döze bilmen beýtinleriň zaryna,
+Kaýda watan tutduň, gardaş Abdylla.
+
+       Ilde-günde ýokdur meniň kararym,
+       Dert üstüne artdy gaýta azarym,
+       Ýat boldy watanym, öýüm-öwzarym,
+       Kaýda watan tutduň, gardaş Abdylla?
+
+       Güwş1 tutar men her diýilen sözlere,
+       Jepa berdiň hijran bilen bizlere,
+       Özüm urar boldum oda-közlere,
+       Kaýda watan tutduň, gardaş Abdylla?
+
+       Gülüp-oýnamadyk bile şat bolup,
+       Başdan gitdiň, bütin bizden ýat bolup,
+       Magtymguly zar aglapdyr, mat bolup,
+       Kaýda watan tutduň, gardaş Abdylla?',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Çowdurhan üçin',
+    'Ahmet patyşadan habar almaga,
+       Umyt etdi iller Çowdurhan üçin,
+       Sag baryp, salamat gaýdyp gelmäge,
+       Oňmady ykballar Çowdurhan üçin.
+
+       Ýaplar doňup galdy, ýagyşlar syzman,
+       Bulut bökelek saldy, bu derde dözmän,
+       Zemin zaýa boldy, pelekler perman,
+       Gözde ýaşy siller Çowdurhan üçin.
+1 Güwş – gulak
+
+       Kaza gahra mündi, perin syndyrsa,
+       Pelek hyýal etdi, mährin indirse,
+       Derýa joşa geldi, suwun gandyrsa,
+       Muştak boldy köller Çowdurhan üçin.
+
+       Yzyňda boldular il intizaryň,
+       Umyt bile gezdi Annahal ýaryň,
+       Atanazar boldy çekerge zaryň
+       Gözleý-gözleý ýollar Çowdurhan üçin.
+
+       Barsa, paýy belli soltanda, handa,
+       Iller bilmeý galdy, armany janda,
+       Kazadyr, kysmatdyr Ýeztde, Kirmanda,
+       Meger tartdy ganlar Çowdurhan üçin.
+
+       Gurralar güň boldy, dallar şum boldy,
+       Ýaranlar kem boldy, ýollar bim1 boldy,
+       Çeşmeler höşk boldy, daşlar gum boldy,
+       Güwýä2 boldy tiller Çowdurhan üçin.
+
+       Söýle, Magtymguly, älem bilsinler,
+       Jaýy jennetdedir, güwä bolsunlar,
+       «Hak rehmet etsin» diýp, doga kylsynlar
+       Tamam ulus-iller Çowdurhan üçin.
+
+1 Bim – gorkuly.
+2 Güwýä – saýraýan, gepleýän manysynda.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Geçdi diýdiler',
+    'Eý ýaranlar, ýowuz destan tapyldy,
+Bir goçak panydan geçdi diýdiler.
+Ahyrzaman boldy, aý-gün tutuldy,
+Aý-günüň şuglasy ýaşdy diýdiler.
+
+Nägehan ugrady aýralyk dagy,
+Seýdim tarhan çeker derdi pyragy,
+Ömrüniň hasyly, otuz çyragy,
+Bady-hazan urup öçdi diýdiler.
+
+Gitdi Öwez, geldi ýene köp zatlar,
+Pozuldy söhbetler, gam boldy şatlar,
+Gardaşlar, syrdaşlar, ýakynlar, ýatlar
+Gara geýip, gan ýyglaşdy diýdiler.
+
+Bedew atly, bek kemerli, ýaragly,
+Döwleti, zynaty malyna bagly.
+Myhmanly bir ärdir, zatly, otagly,
+Bir belent ordasy çaşdy diýdiler.
+
+Ýigitlik hasraty başdan ötermiş,
+Ogulsyzlyk barça işden betermiş,
+Zürýatsyz ýigidiň orny ýitermiş,
+Ýurdy ýok, kerweni geçdi diýdiler.
+
+Magtymguly diýr, Türküstan töresi,
+Bir goçakdyr ýeriň, suwuň seresi,
+Ýygyn görki, ýow gününiň öresi
+Üşbu gara ýeri guçdy diýdiler...',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Zarlar içinde',
+    'Çowdurhan görejim, köňül diregim,
+Sen wepat bolup sen zarlar içinde,
+Gökleňde pälwanym, ile geregim,
+Halky goýup gitdiň narlar içinde.
+
+Gele bilmez idi badyňdan duşman.
+Gelen tapdy gitdi zoruňdan puşman,
+Goja dagdan bäri, gökleňe aşman,
+Bizi goýup gitdiň marlar içinde.
+
+Pelek seniň gül ömrüňi soldurdy,
+Hazan degdi, now gunçaňy ýoldurdy,
+Gara daglar dözmen, serin galdyrdy,
+Çeşmim ýaşy duman-garlar içinde.
+
+Magtymguly, hemdem, akyl syrdaşyň,
+Tutabilmez özün, döküp göz ýaşyn,
+Duman aldy daglar – kemeriň başyn,
+Aý-günler batdylar zarlar içinde.',
+    'Magtymguly, Aşgabat, 1959'
+);
+
+SET FOREIGN_KEY_CHECKS = 1;
