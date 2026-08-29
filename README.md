@@ -12,6 +12,7 @@ Open, machine-readable datasets related to Turkmenistan.
 | Poetry | 605 works by seven Turkmen poets | MySQL 8+ SQL | [Guide](poetry/README.md) |
 | Stories | Page-level text extracted from Turkmen stories and prose | JSON, SQLite, MySQL SQL | [Guide](stories/README.md) |
 | Colors | Turkmen color names, English translations, HEX values, and categories | MySQL 8+ SQL | [Guide](colors/README.md) |
+| Dictionary | 18,674 searchable Turkmen headwords with pronunciations, definitions, and examples | JSON | [Guide](dictionary/README.md) |
 
 Each dataset documents its structure, import process, limitations, and available sources in its own directory.
 
@@ -38,7 +39,6 @@ Contributions may include new datasets, corrections, sources, translations, or a
 
 ## Ideas for future datasets
 
-- A Turkmen dictionary with parts of speech, definitions, synonyms, antonyms, and example sentences
 - Proverbs, sayings, and riddles with topic labels
 - Turkmen given names with gender, meaning, and origin
 - District codes, postal codes, and telephone codes
