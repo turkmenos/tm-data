@@ -21,7 +21,7 @@ Each dataset documents its structure, import process, limitations, and available
 Clone the repository:
 
 ```sh
-git clone https://github.com/dayanchm/tm-data.git
+git clone https://github.com/turkmenos/tm-data.git
 cd tm-data
 ```
 
