@@ -1,0 +1,151 @@
+[
+  {
+    "name": "Abat",
+    "description": "Şikestsiz‚ bat."
+  },
+  {
+    "name": "Azat",
+    "description": "erkana‚ azat."
+  },
+  {
+    "name": "Aman",
+    "description": "sag-aman dünýä inen."
+  },
+  {
+    "name": "Anna",
+    "origin": "Arabic",
+    "description": "anna güni doglan."
+  },
+  {
+    "name": "Dursun",
+    "variants": [
+      "Tursun"
+    ],
+    "description": "ölmesin‚ uzak ýaşasyn‚ dursun."
+  },
+  {
+    "name": "Jöwher",
+    "description": "gymmat bahaly."
+  },
+  {
+    "name": "Kekil",
+    "variants": [
+      "Käkil"
+    ],
+    "description": "çokul‚ depede goýulýan saç‚ ýagny çokully."
+  },
+  {
+    "name": "Kiçi",
+    "description": "çagalaryň iň kiçisi."
+  },
+  {
+    "name": "Körpe",
+    "description": "iň kiçi çaga."
+  },
+  {
+    "name": "Maksat",
+    "origin": "Arabic",
+    "description": "makastly‚ maksat-myrada ýetiren."
+  },
+  {
+    "name": "Mamur",
+    "origin": "Arabic",
+    "description": "ýaşaýjy‚ gülleýän‚ ömür sürýän."
+  },
+  {
+    "name": "Meňli",
+    "description": "meňi‚ haly bolan."
+  },
+  {
+    "name": "Mährem",
+    "origin": "Persian",
+    "description": "1) Muharram aýynda doglan (Bharam ýa-da Mahram-Mars planetasy‚ ýaldyrawyk; 2) mährem‚ ýakyn."
+  },
+  {
+    "name": "Nazly",
+    "variants": [
+      "näzli"
+    ],
+    "description": "1) «Nyýazly» diýen adyň gysga görnüşi; 2) näz-kereşmeli gyz."
+  },
+  {
+    "name": "Nar",
+    "origin": "Arabic",
+    "description": "nary‚ ýagny bedeninde uly gyzgylt tegmili bolan."
+  },
+  {
+    "name": "Nawruz",
+    "origin": "Persian",
+    "description": "täze gün‚ ýagny täze ýylyň ilkinji güni doglan."
+  },
+  {
+    "name": "Nur",
+    "origin": "Arabic",
+    "description": "şöhle‚ nur."
+  },
+  {
+    "name": "Nyýaz",
+    "origin": "Persian",
+    "description": "diläp alnan‚ sowgat berlen (goşma atlaryň sostaw bölegi)."
+  },
+  {
+    "name": "Sabyr",
+    "origin": "Arabic",
+    "description": "sabyrly‚ takatly."
+  },
+  {
+    "name": "Saýat",
+    "origin": "Arabic",
+    "description": "awçy‚ adamlaryň göwnüni awlap bilýän."
+  },
+  {
+    "name": "Togta",
+    "description": "dur‚ gitme‚ aýak çek‚ ölmesin."
+  },
+  {
+    "name": "Tuwak",
+    "description": "tuwakly‚ perdeli doglan."
+  },
+  {
+    "name": "Täze",
+    "related_names": [
+      "Täzebaý",
+      "Täzegül"
+    ],
+    "description": "täzelendi‚ täzelensin (şu ogluň yzyndan gyz ýa-da gyzyň yzyndan ogul bolsun)."
+  },
+  {
+    "name": "Täç",
+    "variants": [
+      "Täçli",
+      "Täşli"
+    ],
+    "description": "1) täji )uly garamatyl tegmili‚ haly) bolan; 2) başymyzyň täji."
+  },
+  {
+    "name": "Umyt",
+    "description": "umydy‚ islegi ödän."
+  },
+  {
+    "name": "Hally",
+    "description": "haly tegmili bolan."
+  },
+  {
+    "name": "Şirin",
+    "origin": "Persian",
+    "description": "süýji‚ tagamly‚ şirin dilli."
+  },
+  {
+    "name": "Erke",
+    "description": "erkin ösýän‚ göwnüne degilmeýän."
+  },
+  {
+    "name": "Ýunus",
+    "origin": "Hebrew",
+    "description": "kepderi‚ ýagny owadan."
+  },
+  {
+    "name": "Ýagşy",
+    "description": "oňat‚ gowy."
+  }
+]
