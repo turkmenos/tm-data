@@ -15,6 +15,10 @@ A collection of Turkmen poetry prepared in SQL format for databases, application
 | Nobatguly Rejepow | 48 | [`sql/nobatguly-rejepov/poetry.sql`](sql/nobatguly-rejepov/poetry.sql) |
 | Magtymguly Pyragy | 130 | [`sql/pyragy/pyragy.sql`](sql/pyragy/pyragy.sql) |
 | Seýdi | 29 | [`sql/seydi/poetry.sql`](sql/seydi/poetry.sql) |
+| Zelili |  | [`sql/zelili/yedigen-zelili.sql`](sql/zelili/yedigen-zelili.sql) |
+| Mataji |  | [`sql/mataji/yedigen-mataji.sql`](sql/mataji/yedigen-mataji.sql) |
+| Magrupy |  | [`sql/magrupy/yedigen-magrupy.sql`](sql/mataji/yedigen-magrupy.sql) |
+| Kemine |  | [`sql/kemine/kemine.sql`](sql/kemine/kemine.sql) |
 | **Total** | **605** | |
 
 Counts are based on the `poems` records present in the SQL files.
