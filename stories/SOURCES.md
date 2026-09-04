@@ -11,6 +11,17 @@ The website exposes a large catalog, including Turkmen fiction, folk tales, chil
 
 No full text from Kitaphana may be committed to this repository until the applicable work and edition are confirmed as public domain, explicitly openly licensed, or covered by written permission. A `robots.txt` rule, public download button, or ability to read a document online is not a copyright license.
 
+## Candidate source: Ene dilim
+
+- Website: [enedilim.com](https://enedilim.com/)
+- Role: possible source location for books carrying `enedilim.com` page headers or footers
+- Reviewed: 2026-09-04
+- Full-text import status: **not authorized**
+
+Several extracted story files contain repeated `enedilim.com` watermarks in their page text. The current website includes a `Kitaphana` section, but no general open-data or open-content license permitting bulk redistribution or LLM training was found during review.
+
+No full text from Ene dilim may be committed to this repository until the applicable work and edition are confirmed as public domain, explicitly openly licensed, or covered by written permission. A page watermark, public download button, or ability to read a document online is not a copyright license.
+
 ## Required source record
 
 For every imported work, document:
