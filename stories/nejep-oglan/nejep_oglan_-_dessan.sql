@@ -1,0 +1,599 @@
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS=0;
+DROP TABLE IF EXISTS `page_columns`;
+DROP TABLE IF EXISTS `pages`;
+DROP TABLE IF EXISTS `documents`;
+START TRANSACTION;
+CREATE TABLE `documents` (`id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,`source_file` VARCHAR(255) NOT NULL,`source_path` TEXT NOT NULL,`created_at` VARCHAR(35) NOT NULL,`page_count` INT UNSIGNED NOT NULL,PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE `pages` (`id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,`document_id` BIGINT UNSIGNED NOT NULL,`page_number` INT UNSIGNED NOT NULL,`text` LONGTEXT NOT NULL,`character_count` INT UNSIGNED NOT NULL,PRIMARY KEY (`id`),UNIQUE KEY `document_page` (`document_id`,`page_number`),CONSTRAINT `pages_document_fk` FOREIGN KEY (`document_id`) REFERENCES `documents` (`id`) ON DELETE CASCADE) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+INSERT INTO `documents` (`id`,`source_file`,`source_path`,`created_at`,`page_count`) VALUES (1,'nejep_oglan_-_dessan.pdf','/Users/macmini/Desktop/pdf-to-stories/input/nejep_oglan_-_dessan.pdf','2026-09-04T05:23:40Z',74);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (1,1,1,'enedilim.com
+
+NEJEP OGLAN dessan',32);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (2,1,2,'NEJEP OGLAN (DESSAN)
+
+«Türkmenistan» neşirýaty, Aşgabat, 1977',61);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (3,1,3,'«Nejep oglan» dessany awtory näbelli dessanlaryň biridir. Bu dessanda bagşylar sungatynyň dowam edişi, halk arasyna ýaýradylyşy, onuň jadylaýjy nepis ýollary hakynda gürrüň berlip, oňa halk köpçüliginiň we agalyk ediji toparlaryň garaýşy çeperçilik bilen beýan edilýär. Waka esasan Elbent we Nejep diýen bagşylaryň gatnaşmagynda dowam edýär. Dessanyň bu neşiri belli bagşy Mämmedanna Sopyýewiň dilinden ýazylyp alnan nusga esasynda çapa taýýarlandy.
+
+— Çapa taýýarlan K. Seýitmyradow Redaktor D. Haldurdy Suratçy A. Agaýewa Surat redaktory D. Mämijikow Tehnik redaktor T. Keçäýewa Korrektor O. Ýowyýew — Ýygnamaga berildi 12.04.1976. Çap etmäge rugsat edildi 13.12.1976. PDF-a geçirildi 21.01.2018.
+
+— «Türkmenistan» neşirýaty, 1976',732);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (4,1,4,'Mazmuny
+
+I Sözbaşy 1
+
+II Nejep oglan 13
+
+III Sözlük 66
+
+ii enedilim.com',71);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (5,1,5,'SÖZBAŞY
+
+Awtorynyň kimdigi barada ynançly maglumat bolmadyk, bir eýýämden bäri bagşylaryň repertuaryna girip, diňe şolaryň ýatdan aýtmaklary arkaly biziň günlerimize gelip ýeten eserleriň biri-de «Nejep oglan» dessanydyr. «Nejep oglan» dessanynyň teksti 1939-njy ýyldan başlap, aýry-aýry bagşylaryň dilinden ýazylyp alynýar. Häzir biziň elimizde dessanyň köneürgençli bagşylar: Mämmedanna Sopyýewden, Nury Halykowdan, Artyk Durdyýewden, tagtaly bagşylar: Öre Seýitmädowdan, Öre Käbäýewden, Gylyç Ödäýewden ýazylyp alnan doly wariantlary bar. Dessanyň ähli wariantlarynyň sýužet ýordumynyň birmeňzeşräk bolmagyna garamazdan, olaryň her birinde dürli häsiýetdäki tapawutlara-da duş gelinýär: Bar wariantlar ilki bilen möçber tarapdan tapawutlanýar. Şygyr setirleriniň sanynyň köplügi boýunça Mämmedanna Sopyýewiň warianty birinji orunda, Nury Halykowyňky ikinji, Öre Käbäýewiňki üçünji, Öre Seýitmädowyňky dördünji, Artyk Durdyýew bilen Gylyç Ödäýewiňki bolsa soňky orunlarda durýarlar. Eserde duş gelýän geografik atlar dürlüçe berilýär. Mämmedannanyň wariantynda Soltanesen patyşanyň hökümdarlyk edýän ýurdy «Ýemen ili» bolsa, Nury bagşy hem Öre Käbäýewiňkide «Harazmin welaýaty», Öre Seýitmädowyňkyda «Ziýar welaýaty», Artyk bagşynyňkyda «Müsür ýurdy» diýlip görkezilýär. Nury hem Artyk bagşynyň wariantlarynda patyşanyň ady-da üýtgeşik gelýär (Mämmetsöýün, Mämmedesen). Wariantlaryň ählisinde Nejep Aşygaýdyňyň ýanyna aýdym-saz öwrenip, atalygyny ýeňmek üçin gidýän bolsa-da, Nury
+
+1 enedilim.com',1498);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (6,1,6,'hem Artyk bagşynyň wariantlarynda hiç hili aýdyşyk, güýç synanyşma ýok. Nejep tötänden patyşanyň serpaýyna mynasyp bolýar. Elbent bolsa diňe garrylygy zerarly köşkden kowulýar. Wariantlaryň köpüsinde Nejep ýeke özi bir çatmada ýaşaýan kempiri Sona üçin sawçylyga ýollaýar, Elbendiň şol kempire ýüzlenip aýdan «Dünýädir» şygry diňe Nury bagşynyň wariantynda duş gelýär. Genje-Garabagda Elbendiň Sona bilen aýdyşygy, Sonanyň Elbent bilen gaýdan wagtynda ýurdy bilen hoşlaşyp aýdan «Daş galdy» şygry Nury bagşyda, Elbendiň Sonany getireninden soň Soltanesen patyşadan rugsat sorap aýdan «Bäş günden bir» şygry Nury hem Artik bagşyda, Nejebiň Aşygaýdyň bilen aýdyşygy («Habar ber – Şeýledýr») Nury bagşyda, Nejebiň Soltanesen patyşa ýüzlenip aýdan «Hak salamyn aldyňyzmy?» şygry diňe Nury bagşyda, Nejebiň Mylaýyma ýüzlenip aýdan «Oýan indi» şygry diňe Nury hem Artyk bagşyda duş gelýär. Dessanyň wariantlary aýry-aýry şygyrlaryň bir bagşynyň wariantynda bolup, beýlekisinde ýoklugy bilen tapawutlanman, şol bir şygryň özi bent sanlarynyň az-köplügi, bentleriň, setirleriň many tarapdan başga-başgalygy bilen-de tapawutlanýarlar. Dessanyň personažlarynyň biri bolan Ahmet begiň kimdigi barada hem dürlüçe maglumat berilýär. Ol Nury bagşyda «patyşanyň baş wezirleriniň biri», Mämmedanna bilen Gylyç Ödäýewde «patyşanyň inisi», Öre Seýitmädowda «bir şäheriň baştutany», Artyk bagşyda «Mylaýym hanyň daýysy» diýlip görkezilýär. Dessanyň wariantlarynda Nejebiň ölümden halas edilişi-de dürlüçe berilýär. Mämmedanna, Öre Käbäýew, Öre Seýitmädowda ony Ahmet serdar halas edip, aşyklary öz ýurduna alyp gidýän bolsa, Nury Halykow bilen Artyk Durdyýewiň wariantlarynda Nejebiň ölüme höküm edilmegine sebäp bolan Abadan kempiriň hilesi paş edilip, aşyklary hut patyşanyň özi maksatlaryna ýetirýär. «Nejep oglan» dessanynyň bize belli wariantlarynyň möçber taýdan has ulusy, ideýa-çeperçiligi taýdan has oňady Mäm-
+
+2 enedilim.com',1916);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (7,1,7,'medanna Sopyýewden (1884-1944) ýazylyp alnan wariantdyr. Bagşy maşgalasyndan çykan Mämmedanna diňe bir öz raýonynda däl, Ahal töwereklerinde Gara oglan ady bilen, Garagalpagystanyň aýry-aýry ýerlerinde Ýomut bagşy ady bilen oňat tanalypdyr. Döwrüniň belli bagşysy Sopy bagşy Mämmedanna ýaş çagaka aradan çykypdyr. Mämmedanna ilkinji bagşyçylyk tälimini öz agasy Kakyş bagşydan alypdyr. Mämmedanna «Hüýrlukga – Hemra», «Şasenem – Garyp» dessanlaryny, «Görogly» eposynyň käbir şahalaryny bilen hem bolsa, onuň toýda-tomaşada iň köp aýdýany «Nejep oglan» dessany eken. Belli saz öwreniji W. Uspenskiý 1926-njy ýylyň aprel aýynyň 26-synda şol wagtlar Tagta raýonynda ýaşan Mämmedanna bagşy bilen duşuşypdyr hem onuň ýerine ýetirmeginde «Taý atym, gel», «Goşa dest», «Aýralyk», «Buzly» aýdymlaryny nota geçiripdir. «Nejep oglan» dessany N. Hojaýew hem P. Agalyýew tarapyndan çapa taýynlanyp, ilkinji gezek 1943-nji ýylda neşir edilipdir. Dessanyň neşir edilmegi edebiýat jemgyýetçiliginiň arasynda uly gyzyklanma döredipdir. Meşhur alym professor Ý. E. Bertels bu dessana bagyşlap, «Nejep oglan» şahyr hakdaky türkmen romanydyr» (1946 ý.), «Şahyr hakda türkmen poemasy» (1947 ý.) atly makalalaryny ýazypdyr. Soňra S. Gutlyýewa «Nejep oglan» dessanyna bagyşlap, ýörite dissertasion iş ýazdy. Dessan ikinji gezek B. Ahundow tarapyndan çapa taýynlanyp, 1960-njy ýylda neşir edildi. Emma bu neşirleriň ikisi-de belli bir wariantyň esasynda däl-de, dürli wariantlaryň gatyşdyrylmagy netijesinde düzülen tekstlerdir. Dessanyň eliňizdäki şu neşiri bolsa diňe Mämmedanna Sopyýewiň warianty esasynda çapa taýynlandy. Türkmen dessanlary, onuň folklora ýa-da ýazuw edebiýatyna degişlidiklerine garamazdan, köplenç söýgi gatnaşyklary bilen bagly bolan wakalary öz içine alýar. «Şasenem – Garyp», «Saýatly Hemra», «Zöhre – Tahyr», «Gül – Bilbil» ýaly onlarça
+
+3 enedilim.com',1856);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (8,1,8,'dessanlarda dürli meseleler goýulsa-da, olaryň hemmesi söýgi meselesiniň daşyna jemlenendir. «Nejep oglan» dessany özüniň ideýa-tematik ugry boýunça türkmen dessanlarynyň köpüsinden tapawutlanýar. Dessanda ýaýbaňlanýan wakalaryň ählisi bagşylaryň durmuşy bilen baglanyşykly gidýär. Türkmen halkynyň medeni durmuşynda bagşylaryň oýnan we oýnaýan roly örän uludyr. Beýik Oktýabr sosialistik rewolýusiýasyndan ozal bagşylaryň türkmen halkynyň öňündäki medeni hyzmaty has-da köptaraply bolupdyr. Olar diňe aýdymçylar, sazandalar bolmak bilen çäklenmän, halk döredijiliginiň, edebiýatyň ajaýyp nusgalaryny halkyň arasyna ýaýratmak bilen, teatryň, kitaphananyň, gazet-žurnalyň, radionyň hyzmatyny-da amala aşyrypdyrlar. Asyrlar boýy bagşylaryň ýerine ýetirmeginde dilden-dile geçip, biziň günlerimize gelip ýeten edebi mirasymyz indi neşir edilip, giň halk köpçüligine ýetirilýär. Türkmen halky öz bagşylaryna uly hormat goýýar. Türkmen halkynyň bagşylara bolan söýgüsi halk döredijiligi eserlerinde-de, klassyky edebiýatda-da şöhlelenipdir. Bagşynyň, aýdym-sazyň, poeziýanyň täsir edijilik güýji, onuň ähmiýeti köne edebi mirasymyzyň içinden eriş-argaç bolup geçýär. «Nejep oglan» dessanynyň içinde ýaýbaňlanýan wakalar, gahrymanlarynyň hereketleri bizi sungatyň entek sinkretik, ýagny köp taraply hyzmaty ýerine ýetirýän döwrüne alyp gidýär. Biziň günlerimizde sungatyň dürli pudaklary bolup, sungat wekilleriniň her biriniň bir pudak boýunça hünäri bar: bagşy, artist, şahyr, suratkeş, kompozitor we ş. m. Emma adamzat jemgyýetiniň irki döwürlerinde şeýle bölünişik bolmandyr. Sungatyň dürli pudaklarynyň ýerine ýetirýän hyzmatyny diňe bir adam amala aşyrypdyr. Dessanyň gahrymanlarynyň alyp barýan işlerini göz öňünde tutsaň, Aşygaýdyňyň, Elbendiň, Nejebiň, Nowruzyň hünärleriniň diňe bir bagşylykdan ybarat däldigi görünýär. Olar bagşy bolmak bilen bilelikde, ýatdan döredýän şahyrlar hökmünde-de göz öňüne gelýär. Aşygaýdyň Nejebi döredijilik synagyndan geçirende ilkinji nobatda onuň
+
+4 enedilim.com',2000);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (9,1,9,'ýatdan döretmek ukybyny göz öňünde tutýar. Aşygaýdyň Nejebe onuň şahyrçylyk zehinine gowy göz ýetirenden soň pata berýär. Nowruzam Nejebiň kämilligini barlanda berlen soraga tiz jogap bermek, şahyrlyk oýlaptapyjylygyna üns berýär. Şanyň köşgünde ýaryş geçirilende bolsa Nejep diňe bir sazanda däl, şahyrçylykda-da Elbentden üstün çykýar. Türkmen medeniýetiniň taryhynda hem bagşyçylyk, hem şahyrlyk bilen meşgullanan adamlaryň bolandygy mälim. Halk şahyrlary Durdy Gylyç, Baýram şahyr dagynyň şahyrdyklarynyň daşyndan aýdym aýtmak, bagşyçylyk etmek käriniň-de bolandygy mälimdir. Ýigriminji ýyllaryň ahyrynda aradan çykan, Daşhowuz sebitlerinde özüni tanadan Gajar bagşy şahyrçylyk bilen-de meşgullanypdyr. Biziň belli klassyk şahyrlarymyz Şabendäniň, Mollanepesiň we beýleki bir topar şahyrlarymyzyň bagşyçylyk bilen-de meşgul bolandygy bellidir. «Nejep oglandaky» Aşygaýdyň, Elbent, Nejep, Nowruz hem şol tipli bagşylaryň obrazy, şahyr bagşylaryň obrazydyr. Irki wagtlarda bagşylaryň şeýle tipiniň giň ýaýran bolmagy ähtimaldyr. Sebäbi, ençeme türkmen dessanlarynda hut şeýle bagşynyň tipi berilýär. Bu babatda «Şasenem – Garyp» dessanynda hereket edýän Babahasan aşygyň obrazy gyzyklydyr. Ol bu ýerde ussat bagşynyň roluny oýnaýar. Aşygaýdyňyň Nejebi synagdan geçirişi ýaly, Babahasan aşyk-da Garyby synagdan geçirýär. «Nejep oglan» dessanynda gozgalýan esasy mesele sungat işgärleriniň, hususan-da, bagşylaryň tälim alyş meselesidir. Iliň içinde aýdym aýdýanlaram, saz çalýanlaram köp. Emma olaryň hemmesi bagşy bolup duranok. Hakyky bagşylar bagşyçylygyň özboluşly mekdebini geçipdirler. Elbetde, köne Türkmenistanyň ýagdaýynda biziň günlerimizdäki ýaly saz mekdepleri, konserwatoriýalar bolmasa-da, bagşylyk käriniň kyn ýoluny geçýän ekenler. Aýdym-saza, bagşyçylyga höwesi hem-de zehini bolan adamlar bagşy bolup orta çykmazyndan öň belli bir ussat bagşydan, käwagt birnäçe bagşydan tälim alar eken. «Nejep oglan» dessanynda Aşygaýdyňyň, Elbendiň,
+
+5 enedilim.com',1970);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (10,1,10,'Nejebiň üsti bilen halypa bagşydan şägirtleriň tälim alşynyň käbir taraplary şöhlelenipdir. Eserde görkezilşine görä, Aşygaýdyň köp şägirtleri ýetişdiren halypa bolupdyr. Dessanyň personažlaryndan Elbendiň, Nowruzyň, Nejebiň Aşygaýdyňda şägirt bolandygy görünýär. Dessanyň Artyk Durdyýew we Nury Halykowdan ýazylyp alnan wariantlarynda umumy häsiýetde bolsa-da, Aşygaýdyňyň öz şägirtlerine aýdym, saz öwredip oturan pursaty barada aýdylýar. Elbendiň hem, Nowruzyň hem Aşygaýdyňdan terbiýe alandygy diňe ýatlanyp geçilýän bolsa, Nejebiň halypasy bilen bolan gatnaşygy has jikme-jik beýan edilýär. Mälim bolşyna görä, halypa bagşylar öz şägirtlerini ýanynda saklap, toýa-tomaşa, il arasyna bile alyp gider ekenler. Şägirdiň ähli eklenjini halypa çeker eken. Şägirt bolsa özüni terbiýeläniň muzdy hökmünde halypasynyň hojalyk işlerine kömekleşer eken. Dessanda şägirdiň halypasynyň gapysyndaky hyzmaty beýan edilýär. Nejep Aşygaýdyňyň ýanyna baryp öz arzyny aýdan badyna, ol: «Bagşy boljak bolsaň, aşhanadaky oglanlar näme iş etse, sen hem şonuň bilen boluber» diýip tabşyrýar. Şeýlelikde, Nejebiň pişesi günde bir arka odun çöpläp getirmek bolýar, ol halypasynyň ýedi ýyllap hyzmatyny edýär. Dessanda ussat bagşylaryň öz şägirtlerine diňe bir aýdym-saz öwretmek bilen çäklenmän, olara ahlak terbiýesini-de berendikleri görünýär. Aşygaýdyň Nejebe pata bermezden öň oňa nesihat bilen ýüzlenýär:
+
+Sen baraňsoň şa istemiş Elbendi, Pendim budur: tekepbirlik eýleme. Tekepbirlik goç ýigide har getir, Pendim budur: tekepbirlik eýleme.
+
+Ussat bagşylaryň hakykatdan hem şägirtlerine bir topar asylly maslahat berendikleriniň faktyny W. Uspenskiý özüniň «Türkmen sazy» (Moskwa, 1928) diýen kitabynda görkezipdir. Onuň belleýşine görä, maryly Annaguly bagşy (Saryýew) öz ussady Ärsary ussa Batyr oglundan dört sany maslahat alypdyr:
+
+6 enedilim.com',1836);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (11,1,11,'Hiç haçan il-halkyň göwnüne degmeli däl, berlen her bir pul sylagy üçin, az bolsa-da, sag bolsun aýtmaly, özüňden pes tüýdükçi bilen ýaryşmaly däl, ogurlyk etmeli däl. Dessanda bagşynyň durmuşynyň ýene bir tarapy öz beýanyny tapypdyr. Ol hem bolsa bagşynyň, umuman sungat adamlarynyň çeperçilik ussatlygyny ýüze çykarmakda, ony has kämil derejä ýetirmekde uly rol oýnan özara ýaryş, aýdyşyk meselesidir. Dessanda aýdyşyk ilki bilen bagşynyň ussadyna özboluşly ekzamen bermegiň serişdesi hökmünde ulanylýar. Aşygaýdyň Nejebe pata bermezinden ozal ony gowy synagdan geçirýär. Aşygaýdyň şägirdine tapmaçalaryň üsti bilen sorag berýär, Nejep bolsa jogap gaýtarýar. Ol tapmaçalaryň mazmuny köplenç dini rowaýatlar bilen baglanyşykly bolsa-da, durmuş hakykatyna degişli tapmaçalar hem duş gelýär. Aşygaýdyň özüniň ähli soraglaryna pert-pert jogap gaýtaran şägirdiniň bagşylyk ukybyny ýene bir gezek has ykjam barlamagy ýüregine düwýär. Emma Nejep bu synagyň-da hötdesinden gelýär. Diňe şondan soň Aşygaýdyň Nejebe, «Ýoluň ak bolsun, baran ýeriňde ýurt alasyň» diýip pata berýär. Nejep Nowruzyň hem synagyndan geçýär. Nejebiň synagdan geçişiniň kulminasion nokady Soltanesen patyşanyň köşgünde bolýar. Bagşy bolup atalygyndan aryny almak uçin Aşygaýdyňdan tälim alyp gelen Nejep üçin aýgytly pursat gelip ýetýär. Nejep sazynda-da, sözünde-de Elbentden üstün gelýär. «Nejep oglan» dessanynda halk bagşysynyň-şahyrynyň ussatdan tälim alşynyň, umuman olaryň durmuşyna degişli ençeme real hakykat şöhlelenen bolsa-da, olaryň tälim alşynyň jikme-jikligi dessandan görünmeýär. Onuň tersine, dessanda zehin, ylham, bagşyçylyk-şahyrlyk ukyby tötänden taýyn halda berilýär diýen ideýa ündelýär. Dessandan görnüşine görä, Aşygaýdyň öz şägirtlerine aýdym-sazdan, poeziýadan hiç hili konkret tälim bermeýär. Gaýtam şägirtleriň işi-pişesi onuň gara hyzmatyny ýerine ýetirmekden ybarat. Olar ýa onuň aşhanasynda bulaşyp ýörler, ýa-da arkalary bilen odun daşaýarlar. Türgenleşmek, sazy, poeziýany
+
+7 enedilim.com',1990);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (12,1,12,'öwrenmekde şägirtler tarapyndan hem hiç hili alada, hereket dessanda ýok. Göýä halypalary-da çeperçilik zehiniň tötänden, taýyn halda şägirtleriniň kalplaryna guýulmagyna garaşýan ýaly. Ol Nejebiň mysalynda şeýle hem bolup çykýar. Çeperçilik zehininiň sungat işgärlerine tebigatdan daşary güýçler tarapyndan taýyn halda bagş edilişi baradaky rowaýat Gundogaryň hem Günbataryň dürli halklarynyň arasynda giňden ýaýrapdyr. Ol rowaýatlar bir-birinden dürli ýagdaýlar boýunça tapawutlansalar-da, esasy manysy boýunça bir-birlerine örän meňzeş. Ol rowaýatlaryň ählisinde-de şahyranalyk ylhamy keramatly güýçler tarapyndan taýyn halda berilýär. Türkmen halkynyň arasynda haýsydyr biriniň öz kärine ökdeligi aňladyljak bolanynda, «Ol hakdan içen ýaly» diýip, baha berişlerini ýygy-ýygydan eşitmek bolýar: «Alili (Magtymguly bagşy) aýdyma gezek gelende hakdan içen ýaly» we ş. m. Bu bolsa öňki wagtlarda halk köpçüliginiň arasynda sungatyň bar syrlary göýä aýry-aýry adamlaryň kalbyna keramat bilen guýulýar diýen düşünjäniň kök urup güdenligine şaýatlyk edýär. Hakyky şahyryň döredijilik zehininiň «hakdaniçenlik» ýoly bilen döreýändigi baradaky düşünjäniň örän ýörgünli bolandygyny XVIII asyr şahyrlarynyň döredijiligi görkezýär. Ençeme şahyrlar özleriniň şahyrana döredijiliginiň aslyýetini hak tarapyndan berildi diýip düşündiripdirler. Şeýle düşündirme öz gezeginde dine, hudaýa ynanýan halk köpçüliginiň arasynda ol şahyrlaryň eserlerine bolan hormaty köpeltmek üçin ýöredilipdir. Şabende «Begler» şygrynda özüniň «Gül – Bilbil» dessanyny döredişi barada söz açyp, dessanyň döredilmeginde çeken zähmetini, hyzmatyny inkär edip:
+
+Diýmäňiz «Şabende özunden diýdi», Dertli jana däri sözünden diýdi, Meý içipdir yşkyň gözünden diýdi, Hak beripdir genji-bu käni, begler!
+
+8 enedilim.com',1779);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (13,1,13,'diýip görkezýär. Beýik şahyr Magtymguly-da öz poetik ylhamynyň «keramat» arkaly berlişi barada «Turgun diýdiler» diýen goşgusynda gürrüň berýär. Dessanda sungat adamlarynyň halk bilen gatnaşygy barada-da mesele gozgalýar. Mälim bolşy ýaly geçmişde bagşylaryň aglaba köpçüligi zähmetkeş adamlaryň içinden ýetişip, şolaryň arzuw-isleglerine hyzmat edipdirler. Olar özleriniň sungatyny halkyň umumy bähbidine bagyşlapdyrlar. Beýle bagşylar halk bagşylarydyr. Şonuň bilen birlikde öz zehinini, ylhamyny eziji synplaryň bähbidine gulluk etdiren bagşylar-da bolupdyr. «Nejep oglan» dessanynyň iň ähmiýetli tarapy-da bu ýerde bagşylaryň şol iki topary barada-da aýdylýanlygydyr. Aşygaýdyňyň, Nejebiň üsti bilen halk bagşysynyň obrazy berilýär. Ylaýta-da Aşygaýdyňyň obrazynda halk bagşylaryna mahsus ençeme häsiýetler bar. Ol Nejebe ahlak taýdan oňat terbiýe berýär. Elbendiň mysalynda öz sungatyny eziji synplaryň, patyşanyň hyzmatynda goýan satlyk bagşynyň obrazy berilýär. Elbentde, Aşygaýdyňyň tersine, men-menlik, öz-özüne mahabat bermek ýaly otrisatel häsiýetler bar. Onuň men-menligi, şöhratparazlygy Nejep bilen gatnaşygynda aýdyň ýüze çykýar. Dessanda dürli synpy toparlaryň bagşa, aýdym-saza bolan garaýyşlary belli bir derejede şöhlelenipdir. Eger-de ýönekeý zähmetkeş halk bagşyny, aýdym-sazy tüýs ýürekden söýýän bolsa, olara uly hormat goýýan bolsa, agalyk edýän toparyň wekilleri bagşyny, aýdym-sazy öz şahsy bähbitlerine peýdalanypdyrlar. Ýönekeý halkyň aýdym-sazyň gadyryny bilýändigini dessanyň ençeme ýerinde görmek bolýar. Elbent bagşy Sonanyň yzyndan gidende, kyrk sany ýigidiň üstünden barýar. Ýigitler Elbendi ol bagşy bolany sebäpli kabul edýärler. Bagşylaryň ýönekeý halk tarapyndan hormatlanyşy Nejebiň çarwalaryň arasyna düşen epizodynda hem görünýär. Agalyk edýän toparyň sungata, sungat adamlaryna bolan garaýşy Soltanesen patyşa bilen Elbendiň mysalynda aýdyň bolýar. Elbent bagşy bütin ömrüni şanyň hyzmatynda geçi-
+
+9 enedilim.com',1955);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (14,1,14,'ripdir. Onuň bar maksady patyşanyň göwnüni açmak, ony şöhratlandyrmakdan ybarat bolupdyr. Şoňa garamazdan, ol garran wagtynda rehim-şepagat edilmezden kowulyp goýberilýär. Elbendiň garran wagtyndaky gün-güzerany patyşanyň kellesine-de gelenok. Gaýtam «pagtasy çykyp duran» köne don geýdirip, telpegine jyganyň ornuna horazyň perini gysdyryp, wejera edip, Elbendiň masgara ýagdaýa düşmekliginden lezzet alýar. «Nejep oglan» dessanynda söýgi temasy-da bar. Elbendiň dul aýala, onda-da çagaly dul aýala aşyk bolşy original häsiýete eýedir. Bu ýagdaý beýleki dessanlarda duş gelmeýär. Elbendiň aşyklyk epizody dessanyň birinji ýarymynda dowam edip, esasy temany ösdürmekde goşmaça rol oýnaýar. Elbendiň çagaly aýala öýlenmegi täze bir wakanyň ýaýbaňlanmagyna sebäp bolýar, onuň ogullygynyň göwnüne degmegi Nejebiň bagşylyk arkaly aryny almak üçin hereket etmegine eltýär. Nejebiň Mylaýyma aşyklyk «taryhy» dessanda Elbendiňkä görä köp ýer tutýar. Dessanyň şu bölüminde rewolýusiýadan öňki döwre häsiýetli bolan bir detal ünsüňi özüne çekýär. Patyşa Nejebiň «aýagyny baglamak üçin» ony öýlendirmegiň ugruna çykýar, toý başlanýar, emma bu barada Nejebiň göwün matlabyny soraýan adam ýok, patyşanyň alyp berjek gelinligi onuň göwnüne ýarajakmy-ýaramajakmy – onuň aladasy edilmeýär. Nejep bilen Mylaýymyň söýgi wakalary dessanyň gahrymanlarynyň synpy ýüzüni has aýdyň görmeklige kömek edýär. Bu wakalar Nejebiň sosial pozisiýasyny aýdyňlaşdyryşy ýaly, Soltanesen patyşanyň-da tipik despotdygyny aýdyňlaşdyrmaga ýardam edýär. Dessanyň önki bölümlerinde Soltanesen patyşanyň hereketlerinde şöhratparazlyk, gopbamsylyk alamatlary aýdyň görkezilen bolsa, bu ýerde onuň zalymlygy, aşyklaryň mukaddes duýgularyny depeleýändigi hem ýüze çykýar (Nejebiň ölüme buýrulmagy, aşyklaryň ýurtdan çykarylmagy we ş. m.). Şeýlelikde, Gündogaryň tipik patyşasynyň obrazy göz öňüne gelýär.
+
+10 enedilim.com',1879);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (15,1,15,'Mylaýymyň obrazy wakalaryň gidişinde birneme ösýär. Ilkibaşda onuň hereketlerinde jemgyýetiň baý gatlagyna mahsus bolan durnuksyzlyk, aşaky gatlagyň wekillerini äsgermezlik ýaly otrisatel häsiýetleri görünýär. Emma wakalaryň gidişinde onuň häsiýeti üýtgeýär, Nejebiň ölüme buýrulandan soňky hereketleri ony söýgüsine wepaly, tutanýerli, hatda batyr gyz hökmünde janlandyrýar. Ol märekäniň içinde söýgülisi üçin ölüme-de gitmeklige taýyndygyny mälim edýär, käbir derejede ejizlän Nejebi mert bolmaklyga çagyrýar. Mylaýymyň mertligi Nejebiň ölümden halas bolmagynda ep-esli rol oýnaýar. «Nejep oglanyň» epizodik personažlarynyň biri Abadan kempirdir. Onuň üsti bilen ýokary synp wekilleriniň ahlak taýdan bozuklygy paş edilýär. Dessany aýdyjylar Nejep bilen Mylaýymyň söýgüsine simpatiýa bildirýän bolsalar, Abadanyň galp söýgüsiniň üstünden gülýärler.
+
+Kakabaý Seýitmyradow
+
+11 enedilim.com',889);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (16,1,16,'12 enedilim.com',15);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (17,1,17,'NEJEP OGLAN
+
+Rawylar andag rowaýat kylarlar, gadym eýýamda Ýemen ilinde Soltanesen diýen patyşa bar erdi. Taryp etsek, atarmanlykda-çaparmanlykda bir özi erdi. Onuň ýurduna Genje-Garabag diýen ýurtdan bir hatar kerwen geldi. Kerwenler aljagyny aldy, satjagyny satdy. Ýurtlaryna gaýdarman bolup, oturyp maslahat etdiler. Bu ýandan biri çykyp: – Söwdagärler, patyşadan birugsat gaýtmalyň, rugsatly gaýdalyň – diýdi. «Şu ýagşy-ha, şu ýagşy» diýşip, patyşanyň ýanyna bardylar. Olar patyşanyň arz jaýynda gol gowşuryp, salam berip: «Tagsyr, arzymyz bar» diýip durdular. – Eý, myhmanlar, ne arzyňyz bar? – Tagsyr, ýurduna gelen bir hatar kerwendik, aljak zadymyzy aldyk, satjak zadymyzy satdyk, rugsat berseňiz, ýurdumyza gaýdýarys. Rugsatdyr gaýtsaňyz. – Rugsadyň-a ýagşy welin, ýurduňa gelýäris, gaýdýarys, heý bir resim-kadaňy bilebilmedik. – Myhmanlar, biziň ýurdumyzda-da geň resim-kada bolmaz, siz öz ýurduňyzyň resim-kadasyndan aýdyberiň. – Ýok, tagsyr, biziň ýurdumyzda hem geň resim-kada bolmaz, ýöne bizde baran myhmany saz bilen, söhbet bilen atarýarlar, biz sizde ony görmedik – diýdiler. Patyşanyň bir bagşysy bar erdi, onuň adyna Elbent bagşy diýer erdiler. Patyşa: «Bar, Elbent bagşyny alyp gel, myhmanlaryň göwni saz-söhbet isläpdir» diýip, bir atlyny ataryberdi. Atly Elbendiň ýanyna bardy. Barsa, Elbent bagryny sowuk ýere berip, ah-wah edip ýatan ekeni. Atly Elbende aýtdy:
+
+13 enedilim.com',1403);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (18,1,18,'– Eý, Elbent, patyşa saza gelsin diýdi. – Meniň patyşanyň hyzmatyna bararlyk halym ýok, daňdandan bäri kesel bolup ýatyryn. Elbent bagşy dul ekeni. Onuň keseli – düýşünde bir Sona atly gelin bilen öpüşip-guçuşyp, muhabbet posasyny alşyp, oýanansoň düýşüdigine lapykeç bolup, bagryny sowuk ýere berip ýatan ekeni, keseliniň başy hem şu ekeni. Patyşanyň goýberen atlysy gaýdyp geldi. Patyşa: «Hany Elbent bagşy?» diýip sorady. – Elbendiň ýanyna bardym, bärden barsam, bagryny sowuk ýere berip ýatan ekeni, patyşanyň hyzmatyna bararlyk halym ýok, daňdandan bäri kesel bolup ýatyryn, bar, patyşaňa şuny baryp aýt diýdi. – Seniň bilen bir-iki agyz gepleşmäge ýaradymy? – Hawa, ýarady. Bar, onda ony demme-demden kowup alyp gel. Höküm bilen baran atly: Gitseň-de alyp giderin, gitmeseň-de alyp gide-rin – diýip, Elbendi atyň öňüne salyp gaýdyberdi. Elbent patyşanyň arz jaýyna gelip, gol gowşuryp, salam berip durdy. Patyşa: – Eý, Elbent bagşy, bir mertebe adam goýberende gelmän, iki mertebe adam goýberdip, heýwere ulalan ekeniň – diýdi. – Ýok, tagsyr, daňdandan bäri kesel bolup ýatyryn. — Kesel bolsaň, al eliňe sazyňy, hemişeki ýaly seni üç gije-gündiz, dört gije-gündiz kowup oturjak däl, gaýdarman myhmanlara bir-iki aýdym aýdyp, bir-iki ýol saz çalyp ber. Elbent bagşy: «Bu myhmanlar-a bir jahankeşde ýigitler ekeni, her kim öz gijän ýerini gaşasa ýagşy, şu myhmanlardan Sonanyň idegini sorasam, ondan bir derek tapylmazmyka?» diýip, elinde sazy, dilinde sözi, myhmanlardan Sonany sorap, bir bäş keleme söz diýse gerek.
+
+14 enedilim.com',1538);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (19,1,19,'Agalar, ýatyrdym, birje düýş gördüm, Ýadymdan çykmaýar ady Sonanyň. Nägehandan ony görüp, iş gurdum, Ýadymdan çykmaýar ady Sonanyň.
+
+Onuň bilen bir düşekde oturdym, Aglaýa-aglaýa daňym atyrdym, Men golumdan näzli ýarym ýitirdim, Ýadymdan çykmaýar ady Sonanyň.
+
+Kaýdan geldigini bilebilmedim, Şol dilberden habar alabilmedim, Bagynyň gülünden ýolabilmedim, Ýadymdan çykmaýar ady Sonanyň.
+
+Dilber bilen baga seýran etmedim, Gol uzadyp, goşa naryn tutmadym, Arman köpdur, gije-gündiz ýatmadym, Ýadymdan çykmaýar ady Sonanyň.
+
+Elbent aýdar, begler, sizden soraly, Bilebilmen, ne ýerlerden garaly, Söwdagär siz, ülkäňize baraly, Ýadymdan çykmaýar ady Sonanyň.
+
+Elbent bagşy bu gazaly tamam edenden myhmanlar bir-birilerine bakyp gülüşiberdiler. Şonda patyşa: – Eý, myhmanlar, bagşymy halamadyňyzmy, resim-kadamy halamadyňyzmy, oturyp-turşumyzy halamadyňyzmy, gülşeniňiziň sebäbini düşündiriň – diýdi. Ol wagtda myhmanlar aýtdy: – Ýok, tagsyr, biziň ýurdumyzda-da patyşamyz bar, ol patyşanyň bir weziri bar erdi, ol wezir dünýeden ötüpdi, onuň Sona atly aýalynyň başy boş galypdy, onuň at-owazasynyň düşmedik ýurdy, düşmedik kenti ýok, şonuň at-owazasy bu ýerlere-de düşdümikä diýip, bagşyňyzy aýtdyryp eşidenimiziň sebäbi-de şol boldy, ýogsa biziň bagşy eşidesimiz gelenokdy, bu ýurda-da
+
+15 enedilim.com',1299);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (20,1,20,'şonuň at-owazasy düşen eken-ow diýip, gülüşmegimiz şonuň üçindi. Onda patyşa: – Eý, myhmanlar, onuň at-owazasy biziň ýurdumyza düşenokdy, bu bidöwlet bagşynyň sözüne görä, ol şol gelne düýşünde aşyk bolupdyr. Biz bagşymyzy ibersek, siziň patyşaňyz şol gelni biziň bagşymyza berermi? – diýip sorady. Onda kerwenler: – Tagsyr, onuň gürrüňi bolmaz, bir patyşadan bir patyşanyň dilegi bitegen bolar – diýdiler. Şondan soňra patyşa Elbent bagşynyň ýol şaýyny tutduryp, eline hat berip, kerwenlere goşup goýberdi. Elbent kerwenler bilen üç gün ýol ýöredi weli, oňa üç günüň özi üç ýylça boldy. Ol: – Eý, kerwenli dostlar, maňa bu ýeriň dagyny-gyryny, çölüni ýagşy salgy beriň, men siziň aýagyňyza takat edip gidebilmeýärin – diýdi. Ol wagtda biri bir ýandan çykyp: – Eý, bagşy aga, mundan gitseň, bir gumluk bardyr, gumlugyň aňrysy bir kentdir, kentiň aňry ýany ýene bir gumlukdyr, gumlukdanam çykar gider otyrsyň, gaýraňda bir gara bag peýda bolar, gara bagyň gaýrasynda bir gara çatma peýda bolar, şol çatma baryp düşseň, şonuň içinde bir kempir bardyr, seniň hyzmatyňy şol bitirer – diýdi. Elbent bu jogaby eşidip, ýeke özi atyny sürüp ötägitdi. Baýaky gumlukdan geçdi, kentiň garasy göründi, ol kentden bir oglan çykdy. Elbent: – Eý, oglan, bu kentiň adyna näme diýerler? – diýip sorady. – Aga, bu kentiň adyna Töwriz diýýärler. – Elbent Töwriziň içi bilen sürüp barýardy, kybla tarapda bir jaýyň işiginden bardy. Görse, bir sapaly jaý. «Alla janym, şu ýerde çaý içip, çilim çekip ötäýsem, kem bolmazdy» diýip, Elbent bagşynyň göwüne geldi-de: «Habarlaş» diýip gygyrdy. Şol wagt işikden bir ýigit tasak-ga çykdy hem: – Aga, saňa ne habar gerek? – diýip sorady. Onda Elbent bagşy: – Men bir ötermen ýolagçy, bir çilim berip bilmezmiň? – diýdi.
+
+16 enedilim.com',1757);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (21,1,21,'Bu ýerde bir bölek hanly, aga-begli, mäterli, töreli, guşbegili oturan, bir topar gürrüň-ýaran bilen meşgul ýigitler bardy. Ýaňky ýigit içeri giren badyna: «Daşardaky kim?» diýip soradylar. – Arkasynda dutary bar, teýinde ýorgasy bar, ötermen ýolagçy, çilim berseň diýip dur. – Arkasynda dutary bolsa, märeke görüp ýören ýigitdir, düşüp çaý içsin, çilim çeksin – diýdiler. Mürähede zar bolup duran bagşy ýorgadan özüni oklaýdy, baýaky ýigit ýorgany tutjak bolup synanyşdy. Emma ol «Degme ýorga» diýip, eýwançada ýorgasyny gaňtaryp goýup, içeri girdi. Oňa çaý berdiler, çilim berdiler. Soňra: – Aga, arkaňda dutaryň bar ekeni, bagşymyň, sazandamyň, şahyrmyň? – diýip soradylar. – Her haýsyndan hem birneme bardyr. Onda olar: – Her haýsyndan hem birneme bolsa, bizem bir gam basyp oturan ýigitlerdiris, bize bir-iki nama aýdyp berseňiz, bir-iki ýol saz çalyp berseňiz – diýdiler. Ondan soň Elbent bagşy: «Alla janym, şu ýigitler hem gowy ýigitler ekeni, her kim öz gijän ýerini gaşasa gerek, gel-ä Sonanyň soragyny şulardanam soragaýyn-la» diýip, elinde sazy, dilinde sözi, bu ýigitlerden Sonany sorap, bir bäş keleme söz diýse gerek:
+
+Asty arap atly beg oglanlary, Töwriziň begleri, Sonam geldimi? Jygalary tel-tel, gözleri mestan, Töwriziň begleri, Sonam geldimi?
+
+Töwriziň degresi ýoldur-ýolakdyr, Üstümizde gurlan çarhy pelekdir, Enesi hüýrüdir, gyzy melekdir, Töwriziň begleri, Sonam geldimi?
+
+17 enedilim.com',1412);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (22,1,22,'Töwriziň degresi dolanma daglar, Ýar ýardan aýrylsa, ah çeker, aglar, Açylsa läleler, gül olsa baglar, Töwriziň begleri, Sonam geldimi?
+
+Bilbiller ah çeker güle ýetmäge, Bagbanlar ah çeker ony tutmaga, Töwriziň bagyna seýran etmäge, Töwriziň begleri, Sonam geldimi?
+
+Elbent aýdar, saz arkamda baglydyr, Synalarym syýa, çapraz daglydyr, Aslyn sorsaň, Genje-Garabaglydyr, Töwriziň begleri, Sonam geldimi?
+
+Elbent sözüni tamam edenden, ýaňky ýigitleriň biri: – Eý, ýigitler, biziň hemmämiz bu ýerde Sona diýip otyrys, bu bidöwlet bagşy-da Sona diýip barýan ekeni, ol bu sazy-bu sözi bilen, bu ýagşy ýigitligi bilen, bu hoşroýlygy bilen, bu bagşyçylygy bilen bardy-aldygydyr, hiç haýsymyza Sona ýok – diýdi. Ol wagtda bu ýandan ýene biri: – Bir aljak şumy? – diýdi. – Häzir-ä bir şu. Ýene biri: – Muny öldüräýende bolmyýamy, bar, daşary çykyp gözläp gel – diýdi. Ol adam çykyp, daşaryny gözläp geldi hem: «Agalar, özümizden başga iňlär siňek ýok» diýdi. Bagşyny aldylar depginiň aşagyna, depip-ýumruklap, urup öldürip barýarlar. Elbendem: – Alla janym, bu bidöwletler-ä öldürkek – diýip, ölen kişi bolup ýatyberdi. Şonda ýigitlerin biri: – Eý, dostlar, bi-ýä ölüp galdy. Daşary çykalyň, gün batandan soň bir raýyşa süssiris-dä – diýdi. Ýigitler tamyň güneşine çykdylar. Ikibir-ikibir gürrüňe başladylar. «Eý, jora, bu senden boldy-da, senden boldy» diýşip, her kim günäni özüniň üstünden aýyrmak isledi. Şunlukda: «Özi
+
+18 enedilim.com',1431);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (23,1,23,'bir ýagşy ýigit ekeni, özi bir bagşy ýigit ekeni – nesip etse, aljak ekeni, nesip etmese, gaýtjak ekeni. Hiç zat ýok ýere nahak gana galdyk» diýip, igenişip oturmak bilen boldular. Indi habary kimden al, Elbent bagşydan. Bir wagtdan başyny galdyryp seretse, özünden başga jandar ýok. Ol dutarynyň ownugyny çöpläp, ony tary bilen daňyp, horjunyna saldy. Dutarynyň dessesini arkasyna gysdyrdy, gorkan bagşy özüňe mälim, ýorgasyny gözlese, eýwançada gaňtarylyp dur. Işigi penalap, hüjräň düýbüne bat alyp, «Şu ýerden zyňsam, ýorga galyp bolmanmy?» diýip, öz göwnüne getirdi. Elbent bat alyp «ýa, biribar» diýip, özüni oklady, ýorga galyp boldy duruberdi, çekdi bir jübüt gamçyny. Ýorgasy ýyldyz kimin süýnüp gidiberdi. Habary kimden al, baýaky ýigitlerden. Olar «Al gitdi-hä, al gitdi» diýip, gygyryşyp galdylar. Elbent bagşy baýaky gumlukdan geçdi, bir tokaýlyga bardy. Barsa, özüňe belli, gury odun çaşyp ýatyr. Elbent bagşy atdan düşüp, ot ýakyp, elim eredip, döwlen dutaryny jaýma-jaý ýelmedi. Täze kiriş işip, täze perze baglap, dutaryna des urup görse, dutaryň sesi göýä tokaýy göçüreýin diýýär. Dutarynyň bejerileniniň wagtyhoşlugyna, özüniň depgi iýeniniň «wagtyhoşlugyna» şu ýerde zar-zar, çyn ebir-nowbahar ýyglap, gözünde ýaş, bagrynda baş, bir bäş keleme söz diýse gerek. Gör-bak, näme diýýär:
+
+Arzuw eýläp, ýara gelip, Şu boldumy maksat maňa? Boýnum burup, zar aglaýyp, Şu boldumy maksat maňa?
+
+Oturdym, girýan agladym, Kesip, jigerim dagladym, Gitmäge bilim bagladym, Şu boldumy maksat maňa?
+
+19 enedilim.com',1519);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (24,1,24,'Yşgyň lybasyny geýdim, Syrymy äleme ýaýdym, Öz dilimden depgi iýdim, Şu boldumy maksat maňa?
+
+Bilmedim ýaryň hyýalyn, Şeker-şirin lebde balyn, Görmedim sahyp jemalyn, Şu boldumy maksat maňa?
+
+Boýuň uzyn, kaddyň elip, Durma, ýar, bizden uýalyp, Aşyk Elbent ýara gelip, Şu boldumy maksat maňa?
+
+Elbent bagşy bu gazaly tamam edenden soň, ýorgasyna münüp, basaýdy gamçyny, ol depeden ol depä at çapdyryp, çykyp barýar, baýaky bag diýeniniň garasy göründi, ol gara çatma heý görünmedi. Bir beýgiräk depäniň üstüne çykyp gözlese, bir ýapynyň ýüzünde gury ýapynja ýatan ýaly bir gara peýda boldy, görse çatma diýleni şu bolup çykdy. Çatmanyň ýanyna baryp görse, ol şeýle bir çagşapdyr, onuň üstüne towuk-da münse, pişik-de münse, patda aşak gaçagaýjak. Şunuň ýaly terzli «oňat» çatma. Elbent bagşy: «Alla, görgimdir-dä» diýip, ýorgadan düşüp, ýorganyň teblesini çatmanyň işiginde kakyp, horjunyny eline alyp: «Essalawmaleýkim» diýip, çatmanyň işiginden barsa, onuň töründe iki dyzy gulagyndan bir garyş ýokary aşyp duran bir kempir otyr. «Waleýknm essalam» diýip, zordan bir gymyldan ýaly boldy. Görse, Elbendiň arkasynda dutary bar. Ol: «Toý günleri ýadap gelen bagşydyr-da, meniň çatmamy çola görüp gelendir-dä» diýip, pikir etdi. Emma Elbent bir günde-de gitmedi, iki günde-de gitmedi, on-on bäş günläp şol ýatyşy, kempiriň o ýerden-bu ýerden çöpläp getiren odunlaryny hem çaý oduny edip, gutaryp barýar. Günlerde bir gün kempir:
+
+20 enedilim.com',1442);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (25,1,25,'– Eý, bidöwlet, bisähet güni gelen bagşy, meniň owadan gyzym-da ýok, owadan gelnim-de, ýa seniň bilen gürrüňleşer ýaly oglumam ýok, tur git, ýok bol – diýdi. – Eý, ene jan, sen habar soramadyň, menem habarymy bermedim. «Habary soranda ber» diýen nakyl bar – diýip, baýaky patyşanyň beren hatyny mamanyň öňüne oklady. Mama ýaşlykda köp okan bidöwlet sowathondy. Haty okap gördi. – Eý, oglum, mamaň nas pulusyny ýetirsen, bu hyzmatyňy mamaň bitirse gerek. – Mama jan, şu hyzmatymy bitirseň, geregiň nas puly bolsun. Şol wagtda mama patyşanyň ýanyna ýelk ýasaýdy. Baýaky haty eltip patyşanyň öňüne oklady. Patyşa haty okap gördi. Ol: «Eý, mama, özi Soltanesen patyşadan gelen ilçi bolsa, Sonanyň özüni göwnetseň, meniň garşylygym ýok» diýdi. Ondan soňra mama Sonanyň ýanyna bardy. Ol agyz süýjütme gürrüňlerden gürrüň tapyp: – Eý, Sona jan, seniň ataň bilen atam dostdy, eneň bilen enem dostdy – diýip, damarma-damar, tohumma-tohum yzarlaşdyryberdi. Sözüniň ahyrynda bolsa: – Eý, Sona jan, oglum, seniň üçin bir ýigit gelipdir, özi ýagşy ýigit, özi bagşy ýigit, beýdip oturanyňdan, şoňajyk baragaýsaň, näderkä? – diýdi. – Eý, ene jan! Meniň elimde ýedi aýlyjak oglum bar, şony ynjytman saklaýyn diýse, baraýyn – diýdi. Kempir: «Seniň diňe bir ýedi aýlyk ogluň däl, ol seniň ýetmiş ogluň bolsa-da saklajak adam» diýip magtap, etek alty, ýeň ýedi bolup, ýüwrüp yzyna gaýdyberdi. Şol gelşine Elbent bagşynyn ýanyna geldi: – Eý, oglum, patyşa Sona razylyk berdi, söýünjimi ber – diýdi. Elbent mamanyň etegine iki tyllany taşlady. Kempir: «az!» diýdi. Bagşy ýene bir näçe tylla oklady welin, mamanyň wagty hoş bolup, aýagy ýeňläp: – Eý, oglum, ýorganyň syrtyny galyň edip, dembe-demden galanyň syrtyna baryber – diýdi, özem Sonanyň ýanyna gidiberdi. Elbent bagşy: «Ajap bolýar» diýip galyberdi. Kempir
+
+21 enedilim.com',1810);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (26,1,26,'Sonanyň ýanyna baryp, oňa dokuz ýyldan bäri mes bolup ýatan şerapdan bir käse şerap berdi. Dokuz gat perdäni ýüzüne tutduryp, Elbent bagşynyň syrtyna mündürdi. Baýaky ýedi aýlyk Nejep jan diýen ogluny hem aralygyna berdi. Elbent sürüp gidiberdi. Birniçe ýol geçip, daň säher çagy bir serhowzuň başyna ýetip bardylar. Görseler gumrular owaz edip, bilbiller jak-jak urup, bulaklar her tarapa akyp barýar. Şeýle bir sapaly jaý. Elbent: – Alla janym, ýoluň ýarpysyny aldym, şu ýerde demimi-dynjymy alyp gidibersem bolmazmyka? – diýip oýlandy. Atyndan düşdi, soňra: – Alla janym, şu bidöwlet kempir Sona diýip, başga kimersäni, patyşanyň hyzmatynda gezip ýören kenizeklerden birini syrtyma mündürip goýberen bolmasa ýagşy. Gel-ä şu ýerde janymy barlagaýyn-la – diýip, Sona gelni ýorganyň syrtyndan alyp, ýerde oturdyp, baýaky ýüzündäki perdeleri bir-birden aýyrmaga başlady. Sekiz gat perdäni aýryp, dokuzlanjy gata gezek gelende, Elbendiň gözi gamaşdy duruberdi. Ýüzi on dördi gijäniň aýy kimin, bir gijäniň daga düşen bölek-bölek gary kimin, ýaňaklary gunça kimin, mämmeleri tüňçe kimin, kepder topukly, maral ýörüşli, täze helal gaşly, merwerit dişli, dawut towuşly, bernaý, hoşroý, taryp edip aňyrsyna çykar ýaly däl. Elbent: «Alla janym, munuň Sona diýen-ä rast boldy. Öz wagtyhoşlugy bilen berse, bir posa diläýin, bermese, gaňyryşyna gitmäýin» diýip, Elbent bagşy elinde sazy, dilinde sözi, daň säher çagy Sona gelinden posa diläp, bir bäş keleme söz diýse gerek:
+
+Gel, perim, gideli gülşen seýline, Bilbil ürküşmesin, gül ynjamasyn. Össe bady-saba zülpüň meýline, Bir moý aýrylmasyn, tel ynjamasyn.
+
+22 enedilim.com',1618);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (27,1,27,'Ugruňda giderdi şems ile kamar, Zülpüňe sepilmiş müşk ile anbar, Kaddyňa ýaraşar murassag kemer, Bile baglaganyň, bil ynjamasyn.
+
+Gujaklaşyp, gol salyşyp gitmedim, Rakyplaryň täne sözün etmedim, Arman köpdür, gije-gündiz ýatmadym, Edep bilen uzan gol ynjamasyn.
+
+Bagynda bitendir bakjaly-bary, Bol olar, tirerler alma-enary, Isteseň, taparsyň söýgüli ýary, Ile baryp gelen ýol ynjamasyn.
+
+Elbendi köýüňden tapyp howaýa, Ýüzüňi ogşatdym şems ile aýa, Lebiňden posa ber men binowaýa, Dodak deprenmesin, dil ynjamasyn.
+
+Elbent bu gazalyny tamam edenden soňra Sona gelniň perdelerini jaýma-jaý goýup, ýorganyň syrtyna mündürip, ilatynyň çetinden ýetip bardy. Patyşaga söýünjiläp adam iberdi. Patyşa öň barana at mündürdi, soň barana don geýdirdi, kyrk gije-gündiz toý etdi. Kyrk gije-gündizlik toýuny sowup, Elbent bagşy bilen Sona gelni bir-birine gowşurdy. Ikisini bir ak öýe saldy. Bular maksat-myradyna ýetdiler. Aradan birnäçe wagt geçdi. Baýaky ýedi aýlyk Nejep ýedi ýaşady, günlerde bir gün atalygy Elbent bagşy ony molla berdi. Ony Elbent molla eltip berse, günortana galman gaçyp gelýär. Günortan eltip gelse, peýşine galman gaçyp gelýär. Şondan soň Elbent: – Eý, bidöwlet oglan! Sen okap kazy bolasyň ýok, sakydyň-a başymdan sowuldy, şu gün şu ýorga ýadap geldi, gün batan soň, ýorganyň ot-iýmini berip, päkize bejerip, arkalap goýaweri, oglum – diýip tabşyryp, nirädir bir ýere gitdi.
+
+23 enedilim.com',1408);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (28,1,28,'«Ajap bolýar, ata» diýip, galyberdi oglan. Oglan aşyk oýnady, çilik oýnady, enesiniň goýnuna girip, ukyny urdy, ertir turup, ýene oýnamaga başlady. Habary kimden al, Elbent bagşydan al. Ol ertesi giden ýerinden gaýdyp gelse, ýorga sereden kişi bolmandyr, ýorganyň içi aç, ilmek ýaly bolupdyr. Görse, Nejep oglam oýnap ýör. Elbent: «Eý, Nejep jan, oglum, bäri gel» diýip, ony ýanyna çagyrdy. Nejep jan ýüwrüp geldi. «Eý, Nejep, oglum, şu ýorgany biri bir ýana münüp geldimi, ýa bolmasa-da özümiň goýup gidişimmi?» diýdi. Nejep jan ýalan sözlemäniň ugruny tapman: «Eý, ata, men hemişe ýorga bakýarmydym, öz goýup gidenjigiňdir» diýdi. – Eý, bidöwlet oglan, meniň özümden önen perzent bolanyňda beýle etmezdiň – diýdi, oglanyň ýakasyndan tutup, her ýaňagyna bir şapbat urdy. Oglanyň gözünden ýalpyldap ot çykdy. Oglan zordan özüni enesiniň ýanyna gaçyp atdy. – Eý, bidöwlet oglan, sen eneňi arka tutunar bolduňmy? – diýip, Elbent bagşy eline ilen bir tal çybyk bilen oglanyň ýagyrnysynyň üstüne ikisini saldy. Oglan syçrap-syçrap bökdi. Elbent bagşy gaharyna çykyp gidiberdi. Habary kimden al, Nejepden al. Ol enesiniň ýakasyndan alyp: – Eý, ene, şu bidöwlet bagşy meniň çyn atammy ýa ýalan atammy? – diýip sorady. Enesi: – Eý, oglum, seniň çyn ataň bolanda, ol öz perzendini beýle awundyryp urmazdy – diýdi. – Eý, ene jan, meniň çyn atam nirededir? – Seniň çyn ataň Genje-Garabagyndadyr, ol patyşanyň weziridi, seniň ataň dünýäden ötdi, bu bagşy nesip bolup bizi alyp gaýtdy. – Eý, ene, men başym ýaş bolsa-da, könelerden eşidýärin, şu ýanda Aşygaýdyň diýen bir pir barmyş, şoňa kim ýedi ýyl hyzmat etse, myrady hasyl bolarmyş, men şoňa ýedi ýyl hyzmat edip, bagşy bolup gelip, şu bagşy bilen aýdyşyp, ýeňip arymy almasam, bolmaz.
+
+24 enedilim.com',1745);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (29,1,29,'– Eý, oglum, bu bagşy patyşanyň uly bagşysydyr, munuň öňüne bagşy çykmaz. – Eý, ene, äriňi kän magtaberme, gözünem oýsa bolar. Görse, oglanyň çyny, hökman gitjek. Ene-ogul ikisi ýakalaşa-ýakalaşa galanyň agzyna bardylar. Şol wagt galadan bir topar kerwen çykyp barýardy. Sona gelin olara ýüzlenip: – Eý, kerwenler, nirä barýarsyňyz? – diýip sorady. – Genje-Garabagyna barýas. – Genje-Garabagyna barýan bolsaňyz, meniň şujagaz oglum Aşygaýdyň pire hyzmat etjek bolýar, muny ýolda şoňa tabşyryp gidiň – diýdi. Kerwenler: – Ajap bolýar, ogluňy taşla düýäniň üstüne, özümiz hem Aşygaýdyň piriň jaýyna düşüp ötýäris – diýdiler. Sona gelin ogluny düýäniň üstüne mündürdi. Birnäçe günler ýol ýöräp, kerwenler Aşygaýdyň piriň saraýyna düşdüler. Olar Aşygaýdyň pire getiren berim-peşgeş, nezir-niýazlaryny berdiler. Soňra: – Eý, pirim, size bir hyzmatkär oglan hem alyp geldik – diýdiler. Aşygaýdyň: – Baryň, alyp geliň, göreýin – diýdi. Kerwenler oglany Aşygaýdyň piriň ýanyna getirdiler. Pir: – Eý, oglum, mahlasyň näme? – diýip sorady. Nejep jan bolsa: «Eý, pirim, mahlasym bagşy bolmak» diýdi. – Bagşy boljak bolsaň, aşhanadaky oglanlar näme iş etse, sen hem şonuň bilen boluber. Nejep jan şunlukda Aşygaýdyňyň hyzmatynda geziberdi. Aýdan aý, günden gün geçdi. Günlerde bir gün oglan ir säherden ukudan oýandy. Ol: – Alla janym, men ýalaň aşyň yssysy barka ýetibilmeýärin. Şu gün aşyň yssysy barka ýetip bolmazmyka? – diýip, irden turup oduna gidiberdi. Munuň edýän bar pişesi günde bir arka odun çöpläp getirmekdi. Ol odunyny göterip ýadap gelýärdi. Öňünde bir ýapgydrak depe peýda boldy, Nejep şol ýerde: «Alla janym, birje sagat demimi alagaýyn» diýip, odunyna arkasyny berip oturdy. Oturan ýerinde gelen gününi hasap etdi, hasap etse, ýedi ýyl ýetip, sekizlenji ýyla gadam basypdyr. «Alla, men enemiň gargyşyna galdym gerek, gitme diýende
+
+25 enedilim.com',1854);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (30,1,30,'gaýtdym» diýip, odunyna söýenip, aglamaga başlady. Şol aglap oturyşyna gözi gaflat uka gitdi. Düýşünde kyrk erenler jem bolup, oglanyň töweregini gurşap oturdylar. Kyrk erenleriň her haýsysy oglana bir käse – bir käse şerap berdiler. Aşygaýdyň piriň özi hem gelip, bir uly käse şeraby dolduryp oglana berdi, munuň bilen kyrk bir käse şerap boldy. Oglan ýalpa gözüni açsa, pir-de ýok, peşwar-da ýok. Oglan sag eliniň başam barmagynyň dyrnagynyň ýüzüne seretse, arşy-kürsi on sekiz müň älem oglanyň dyrnagynyň ýüzüne ýazylyp dur. Oglanyň ökjesi ýeňläp, oduny göterip gaýdyberdi. Getirip, oduny aşhananyň törüne düňküldedip urdy. Piriniň ýanyna bardy. – Eý, pirim, towşana dogduk depe diýýänleri, rugsat berseň, ýurduma gaýdýaryn. – Eý, oglum, ýedi ýyl hyzmat bitirdiň, ýedi ýyllap saňa aýdym-saz öwretsem gerek. – Eý, pirim, aýdymy-da özüm bilerin, sazy-da, rugsat berseň bolýar. – Eý, oglum, aýdymy-sazy özüň bilýän bolsaň, piriň senden bir näçe sowal sorar, şolara jogap berseň, rugsat bererin, bolmasa saňa asla rugsat ýok. – Pirim, tiz sorawer. Aşygaýdyň pir şu ýerde oglandan sowal sorar, oglan jogap berermi-bermezmi, bir bäş keleme söz aýdyşsa gerek:
+
+Aşygaýdyň: – Ol ne dagdyr, gary gitmez, erimez? Ne derýadyr, dolar-daşar, ýörimez? Ne sakydyr, ölmez-ýitmez, garrymaz? Ne kerwendir, münmeý hatar ider deý?
+
+Nejep: – Kap dagynyň gary gitmez, erimez, Köňül-derýa, dolar-daşar, ýörimez, Hakyň özi ölmez-ýitmez, garrymaz, Jan bir kerwen, münmeý hatar ider heý.
+
+26 enedilim.com',1480);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (31,1,31,'– Ol nedir, kim, husny sapa çoh olur? Ol nedir, kim, gün çykansoň ýok olur? Ol nedir, kim, atylmaýyn ok olur? Ne kemandyr, gol degmeýin dolar heý?
+
+– Melaýyklar husny sapa çoh olur, Gün çykansoň, ol ýyldyzlar ýok olur, Ol kirpikdir, atylmaýyn ok olur, Gaş bir keman, gol degmeýin dolar heý.
+
+– Ol nedir, kim, ýer ýüzünden akynan? Ol nedir, kim, ýerden göge bakynan? Ol nedir, kim, merdiwana çykynan? Ol nedir, kim, pelle-pelle iner heý?
+
+– Ol suw bolar ýer ýüzünden akynan, Oglanlygam ýerden göge bakynan, Ýigitlik bir merdiwana çykynan, Garrylyk bir pelle-pelle iner heý.
+
+– Aşygaýdyň, näler gezer howada? Kimiň adyn okaýarlar dowada? Ol ne guşdur, mesgen tutmaz bu dagda? Ne saýýatdyr oňa albaý bular heý?
+
+– Nejep aýdar, köňül gezer howada, Hakyň müň bir ady ýatyr dowada, Jan bir guşdur, mesgen tutmaz bu dagda, Ajal – saýýat, oňa albaý bular heý.
+
+Bular sözlerini gutardylar. Aşygaýdyň: – Eý, oglum, bujagaz jogabyňdan jogap bolmaz, muny aşhanadaky dogmalaryň baryjygy bilýändir, muny şolardan ýat alansyň, piriň senden gaýtalap ýene bir näçe sowal sorar, şoňa jogap berseň, rugsat ederin, bolmasa, saňa asla rugsat ýokdur – diýdi. Oglanyň ýüregi jaýly: «Sora, pirim, sowalyň bolsa»
+
+27 enedilim.com',1204);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (32,1,32,'diýdi. Şol wagtda Aşygaýdyň pir gaýtalap sowal sorar, Nejep jan sowalyna jogap berermi, bermezmi!
+
+Aşygaýdyň: – Ol nedir, kim, iki başly, Parasy bar, çäresi ýok? Ol nedir, kim, bäş ýüz ýyllyk, Menzili bar, arasy ýok?
+
+Nejep: – Bu dünýä bir iki başly, Parasy bar, çäresi ýok. Ýer bilen gök bäş ýüz ýyllyk, Menzili bar, arasy ýok.
+
+– Ol ne meýlisdir araksyz? Ol ne möwsümdir oraksyz? Ol ne kitapdyr waraksyz, Galamy bar, garasy ýok?
+
+– Hakyň meýlisi araksyz, Ajal möwsümi oraksyz, Jebraýyl özi waraksyz, Galamy bar, garasy ýok.
+
+– Ol nedir, bile bitişen? Biri-birinden ötüşen? Ol nedir, rysgy ýetişen, Uçmaga mydarasy ýok?
+
+– Aý, gündür bile bitişen, Biri-birinden ötüşen, Symrugyň rysgy ýetişen, Uçmaga mydarasy ýok.
+
+28 enedilim.com',732);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (33,1,33,'– Ol nedir, kim, mälär geçer? Dagy-daşy ýalar geçer? Ol nedir, kim, diler geçer, Gany akmaz, ýarasy ýok?
+
+– Ol bulutdyr, mälär geçer, Dagy-daşy ýalar geçer, Ýaman sözdür, diler geçer, Gany akmaz, ýarasy ýok.
+
+– Aşygaýdyň bolsa hajy, Ol ne iýmiş, bolmaz ajy? Ol nedir, kim, bar alajy? Ol nedir, kim, çäresi ýok?
+
+– Nejep aýdar, bolman hajy, Jan iýmişi bolmaz ajy, Barça işiň bar alajy, Şum ölümiň çäresi ýok.
+
+Bular sözlerini gutardylar. Aşygaýdyň pir Nejebe garap: – Oglum, sen maksadyňa ýeten ekeniň, bagşy bolan ekeniň – diýdi. «Jogap bermen» diýse, gorkup oturan Nejep «Bagşy bolan ekeniň» diýenden ökjäni göteriberdi. Aňyrrak baryp: «Alla, pirime men biedep bolan ekenim» diýip oýlandy, ýene piriniň ýanyna gaýdyp gelip, «Eý, pirim, meniň günämi öt» diýdi. – Oglum seniň ne günäň bar, günäňi ötdüm. – Meniň günämi öten bolsaň, pirim, maňa asmandan inen gara dutaryňy berseň, ak pataňy berseň. – Oglum, asmandan inen dutar arkaky hüjräniň burçunda durandyr, bar, meniň ýanyma alyp gel, kirişi sazmy, perzesi jaýmy, men bir görüp bereýin – diýdi. Oglan begenjinden ýüwrüp-ýortup, derrew ol dutary piriniň eline getirip berdi. Piri dutary görüp:
+
+29 enedilim.com',1163);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (34,1,34,'– Eý, oglum, dutaryň-a saz eken, öz dutaryň bilen özüňe bir nesihat bereýin» diýip, bäş keleme söz aýdar gerek, gör-bak, näme diýer:
+
+Sen baraňsoň, şa islemiş Elbendi, Pendim budur: tekepbirlik eýleme. Tekepbirlik goç ýigide har getir, Pendim budur: tekepbirlik eýleme.
+
+Mundan barsaň, Esen hanyň gaşyna, Altyn jygasyny sanjar başyňa, Özüňden ýaşula, deňi-duşuňa, Pendim budur: tekepbirlik eýleme.
+
+Zamana beýledir, niçik zamana, Indi seni hak saklasyn amana, Özüňden gaýryga, ýagşy-ýamana, Pendim budur: tekepbirlik eýleme.
+
+Aşygaýdyň aýdar, magrypet şuldur, Şerigat-tarykat bir dogry ýoldur, Menden saňa soňky nesihat oldur, Pendim budur: tekepbirlik eýleme.
+
+Aşygaýdyň sözüni tamam edenden soň Nejep jana: «Ýoluň ak bolsun, baran ýeriňde ýurt alasyň» diýip, ak patyýasyny berdi. Habary kimden al, Nejep jandan. Nejep jan ýola rowana bolup, çykyp gidip barýardy. Ol bir kentiň gapdalyndan ötüp barýardy, ol kentden eline bir sanaç un alyp, bir çory çykdy hem: «Eý, Nejep jan, bäri dur» diýdi. Onda Nejep jan: «Habaryňy ber, çory» diýdi. – Habarymy bersem, Nejep jan, ýolazyk gerek bor, şujagaz uny al-da ýöriber, gerekli daşyň agramy ýok diýenleri diýdi. Muny Nejep jan makul bilip, aldy-da, sanajy arkasyna atdy-ýö-
+
+30 enedilim.com',1235);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (35,1,35,'riberdi. Birnäçe günläp ýol ýöräp barýardy. Yzyndan bir hatar kerwen ýetdi, Nejep olara salam berdi. Salamyny aldylar. Nejep: – Eý, agalar, men ýadap gelýärin, meni birje zaman düýäňize mündürip, aýagymy sowatsaňyz näder? – diýdi. – Eý, oglan, seni mündürere halymyz ýok, düýämiziň ýüki agyr – diýip, oglanyň deňinden şaglap ötüberdiler. Nejep: – Eý, agalar, eýsem, meniň şujagaz unumy alyp gidiň – diýdi. – Unuňy alyp gitsek, özüň aç ölüp galmazmyň? – Siz ganat baglap uçup gitjekmi, ýa her ýerde menzil söküp düşüp gitjekmi? – Düşüp gitjek. – Her düşen ýeriňizde ot ýakarsyňyz, oduňyzyň teýine ýumruk ýaly hamyry ýassylap taşlap ýöriberiň, men yzyňyzy yzarlap, tapyp alyp, iýip, owkat-güzeran edip barsam gerek – diýdi. Kerwenler muny makul bilip, uny alyp ýöriberdi. Her düşen ýerlerinde ot ýakýarlar. Oduň teýine ýumruk ýaly hamyry ýassylap gömdüler-de ýöräberdiler. Indi habary kimden al, Nejep jandan al. Ol kerweniň yzyny yzarlap, külüň teýinden hamyry agtaryp alyp, ýary ýanan, ýary çig çöregi iýip, birnäçe günläp owkat-güzeran edip barýardy. Birden oglanyň gözi bir agaçlyga düşdi. Ol «Eý, hudaýym, maňa-da bir agajyň garasy görünme bar eken» diýip, ökjesi ýeňläp barýardy. Ol agaçlykdan bir ýorgaly çykdy. Görse, iýermende-içermende zat ýok. Ýorgaly deňine geliberende Nejep: «Aga, salawmaleýkim» diýdi. Ýorgaly oglanyň salamyny içinden almasa, daşyndan almady. Ýorgaly aňyrrak baryp, yzyna öwrülip, Nejebe seretdi, görse, oglanyň arkasynda dutary bar. «Alla janym, şu bidöwlet ýöne-möne oglan däl-ow, şunuň birje habaryny alyp iberäýeýin-le» diýip, ýorgaly yzyna öwrülip: «Oglan, bäri dur, habaryňy ber» diýdi. – Menden habar iberipmidiň, ýaňy taňry salamyny alaňokdyň? – Bolsa-da, oglan, gelşiň nireden? – Gelşim Aşygaýdyň pirden.
+
+31 enedilim.com',1760);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (36,1,36,'– Aşygaýdyň pire ne maksat bilen barypdyň? – Bagşy bolmaga barypdym. – Bagşy bolduňmy? – Bagşy boldum. – Bagşy bolan bolsaň, bäri dur, taýyn uruş diýenleri, Aşygaýdyň piriň senden owalky çykaran şägirdi biz bolarys. Biz senden bir sowal sorarys, sowalymyza jogap berseň-ä bagşy bolanyň, eger-de jogap beribilmeseň, bizde-de ýedi ýyl hyzmat edip gitseň gerek. – Soraberiň, halypa, sowalyňyz bolsa. Ýaňky ýorgaly Nowruz kyrk käse şerabyň garasyny gören ekeni, ýöne özüni içebilmän ekeni. Ol: «Bu näden şeýle boldy?» diýip, Nejep jandan sowal soraýar. Nejep jan hem sowalyna jogap berýärmi-bermeýärmi, şu ýerde halypa Nowruz bilen Nejep jan ikisi ýoluň üstünde bir bäş keleme söz aýdyşar gerek.
+
+Nowruz: Bizden salam bolsun gardaş Nejebe, Ganatlanyp uçabilmen, bu nedir? Alnym alyp duran nije ýagydyr? Gözüm görüp, gaçabilmen, bu nedir?
+
+Nejep: – Halypam Nowruz, pirden rugsat almasaň, Ganatyň ýetirip, uçabilmersiň. Alnyň alyp duran ajal ýagydyr, Gözüň görüp, ondan gaçabilmersiň.
+
+– Ne jemaldyr, ne şöhledir, ne tapdyr? Ne galadyr, bir lahzada harapdyr? Ne derýadyr, ne ummandyr, ne abdyr? Katrasyndan içebilmen, bu nedir?
+
+32 enedilim.com',1138);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (37,1,37,'– Hakyň jemalyny görseň ne tapdyr, Bir köňül ynjytsaň, Käbe harapdyr, Hakykat ummandyr, tarykat abdyr, Şerigat şertinden geçebilmersiň.
+
+Jebraýylyň durduk ýeri nirede? Onuň bilen kimler tapdy erada? Bir tilsim, bir nokat bardyr arada, Okymyşam, seçebilmen, bu nedir?
+
+– Jebraýyl durdugy hakyň ýerinde, Dört perişde mukarredir derinde, Üç ýüz altmyş kitap pirler elinde, Okymaý, manysyn seçebilmersiň.
+
+– Ol nedir, kim, iýmeý-içmeý doýdular? Ol nedir, kim, ýuwmadylar, goýdular? Ol nedir, kim, dirileýin soýdular? Bu ne syrdyr, açabilmen, bu nedir?
+
+– Melaýyklar iýmeý-içmeý doýdular, Ol Musany ýuwmadylar, goýdular, Nesimini dirileýin soýdular, Halypam, bu syry açabilmersiň.
+
+– Nowruz aýdar, ajdarhany demime Ýudaý edim, çekeý edim kämime, Bir meýdirki, doldurdylar jamyma, Katrasyndan içebilmen, bu nedir?
+
+Nebsiň aždarhadyr, hyýalyň hamdyr, Nije kim saklasaň, bilgin kelamdyr, Nejebiň içdigi kyrk-da bir jamdyr, Tä rugsat bolmaýyn, içebilmersiň.
+
+Bular sözlerini tamam etdiler, Nowruz Nejebe garap: «Us-
+
+33 enedilim.com',1023);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (38,1,38,'sadyňa rähmet, oglan, bagşy bolan ekeniň» diýdi. Ondan soň Nowruz hem, Nejep jan hem öz ýollary bilen gidiberdiler. Habary kimden al, Nejep jandan al. Ol birnäçe günläp ýol ýöräp barşyna daň säher çagy bir serhowzuň başyna ýetip, aýak çekdi. Görse, bir sapaly jaý, gumrular owaz edip, bilbiller jak-jak urup, bulaklar her tarapa akyp barýar. Nejep: «Alla janym, birje sagat demimi alyp, soňra ýöribersem bolmazmy?» diýip, pikir etdi. Ol serhowzuň suw alynýan tekjegine girip, baýaky ýary ýanan, ýary çig çöregini suw bilen huruş edip iýmäge başlady, çöregini iýip bolup, suwy aşak-ýokary zyňyp, oglanlygyny ýat edip, oýnamaga durdy. Şol oýnap oturyşyna namaz wagty boldy. Howzuň kybla tarapyna seretse, bir bölek çarwanyň küren obasy eken. Ol çarwa obasyndan elinde ak kündükli gelin suwa baka ýöredi. Suwuň başyna geldi, onuň gözi bir ýalkyma düşdi. «Alla, bu ýalkymyň hi bir eýesini tapmak alajy bolmazmyka?» diýip, daşyna aýlanyberdi. Howzuň daşyna üç-dört aýlandy, ýalkymyň deregini tapmady. Ondan soňra agaçlaryň arasyny bir-birden gözlemäge başlady. Şol wagt gün dogdy, guşluk galdy. – Alla, men bir baýyň töründe oturan gelni bolsam, «gideniň namaz wagtydy, guşluk galdy, şu wagta çenli näme işlediň?» diýseler, men näme jogap bererin, suwumy alyp gaýdaweräýin – diýip, suw alynýan tekjege girse, şol ýalkym aýagynyň aşagynda peýda boldy. Gelin oglanyň egniniň üstünden kündügini sallaberdi. Şol wagtda oglan gelniň ýüzüne bakdy. Şol wagtda gelin oglany şapba bir ogşady. Bu ýanyna bakdy, bu tarapyndan ýene ogşady. Ýaňagyna sowuk agyz degmedik oglan zöwwe ýerinden turuberdi. Gelin «Kündük bolsa hiç ýana gitmez» diýip, kündügi howzuň içine oklap, oglanyň egnine hopba bolup duruberdi. Nejep: «Alla, bu meniň başyma inen bir towky boldy how, muny bir aýyrmanyň alajy bolmazmyka?» diýip, iki dyzyna darak urup, eglip, gelni silkip goýberdi. Bihabardan duran gelin suwa garşy başaşak ýok bolaýdy. Nejep jan: «Alla janym, men gelip-gelip şu ýerde gandar bolaýjag-ow» diýip pikirlendi, oglany howp basdy. Bir mahaldan howzuň kybla tarapyndan gelniň her omzy ýumruk ýaly gök laýy göteriň turdy. Özüne mälim: ýazyň
+
+34 enedilim.com',2133);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (39,1,39,'güni, ýuka köýnek, daraýy köýnek, öl bolan köýnek gelniň endamyna syrlaşyp ýapyşypdyr. Oýy-oý, ýumrusy-ýumry, käse-käse, akyn-çukun bolup barýar. Nejep jan muňa seredip gülýär. Muňa gelniň gahary gelip: «Eý, bidöwlet oglan, sen meni şeýder gidermiň?» diýip, düşdi onuň ökjesine, oglany kowalap, howzuň daşyndan üç-dört gezek aýlady. Nejep jan kowalap gelýän gelne ýetdirmän, bir depäniň üstüne çykyp üýşerlip oturberdi. Şonda gelin: «Eý, bidöwlet oglan, sen maňa ýetdirmediň, çarwa jahylyndan üç-dört sany dehenek jahyl tapmarynmy?» diýip, öýüne ylgady. Özem şol barýan ýerinde: «Eý, hudaýym, öýde adam ýok bolaýsa ýagşydyr» diýip, hudaýy çagyryp barýardy. Görse, hemme kişi işli işine dargaşyp gidipdir. Gelin öl bolan geýimlerini çykaryp goýup, gury geýimlerini geýip, daşary çyksa, üç-dört sany ýigit otyr. Öňlerinde üç-dört sany çukalak. Çukalagyň içinde üç-dört sany gumalak, oýun oýnap otyrlar. Biri «Bogaz boldy» diýýär, biri «Guzlady» diýýär. Gelin bularyň oýnuna seredip durdy, emma bogaz bolup, garny gabany ýok, guzlap, biri iki bolanam ýok. Gelin gumalaklary aýagy bilen kakyp iberdi. Ýigitler: «Eý, pylan baýyň gelni, sen däli bolduňmy, biziň oýnumyzy bozýarsyň?». diýdiler. – Şundan hem bir oýun bolarmy, bogaz boldy diýýärsiňiz, garny gabarany ýok, garny gabardy diýýärsiňiz, biri iki bolany ýok. – Aý, bir oýundyr-da, bir güýmenmedir-dä, haçandan bäri seniň didaryňa muşdak bolup, görüp bilmän ýördük, özüň ýagşy geläýdiň – diýip, ol ýigitleriň tüýsi üýtgäp, bu gelniň alkymyna girip, haşlaşyberdiler. Gelin bularyň tüýsüniň bozulanyny bilip: «Eý, ýigitler, men size bir täze oýun tapyp geldim» diýdi. Onda bu ýigitler «Nirede?» diýip soradylar. Gelin: «Pylan baýyň serhowzunyň başynda bir käkil pereň oglan bar, dembe-demden şony alyp geliň. Men öýe baraýyn, ot ýakaýyn, çilimi, çaý-temmäkini taýyn edeýin» diýdi. Ýigitler «Nirede ol, hany, nirede?» diýip, düňküldeşip ugraberdiler. Bulara Nejep janyň gözi düşdi. Ol: «Alla janym, şol gelin hossarlaryna habar berip, bulary iberipdir-ow, indi meni öldürerler» diýip gorkup, olaryň garasyny görenden: «Agalar, salawmaleýkim» diýip gy-
+
+35 enedilim.com',2117);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (40,1,40,'gyrdy. Munuň salam-aleýgine kim gulak asdy. Iki elinden iki adam, iki aýagyndan iki adam tutup, dördörme edip, göterip ýöriberdiler. Şol barşyna Nejep jan baran ýerinde: «ýa suw, ýa saman, ýa garaman, ýa güjüm, ýa bir ýumşagrak ýer» diýip bir toklusy ýok ýerden, demi saýy bir janlyny hudaýýoly aýdyp barýar, şol barşyna Nejep jany bir ak öýüň içine eltip goýdular. Ondan soňra ýigitler: «Eý, oglan, sazandamysyň, bagşymysyň, arkaňda dutaryň bar?» diýip soradylar. Onda oglan gorkusyna «Eý, agalar, meniň ýaly bagşy, sazanda jahan älemine gelmez» dýýdi. Ol wagtda bu ýanyndan biri çykyp: «Al eliňe sazyňy» diýdi. Nejep jan: «Ajap bolar» diýdi, gamyş kimin galdyrap, piriniň beren gara dutaryny sazlap düzüp çalmaga aýlanyşdy. Indi habary kimden al. Baýaky Nejep jany kowalan gelinden al. Onuň otuz çemesi gelin-gyz deň-duşy bardy. Olaryň barysy Nejep janyň saz çalyp duranyny görüp, onuň daşyna ýygnandylar. Gelinler bir-birlerine: «Eý, gelinler, şu oglanyň saz çalyp duranyny görsek hem ömrümize peýdasy bardyr, içeri gireliň-de, içeri gireliň» diýişdiler. Ondan soňra «Bir sep ýigidiň arasynda bir sep gyz durmaýanmydyr, mundan öň kada şeýle dälmidir?» diýip, çarwanyň mes gelin-gyzlary hasyrdaşyp içeri girdiler, bir sep bolup duruberdiler. Nejep jan jahyl oglan, gelin-gyzlara seretdi, baýaky gelinleriň içinde özüniň suwa ýykan gelnini tanady. Ol özge gelinlere gatyşanak. Olardan ýokarrak galyp dur. «Meniň sözümiň başy şu gelin bolaýsyn-da» diýip, Nejep janyň elinde sazy, dilinde sözi, şol gelne garap, bir bäş keleme söz diýse gerek:
+
+Owal-başda meýlisiňde tutuldym, Sözle, näzli gelin, kimiň ýary sen? Öldürjekler bolduň, gaçdym-gutuldym, Sözle, näzli gelin, kimiň ýary sen?
+
+Tomaşa eýlediň meniň oýnuma, Edep-ekram bilen geldiň ýanyma, Kemer deýin zülpüň saldyň boýnuma, Sözle, näzli gelin, kimiň ýary sen?
+
+36 enedilim.com',1834);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (41,1,41,'Gözleriň jellatdyr, kirpigiň hatar! Bilmen, şu nesibäm nä ýere tartar, Seni görgeç, gün-gün bu derdim artar, Sözle, näzli gelin, kimiň ýary sen?
+
+Tarypyň aýdaýyn ýagty jahanda, Owazaň düşendir Balh-Badahşanda, Seniň deý peri ýok Rum, Ispyhanda, Sözle, näzli gelin, kimiň ýary sen?
+
+Bizem aşyk bolduk şo jellat göze, Hakygat aşykdyr, bu jebre döze, Nejep, sen sözleseň, öz sözüň sözle, Sözle, näzli gelin, kimin ýary sen?
+
+Nejep sözüni tamam edenden, ol gelin. – Alla janym, bu oglan ozal hiç zat görmedik utançsyz oglan ekeni. Şunça adamyň arasynda maňa «Kimiň ýary sen, kimiň ýary sen» diýip dur, bidöwlet, bolmasa şu oglanyň bir zaman gözüne görünmäýin – diýip, aşak oturyberdi. Nejebem: – Eý, gözüňe döneýin, boýuňa döneýin, owalky durşuň bir ganymatdy, näme üçin bizden ýüzüňi dönderdiň? – diýip, bäş keleme söz diýse gerek:
+
+Saňa diýrin, näzli dilber, Janym aldy jellat gözler. Gel, lebiňden bir posa ber, Janym aldy jellat gözler.
+
+Bilebilmedim hoýuňy, Özüme kylsaň toýuňy, Görkezgin çynar boýuňy, Janym aldy jellat gözler.
+
+37 enedilim.com',1046);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (42,1,42,'Seniň bilen baga girsem, Çemen baglap, güller tirsem, Gol salyşyp, bile ýörsem, Janym aldy jellat gözler.
+
+Bizden ýüzüňi dönderdiň, Suwsan duşmanyň gandyrdyň, Aşyk Nejebi ýandyrdyň, Janym aldy jellat gözler.
+
+Gelin uýalyp turabilmedi. Şu ýerde Nejep jan gelne hoşamat urup, taryplap, ýerinden turuzjak bolup, ýene bäş keleme söz diýse gerek:
+
+Eýranda-Turanda, ajam ilinde Görmedim seniň deý owadan gelin. Hublar arasynda, jennet gülunde Görmedim seniň deý owadan gelin.
+
+Bir uzümsiň, şerbet diýip ýutmaga, Namys etdim, üstüň basyp ötmäge, Duzak eýläp, aşyklary tutmaga, Çüňki başdan aýak owadan gelin.
+
+Boýlaryň uzyndyr, ýaňagyň nardyr, Lebleriň şerbetdir, zülpleriň tardyr, Gül ýüzüň görmäge gözlerim zardyr, Görkezgin ýüzüňi, sabadan gelin.
+
+Nejep aýdar, aşnalygym ýat olmaz, Gül ýüzüň görmesem, asyl zat olmaz, Seniň kimin asla perizat olmaz, Meger, sen inensiň howadan gelin.
+
+Nejep bu sözüni tamam edenden soň, işikden iki sany atly «Habarlaş» diýip gygyrdy. Bir ýigit towsakga çykyp «Agalar,
+
+38 enedilim.com',1014);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (43,1,43,'size ne habar gerek?» diýdi. Onda ol ýigitler: «Biz ötermenräk ýolagçy, bir çilim berseň» diýdiler. Olara çilim berdiler, olar ötüp gidiberdiler. Indi habary kimden al, Soltanesen patyşadan al. Ol bu atlylary «Elbent bagşy bolsa garrapdyr, ýalançyny seýil ediň, geziň, päkize bir oglan bagşy tapyň» diýip iberen eken. Baýaky öýüň işiginden «Çilim ber» diýip gelenlerinde, gapyny açanlarynda, Nejep janyň husny-jemalyny gördüler. Aýdyşynam daşardan gulak asyp eşitdiler. Aňyrrak baryp ýaňky iki atly: – Patyşamyza aňrujy ýarajak bolsa, şu oglan bagşy ýarar. Baryp habar edeli, daşdaky ýumuşymyz ýakyndan bitdi – diýip begendiler. Olar hilegärçilik bilen baýaky oglanyň aýdyp oturan gapysyndan gelip, ýene-de «Habarlaş» diýdiler. Ýene bir ýigit towsup daşary çykdy. Görse, iki ýorganyň jylawyny deň tutupdyrlar, atlaryň toýnagyndan der syrygýar. Ol ýigit: «Agalar, nä habaryňyz bar?» diýip sorady. «Habarymyz-a – biz ötermenräk, bir çilim berseň» diýdiler. – Agalar, päkize aýdyjy bagşymyz bar, bagşy eşideris diýseňiz düşüň. – Bagşyňyz-a bir diňläýmeli bagşy ekeni, şol bagşyňyz bir eli bilen çaý berse, bir eli bilen çilim berse, düşäýeris diýip durus. Nejep jan hoşamaý oglan, bir elinde çaý, bir elinde çilim: «Agalar, şonda wagtyňyz hoş bolsa, ine» diýip käsäni birine, çilimi birine uzatdy. Olar çaý, çilimi alan kişi bolup, her haýsy Nejebiň bir elinden tutup, ýorga gamçyny basaýdylar. Oglan iki atlynyň arasynda batbörek gaýdyrylan ýaly gaýdyrylyp barýar. Indi habary kimden al, baýaky gelinden al. Ol öýleriň arasynda kebelek ýaly ikibaka ýüwrüp: «Eý, ýüzi garalar, şu oglany berip goýberseňiz, ýüzüňize gara, gaýnatamyň aty ýüwrük dälmi? Daýymyň üç ýaşary ýüwrük dälmi?» diýiberdi. Ol wagtda çarwada at ne işlesin, it ne işlesin, ýaby-esge, baýtal-okajyň üstüne palan taşlap, otuz çemesi atly bolup, olaryň yzyndan kowdular, emma patyşanyň atlylary ýetdirmän, özlerini gala gaçyp atdylar. Baýaky ýigitleriň içinde köpi görenräk, pähimli-
+
+39 enedilim.com',1963);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (44,1,44,'räk biri bardy. Ol: «Joralar, duruň şu ýerde, bular patyşanyň atlysy bolmaga çemeli, olar özlerini gala gaçyp atdy, häli-de bir pille, bu ýerden gaýdalyň. Patyşanyň ýanyna biziň bagşymyzy ber diýip bärden depirjeşip barsak, biziň barjygmyzy tohummurt edip gyrar» diýip, öz töwellaçysy özünden tapylyp, öwrülip gaýdyberdiler. Habary kimden al, Nejep jandan. Ony patyşanyň huzyryna eltdiler. Nejep arz jaýynda gol gowşuryp, salam berip, baryp oturberdi. Patyşa baýaky ýigitlerden: – Eý, ýigitler, bu oglany nireden tapdyňyz? – diýip sorady. – Tagsyr patyşahym, daşdaky ýumşumyz ýakyndan bitdi. Pylan çarwanyň obasyndan tapdyk. Şol wagtda patyşa otuz iki emeldaryna: – Eý, ýigitler, bu taryply aýdyjy oglan bagşy bilen aýdyşar ýaly ýurdumyzda bagşy barmy? – diýdi. Bu ýandan biri çykyp: – Eý, tagsyr, ýurtda bagşy galdymy, baýaky garry Elbent bagşy bolmasa? – diýdi. – Baryň, alyp geliň, şol garry bidöwleti, hälem oglan-uşaga depgi bererligi bardyr. Derrew Elbendiň yzyndan bir atly iberildi. Atly Elbendiň ýanyna baryp: – Eý, Elbent, seni patyşa çagyrýar – diýdi. — Patyşa näme etjekmişin meni? – Patyşanyň huzyryna bir oglan bagşy gelipdir, şonuň bilen seni aýdyşdyrjak bolup çagyrýar. – Meni garran wagtymda oglan-uşak bilen agzymy deň edip ýörüp, patyşanyňam akly çaşypdyr-ow, bolsa-da patyşadyr-da, barmasak bolmaz – diýip, gara dutaryny arkasyna atyp, ugramak bilen boldy. Arz jaýyna gol gowşuryp, salam berip bardy, görse, patyşanyň ýanynda bir oglan otyr. Özge ýeri üýtgese-de, gözi üýtgemändir. Pikir edip otursa, şol baýaky ogullygy. Elbent Nejebiň syrtyndan geçiberen kişi bolup, ädiginiň burny bilen oglany depip ötdi: – Eý, bidöwlet oglan, meni garran wagtymda aýdyşjak diýip çagyrdyp getirdip ýören senmidiň? –
+
+40 enedilim.com',1739);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (45,1,45,'diýdi. Ol wagt Nejebi horluk basdy, gözünden katra-katra ýaş dökdi. Patyşa muny görüp, dergazap boldy: – Bidöwlet Elbent bagşy, meni penalap oturan oglany näme üçin depýärsiň? – Eý, tagsyr, munuň özüne ýetesi sebäbi bar. – Onuň näme sebäbi bar? – Tagsyr, muny bir sorasaňyzlaň. – Ine soradygymyz, aýt. – Sorasaňyz, bu baýaky Genje-Garabagyna iberdip getirden aýalyňyzyň elinde gelen ýedi aýlyk oglan. Men muny bakdym-bejerdim, kemala getirdim. Men gahar üstüne muňa iki şapbat çalaýypdym. Munuň şol gideni gidenidir. «Men Aşygaýdyň piriň ýanyna gidip, ýedi ýyl hyzmat edip, bagşy bolup gelip, şu bagşy bilen aýdyşyp ýeňip, arymy almasam, armanda bolsam gerek» diýip, munuň şol gideni-gideni. Şondan bäri ine görüp durşum muny. Ol meniň bilen aýdyşar ýaly kim bolupdyr? – diýip, Elbent bagşy öz-özünden men-menlik satdy. Onda patyşa: – Eý, bidöwlet Elbent bagşy, oglanyň tarypyny ýaman belent eşidýäris, aýdyş, ýeňseň-ä her iş et, ýenilseň, nädersiň? – diýdi. Onda Elbent: – Päheý, patyşahym, şundanam bir ýeňilme bormy? Ýeňilme bolmasa, al eliňe sazyňy. Elbent bagşy sazyny silkip aldy. Gahary gelip: – Oglan, meniň bilen aýdyşarmyň-aýt? – diýdi. – Aýdyşmada gözüňem oýaryn seniň. Ikisi şu ýerde dutarlaryny bir gulakdan düzüp, saz çalmaga başladylar. Elbent ilki başlap, Nejep jan ony kowanda Nejep set-hezar artyk çalýar. Nejep başlasa, Elbent bagşy onuň yzyna eýerip bilmän galaýýar. Patyşa: «Bu garry bidöwlet sazynda-ha oglandan gaýra geldi, sözünde gör nädýär-dä?» diýip otyrdy. Elbent bagşam öz içinden: – Alla janym, bu oglan sazynda ökdelän eken, sözünde şunuň ýaly ökdelän bolsa, meni heläkläýmese ýagşy – diýip gahary gelip, gözleri alaryp, reňki gaçyp, murtlary syh-syh bolup, – Gel-ä şu oglandan dünýäniň binýat bolan ýerinden bir
+
+41 enedilim.com',1760);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (46,1,46,'habar soraýyn – diýip, owaly Elbent bagşy sowal sorar, Nejep jan hem sowala jogap berer, ikisi garşylykly bir bäş keleme söz aýdyşar gerek:
+
+Elbent: – Bizden salam bolsun il uşagyna, Adam Sefi-ylla ne şäher saldy? Ne mekanda durup, galam çaldylar? Nije ýyl jesetde lemýezal galdy?
+
+Nejep: – Dunýä «çarköşedir» orta ýerinde, Adama jan berip, galam çaldylar. Mundan owal hiç bir şäher gurulman, Owal başda Kufe şährin saldylar.
+
+– Şähri Luty nije perişde ýykdy? Haýsy ýerde gurlan Suleýman tagty? Haýsy ýyl an hezret Magraja çykdy? Ol ne ýerde arslan ýüzügin aldy?
+
+– Şehri Luty bäş ýüz perişde ýykdy, Ýol arkasynda gurlan Süleýman tagty, Lu ýyly an hezret Magraja çykdy, Ol semadan arslan ýüzügin aldy.
+
+– Düldüliň enesi mahy zeňňinden, Habar bergin şol düldüliň reňňinden, Hezreti Resulyň owal jeňňinden, Ozal zülpükary kime çalyndy?
+
+– Düldüliň enesi mahydyr-zeňňi, Misli semawatdyr, düldüliň reňňi, Emir Antar bilen eýledi žeňňi, Owal zülpükary şona çalyndy.
+
+42 enedilim.com',977);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (47,1,47,'– Näden garadyldy Musanyň tury? Näden ýaradyldy Esrapyl sury? Ol nedir, kim, mydam alnynda nury? Owal kim tanady, musulman boldy?
+
+– Nykabyn göterdi, ýandyrdy tury, Köpükden ýaraldy Esrapyl sury, Hezreti Resulyň alnynda nury, Hatyja tanady, musulman boldy.
+
+– Elbendiniň söwdüjegi destinde, Nä ölüdir dirileriň kastynda? Ol nedir, kim, mydam Basra üstünde? Ne ýerde Ýezidiň myhy ýolundy?
+
+– Bäş wagt namaz gul Nejebiň destinde, Öli toprak dirileriň kastynda, Muhammet Mustapa Basra üstünde, Magrypda Ýezidiň myhy ýolundy.
+
+Bular sözlerini tamam edenden soňra patyşa aýtdy: «Bu garry bidöwlet sazynda-da, sözünde-de oglandan ryswa boldy, ýeňildi. Emeldarlarymy synap göreýin, olar näme diýerkä?» diýip, patyşa otuz iki emeldaryny ýanyna çagyrdy, hem: – Eý, emeldarlar, bagşylaryň haýsy ýeňdi, haýsy ýeňildi, maňa şony aýdyp beriň – diýdi. Ol wagtda bu ýandan biri çykyp: «Eý, tagsyr patyşahym, bir zaman möhlet berseňiz, biz aýdyp bereli» diýdi. Orda patyşa: «Möhlet berdim» diýdi. Otuz iki emeldar bir ýere ýygnanyşyp, maslahat edip: – Eý, joralar, bu garry bidöwlet-ä sazynda-sözünde oglandan ryswa bolup ýeňildi. Patyşa-ha muny bilmedi, Elbent ýeňilse-de, ýeňdi edeliň, «Pygamberler hem öz goşunynyň arkasyny sypapdyr» diýen bir nakyl bar – diýen netijä geldiler. Soňra patyşanyň ýanyna baryp: – Eý, tagsyr patyşahym, Elbende söz barmy? Ol ýeňdi – diýdiler. Ol wagt patyşa olara: – Eý, bidöwletler, garry býdöwlet sazyn-
+
+43 enedilim.com',1439);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (48,1,48,'da-sözünde oglanyň öňünde heý gaçyp gutulyp bildimi? Siz näme patyşany haýwan diýip eşidipmidiňiz? Baryň, oglanyň egnine iki gat zerli don getirip ýapyň, altynly jüp jygany getirip, başyna sanjyň – diýdi. Oglanyň egnine iki gat zerli don getirip ýapdylar. Altynly jüp jygany hem getirip, başyna sançdylar. Oglan tagta çykan şazada kimin boldy. Ol wagtda bu ýandan biri çykyp aýtdy: – Eý, tagsyr patyşahym, Elbent-de gadymdan gelen hyzmatkärdi, muňa bir köne güpbi-de bolmady – diýdi. Onda patyşa bir dogmanyň eline dört ýarym teňňe çykaryp berip: – Bar, bu gün şäheriň bazarydyr, Elbent ýaly garry adama üşemez ýaly arzan bahasyndan getir-de beräý – diýdi. Şol wagt ýene biri: – Eý, tagsyr, onda jygasy kemis bolýar – diýdi. Onda patyşa: – Bir bakgalyň tawusynyň perini ýol-da, al-da gaýdyber – diýdi. «Ajap bolýar» diýip, dogma ýöribermek bilen boldy. Bärden çapanpurşuň ýanyna bardy, arzan bahasyndan şaýy kem dört teňňä her ýerinden pagtasy çykyp duran bir don satyn aldy. «Men-de aýak kireýini alyp galaýyn» diýip, üç şaýysyny jübüsine urdy. Alan donuny egnine atyp, bir bakgalyň ýanyna bardy: – Eý, bakgal aga, maňa şol tawusyň perini ber – diýdi. Onda bakgal: «Tur, ýok bol, patyşa gerek boldy diýip, men nişämden aýrylarynmy?» diýdi. Dogma alan donuny egnine atyp, haýran bolup gaýdyp gelýärdi. Şol gelşine bir nanbaýyň tamdyrynyň başyna geldi. Görse, üç-dört sany towuk gezip ýör. Içinde bir horaz bar, görse, peri al-ýaşyl öwüsýär. «Alla janym, tawusyň peri bolmasa, towguň peri boljak eken-dä. Şunuň yzyndan ýetip bolsa, bir oňaý söwda ekeni» diýip, daýaw dogma horazyň yzyna düşdi. Horaz gaçmaga, dogma kowmaga aýlanyşdy. Şol barşyna horazy ýadatdy. Bir ýerde horazy gaňrak-ga basdy. Bularyň güpürdisine bir kepbe tamdan bir oglan çykdy, görse horazyny bir bela basyp ýatyr. Ol: «Eý, meniň horazymy nädýärsiň?» diýip gygyrdy. Dogma: «Horazyň peri patyşa gerek boldy» diýip, horazyň guýrugyny ýolup, bilini bogup alyp, ýöribermek bilen boldy. Elbendiň donuny eltip egnine ýapdy. Onda patyşa «Hany jygasy?» diýdi. Onda dogma: «Tagsyr patyşahym, tawusyň perin-ä tapmadym, bir towguň
+
+44 enedilim.com',2107);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (49,1,49,'perini tapdym» diýdi. Patyşa: «Hany ony telpeginiň gyrasyna sanç» diýdi. Elbendiň jygasyny sançdylar. Ol Nejep janyň jygasyna görä syrdamrak, owadanrak, egjemräk görünýär. Elbent kölegesine gözläp: «Alla janym, meniň jygam-a onuňka görä owadanrak, bu oglandyr, donuň gadryny biler, jyganyň gadyryny bilmez, jygamyzy alşaly diýip, bir söz aýdaýyn, alyşaýsa, kempir ikimiziň ömrümiz ötinçä iýmäge boljak eken, alyşmasa, bu-da bir köýen sözüň biri boljak eken-dä» diýdi. Elbent bagşy: «Oglum, bäri otur, jygamyzy alyşaly» diýýär, Nejep jan «Alyşman» diýýär. Ikisi şu ýerde ýagly bagyr, sowala jogap, garşylykly gulpy-kilt, bir bäş keleme söz aýdyşar gerek:
+
+Elbent: – Seniň jygaň iki başly, Gel, jygamyz alyşaly. Men bir pakyr, gözi ýaşly, Gel, jygamyz alyşaly.
+
+Nejep: – Bu dünýä hem iki başly, Men jygamy alyşmanam. Gözden akan ganly ýaşly, Men jygamy alyşmanam.
+
+– Saba gülşene barmazmyň Bilbilden habar almazmyň? Oglum, öl diýsem, ölmezmiň? Gel, jygamyz alyşaly.
+
+– Saba gülşene bararmen, Bilbilden habar alarmen, Eýäm ýel diýse, ölermen, Men jygamy alyşmanam.
+
+45 enedilim.com',1078);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (50,1,50,'– Ok kimiňdir? – Atanyňdyr, Ýaý kimiňdir? – Tutanyňdyr, Ogul maly – atanyňdyr, Gel, jygamyz alyşaly.
+
+– Dine girmeýen mülhidem, Hem tersaýam, hem jöhidem, Meňki saňa näbähbidem, Men jygamy alyşmanam.
+
+– Elbent diýer, saz çalmanam, Oglum, sen gitseň, galmanam, Närazy bolsaň, almanam, Razylykda alyşaly.
+
+– Nejep aýdar, hub sözüm bar, Ilde-halkda bir resim bar, Men oglanam, höwesim bar, Men jygamy alyşmanam.
+
+Bular sözlerini tamam edenden soň Elbent bagşy: «Eý, alyşmasaň, ters alyş» diýip, keseräge-de bakyp oturberdi. Nejep janyň: «Arymy almagyň ýeri geldi gerek» diýip, göwnüne gelip: – Eý, ata, bäriňi bak-la, ýaşuly halky kän kine saklamazak bolar – diýdi. Muňa Elbent bagşy öz ýanyndan: «Maňa rehimi geldi gerek, jygasyny berjek gerek» diýip, çak edip, ýüzüni Nejep tarapa öwürdi. Oglan Elbendiň sakalyndan orap alyp, onuň her ýan çekgesine bir şapbat çaldy. Özüňe mälim, degmän ýören eliň tekiz degişi bilen Elbent bagşynyň gözünden ýalpyldap-ýalpyldap ot çykdy. Patyşa tagt üstünde oturan ýerinden muňa gözi düşdi. Ol: «Oglanyň ary bary çyn ekeni» diýip, bir güldi, onuň gülenine hem Elbendiň gözi düşdi. Ol: «Patyşamyzyň-a Nejebiň meni uranyna wagty hoş bolup gül-dow» diýip, pikir etdi. Elbent:
+
+46 enedilim.com',1222);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (51,1,51,'– Men iň gowusy şu ýerden gideýin, bolmasa patyşa «Elbendi öldüriň» diýip, perman berermi-nädermi – diýip, ýerinden turdy, gapa tarap ugrady. Elbent bosagadan ýaňy bir aýagyny ätläpdi. Şol wagt Nejep oglan: «Bu bidöwlet ýaňy meni depip ötüpdi, şol depgi üçinem arymy alyp galaýyn» diýip, errek goçy ýaly bolup, bat alyp, ýüwrüp baryp, Elbendiň syrtynyň ýumralan ýerine ras çüwüp bir depdi. Dyzynyň kuwwaty giden garry honda baryp düşdi. Özüňe mälim, patyşanyň gök daşdan bina bolan jaýy, Elbendiň maňlaýy bilen kükregi ebşiri baryp, daşa degdi... Elbent bagşy öýüne garşy ýoklar bolaýdy. Ol baryp, öýünde karar tapsyn. Habary kimden al, Soltanesen patyşadan al. Ol: «Alla janym, Elbent bagşyny bolsa beýdip goýberdik, bu oglan bolsa elden çykarar ýaly oglan däl ekeni. Muny öz ýurdumyzdan öýlendirip, aýagyny baglaýyn» diýip, göwnüne düwdi-de, kyrk gije-gündüzlik toýa başlady. Patyşanyň emeldarlary: «Eý, tagsyr patyşahym, bu kyrk gije-gündizlik toýuň bagşysy kim bolar?» diýdiler. – Özüni aýtdyryp, onsoň gelin alyp berenimizde bolmaýarmy? Patyşa Nejep janyň ýanyna baryp: – Eý, Nejep jan, bize ýatyp-turup, dem-dynjyňy alyp, kyrk gije-gündiz hyzmat edersiň, otuz iki emeldarlarymyň barysy «Asla seniň sazyňdan-sözüňden gana bilmeýäris» diýýärler – diýdi. Onda Nejep «Ajap bolar» diýip, kyrk gije-gündiz hyzmat etmek bilep boldy. Patyşanyň bir garry weziri bardy, adyna Esen wezir diýerdiler. Ol wezir dünýäden ötüpdi, onuň Ziwer beg diýen ogly bardy. Atasy ölenden soň onuň ornuna wezir bolupdy. Ziwer begiň bir ýetişip oturan gyz dogany bardy. Adyna Mylaýym han diýerdiler. Onuň bir garry enesi bardy. Ol Mylaýym hanyň köşgüne gelip: – Eý, oglum, Mylaýym jan, agaň Ziweriň gala gideli bäri bir aýdanam ötüp barýar, hemişe hepde, bazar ortalygy aýlanyp durýardy. Bu sapar ondan hiç bir habar bolmady. Gülçemen çoryny iberip, bir habar aldyrsak niçik bolar? – diýdi. Onda
+
+47 enedilim.com',1890);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (52,1,52,'Mylaýym han «Ajap bor» diýip, Gülçemen çoryny ýanyna çagyryp: «Bar, Ziwerden habar alyp gel» diýdi, «Ajap bolar» diýip, Gülçemen çory gidiberdi. Ol galanyň ýanyna baryp, görse, ýygnanypdyr ýygyn-märeke, çöpde-çörde san bar, emma bu märekede san ýok. Olaryň ortarasynda bir oglan bagşy çyrlap aýdym aýdyp otyr. Gülçemen birinden: – Bu waka haçandan bäri peýda boldy? – diýip sorady. – Eý, bu dünýäden bihabar çory, otur, bu oglanyň patyşanyň gaşynda aýdyp oturaly bäri otuz ýedi gije-gündizdir. – Munuň adyna näme diýerler? – Munuň adyna Nejep oglan diýerler. – Haý-haý, ajap oglan eken-ow – diýip, çory yzyna ökjäni göteriberdi. Görse, Ziwerem hoşlukda otyr aken. Ol dolanyp geldi-de: – Eý, bibilerim, söýünji, agam wagtyhoşlukda oturan eken, otuz ýedi gije-gündizden bäri patyşamyzyň dergähinde bir käkil pereň oglan aýdym aýdyp oturan ekeni, görmäge göz gerek – diýdi. Emma muny eşiden Mylaýym gyz enesiniň gitmegine howlugyp, oturyp-turuberdi. Enesi baryp köşgünde karar tapsyn. Habary kimden al, Mylaýym gyzdan al. Ol Gülçemeni ýanyna çagyryp: «Ýaňy patyşanyň gaşynda bir oglan bagşyny görüp geldim diýdiňmi? – diýip sorady. Ol «Hawa» diýdi. – Onda maňa şony alyp gelip beräýseň. – Eý, bibi jan, ony iki aýakly bende alyp gelip bilermi? – Alyp gelseň-de alyp gelersiň, alyp gelmeseň-de alyp gelersiň. – Eý, bibi jan, öýdenden, özüň öldürjek diýsene. – Öldürmeden bäri-de iş kän, emel öwretsem edermiň? – Hawa, ederin. – Etseň, haremhana gir, meniň peri lybasymy geý, eliňe tylla sadaply gazmany al, ýüzüňe-de bir çeşmendi tut. Şol oglanyň çat maňlaýyna geç-de, iki gözüňden başga ýeriňi görkezmän, bar yşaraty yşaratyň üstüne uruber. Eger şol oglanyň gaýraty bolsa, hökman çykyp, seniň habaryňy aljak bolar. Şonda sen meniň tarypymy belent etgeýsiň.
+
+48 enedilim.com',1770);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (53,1,53,'Çory: «Ajap bolar» diýip, ýöribermek bilen boldy. Nejep janyň aýdyp oturan ýerine baryp, onuň ýazzy maňlaýyna geçip, gözi owadan çory yşaraty yşaratyň üstüne uruberdi. Nejep jan muny görüp aýdyp oturan aýdymyny ýalňyşyberdi: – Sen ýa bir aşyk sen, ýa bir magşuk sen, ýa bir aşykdan gelen dil sen, seniň bir çykyp habaryňy almasam, maňa-da bir uly namartçylyk bolsa gerek – diýdi. Nejep jan derrew ýerinden turup: «Patyşahym, bir arzym bar» diýdi. – Oglum, ne arzyň bar? – Tagsyr patyşahym, hyzmatyňyza düşeli bäri, sanap otursam, otuz ýedi gije-gündiz bolupdyr. Bir sakydym bardy, şony aýtmak ýadymdan çykypdyr. – Oglum, ne sakydyň bar? – Ýedi ýaşymdan bäri bir rekagat namazy kaza goýmaýardym, rugsat berseň, şony okap, soňra aýtsam bolmaýarmy? – Rugsatdyr. Nejep janyň eline bir ak kündük çykaryp berdiler. Ol täret kylan kişi bolup, ortara gelip, namaza durdy. Oturyp okan boldy, ýartysy ýok, turup okan boldy, elhemi ýok, iki eline salam berme ýok, egildi, galdy-egildi, galdy, otuz ýedi gije-gündiziň namazyndan bir sagatda dynyp, sähralap geljek kişi bolup, çykdy ýöriberdi. Özüni buljumdan-buljuma çekip barýardy. Habary kimden al, Gülçemen çorudan al. Ol Nejep janyň gapdalyndan çykyp: «Nejep jan, bäri dur» diýdi. Nejep janam: «Habaryňy ber, çory» diýdi. Aýyplaşdyrmasaň, habarymy saz bilen bereýin. – Saz bilen berseňem, tiz ber, bidöwlet, bolup durşumyzy biri göräýmesin. Şu ýerde çory bentlerini ýazdyryp, synalaryny agardyp, tylla desseli gazmany ak mämmäniň ikisiniň ortasynda goýup, Nejep jana garap: «Eý, Nejep jan, saňa Mylaýym han gelsin diýdi» diýip, bir bäş keleme söz aýdar gerek:
+
+49 enedilim.com',1618);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (54,1,54,'Owazyň arşa ulaşdy, Mylaýym han gelsin diýdi. Seni soraşdy-yzlaşdy, Mylaýym han gelsin diýdi.
+
+Seniň ýoluňa bakandyr, Dagy-hijranyň çekendir, Gözden ganly ýaş dökendir, Mylaýym han gelsin diýdi.
+
+Owazyň düşdi illere, Düşüp sen dilden-dillere, Bar, dolan inçe billere, Mylaýym han gelsin diýdi.
+
+Misli enaryň özüdir, Şekerden şirin sözüdir, Esen weziriň gyzydyr, Gyz Mylaýym gelsin diýdi.
+
+Aşyk ýolundan dänmedi, Dünýäge iki inmedi, Eglemegin Gülçemendi, Mylaýym han gelsin diýdi.
+
+Gülçemen sözüni tamam edenden soň Nejep jan: – Eý, bidöwlet, bedrek çory, namaz bilmeýän ýerime namaz okan bolup, munça halaýyga it ryswasy, masgara boldum, meni çykaryp aýdan habaryň şumy, men ozal bir hanyň hyzmatyndan gutulabilmän ýörün, meniň ýene bir han nämäme gerek? – diýdi. – Eý, oglan, «bidöwlet» diýip, agzyňy onda-munda uruberme, meniň aýdyýanym näzenin han. – Näzenin han diýdiňmi? – Hawa.
+
+50 enedilim.com',900);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (55,1,55,'Nejep jan jahyl oglan, çorynyň «näzenin han» diýeni gulagyna ýokup gitdi. – Bidöwlet, bolup durşumyzy biri göräýmesin, maňa köşgüni, ýoluny salgy ber. – Köşgi-de ýakyn, ýoly-da ýakyn, barjak wagtyňy aýt. – Barjak wagtym – namaz şam ýa bararyn, ýa öldi habarymy eşidersiňiz, bar bibileriňe söýünjiläber. Nejep jan Gülçemen çorudan ýol salgyny aldy-da, yzyna gaýtdy, ýaňky aýdym aýdyp oturan ýerine baryp, «wah» diýip, özüni ýüzünleýin taşlady. Patyşa Nejebiň başujynda perwaz urýar. Ol: – Meniň bagşyma göz çaldymy, dil boldumy, meniň şu bagşymyň keseliniň emini tapan adam bolsa, salgytdan azat, işigini ýel açyp, ýel ýapar ýaly ederin – diýip, duran halaýyga jar çekdirdi. Bu oturan halaýykdan hekim galmady, gurrandaz hem galmady, hemmejigi Nejebi görüp çykdylar, emma onuň keselini tapabilmediler. Patyşa dergazap bolup: – Meniň soraýan kentimde ýene hekim galdymy, ýa indi hemmesimi şu? – diýip sorady. Ol wagt bu ýandan biri çykyp: – Eý, tagsyr patyşahym, pylan kentde bir garry mama bar, Lukmandan bärki hekim-a şoldur, özi gelmäge ýaramaýar, ol ýüz on ýedi ýaşynda – diýdi. Patyşada gyt zat barmy? Bir ýelmaýa kejebäni urup iberdiler, baýaky garry mamany dembe-demden getirdiler. Iki dyzynyň aşagyndan gujaklap kempiri Nejep janyň başujuna eltip goýdular. Patyşa kempire: –Eý, mama jan, şu bagşynyň keselini tapsaň, islän maksadyňa ýetseň gerek – diýdi. – Eý, tagsyr patyşahym, bagşyň aňryujy keseli bar bolsa, taparys. Nejep janam, özüne mälim, masgarabaz ýaly saňgaty bolup ýatyr. Kempir Nejep janyň kükreginiň üstünden uran eli ondan oňa, mundan muňa ýetip barýar. Onda patyşa oňa: «Eý, mama jan, eliňi ýaman gaty silkip aldyň-la?» diýdi. – Eý, tagsyr, bagşyň keselini tapdym – diýdi. – Bagşymyza näme bolupdyr? Bagşyňyza aşyklykdan dil ýetipdir.
+
+51 enedilim.com',1773);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (56,1,56,'– Eý, mamajan, özümiz-de şoňa ýorup otyrdyk, bagşynyň keselin-ä tapdyň. Şondan soň patyşa Nejep janyň başujyna gelip: – Eý, Nejep jan, tur ýeriňden, aljagyň dokuz gyzam bolsa, alyp bereýin, ýene üç gije-gündiziň galypdyr, ony hem sow – diýdi. Nejep jan ölse-öljek welin, wada-da ýalançy boljak däl. Patyşanyň üç mertebe sözi syndy. Iň soňunda patyşa: – Sen bidöwlet oglan, ogurlukda-jümrülikde görsem, öldürmesem, Soltanesen patyşa adym ite dakylsyn. Ýörüň, halaýyk, munuň daşyndan – diýdi. Halaýyk güwläp ördi, Nejebiň aşagyndaky keçäni hem silkip aldylar. Nejep doňan terne ýaly, şaly samanyň üstunde galyberdi. Indi habary kimden al, Nejep jandan al. Ogrynça gözüni açyp görse, özünden başga iňlär siňek ýok. Niredesiň gaýraky derweze diýip, guş atjak mergen ýaly bolup, gara dutaryny egnine atyp bükedekleý-bükdekleý gidip, iki ýaşyl syrçaly köşgüň ýanyna bardy. Haýsy Mylaýym hanyň köşgüdigini, haýsy enesiniň köşgüdigini bilmän, Nejep jan şu ýerde çyn ebir-nowbahar ýyglap, gözünde ýaş, bagrynda baş, her elinde kyrkagyr daş, zar-zar ýyglap, bir bäş keleme söz diýse gerek:
+
+Seni görmäge gelmişem, Görmeginçe gidermiýem? Birnäçe nar gülleriňden Tirmeginçe gidermiýem?
+
+Ajam ilinden gelmişem, Ganly jigerim dilmişem, Myrat almaga gelmişem, Almagynça gidermiýem?
+
+Aç, ýykylmyş gapyny aç, Ak ýüzünden alaýyn paç, Gardaşyň boýnuma gylyç Çalmagynça gidermiýem?
+
+52 enedilim.com',1378);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (57,1,57,'Näzli han, köşgünden bakyp, Ganly jigerimi ýakyp, Jynazam gapyňda okyp, Ölmeginçe gidermiýem?
+
+Sen meni saldyň oýnuňa, Webal-ýazygym boýnuňa, Aşyk Nejebi goýnuna Salmagynça gidermiýem?
+
+Nejep bu sözüni tamam etdi. Habary kimden al, Mylaýym handan. Ol köşgüniň üstunde oturan ýerinde: – Eý, Gülçemen çory, gulagyma bir ýakymlyja owaz ilen ýaly bolup gidýär, daşaryk çykyp gözlesene – diýdi. Ajap bolar – diýip, Gülçemen çory çykyp gözlese, Nejep jan iki köşgüň arasynda «Almagynça gidermiýem» diýip delmirip dur. Gülçemen: – Eý, Nejep jan, alsaň-da, islegiň bärde – diýip, onuň elinden tutup, idip gaýdyberdi. Mylaýym han bir şum pikire gitdi. Ol: «Gülçemen çory bolsa-da, bir owadan çory, şu ýere gelende çykman, meniň aýagym maýypmykany?» diýip, towsup çykyp gözlese, çory Nejebiň elinden tutup gelýär. – Eý, bidöwlet bedrek, betbagt çory, ol oglanyň eli kim, seniň eliň kim, a onuň elinden tutup, idip gelip onuň gözi körmi? – diýip, Mylaýym han gahar-gazap bilen goşa ýumrugy düwüp, çorynyň ras iki göwsüniň üstune saldy. Çory iki dyzynyň aşagyndan gujaklap, daň asmandan gaýdyberdi. Eňsäniň düwlen ýeri, ýagyrnyň hekgeren ýeri, zigirrigiň tükenen ýeri – üçüsi ras degdi güpläp, ýygrylyp düýrülip, jürre bolan mal ýaly, ýatybermek bilen boldy. Çory şu ýerde galyberdi. Indi habary kimden al, Mylaýym han bilen Nejep jandan. Mylaýym han bilen Nejep jan ikisi gol boýna salşyp, köşk üstüne çykdylýar. Mylanym han şu ýerde bentlerini ýazdyryp, synalaryny agardyp, tylla desseli gazmany ak mämmäniň ikisiniň ortasynda goýup, Nejep jana garap: – Eý, Nejep jan, owaly
+
+53 enedilim.com',1581);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (58,1,58,'bilen bir sözbaşy bolsun – diýip, bir bäş keleme söz aýdar gerek:
+
+Alys ýoldan gelen oglan, Başyň üçin al gaç meni. Ýürek-bagrym dilen oglan, Başyň üçin al gaç meni.
+
+Sapa bolsa, öser batlar, Mundan ýeg bolarmy ýatlar, Teble doly bedew atlar, Başyň üçin al gaç meni.
+
+Ter hynalar bar golumda, Binalar sagy-solumda, Pyýada gezem ýoluňda, Başyň üçin al gaç meni.
+
+Mylaýym diýr, gara saçly, Gara gözli, galam gaşly, Meni goýma gözi ýaşly, Başyň üçin al gaç meni.
+
+Mylaýym bu sözüni tamam edenden soň, Nejep jan: – Meniň barara ýerim bolmasa, batara kölüm bolmasa, men seni göre alyp gaçaýynmy? Meni patyşa ýaly adamyň hyzmatyndan getirip, aýdan habaryň şu bolýan bolsa, ine meniň turanym – diýip, ýerinden turuberdi. – Eý, Nejep jan, owal birje sözbaşy diýmedimmi men saňa, mahlasyňy aýdybersene-mahlasyňy – diýip, Mylaýym gyz ýüz müň jülwe bilen tawus dek daranyp, humaýun dek jilwe kylyp, dyzboýundan tekýe ýassyk, bil bagdan körpe düşedi, Hindistan çitinden dokuz gat körpäniň arasyna girip, yşgy peçek kimin bolup ýatyberdiler. Bular şu ýatyşda ýedi gije-gündizläp ýatdylar, ýedi gije-gündizden soň Mylaýym jan oýandy. Otuz ýedi gije-gündiziň ukusyndan galan Nejep jan oýanmady. Mylaýym
+
+54 enedilim.com',1204);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (59,1,59,'han oýanansoň: «Munuň bilen bolup ýatmam däl eken-ow, men bir weziriň gyzy bolup, bir aýak ýalaňaç jalataý bilen bolup ýatmam däl eken-ow, häläm wagty barka muny basymrak turuzyp kowawereýin» diýip, kowmaga-da kän gözi gyýman, Nejep jana garap, elinde sazy, dilinde sözi, bir bäş keleme söz aýdar gerek:
+
+Balym ajam, janym ajam, Saba boldy, tur, git indi. Bir boldy gündizim-gijäm, Saba boldy, tur, git indi.
+
+Saba bolsa, agam duýar, Yzymyzdan kowgy kowar, Läşimizden gurt-guş doýar, Saba boldy, tur, git indi.
+
+Günüm gussaýa doldurar, Syrym äleme bildirer, Agam duýsa, meni öldürer, Saba boldy, tur, git indi.
+
+Mylaýym diýr, gorkym çohdur, Dostumdan duşmanym köpdür, Senden gaýry ýarym ýokdur, Saba boldy, tur, git indi.
+
+Mylaýym bu sözüni tamam edenden soň, Nejep jan ýalpa gözüni açsa, «Tur gitden» başga söz eşitmedi. «Alla, biwepanyň boljagy şu eken-ow» diýip, oglan bir donuny egnine geýip, bir donuny ýasgynçak alyp: «Indi men ölýän, ölsem-de ukymy alyp öleýin» diýip ýöriberdi, bir boljumrak jaý gözläp barýardy. Mylaýym hanyň enesiniň kyrk tanap seýilgäh bagy bardy, ortasynda bir serhowzy bardy. Nejep jan şonuň başyna baryp, bir desse güli ýassanyp, bir desse güli hem ýüzüne örtüp ýatyberdi.
+
+55 enedilim.com',1220);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (60,1,60,'Indi habary kimden al, Mylaýym hanyň enesinden al. Ol, günlerde bir gün bagyna seýýl etmäge çykmakçy boldy. Keniziniň birini: «Eý, keniz, bar-da, howzuň başyny päkize süpür» diýip ýollady. Keniz howzuň başyny syryp ýördi. Şol wagt keniziň gözüne gülüň içinde bir peýkam ädigiň burny göründi. Ol gül dessesini Nejebiň ýüzünden aýyrsa, ak ýüzli, gara kekilli Nejep jan, bir gijäniň daga düşen bir bölek gary kimin bolup ýatyr. Nejep janyň husny-jemalyny görüp, keniz oňa aşyk bolup, iki dyzyny gujaklap, dik asmandan gaýdyberdi. Bir mahaldan essine gelip: «Bibimiňem bagyň derwezesine geler wagty bolan bolsa gerek» diýip, entiräp-tentiräp bagyň derwezesine barsa, bibisi gelipdir. Hemişe ol bibisini atdan göterip düşürerdi. Bu gün atdan göterip düşürmäge ýaramady. Onda bibisi: – Eý, bidöwlet keniz, ýüz-gözüň peşabyň ýüzi-gözi ýaly bolupdyr, saňa ne bela boldy? – diýip sorady. – Eý, bibi jan, howzuňyzyň başynda bir käkilpereň oglan ýatan eken, şony görüp bolup gelişim-dä meniň. – Meniň howzumyň başynda ýatan ne ýeser oglan ol, bar turzup, iýdirip, ýok edip goýber. – Eý, bibi jan, ol oglana «tur, git» diýmäge meniň bognum ysmaýar, özüň kowmasaň. Garry kempir «Özümiz ýogsa-da kowarys ony» diýip, hasany çalyp, ümedekläp ýöremek bilen boldy. Çoryda awçynyň tazysy ýaly onuň yzyna düşüp otyr. Kempir bärden baryp, Nejep janyň husny-jemalyny görüp, çorynyň özünden gitmegi gitmekmi, ondan-da beter din asmandan gaýdyberdi. Keniz: «Bibim meniň ýaly masgara bolmasyn> diýip, onuň ýüzüne gülap suwuny sepdi, huşa getiriji güli ysgatdy. Kempir asgyryp huşuna gelip: «Ýaşym ýaňy on dördümden on bäşime gadam basan bolsa gerek, maňa ýaşymyň soňunda beýle ýary hudaýyň özi ýetirdi» diýip, ýaşyny kä on dört-on bäşe getirip, kä ýaşynyň soňuna çykyp, agzynyň aýdanyny gulagy eşitmän, samyrdap, uklap ýatan oglanyň kellesini dyzynyň üstüne alyp, ogşamaga durdy.
+
+56 enedilim.com',1871);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (61,1,61,'Özüňe mälim, dişsiz agzyň pakgyldysy, göýä oglanlar paklawuk oýnaýan ýaly, pakgyldaberdi. Kempiriň bolup oturşy, siňek peýlap oturan gurbakgany ýada salýardy. Indi habary kimden al, Mylaýym handan. Ol köşgüň üstüne çykyp, bolup duran işleri görüp otyrdy: «Alla janym, kellesiniň gyzyp barşyna meniň ýarymy iýäýmese ýagşydyr» diýip, enesine garap, bir bäş keleme söz diýse gerek:
+
+Ene jan, arzym aýdaýyn, Ýar meniňki, ýar meniňki. Beýle ýaman iş bolurmy, Ýar meniňki, ýar meniňki.
+
+Garry, seniň batdy bazyň, Zemistandyr bahar-ýazyň, Kölden uçan guba gazyň, Ýar meniňki, ýar meniňki.
+
+Ne söwdaga düşen başdyr, Gözden akan ganly ýaşdyr, Öpmeklik ne müşgil işdir, Ýar meniňki, ýar meniňki.
+
+Göwnüm müň gussaýa dolur, Hazan urup, meňzim solur, Bilmeseň, giýewiň olur, Ýar meniňki, ýar meniňki.
+
+Barabilmenem ýanyňa, Girebilmenem donuňa, Ot saldyň Mylaýym janyna, Ýar meniňki, ýar meniňki.
+
+Mylaýym bu sözüni tamam edenden, kempiriň göwnüne güman gidip, kellesini galdyrdy. Ol kenizine:
+
+57 enedilim.com',997);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (62,1,62,'– Eý, keniz, şu gyz köşgüň üstünde ýaman çyrlaň urup gygyrýar, «Ýar meniňki» diýýär, meniň göwnüme bolmasa, şu ýatan bidöwlet oglan ozal şu gyz bilen bir iş göräýdimikä diýýän, bar, Ziwer bege habar ber, ýa şu ýatan bidöwlet oglany öldürsin, ýa ýurtdan çyksyn, onuň uýasynyň işini bitiripdir bu – diýdi. Çory çäresiz baryp, Ziwer bege habar berdi. Ziwer beg uç-dört atlyny ýanyna alyp gelip, uklap-ýatan oglanyň boýnuna syrtmak salyp, ata süýredip alyp gidiberdi. Ony patyşanyň ýanyna eltip: «Eý, tagsyr, baýaky bidöwlet oglan meniň enemiň bagyna giripdir, iýenini iýipdir, iýmediginiň şahasyny döwüpdir» diýdi. Patyşa onuň ullakanrak miwäniň ogrusy ekenini bilip: «Bar, kyrk peşaba eltip ber» diýdi. Ziwer beg Nejep jany kyrk peşaba eltip berip: «Demhe-demden dara çekiň» diýip, öwrülip gaýdyberdi. Kyrk peşap Nejep jany dara çekjek bolup boýnuna gyl tanap salyp, oglany dara çekmäge gözleri gyýman: «Göz gyýyp dara çeker ýaly oglan däl ekeni» diýip, oýlanyşyp durdular. Indi habary başga tarapdan eşidiň. Patyşanyň alty aýlyk ýolda bir Ahmet beg atly inisi bardy. Patyşa kyrk gije-gündiz toýa başlanda: «Ahmet beg gelsin, eşitse, meniň aýdyjy bagşym bar» diýip, muňa çapar atly ýollapdy. Şol wagtlar Ahmet beg kyrk atlysy bilen gelýärdi, olaryň ýoly daryň üstünden düşdi. Ahmet beg görse, daryň aşagynda üýşmeleň görünýar. Ol atlylaryna: «Siz gala tarap sürüp gidiberiň, men şu aşagyny bir barlap öteýin» diýip, at başyny öwürip, daryň aşagyna barsa, kyrk peşap Nejep jany dara asjak bolup dur. Ahmet beg: «Eý, peşaplar, bu näme boldugy?» diýdi. Onda peşaplar: «Patyşanyň aýdyjy bagşysy ölümli bolup, biziň elimize düşdi» diýende, Ahmet beg: «Bu bir günä etjek oglana meňzemeýär-le, oglanyň geýimlerini geýdiriň, oglany öldürmeg-ä bu ýana dursun, şu oglana agramly söz aýtsaňyzam, sizi tohummurt edip, gyraryn» diýdi-de ugraberdi. Nejep janyň boýnunda gyl tanap, elinde sazy bolmasa-da, dilinde sözi, Ahmet bege garap «Eý, beg aga, bäri dur, öz günämi özüm saňa aýdyp galaýyn» diýip, zar-zar ýyglap, bir bäş keleme söz diýse gerek:
+
+58 enedilim.com',2050);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (63,1,63,'Eý, ýaranlar, musulmanlar, Meni azat et, Ahmet beg. Ogurlyk maňa töhmetdir, Meni azat et, Ahmet beg.
+
+Bardym Mylaýym ýanyna, Rakyplar suwsar ganyma, Delalat bol şu janyma, Meni azat et, Ahmet beg.
+
+Men aşygam gyzyl güle, Ýetişdiň kyrk ýigit bile, Bar-da meni şadan dile, Meni azat et, Ahmet beg.
+
+Gyzyl gülem, gyrmyzyýam, Men ýören ýaban-düziýem, Men birewiň ýalňyzyýam, Meni azat et, Ahmet beg.
+
+Asmana ýetmedi dadym, Seni ýetirdi hudahym, Aşyk Nejep diýerler adym, Meni azat et, Ahmet beg.
+
+Nejep bu sözüni tamam edenden, Ahmet beg atyny sürüp gidiberdi. Bärden gahar-gazap bilen agasynyň ýanyna bardy, salam ýok, zat ýok. «Eý, aga, aga bolsaň bol weli, bu ne iş?» diýdi. Onda patyşa: «Ahmet beg, eýgilikmi?» diýdi. – Eýgilik bolanda şeýle iş ederlermi, aýdyjy bagşym bar diýip, meni alty aýlyk ýoldan heläk edip getirdiň, bu günki gün ol bagşyňy daryň aşagynda gördüm. – Ahmet jan, ölümlidir ol, öldürjekdirin ony. – Aga, bir ölümli-iki ölümlini biz diläp alyp bilmerismi! – Eý, Ahmet jan, eger öz janymy dileseň, bereýin, başga näme dilegiň bolsa bitireýin, ýöne oňa ölüm jezasyny hudaýyň
+
+59 enedilim.com',1109);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (64,1,64,'ýanynda wada edendirin. Görse, agasynyň jylawy özünden-de gatyrak. Ahmet beg: «Alla janym, bu bidöwlet meniň diýenimi etjek däl-ow, muňa başga bir akyl tapaýyn» diýip oýlandy-da: «Eý, aga, onda başga bir dilegim bar» diýdi. – Ahmet jan, başga nä arzyň bar? – Eý, aga, şol bagşyny üç gije-gündiz aýtdyryp eşideýin, üç gije-gündiz toý tutaýyn, üç gije-gündizem patyşalyk süreýin, özüňem tagtyňdan düş. – Ajap bolýar, Ahmet jan: Patyşa tagtyndan düşüp, haremhanasyna urup gidiberdi. Ahmet jan tagta münüp: – Üç gije-gündiz toýum bar, eşidip gelmedigiň başy ölümli, maly talaňly – diýip, çar tarapa jar çekdiriberdi. Patyşanyň jarçysynyň biri Mylaýymyň köşgüniň ýanyndan: «Patyşanyň bagşysyny üç gije-gündiz aýtdyryp, eşidip, öldürjekler, şuny eşidip, barmadygyň başy ölümli, maly talasly» diýip, gygyryp ötüberdi. Muny Mylaýym han eşidip, bitakat, biaram boldy, sabyr-takaty galmady, janyna howul düşüp, «Alla janym, ýarymy görmän galmaly boldum-ow» diýip, haremhana girip, perizat lybaslaryny geýip, dakyna bilenini dakynyp, ýer, minnetdar bolsaň-basaryn, bolmasaň basmaryn diýip, özüni bezäp, köşgüniň öňüne çykdy, bir garry kempir mama sataşdy. Mylaýym: «Ýör, mama jan, toýa barsaň» diýip, mamanyň elinden tutup, tasanakladyp, süýräp ýöriberdi. Mamanyň her aýagy bir ýere degýer. Onda mama: «Eý, oglum, assarak» diýýär, – Assaragyňy görüpdirin – diýip, mamany deri süýrän ýaly, süreý-süýreý märekäniň bir çetinden eltip taşlady. «Al mama jan, hoş, alla ýaryň indi seniň» diýdi. Özüne mälim, Nejep janam bazary guralan toýda aýdym aýdyp otyr. Mylaýym han Nejep janyň husny-jemalyny görüp, takat berip durabilmedi. «Şu zaňňaryň ogly bilen men ýedi gije-gündiz hemra bolup ýatdym, meniň boýnumda ýupar-müşk dermanlarynyň ysy bar. Şunuň ýele tarapyna geçip duraýyn, ysym baryp burnuna ursa, meniň şu märekä gelenimi bilip, maňa bir söz gatsa, ölsem-de şunun bilen bile öleýin. Ýok, ony bilmese, onda öz aýagyndan özi tozar gider-dä» diýip, Mylaýym han Nejep janyň ýele ta-
+
+60 enedilim.com',1985);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (65,1,65,'rapyna geçip durdy. Nejep janyň baýaky ýedi gije-gündizläp öwrenişen yslary burnuna urdy. Ýarynyň gelenini bilip «Eý, gözüňe döneýin, boýuňa döneýin, jan bazary gurlan toýuma sen-de geldiňmi?» diýip, Mylaýymy gözi görmezden, ortada oturan ýerinde zor, çyn ebri-nowbahar ýyglap, bir bäş keleme söz diýse gerek:
+
+Gitme-gitme, senden habar alaýyn, Gözleri messanym, toýa geldiňmi? Söwdügim, adyňa gurban bolaýyn, Jennetim, bossanym, toýa geldiňmi?
+
+Sensiz ýagty günüm maňa erir şam, Biçäre misginem, dertlidir synam, Derdime dermanym, genjim-hazynam, Gazalym, dessanym, toýa geldiňmi?
+
+Bu yşgyň ataşy ýakdy magrajy, Muhabbet süýjüdir, aýralyk ajy, Gözümiň rewşeni, depämiň täji, Hem hanym, soltanym, toýa geldiňmi?
+
+Jan şährini saňa bereýin para, Bir ejiz bendäň men, çekdirme dara, Goýnuň içi meňzär pasly-bahara, Bilbil gülüstanym, toýa geldiňmi?
+
+Aşyk Nejep ýar ýoluna baş goýup, Kim ötdi dünýäden didardan doýup, Al ýaňak üstüne zülpüňi ýaýyp, Alma zenehdanym, toýa geldiňmi?
+
+Bu sözüni tamam edenden soň, Mylaýym gyz: – Eý, zaňňaryň ogly, indi sen söz gatdyň, indi seniň bilen ölmedik namart bolsa gerek – diýip, märekäni o ýana-bu ýana tirsekläp, märekäniň orta gürpürägine baryp, Nejep janyň
+
+61 enedilim.com',1212);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (66,1,66,'ýanyna barmaga uýalyp, bürenip duruberdi. Muňa Nejep janyň gözi düşüp: – Eý, gözüňe döneýin, boýuňa döneýin, indi kimden bürenip dursuň, kimden basylyp dursuň, ýanjagazyma geläýseň bolmaýamy!– diýip, Mylaýym gyza garap, bir bäş keleme söz aýdar gerek:
+
+Söwdügim, kaýdan geler sen, Ýoluňa gurban bolaýyn. Haýsy ulusdan bolar sen, Iliňe gurban bolaýyn.
+
+Söwdügim, näge durar sen, Ýüzüňi kimden bürär sen, Perenjäň ýerden suýrär sen, Halyňa gurban bolaýyn.
+
+Nala-ha, söwdügim, nala, Meger, peýmanamyz dola, Meni şitde kimin ora, Biliňe gurban bolaýyn.
+
+Doldur-ha, söwdügim, doldur, Indi peýmanamyz şoldur, Gul Nejebi özüň öldür, Eliňe gurban bolaýyn.
+
+Nejep bu sözüni tamam edenden soň, Mylaýym gyz gelip, Nejebiň garşysyna geçdi-de oturyberdi. Ol: – Eý, zaňňaryň ogly, «Özüň öldür-pözüň öldür» diýip, namartçylyk edip oturma, eliňdäki sazy bäri al, men ölemde sen öljek dälmi näme? – diýdi. Onda Nejep: – Eý, Mylaýym jan, ýüregimde ýene birje pinhan sözüm bar, şonam aýdyp, sazymy saňa bereýin – diýip, Nejep jan ýüregindäki sözüni aýdar, gör, näme diýýär:
+
+62 enedilim.com',1071);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (67,1,67,'Seriňe döneýin, gül ýüzli ýarym, Özüň öldür, meni berme jellada. Gije-gündiz meniň sen intizarym, Özüň öldür, meni berme jellada.
+
+Hanym jellat buýrmuş meniň kastyma, Kişi beýle giç gelermi dostuna, Üç günden soň elter daryň astyna, Özün öldür, berme meni jellada.
+
+Tomaşa eýlediň meniň oýnuma, Edep-ekram bilen girdiň goýnuma, Üç gunden soň arkan düşer boýnuma, Özüň öldür, meni berme jellada.
+
+Arzyňy ýetirin şirin diliňe, Gurban olam lebleriňe-balyňa, Nejebi öldür, hanjar alyp eliňe, Özüň öldür, meni berme jellada.
+
+Nejep bu sözüni tamam edenden soň, Mylaýym gyz aýtdy: – Eý, zanňaryň ogly, men saňa ýaňy aýtmadymmy, «jellat-pellat» diýip oturma, eliňdäki sazyňy bäri al – diýdi. Onda Nejep jan: «Ine dutar, Mylaýym jan» diýdi. Mylaýym gyz şu ýerde Nejep janyň piriniň beren gara dutaryny elinden alyp, örboýuna galyp, dutary iki ak mämmäniň ortasynda jaýlaşdyryp goýup: «Eý, halky-halaýyk, garyndaş-dogan, daýy-egen, men şu gün şu oglana gurbanlyk bolmaga geldim» diýip, bir bäş keleme söz aýdar gerek:
+
+Eý, ýaranlar, musulmanlar, Nejebe gurbana geldim. Arzym eşit, begler, hanlar, Men şuňa gurbana geldim.
+
+63 enedilim.com',1129);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (68,1,68,'Çölde gezen ahylarym, Suwda ýüzen mahylarym, Eşidiň, beg daýylarym, Nejebe gurbana geldim.
+
+Eý, gadyrdan tagalarym, Hassa bolsam, sagalaram, Eşidiň, beg agalarym, Nejebe gurbana geldim.
+
+Säheriň daň ýyldyzyýam, Esen weziriň gyzyýam, Mylaýym hanyň özüýem, Nejebe gurbana geldim.
+
+Mylaýym bu sözüni tamam edenden soň, Ahmet beg agasynyň ýanyna bardy. «Eý, aga, baýaky öldürjek diýen oglanyň, owal bir bolsa, indi iki boldy» diýdi. Onda patyşa: «Ikisinem öldüräýerin» diýdi. – Eý, aga, ol oglanyň işi jan ýaljak weziriň gyzy bilen eken, «Pylan patyşa weziriniň gyzyny bir aýakýalaň jalataýa deň edip öldüräýipdir» diýen at başga birinden galsa galsyn, senden galmasyn. Aga, iň gowusy sen blary ýurtdan çykaraý. – Ahmet jan, eýse, gözüme görünmesin, ýurtdan çyksyn. – Aga, şol oglanlary ýurtdan çykarjagyň çynmy? – Hawa, çyn. – Aga, meniň. ýurdumdan daş ýurt ýok, men olary alyp ýöribersem näderkä? – Gözüme görünmese bolýar. Ine şundan soň Ahmet beg Nejep jan bilen Mylaýym jany päkize bir ata mündürip, alty aýlyk ýola alty basyp, ilatyna baryp ýetdi. Ahmet beg ilatyna baryp, kyrk gije-gündizläp toýberdi. Kyrk gije-gündizlik toýuny sowup, iki molla, bir kazy getirip, Mylaýym jany Nejep jana nikalap, alyp berdi. Olaryň ikisini bir
+
+64 enedilim.com',1248);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (69,1,69,'ak öýe salyp, dört töwereginde bagşy aýtdyrdylar. Şunlukda bular maksat-myratlaryna ýetdiler.
+
+65 enedilim.com',110);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (70,1,70,'SÖZLÜK
+
+A
+
+Ab – suw. Arşy-kürsi – gögi-ýeri. Ataş – ot. Adam sefi-ylla – Adamata, Adamatanyň lakamy. An hezret – ol jenap. Ahylar, ahular – keýikler.
+
+B
+
+Bady-saba – daň şemaly. Bakgal – ownuk-uşak zat satýan satyjy. Basra – Yrakda bir şäheriň ady. Bahry-baz – oýun-maza. Bedrek – binamys, betnyşan. Bernaý, berna – ýaş ýigit, juwan.
+
+W
+
+Warak – sahypa, ýaprak. Webal – zyýan, günä.
+
+G
+
+Gaflat – gapyllyk, habarsyzlyk. Gidermiýem – gideýinmi?
+
+66 enedilim.com',459);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (71,1,71,'D
+
+Der – gapy, işik.
+
+J
+
+Jebraýyl – dini düşünjelere görä kuranyň sözlerini pygambere ýetiren perişde. Jilwe – näz-kereşme.
+
+Z
+
+Zenehdan – alkym, eňek. Zemistan – gyş.
+
+K
+
+Kad – boý. Kamar – aý. Katra – damja. Käm – agyz, maksat. Kufe – Arabystanda bir şäheriň ady.
+
+L
+
+Lahza – az wagt, pursat. Leb – dodak. Lemýezal – hemişelik, ebedilik, ölmez-ýitmez.
+
+M
+
+Magryp – Günbatar. Magrypet – bilim, ylym, terbiýe. Magraç – gök, asman, basgançak, ýokary çykma. Mahy – balyk.
+
+67 enedilim.com',486);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (72,1,72,'Moý – saç, gyl. Mukarrar – karar tapan, duran. Mülhit – dinsiz. Murassag – bezelen, bezegli. Muhabbet – söýgi.
+
+N
+
+Nezir-niýaz – hudaý ýoly, hudaý ýoluna sadaka, sowgat. Nişe – bezeg.
+
+P
+
+Peşap – patyşanyň buýrugyny ýerine ýetirýän nökerler, jellat.
+
+R
+
+Rawylar – rowaýatçylar, gürrüňçiler. Rakyp – bäsdeş, duşman Resim-kada – däp-dessur.
+
+S
+
+Saba – ertir. Saýýat – awçy. Sahişemal – owadan, gözel, görkli. Sema – asman. Set-hezar – ýüz müň. Simrug – mifiki guş ady.
+
+T
+
+Taga – daýy. Tagna – kinaýaly söz, töhmet. Tarykat – ýol.
+
+68 enedilim.com',545);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (73,1,73,'Tersa – dinsiz. Töwriz – Eýranda bir şäheriň ady.
+
+U
+
+Umman – deňiz.
+
+H
+
+Hekim – tebip. Helal – ýaňy dogan aý. Haremhana – aýallaryň ýaşaýan öýi, garem. Hub – ýagşy, oňat. Husn – görk, gözellik. Humaýun – şalara berilýän titul, bagtly manysynda.
+
+Ç
+
+Çapanpuruş – don satyjy. Çarhy-pelek – asman, döwür manysynda. Çeşment (çeşm bent) – göze tutulýan perde, gözlük. Çoh – köp.
+
+Ş
+
+Şam – agşam, garaňky. Şems – gün. Şitde – guşak. Ysrapyl sury – Ysrapylyň surnaýy, dini rowaýatlara görä perişdileriň biriniň ady.
+
+E
+
+Ebri-nowbahar – ýaz paslynyň buludy, ýagyşy.
+
+69 enedilim.com',575);
+INSERT INTO `pages` (`id`,`document_id`,`page_number`,`text`,`character_count`) VALUES (74,1,74,'— «Enedilim.com» sahypasynyň kitaphanasy.
+
+— Bu kitapdaky maglumat "bolşy ýaly" esaslarda, kepilliksiz getirilýär. Bu iş taýýarlananda ähli seresaplyk çäreleri görlen hem bolsa, ne awtor(lar), ne «Enedilim.com» sahypasy bu işdäki informasiýa sebäpli çekilen göni ýa gytaklaýyn ýitgi ýa zelel üçin hiç bir adamyň ýa guramanyň öňünde jogapkärçilik çekmeýär.',355);
+COMMIT;
+SET FOREIGN_KEY_CHECKS=1;
