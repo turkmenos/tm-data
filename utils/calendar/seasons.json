@@ -1,0 +1,6 @@
+[
+  { "id": "spring", "tm": "Ýaz", "en": "Spring" },
+  { "id": "summer", "tm": "Tomus", "en": "Summer" },
+  { "id": "autumn", "tm": "Güýz", "en": "Autumn" },
+  { "id": "winter", "tm": "Gyş", "en": "Winter" }
+]

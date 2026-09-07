@@ -1,0 +1,10 @@
+[
+  { "id": "second", "tm": "sekunt", "en": "second" },
+  { "id": "minute", "tm": "minut", "en": "minute" },
+  { "id": "hour", "tm": "sagat", "en": "hour" },
+  { "id": "day", "tm": "gün", "en": "day" },
+  { "id": "week", "tm": "hepde", "en": "week" },
+  { "id": "month", "tm": "aý", "en": "month" },
+  { "id": "year", "tm": "ýyl", "en": "year" },
+  { "id": "century", "tm": "asyr", "en": "century" }
+]
