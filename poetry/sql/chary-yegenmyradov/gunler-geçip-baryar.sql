@@ -1,0 +1,3981 @@
+-- tm-data
+-- Turkmen Poetry Dataset
+-- MySQL 8+
+
+SET NAMES utf8mb4;
+
+SET FOREIGN_KEY_CHECKS = 0;
+
+CREATE TABLE IF NOT EXISTS poets (
+    id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+
+    PRIMARY KEY (id),
+    UNIQUE KEY uq_poets_name (name)
+) ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS poems (
+    id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    poet_id BIGINT UNSIGNED NOT NULL,
+    title VARCHAR(500) NOT NULL,
+    text LONGTEXT NOT NULL,
+    source VARCHAR(1000) NULL,
+
+    PRIMARY KEY (id),
+
+    KEY idx_poems_poet_id (poet_id),
+    KEY idx_poems_title (title),
+
+    CONSTRAINT fk_poems_poet
+        FOREIGN KEY (poet_id)
+        REFERENCES poets(id)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+) ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO poets (name)
+VALUES ('ÇARY ÝEGENMYRADOW')
+ON DUPLICATE KEY UPDATE name = VALUES(name);
+
+SET @poet_id = (
+    SELECT id
+    FROM poets
+    WHERE name = 'ÇARY ÝEGENMYRADOW'
+    LIMIT 1
+);
+
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'GÜNLER  GEÇIP  BARÝAR ',
+    'Şu gün saňa telwas etdim ýene men,
+Eý, sen, päklik hem gözellik ölçegi.
+Azary ýetikdir gaýyn eneňem,
+Belli däl, pahyryň haçan öljegi.
+
+Öňden belli zadyň gyzygam bolmaz,
+Söýmezdim-le beýle boljagyn bilsem.
+Ýöne, hasaplabam söýüp bolanok,
+Ýa-da söýgüde-de barmyka tilsim?
+
+Akyl satýan akylsyzlar köpelip,
+Ýaşyň on sekize ýeten mahaly.
+Söýgi aýp zatdyr obada diýip,
+Guratdylar göze ilen nahaly.
+
+Indi-indi şo günleri ýatlasam,
+Özümi ýazgarýan ilki bilen men.
+Men batyr ekenim beýnisi ýuka —
+Durmuşyň al salýan tilkilerinden.
+
+Käte seni sorap, barasym gelýär,
+Ýöne, uýat bolar, saňa gep geler.
+Arzuwlary ýuwaş-ýuwaş könelip,
+Günler geçip barýar, geçýär hepdeler.
+
+Gowy bolsun çagalaryň görjegi,
+Ýetişýär gyzlarmyz, ogullarymyz.
+Seniň günäň däldir, meniňkem däldir,
+Söýgiň ýok ýerinde doglumagymyz.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'GUTARYLMADYK GOŞGULARYM',
+    'Ine, bu goşgymda ejem pahyr bar,
+Bu goşguda bolsa, galam gaşly gyz.
+Elim degen çagy elime alýan,
+Şol hem bular bilen salamlaşdygym.
+
+Bu ýerde şapagyň aotyn şöhlesi,
+Ýowşan ysly ýaýla düşýär endigan.
+Bärde bolsa bir gül — azatlyk küýsän,
+Porsy ýerzeminde otyr bendiwan.
+
+Ony erkinlige çykarmalydym,
+Ýerzemini sowuk, çygly hem zeýli.
+Emma, maňa päsgel berdi hemişe,
+Has ajaýyp zatlar döretmek meýli.
+
+Wah, ejeler ýagdaýyňa düşünýär,
+Senem düşünjek bol, galam gaşly gyz.
+Meni örteýän zat, bu goşgularyň
+Bir maýyp görgülä çalymdaşlygy.
+
+Söýgüde ädigem zerur
+
+Bilemok, nämüçin ýatdan çykanok,
+ÝA başga ýatlama tükenäýdimi?
+On bäş ýyl soň ýene düýşüme girdi,
+Polýak ussalarnyň tiken ädigi.
+
+Mollamurtuň «Nesihatyn» ýat tutup,
+Ekzamene taýynlanýan wagtymyz.
+Satylýar — diýdiler — modaly ädik,
+Beýle ädik — ýetginjegiň bagtydyr.
+
+«Nesihat», ekzamen huşumdan uçdy,
+«Birini alaýyn nädiibem bolsa.
+Şo gyz meni söýer — diýdim içimden, —
+— Geýer ýaly gowy ädigim bolsa.
+
+Bir gowy gyz bardy, biçak owadan,
+Klasdaşlar bolup, şony söýdük biz.
+Dostum şol ädigi alan dessine,
+Bagtym menden ýüz öwrendir öýdüpdim.
+
+Gowy ädik nesibämde ýok eken,
+Hatda aýagma-da görmedim deňäp.
+Başga oba göçüp gitdi ol gyz hem,
+Näme sebäp boldy, bilmedim men-ä.
+
+Henizlerem söýýänrin şol gözeli,
+Kalbymda dogadyr, möhriban ady.
+Durmuşda bu, dostlar, erkiň ýetenok,
+Käte ol gysganýar bolgusyz zada.
+
+Ynjalyk berenok, ýatdan çykanok,
+Ykbalyňdan bir zat gädilen bolsa.
+Göwnüme bolmasa, söýjekdi-le şol
+Illeriňki ýaly ädigim bolsa.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    '19-njy fewral',
+    '/Beýik Saparmyrat Türkmenbaşynyň dogulan güni/
+
+Onuň barlygynda toý edýär bu gün
+Her şäher, her oba, her köçe, her jaý.
+Biz bada göterip, arzuw edýäris
+A, Ol arzuwlary edip ýör berjaý.
+Bu gün myhman gelýär çäksiz älemde
+Näçe arap bolsa, şonça tarapdan.
+Ýewropadan, Afrikadan, şeýle hem
+Türkiýeden, Eýrandan hem Arapdan.
+
+Bu gün — ulus-iliň şatlanýan wagty
+Ertiriň gaýgysyn edýär Ol şu gün.
+Maksady — türkmeniň egsilmez bagty
+Baky agzybirlik isleýär göwün.
+
+Garaşsyz ülkede ýeke-t-k Adam,
+Ýadasa-da dynçlyk gadagan Oňa —
+Eger şeýle meýil döräýende-de,
+Bu isleg hemişe goýulýar soňa.
+
+Ol uly işlere töwekgel boldy,
+Il-gün üçin ätiýajy bermezden.
+Il üçin könelmez aklyk boldy Ol
+Il üçin heýkelem boldy mermerden.
+
+Bir tylla ýüzükdi...
+
+Günler geçdi, gitdi nobaty bilen
+Kän aýlar aýlandy,
+ýyllar dolandy.
+Golumdan gaçypdyr tylla ýüzügim,
+Bilmedim nirede näme bolanny.
+
+Ýolda-yzda kän gözledim men ony,
+Özgäň ýüzüginde gözüň eglendi.
+Adam ýitigini ýatdani çykarmaz,
+Unutsa-da käte göwne deglenni.
+
+Bildirýär adamyň çig süýt emeni,
+Ol hemişe zynat küýsäp gezegen.
+Ýöne, bu geň zat däl,
+             dünýäniň özem,
+Dereginde mätäç eken bezege.
+
+Şondan habar berýär,
+             irkilen baglaň,
+ýaz gelse, oýanyp, bezenip durşy.
+Ýa-da ýanwar aýy
+         syrgynlar döräp,
+agaçlaň başynda topalaň turşy.
+
+Emma ýiten zadyň çykmaýar ýatdan,
+Bilmedim ne boldy,
+Düýe sagýan gyzyň aýnirede,dymy
+                haçan?
+Eý, ýagşy adamlar, görmediňizmi,
+Bir tylla ýüzükdi golumdan gaçan.
+
+Düýe sagýan gyzyň aýdymy
+
+Başyň dik, göwnüň kiçi,
+Höräm, höräm, hörelim.
+Süýt sagyp, aýran içip,
+Hözirini göreliň!
+
+Dünýe maly diýilen,
+Süýdi, ýüňi, eti em.
+Uzak-uzak menzile,
+Maýa münüp ýetiler.
+
+Aýran içen nähoşam,
+Hassalykdan halasdyr.
+Ýüňüne näme diýjek,
+Ýorgan-düşek, palasdyr.
+
+Iki ýyldan bir gezek,
+Ýüzüň düşýär köşege.
+Ýüz gezek nesip etsin,
+Ýene döläp-döşeme.
+
+Köşejigiň ulalsa,
+Atyp şoňa kejebe.
+Gelnalyja gideris —
+Şeý diýýän men ejeme.
+
+Başy dik, göwni kiçi,
+Höräm, höräm, hörelim.
+Süýt sagyp, aýran içip,
+Hözirini göreliň!
+
+Ýat ýere gyz bermäň!
+
+Wah, ne gözel maşgala,
+Keşde çekse sünnälän.
+Bigadyra duş bolup,
+Görýän güni gün däl-ä.
+
+Belki, Allaň buýrugy,
+Arzuwynyň paşmany,
+Basýar onuň egninden,
+Ýat illeriň asmany.
+
+Bagt diýlen zat berlenok,
+Gözýaşa ýa badaga.
+Indi gyzyň yhlasy,
+Şu ojaga sadaga.
+
+Käbir gyzyň gylygy,
+Açmaýar hiç ýüregni.
+Ynanýar hossaryna,
+Ykbalynyň küregni.
+
+Dillenmegi kyn görer,
+Bir utanjaň — ýazygy.
+Üme düşmez eşitmez
+Gyz kalbynyň sazyny.
+
+Gyzy oda atanyň
+Ýandak bitsin meýdine.
+Günä galmak bolarmy,
+Bu döwürde beýdibem?
+
+Gaýynlary öwse-de,
+Hoş ýakanok gulaga.
+Ýöne, ile bildirmez,
+Günlerinem bulamaz.
+
+Bu öý bilen garyşar,
+Çeker ýörer keşigni.
+Ýuwar-ardar äriniň,
+Dolagyny, eşigni.
+
+Söýgüsizem sebäp bar,
+Döremok, dogulmaga.
+Ýüzi düşer bäbege,
+Gyzlara, oglanlara.
+
+Kem-kem ýatdan çykyşar,
+Arzuwlarnyň paşmany.
+Häzir welin, egninde,
+Ýat illeriň asmany.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'INE, DOGAN GELER...',
+    'Ine, dogan geler: “Dirimiň?” diýer,
+ýananmaýan ýaly ýaşap ýörenme.
+Men: «Şükür» diýerin begenerinde
+bu gün ýene aman-esen örenime.
+
+Ol papagny bir gapdala taşlar-da,
+soňsuz nesihatda başlar ýene-de.
+/Biz ikimiz başga-başga adamlar
+döresegem bir ata, bir eneden/.
+
+«Şahyrlykdan çörek iýmek kyn düşer,
+yhlasyňy siňdir ýeňilräk käre
+Men bolsa diýerin: «Ynanaý agam,
+özümem alaçsyz, tapamok çäre.
+
+Dünýämizde diýen köp, emma hudaý bir,
+ol hemişe gorap ýörmez täk meni.
+Girdaba gaçsamam, endişä galyp,
+başa çekip ýatma, köne çäkmeni.
+
+Men indi çaga däl, şükür, goja däl
+öz başymy özüm çarajak borun.
+Bir aýdymçy kimdigini bildirmez
+içinde bolanda köp sesli horuň!»
+
+Ol gider, kalbyma howsala salyp,
+hem kisäme salyp, bir az-owlak pul.
+Men: «Sag bol» diýerin, «Sag bol, jan agam»
+Emma arzuw eden günüm däldi bul.
+
+Ilki arzuwlarym başga-başgady,
+Çaga arzuwlarynyň baryp ýatany.
+Men öz adym bilen bezemekçidim
+Bezege mätäç däl eziz Watany.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Baharyň ilki güni ',
+    'Baharyň uzakda däldigni duýup,
+Agylyndan çykjak bolýar dowarlar.
+Şu günki çagba-da ölmese buýup,
+Ertir-ä olary örä kowarlar.
+
+Öýlänçi ýagyşda,
+Ýumşak şemalda,
+Bigam argynlykda duýulýar maza.
+Garry-gurtularyň käbiri şu gün,
+Öýle namazynam goýupdyr kaza.
+
+Öýde diňe üme düşmez bäbekler,
+Öý hojalykçylar hemem hassalar.
+/Ýüregiň awaýar şo bendelere,
+Düşeginden galyp bilmän ýatsalar/.
+
+Dükanyň işigi,
+Urpajyk çäge,
+Gojalaryň üýşýän ýeri owaldan.
+Han-ha, eýýäm birnäçesi gelipdir,
+Köwşüni aýaga çekip gowallaň.
+
+Bazaryň nyrhyndan hemem ýaşlardan,
+Zeýrene bolýarlar endige görä.
+Ýöne gamlanmaga sebäp ýok, şükür,
+Durmuş hiç neneň däl, hezillik örän.
+
+Uruş-gykylyk ýok,
+Syrkawçylyk ýok,
+Garrylyk derdi hem berenok agar.
+Uly günä däldir, bular ýaly gün,
+Öýle namazyny goýsaňam kaza.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Ot başynda oturaly... ',
+    'Hany, dostum ölçersene,
+körän oduň kesindisin.
+Ýol ýaly uzak bu gije
+söhbetimiz kesilmesin.
+
+Gözenegin ýapma öýüň,
+çekme öýüň serpiginem.
+Şu görnüşi arzuw etdim,
+Arzuwy bar her kimiňem.
+
+Ot başynda oturaly,
+Ot — arzuwdyr, höwür bolar.
+Hoşal bolup ýatlarys kän,
+Soň şeýle bir döwür bolar.
+
+***
+
+Bagşy bolgun diýip maňa
+kän sargapdy kakam bende.
+Nätjek, arman ýürek bard-a
+hoş owazly ses ýok mende.
+
+Çyn aýdymyň höwesinže
+ýaşadym ýaşan ýaşymy.
+Şol sebäplem nobat senden
+aýdymyň-sazyň aşygy.
+
+Dost-ýar eşitse köwlener,
+Göwni gaýry gaýra teser.
+Niçik bolar bilbilgöýä
+öz wagtynda saýramasa.
+
+Dünýe toýhana meňzeýär
+yşky aldy erkimizi.
+Gözenegin ýapma öýüň,
+çekme öýüň serpigini.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Ojak başyndaky oýlar',
+    'Käbir arzuwlarmyň kinesi üçin,
+Göwnümde hiç kime saklamok kine.
+Joşgunly ýüregme
+          rahatlyk hemem,
+Ertirme ynam
+       atypdyr şine.
+
+Açgöz hyjuwy hem wagşy islegi,
+Ugratdym, gardaşlar, gümüň teýne men,
+Hoşal men durmuşdan,
+           ynjalyk bilen
+Nesip     etse,   halal        çörek çekneme.
+
+Ýogsam, öňler il içinde gezemde,
+Durmuş meni bijaý ýowuz darady.
+Ýüregimde yza galanam bolsa,
+Ökünjim ýok, geçen günler barada.
+
+Men ozallar şagalaňy söýerdim,
+Boldum indi ynjalygyň sermesi.
+Melul edýär ynha, şirin saz ýaly,
+Ojakda gaýnaýan gazanyň sesi.
+
+Kän oýlanýan, mal-garamyz barada,
+Hojalykçy boldum,
+         biçak özgerdim.
+Öz köýnegim ýaly özüme ýakyn,
+Öz aladam, öz şatlygym, öz derdim.
+
+Han-ha, Nowruz batyr çygar çybygy,
+At edinip, çapdyryp ýör daşarda.
+Bar umydym şonda,
+           köýen arzuwmy,
+Hasyl etmek belki, oňa başardar.
+
+Özüm-ä dogrusy, bu zatlar üçin,
+Göwnümde hiç kime saklamok kine.
+Joşgunly ýüregme rahatlyk hemem,
+Ertirime ynam atypdyr şine.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Suratlara seredip...',
+    'Suratlarda adamlaryň keşbi bar,
+Olar kän zat ýatladyp dur geplemän.
+Pul saklanýan düwünçekde ýygşyryp,
+Suratlary aýap saklaň, eplemäň.
+
+Olar maňa janly ýaly bakyp dur,
+Käbiri syrdaşym, käsi bigäne...
+Her kimem bolanda, tapawudy ýok,
+Dilim barmaz ýakymsyz söz diýmäge.
+
+Gamgyn çagym seredýän-de oturýan,
+
+Iremok men näçeler syn etsemem.
+Olar ähli zada düşünýän ýaly,
+Göwnüň üçin bermese-de ses-selem.
+
+Adam köpi görüp, ulalyp ýaşy,
+Otuzdan aňyrrak geçip ugrasa.
+Çagalygy kän küýseýär ekeni,
+Soňky günler kän bakýan bu surata.
+
+Onuň bilen emedekläp,
+             ylgaşyp,
+At çapyşyp, bolduk mydam hemşeri.
+Yhna, täleýinden öýkelän ýaly,
+Gyýarak bakyp dur, çala kemşerip.
+
+Görnüp dur boýnunda medala meňzäp,
+Sünnäläp işilen alaçajygy.
+Ejesi görgüli syzandyr, belki,
+Ony soň ykbalyň dalajagyny.
+
+Gorasam diýendir bela-beterden,
+Balasyny alaçany dakanda.
+Emma, alajyň ýok, erkiňe bakman,
+Boljak işler bolaýýar-da jahanda.
+
+O döwürde wezipeli kişiler,
+Söýerdi könäni ýepbeklemegi.
+Bir gezek, «Tahýaňda doga bar» diýip,
+Käýýäp aglatdylar mekdepde meni.
+
+...Ulalaýsak urşa gideli diýşip,
+Kän gezdik çagakak göwün ýüwürdip.
+Soňra uruş söýgä ornuny berdi,
+Ýaňagmyza örüp jahyl düwürtik.
+
+Durmuşyň bardygy bilinmese-de,
+Kitaplardan üzňe, mekdepden üzňe.
+Dagap gitdik, soňky ekzamen güni,
+Arzuwlarmyz hakda ýazdyk-da düzme.
+
+Şükür, uruş-dawa bolmady emma,
+Başga-da kän arzuwlarmyz paşmandy.
+Bir ýyl soň baharyň jeýhun mahaly,
+Bir owadan ýyldyz süýndi asmanda.
+
+Ine, indem janly ýaly bakyp dur,
+Hemem kän zat ýatladyp dur geplemän,
+Pul saklanýan düwünçekde ýygşyryp,
+Bu suraty goýaýyn men eplemän.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Obada',
+    'Ýazýan diýsem, arzaçydyr öýdenler,
+Düňle görýän adamlaryň käsini.
+Emma, gelen çagy, kowman öýden men,
+Ýetirýärin gürrüňlerniň häsini.
+
+Men barsamam, ýer berýärler töründen,
+Bu obada hemmämiz bir nebere.
+Başymy dik tutup, ýaşap ýörün men,
+Dogry, sebäbem ýok başym egere.
+
+Göwnüme jaý bu obanyň däpleri,
+Men olary turuwbaşdan haladym.
+Bärde uly-kiçi bary edepli,
+Gaýyş sözler aýdylmaýar mala-da.
+
+Bir gysym çöpleme bermesemem men,
+Ýa oduna nepýag damdyrmasam-da.
+Ýol bilen barýarkam, duz hödürleýär,
+Nan ýapýan zenanlar tamdyr başynda.
+
+Şonda duz dadýaryn, «Sag boluň!» diýip,
+Ýogsam, zar dälem men döwüm çörege.
+Bilýän, iliň halal duzuny iýip,
+Aňsat maňa, ýollarymda ýöreme.
+
+Men öz obam bilen bir tenu-bir jan,
+Bu ýerdekäm ýüregimde gam durmuz.
+Bagtymyz güllesin,
+Güllemesin nan,
+Hem hiç haçan sowamasyn tamdyrlar!',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'SENI ÝATLAÝAN...',
+    'Indi hiç zat ýüregimi gozganok,
+Ýer ýok onda şatlyga-da, gama-da.
+Düýn gowy dostumyň kyrkyny sowdum,
+Bu günem bir toýda boldum tamada.
+
+Dünýäniň şowhuny azalan ýaly,
+Ýekelik höwesi aňyma ýaýran.
+Edil häzir jaýlar uçup gitse-de
+Ahmal, men şoňa-da galmaryn haýran.
+
+Her zat boljak eken ýagty dünýäde,
+Bolman biljek eken, bolmaly zadam.
+Hergiz ýazgydyndan n-razy bolsa,
+Ýürekdeş dostuny küýseýär adam.
+
+Menem seni küýsäp, meýdana çykdym,
+Çopantelpekleri söýdüm, ysgadym.
+Şolara-da ýaman nebsim agyrýar,
+Olaryňam galan ömri gysgadyr.
+
+Çünki, ýene güýz gelipdir äleme,
+Çygly şemal kän öwüsýär ilerden.
+...Sen bile sary gül ýygardym weli,
+Uzakda sen gülüň parhyn bilerden.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Her gün işe geçýäň...',
+    'Tüweleme, ýene işe barýaňmy,
+Görki Güne meňzeş açylan läle.
+Seni her göremde endişä galýan,
+Sataşaýmaweri mynasyp däle.
+
+Aşygyny ýeke tara kökerjek
+Saçyň her örümi bir gulaçdyr-a.
+Sen olary oraýsana boýnuňa:
+ýaman göze ilmez, ýel bulaşdyrmaz.
+
+Geçip barýaň, öz-özüňden uýalyp,
+Salam diýmäge-de ysanok dilim.
+Her kimi azdyrjak jemalyň bilen
+Maňa bu ýaşdan soň öwretdiň çilim.
+
+Görki gülden zyýat naçar maşgala,
+Buýsanjyň artykdyr, dälsiň ulumsy.
+Gözüm görýär, ýürek diýýär şu sözi:
+Öýňüzde-de ähli işe çulumsyň.
+
+Ýaşap, işläp, armaweri durmuşda,
+Görki köňle ýakyn açylan läle.
+Seni her göremde endişä galýan
+Sataşaýmaweri mynasyp däle!',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'GELINLER ÝAŞYNSA',
+    'Aňam etmändirin soňky döwürde,
+Gelinler ýaşmagna ýetirse elin.
+Şu gün irden gabat gelip köçede,
+Uz ýaşynyp, geçip gitdi bir gelin.
+
+Kişi maşgalasy... Sözüm ýer almaz,
+Ýaşynsa ýaşynsyn, gülmese bolar.
+Ýetişen bolsalar gelin bolmaga
+Etjek işlerinem bilýändir olar.
+
+Çekinendir, belki, meni ýat görüp,
+Ahmal, meni garry adam saýmagam.
+Hormata, söýgä-de imrinemok kän,
+Onsuzam durmuşdan ýetdi paý maňa.
+
+Dogrusy, süňňüm-ä ýeňilem welin,
+Çalarak çal sepdi saçdyr gaşyma.
+Onda-da deň gopýan oglanlar bilen,
+Ýaňy otuz birden geçdi ýaşymam.
+
+Men kän zada zar bolmadym durmuşda,
+Şükür, az däl nesibäme ýeteni.
+Ýöne öňler söýgi joşýan ýüregim,
+Indi gaýgy-aladanyň ketegi.
+
+Esasy aladam çagajyklarym,
+Şolar gowy geýsin, gowy iýsinler.
+Özüm-ä oňaryn tapanym bilen,
+Ilem näme diýse, şony diýsinler.
+
+Garrylygam näme, ýaşlyk mysaly,
+Ölmese, her kimiň başynda bardyr.
+Belki, menden ýüz öwrendir ýaşlygam,
+Öň-ä hiç kim menden ýaşynmaýardy.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Özüm hakda',
+    'Men,
+   kölege deý ruhy aňymda galan
+Atamyň,
+    duýgusy, inçe dowamy,
+Täleý, şatlygyma salypdyr talaň,
+Goýup, nesibäme sergin howany.
+
+Men,
+  hyýalyň müdimilik tussagy
+Hem köňüller köşgünde täk yşkbaz,
+Başym dik,
+Janym sag,
+Serim gussaly,
+Gijeler Aý,
+Umydymdyr yşyklan.
+
+Akar — suw,
+Öwser — ýel,
+Sowular toýlar,
+Aýralyga çenli äkider takdyr,
+Ýöne, ýagty günler näumyt goýmaz,
+Günäsiz gözlerim wysala bakdyr.
+
+Hawa,
+   men,
+     duýgusy, inçe dowamy,
+Jesedi topraga siňen atamyň.
+Ysgap ýörün atyr ysly howany,
+Ýatlap geçmişimiň çüýräp ýatanyn.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Obam',
+    'Şatlygyňdan rysgalymy aýyrdym.
+Diňe ýetmeziňe janym ýakaryn.
+Başga ýerde, iş düşende başyma
+Seni küýsäp, ýollaryňa bakaryn.
+
+Wah, ýollaryň sadagasy bolaýyn,
+Meňzeş juda mesnewiniň bendine.
+Bagtlydyr seň adamlaň hemmesi,
+Maňlaýy pes, boldummykam men diňe.
+
+Adamlaryň kalby tämiz, başy dik,
+Göýä, boý derege deňleşen ýaly.
+Senem, obam, geçmişiňe meňzäňok,
+Meň atam pahyra meňzeýşim ýaly.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Pal',
+    'Täleýimi garadym bazar jaýynda,
+Sygan aýalynyň kartlarynda.
+Çapyljak at ýaly gozgalaň tapdym,
+Ikçi howsalamyň artmagynda.
+
+Ol baky ýitigme kän garaşdyrman,
+Umydymyň öresini çykardy.
+Maňa nazar salan ýaş şazadanyň,
+Gözleri göm gökdi, ýüzi çypardy.
+
+Her niçigem bolsa, bagtyň nyşany
+Başymy       sämetdi, gozgady kalby.
+Ýogsam, palçy aýal, näme üçindir,
+Goýun gözli gyzy bermedi salgy.
+
+Ömür pile ýaly sarpa ýyllary,
+Şatlygy gowşurdy paýyma ýeten.
+Ýöne, ykbal ýanaşmady şo gyza,
+Täleýiň oýnuna çäre ýok eken.
+
+Ýene ýolum düşdi bazar jaýyna,
+Palçy aýalyň daşy giden mähelle.
+Ýöne, bagty agtarmaga bu gezek,
+Mende höwes tapylmady sähelde.
+
+               ***
+
+Ümsüm gije aýnamyzdan delminen
+Aý asmanda erän mesge ýalydyr.
+Görsem diýip barmajagm-a belli meň,
+Ýogsam, ol köňlümiň besleýänidi.
+
+Tisginýärsiň, o dünýäden gelýän dek,
+Pejiň turbasyna düşen sesinden.
+Ak guş deý ruhy çykman kelläňden
+Ýaşlygyňda baky galan nesilleň.
+
+Gussaň ýyllar boýy ýuwulmaz hatam,
+Ejir çekme, hesret bagryň deşende.
+Men galdym, ýelli gün sygyryp ýatan
+Güllesi göwsümde galan peşeňde.
+
+Razy bol /men harajat dilämok/,
+Gije ahwal bolup dolanmagymdan,
+Ýaşa, kyn günüňde isläp delalat,
+Derdiň soran goňşy-golamlaryňdan.
+
+Gamlanma, hesretde gül ýüzüň solup,
+Ak dumanly güýz gelende haçanda.
+Baglarda ýapraklar höwesiň bolup,
+Pudakdan serçe dek gaýyp gaçanda.
+
+Mendirin şol, nowruz gary gelende,
+Bulutlar goýalyp, mürepbe ýaly.
+Öýüň öresi ýok diýip elenme
+Mahmal hüwdüleriň ýürekde häli.
+
+                ***
+
+Öten agma ýene düýşüme girdi,
+Daglaryň bürgüdi, sähranyň gurdy.
+Aýpalta çalymdaş
+          emma owadan
+aýam aýnamyzdan delmurup durdy.
+
+Gurdy gördüm, sähralary küýsedim,
+Bardyr ol ýerleriň keýik, maraly.
+Hergiz jany şypa tapyp gaýdandyr,
+Derman küýpäp baran süňňi ýaraly.
+
+Bürgüdi görübem dagy küýsedim,
+«At salyp, gezmäge daglary ýagşy».
+Alla nesip edip, ajal maý berse,
+ýatlap owsunmaly çaglary ýagşy.
+
+Men şatdym,
+      şatdym men,
+             kalbym ýagtydy.
+Garyp çatmaň içem durşuna nurdy.
+Aýpalta çalymdaş, emma owadan
+Aýam aýnamyzdan delmuryp durdy.
+
+              ***
+
+Öten agşam ýene düýşüme girdi,
+Daglaryň bürgüdi, sähranyň gurdy.
+Aýnalta çalymdaş
+         emma owadan
+aýam aýnamyzžan delmurup durdy.
+
+Gurdy         gördüm, sähralay küýsedim.
+Bardyr ol ýerleriň keýik, maraly.
+Hergiz jany şypa tapyp gaýdandyr,
+Derman küýsäp baran süňňi ýaraly.
+
+Bürgüdi görübem dagy küýsedim,
+«At salyp, gezmäge daglary ýagşy».
+Alla nesip edip, ajal maý berse,
+ýatlap owsunmaly çaglary ýagşy.
+
+Men şatdym,
+      şatdym men,
+             kalbym ýagtydy.
+Garyp çatmaň içem durşuna nurdy.
+Aýpalta çalymdaş, emma owadan
+Aýam aýnamyzdan delmuryp durdy.
+
+             ***
+
+Ile ýamanlyk etmerin,
+Erbet däldir meniň zandym.
+Ir ulaldym, bir ýetmezim,
+Hem uly söýgä ir ýandym,
+
+Indi onam öçürerin,
+Hakydamyň lentasyndan
+Goý, indi başga oglanlar
+Yşka düşüp entesinler.
+
+Ömrümden nadyl bolmaryn
+Hem hiç köňli ýykmanyma.
+Bagdan sary gül ýolmaryn,
+Meňzeş görüp ykbalyma.
+
+Şeýdibem men nesip etse,
+Durmuşymyň batgasyndan,
+Gam-hesretiň besse-besse,
+Köňle üýşüp ýatmasyndan.
+
+Geçip giderin, sag-aman,
+Başga          mekan tutunmaryn.
+Özüm özümi tanaman,
+Soň ýatlamda utanmaryn.
+
+Ile ýamanlyk etmerin,
+Erbet däldir meniň zandym,
+Ir ulaldym, bir ýetmezim
+Hem uly söýgä ir ýandym.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Mynajat',
+    'Eger,
+    bir ýaman söz sypsa dilimden,
+Alla jan, sen mendan etme aýyp-syn.
+Çünki, bu dünýäde gören-eşdenmi
+paýyş söz agzaman beýan etmek kyn.
+
+Sen — Hudaý isleseň, islemeseňem,
+Menem, özüň bilýäň, ýazykly bende.
+Emma mundan beýläk sejde kylmaga
+jinnek ýalam takat galmandy mende.
+
+Sebäbi bäş ýyl öň, gyşyň bir güni,
+Hak söz üçin tyg urdular bedenme.
+Sen Hudaý halyňa utanmadyňmy
+Meni şol günlere duçar edenňe?
+
+Kisäm kör-köpüksiz,
+            ýat dilde gepläp,
+kömek sorap ýada boldum hemşeri.
+Bir gögele oglan on sekiz ýaşly
+Huzuryňda durmanmydym kemşerip?
+
+Başym ýaşdy, ýagşy pälimden başga,
+Ýokdy meniň ýaşamaga serişdäm.
+Niredediň şonda, Gudraty güýçli,
+Nirededi on müň sany perişdäň?
+
+Men soňra kem-kemden içgä imrindim,
+Höwes etdim zährimanly bokala.
+/Elbetde, şol günleň ajysy hakda
+Ýazyp bordy kitap ýa-da makala/.
+
+Emma men ýazmadym,
+          elim degmedi,
+Ile diýmäge-de barmady dilim.
+Ýeri,
+   diýdimem-dä,
+          peýdasy näme?
+iç kimem kireýsiz kakmaýar kilim.
+
+Dogry içen wagtym teselli tapýan,
+Ýöne uzak çydap bilmen beýdibem.
+Aý, näm bolsam, şol bolaýyn, owarram,
+It çeýnesin, garga çoksun meýdimem.
+
+Barybir, ynamsyz ömür sürenden
+Ile meňzeş bolup ölenim ýegdir.
+...Her niçigem bolsa, unutmaryn men,
+Nämüçin sen meniň göwnüme degdiň!?',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Soňky söz',
+    'Bu höwes erkime goýmady meni,
+Indi men şoňa-da ýetmäge taýyn.
+Bagta tarap barýan iň soňky ýoly
+Tapdym 17-nji gününde maýyň.
+
+Bu gün bir üýtgeşik gün boldy,
+                  gökde
+bulutlar meňzeýär bölegne kamsyň.
+Ol meniň iň soňky ykbalym
+               ýöne
+men mawy asmana bakýaryn gamsyz.
+
+Ýaşaň siz, adamlar,
+           erkana boluň,
+Mensiz bir adamlyk giňän dünýäde.
+Onsoňam hiç haçan «bagtly bolmaga
+mümkinçilik ýokdur — diýmäň — dünýäde».
+
+Men gaty begenýän, kakam pahyryň
+horlansa-da, menden soňa galanna,
+Aşymy-suwumy berer ol hökman,
+Bermese-de il içinde halanmaz.
+
+Hoşlaşyk sözleri gysga aýdylar,
+Bu däbe hemişe kaýyldyr her kim.
+Size gowy günler arzuw edýärin,
+Çünki, başga zada ýetmeýär erkim.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'ALAMAT',
+    'Gözüme bir ýagşy alamat ildi,
+Şondandyr, köňlüme heser ýeteni.
+Maňa kän zat wada berýän şekilli,
+Galgap gitdi, al şapagyň etegi.
+
+Belki, ýene alçy gopar aşygym,
+Egsilen göwnümem doldurar hyjuw.
+Egmerin hiç, egilmejek başymy,
+Könelmejek tenha arzuwymdyr bu.
+
+Bilýän ýogsa, ykbal sähel salymda,
+Ilki saňa, soňam özgä näz eder.
+Şol sebäpli durmuş oýna meňzeýär,
+Emma ony oýnap bolmaz täzeden.
+
+Bu oýna meňzeşden gözüm dokunmaz,
+Äleme aşyk men, baş egýän güle.
+Ahmal, ejir çekmen töhmet okundan,
+Bagtym irde-giçde çökmese küle.
+
+Gör, näçe ýyl horluk bary çekildi.
+Töhmetlerem berdi bizar-teteňi.
+...Maňa kän zat wada berýän şekilli,
+Galgap gitdi, al şapagyň etegi.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Otuz ýaşdan soň',
+    'Göwnüme bolmasa, zerur däl indi,
+Arzuwa beslenip, kaşaň geýinme.
+Wagtyhoş bolsamam, meýlis kölünde,
+Alada bar, şatlygymyň teýinde.
+
+Hoşlaşygyň wagty golaýlap geldi,
+Sag bol, ýaşlyk — ömrümiziň şatlygy.
+Men garrap baramok,
+            şonda-da belli,
+Goja bolmagyňam niçik zatlygy.
+
+Kaýyl indi, şu ömürde tapanma,
+A, öň mydam gözlegdedim jahanda.
+Ynjalyk tapýardym apy-tupanda,
+Gök gürleýip, ýyldyrymlar çakanda.
+
+— Harbylarça dik tutýaryn kaddymy,
+Kän bir üýtgän zadam ýok-la keşbimde.
+Gojalygam däldir bagtyň ýatdygy
+Şeý diýdim men otuz ýaşdan geçdim-de.
+
+Bu boluş kanundyr dünýäler döräp,
+Göwün guşy telim gezek göç eder.
+Şükür, häzir-ä men barýaryn ýöräp,
+Ýaşlyk atly iň ajaýyp köçeden.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Dostuma',
+    'Däli deňziň garşysyna gaýykly,
+Ýör, gideli,
+       tijen dostum,
+                ýürekle.
+Ýaýdanmaly, şowsuzlyk nä aýypmy?
+Beýik işe hyjuw barka ýürekde.
+
+Çagalykda at edindik hyşany,
+Ýigit çykyp, dosta serbe-ser gezdik.
+Dostdan galan ýadygärlik nyşany,
+Bir husydyň baýlygyna bermezdik.
+
+Seret, ümür basan kenara seret,
+Soň ýatlap ýörmäge göwnüň küýsände.
+Äkit, bir ýepdelik azyga derek
+Mähribanyň suratyny kisäňde.
+
+Çola kenar — dolanmajak geçmişdir,
+Tupana döş gerip, äkider ýelken.
+Ykbal bagty, gör, nirede seçmişdir,
+Bir ajap, ýagty gün duşarys, belkem!',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Meýdan çagyrdy',
+    'Awa diýip çykdym, şu gün ir bilen,
+Egnimde tüpeň bar, ýanym tazyly.
+Seleň gyryň her ýerinde adama,
+Meňzäp otyr, çomuçlaryň pazyly.
+
+Islegim towşan ýa guş atmak däl-de,
+Duýgularmyň örtügini sypyrma.
+Ana, şol çomuçlar adama meňzeş,
+Egni ýuka,
+başynda-da şypyrma.
+
+Tüpeňi egnimden düşüremok men,
+Aw bolarmy munuň ýaly ümürde.
+Gury ýowşanlary basyp geçemde,
+Eşidýärin bir düşnüksiz hümürdi.
+
+Maňa hökman däldi, gyşyň içinde,
+Bu ýerleriň aňzagynda üşeme.
+Emma, hoşal bolup ýatlaryn hökman,
+Agşam girenimde, ýyly düşege.
+
+Bu meýdanlar goýmaz soňam erkime,
+Meni gizlin seda bilen çagyrar.
+Şonda bir biçärä meňzeýär diýip,
+Guran çomuçlara nebsim agyrar.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Çagalary zor gördüm',
+    'Enesi-atasy käýese-de kän,
+Çaga-çaga bolar,
+          diýen etmezek.
+Köçe durmuşynyň däbine görä,
+Dowalaşsa, çykýar olar ýekme-ýek.
+
+Çagalaryň şol ajaýyp Kanuny,
+Garşy bolýar ýykylany depmege.
+Birem şugulçylyk — ýigrenilýän zat,
+Şeýle diýip öwredýändir mekdebem.
+
+Çagalar öz kanunyna tabyndyr,
+Dawalylar uruşdan soň ýaraşýar,
+Görýän welin, ulular-a beýle däl,
+Käbirleri entäniňe garaşýar.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Karar',
+    'Indi besdir,
+        gamgyn bolmak hebesdir,
+bolmadyk işler hiç, boljak iş boldy.
+Herniçigem bolsa, ysgajak gülüm
+wagtynda açyldy, wagtynda soldy.
+
+Şol sebäplem kalby lälezar eýläp,
+Şat aýdym aýdaryn indiden beýläk.
+
+Biminnet nur saçýan Güni hem Aýy,
+bu ýagty dünýäni görýän diýibem.
+Toýa gitjek ýaly
+         her gün ir bilen
+öýümden keýpi kök örýän diýibem.
+
+Päkize kalbymy lälezar eýläp,
+şat aýdym aýdaryn indiden beýläk.
+
+Bilip bolmaz, käte ownuk alada
+gam bolup, üstüme salsa kölege.
+Şepagat taparyn aýdymdan-sazdan
+men öňdenem aýdym-saza ölemen.
+
+Şol sebäpli kalby lälezar eýläp,
+Şat aýdym aýdaýyn indiden beýläk.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Men indi ýazaýyn... ',
+    '«Men ýazaýyn, ýazanlarym az bolar»...
+/Şähribossan/
+
+Men indi ýazaýyn,
+ýazmasam bolmaz.
+Heniz kän ekeni diýmedik sözüm.
+Bäş günlük dünýedir, galmaýyn gijä
+ýürek egbarlapdyr, galmandyr dözüm.
+
+Allaň emri bilen şu gije
+               köňle
+ylham iýndi, şükür elhemdilylla.
+Hoş sözlerden saýlap, çemen bogaýyn
+ýyly söz hassa-da melhemdir ylla.
+
+Biri gamda galsa, erkin ýitirip,
+Şygyrlarym çeksin onuň elinden.
+Hüwdä meňzeş aýdym edip aýtsyn,
+bäbeklerni üwrän wagty gelinler.
+
+Men indi ýazaýyn,
+ýazmasam bolmaz,
+şygrym hoşwagt etjek bolsa bir kesi.
+Şygrym nepis bolsun,
+Saz ýaly näzik,
+ýülmemesin aý-ýyllaryň tirkeşi.
+
+Men indi ýazaýyn,
+ýazmasam bolmaz,
+başga aladany çekeýin gyra.
+Bilinmez sogabyň nirden geljegi
+Selälige çenli öçmesin çyram.
+
+Çyram ýansyn dursun, ýüregim ýaly
+heniz ýahlas barka,
+jan barka tende.
+Garaňky gijede yşyk bardygyn
+görer, iň bolmanda, ötegçi bende.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    '«Meniň kalbymda bahar»',
+    '/S.Ýesenin/
+
+Sowetler ýurdunyň baýdagy ýaly,
+şapak
+    günbatarda saraldy-soldy.
+Nädip düşündirjek beýle ahwaly
+şatlyk gursagyma sygmajak boldy.
+
+Mawy duman içre sazak tokaýy
+edil tütün ýaly burugsadylar.
+Baharda kök urup, öseňsin diýip,
+olara Allanyň rusgady bar.
+
+Ine, bahar geler,
+           hemmä deňlikdir
+ulumsy däldir ol, däldir tekepbir.
+Bahar bir işeňňir gelin mysaly
+her kime mynasyp köýnek tikip biýr.
+
+Ol, eli açykdyr, zady gysganmaz,
+Ýylgynlaryň paýy keteni bolar.
+Belli däl, şo-ol töňňä näme ýetjegi,
+Aý, oňa-da näme ýeteni bolar.
+
+Dünýä nur çaýylar,
+           oýanar söýgi,
+janly-jandar yşka düşer esirär.
+Şol sebäplem meniň kalbymda
+                 Bahar
+hem ýalňyz durnanyň zaryn sesi bar.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Halkym',
+    'Gaýduwsyz,
+      batyr hem biçak edepli,
+Emma, käbir zatda geleňsiz halkym.
+Ýurt baryny çapyp
+            asyrlar boýy
+Ýurt eýesi bolman gelensiň halkym.
+Egilmediň,
+      egri gylja daýandyň,
+Egrilikden nyşan ýokdur zandynda
+Ýöne, kän horluga duçar bolduň sen,
+öz köre-kör gazabyňda ýandyňda.
+Güne ýatanam han,
+           serkerdäňem han,
+Öňde-soňda bir agyza bakmadyň.
+/Maňlaýsyz mert hakda söhbet açylsa,
+Halkym,
+    ilkinji söz özüň hakdadyr!/
+
+Söweş güni Göroglydaň,
+               Keýmirdiň,
+başga mahal
+       daýhan ýada çopandyň,
+Ynanjaň,
+     yňdyrma,
+           şeýlekin sada,
+Şol sebäpli bir-biregem çapansyň.
+Sen öňem azlykdyň,
+            hasam azaldyň,
+bölünip kän taýpa, kän tirelere.
+Soňsuz söweşlerden ürken Ykbalyň,
+uýan süýräp gitdi gör, nirelere!
+Halkym6
+     eý, türkana, yňdyrma halkym!
+nämeleri ýitirenňi duýsaňdyň.
+Mümkin bolan zatlaň baryn ýitirdiň,
+galdy diňe
+       namys-aryň,
+               buýsanjyň.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Göçülen ýurt',
+    'Ýok eken        obada janly-jemende,
+Kibtin gysyp otyr pessejik tamlar.
+Aslynda-da çakylyga emenme,
+Göwnümde ýok diýsem, bolaryn mamla.
+
+Gelmedim bu ýere çakylyk bilen,
+Düşnüksiz bir duýgy ýeňimden çekdi.
+Ýüregime kerep ýaly örtülen,
+Ol duýgy işilen ýüpdenem bekdi.
+
+Ýeldirgäp ýörmükäm iýdim men ilki,
+Bu güň duýgy şemal ýaly ösende.
+Adamlar, Sizde-de bolandyr, belki,
+Nämäň-nämedigni bilmän kösenme.
+
+Ol maňa hiç ýerde bermedi karar,
+Öýde, işde ýa-da toý meýlisinde.
+Ýetim oglan ýaly durdy ol garap,
+Wagtyhoş märekäň hol beýlesinde.
+
+Şeýdip, kän ýyldan soň,
+              ýazyň bir güni,
+Geň duýgy şu ýana ýeňimden çekdi.
+...Kakam pahyr bilen ejem görgüliň,
+Arzyly didary öňümden çykdy.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Ýaşlyk bilen hoşlaşyk ',
+    'Men heniz garramok,
+             ýaňy-ýakynda
+ýaşlyk bossanymdan ätledim daşa.
+Indi şol ýyllaryň ýatlamasy hem
+maňa melhem bolar, iş düşse başa.
+
+Ýaşlykdan ýadygär bir owaz galdy,
+gamgyn we joşgunly ol aýdym-mukam.
+Ýa-da ýaşlyk bilen hoşlaşan çagym
+az-kem ejizlejek bolaýdymmykam?
+
+Her döwrüň öz derdi bolşy ýaly,
+öz aýdymy bolýandyr her döwrüňdem.
+Täze aýdymlary eşidip häzir
+oýa batýan, diň salýanda böwrüme.
+
+Belkem, şol gowudyr,
+             döwür çalyşsa
+hemmä ýeter juwan bolmak gezegi,
+Görüň, bu gün başga-başga oglanlar
+boldy, allanäme toýuň bezegi.
+
+Nobat siziňkidir,
+           oýnaň ýigitler
+tans edýänleň halkasyna giriňde.
+Şatlanyň,
+      şatlykdan bir ýaşaň şu gün,
+men olsa, onsuzam otuz birimde.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Toýa gitdim',
+    '«Çakyr kelle togalanar toý bolsa»,
+Diýip menem bardym iliň çetinden.
+Nazar iýdim,
+       toý töwürin galdyrdym.
+Berhiz saklap, datmasamam etinden.
+
+Toý gowy zat,
+       hemmäniňem arzuwy,
+Tuwmaýak bolmasa, gyzsyz-ogulsyz.
+Ýyldyzlary duşup, ýaş çatynjalaň,
+Ak posalak bäbejikler dogulsyn.
+
+Hany, toýuň bagşysynam diňläli,
+Aýdyp bilýärmikä «Amman-ammany».
+Ýogsam kä aýdymdan ýüzüň utanýar,
+Geýip çykan ýaly ýyrtyk tammany.
+
+Hindiçe tans edýär başaçyk bir gyz,
+Nämemikäm diýýär saçy kesilen.
+Ýüregiňi gopdurýan saz ýokmy başga,
+«Sen-sen» bilen «Uçradym» bar, meselem.
+
+Bilýän däldir heniz
+            ulaljayny,
+Ýaşkaň sähelçejik goýberseň hata.
+Deň-duşum däl,
+         meniň sözüm diňlenmez,
+Besdir, gulak goýsa enedir-ata.
+
+Indi gaýdaýsamam bolman durjak däl,
+Öýde-de iş kändir, kändir alada.
+Set ýurduň sazlaram ýakymly ýaly,
+Uzaklardan eşidýärkäň çalaja.
+
+allajan hemmäni toýa ýetirsin,
+Däl özümem, şükür, ogulsyz-gyzsyz.
+Öýlenjek öýlensin wagty ýetende,
+Ýetişen gyzyňam başy bogulsyn!',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Gedem gyza',
+    'Jogap bermän, ýeke agyz geplemän,
+Sen nämüçin, ýigidi kän kösediň.
+Zaryňy çekipdir telim hepdeläp,
+Halyna dözmedim, synlap keseden.
+
+Siziň ýanyňyzdan geçipdir ýoly,
+Işe, toýa, garaz, nirä gitse-de
+Hamana ol göze ilmeýän ýaly,
+Yşk derdini ýeňletmänsiň pisseçe.
+
+Bileňok, gedemlik — akmagyň däbi,
+Sen onuň ýüzüne äňetmänsiňem.
+Wah, onuňam arsyzlygnyň sebäbi,
+Söýgi-kän alkyşlar, näletler siňen.
+
+Gumry bol sen, ýa-da meňzeş jerene,
+Kim bolsaňam päk söýgüden ürkme sen.
+Iň bolmanda duýdur söýmeýäniňi,
+Aşyk duýmaz, duýar ýaly dürtmeseň.
+
+Sen oňa gürrüň ber söýgüliň hakda,
+Ol hakda geplemek kyn düşmez saňa.
+Kaýyl ol bar zada, kaýyl ol hatda,
+Göwnaçyk ýylgyryp pyçaklasaňam.
+
+Ýüzüňde gaýgy bar, gözüňde ünji,
+Belli däl, mähriňi kime berjeksiň?
+Söýüp bilmedikleň kän bor ökünji.
+Beýle kişileri hernä ýer çeksin!
+
+Ýok, myrtar keseli,
+            başynda keli,
+Günä bolar hoş sözüňi gaýgyrsaň.
+Senden akyllydyr, bilemok welin,
+Her gije bir äri söýýän aýgyr hem.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Söýüp söýülmeseňem... ',
+    'Kysmatyňy düzetmersiň el bilen,
+Şol sebäpli, gynanmagyn birjigem.
+Şor gözýaşdan gül göwünler kirjiger,
+Görjegi gowudyr sen deý selbileň,
+Kysmat bolsa, düzetdirmez el bilen.
+
+Täze gül gözläniň bolmaz ýazygy,
+Goý gitsin, saglykda ýetsin maksada.
+Özge diňlär, göwün söýen sazyňy,
+Şo zatlaram näler içiň ýaksa-da,
+Gül gözläp gideniň bolmaz ýazgydy.
+
+Ýürek duýmaz sögünseňem6 ursaňam,
+Ýitigini gözlär, gider soraga.
+Başga hiç zat girip bilmez gursaga.
+Seniň borjuň — mertebäňi gorama,
+Ýürek duýmaz sögünseňem, ursaňam.
+
+Boýdaşlaryň öz bagtyny mazamlar,
+Gol tutuşyp, agşam çykanda seýle.
+Agy bar ýerinde şirin sazam bar,
+Nätjek-dä, dünýäniň gurluşy şeýle,
+Her kim mydam öz bagtyny mazamlar.
+
+Didäňde ýaş görse, bagtyň ýadyrgar,
+Şonuň üçin süpür, gözde ýaşyňy.
+Durmuş geçmez, şatlygyny dadyrman,
+Dünýäde kän her gülüňem aşygy,
+Şonuň üçin, süpür gözden ýaşyňy.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'DOSTLUKDAN BÄHBIT GÖZLEMÄŇ!',
+    'Dostlar bähbit gözläp, gitdi tirkeşip,
+Sag gitsin-de, aman bolsun, goý, olar.
+Barybir, günlerim garaňkyramaz,
+Gijelerim altyn şöhlä boýalar.
+
+Hergiz gynanamok, meniň adymdan,
+Öz peýdasy üçin geplänlerine.
+Men gaýta: «Hormatdan nyşandyr» diýýän,
+Naharyma zäher sepmänlerine.
+
+Bähbit bolsun, dostlar gitdi terk edip,
+Sähel zat üstünde bolduk agzala.
+Her kim her zatlara deňeselerem,
+Durmuş diýlen meňzeş eken wokzala.
+
+Aýlygynam telim sanap alardy,
+Olar biçak zordy hasap-hesibe.
+Gel, gowusy goýaýyn bu gürrüňi,
+Adam gider, çeken bolsa nesibe.
+
+Ýok, olar ýalňyşjak adamlar däldi,
+Hökman ýedi ölçäp, bir kesendirler.
+Belki, çyn bahamy aňlamak üçin,
+Şunça ýyl bialaç tirkeşendirler.
+
+Dostlar gitdi, bulaşypdyr hasaby,
+Emma, dünýäm altyn şöhlä boýalar.
+Tabagyma         zäher sepmäni üçin,
+Sag gitsin-de, aman bolsun, goý, olar!',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Parla, Tugum! ',
+    'Tugum, maňa biçak zerur ekeniň,
+Zerurlygy ýaly köýnek-balagyň.
+Men indi äleme uýatsyz bakyp
+Gamgyn oýlarymyň berdim talagyn.
+
+Göge galan günüň göz dokundyryp,
+Görgi baryn beren eýýam soňlandy.
+Biz Garaşsyz diýip, jar etdi Serdar,
+Jarnamasy älem içre oňlandy.
+
+Parla Tugum,
+       görjek görsün, guwansyn,
+Görüp bilmedikleň garagy aksyn.
+Öňdenem bilýärin, görip kişiler,
+Hergiz, il derdine ýaramazakdyr.
+
+Olar ýagşy görýär mahmal-begresi,
+Köýnek tiker ýa penjirä tutulyk.
+Besdir, ownuk gürrüň gelişmez maňa,
+Şatlanýarkam gamgynlykdan gutulyp.
+
+Çünki, men äleme uýatsyz bakyp,
+Gamgyn oýlarymyň berdim talagyn.
+Tugum, maňa biçak zerur ekeniň,
+Zerurlygy ýaly köýnek-balagyň.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Küýki oglan',
+    'Küýkem bolsa, mydam ýalňyz başyny,
+Mümkin boldugyça dik tutup gezdi.
+Çagaka kän gülüpdiler üstünden,
+Içýakgyç gülküden ini bez-bezdi.
+
+Soň kän gyzlar ondan ýüzüni sowdy,
+Ýeňlesleri nakys gülüp, gaş kykdy.
+Oglanyň     maksady söýgüsi bilen
+Görülmedik menzillere aşmakdy.
+
+Düşnüksiz üm bilen,
+Yşarat bilen,
+Ýadyna saldylar küýküligini.
+Şol sebäpli oglan ýuwdandyr telim,
+Şir gözýaşa garyp tüýküligini.
+
+Synasynyň az-kem ýetmezi üçin,
+Gaharjaň hem dymma bolýar küýküler.
+Eger kimdir biri gyýa seretse,
+Paýyş söger ýa ýüzüne tüýkürer.
+
+Gyzlar,
+   şol oglanyň kalbyna garaň,
+Şonda söýmek üçin bolmaz päsgel-de.
+Arman çekýär söýgüsine şäriksiz,
+Agyr düşýär duýgularna bäs gelme.
+
+Emma, kalby ýagty, niýeti düzüw,
+Duýgulary çeşme ýaly kireňsiz.
+Bagty çüwer ony söýen gözeliň,
+Çüwmez diýip, pikir etmäň birem siz.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Bir çopan hakda',
+    'Obamyzyň geçisini bakardy,
+Özem geçi ýaly ýaman hötjetdi.
+Salamdan öňinçä içiň ýakardy,
+Şeýde-şeýde müjerretem ötjekdi.
+
+Kändir diýip, hossarsyzyň webaly,
+Illäp-günläp, iýerdiler, elgaraz.
+Gelin pahyr ýerden ümsüm, edaly,
+Çopan welin, işläp duran ýolharaz.
+
+Onuň bar höwesi akyl bermekde,
+Ýogsam özi biýedep hem bahyldy.
+Gaşanar-da, elin sokup çermekden,
+Söze başlar syýasata        dahylly.
+
+«Isgender şa ilkibaşda çolukmyş,
+Jojuk bakar eken Çemberlen bolsa.
+Öwreniň» diýerdi derde ýolukmyş,
+«Şu sözler kitapda kem berlen bolsa».
+
+Şeý diýer-de, gyşaryp bir naslar ol,
+Ýöne heniz gep-gürrüňi kemelmez.
+Has-da möhüm, wajyp gepe başlar ol,
+Kime, nädip berilýärmiş emeller.
+
+Dünýäň gurluşyndan ýalňyşlyk tapyp,
+Öz gadrynyň kemliginden nalardy.
+«Öz ilinde pygamberem tanalmaz»,
+Diýen ýaly nakyllary halardy.
+
+Eýran bilen Yrak uruşýan çagy,
+«Wah, meniň töwellam gerek» diýerdi.
+Ýiten geçilerňi sorasaň dagy,
+Agzyna bir sagat seretdirerdi.
+
+Soň aýdar: «Bar gaýgym geçi däl» diýip,
+Ýeke gepläp, gep haltasyn egisse.
+Hak alanda welin, bolşun görskdiň,
+Görlen däldir onuň ýaly nebisjeň.
+
+Şo gylygy üýtgemändir soň-soňam,
+Obadan göçensoň, bekäpdir has-da.
+Gurgun gezip ýör diýýärler,
+Iliň geçisini bakýarmyş Wasda.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Bahar',
+    'Bahar, bahar ýüregimiň aramy,
+Ýadadym men, uçursyz kän garaşyp.
+Sen geldiň-de kalba kanagt berdiň,
+Ýalaňaç baglaram tapdy ýaraşyk.
+
+Ykbalymyz meňzeş ýazylan ýaly,
+Meň bijäme düşüpsiň sen kartda.
+Meniňem göbegim kesilen eken
+Çärýek asyr ozal 10-njy martda.
+
+Men ýagty jahanda ýolagçy kibi,
+Döken külüm, ýetmez munda gadaga.
+Gül bolup, sen bile solmaga kaýyl,
+Sallah başym bolsun saňa sadaga.
+
+Bahar diýen gyza meňzeş baharym,
+Bilýädim men senden göwnüm bitjegin.
+Sen meniň ummy, mähriban Bahar,
+Ýa ölsem yzymda goýup gitjegim?!
+
+***
+
+Toşap ýaly goýalypdyr al şapak
+Elwan reňke boýap gussaň tuguny.
+Bu gün ýene düşdüň meniň ýadyma,
+Natuwanym,
+     sowuk ülkäň suguny.
+
+Şeýle boldy.
+        Aýraladyk ýolumyz,
+Gözýaş dökmän, bir-birege söz bermän.
+Indi bilýän, dolanmarsyň asyl-ha,
+Ikatýoga meňzemeseň özgermän.
+
+Men seni ugradyp, bir zady bildim,
+Ömrüň, söýgi bilen dirilikdigin.
+Ykbal maňa ýalňyzlygy buýrupdyr,
+A men hesret bilen birigipdirin.
+
+Az salymdan göge galar doly Aý,
+Şa gyzy deý, jygasy zer börükli.
+Kimdir biri aňtap, ýalňyz çagymy,
+Köňül köşgün çarşaklapdyr, dörüpdir.
+
+Salamat bol, egsilmesin mertebäň,
+Ýoluň uzak, typançakdyr, doňakdyr.
+Ahmal, söýgi şowsuz bolsa has beter,
+Ezýetlidir, ýatlamaga oňatdyr.
+
+Şoň üçindir düşdüň ýene ýadyma,
+Natuwanym,
+     sowuk ülkäň suguny.
+Toşap ýaly goýalanda al şapak,
+Elwan reňke, boýap gussaň tuguny.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'EJEME',
+    'Bu gün göwnüm gozgap, söz açdym ýene
+Mähribanym, ejem pahyr barada.
+200 metrlik gumak ýol bilen
+Ýyllaryň oýnamy ýatyr arada.
+
+Şonda-da bir täsin, adam diýeniň,
+Ony sähelçe zat salýar heýjana.
+Men seni küýseýän ýagyş ýaganda,
+Gar ak bägül bolup düşse meýdana.
+
+Durmuşymda kän zat üýtgänok meniň,
+Geçdi bir gurultaý, iki plenum.
+Adam bar zadyna şükür etmeli,
+Heniz-ä bol bizde gant bilen un.
+
+Teke nowruzynda ýagaryn ýaýla,
+Öýlänçi bolubam aglap, diňerin.
+Dogryňy aýtsaň urýarlar, eje,
+Urulmakdan besse-besse jigerim.
+
+Şonuň üçin bu gün, söz açdym ýene,
+Mähribanym, ejem pahyr barada.
+... 200 metrlik gumak ýol bilen
+Ýyllaryň oýnamy ýatyr arada.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'KAKAMA',
+    'Indi giç, ykbala garşy giderin.
+Goý, ol meni şalgam kimin aparsyn.
+Barybir, dünýede galmarsyň ýalňyz,
+Ölmeseň şatlygňa şärik tarapsyň.
+
+Asla ýaşaýyşyň ugrun bilmedim,
+Bagtly bolmaga-da barmyka tilsim.
+Kän ýalňyşdym çärbek asyr ömürde
+Goý indi, hesretim bagrymy dilsin.
+
+Gaýgy edip ýörme, çekme endişe,
+Okama meň üçin «Kulhuallanam».
+Ejirli ýüregim aýdymdan doly,
+Belki, bardyr ony sulhy alýanam.
+
+Ýalançy diýdiren ýagty dünýede
+Özüme däl, saňa agyrýar nebsim.
+/Baýdaga çalymdaş, owadan şapak,
+Ýene 70 ýyllap alnyňa degsin/.
+
+Derman içip, berzih saklap gezsem-de,
+Meniň aýdymlarma ýetmändir zeper.
+Göwün berip, gulak goýsaň olara,
+Kalbyňa şalygyň nuryny seper.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'BAÝHATYN',
+    'Uçup git, ezizim, armanyň näme?
+Ganatlaryň ykbalyňy göterse.
+Ýogsam, senem biziň ýaly horlanyp,
+Bu jahanda ahmyr bilen ötersiň.
+
+Uçup git, ezizim, mawy asmana,
+Ýerde mydam ýer tapylýar jesede.
+Sowuk täleýiňe bagryňy berip,
+Oturşyňa men gyýylýan keseden.
+
+Höwes edýän, ýerden örküni üzüp,
+Bigünä guşlaryň göge galşyna.
+ÝA ganatly, ýowuz ykbalyň bilen,
+Ömrümizi goýaly biz çalşyga.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'ÇALYŞMAN',
+    'Keç ykbaly aýdym bilen bezedim,
+Güller bilen arzuwlarmyň mazaryn.
+Ulus-ile ýuwaş sesde aýtdym,
+Nesibede ýok zatlaryň azaryn.
+
+Söýdüm öz jepakeş, ýuwaş halkymy,
+Halkyň söýgüsinem küýsedim örän.
+/Bu gowgaly hem mähriban dünýede,
+Biziň hemmämizem söýgüden dörän/.
+
+Söýdüm diňe ezýetine gyýylyp,
+Boldum, mydam jepasynyň şärigi.
+Şeýle yhlas bilen akylly heleý
+Söýýändir öz infarktly ärini.
+
+Düşünmedi garny ýogyn nadanlar
+Uly söýgä ykbalymy gatanma.
+Barybir, men öz-özüme aýtdym,
+Ştatlara çalyşmaryn Watanmy.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'ÝOLAGÇY OTLUSYNDAKY OÝLANMA',
+    'Bir tarapyň Hydyr gören çägelik,
+Bir ýanyň Hanhowuz gowaçalygy.
+Bilýän, bir mahallar ýürgimiňem,
+Şu meýdanlar ýaly sowajagyny.
+
+Şoň üçin içmäge ýaran gözleýän,
+Belki, o zat ýüregime em eder,
+Taýyn men, heserdeş, ykbaldaş bilen,
+Güm bolup gitmäge jähenneme-de.
+
+Bir gün säher bilen işigmi açyp,
+Başy şlýapaly, ýakymsyz bir tip.
+Golumy baglarda, äkdire türmä,
+Dünýede düzgünsiz ýaşapsyň diýip.
+
+Garynjaň       öýjügni bozmadyk janym,
+Neneň döz gelerin, beýle töhmede,
+Şehit bolar töhmet okundan ölen,
+Şonuň üçin gamgyn bolar söhbedem.
+
+Ýollar nekrologa meňzär bigüman,
+Gözleirm zar bolar toýdur-baýrama.
+Bu dünýäniň ozalyndan kadasy,
+Gülden aýra düşen bilbil saýramaz.
+
+Hut şonuň üçinem içesim gelýär,
+Belki, o zat ýüregime em eder.
+Taýyn men, heserdeş, ýürekdeş bilen
+Güm bolup gitmäge jähenneme-de.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'SENI ÝATLAP',
+    'Seni ýatlan çagym, göwnüm açylýar,
+Göz öňümde seniň eziz keşbiň bar.
+Sagalýan hassalaň güzerany hakda
+Gürrüňlerem aýdym bolup eşdilýär.
+
+Ýöne, indi ýatlamaga utanýan,
+Göýä biri bakýan ýaly çermegme.
+Sen-ä meni küýsäp ýörenem dälsiň,
+Mynasyp dälem men üns bermegňe.
+
+Meň yzymda elli gün öň ýapyldy
+Giň hem ýagty keselhanaň işigi.
+Ýatan çöpem galdyramok bu ýerde,
+Bejerýärler öýkenimiň çişini.
+
+Sen bir kesellerden gora özüňi,
+Galan ömrüň ýugrulmasyn perýada.
+Näsag bolsaň, küreklemek kyn düşer
+Gaýygyňy durmuş atly derýada.
+
+Meniň şu diýýänlem ýadyňda bolsun,
+Gezen bolup ýörme, etmän pitiwa.
+/Birnäçe kişileň, hatly-petekli
+adam ýaly seredilýän        iti bar/.
+
+Seni gowy görýän, aýalym ýaly,
+Ýeke gezek ýatmasagam düşekde.
+Ýarygije seni ýatlap irkilsem,
+Ýukajyk ýorganym meni üşetmez.
+
+Ýeri, bolýar, mähribanym, gynanma,
+Janymyz sag, düzüw niýet-pälimiz,
+Bolmajak zat barmy ýagty jahanda
+Şatlyga-da sataşarys häli biz!
+
+***
+
+Her kim bagtyň gözleginde älemde
+Diýip, kän oýlandym öten gije men.
+Indi menem il ugruna ýöresem,
+Belki, henizlerem bolmaz biçeme.
+
+Dünýä giňdir, ahmal ýeter maňa-da
+Onuň bir çetinden ýaşlar ýaly jaý.
+/Şu höwesim ýüregimi ýyladýar
+daşarda dekabr, gursagymda maý!/.
+
+Şol ýerde ýaşasam
+          öz günüm bilen
+Gaýgy meni iýmez,
+           çykmaz ýüze-de.
+Il içinde özüm ýaly oglanlar
+Maňa bakyp, ýalňyşyny düzeder.
+
+Ýalňyşlyklar kän bolandyr bu ýaşda
+bolandyr horlugam, soňsuz keselem.
+Ajy zada ýaşlygymdan imrinip,
+Ajy güne duçar boldum, meselem.
+
+...Şatlygymy bigamlara paýladym,
+Hemaýat gözledim men şolardan.
+Başgany özüme aşna saýmadym,
+Mümkin, şoldur köňül bagym çolardan.
+
+Dost gözläbem, öňýetene dost diýdim,
+Emma ýer goýmadym wada-kasama.
+Ýalandan kän güldüm,
+            soňam agladym
+Bir katra gözýaşym däldi ýasama.
+
+Besdir indi
+       örtemäýin özümi—
+Boljak boldy, iýne siňdi boýasy.
+Janymy ýaksamam, içim ýylamaz,
+Göwnümiňem ýok hyýaldan doýasy.
+
+Bir höwes bar,
+         ýüregimi ýyladýar
+daşarda dekabr gursagymda maý.
+... Dünýä giňdir, ahmal, ýeter maňa-da
+Onuň bir çetinden bir otagly jaý!',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Bilbilim',
+    'Aýdymyňdan derde derman gözeleseň,
+Ýüzüň düşmez,
+       mylakata, iýme kän,
+Gaty beletdirin bu zatlara men,
+Çünki, menem özüň ýaly bimekan.
+
+Bimekanym,
+     saňa göwnüm açaýyn
+Tagapyl et, daňa çenli saýrama.
+Aýtdym-a häli men,
+           ykbaldaş biz
+Men öwgä mämtäç däl, senem baýraga.
+
+Birmahallar kändi meniň syrdaşym,
+Ýeke gezip ýörün, bilbildim, indem.
+Başym çaşdy,
+        okuwdanam kowuldym
+«ikilik» aldym-da dil biliminden.
+
+/Dil          nämedir ýüregiňde söz bolsa,
+Garaşýarkaň hyrydara ýeterne.
+Kalby sazly şehit bolsa kaýyldyr,
+duş bolsa-da belalaryň beterne/.
+
+Şondan soň mugtuna saýrap başladym,
+Şoldur biziň ömrümiziň ýalňyşy.
+Göwün diýenimem tersine boldy,
+Bar ýaly ykbalyň mende algysy.
+
+Men, barybir, henek etdim ykbala
+A,
+ ol welin, düşünmedi, eýesiz!
+Nätjek-dä, bilbilim, ýazgytda bolsa,
+Doganyň neýlesin, dost-ýar neýlesin!
+
+Meni aý-ýyllar däl, günüm garratdy,
+Indi zeýrenmegem görünýär çemsiz.
+Ynansa, gözlerim ýumdurjak ýokdur,
+Bir gün iýnim sowap, ýykylsam demsiz.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'SEN GOWY',
+    'Keseki däldigmi bildim aç-açan
+Gözlerňe ýetende gyňajyň çowy.
+Maňa her kim gabat geldi her ýerde,
+Ýöne, hemmesinden diňe sen gowy.
+
+Sen halal süýt emen, naçar maşgala,
+Öwýär seni mydam goňşy-golam-da.
+/Sen hakda üýtgeşik bir zat ýazaryn,
+Menem ile belli şahyr bolamda/.
+
+Gitdiň sen birmahal durmuşa çykyp,
+Menem galdym, dönüp süpük tirýekä,
+Bolýa, ýöne nesip edenem bolsaň,
+Özüm ýaly ýarymgöwün bir ýekä.
+
+Uzak ýaşap, bagta ýetmek höwesi,
+Maňa şu güne çenli berdi goltgy.
+Şoň üçin umytly ýaşadym ýördüm.
+Ýogsam ölmäge-de sebäp bolupdy.
+
+Aý, bolýa-da, geçen geçdi diýeli,
+Goýdum seni hakydamyň töründe.
+Sawçylyga iberjekdim ejemi,
+...Goý, olam rahat ýatsyn göründe.
+
+Keseki däldigmi bildim aç-açan,
+Gözlerňe ýetende gyňajyň çowy,
+Maňa her kim gabat geldi her ýerde,
+Ýöne, hemmesinden diňe sen gowy.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Sähra gideýin',
+    'Ýüregim bir uly şatlygy syzýar,
+Gideýin men kän garaşdym, bes indi.
+Aprelde sähralar bolsa-da yzgar,
+Ýylanmaga bar köňülde kesindi.
+
+Janlansyn usurgan damarlam meniň,
+Ýuwuş suwy goýberilen keş deýin.
+Ýylakly meýdana owkalap tenim,
+Boz torgaýyň nagmasyny eşideýin.
+
+Ýagyş suwy püre-pürlän kaklaryň,
+Ýakasynda dikeldeýin çalmarym.
+Il gözüne utançly bakmaryn,
+Könelse-de geýip gelen jalbarym.
+
+Agşam
+   toşap ýaly, göý çaýdan boşan,
+Käsä dolan Aýyň ýüpek şöhlesin.
+Içip,
+   ykbalymdan bolaryn hoşal.
+Azalsa-da ömür diýen möhledim.
+
+Dünýä inip, mähri bilen gundalan,
+Göbek ganym siňen ýaýlam Ýerbendim,
+Bigamlara hemra bolup munda men,
+Senden         gidip,        şowsuzlykda sermendim.
+
+Aşyk bolup, baky bahar paslyna,
+Heňňam içre ham-hyýala münmedim,
+Ýakyn boldum ynsan diýen aslyma,
+Unutsamam musulmanlyk sünnedin.
+
+Ýöne hiç kim maňa gülüp bakmady,
+Yşkymy aňmady göreçlerimden.
+Aýdymlarym şum ykbalym hakdady,
+Şondan zyýat aýdym döretmedim men.
+
+Burkut ataň talaň salan göçleri,
+Aglap-diňse,
+Gözýaşlary gowzasa,
+Azalmady hesretimiň möçberi,
+Ýagty dünýäm döndi maňa dowzaha.
+
+Men ýagty jahandan yşyk gözledim,
+Tümlük baglan çagy didelerimi.
+Ýat göwünlä bagş etmäge dözmedim,
+Köňlümdäki polýar gijeligini.
+
+Onsoň howandarym sähra dolandym
+Dumanly ýaýlanyň ümsüm döwründe.
+Sähram!
+Bagyşla ykbalyň şeýle bolanna
+Arzuwlarym köýüp galan ömrümde.
+
+***
+Ýaşlyk menden ara açýar,
+Uzaklaşýar owaz ýaly.
+Köňle gussa aralaşýar,
+Ýürek boşap, sowan ýaly.
+
+Boldy ýalňyşam, ýazygam,
+Şatlygam bolupdy ýetik.
+Sarç mal kimin tazygan
+Arzuwlarym, barýar ýitip.
+
+Birmahallar göwnüm söýen
+Bigamlara joradym men.
+Ajysyny deň paýlaşyp,
+Ajy günden goradym men.
+
+Indi gussa aralaşýar,
+Ýürek boşap, sowan ýaly.
+Köňül bahary küýseýär,
+Jyda düşen dogan ýaly.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Ejeme',
+    'Ak pataňy alyp, gömme nanyňy,
+Bile guşap, ak bedewe mündügim.
+Giderin men, mydam bolman ýanyňda,
+Ýelden ýüwrük heserdeşim-düldülüm.
+
+Hatda seniň düýşüňe-de girmejek,
+Uzak, ýat ülkede taşlaryn labyr,
+Ähtimal, gelmernem toý çakylygyňa,
+Diňe ezýetiňde, gussaňda çagyr.
+
+Gözýaşyňy gülli keçä damdyryp,
+Hesretiňe boglup, käbäm sojama.
+Dolar meni duzun iýen tamdyrym
+Mähriň siňen şu pukara ojaga.
+
+Ýarygije Aý bakanda tüýnükden,
+Arzuwyňa ýetirende düýşleriň.
+Gam-gussany, şeýtan ýaly güýlüp men,
+Gamçylaryň bulut ýaly üýşmegin.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Sersepil',
+    'Bigadyr bolarsyň, miwesiz bolsaň,
+Duşmadym men heniz seni magtana.
+Adamlar hemişe bähbit gözleýär:
+Öwüp arşa çykardylar pagtanam.
+
+Çig süýt emen bolýar adam diýeniň,
+Hemişe bir zatda gaýdylýar kelte.
+Biziň bähbit gözläp, şeýdip ýörşümiz
+Ahyry bir belaň üstünden elter.
+
+Tanap goý sen, ikimizem heserdeş,
+Sersepilim, sersepilim, sersepil.
+Mydam seniň hyzmatyňda gezerdim,
+Eger ykbal ellerime berse pil.
+
+Ýogsam,
+   goşgy ýazyp, janymy ýakyp,
+Çendenaşa ezýet berdim ýüregme.
+Hesret derýasyna atdym özümi,
+Ýok gaýygym, ýok elimde küregmem.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Döwrana arzuwym',
+    'Gaýgy etme gün alýamak hakynda,
+Günüň dogup, ýaşyşyna aşykkaň.
+Bu sözlermi doga edip dakynma,
+Gülün döken pisse bilen ýaşytkaň.
+
+Durmuş meselesi bolsun huşuňda,
+Kyndyr ol algebraň deňlemesinden.
+Onsoňam mährem bol deňi-duşuňa,
+Göwni sowuk diýip geňlemesinler.
+
+Köňül diýlen däldir Pars aýlagy,
+Joşgunyna, gaýtgynyna esetgin.
+Ötegçi şatlygy bagtym saýmagy
+Men-ä jigim geçen ýyl güýz bes etdim.
+
+Mähriban ýyllaryň deňinden geçip,
+Başyň şlýapaly adam bolansoň.
+Ýagşylykda ýatla garyp agaňy,
+Göwnüň küýsäp, geçmişiňe dolansaň.
+
+Sözerimden gyýylma sen, gynanma,
+Täleýiňde şatlyk bolar ýene kän.
+Ýagty öýüň täk öresi synanda
+Tylla   gulpakly   Aý        bolar enekäň.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'ÖWRENIŞDIM',
+    'Günler ömre şatlygyny tirkeýä,
+Azalyşýar ýüregimiň järhedem.
+Täleýimden çykyp, gitmen Türkiýä,
+Kalba niçik ezýet - azap berse-de.
+
+Çünki, bu ýer, ýagşy päle öýerdi,
+Galdym oňa nikalanyp, imrinip.
+Öýmüzdekäm säherleri söýerdim
+Höwäsgäri boldum indi iňrigiň.
+
+Agşamlara yşk höwesin goşan Aý
+Ýada salýar eräp barýan mesgäni.
+Bu ýerleriň adamlaram hoşamaý,
+Ozaldan göwnümiň besleýänidi.
+
+Göwün açmak üçin gözleseň pişe,
+Dul aýalyň öýi berlenok salgy.
+Ynanaý, şulary görsem hemişe,
+Bir zatlar,
+Bir zatlar gozgaýar kalby.
+
+Men bu ýerde gögerçinleň aşygy,
+Heserdeşi hem wepadar itleriň.
+Şu ýerde ýaşaryn galan ýaşymy,
+Men bu ýerden öz erkime gitmerin.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'GOWY',
+    'Gowy, ýagty gündiz, gijäň tümlügi,
+Torgaýyň nagmasy, gargaň nalyşy.
+Ýatlamalaň goşhalta deý agralyp,
+Hakydaňda dünýe bolup galyşy.
+
+Ýadasaň kämahal, ezýetden irseň,
+Öz ýagty dünýäňe dolansaň, gowy.
+/Metjit ýaly tämiz, köşgüne girseň,
+Bulaşyk täleýiň çözülýär towy/.
+
+«Dutaryň owazy» oýarsa, gowy,
+Säher penjireden baksa, ýagty gün.
+Ýollaryň uzagy basmasa howuň,
+Dowam etse, ogul bilen agtygyň.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Hoşlaşyk',
+    'Gördüm, hoşlaşykda egnimden garap,
+Açyk penjireden delmurup durşuň.
+Seriňde ýatlamaň ýumagyn sarap,
+Diňläp durmudyň sen ýüregiň urşun.
+
+Gam çekme,
+Başyňda sansyz alada,
+Mekgäň daşy kimin sallanan çagy.
+Hoşsurat bir ýigit gelip alnyňa
+Üwrär, täleý atly sallançagyňy.
+
+Men-ä garyp oglan,
+          dagy bolmasa,
+Bigamlykdan gaýry ýokdur ýazygym.
+Halal nanym, gant, ýagsyz kolbasa
+Hem süýji arzuwlar her gün azygym.
+
+Tä ölinçäm seni ýatlap gezerin,
+Bolsaňam sen başga kişiň aýaly.
+Iller näme diýse, şony diýsinler,
+Kalbymda saklaryn ikona ýaly.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Bahar',
+    'Öten agşam ýagyş ýuwup darapdyr,
+Söwütleri — hatardaky esgeri.
+Sürüp ýördi oýnam sany traktor
+Üç aý gyşda tohum küýsän mes ýeri.
+
+Tüýdüm-tüýdüm bulut a:kdy kagyzdan,
+Çal heseriň oňurgasy synykdy.
+Şemal — bahar meýlisine çagyrlan -
+Hoşamaýdy, ýüpek ýaly mymykdy.
+
+Köne salma kenaryna öjügip,
+Ýigdekçe deý geçipdir öz hetdinden.
+Gözbaşyna pyýadalap, ajygyp,
+Sagat ýarym ýöräp, zordan ýetdim men.
+
+Bir çetinde sürüm geçen kartalaň,
+Jigerimi gussa daglap saklady.
+Ol şat bahar yşky bilen gartaşan,
+Aýdymdy,
+     Güýz hem aýralyk hakdady.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Mynajat',
+    'Sen maňa kuwwat ber, merdem bolmaga,
+Ýüregimi ezýetlere taýynla.
+Aýralyk tyg bolup dilse-de kalby,
+Ol parahat urup dursun jaýynda.
+
+Kalbyma umyt sal, lowlasyn dursun,
+Şaman ody ýaly öçmän yşygy.
+Tukat ýeller öwsüp, sowulanda güýz,
+Şonuň bilen geçirerin gyşymy.
+
+Pula satylmaýan iman ber maňa,
+Men imansyzlardan edýärin heder.
+Günümi aýlaryn aýlyk bilenem,
+Şonda-da halal nan miýesser eder.
+
+Salyhatly oýlanaýyn, gepläýin,
+Goşma meni zynakärleň oýnuna.
+Aýpalta meňzeş Aý gülýaka bolup,
+Dakylmasyn bir ýeňlesiň boýnuna.
+
+***
+Goýup kalbymdaky çäksiz höwesi,
+Adamlaň şowhunly hümerinde men,
+Giderin       ýolagçy otlusy bilen
+Ýyllaryň deňzine çümerin-de men.
+
+Ýöne sen gyýylma, janyňy ýakma,
+Hoşlaşyk zoguny çalanda otly.
+Onsoňam ýatlama aýralyk hakda,
+Näme, ýatlar ýaly geçmişim ýokmy?
+
+Bagtdan sermes gez, ejapdan ümsüm,
+Şu bolar dilegim soňky demdäki.
+Men-ä hiç, köňlüme sowuk tyg çümsin,
+Siňsin hesret bilen ajy temmäki.
+
+Gowgaly dünýäniň nirelerinde
+Gezseňem yhlasym bolsun ýaranyň.
+Gijeler gözel Aý direleninde
+Unudylsyn uzaklygy aranyň.
+
+Men gideýin, ykbalymy yzlaýyn,
+Tap getirip bilmän göwne deglenne.
+...Şat günlerim geçdi köňle yz goýup,
+Bu günlerem möhletinden eglenmez.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Garly günüň ýatlamasy',
+    'Niýetini ýagşy päle öýerdi,
+Rysgal gözlemedi özgäň aşyndan,
+Ol itlerem ýüreginden söýerdi,
+Ýogsam itiň güni bardy başynda.
+
+Ol gyşy söýerdi, ümsümligini,
+Diýerdi: «Gar ýagsa, älem ýagtylýar».
+Gar tozgalap ýere düşek bolanda,
+Diýerdi: «Gar ýagdy, meniň bagtyma».
+
+Il üçin ýaşady gysga ömrüni,
+Her zat diýsegem ol, däldi üşüksiz,
+Ýöne bir garly gün ahmal galyp ol,
+Bir maşynyň aşagyna düşüpdi.
+
+Ol bir şa göwünli garyp oglandy,
+Mertebesi boýy bilen deňe-deň.
+Nämynasyp ykbal çirkizdi ony,
+Horluk üçin doglan eken eneden.
+
+Älemde adamdan at galýar diňe,
+Säginmesi-salymy ýok wagtyňam.
+Bir çak onuň höwesine ýagan gar,
+Indi ýagýar özgeleriň bagtyna.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'SÄHRANY KÜÝSEDIM ',
+    'Sährany küýsedim, ýüregim gysdy,
+Şonsuz dar gördüm men köňül mülkümi.
+Sähraň ýandaklaram gözüme yssy,
+Söýýän ony bir ajaýyp gül kimin.
+
+Öten-geçenleri görjegim hakdy,
+Çyksam garamyklaň alaňlaryna.
+Depelere çykyp, ýokardan bakdym,
+Özgäniň gybatdyr ýalanlaryna.
+
+Ökünemok bu ýollara gaýdanma,
+Her ýerde kän oturybam iripdim.
+Ýene-de bir sebäp, bäri gaýdanma,
+Agşam şu meýdanlar düýşe giripdir.
+
+Ýaz gyşyň erkini alyp elinden,
+Ot örüpdir, ýapylaryň gerşine.
+Göwnüm göterildi, sazak-selinleň,
+Maňa tagzym edip, salam berşine.
+
+Bu ýyl biçak bol bolupdyr selmeler,
+Süýgeşik gök şire siňýär köwşüme.
+Sähranyň yşkynda boldum telbe men.
+Belki, duýgym aýdym bilen böwsüler.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'WAGT GEÇÝÄR',
+    'Wagt diýlen däldir heserdeş joraň,
+Garaşyp durmaz ol, çykyp işige.
+Dostlar öter gider emgekden gorap,
+Soň bilersiň ony, girse düýşüňe.
+
+Aýa sen olary, toý köýnegiň deý,
+Tämiz sakla, özgä amanat berme.
+Ýalňyşsaň örtenäý, otly köýnek geý,
+Söýgiň gerdeniňe güýç bersin herne!
+
+Kyn bolar, meýdana çökende iňrik,
+Çäresin tapmarsyň döz geler ýaly.
+Tenha, hesretini inine siňrip,
+Ýaşabam bilmersiň özgeler ýaly.
+
+Göwnüň jübüň ýaly bolsun arassa,
+/Aýlygňa garaşyp gezmek aýyp däl/.
+Ykbal kişiň derdi üçin ýaratsa,
+Kaýyl bolaý, bir ýaman söz aýtman.
+
+Geçenini käte ýatlap dursaňdyň,
+Olar geljegiňe galdyrar sudur.
+Gussa raýdaş, şatlygyma hursandym,
+Saňa öňde, soňda diýjegim şudur.
+
+Wagt diýlen, däldir heserdeş joraň,
+Garaşyp durmaz ol, çykyp işige.
+Dostlar öter gider, hesretden gorap,
+Soň bilersiň ony, girse düýşüňe.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'SENIŇ YŞGYŇDA',
+    'Gök asman dursa ýerinde,
+Zeminem ýatsa bugaryp,
+Baky ýaşarsyň serimde
+Ýalňyz galsamam, gugaryp.
+
+Şu sözi ýatla hemişe,
+Gaýtalap ýörmez çem gelen.
+Yşkynda boldum kemine,
+Söýgim didämde jemlenen.
+
+Hesretde saralan, solgun,
+Gül keşbiň gaşsa yşnagy.
+Bir nyşan ýetişer şol gün,
+Üýtgedip ýaz-u-gyşlary.
+
+Ataşym-yhlasym bilen
+Huzuryňa ýeterin men.
+Goraryn, bagryňy dilen
+Belalaryň beterinden.
+
+Baky ýaşarsyň serimde
+Ýalňyz galsamam gugaryp.
+Gök asman dursa ýerinde,
+Zeminem ýatsa bugaryp.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'BAHARGÜL',
+    'Bahargül, men saňa baharda duşdum,
+Gargalaryň owazynda gam barka.
+Bägüller bagynda bolanda huşsuz,
+Pudagyndan ýagyş suwy damýarka.
+
+Söýgiň huzurynda sadyk gul ýaly,
+Tylla halkasyna boldum kökerlen.
+Şu ýerde gussamy nagt pul ýaly
+Bagtym üçin bagyş edip döker men.
+
+Pasyllar parahat gelsin-de geçsin.
+Bahargül, ak bagtyň bolsun maňlaýyň.
+Gara gözleriňde göreýin keşbim,
+Täleýine hemişelik daňlaýyn.
+
+Men bu ýyllar bilen ýel deý öwseýin,
+Ykbal bu ahwaly gaýtalap bilmez.
+Ýöne, galar söýgim, solmaz göwherim,
+Asyl ony hiç zat maýdalap bilmez.
+
+***
+Suratçy dost, senden tenha haýyşym,
+Arzuwlam gül bolup gögersin meniň.
+Çek asmanda hyýal kimin gaýyşyn,
+Çapak çalyp barşyn gögerçinleriň.
+
+Çek sen, dostum, towuklaryň telärin,
+Ejem janyň çörek ýapýan tamdyryn.
+Galam hakyň aýlygymda tölärin,
+Unudyp dünýäniň gaýgy-gamlaryn,
+
+Şemal ýaly tiz bedewe münjekdim,
+Çek sen, meniň şady-horram şeklimi.
+Obanyň üstünden äpet Gün çekgin,
+Tükeniksiz ýol hem bolsun çekilgi!',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'SENSIZ',
+    'Sensiz ähli zada öwrenişýärin,
+Köçämizden aglap geçse şemalam.
+Sensiz ähli zada öwrenişýärin,
+Känbir gussa çekmeýärin şumalam.
+
+Sensiz ähli zada öwrenişýärin,
+Öňküsi deý Aýly, ýyldyzly asman.
+Ýyllar şemal bolup geçende aglap,
+Köne ýaralaryň bitmegi ahmal.
+
+Ýogsam bir zadymy ýitiren ýaly,
+Saňa derek aýnamyzdan Aý baksa.
+Henizlerem ylgap çykýan işige,
+Nätanyş ýolagçy gapyny kaksa.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'SÖÝMEK BAGTY',
+    'Söýmek bagty ýok ýalydy kysmatda,
+Özümden özgäni söýüp bilmezdim.
+Gijeler sargaryp, ýürek gysmakdan,
+Gyzlaryň yşgynda köýüp bilmezdim.
+
+Keşbiň bilen doldy köňül sandygy,
+/Boş galmajak ekeni ol bu ýaşda/.
+Öz            müdimi höwesinde ýandygy,
+Seni görüp başladym men Kuýaşda.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'SÄHRA ÇYKDYM',
+    'Ýene bu ýerlere nesibäm çekip,
+Otly köýnek geýip, çykdym meýdana.
+Görküniň ýasama däldigi bilen
+Çigildemler meni saldy heýjana.
+
+Eý, sähram!
+Giň dünýä sygyp bilmedim,
+Ýerleşsemem dar ölçegli penjege,
+Iş-alada bilen göwnümi bölüp,
+Ýarymgöwün bolup galdym ençeme.
+
+Sen kalbymyň owazyny alyp gal,
+Ýaz ýeli, dek mylaýymdyr ol aýdym.
+Men sende döredim, kemala geldim,
+Şonuň üçin ol saňa-da golaýdyr.
+
+Men ömrümi ýagşy päle besledim,
+Galan ömrümizem şonuň bilendir.
+Saňa-da şowhunly ýaşyl baharlar
+Hem daş düşelmedik ýollar diledim.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'SENSIŇ',
+    'Sensiň gam öýüniň binýadyn bozan,
+Naçar leglegim.
+Ömrüň ak säherin basmasyn tozan,
+Bägül kimin açylanda lebleriň.
+
+Akmaýanyň ýoly däldir ýazgydyň,
+Ýodaňy ýitirdiň, ýola dolandyň.
+Köýen arzuwlaryň keç bagtyň däldir,
+Ol biriniň nesibesi bolandyr.
+
+Umyt badalgaňdyr, şonsuz ötegçi,
+Şatlygyň ählisi ýarym mysgaldyr.
+Özüň     bu   zatlara düşünersiň giç,
+Käte oýlanaňda ýürek gysýandyr.
+
+Alys ýolda seni idän yhlasym,
+Ummana oklanan çeňňekdi dünýäm.
+Sen, durmuşyň ezýeti kän diýmegin,
+Gowgaly ak dünýä jennetdir, dünýäm.
+
+Söýseň meni, söý yşkyňdan uýalyp,
+Sada ýygralygy, diýmezler aýby.
+Ynan, ykbal bizi eýlemez jyda,
+Ýelkene ýel düşüp, äkider gaýygy.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'ALLA GORASYN',
+    'Bulut geçse, kölgesinde üşejek,
+Ýagyş ýagsa, ýüpek saçyň ezjek sen.
+Göwnüňe degmesin ejeň dagy hem,
+Ýogsa, mydam gözüň ýaşly gezjek sen.
+
+Ýel öwsende tozan ýokar kirpigňe,
+Seniň köwşüň, meniň kalbym kirjiger.
+Ömürboýy seni aýap ýörmäge
+Mejbur bolsam, ökünmerin birjigem.
+
+Sen bir göwni ýuka, eziz maşgala,
+Belki, ýowuz ykbalyma jorasyň.
+Men seni goraryn ýaman gözlerden,
+Belalardan seni Alla gorasyn.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'TÜWELEÝ',
+    'Möhüm bir zadyny ýitiren ýaly
+Çar ýana alakjap, çöwjäp başlady.
+Sähel salym içre ümsüm sähranyň
+Ýaşyl köýnegini ýyrtyp başlady.
+
+Men beýle tupany halamaýaryn,
+Onda bir ýakymsyz öçlülik duýýan.
+«Il bagtyna guwanmaýan kişiniň
+Betlagam       gylygy        barmyka?» diýýän.
+
+Belki, yşgyň söwdasynda utulyp.
+Ol Tahyr deý Watanyndan kowlandyr.
+Bir zat weli köre hasa tüweleý
+Säherlerde öçli ýaly towlandy.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    '18.12.1997.',
+    'Meni bu ýolumdan gaýtarjak bolma:
+Göwün giden taýa ädim ädiler.
+Maňa sähelçe zat zerur, dogan jan,
+Aýdan aýdymlarma düşünsediler.
+
+Çünki, öňde-soňda perwaýsyz boldum,
+Ýeňles aýdym aýdyp meşhur bolmaga.
+Şu gylygym meni bähbitden goýdy
+Ynjalygam bermedi hiç ol maňa.
+
+Emma, ýazgydynda barlygy üçin
+Bilbil gül yşgynda saýrap ýadamaz.
+Maňa öwüt berme, düşünäý dogan:
+Sähelçe zat zerur eken adama.
+
+17.12.1997.
+
+Aý, hawa-da, özge nireden bilsin,
+Kesekiň ahwaly kesekä syrdyr.
+Haýyş bilen kiçelmäge utanyp,
+Nebir arzuwlarmyň ganatyn gyrdym.
+
+Dünýä bir bolşuna galdy barybir,
+Emma, bir ýetmezi bar eken oňam.
+Hiç kimem özgäniň tabyn bilenok,
+Soramasaň pul berenok, onsoňam.
+
+Belki, her kime-de asman zerurdyr,
+Hem onuň erkana ýüzýän buludy.
+Her kim çemin tapyp, uçup gitjekdir,
+Her kimiňem arzuwlary uludyr.
+
+Asman giňişligi zerurdy maňa,
+Hem onuň erkana ýüzýän buludy.
+Uçup gitmekçidim çemini tapyp,
+Ýaş oglandym, arzuwlarym uludy.
+
+Aýlygymyň ýaryny öýe ugradyp,
+Ýele sowurýardym artanjasyny.
+Goňşymyň üç gyzy bardy, niýetim,
+Öýlenmekdi şolaň ortanjysyna.
+
+Üýtgeşik bir sowgat alyp şo gyza,
+Gutlajakdym 8-nji martyny.
+Ýöne, pulsuzlygym sebäp boldy-da,
+Bulaşdyrdy meniň ähli kartymy.
+
+Pul sorasam, beriljegin bilsemem,
+Islemändim işiň beýle biterni.
+Şol gün maňa örän-örän zerurdy,
+Azajyk hemaýat, az-kem itergi.
+
+Ýogsam, tanyş adam bardy ýanymda,
+Obadaşym bardy — üme düşmezdi.
+Garaz, begenmedi begendirjegim,
+Ykbal arzuwlarma düzediş berdi.
+
+Nesihat
+Döwrana
+
+Sen özüňi aýa ýeňles gyzlardan,
+Aýal bolup hezil bermez äre kän.
+Ýamana duş bolsaň, gysylar egniň
+Ornuň bolar bir çetinde märekäň.
+
+Kart oýnama, gyjalata galarsyň,
+Ýüzüňem sow arak-meýden, neşeden.
+Şoldur jigim, sergin başy sämeden,
+Şoldur meni matam güni mes eden.
+
+Köňlümizem däldir Pars aýlagy,
+Joşgunyna-              gaýtgynyna esetgin.
+Ötegçi şatlygy bagtym saýmagy,
+Meň özümem geçen ýyl gyş besetdim.
+
+Bagt bir guş, uçar gider, şonsuzam,
+Ömrüň gysga bolar, şat günleriň kem.
+Ýaşlyk edip galaýmagyn armanda,
+Armanly ýürege tapylmaýar em.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Eşit mähribanym!',
+    'Armajak ýaly indi hiç,
+Ykbalymyň bujurygy.
+Ýaşap ýörin aman-esen,
+Aýap güýçdür-gujurymy.
+
+Bolmajak ýaly hiç mahal,
+Gaýgy-azap, ejir indi.
+Boldum agram hem mylaýym,
+Jedellerde geçirimli.
+
+Men, ahmal, bihal däldirin,
+(Göwnüňe güman getirme!)
+Her sözüme pul tölenýär,
+Pylança manat setirme.
+
+Aýalym düşbi, ýogsam ol
+Doly däl orta bilimli.
+Diýýär ol: «Janyňy ýakma,
+Taşla özüňem çilimňi».
+
+Daş gulakdan eşidýärin,
+Ýaman zabunmyş gaýynyň.
+Adamyňam... bolýamyş-da,
+Sen dagy şonuň taýymyň?!
+
+Kämahal ýersiz yrsarap,
+Göwnüňe degende äriň.
+Seniň maňlaýsyzlygyňa,
+Men asla begenmeýärin.
+
+Mende bir gowy arzuw bar:
+Seni Alla jan ýalkasyn.
+Sataşdyň gadyr bilmeze,
+Sen bir gyzylly halkasyň.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'DOGRY DÜŞÜNIŇ',
+    'Eger size: «Söýýän» diýsem,
+Söýýändirin azda-kände.
+Siz maňa dogry düşüniň,
+Söýýänler sözünden dänmez.
+
+«O» diýip okap bolarmy?
+Ýazan bolsam «A» harpyny.
+Ýa kabul edip bolarmy
+Salam deregne şarpygy?
+
+«A» harpyna «a» diýmäge,
+Meniň-ä ýetýär üşügim.
+Sizdenem etjek haýyşym,
+Siz maňa dogry düşüniň.
+
+Atama açyk hat
+
+Orazmyrada bagyşlaýaryn.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'AGAMA',
+    'Uýalarym eşitmesin bu gepi,
+Düşünmän gynanar, aglar, hamsygar.
+Işiň oň bolmasa gyjalat berip,
+Içiň ýakýar her öňýeten samsygam.
+
+Emma, men ejiz däl, kalbym ýagtylyk,
+Tümlükde goýmady Perwerdigärim.
+Pikir edip: Hydyr ata duşsamam
+Şundan zyýat bagty bermez diýýärin.
+
+Ganybir bolsagam hüýümiz başga
+Belki, bolup ýörşüm saňa-da geňdir.
+Emma, bilip goýgun, ömrüň manysy,
+Edilen işleriň jemine deňdir.
+
+Şol sebäplem, aýbym-müýnüm ýok meniň,
+Men bir saz yşgynda gezen teneçir.
+Gül yşgynda saýrap gören şatlygym
+Horlugyma gelse bolýar deňeçer.
+
+Dogry, nadyl bolýan aýdym aýdamda.
+Düşünmän içimi ýaksa halaýyk.
+Emma, maňa çörekli kär gözleme
+Däl ol meniň üçin maksadalaýyk.
+
+Meni bu ýolumdan gaýtarjak bolma:
+Göwün giden taýa ädim ädiler.
+Maňa sähelçe zat zerur, dogan jan,
+Aýdan aýdymlarma düşünsediler.
+
+Çünki, öňde-soňda perwaýsyz boldum,
+Ýeňles aýdym aýdyp meşhur bolmaga.
+Şu gylygym meni bähbitden goýdy,
+Ynjalygam bermedi hiç ol maňa.
+
+Emma, ýazgydyňda barlygy üçin,
+Bilbil gül yşgynda saýrap ýadamaz.
+Maňa öwüt berme,
+           düşünýän dogan:
+Sähelçe zat zerur eken adama.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Eziz Türkmenistan',
+    'Ilde algysy kän,
+Bergisi ýokdur.
+Hiç kimiň ýanynda egnin ýygyrmaz.
+Şonuň üçin bu gün ýüregim joşdy,
+Ülkämi wasp etsin indi şygyrlam.
+
+Gapylarmyz açyk dosty-ýar üçin,
+Göwnümizem               açylyşda kem-kemden.
+Hergiz göwni sahy, eli açyga,
+Rysgal bilen döwlet bolýandyr hemdem.
+
+Binalarmyz beýik,
+          görlen zat däl, geň,
+Tahýaň ýere gaçýar, golaýdan baksaň.
+Serdaryň aýdany çyn bolup çykdy,
+Arkamyzy çoýjak ýagty Gün hakda.
+
+Çyn daýhan han boldy — saçagy doly,
+Ak bugdaýyň ysy urar burnuňa.
+Kaddyny dikeltdi,
+Egnini ýazdy,
+Ýyllar boýy jepa çekip surnugan.
+Hannas bolma,
+        baý bol,
+             päsgel berýän ýok.
+
+Ek,
+ suwar,
+      ýetişdir,
+           ýer bölüp al-da.
+Pederleriň gany hem deri siňen
+Toprak
+    ideg etseň, berýär kän galla.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'AGŞAM ŞAPAGY',
+    'Ýaňy oýun bilen gümradym, emma,
+Atymy mugt berip, taşladym küşdi.
+Şapagy göremde, sowet döwründe,
+Özün otlan bir gyz ýadyma düşdi.
+
+Nämüçin, näm boldy, bilmedi hiç kim,
+Sanjak boýly gyzdy, obaň görküdi.
+Bezenip çykanda toýa-tomaşa,
+Ýaza meňzeýärdi gyşyň örküji.
+
+Söýýärin şapagy — şaman ody deý,
+Tutaşyp,     asmana büreleninde.
+Durmuş bir mukaddes kitaba meňzeş,
+Ylham alýan onuň sürelerinden.
+
+Her gün şeýle bolýar: şapaga garap,
+Älemde bar zatdan gözleýän muny.
+Şapak, garamaňlaý gyzmyka ýa-da
+Bir şehit bendäniň dökülen gany.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'SÖÝGI',
+    'Perişdeleň örýän çagy oýandym,
+Köňül heserlendi, ýürek terpendi.
+Gördüm ýarymaçyk tüýnükden garap,
+Bady-sabaň bulutlary serpenni.
+
+Belki, bes edendir Biribar indi
+Ykbaly gam bilen zäherlemegni.
+Agşamyň şapagy gamlandyrmaýar,
+Şatlyga gark edýär säherler meni.
+
+Indi adamlara mähirli bakýan,
+Indi olar maňa görünýär yssy.
+Kine saklap gezen ýyllarym üçin,
+Ökünje gaplanyp, ýüregim gycdy.
+
+Ýürekde söýgi bar — il-güne söýgi
+Oýanypdyr, telim ýyllap irkilen.
+Söýgi — oda guýlan spirt mysaly,
+Ýanyp dur gursakda ak ýalyn bilen.
+
+Şerbet suwy ýaly etse-de melul,
+Bu duýga berdim men bütin erkimi.
+«Aýallar-uýamdyr, erkekler — dogan»
+Diýip, tüýs ýürekden söýýän her kimi.
+
+Bular bir ýow güni gözümden uçup,
+Kän ýyl soň tötänden sataşan ýaly.
+...Söýgi bilen dünýä geldim ýaňadan,
+Niçik bolar, söýmedigiň ahwaly!',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Gawun sakçysy we çagalar',
+    '— Aleýkim, gurgunmysyňyz?
+Geliň, dillije kelleler.
+Siz ýaly perişdejikleň
+Rysgalyny şeýtan ellemez.
+
+Alyň, ine, şu pyçagy,
+Gawun-garpyzy dilimläň.
+Soňra birneme tijeniň,
+Matal galmasyn bilinmän.
+
+Bilmeseňiz öýkelemäň,
+ÝA gahar etmäň birjigem.
+Ýaşlykda kine saklanyň,
+Ulalsa, kalby kirjiger.
+
+Şol sebäplem, diýjek sözüm,
+Kinelini halamaryn.
+Durmuş çözmesi kyn matal,
+Şony biliň, balalarym.
+
+Ýygnaň indi paçaklary,
+Isrip bolup ýatmasynlar.
+Tämizlik bolsun hemişe
+Babaňyzyň çatmasynda.
+
+Geliň ýene gezelenje
+Her gün, dillije kelleler.
+Siz ýaly perişdejikleň,
+Rysgalyny şeýtan ellemez.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Toýa bardym...',
+    'Içip, toç gelen märeke bilen,
+Garylyşyp gitdim tüweleme men.
+Toý gowy zat,
+         hemmä toýdan ýetirsin,
+Adamlaram gowy, tüweleme-le!
+
+Söýýän men olary,
+           gamly günümde,
+Goltugymdan söýget beren şolardyr.
+Eger, şol adamlar bolmadyk bolsa,
+Ýat hem uzak ilde misgin bolardym.
+
+Özümi olardan aýra tutmadym,
+Illerden üýtgeşik bezenmedimem.
+Bildim men bularyň ýakynymdygyn,
+Ajy gam bagrymy ezende diňe.
+
+Sarpalysyn sylap,
+Merdini söýüp,
+Egni gysygna-da atmadym pitjiň,
+Toý bilen ýas bile gelen çagynda,
+Hergiz ilki bilen namaza gitdim.
+
+Bu gün bolsa, toýa diýip jemlendik,
+Goý, hemişe bolsun, şular ýaly toý.
+Her kimiň dilinde ýagşy dilegi,
+Il-günüň dilegem kabul bolsun, goý!
+
+Neneň gowy, içip toýuň şanyna,
+Garylsaň märekäň şüweleňine.
+Toý gowy zat,
+       hemmä toýdan ýetirsin,
+Adamlaram gowy, tüweleme-le!
+Dogry, birazajyk başym aýlanýar
+Gaçyp barýan ýaly düýpsiz käle men.
+Emma, geň zat däl bü,
+            sebäbi diýseň,
+Aýlanma kanuny mahsus äleme.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Awtobusda',
+    'Çoganlyň deňinde bazara barýan,
+Aýallar elem-tas bolup mündiler.
+Goşlary kän eken ýarar-ýaramaz,
+Biriniň elinde bardy kündügem.
+
+Kän gürrüň etdiler,
+           tanyş-bilişleň,
+Bolan hem bolmadyk hatasy hakda.
+Soňam bir geliniň Türkiýä gidip,
+Getiren üýtgeşik matasy hakda.
+
+Hormat goýmasamam, endige görä,
+Birine ýer berdim çalarak süýşüp.
+Her kim öl-suw bolup,
+             derläp-daljygyp,
+Gapa seredişip, durdylar üýşüp.
+Beýle gapdalymda durdy bir gelin,
+Elinde tor,
+Içinde-de mürepbe.
+Aýagyma basdy,
+Yza duýmadym,
+Gaýta çäksiz şatlyk duýdum ýürekde.
+
+Sebäbi, şo bada «Bagyşlaň!» diýdi,
+Uýatly ýylgyryp, bakyp edaly.
+Towşantüý-ä däldim, ekabyrrakdym,
+Şonda welin birden gaçdy mejalym.
+
+Taýyn-la ýüz gezek bagyşlamaga,
+Ýüz gezegem ogşamaga dabanňy.
+Biler bolsaň ýaňy, göwnüm gitdi-de,
+Seni hut öz äriňdenem gabandym.
+
+Bagyşla diýseler söýýän, sebäbi
+Düşün, köşek gözli, saçlary syýa.
+Ýogsam, diňe şu gylygym üçinem,
+Durmuşda gaty kän çekdim men zyýan.
+
+Meni kän urdular, gizlinlik bilen,
+Ýüregimde yz goýdy şol depgiler.
+Soň bolsa, özümi günäkär saýyp,
+Ýaramyň üstüne narpyz sepdiler.
+
+Goý, basylan aýak bolsun hemişe,
+Aýakda däl, başda bolar mertebe.
+Eger sen bagyşla diýmekçi bolsaň,
+Müň gezek bas, kaýyl beýle şerte men.
+
+Aýakda agyry-yza dumadym,
+Emma, çäksiz şatlyk duýdum ýürekde...
+Keşbiňi hiç haçan ýatdan çykarman,
+Awtobus, tor,
+        içinde-de mürepbe.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'SÖÝGI TÖLEGSIZDIR',
+    'Bilýän söýgim üçin hiç zat tölenmez,
+Aslynda özümem söýdüm nebissiz.
+Düýn bir torgaý etenesi ölende,
+Meni dogan saýyp derdin egisdi.
+
+Jandarlaram kiçi doganmyz diýip,
+Okatdylar, öwretdiler mekdepde.
+Okatmagam, öwretmegem kyn zat däl,
+Esasy iş ony berjaý etmekde.
+
+Şükür, kem zadym ýok dünýäde meniň,
+Dilgir bolsam, Biribaram halamaz.
+Meniňkidir asmandaky torgaýlar,
+Hem beýleki guşlar gonýan alalar.
+
+Söýmän biljek däl men, sebäbi diýseň,
+Şonuň üçin dörän ynsan kowumy.
+Hany, maňa aýdyň, guşa daş atýan,
+Adamlar gowumy, guşlar gowumy?
+
+Janawerler, derdim bolsa paýlaşyp,
+Derdin egser etenesi ölende.
+Hiç kim meni nebsiň guly saýmasyn,
+Söýgim üçin başga hiç zat tölenmez.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Alabahar tupany',
+    'Söýýärin maýdaky ýaz tupanyny.
+/F.Týutçew/
+
+      I
+Meniň ýüregimi heýjana salýar,
+Ir alabaharyň apy-tupany.
+Ýagyş köçeleri dolduryp suwdan,
+Akdyryp äkidýär hapa-hupany.
+
+Gelşigine gelýär çuwalgyz ýaly,
+Baglar çyplaklanyp taraşlanýar-da.
+(Ähtimal, maňa-da bir ýerde şeýdip,
+Çäksiz höwes bilen garaşýan bardyr).
+Her ýyl şeýle bolýar,
+            paýawlanda gyş.
+
+II
+
+Fewralyň soňunda,
+Martyň başynda.
+Belki, ömrümiziň manysy bardyr,
+Duýgulaň kiriş deý dartylmasynda.
+
+Ynjalyk tapýaryn,
+          bulutlar süýşüp,
+Asman sarsyp,
+Ýyldyrymlar çakanda.
+Özümden utanýan: «Şu çaka çenli,
+Ownuk işe gümra» diýip jahanda.
+
+Söýgi bilen tämizlärin dünýäni,
+Hiç zat indi eli işden sowatmaz.
+Diňe Bibirbardan: «Güýç-kuwwat hemem,
+Möhlet beriň» diýip edýän towakga.
+
+Bahary arzuwlan bahara gowşar,
+Arzuwsyz kişiler kän çeker arman.
+Bar bolsa bir ýerde zarymy çekýän,
+Oňmaryn iru-giç gaşyna barman.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Suratlara seredip...',
+    'Suratlarda adamlaryň keşbi bar,
+Olar kän zat ýatladyp dur geplemän.
+Pul saklanýan düwünçekde ýygşyryp,
+Suratlary aýap saklaň, eplemän.
+
+Olar maňa janly ýaly bakyp dur,
+Käbiri syrdaşym, käsi bigäne...
+Her kimem bolanda, tapawudy ýok,
+Dilim barmaz ýakymsyz söz diýmäge.
+
+Gamgyn çagym seredýän-de oturýan,
+Iremok men näçeler syn etsemem.
+Olar ähli zada düşünýän ýaly,
+Göwnüň üçin bermese-de ses-selem.
+
+Adam köpi görüp, ulalyp ýaşy,
+Otuzdan aňyrrak geçip ugrasa.
+Çagalygy kän küseýär ekeni,
+Soňky günler kän bakýan bu surata.
+
+Onuň bilen emedekläp,
+             ylgaşyp,
+At çapyşyp, bolduk mydam hemşeri.
+Ynha, täleýinden öýkelän ýaly,
+Gyýarak bakyp dur, çala kemşerip.
+
+Görnüp dur boýnunda medala meňzäp,
+Sünnäläp işilen alaçajygy.
+Ejesi görgüli syzandyr, belki,
+Ony soň ykbalyň dalajagyny.
+
+Gorasam diýendir bela-beterden,
+Balasyna alaçany dakanda.
+Emma, alajyň ýok, erkiňe bakman,
+Boljak işler bolaýýa-da jahanda.
+
+O döwürde wezipeli kişiler,
+Söýerdi könäni ýepbeklemegi.
+Bir gezek, «Tahýaňda doga bar» diýip,
+Käýýäp     aglatdylar        mekdepde meni.
+
+... Ulalaýsak urşa gideli diýşip,
+Kän gezek çagakak, göwün ýüwürdip.
+Soňra uruş söýgä ornuny berdi.
+Ýaňagmyza örüp jahyl düwürtik.
+
+Durmuşyň bardygy bilinmese-de,
+Kitaplardan üzňe, mekdepden üzňe.
+Dagap gitdik, soňky ekzamen güni,
+Arzuwlarmyz hakda ýazdyk-da düzme.
+
+Şükür, uruş-dawa bolmadyk emma,
+Başga-da kän arzuwlarmyz paşmandy.
+Bir ýyl soň, baharyň jeýhun mahaly,
+Bir owadan ýyldyz süýndi asmanda.
+
+Ine, indem janly ýaly bakyp dur,
+Hemem kän zat ýatladyp dur geplemän...
+Pul saklaýan düwünçekde ýygşyryp,
+Bu suraty goýaýyn men eplemän.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Goja güneşläp otyr',
+    'Garran adam,
+       saly gowşak,
+Zeýrenji kän,
+        göwün çökgün.
+Ýykylman buşugyp gelse,
+Gurp bar diýip öwünjekdir.
+
+Bar gaýgysy üşemezlik,
+Tapdan düşen hor alaşa.
+Ýaman boljak goňşy-golam,
+Gelip halyn soramasa.
+
+Birmahallar onuň öýem,
+Gol doly bir maşgalady.
+Kem-kem sowuldy bazary,
+Kempir ýurdun başgalady.
+
+Geçmişini elek edip,
+Ýatlamakdan ýadamaýar.
+Ýatlamalar ýaşamaga,
+Güýç berýändir adama ýa!',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'EŞEGE OT BERIŇ',
+    'Garrapdyr, arkasy ýagyr bolupdyr,
+Mejaly ýok ýaly aňyrrmaga-da.
+Janaweriň taby agyr bolupdyr,
+Gidip bilenok ol aňyrraga-da.
+
+Dogry, eşek at däl, owadan kişňäp,
+Jylawyny çeýnäp, toprak peşemez.
+Emma, göz öňümde, kiçiräjikkäk,
+Gaty kän ot ýüklärdik biz eşege.
+
+Indi birje gysym ot beriň oňa,
+Garny dagy meňzäp barýar hepbige.
+Peýdasy ýok diýip, harlamaň ony,
+Başdan sowmaň, bolar-bolmaz gep bile.
+
+Utanman diýýäňiz «Bizä-hä şonuň,
+Asyl ugruna-da garamzok» diýip.
+Eşegem Allanyň ýaradan zady,
+Mojuk gep tapýaňyz haram zat diýip.
+
+Atlaryň et üçin soýulýan döwri,
+Bu eşegi «çüw» diýip, kän çapdyg-a.
+Gysganmaň ahyry bir gysym oty
+Janaweriň garny meňzeş gapjyga.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Beýik Serdara tagzym',
+    'Saparmyrat Ataýewiç Nyýazow —
+Bu at aýdym boldy bütin äleme.
+Hiç haçan, hiç ýerde gabat gelmedi,
+Onuň aşagy ýa dosty däle men.
+
+Ony        iliň-günüň hossary saýýar,
+Arkadagy saýýar ony hemmeler.
+Köpetdagy çeküw daşy etsegem,
+Abraýyny ölçemäge kem geler.
+
+Ýalta, bidöwleti ýazgary hem-de —
+Psiledi ogryny, neşe satýany.
+Ähli zyýankeşler aç-açan boldy,
+Suw ýüzüne çykan hapa zat ýaly.
+
+Küle çöken bagty oýanyp, Türkmen,
+Her galýar bäş-alty gez belende.
+Ýadyňyzdadyr-la,
+         niçik haldadyk,
+Ýedi ýyl öň Garaşsyzlyk gelende?!
+
+Durmuş derýasynda çaýkanýardyk biz,
+Ykbal atly çagşan köne gämide.
+Şonda gaýrat edip, girdapdan sowan,
+Saparmyrat Ataýewiç dälmidi?!
+
+Dogry, Alla oňa hemra bolýandyr,
+Müşgil işlerinde berip teselli.
+Ýöne, men bilemok,
+           näme sebäpli,
+Kim berdikä ýürekdäki keselni?!
+
+Belki,
+   bizdiris şol kesele sebäp,
+Özümizem, özgänem kä aldadyp.
+Aldaw bilen golaýlapdyk girdaba,
+Ýadyňyzdadyr-la,
+         niçik haldaky?!
+
+Saparmyrat Ataýewiç Nyýazow —
+Bu at aýdym boldy bütin äleme.
+Hiç haçan hiç ýerde gabat gelmedim,
+Onuň aşygy ýa dosty däle men.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Garaşsyzlyga tagzym ',
+    'Men baky minnetdar Garaşsyzlyga,
+Hemem ony beren Beýik Adama.
+Isa ýaly direlseme ýaňadan,
+Men olaryň waspyn edip ýadaman.
+
+Onuň paýhasyndan nurlandy dünýä,
+Ol hasam nurlanar soňky 1000 günde.
+Her kim gez öser, buýsanjy bilen,
+Türkmen gany akýan bolsa süňňünde.
+
+Emma,
+   agzybirlik,
+          jebislik zerur,
+Ine, Serdar şu pikir ündedi.
+Dünýäň özem bir-birege söýenip...
+Dogan bolup ýaşamaly dünýedir.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Watan hakda sözläliň',
+    'Ýaponlarda telewizor arzanmyş,
+Atyrlaram arzanmyka Pereňde?!
+Satyjylar nähilikä o ýerde,
+Nädýälerkä artygrajyk bereňde?!
+
+Hytaýda mahmallar bolmuka beýle,
+Meksikada daglar beýik-pesmikä?!
+...Ine, şeýle,
+          üýşüp meýlis başynda.
+Bähbit gözleýän kän,
+               gaty sesli kän.
+
+Zerurmyka hytaýlylaň mahmaly,
+Zerurmyka anbar saçýan atyrlar?!
+Bir zada düşüniň: özgäniň zady,
+Özgeleri bal gününe batyrmaz.
+
+Ine, men aýdaýyn Meksika hakda,
+Daglary bar, howasy däl ýaramaz.
+Paýtagty — Mehiko, owadan şäher,
+Ilaty-da on millionla        barabar.
+
+Belkem, bu zatlary bilsek gowudyr,
+Ýöne, gutaralyň soňsuz jedeli.
+Gowusy, il hakda, Watanymyz hakda,
+Gulaga ýakymly söhbet edeliň.
+
+Näme, atyr gytmy Türkmenistanda?
+Goý, gelse Pereňden köne meý gelsin!..
+...Göter bada Türkmenbaşyň saglygna,
+Ol sag bolsun,
+         Watanymyzam beýgelsin!',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'Baýramçylyga sebäp kän...',
+    'Çäksiz uly şatlyk dolduryp kalby,
+Ähli gaýgy-aladany öçürdi.
+Bir gyz ony tassyklady buýruksyz,
+(Edaly ýylgyryp), hatsyz-möhürsiz.
+
+Diýmek, men hiç kimden ogurlamadym,
+Men bu kalbymdaky baýramçylygy.
+Şol sebäpli, ýokuş degýär kä kişiň,
+Hemme zada müňkür bolmak gyzygy.
+
+Men äpet adam däl, emma ýüregim,
+Bütin dünýäň giňligine barabar.
+Ýöne, ýer ýok onda ogurlyk zada,
+Ogurlyk zat sadaka-da ýaramaz.
+
+Ýagşyny göremde, göwnüm açylýar,
+Giňäp gidýär arzuwlarmyň örüsi.
+Begendirýär meni, akylly gyzyň,
+Gözelligi tämiz saklap ýörüşi.
+
+Ýüreklde ýer goýmaň bolgusyz zada,
+Ýaman zatdyr müňkür bolmak gylygy.
+Hiç kimiň bagtyndan ogurlaman men,
+Kalbymdaky beýik baýramçylygy.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'BAHAR GELDI',
+    'Dünýäde baharyň demi duýulýar,
+Ah, bahar gelendir, indi gelendir.
+Bahar aýra düşen adaglym meniň,
+Gelende kalbymy elendirendir.
+
+Geläýse bor diýip, intizar bolup,
+Düme duýgularmy taraşladym men,
+Ýaýlamyzyň güllänini görjekdim,
+Başga bähbit gözläp garaşmadym men.
+
+Döw ýaly bulutlar, çakyşyp birden,
+Zenzeläniň soňy ýagyşa sapdy.
+Ýyldyrym çakýarka, düşen ýagtydan,
+Men iliň görmedik zadyny tapdym.
+
+Ýowşanly adyrlar suw-sil bolaýdy,
+Ýogsam aňsat-aňsat ezilmezekdir.
+Ýadygärlik ýaly sähra seredip,
+Öz ýanymdan özüm heziller etdim.
+
+Bahar — meniň könelmejek arzuwym,
+Gargalaňam ýer almadyk gargyşy.
+Bahar — öňde-soňda maza bermedik,
+Ýaralarmyň täzelenen sargysy.
+
+Läle, sen uýamsyň...',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'L.Saparowa bagyşlaýaryn',
+    'Bile doglup, dogan bolup bolanok,
+Kä kişi dogany çalyşýar zada.
+Läle, sen umsyň, dogandan eziz,
+Hergiz gamlanamda, sen düşýäň ýada.
+
+Başyňa iş düşse, uýaň çekişer,
+Ýakynda bolsa-da görünmez dogan.
+Uýaň — gamlanaňda göwünlik berer,
+Şatkaňam keýpiňe dogramaz sogan.
+
+Uýalaryň bir ýetmezi — naçardyr,
+— dişiň agyrsa-da perýat ederler.
+Sebäbini bilemok men, nämüçin,
+Göwün hoşy — gyz diýdikä şejerler.
+
+Wah, uýalar nirelerde bolsa-da,
+Öýüňe öredir, çatmaňa çöwüş...
+Erkim ýetse, käbir dostlarmy satyp,
+Läle, uýam, saňa alardym köwüş.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'SURNAÝ',
+    'Suraný meni ýörişlere çagyrma!
+Kän başymda ownuk işdir-alada.
+Göwnüm bölek bolup, çyksam o ýollar,
+Ahmyr bilen dodagymy ýaladar.
+
+Ýaşlaryň paýydyr ýolagçy bolmak,
+Ýollarda gezeniň giňär göwrümi.
+Men oňňut ederin ýatlap kä mahal,
+Ýörişlere höwes eden döwrümi.
+
+Men ögäň derdini paýlaşyp bilmen,
+Bolup bilmen şatlygnyňam şärigi.
+Ýadymdan çykardym ýeňmegiň hemem,
+Kynçylyga döz gelmegiň tärini.
+
+Çünki, ýel öwüsýär kalbymda meniň,
+Tupan turýar hemem ýagýar boragan.
+Emma, bähbit bolsun diýýän, sebäbi,
+Türkmen ähli zady ýagşa ýoragan.
+
+Agşamara daş işige çykaryn,
+Ýörişden galybam tapmaryn karar.
+Şonda Aý bolşumy birhili görüp,
+Ýaşyp barýan çagy egninden garar.
+
+Emma, hiç kim meniň halym soramaz,
+Meniňem hiç zada nebsim agyrmaz.
+Hiç kime dost däl men,
+             duşman      däl indi,
+Surnaý, meni ýörişlere çagyrma.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'KÜÝSEG',
+    'Agşamara ot başyna egrilip,
+Çopanlar çaýyny öňe alanda.
+Ýaş oglan gürrüň tapýar warsaky,
+Menem oňa gülen bolýan ýalandan.
+
+Olar gürrüň edýär,
+           uçgurny bezäp,
+Bir ýeňlesiň toýa barşy hakynda.
+Gulagyny şaňlatdylar öňem kän,
+Herki zady bes etmeli çakynda.
+
+Oýa batanymda, asmana bakyp,
+Bir ýyldyz göz gypýar, bakýar şadyýan.
+Kerwengyranmyka, Zöhremikä ol,
+Bilmeýärin, başgamyka ady ýa!
+
+Bir owdan gyzy ýada salýar ol,
+Boýy sanjak ýaly,
+          ýaňagy hally.
+Dünýäde şol gyzyň barlygy üiçn,
+Diňe şat günlerim ýadymda galdy.
+
+Küýseginde geçýär bir meňzeş günler,
+Bu günüm duşenbe, ertir sişenbe.
+Has beter küseýän
+          deň-duş oglanlar:
+Pylan hem öýlenýärmiş diýşende.
+
+Bahym bahar sowlar,
+            tomusam geçer,
+Guran çigitlerni döker sözenler.
+Dowzaha düşse-de, perwaýsyz ýanar,
+Bu dünýäde yşk oduna dözenler.',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'ÇAGALYK DÖWRÜMIZIŇ AÝDYMY',
+    '..Ýada düşýär alasarmyk düýş ýaly:
+Men şol gün okuwdan galdym ýaraman.
+A, siz täze aýdym öwrenipsiňiz,
+Çal baraban, çal baraban, baraban!
+
+Ýollarda garaşýan bagtymyz hakda,
+Hem wepaly dost hakdady ol aýdym.
+Saňa, maňa, hemmämize ýarady,
+Ah, ol aýdym ýüreklere golaýdy.
+
+Bir günem mugallym ýaňky aýdymy,
+Sorap gördi okuwçylaň hersinden.
+Şonda ýuwaş sesli aýdanym üçin,
+2-lik aldym men aýdym dersinden.
+
+Soň... alnan bahalar ýatdan çykyşdy,
+Käbir ýoldaşlarym çykdy aradan.
+Emma, şol aýdymy ýatlaýaryn men,
+Söhbet etsek çagalygmyz barada.
+
+Aýdym mugallymy çöňňedi, dostum,
+Nämä gerek gürrüň etmek o hakda.
+Biz ony däl, şol aýdymy ýatlarys,
+Heran-haçan nirelerde bolsak-da.
+
+Çagalygmyň şol aýdymyn aýdaryn,
+Orta ýaşa ýetenligme garaman.
+Aýdym baha üçin aýdylýan däldir,
+Çal baraban, çal baraban, baraban!',
+    ''
+);
+
+INSERT INTO poems (
+    poet_id,
+    title,
+    text,
+    source
+) VALUES (
+    @poet_id,
+    'APREL',
+    'Ozaldan zandyma gulandyr, belki,
+Bahar gelse, gülleriniň şeýdasy.
+Sähradan selme däl, bägül gözleýän,
+Eklenjime bolmasa-da peýdasy.
+
+Uzaklarda sanjak boýly sözenler,
+«Geleý» diýip, gollaryny bulady.
+Kaknus guşy ýaly eziz göründi,
+Şol tarapa uçup barýan gulaty.
+
+Belki, gowy bordy, obada bolsam,
+Il deňinde suw tutardym mellegme.
+Wah, ýöne bu bahar çeniň-çakyň däl,
+Sowulýança başga işe el degmez.
+
+Bu ýerlerde hiç zat ýitirmesemem,
+Bahar gelse, gidýän ýene gözlege.
+Gözetime ýetip üzülýän ýollar,
+Meňzeş eken soňlanmadyk sözleme.
+
+Hany, indi bir tüňçe çaý içeýin,
+Çöläýin-de goltuk-goltuk jagrama.
+Üýtgeşik gül gözläp, ýadadym biraz,
+Ýokdy ýogsam, arzuwlarmyň agramy.
+
+Ozaldan zandyma guýlandyr, belki,
+Bahar gelse, gülleriniň şeýdasy.
+Hiç haçan solmajak gül gözleýän men,
+Eklenjime bolmasa-da peýdasy.',
+    ''
+);
+
+SET FOREIGN_KEY_CHECKS = 1;
