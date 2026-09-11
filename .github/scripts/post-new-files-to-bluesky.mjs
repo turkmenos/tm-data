@@ -1,6 +1,6 @@
 import { execFileSync } from "node:child_process";
 import { readFileSync, statSync } from "node:fs";
-import { extname } from "node:path";
+import { basename, extname } from "node:path";
 
 const {
   BLUESKY_HANDLE,
@@ -61,24 +61,107 @@ function truncate(value, maxLength) {
     : `${graphemes.slice(0, Math.max(0, maxLength - 1)).join("")}…`;
 }
 
-function preview(file) {
-  if (!textExtensions.has(extname(file).toLowerCase())) {
-    return `Binary file · ${statSync(file).size.toLocaleString("en-US")} bytes`;
-  }
+function formatBytes(bytes) {
+  if (bytes < 1024) return `${bytes} baýt`;
+  if (bytes < 1024 ** 2) return `${(bytes / 1024).toFixed(1)} KB`;
+  return `${(bytes / 1024 ** 2).toFixed(1)} MB`;
+}
 
-  const content = readFileSync(file, "utf8")
-    .replace(/^\uFEFF/, "")
+function readableFileName(file) {
+  return basename(file, extname(file))
+    .replace(/_+-+_/g, " — ")
+    .replace(/[_-]+/g, " ")
     .replace(/\s+/g, " ")
     .trim();
-  return content || "Empty text file";
+}
+
+function workTitle(data, file) {
+  const title = data?.title
+    ?? data?.work_title
+    ?? data?.book_title
+    ?? data?.name
+    ?? data?.meta?.title;
+  if (typeof title === "string" && title.trim()) return title.trim();
+
+  if (typeof data?.source_file === "string" && data.source_file.trim()) {
+    return readableFileName(data.source_file.trim());
+  }
+
+  if (typeof data?.poet === "string" && data.poet.trim()) {
+    return `${data.poet.trim()} goşgulary`;
+  }
+
+  return readableFileName(file);
+}
+
+function fileDetails(file) {
+  const size = formatBytes(statSync(file).size);
+  if (!textExtensions.has(extname(file).toLowerCase())) {
+    return { title: readableFileName(file), amount: size, preview: "Ikilik maglumat faýly" };
+  }
+
+  const rawContent = readFileSync(file, "utf8").replace(/^\uFEFF/, "");
+  const content = rawContent
+    .replace(/\s+/g, " ")
+    .trim();
+
+  if (extname(file).toLowerCase() === ".json") {
+    try {
+      const data = JSON.parse(rawContent);
+      if (Array.isArray(data)) {
+        return {
+          title: readableFileName(file),
+          amount: `${data.length.toLocaleString("en-US")} ýazgy · ${size}`,
+          preview: content,
+        };
+      }
+      if (Array.isArray(data.pages)) {
+        const characters = data.pages.reduce(
+          (total, page) => total + (Number(page.character_count) || String(page.text ?? "").length),
+          0,
+        );
+        return {
+          title: workTitle(data, file),
+          amount: `${data.pages.length.toLocaleString("en-US")} sahypa · ${characters.toLocaleString("en-US")} nyşan · ${size}`,
+          preview: data.pages.map((page) => page.text).find(Boolean) ?? content,
+        };
+      }
+      if (Array.isArray(data.poems)) {
+        return {
+          title: workTitle(data, file),
+          amount: `${data.poems.length.toLocaleString("en-US")} goşgy · ${size}`,
+          preview: content,
+        };
+      }
+      const wordCount = Number(data?.meta?.wordCount)
+        || (data?.words && typeof data.words === "object" ? Object.keys(data.words).length : 0);
+      if (wordCount) {
+        return {
+          title: workTitle(data, file),
+          amount: `${wordCount.toLocaleString("en-US")} söz · ${size}`,
+          preview: content,
+        };
+      }
+      return { title: workTitle(data, file), amount: size, preview: content };
+    } catch {
+      // Invalid JSON is still described as a regular text file.
+    }
+  }
+
+  const lines = rawContent.split(/\r?\n/).filter((line) => line.trim()).length;
+  return {
+    title: readableFileName(file),
+    amount: `${lines.toLocaleString("en-US")} setir · ${size}`,
+    preview: content || "Boş tekst faýly",
+  };
 }
 
 for (const file of files) {
-  const url = `${SERVER_URL}/${REPOSITORY}/commit/${AFTER_SHA}`;
-  const prefix = `🆕 Yeni veri eklendi\n📄 ${truncate(file, 100)}\n\n`;
-  const suffix = `\n\n🔗 ${url}`;
+  const details = fileDetails(file);
+  const prefix = `🆕 Täze maglumat goşuldy\n📚 Eser: ${truncate(details.title, 100)}\n📊 ${details.amount}\n\n`;
+  const suffix = `\n\n🔗 ${SERVER_URL}/${REPOSITORY}`;
   const available = 300 - [...segmenter.segment(prefix + suffix)].length;
-  const text = `${prefix}${truncate(preview(file), Math.max(0, available))}${suffix}`;
+  const text = `${prefix}${truncate(details.preview, Math.max(0, available))}${suffix}`;
 
   const response = await fetch(`${service}/xrpc/com.atproto.repo.createRecord`, {
     method: "POST",
