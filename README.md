@@ -39,9 +39,11 @@ Contributions may include new datasets, corrections, sources, translations, or a
 
 ## Bluesky bot
 
-When a new data file is pushed to `main`, the GitHub Action posts its path, a short
-content preview, and a permanent GitHub link to Bluesky. Binary files are posted
-with their name and size instead of a content preview.
+When a new data file is pushed to `main`, the GitHub Action publishes a Turkmen
+post containing the work's title, data size, a short content preview, and only the
+repository's main link. JSON datasets also include a record count or, where
+applicable, page, poem, word, and character counts.
+Binary files are posted with their name and size instead of a content preview.
 
 Configure these repository secrets under **Settings → Secrets and variables →
 Actions**:
