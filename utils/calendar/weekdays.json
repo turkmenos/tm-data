@@ -1,0 +1,9 @@
+[
+  { "iso": 1, "tm": "Duşenbe", "en": "Monday" },
+  { "iso": 2, "tm": "Sişenbe", "en": "Tuesday" },
+  { "iso": 3, "tm": "Çarşenbe", "en": "Wednesday" },
+  { "iso": 4, "tm": "Penşenbe", "en": "Thursday" },
+  { "iso": 5, "tm": "Anna", "en": "Friday" },
+  { "iso": 6, "tm": "Şenbe", "en": "Saturday" },
+  { "iso": 7, "tm": "Ýekşenbe", "en": "Sunday" }
+]

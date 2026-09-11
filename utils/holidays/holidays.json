@@ -1,0 +1,204 @@
+[
+  {
+    "name": "Täze ýyl",
+    "month": 1,
+    "day": 1,
+    "type": "public_holiday",
+    "day_off": true
+  },
+  {
+    "name": "Watan goragçylarynyň güni",
+    "month": 1,
+    "day": 27,
+    "type": "observance",
+    "day_off": false
+  },
+  {
+    "name": "Türkmenistanyň diplomatik işgärleriniň güni",
+    "month": 2,
+    "day": 18,
+    "type": "observance",
+    "day_off": false
+  },
+  {
+    "name": "Halkara zenanlar güni",
+    "month": 3,
+    "day": 8,
+    "type": "public_holiday",
+    "day_off": true
+  },
+  {
+    "name": "Milli bahar baýramy",
+    "month": 3,
+    "start_day": 21,
+    "end_day": 22,
+    "type": "public_holiday",
+    "day_off": true
+  },
+  {
+    "name": "Bütindünýä saglyk güni",
+    "month": 4,
+    "day": 7,
+    "type": "observance",
+    "day_off": false
+  },
+  {
+    "name": "Türkmen bedewiniň milli baýramy",
+    "month": 4,
+    "rule": "last_sunday",
+    "type": "observance",
+    "day_off": false
+  },
+  {
+    "name": "1941-1945-nji ýyllaryň Beýik Watançylyk urşunda Ýeňiş güni",
+    "month": 5,
+    "day": 9,
+    "type": "observance",
+    "day_off": false
+  },
+  {
+    "name": "Türkmenistanyň Konstitusiýasynyň we Türkmenistanyň Döwlet baýdagynyň güni",
+    "month": 5,
+    "day": 18,
+    "type": "public_holiday",
+    "day_off": true
+  },
+  {
+    "name": "Aşgabat şäheriniň güni",
+    "month": 5,
+    "day": 25,
+    "type": "observance",
+    "day_off": false
+  },
+  {
+    "name": "Türkmen halysynyň baýramy",
+    "month": 5,
+    "rule": "last_sunday",
+    "type": "observance",
+    "day_off": false
+  },
+  {
+    "name": "Çagalary goramagyň halkara güni",
+    "month": 6,
+    "day": 1,
+    "type": "observance",
+    "day_off": false
+  },
+  {
+    "name": "Bütindünýä welosiped güni",
+    "month": 6,
+    "day": 3,
+    "type": "observance",
+    "day_off": false
+  },
+  {
+    "name": "Daşky gurşawy goramagyň bütindünýä güni",
+    "month": 6,
+    "day": 5,
+    "type": "observance",
+    "day_off": false
+  },
+  {
+    "name": "Ylymlar güni",
+    "month": 6,
+    "day": 12,
+    "type": "observance",
+    "day_off": false
+  },
+  {
+    "name": "Medeniýet we sungat işgärleriniň hem-de Magtymguly Pyragynyň şygryýet güni",
+    "month": 6,
+    "day": 27,
+    "type": "observance",
+    "day_off": false
+  },
+  {
+    "name": "Gurluşyk we senagat toplumynyň işgärleriniň güni",
+    "month": 8,
+    "day": 6,
+    "type": "observance",
+    "day_off": false
+  },
+  {
+    "name": "Bilimler we talyp ýaşlar güni",
+    "month": 9,
+    "day": 1,
+    "type": "observance",
+    "day_off": false
+  },
+  {
+    "name": "Türkmenistanyň Garaşsyzlyk güni",
+    "month": 9,
+    "day": 27,
+    "type": "public_holiday",
+    "day_off": true
+  },
+  {
+    "name": "Ýaşulularyň halkara güni",
+    "month": 10,
+    "day": 1,
+    "type": "observance",
+    "day_off": false
+  },
+  {
+    "name": "Hatyra güni",
+    "month": 10,
+    "day": 6,
+    "type": "public_holiday",
+    "day_off": true
+  },
+  {
+    "name": "Türkmenistanyň Saglygy goraýyş we derman senagaty işgärleriniň güni",
+    "month": 10,
+    "day": 10,
+    "type": "observance",
+    "day_off": false
+  },
+  {
+    "name": "Türkmen alabaýynyň baýramy",
+    "month": 10,
+    "rule": "last_sunday",
+    "type": "observance",
+    "day_off": false
+  },
+  {
+    "name": "Hasyl toýy",
+    "month": 11,
+    "rule": "second_sunday",
+    "type": "observance",
+    "day_off": false
+  },
+  {
+    "name": "Halkara Bitaraplyk güni",
+    "month": 12,
+    "day": 12,
+    "type": "public_holiday",
+    "day_off": true
+  },
+  {
+    "name": "Nebitgaz senagaty we geologiýa işgärleriniň güni",
+    "month": 12,
+    "day": 14,
+    "type": "observance",
+    "day_off": false
+  },
+  {
+    "name": "Türkmenistanyň ilkinji Prezidenti S.A.Nyýazowy (Beýik Saparmyrat Türkmenbaşyny) ýatlama güni",
+    "month": 12,
+    "day": 21,
+    "type": "observance",
+    "day_off": false
+  },
+  {
+    "name": "Gurban baýramy",
+    "rule": "presidential_decree",
+    "type": "public_holiday",
+    "day_off": true
+  },
+  {
+    "name": "Oraza baýramy",
+    "rule": "presidential_decree",
+    "type": "public_holiday",
+    "day_off": true
+  }
+]

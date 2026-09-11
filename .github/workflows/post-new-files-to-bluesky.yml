@@ -4,10 +4,13 @@ on:
   push:
     branches:
       - main
+<<<<<<< HEAD
   schedule:
     # Every Monday at 09:00 in Ashgabat (UTC+5).
     - cron: "0 4 * * 1"
   workflow_dispatch:
+=======
+>>>>>>> origin/main
 
 permissions:
   contents: read
@@ -27,7 +30,10 @@ jobs:
           BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
           BEFORE_SHA: ${{ github.event.before }}
           AFTER_SHA: ${{ github.sha }}
+<<<<<<< HEAD
           EVENT_NAME: ${{ github.event_name }}
+=======
+>>>>>>> origin/main
           REPOSITORY: ${{ github.repository }}
           SERVER_URL: ${{ github.server_url }}
         run: node .github/scripts/post-new-files-to-bluesky.mjs

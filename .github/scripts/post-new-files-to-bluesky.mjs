@@ -7,7 +7,10 @@ const {
   BLUESKY_APP_PASSWORD,
   BEFORE_SHA,
   AFTER_SHA,
+<<<<<<< HEAD
   EVENT_NAME,
+=======
+>>>>>>> origin/main
   REPOSITORY,
   SERVER_URL = "https://github.com",
 } = process.env;
@@ -16,6 +19,7 @@ if (!BLUESKY_HANDLE || !BLUESKY_APP_PASSWORD) {
   throw new Error("BLUESKY_HANDLE and BLUESKY_APP_PASSWORD secrets are required.");
 }
 
+<<<<<<< HEAD
 const isWeekly = EVENT_NAME === "schedule" || EVENT_NAME === "workflow_dispatch";
 const dataExtensions = new Set([
   ".csv", ".db", ".json", ".jsonl", ".sqlite", ".sql", ".tsv", ".txt", ".xml", ".yaml", ".yml",
@@ -32,15 +36,30 @@ if (isWeekly) {
     { encoding: "utf8" },
   );
 }
+=======
+const zeroSha = /^0+$/.test(BEFORE_SHA ?? "");
+const base = zeroSha ? `${AFTER_SHA}^` : BEFORE_SHA;
+const output = execFileSync(
+  "git",
+  ["diff", "--name-only", "--diff-filter=A", "-z", base, AFTER_SHA],
+  { encoding: "utf8" },
+);
+>>>>>>> origin/main
 
 // Workflow implementation files are not dataset additions.
 const files = output
   .split("\0")
   .filter(Boolean)
+<<<<<<< HEAD
   .filter((file) => !file.startsWith(".github/"))
   .filter((file) => dataExtensions.has(extname(file).toLowerCase()));
 
 if (!isWeekly && files.length === 0) {
+=======
+  .filter((file) => !file.startsWith(".github/"));
+
+if (files.length === 0) {
+>>>>>>> origin/main
   console.log("No new data files to post.");
   process.exit(0);
 }
@@ -167,6 +186,7 @@ function fileDetails(file) {
   };
 }
 
+<<<<<<< HEAD
 function groupNewFiles(newFiles) {
   const groups = new Map();
   for (const file of newFiles) {
@@ -247,6 +267,15 @@ if (isWeekly) {
 }
 
 for (const post of posts) {
+=======
+for (const file of files) {
+  const details = fileDetails(file);
+  const prefix = `🆕 Täze maglumat goşuldy\n📚 Eser: ${truncate(details.title, 100)}\n📊 ${details.amount}\n\n`;
+  const suffix = `\n\n🔗 ${SERVER_URL}/${REPOSITORY}`;
+  const available = 300 - [...segmenter.segment(prefix + suffix)].length;
+  const text = `${prefix}${truncate(details.preview, Math.max(0, available))}${suffix}`;
+
+>>>>>>> origin/main
   const response = await fetch(`${service}/xrpc/com.atproto.repo.createRecord`, {
     method: "POST",
     headers: {
@@ -258,16 +287,27 @@ for (const post of posts) {
       collection: "app.bsky.feed.post",
       record: {
         $type: "app.bsky.feed.post",
+<<<<<<< HEAD
         text: post.text,
+=======
+        text,
+>>>>>>> origin/main
         createdAt: new Date().toISOString(),
       },
     }),
   });
 
   if (!response.ok) {
+<<<<<<< HEAD
     throw new Error(`Posting ${post.label} failed (${response.status}): ${await response.text()}`);
   }
 
   console.log(`Posted ${post.label}`);
+=======
+    throw new Error(`Posting ${file} failed (${response.status}): ${await response.text()}`);
+  }
+
+  console.log(`Posted ${file}`);
+>>>>>>> origin/main
   await new Promise((resolve) => setTimeout(resolve, 1000));
 }

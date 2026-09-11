@@ -1,0 +1,7 @@
+[
+  { "id": "morning", "tm": "irden", "en": "morning" },
+  { "id": "noon", "tm": "günortan", "en": "noon" },
+  { "id": "afternoon", "tm": "öýlän", "en": "afternoon" },
+  { "id": "evening", "tm": "agşam", "en": "evening" },
+  { "id": "night", "tm": "gije", "en": "night" }
+]

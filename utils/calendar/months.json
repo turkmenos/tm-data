@@ -1,0 +1,14 @@
+[
+  { "number": 1, "tm": "Ýanwar", "en": "January" },
+  { "number": 2, "tm": "Fewral", "en": "February" },
+  { "number": 3, "tm": "Mart", "en": "March" },
+  { "number": 4, "tm": "Aprel", "en": "April" },
+  { "number": 5, "tm": "Maý", "en": "May" },
+  { "number": 6, "tm": "Iýun", "en": "June" },
+  { "number": 7, "tm": "Iýul", "en": "July" },
+  { "number": 8, "tm": "Awgust", "en": "August" },
+  { "number": 9, "tm": "Sentýabr", "en": "September" },
+  { "number": 10, "tm": "Oktýabr", "en": "October" },
+  { "number": 11, "tm": "Noýabr", "en": "November" },
+  { "number": 12, "tm": "Dekabr", "en": "December" }
+]

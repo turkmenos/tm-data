@@ -1,0 +1,1375 @@
+[
+  {
+    "name": "Aba",
+    "description": "dialektlerde bu söz «ata»‚ «kaka» we «kakanyň erkek dogany» ýaly manylary aňladýar."
+  },
+  {
+    "name": "Abdy",
+    "origin": "Arabic",
+    "description": "arapça abd—«gul». Abdylla ýaly goşma adyň gysgalan görnüşi."
+  },
+  {
+    "name": "Abdykerim",
+    "origin": "Arabic",
+    "description": "keremliniň‚ sahawatlynyň‚ jomardyň (allanyň) guly."
+  },
+  {
+    "name": "Abdylla",
+    "origin": "Arabic",
+    "description": "allanyň guly."
+  },
+  {
+    "name": "Abdyrahman",
+    "origin": "Arabic",
+    "description": "mähirliniň (allanyň) guly."
+  },
+  {
+    "name": "Abdyrahym",
+    "origin": "Arabic",
+    "description": "rehimliniň (allanyň) guly."
+  },
+  {
+    "name": "Abdyresul",
+    "origin": "Arabic",
+    "description": "allanyň ilçisiniň (pygamberiň) guly."
+  },
+  {
+    "name": "Abdysetdar",
+    "origin": "Arabic",
+    "description": "geçirimliniň (allanyň) guly."
+  },
+  {
+    "name": "Abraý",
+    "origin": "Persian",
+    "description": "atly-abraýly."
+  },
+  {
+    "name": "Abraýguly",
+    "description": "abraýly gul‚ atly-abraýly ogul."
+  },
+  {
+    "name": "Abyl",
+    "origin": "Arabic",
+    "description": "ata. Gysgalan at."
+  },
+  {
+    "name": "Aga",
+    "description": "uly erkek dogan. Bu at «kiçilere aga bolsun» diýen manydadyr."
+  },
+  {
+    "name": "Agageldi",
+    "description": "agasy gelende bolan ogul."
+  },
+  {
+    "name": "Agajan",
+    "description": "agasynyň jany‚ ezizi."
+  },
+  {
+    "name": "Agahan",
+    "description": "agalaryň hany."
+  },
+  {
+    "name": "Agöýli",
+    "description": "ak (bagtly) öýüň eýesi."
+  },
+  {
+    "name": "Adyl",
+    "origin": "Arabic",
+    "description": "adyl‚ hemmä deň seredýän."
+  },
+  {
+    "name": "Azym",
+    "origin": "Arabic",
+    "description": "beýik‚ uly."
+  },
+  {
+    "name": "Aýguly",
+    "description": "aýyň guly."
+  },
+  {
+    "name": "Aýdogdy",
+    "description": "täze aý doganda bolan çaga."
+  },
+  {
+    "name": "Aýmyrat",
+    "description": "aýly gijede doglup‚ maksat-myrada ýetiren ogul."
+  },
+  {
+    "name": "Aýhan",
+    "description": "aýlaryň hany."
+  },
+  {
+    "name": "Aýyt",
+    "variants": [
+      "Haýyt"
+    ],
+    "origin": "Arabic",
+    "origin_note": "arapça rýt",
+    "description": "baýram."
+  },
+  {
+    "name": "Akmuhammet",
+    "description": "bagtly we öwgä mynasyp."
+  },
+  {
+    "name": "Allaberdi",
+    "description": "allanyň beren çagasy."
+  },
+  {
+    "name": "Allaguly",
+    "description": "allanyň guly."
+  },
+  {
+    "name": "Allanazar",
+    "description": "allanyň nazary bilen doglan."
+  },
+  {
+    "name": "Almaz",
+    "description": "1) Italmaz diýen adyň gysga görnüşi; 2) kesgir‚ ýiti akylly."
+  },
+  {
+    "name": "Alty",
+    "description": "1) altynjy; 2) altybarmakly."
+  },
+  {
+    "name": "Aly",
+    "origin": "Arabic",
+    "description": "belent derejeli."
+  },
+  {
+    "name": "Arslan",
+    "description": "arslan ýaly güýçli‚ batyr."
+  },
+  {
+    "name": "Artyk",
+    "description": "bedeninde artykmaç ösüntgisi bolan."
+  },
+  {
+    "name": "Ata",
+    "description": "1) ata bolsun; 2) atasynyň ady dakylan."
+  },
+  {
+    "name": "Ahmet",
+    "origin": "Arabic",
+    "description": "öwlen‚ öwgüsi ýeten."
+  },
+  {
+    "name": "Açyl",
+    "description": "keselden gutul."
+  },
+  {
+    "name": "Aşyr",
+    "origin": "Arabic",
+    "description": "1) aşyr aýynda doglan; 2) onunjy‚ ýagny muharram aýynyň 10-njy güni doglan."
+  },
+  {
+    "name": "Aýaz",
+    "description": "aýazda doglan."
+  },
+  {
+    "name": "Baba",
+    "description": "1) baba bolsun; babasynyň ady dakylan."
+  },
+  {
+    "name": "Bagşy",
+    "description": "bagşy ýa-da bagşy ýaly abraýly bolsun."
+  },
+  {
+    "name": "Bagybek",
+    "description": "uzak ýaşasyn‚ ölmesin."
+  },
+  {
+    "name": "Bazar",
+    "description": "1) bazar güni doglan; 2) gelim-gidimli‚ şagalaňly."
+  },
+  {
+    "name": "Baýram",
+    "description": "baýramçylykda doglan."
+  },
+  {
+    "name": "Baky",
+    "origin": "Arabic",
+    "description": "uzak ýaşasyn‚ ölmesin."
+  },
+  {
+    "name": "Begenç",
+    "description": "maşgalany begendiren."
+  },
+  {
+    "name": "Bezirgen",
+    "origin": "Persian",
+    "description": "bazarçy‚ täjir‚ söwdagär."
+  },
+  {
+    "name": "Beki",
+    "description": "jany bek."
+  },
+  {
+    "name": "Bekpolat",
+    "description": "polat ýaly bek."
+  },
+  {
+    "name": "Boran",
+    "description": "boranda doglan."
+  },
+  {
+    "name": "Borjak",
+    "description": "borjak ýaly berk‚ kynçylygy ýeňişi."
+  },
+  {
+    "name": "Böke",
+    "description": "pälwan‚ güýçli."
+  },
+  {
+    "name": "Böri",
+    "description": "böri ýaly çydamly‚ berk."
+  },
+  {
+    "name": "Buga",
+    "description": "öküz‚ öküz ýaly güýçli."
+  },
+  {
+    "name": "Bugra",
+    "description": "iki örküçli düýe‚ güýçli."
+  },
+  {
+    "name": "Bähram",
+    "origin": "Persian",
+    "description": "mars planetasy‚ ýagny ýyldyz ýaly parlak."
+  },
+  {
+    "name": "Bäşim",
+    "description": "bäşinji oglum."
+  },
+  {
+    "name": "Wagyt",
+    "origin": "Arabic",
+    "description": "ýeke‚ ýalňyz (allanyň ady)."
+  },
+  {
+    "name": "Weýis",
+    "origin": "Arabic",
+    "description": "güýçli‚ kuwwatly."
+  },
+  {
+    "name": "Wekil",
+    "origin": "Arabic",
+    "description": "köpçüligiň‚ iliň wekili‚ ynamly adam."
+  },
+  {
+    "name": "Weli",
+    "origin": "Arabic",
+    "description": "ýakyn kişi ýa-da akylly adam‚ serdar."
+  },
+  {
+    "name": "Wepa",
+    "origin": "Arabic",
+    "description": "wepaly."
+  },
+  {
+    "name": "Gadam",
+    "origin": "Arabic",
+    "description": "ädim‚ ýagny ädimi batly bolsun."
+  },
+  {
+    "name": "Gaýgysyz",
+    "description": "şadyýan‚ gam çekmeýän."
+  },
+  {
+    "name": "Gaýrat",
+    "origin": "Arabic",
+    "description": "gujurly‚ gaýratly."
+  },
+  {
+    "name": "Gaýyp",
+    "origin": "Arabic",
+    "description": "gözden gaýyp bolan‚ ýogalan‚ mukaddes."
+  },
+  {
+    "name": "Galkan",
+    "description": "goragçy‚ goraýjy."
+  },
+  {
+    "name": "Galpak",
+    "description": "garagalpakly‚ saçly doglan."
+  },
+  {
+    "name": "Gammar",
+    "origin": "Arabic",
+    "description": "torgaý (Allanyň gulunyň ady)."
+  },
+  {
+    "name": "Gaplaň",
+    "description": "gaplaň ýaly güýçli‚ çalasyn."
+  },
+  {
+    "name": "Garly",
+    "description": "gar ýaganda doglan."
+  },
+  {
+    "name": "Garry",
+    "description": "garrylaryň ady dakylan."
+  },
+  {
+    "name": "Genje",
+    "variants": [
+      "Genji",
+      "Genjim"
+    ],
+    "description": "iň kiçi çaga‚ bäbek."
+  },
+  {
+    "name": "Gowşut",
+    "description": "1) maksada ýetiren; 2) ene-atasyna sag-aman gowşan."
+  },
+  {
+    "name": "Goç",
+    "variants": [
+      "Goçgar"
+    ],
+    "description": "batyr‚ güýçli‚ goç ogul."
+  },
+  {
+    "name": "Guwanç",
+    "description": "ata-enesini begendiren‚ guwandyran."
+  },
+  {
+    "name": "Gurban",
+    "origin": "Arabic",
+    "description": "gurban aýynda doglan."
+  },
+  {
+    "name": "Gurt",
+    "description": "gurt ýaly çydamly‚ jany berk."
+  },
+  {
+    "name": "Gutly",
+    "description": "bagtly."
+  },
+  {
+    "name": "Güýç",
+    "description": "güýçli‚ kuwwatly ýa-da ene-atasyna güýç getiren."
+  },
+  {
+    "name": "Gündogdy",
+    "description": "gün doganda bolan."
+  },
+  {
+    "name": "Gylyç",
+    "description": "gylyç ýaly ýiti‚ kesgir‚ uzak ümürli."
+  },
+  {
+    "name": "Dawut",
+    "origin": "Hebrew",
+    "description": "söýgüli‚ mähirli."
+  },
+  {
+    "name": "Daňatar",
+    "variants": [
+      "Daňgeldi"
+    ],
+    "description": "daňdan doglan."
+  },
+  {
+    "name": "Daşpolat",
+    "description": "daş we polat ýaly berk‚ sagdyn‚ uzak ömürli."
+  },
+  {
+    "name": "Demir",
+    "variants": [
+      "Temir"
+    ],
+    "description": "demir ýaly jany berk‚ sagdyn‚ ömri uzak."
+  },
+  {
+    "name": "Derýa",
+    "variants": [
+      "Deňiz"
+    ],
+    "description": "joşgunly‚ giň göwrümli."
+  },
+  {
+    "name": "Dilew",
+    "variants": [
+      "Dilegberdi"
+    ],
+    "description": "dilenip‚ ýalbarylyp alnan."
+  },
+  {
+    "name": "Doly",
+    "description": "1) aý dolanda doglan; 2) saçagy doly bolsun; 3) kemis doglan çaga soňra doluşsyn."
+  },
+  {
+    "name": "Döwlet",
+    "origin": "Arabic",
+    "description": "döwletli."
+  },
+  {
+    "name": "Döwran",
+    "origin": "Arabic",
+    "description": "döwrüň‚ zamananyň ogly ýa-da döwran sürsün."
+  },
+  {
+    "name": "Dönmez",
+    "description": "ölmez‚ yzyna dönmez."
+  },
+  {
+    "name": "Durdy",
+    "description": "uzak ýaşasyn‚ ölmesin‚ dursun."
+  },
+  {
+    "name": "Duşem",
+    "variants": [
+      "Duşy",
+      "Tuşy"
+    ],
+    "origin": "Persian",
+    "description": "duşenbe güni doglan."
+  },
+  {
+    "name": "Ýegşem",
+    "origin": "Persian",
+    "description": "ýekşenbe güni doglan."
+  },
+  {
+    "name": "Ýowlýars",
+    "description": "batyr‚ ýola gidenler aman gelsin; 2) ýolda doglan çaga aman bolsun."
+  },
+  {
+    "name": "Ýolbars",
+    "description": "ýolbars ýaly batyr‚ sagdan‚ güýçli."
+  },
+  {
+    "name": "Ýoldaş",
+    "description": "kakasynyň ýa-da agasynyň ýoldaşy‚ hemrasy bolsun."
+  },
+  {
+    "name": "Japar",
+    "origin": "Arabic",
+    "description": "behişt çeşmesi‚ derýa."
+  },
+  {
+    "name": "Jelal",
+    "origin": "Arabic",
+    "description": "beýik‚ mertebesi belent."
+  },
+  {
+    "name": "Jelil",
+    "origin": "Arabic",
+    "description": "beýik‚ mertebesi belent."
+  },
+  {
+    "name": "Jemşit",
+    "origin": "Persian",
+    "description": "owadan‚ gymmatly (Eýranyň mifik şasynyň ady)."
+  },
+  {
+    "name": "Jepbar",
+    "origin": "Persian",
+    "description": "gudratly‚ güýçli (allanyň ady)."
+  },
+  {
+    "name": "Jomart",
+    "origin": "Persian",
+    "description": "sahy‚ eli açyk."
+  },
+  {
+    "name": "Jora",
+    "origin": "Persian",
+    "description": "ikinji ogul‚ hemra."
+  },
+  {
+    "name": "Juma",
+    "origin": "Arabic",
+    "description": "jemlenilýän gün‚ ýagny juma (anna) güni doglan."
+  },
+  {
+    "name": "Jyga",
+    "description": "başyň täji‚ jygasy."
+  },
+  {
+    "name": "Zahyr",
+    "variants": [
+      "Zaýyr"
+    ],
+    "origin": "Arabic",
+    "description": "kömekçi ýa-da röwşen ýüzli."
+  },
+  {
+    "name": "Isa",
+    "origin": "Hebrew",
+    "description": "allanyň ýalkany."
+  },
+  {
+    "name": "Isgender",
+    "description": "grekçe Aleksandr diýen adyň arapça görnüşi. Manysy: «erkekleriň‚ mertleriň goragçysy‚ penakäri»."
+  },
+  {
+    "name": "Işan",
+    "origin": "Persian",
+    "description": "olar‚ ýagny ruhanylaryň adynyň 3-nji ýöňkemede ulanylýan görnüşi."
+  },
+  {
+    "name": "Kadyr",
+    "origin": "Arabic",
+    "description": "her bir zady başarýan (allanyň ady)."
+  },
+  {
+    "name": "Kaka",
+    "description": "kakasynyň ýa-da atasynyň ady dakylan."
+  },
+  {
+    "name": "Kasym",
+    "origin": "Arabic",
+    "description": "deň bölünji‚ paýlaýjy."
+  },
+  {
+    "name": "Kaýum",
+    "origin": "Arabic",
+    "description": "gaýym‚ üýtgemeýän‚ baky (allanyň ady)."
+  },
+  {
+    "name": "Kemal",
+    "origin": "Arabic",
+    "description": "kämillik‚ ýetişinlik."
+  },
+  {
+    "name": "Kerwen",
+    "origin": "Persian",
+    "description": "oglumyz köp‚ ýagny hatar-kerwen bolsun."
+  },
+  {
+    "name": "Kerim",
+    "origin": "Arabic",
+    "description": "asylly‚ keremli‚ sahy."
+  },
+  {
+    "name": "Kömek",
+    "description": "kömekçi‚ ýardamçy."
+  },
+  {
+    "name": "Kössek",
+    "description": "kössekli‚ duşalan‚ ýagny ölmesin."
+  },
+  {
+    "name": "Kuwwat",
+    "origin": "Arabic",
+    "description": "güýçli‚ kuwwatly."
+  },
+  {
+    "name": "Kuly",
+    "description": "(allanyň) guly."
+  },
+  {
+    "name": "Küren",
+    "description": "ogul köp bolsun‚ küren oba bolsun."
+  },
+  {
+    "name": "Kyýas",
+    "origin": "Arabic",
+    "description": "nusga‚ ýadygärlik."
+  },
+  {
+    "name": "Mawy",
+    "description": "mawy gözli."
+  },
+  {
+    "name": "Mansur",
+    "origin": "Arabic",
+    "description": "ýeňişi."
+  },
+  {
+    "name": "Mahmyt",
+    "variants": [
+      "Mahmut"
+    ],
+    "origin": "Arabic",
+    "description": "öwlen‚ magtalan."
+  },
+  {
+    "name": "Mergen",
+    "description": "ökde atyjy‚ mergen."
+  },
+  {
+    "name": "Merdan",
+    "origin": "Persian",
+    "description": "mertleriň‚ batyrlaryň serkerdary."
+  },
+  {
+    "name": "Meret",
+    "description": "meret aýynda doglan."
+  },
+  {
+    "name": "Molla",
+    "description": "okumyş‚ bilimli."
+  },
+  {
+    "name": "Möwlam",
+    "origin": "Arabic",
+    "description": "ýaradan (allanyň ady)."
+  },
+  {
+    "name": "Möjek",
+    "description": "möjek ýaly çydamly‚ uzak ömürli."
+  },
+  {
+    "name": "Mukym",
+    "origin": "Arabic",
+    "description": "baky‚ ömürlik‚ oturymly."
+  },
+  {
+    "name": "Murtaza",
+    "origin": "Arabic",
+    "description": "saýlanan‚ seçilen."
+  },
+  {
+    "name": "Musa",
+    "origin": "Ancient Egyptian",
+    "origin_note": "gadymy müsür dilinde meşu",
+    "description": "çaga‚ bäbek («töwratda» Moiseý)."
+  },
+  {
+    "name": "Mustapa",
+    "origin": "Arabic",
+    "description": "arassalanan‚ saýlanan."
+  },
+  {
+    "name": "Muhammet",
+    "origin": "Arabic",
+    "description": "öwgä mynasyp‚ öwürlýän."
+  },
+  {
+    "name": "Muhat",
+    "description": "muhammet diýen adyň gysga görnüşi."
+  },
+  {
+    "name": "Muhtar",
+    "origin": "Arabic",
+    "description": "saýlantgy."
+  },
+  {
+    "name": "Myrat",
+    "origin": "Arabic",
+    "description": "islegli‚ garaşylýan; myrat-maksada ýetirýän."
+  },
+  {
+    "name": "Myhmangeldi",
+    "description": "myhman gelende doglan."
+  },
+  {
+    "name": "Mälik",
+    "origin": "Arabic",
+    "description": "häkim‚ hökümdar."
+  },
+  {
+    "name": "Mämmet",
+    "variants": [
+      "Mät"
+    ],
+    "description": "muhammet diýen adyň gysga görnüşi."
+  },
+  {
+    "name": "Mäti",
+    "origin": "Arabic",
+    "description": "dogry ýol salgy beriji."
+  },
+  {
+    "name": "Nagym",
+    "origin": "Arabic",
+    "description": "bagtly‚ rahat ýaşaýan."
+  },
+  {
+    "name": "Nazar",
+    "origin": "Arabic",
+    "description": "garaýyş‚ ýagny allanyň nazary bilen doglan."
+  },
+  {
+    "name": "Naýza",
+    "description": "naýza ýaly ötgür."
+  },
+  {
+    "name": "Narzy",
+    "origin": "Arabic",
+    "description": "wada edilen."
+  },
+  {
+    "name": "Naryman",
+    "origin": "Persian",
+    "description": "mert‚ ruhy güçli."
+  },
+  {
+    "name": "Nasyr",
+    "origin": "Arabic",
+    "description": "kömekçi‚ ýeňişi."
+  },
+  {
+    "name": "Nedir",
+    "origin": "Arabic",
+    "description": "seýrek‚ duş gelýän."
+  },
+  {
+    "name": "Nezir",
+    "origin": "Arabic",
+    "description": "ministr."
+  },
+  {
+    "name": "Nepes",
+    "origin": "Arabic",
+    "description": "dem‚ howa‚ ýagny allanyň nepesi bilen doglan."
+  },
+  {
+    "name": "Nesim",
+    "origin": "Arabic",
+    "description": "daň şemaly‚ ýagny ýakymly."
+  },
+  {
+    "name": "Nöker",
+    "description": "dost‚ nöker."
+  },
+  {
+    "name": "Ojar",
+    "description": "ojar ýaly çydamly‚ dözümli."
+  },
+  {
+    "name": "Omar",
+    "origin": "Arabic",
+    "description": "dirilik‚ ömürli."
+  },
+  {
+    "name": "On",
+    "description": "onunjy."
+  },
+  {
+    "name": "Oraz",
+    "description": "1) bagt; 2) oraza aýynda doglan."
+  },
+  {
+    "name": "Orak",
+    "description": "kesgir‚ ötgür; uzak ömürli."
+  },
+  {
+    "name": "Orun",
+    "description": "ölen ogluň ornuna gelen."
+  },
+  {
+    "name": "Osman",
+    "origin": "Arabic",
+    "description": "mert‚ gorkmazak."
+  },
+  {
+    "name": "Öwez",
+    "origin": "Arabic",
+    "description": "ölen çaganyň ornuna‚ öwezine gelen."
+  },
+  {
+    "name": "Öde",
+    "description": "1) ynamy ödesi; 2) öwezine‚ ornuna gelen."
+  },
+  {
+    "name": "Ölmez",
+    "description": "ölmesin‚ uzak ýaşasyn."
+  },
+  {
+    "name": "Öre",
+    "description": "1) keselinden örlesin; 2) sütün‚ maşgalanyň diregi (Daşhowuz); dördünji çaga (Daşhowuz)."
+  },
+  {
+    "name": "Paýzy",
+    "variants": [
+      "Paýzylla"
+    ],
+    "origin": "Arabic",
+    "description": "allanyň sahylygy."
+  },
+  {
+    "name": "Palta",
+    "description": "ötgür‚ ýiti‚ uzak ömürli."
+  },
+  {
+    "name": "Peleň",
+    "description": "güýçli‚ batyr."
+  },
+  {
+    "name": "Penji",
+    "origin": "Persian",
+    "description": "bäşinji."
+  },
+  {
+    "name": "Perde",
+    "origin": "Persian",
+    "description": "perdeli‚ tuwakly doglan."
+  },
+  {
+    "name": "Pirguly",
+    "description": "piriň guly."
+  },
+  {
+    "name": "Polat",
+    "description": "polat ýaly berk."
+  },
+  {
+    "name": "Pürli",
+    "description": "şahaly‚ ýagny köpelsin."
+  },
+  {
+    "name": "Pygam",
+    "origin": "Arabic",
+    "description": "habar‚ derek‚ buşluk."
+  },
+  {
+    "name": "Pälwan",
+    "origin": "Persian",
+    "description": "güýçli."
+  },
+  {
+    "name": "Rahman",
+    "origin": "Arabic",
+    "description": "mähirli (allanyň ady)."
+  },
+  {
+    "name": "Rahym",
+    "variants": [
+      "Rehim",
+      "Reýim"
+    ],
+    "origin": "Arabic",
+    "description": "rehimli‚ mähirli (allanyň ady)."
+  },
+  {
+    "name": "Rejep",
+    "origin": "Arabic",
+    "description": "rejep aýynda doglan."
+  },
+  {
+    "name": "Remezan",
+    "origin": "Arabic",
+    "description": "remezan aýynda doglan."
+  },
+  {
+    "name": "Resul",
+    "origin": "Arabic",
+    "description": "wekil‚ ilçi."
+  },
+  {
+    "name": "Reşit",
+    "origin": "Arabic",
+    "description": "akylly‚ dogry ýol bilen barýan."
+  },
+  {
+    "name": "Rozy",
+    "description": "oraza aýynda doglan."
+  },
+  {
+    "name": "Röwşen",
+    "origin": "Persian",
+    "description": "şöhleli‚ röwşen."
+  },
+  {
+    "name": "Rustem",
+    "origin": "Persian",
+    "description": "daýaw‚ batyr."
+  },
+  {
+    "name": "Rähmet",
+    "origin": "Arabic",
+    "description": "minnetdar‚ bereket."
+  },
+  {
+    "name": "Sazak",
+    "description": "sazak ýaly çydamly‚ dözümli."
+  },
+  {
+    "name": "Salam",
+    "variants": [
+      "Salamat"
+    ],
+    "origin": "Arabic",
+    "description": "sag‚ sagdyn‚ dynç."
+  },
+  {
+    "name": "Salyh",
+    "origin": "Arabic",
+    "description": "gowy‚ güler ýüzli ýa-da dogry ýol görkezinji."
+  },
+  {
+    "name": "Sanjar",
+    "variants": [
+      "Hanjar"
+    ],
+    "description": "ötgür‚ ýiti‚ kesgir‚ ýeňişi."
+  },
+  {
+    "name": "Sapa",
+    "origin": "Arabic",
+    "description": "sapaly‚ ýürekdeş‚ arassa."
+  },
+  {
+    "name": "Sapar",
+    "origin": "Arabic",
+    "description": "1) sapar aýynda doglan; 2) atasy sapara (syýahata) gidende doglan."
+  },
+  {
+    "name": "Sary",
+    "description": "saryýagyz‚ arassa."
+  },
+  {
+    "name": "Satlyk",
+    "description": "satylan‚ ýagny uzak ýaşasyn."
+  },
+  {
+    "name": "Sahy",
+    "description": "jomart‚ eli açyk."
+  },
+  {
+    "name": "Seýit",
+    "origin": "Arabic",
+    "description": "jenap‚ hormatly."
+  },
+  {
+    "name": "Selim",
+    "origin": "Arabic",
+    "description": "sagdyn‚ sagat."
+  },
+  {
+    "name": "Semet",
+    "variants": [
+      "samat"
+    ],
+    "origin": "Arabic",
+    "description": "baky‚ ömürlik."
+  },
+  {
+    "name": "Serdar",
+    "origin": "Persian",
+    "description": "ýolbaşçy‚ başlyk."
+  },
+  {
+    "name": "Setdar",
+    "origin": "Arabic",
+    "description": "geçirimli (allanyň ady)."
+  },
+  {
+    "name": "Soltan",
+    "origin": "Arabic",
+    "description": "häkim‚ patyşa."
+  },
+  {
+    "name": "Sopy",
+    "description": "arassa‚ päk; sopy."
+  },
+  {
+    "name": "Söýeg",
+    "description": "daýanç‚ söýget."
+  },
+  {
+    "name": "Söýün",
+    "origin_note": "a. Husain",
+    "description": "oňatja‚ gowuja."
+  },
+  {
+    "name": "Söhbet",
+    "origin": "Arabic",
+    "description": "söhbetdeş‚ hemra."
+  },
+  {
+    "name": "Suhan",
+    "origin": "Arabic",
+    "description": "şöhratly‚ belent (allanyň ady)."
+  },
+  {
+    "name": "Süleýman",
+    "origin": "Hebrew",
+    "description": "rahat‚ goralan."
+  },
+  {
+    "name": "Sylapberdi",
+    "description": "(Alla) sylap berdi."
+  },
+  {
+    "name": "Satdyh",
+    "origin": "Arabic",
+    "description": "dogruçyl."
+  },
+  {
+    "name": "Sähet",
+    "origin": "Arabic",
+    "description": "sähetli‚ bagtly günde doglan."
+  },
+  {
+    "name": "Tagaý",
+    "variants": [
+      "Tagy"
+    ],
+    "description": "daýy. (?)"
+  },
+  {
+    "name": "Tagan",
+    "description": "jany berk‚ ýaşy uzak bolsun."
+  },
+  {
+    "name": "Taýly",
+    "description": "ikinji ogul."
+  },
+  {
+    "name": "Taýmaz",
+    "description": "ölmez‚ uzak ýaşar."
+  },
+  {
+    "name": "Tarlaň",
+    "variants": [
+      "Tarlan"
+    ],
+    "description": "tarlan ýaly batyr‚ dogumly."
+  },
+  {
+    "name": "Tahyr",
+    "variants": [
+      "Taýyr"
+    ],
+    "origin": "Arabic",
+    "description": "päk‚ arassa‚ köstsüz."
+  },
+  {
+    "name": "Taş",
+    "variants": [
+      "Daş"
+    ],
+    "description": "daş ýaly berk‚ çydamly‚ ömürli."
+  },
+  {
+    "name": "Tirkeş",
+    "description": "yzly-yzly tirkeşsin‚ ogul köp bolsun."
+  },
+  {
+    "name": "Togtamyş",
+    "variants": [
+      "Togtar"
+    ],
+    "description": "dursun‚ gitmesin‚ ölmesin."
+  },
+  {
+    "name": "Toýly",
+    "description": "toý güni doglan ýa-da toýy köp bolsun."
+  },
+  {
+    "name": "Töre",
+    "description": "1) ýolbaşçy‚ öňbaşçy; 2) üçünji‚ käýerde dördünji çaga."
+  },
+  {
+    "name": "Ugurly",
+    "description": "gowy ugra gidýän‚ akylly."
+  },
+  {
+    "name": "Ulug",
+    "variants": [
+      "Ulugberdi"
+    ],
+    "description": "uly (ýagny alla) berdi."
+  },
+  {
+    "name": "Habyp",
+    "origin": "Arabic",
+    "description": "söýgüli‚ dost."
+  },
+  {
+    "name": "Hajy",
+    "origin": "Arabic",
+    "description": "hajy kabul bolan."
+  },
+  {
+    "name": "Haýdar",
+    "origin": "Arabic",
+    "description": "ýolbars‚ güýçli."
+  },
+  {
+    "name": "Hakberdi",
+    "description": "hak (alla) berdi."
+  },
+  {
+    "name": "Halym",
+    "origin": "Arabic",
+    "description": "mylaýym‚ güler ýüzli‚ jomart‚ sahy."
+  },
+  {
+    "name": "Han",
+    "description": "abraýly‚ atly‚ ile baş bolsun."
+  },
+  {
+    "name": "Hapyz",
+    "origin": "Arabic",
+    "description": "goragçy‚ saklaýjy."
+  },
+  {
+    "name": "Hasan",
+    "origin": "Arabic",
+    "description": "gowy‚ oňat."
+  },
+  {
+    "name": "Hatam",
+    "origin": "Arabic",
+    "description": "çözüji‚ ýiti."
+  },
+  {
+    "name": "Haşym",
+    "origin": "Arabic",
+    "description": "hormatly."
+  },
+  {
+    "name": "Hezret",
+    "origin": "Arabic",
+    "description": "jenap‚ hormatly."
+  },
+  {
+    "name": "Hekim",
+    "origin": "Arabic",
+    "description": "bilgiç‚ akylly‚ tebip."
+  },
+  {
+    "name": "Hemdem",
+    "origin": "Persian",
+    "description": "ýürekdeş."
+  },
+  {
+    "name": "Hemze",
+    "variants": [
+      "Hamza"
+    ],
+    "origin": "Arabic",
+    "description": "ýiti‚ ötgür."
+  },
+  {
+    "name": "Hemra",
+    "origin": "Persian",
+    "description": "ýoldaş‚ hemra."
+  },
+  {
+    "name": "Hoja",
+    "origin": "Arabic",
+    "description": "jenap‚ halypa."
+  },
+  {
+    "name": "Hommat",
+    "description": "muhammet diýen adyň gysga görnüşi."
+  },
+  {
+    "name": "Hümmet",
+    "origin": "Arabic",
+    "description": "hümmetli‚ güýçli‚ baý."
+  },
+  {
+    "name": "Hüseýin",
+    "variants": [
+      "Söýün"
+    ],
+    "origin": "Arabic",
+    "description": "oňatja‚ gowuja."
+  },
+  {
+    "name": "Hydyr",
+    "origin": "Arabic",
+    "description": "ebedi diri (pygamberiň ady)."
+  },
+  {
+    "name": "Çaly",
+    "description": "çöl akasiýasy (акациясы); çaly ýaly çydamly‚ berk."
+  },
+  {
+    "name": "Çary",
+    "origin": "Arabic",
+    "description": "dördünji."
+  },
+  {
+    "name": "Çerkez",
+    "description": "çerkez ýaly çydamly‚ berk."
+  },
+  {
+    "name": "Çopan",
+    "variants": [
+      "Çoluk"
+    ],
+    "description": "maldar bolsun."
+  },
+  {
+    "name": "Çoýan",
+    "origin_note": "Çoýun",
+    "description": "çoýun ýaly berk‚ çydamly."
+  },
+  {
+    "name": "Çöli",
+    "description": "çölde doglan."
+  },
+  {
+    "name": "Çäşem",
+    "origin": "Persian",
+    "description": "çarşenbe güni doglan."
+  },
+  {
+    "name": "Şaýmerdan",
+    "origin_note": "p. Çah –e merdan",
+    "description": "mertleriň şasy."
+  },
+  {
+    "name": "Şatlyk",
+    "description": "çadyýanlyk (täze at)."
+  },
+  {
+    "name": "Şemsi",
+    "origin": "Arabic",
+    "description": "güneşli‚ ýagny nurly. (Şemsiýe — gyz ady)."
+  },
+  {
+    "name": "Şerap",
+    "origin_note": "a. Şaraf",
+    "description": "abraýly‚ şöhratly (Şerapat gyz ady)."
+  },
+  {
+    "name": "Şerip",
+    "origin": "Arabic",
+    "description": "mukaddes‚ abraýly‚ meşhur‚ asylly."
+  },
+  {
+    "name": "Şir",
+    "origin": "Persian",
+    "description": "ýolbars‚ şir‚ ýagny batyr."
+  },
+  {
+    "name": "Şöhrat",
+    "description": "şöhratly (täze at)."
+  },
+  {
+    "name": "Şyh",
+    "origin": "Arabic",
+    "description": "goja‚ dini ýolbaşçy."
+  },
+  {
+    "name": "Ybraýym",
+    "origin": "Hebrew",
+    "original": "Abraham",
+    "description": "halklaryň atasy."
+  },
+  {
+    "name": "Yzbasar",
+    "description": "atasynyň yzyny‚ ornuny tutsun."
+  },
+  {
+    "name": "Ylýas",
+    "origin": "Hebrew",
+    "description": "allanyň kuwwaty."
+  },
+  {
+    "name": "Ymam",
+    "origin": "Arabic",
+    "description": "namazda öňde durýan‚ ýolbaşçy."
+  },
+  {
+    "name": "Ysmaýyl",
+    "origin": "Hebrew",
+    "description": "alla eşidýär."
+  },
+  {
+    "name": "Eýe",
+    "variants": [
+      "Ege",
+      "Egem",
+      "Eýäm"
+    ],
+    "description": "allanyň ady (eýäm‚ ýagny allam berdi)."
+  },
+  {
+    "name": "Eziz",
+    "origin": "Arabic",
+    "description": "gadyrly‚ söýgüli‚ eziz."
+  },
+  {
+    "name": "Eýýup",
+    "origin": "Hebrew",
+    "description": "hormatly."
+  },
+  {
+    "name": "Ekber",
+    "origin": "Arabic",
+    "description": "iň uly‚ iň belent."
+  },
+  {
+    "name": "Emin",
+    "origin": "Arabic",
+    "description": "ynamdar‚ wekil."
+  },
+  {
+    "name": "Emir",
+    "origin": "Arabic",
+    "description": "öňbaşçy‚ ýolbaşçy‚ hökümdar."
+  },
+  {
+    "name": "Erkin",
+    "description": "erkin ösýän."
+  },
+  {
+    "name": "Esen",
+    "description": "hasan‚ ýagny oňat."
+  },
+  {
+    "name": "Eset",
+    "variants": [
+      "Esat"
+    ],
+    "origin": "Arabic",
+    "description": "ýolbars; güýçli."
+  },
+  {
+    "name": "Ýusup",
+    "origin": "Hebrew",
+    "description": "köpelsin."
+  },
+  {
+    "name": "Ýagmyr",
+    "variants": [
+      "Ýagdy"
+    ],
+    "description": "ýagyş ýagyp durka doglan."
+  },
+  {
+    "name": "Ýagty",
+    "description": "ýagtylyk‚ nurly."
+  },
+  {
+    "name": "Ýazberdi",
+    "description": "1) Nyýazberdi; 2) ýazda doglan."
+  },
+  {
+    "name": "Ýaýlan",
+    "variants": [
+      "Ýaýlym",
+      "Ýaýyl"
+    ],
+    "description": "ýaýylsyn‚ köpelsin."
+  },
+  {
+    "name": "Ýakup",
+    "origin": "Hebrew",
+    "description": "atasynyň yzyny‚ ornuny tutsun."
+  },
+  {
+    "name": "Ýalkapberdi",
+    "variants": [
+      "Ýalkap"
+    ],
+    "description": "allanyň ýalkap bereni."
+  },
+  {
+    "name": "Ýalkym",
+    "description": "ýalkymly‚ şöhleli (täze at)."
+  },
+  {
+    "name": "Ýaradan",
+    "description": "döreden (allanyň ady)."
+  },
+  {
+    "name": "Ýaran",
+    "description": "ýoldaş‚ hemra."
+  },
+  {
+    "name": "Ýaraş",
+    "description": "ýaraşykly‚ gelşikli."
+  }
+]

@@ -8,15 +8,28 @@ Page-level Turkmen text extracted from PDF books. The collection is intended for
 
 ## Contents
 
-| Work | Source pages | Extracted characters | Files |
-| --- | ---: | ---: | --- |
-| Gökdepe galasy | 84 | 116,667 | [JSON](gokdepe-galasy/gokdepe_galasy.json) · [SQLite](gokdepe-galasy/gokdepe_galasy.db) · [MySQL](gokdepe-galasy/gokdepe_galasy.sql) |
-| Goňubek | 38 | 56,583 | [JSON](gonubek/gonubek.json) · [SQLite](gonubek/gonubek.db) · [MySQL](gonubek/gonubek.sql) |
-| Göreş | 235 | 375,230 | [JSON](goresh/chary_ashyr_-_goresh.json) · [SQLite](goresh/chary_ashyr_-_goresh.db) · [MySQL](goresh/chary_ashyr_-_goresh.sql) |
-| Şükür bagşy | 58 | 93,514 | [JSON](shukur-bagshy/nurmyrat_saryhanow_-_shukur_bagshy.json) · [SQLite](shukur-bagshy/nurmyrat_saryhanow_-_shukur_bagshy.db) · [MySQL](shukur-bagshy/nurmyrat_saryhanow_-_shukur_bagshy.sql) |
-| **Total** | **415** | **641,994** | |
+<!-- stories-contents:start -->
+| Work | Source pages | Extracted characters |
+| --- | ---: | ---: |
+| Berdi Kerbabayew Saylanan Eserler<br><a href="berdi-kerbabayew-saylanan-eserler/berdi_kerbabayew_-_saylanan_eserler.json">JSON</a> · <a href="berdi-kerbabayew-saylanan-eserler/berdi_kerbabayew_-_saylanan_eserler.db">SQLite</a> · <a href="berdi-kerbabayew-saylanan-eserler/berdi_kerbabayew_-_saylanan_eserler.sql">MySQL</a> | 335 | 534,681 |
+| Bir Soragyn Yigrimi Yyllyk Sutemi<br><a href="bir%20soragyn%20yigrimi%20yyllyk%20sutemi/allayar_churiyew_-_bir_soragyn_yigrimi_yyllyk_sutemi.json">JSON</a> · <a href="bir%20soragyn%20yigrimi%20yyllyk%20sutemi/allayar_churiyew_-_bir_soragyn_yigrimi_yyllyk_sutemi.sql">MySQL</a> | 148 | 189,084 |
+| Gokdepe Galasy<br><a href="gokdepe-galasy/gokdepe_galasy.json">JSON</a> · <a href="gokdepe-galasy/gokdepe_galasy.db">SQLite</a> · <a href="gokdepe-galasy/gokdepe_galasy.sql">MySQL</a> | 84 | 116,667 |
+| Gonubek<br><a href="gonubek/gonubek.json">JSON</a> · <a href="gonubek/gonubek.db">SQLite</a> · <a href="gonubek/gonubek.sql">MySQL</a> | 38 | 56,583 |
+| Goresh<br><a href="goresh/chary_ashyr_-_goresh.json">JSON</a> · <a href="goresh/chary_ashyr_-_goresh.sql">MySQL</a> | 235 | 375,230 |
+| Konelmeyan Soz<br><a href="konelmeyan-soz/konelmeyan-soz.json">JSON</a> · <a href="konelmeyan-soz/konelmeyan-soz.db">SQLite</a> · <a href="konelmeyan-soz/konelmeyan-soz.sql">MySQL</a> | 45 | 60,892 |
+| Magtymguly Hakynda Halk Rowayatlary<br><a href="magtymguly-hakynda-halk-rowayatlary/magtymguly_hakynda_halk_rowayatlary.json">JSON</a> · <a href="magtymguly-hakynda-halk-rowayatlary/magtymguly_hakynda_halk_rowayatlary.sql">MySQL</a> | 56 | 46,967 |
+| Nejep Oglan<br><a href="nejep-oglan/nejep_oglan_-_dessan.json">JSON</a> · <a href="nejep-oglan/nejep_oglan_-_dessan.db">SQLite</a> · <a href="nejep-oglan/nejep_oglan_-_dessan.sql">MySQL</a> | 74 | 99,415 |
+| Shukur Bagshy<br><a href="shukur-bagshy/shukur-bagshy.json">JSON</a> · <a href="shukur-bagshy/shukur-bagshy.db">SQLite</a> · <a href="shukur-bagshy/shukur-bagshy.sql">MySQL</a> | 58 | 93,514 |
+| **Total** | **1073** | **1,573,033** |
+<!-- stories-contents:end -->
 
 Counts come from the extraction metadata and include front matter, page numbers, running headers, and other text that may later be removed.
+
+Regenerate this table after adding or changing story exports:
+
+```sh
+python3 stories/update_readme_contents.py
+```
 
 ## Available formats
 

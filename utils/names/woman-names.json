@@ -1,0 +1,606 @@
+[
+  {
+    "name": "Abadan",
+    "origin": "Persian",
+    "description": "abadan‚ abadançylyk."
+  },
+  {
+    "name": "Agabeg",
+    "description": "agasynyň begi."
+  },
+  {
+    "name": "Agabike",
+    "description": "agasynyň bikesi."
+  },
+  {
+    "name": "Agagül",
+    "description": "agasynyň güli."
+  },
+  {
+    "name": "Agajemal",
+    "description": "agasynyň gözel yýasy."
+  },
+  {
+    "name": "Ajaýyp",
+    "origin": "Arabic",
+    "description": "geň‚ täsin‚ ajap."
+  },
+  {
+    "name": "Aýbahar",
+    "description": "baharda doglan aý ýaly gyz."
+  },
+  {
+    "name": "Aýbibi",
+    "description": "aý ýaly owadan gyz."
+  },
+  {
+    "name": "Aýbike",
+    "description": "aý ýaly gözel gyz."
+  },
+  {
+    "name": "Aýbölek",
+    "description": "aýyň bölegi."
+  },
+  {
+    "name": "Aýbäbek",
+    "description": "aý ýaly çaga."
+  },
+  {
+    "name": "Aýgözel",
+    "description": "aý ýaly gözel."
+  },
+  {
+    "name": "Aýdolan",
+    "description": "aý dolanda doglan."
+  },
+  {
+    "name": "Aýjahan",
+    "description": "älem-jahanyň aýy."
+  },
+  {
+    "name": "Aýjemal",
+    "description": "aý ýaly gözel."
+  },
+  {
+    "name": "Aýna",
+    "description": "1) Anna‚ Adine (a.); 2) aýna ýaly gözel‚ päkize."
+  },
+  {
+    "name": "Aýnabat",
+    "description": "aý ýaly gözel‚ nabat ýaly süýji."
+  },
+  {
+    "name": "Aýnur",
+    "description": "aýyň nury."
+  },
+  {
+    "name": "Aýogul",
+    "description": "aý ýaly gözel gyzyň yzyndan ogul bolsun."
+  },
+  {
+    "name": "Aýperi",
+    "description": "aý ýaly gözel peri."
+  },
+  {
+    "name": "Aýsenem",
+    "description": "aý ýaly owadan."
+  },
+  {
+    "name": "Aýsere",
+    "description": "aý ýaly gözelleriň seresi."
+  },
+  {
+    "name": "Aýsoltan",
+    "description": "aý ýaly gözelleriň soltany."
+  },
+  {
+    "name": "Aýsuluw",
+    "description": "aý ýaly owadan (suluw — «owadan»‚ «gözel»)."
+  },
+  {
+    "name": "Aýtuwak",
+    "description": "perdede doglan aý ýaly gyz."
+  },
+  {
+    "name": "Aýtäç",
+    "description": "täçli‚ aý ýaly gyz."
+  },
+  {
+    "name": "Aýçemen",
+    "description": "aý ýaly owadan; gülleriň çemeni."
+  },
+  {
+    "name": "Akbibi",
+    "description": "bagtly we mähriban gyz ýa-da bagtly hanym."
+  },
+  {
+    "name": "Akbike",
+    "description": "bagtly gyz‚ bagtly hanym."
+  },
+  {
+    "name": "Akbäbek",
+    "description": "bagtly çaga."
+  },
+  {
+    "name": "Akgözel",
+    "description": "bagtly‚ gözel çaga."
+  },
+  {
+    "name": "Akgül",
+    "description": "bagtly‚ gül ýaly gyz."
+  },
+  {
+    "name": "Akjahan",
+    "description": "bagtly we açyk‚ giň göwrümli gyz."
+  },
+  {
+    "name": "Akjemal",
+    "description": "bagtly we owadan gyz."
+  },
+  {
+    "name": "Akmaral",
+    "description": "bagtly we gözel gyz."
+  },
+  {
+    "name": "Akmaýa",
+    "description": "bagtly we maýa ýaly ýuwaş."
+  },
+  {
+    "name": "Akmeňli",
+    "description": "bedeninde meňi bolan bagtly gyz."
+  },
+  {
+    "name": "Aknabat",
+    "description": "bagtly we süýji dilli."
+  },
+  {
+    "name": "Akpamyk",
+    "description": "bagtly we pamyk ýaly mylaýym."
+  },
+  {
+    "name": "Alma",
+    "description": "alma ýaly."
+  },
+  {
+    "name": "Altyn",
+    "description": "gymmat bahaly."
+  },
+  {
+    "name": "Arzuw",
+    "description": "arzuw bilen ýetilen."
+  },
+  {
+    "name": "Bahar",
+    "description": "baharda doglan‚ şadyýan."
+  },
+  {
+    "name": "Bibi",
+    "description": "hanym‚ gyz dogan."
+  },
+  {
+    "name": "Bike",
+    "description": "hanym‚ begim."
+  },
+  {
+    "name": "Bilbil",
+    "description": "saýrak dilli‚ şol owaz."
+  },
+  {
+    "name": "Bossan",
+    "description": "gözel‚ bagy-bossan ýaly ýakymly."
+  },
+  {
+    "name": "Geňlik",
+    "description": "geň‚ täsin gyz."
+  },
+  {
+    "name": "Göwher",
+    "description": "gymmat bahaly‚ gözel."
+  },
+  {
+    "name": "Gunça",
+    "description": "gülüň gunçasy."
+  },
+  {
+    "name": "Gül",
+    "description": "gül ýaly owadan."
+  },
+  {
+    "name": "Gymmat",
+    "origin": "Arabic",
+    "description": "gymmat bahaly."
+  },
+  {
+    "name": "Gyrmyzy",
+    "description": "gözel‚ owadan."
+  },
+  {
+    "name": "Datly",
+    "description": "süýji‚ şirin dilli."
+  },
+  {
+    "name": "Dessegül",
+    "description": "gülüň dessesi owadan‚ gözel."
+  },
+  {
+    "name": "Doýduk",
+    "description": "gyzymyz ýeterlik."
+  },
+  {
+    "name": "Döndi",
+    "description": "şu gyzyň yzyndan ogul bolsun (ogla dönsün)."
+  },
+  {
+    "name": "Dünýä",
+    "description": "dünýä ýaly owadan."
+  },
+  {
+    "name": "Dünýägözel",
+    "description": "dünýäde iň gözel."
+  },
+  {
+    "name": "Dürjemal",
+    "description": "dür ýaly gözel‚ owadan‚ gymmat bahaly."
+  },
+  {
+    "name": "Dürli",
+    "description": "1) şu gyzyň yzyndan ogul bolsun (dürlülensin); 2) Dürjemal ýaly goşma adyň gysgalan görnüşi."
+  },
+  {
+    "name": "Ýeter",
+    "description": "gyzmyz ýeterlik‚ indi ogul bolsun."
+  },
+  {
+    "name": "Jahan",
+    "origin": "Arabic",
+    "description": "dünýä‚ ýagty giň göwrümli ýa-da iň owadan."
+  },
+  {
+    "name": "Jemal",
+    "variants": [
+      "Jemile"
+    ],
+    "origin": "Arabic",
+    "description": "owadanlyk‚ görkem‚ gelşikli."
+  },
+  {
+    "name": "Jennet",
+    "origin": "Arabic",
+    "description": "behişt‚ uçmah."
+  },
+  {
+    "name": "Jeren",
+    "description": "jeren ýaly owadan‚ gelşikli."
+  },
+  {
+    "name": "Jeýran",
+    "description": ""
+  },
+  {
+    "name": "Zeýnep",
+    "origin": "Arabic",
+    "description": "doly‚ dolmuş ýa-da belent‚ güýçli."
+  },
+  {
+    "name": "Zöhre",
+    "origin": "Arabic",
+    "description": "ýagty‚ ýaldyrawyk (daň ýyldyzy)."
+  },
+  {
+    "name": "Zyba",
+    "origin": "Persian",
+    "description": "owadan‚ görkli."
+  },
+  {
+    "name": "Zylyha",
+    "origin": "Arabic",
+    "description": "manysy belli däl‚ ähtimal‚ ýakyn garyndaş."
+  },
+  {
+    "name": "Kamar",
+    "origin": "Arabic",
+    "description": "aý‚ ýagny owadan‚ ýüzi nuly."
+  },
+  {
+    "name": "Keýik",
+    "description": "keýik ýaly çalasyn‚ owadan‚ görmegeý."
+  },
+  {
+    "name": "Kümüş",
+    "description": "gymmat bahaly‚ gözel."
+  },
+  {
+    "name": "Leýli",
+    "origin": "Arabic",
+    "description": "liliýa (gül)‚ ýagny owadan‚ gözel."
+  },
+  {
+    "name": "Läle",
+    "description": "gül‚ gülzar."
+  },
+  {
+    "name": "Maýsa",
+    "description": "maýsa (bahar) wagty doglan ýa-da owadan‚ göwün açyk."
+  },
+  {
+    "name": "Mama",
+    "description": "mamasynyň ady dakylan ýa-da mama bolsun."
+  },
+  {
+    "name": "Maral",
+    "description": "maral ýaly owadan‚ gelşikli."
+  },
+  {
+    "name": "Mahym",
+    "origin": "Persian",
+    "description": "aý‚ meniň aýym."
+  },
+  {
+    "name": "Maýa",
+    "description": "maýa ýaly ýuwaş‚ owadan."
+  },
+  {
+    "name": "Merjen",
+    "origin": "Arabic",
+    "description": "gymmat bahaly‚ owadan."
+  },
+  {
+    "name": "Miwe",
+    "description": "miwe ýaly süýji‚ şirin dilli."
+  },
+  {
+    "name": "Mugja",
+    "description": "gülgüň gunçasy."
+  },
+  {
+    "name": "Mylaýym",
+    "description": "ýuwaş‚ mylaýym."
+  },
+  {
+    "name": "Mähri",
+    "origin": "Persian",
+    "origin_note": "parsça «mah-ruý»",
+    "description": "aý ýüzli‚ owadan."
+  },
+  {
+    "name": "Nabat",
+    "origin": "Arabic",
+    "description": "şirin-şeker‚ süýji dilli."
+  },
+  {
+    "name": "Nowbahar",
+    "variants": [
+      "Nopar"
+    ],
+    "origin": "Persian",
+    "description": "täze bahar‚ ýagny baharda doglan."
+  },
+  {
+    "name": "Nurjahan",
+    "origin": [
+      "Arabic",
+      "Persian"
+    ],
+    "description": "dünýä şöhle saçýan‚ jahanyň nury."
+  },
+  {
+    "name": "Näzik",
+    "description": "mylaýym‚ näzik."
+  },
+  {
+    "name": "Owadan",
+    "description": "gözel‚ görmegeý."
+  },
+  {
+    "name": "Ogul",
+    "note": "ogulbagt",
+    "description": "şu gyzyň yzyndan ogul bolsun."
+  },
+  {
+    "name": "Otaga",
+    "description": "belent mertebeli‚ başyň täçi."
+  },
+  {
+    "name": "Pamyk",
+    "description": "mylaýym‚ hoş gylykly."
+  },
+  {
+    "name": "Parahat",
+    "origin": "Arabic",
+    "description": "ýuwaş‚ asuda‚ bagtly."
+  },
+  {
+    "name": "Parça",
+    "description": "ýüpek ýaly ýümşak‚ mylaýym."
+  },
+  {
+    "name": "Patma",
+    "origin": "Arabic",
+    "description": "süýtden aýrylan."
+  },
+  {
+    "name": "Sadap",
+    "origin": "Arabic",
+    "description": "1) sadap ýaly owadan; 2) dişli doglan."
+  },
+  {
+    "name": "Sapdy",
+    "note": "Ogulsapdy",
+    "description": "şu gyzyň yzyndan ogul bolsun (ogul sapsyn)."
+  },
+  {
+    "name": "Selbi",
+    "variants": [
+      "Serwi"
+    ],
+    "description": "serwi ýaly gelşikli‚ syratly‚ owadan."
+  },
+  {
+    "name": "Senewer",
+    "variants": [
+      "Senuber"
+    ],
+    "origin": "Persian",
+    "description": "sosna‚ sosna ýaly uzyn boýly‚ gelşikli."
+  },
+  {
+    "name": "Senem",
+    "origin": "Arabic",
+    "description": "gözel‚ görkli."
+  },
+  {
+    "name": "Sere",
+    "description": "görkli‚ gyzlaryň seresi."
+  },
+  {
+    "name": "Solmaz",
+    "description": "güllesin‚ ölmesin."
+  },
+  {
+    "name": "Sona",
+    "description": "sona ýaly owadan‚ görmegeý."
+  },
+  {
+    "name": "Suraý",
+    "origin": "Arabic",
+    "description": "owadan‚ şöhleli (Suraýýa — ýyldyz ady)."
+  },
+  {
+    "name": "Sülgün",
+    "description": "sülgün ýaly owadan‚ görmegeý."
+  },
+  {
+    "name": "Sähra",
+    "description": "sähra ýaly açyk‚ giň."
+  },
+  {
+    "name": "Sähragül",
+    "description": "sähranyň güli‚ gözel."
+  },
+  {
+    "name": "Tawus",
+    "description": "tawus ýaly owdan‚ gözel‚ gelşikli."
+  },
+  {
+    "name": "Taňgül",
+    "description": "geň gül‚ owdan‚ täsin gözel."
+  },
+  {
+    "name": "Tawşan",
+    "description": "ullakan gözel‚ çalasyn."
+  },
+  {
+    "name": "Toty",
+    "description": "toty ýaly owadan‚ saýrak."
+  },
+  {
+    "name": "Tumar",
+    "description": "eý görülýän‚ guwanylýan."
+  },
+  {
+    "name": "Tylla",
+    "description": "gymmat bahaly."
+  },
+  {
+    "name": "Uzuk",
+    "description": "owadan‚ gelşikli‚ görmegeý."
+  },
+  {
+    "name": "Hajar",
+    "origin": "Hebrew",
+    "description": "göçe‚ göçüp ýören."
+  },
+  {
+    "name": "Hajat",
+    "variants": [
+      "Ogulhajat"
+    ],
+    "description": "ogul gerek."
+  },
+  {
+    "name": "Hatyja",
+    "origin": "Arabic",
+    "description": "ir doglan."
+  },
+  {
+    "name": "Hezzet",
+    "variants": [
+      "Ezzet"
+    ],
+    "description": "hezzetli‚ hormata mynasyp."
+  },
+  {
+    "name": "Hesel",
+    "origin": "Arabic",
+    "description": "bal‚ süýji dilli."
+  },
+  {
+    "name": "Humaý",
+    "origin": "Persian",
+    "description": "bagt guşy‚ owadan."
+  },
+  {
+    "name": "Hurma",
+    "description": "hurma ýaly süýji‚ şirin dilli."
+  },
+  {
+    "name": "Hüýrjemal",
+    "origin": "Arabic",
+    "description": "peri ýaly gözel."
+  },
+  {
+    "name": "Çebşek",
+    "description": "tawşanyň çagasy‚ gözi ullakan."
+  },
+  {
+    "name": "Çemen",
+    "description": "gül dessesi‚ görkli‚ gözel."
+  },
+  {
+    "name": "Çynar",
+    "description": "çynat ýaly uzyn boýly‚ syratly."
+  },
+  {
+    "name": "Çäjek",
+    "variants": [
+      "Jäjek"
+    ],
+    "description": "owadan‚ täsin."
+  },
+  {
+    "name": "Şeker",
+    "description": "şirin-şerbet‚ süýji dilli."
+  },
+  {
+    "name": "Şemşat",
+    "origin": "Persian",
+    "description": "şemşat agajy ýaly suratly‚ gözel."
+  },
+  {
+    "name": "Ybagül",
+    "description": "ybagül‚ ýagny akylly‚ owadan."
+  },
+  {
+    "name": "Eje",
+    "variants": [
+      "Ejegül"
+    ],
+    "description": "enesiniň ýa-da mamasynyň ady dakylan."
+  },
+  {
+    "name": "Ene",
+    "description": "enesiniň ady dakylan."
+  },
+  {
+    "name": "Äşe",
+    "variants": [
+      "Aýşa"
+    ],
+    "origin": "Arabic",
+    "description": "ýaşaýan‚ ýaşagyç‚ jany berk."
+  },
+  {
+    "name": "Ýaňyl",
+    "description": "täzelen‚ ýagny indi ogul bolsun."
+  }
+]
