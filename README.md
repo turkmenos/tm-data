@@ -37,6 +37,20 @@ Contributions may include new datasets, corrections, sources, translations, or a
 4. Preserve the Turkmen alphabet in UTF-8 and check for duplicates where possible.
 5. Do not include private, sensitive, or non-redistributable data.
 
+## Bluesky bot
+
+When a new data file is pushed to `main`, the GitHub Action posts its path, a short
+content preview, and a permanent GitHub link to Bluesky. Binary files are posted
+with their name and size instead of a content preview.
+
+Configure these repository secrets under **Settings → Secrets and variables →
+Actions**:
+
+- `BLUESKY_HANDLE` — the bot account handle, for example `bot.bsky.social`
+- `BLUESKY_APP_PASSWORD` — an app password created in the Bluesky account settings
+
+Use an app password rather than the account's main password.
+
 ## Ideas for future datasets
 
 - Proverbs, sayings, and riddles with topic labels
