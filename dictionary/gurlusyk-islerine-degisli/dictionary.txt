@@ -1,0 +1,3008 @@
+Абак                                        Abak (sütüniň plita görnüşli ýokarky bölegi)
+Абразивный материал                         Abraziw (ýüzi üpürdik) material
+Абсолют                                     Absolýut, üýtgewsiz
+Абсолютное значение                         Absolýut bahasy
+Абсолютное удлинение                        Absolýut uzalma
+Абсолютно твердое тело                      Absolýut gaty jisim
+Абсорбный материал                          Siňdiriji material
+Абстрактное понятие                         Howaýy düşünje
+Аббревиатура                                Abbrewiatura(baş harplar arkaly gysgaltma, meselem- TGK, СНТ…)
+Аванпроект                                  Deslapky taslama
+Аварийное состояние                         Howply ýagdaý
+Аварийное здание                            Howply ýagdaýdaky desga
+Автогенная сварка                           Awtogen kebşirleýiş
+Автоклавная обработка                       Ýokary temperaturaly bugda guradyş
+Автоколебания                               Awtoyrgyldylar
+Aвтокран                                    Awtomobil-göteriji kran
+Автоматизированный процесс                  Awtomatlaşdyrlan hadysa
+Автоматизированное проектирование           Awtomatlaşdyrlan taslaýyş
+Автоматизация в строительстве               Gurluşykda awtomatlaşdyrma
+Авторитетное решение                        Abraýly, tanymal çözgüt
+Авторский надзор                            Awtor gözegçiligi
+Авторские права                             Awtorlyk hukuklary
+Агрессивная жидкость                        Agressiw(iýiji) suwuklyk
+Агрессивность подпочвенных вод              Ýerasty suwlaryň iýijiligi
+Адсорбный материал                          Sorujy material
+Акведук                                     Çuň jardan suw geçiriji desga
+Аккордная оплата труда                      Potrat zähmet haky
+Акр                                         Akr, 4047м 2 barabar meýdan ölçegi
+Акт                                         Resmi iş kagyzy
+Акт приемки                                 Kabul ediş resminamasy
+Акт на скрытые работы                       Ýapyk işleriň resminamasy
+Активные силы                               Aktiw gūýćler
+Актировать                                  Resmileşdirmek
+Актуальность                                Derwaýyslyk
+Акцентировать                               Nygtamak
+Алебастр                                    Gurluşyk gipsi
+Алидада                                     Alidada (burç ölçeýji gurallaryň graduslara bölünen tegelek halkasy)
+Аллювий                                     Gyrmança, suw akymynyň çökündileri
+Альтернатива                                Alternatiwa, saýlama mümkinçiligi
+Альтернативное решение                      Alternatiw çözgüt
+Амортизация                                 Ulanmakdan hil peselmesi, könelişme
+Амортизационные отчисления                  Ulanmakdan gymmat peselmesi
+Амплитуда цикла                             Sikliň amplitudasy
+Анализ                                      Derňew, derňeme, gözden geçirme
+Анализ геометрической неизменяемости        Geometriki üýtgewsizligiň derňewi
+Анализ сооружений                           Desgalaryň derňewi
+Анализ статической неопределимости          Statiki kesgitsizligiň derňewi
+Аналогичный                                 Meňzeş, birmeňzeş
+Ангстрем                                    Santimetriň ýüz milliondan biri
+Анкер                                       Anker, gömme detal 1
+Анкеровка                                   Çuňlaşdyrmak, gömmek
+Анкерный болт                               Gömme bolt
+Анкета                                      Anketa, maglumat sowalnamasy
+Аннулирование                               Ýatyrma, güýjini ýitirme
+Анизотропные тела                           Anizotrop jisimler
+Аналитический метод                         Analitik usul
+Антивибрационные мероприятия                Titremä garşy çäreler
+Антикоррозийный                             Poslamaklyga garşy
+Антисанитарный                              Sanitariýa talaplaryna garşy
+Антисейсмические мероприятия                Seýsmika garşy çäreler
+Антисептические средства                    Zyýansyzlandyryjy serişdeler
+Антисейсмический шов                        Seýsmika garşy sep
+Антресоль                                   Petigasty tekje
+Антропосфера                                Adam ýaýrawy, giňişligi
+Апелляция                                   Arza bermek, şikaýat etmek, ýüz tutmak
+Апогей                                      Ellipsiň merkezden iň uzaklaşan nokady
+Аппаратура                                  Gurluşlar, enjamlar
+Апробация                                   Aprobirleme, synap görme
+Ар                                          Ar, 100m 2 barabar meýdan ölçegi
+Арбитраж                                    Arbitraž, ylalaşdyryjy
+Аргумент                                    Argument, esas, delil
+Аренда                                      Kärende, kireý
+Арендный договор                            Kärende şertnamasy
+Арендование                                 Kärendesine almak
+Арендодатель                                Kireýine beriji
+Ареометр                                    Suwuklygyň dykyzlygyny ölçeýji gural
+Аритмичность                                Sazlaşyksyzlyk, näsazlyk
+Арифметика                                  Arifmetika, hasap, hasap-hesip
+Арматурный выпуск                           Armatura çykyntgysy
+Арматурные работы                           Armatura işleri
+Арматурные стержни                          Armatura syryklary
+Арматурная сетка                            Armatura tory
+Армирование кладки                          Örümiň armirlenişi
+Архаичность                                 Könelik, gadymylyk
+Археологический                             Arheologik, gadymyýetçilik
+Архи                                        Iň ýokary, aňrybaş
+Архипелаг                                   Arhipelag, adalyk
+Архитектор                                  Arhitektor, binagär
+Архитектура                                 Arhitektura, binagärçilik
+Архитектурные решения                       Binagärçilik çözgütleri
+Арка                                        Arka, egme
+Аркада                                      Arkalar hatary
+Арка с затяжкой                             Dartyly arka
+Арочный мост                                Arkaly köpri
+Асбест                                      Asbest, oda çydamly süýümli mineral
+Асимметричный цикл                          Asimmetrik (simmetrik däl) sikl
+Аспект                                      Nukdaýnazar, jäht
+Аспиратор                                   Gazy, howany sorujy enjam
+Ассигнование средств                        Pul serişdelerini goýbermek
+Ассистент                                   Assistent, kömekçi
+Астролябия                                  Burç ölçeýji gural
+Асфальт                                     Asfalt, gara ýoluň ýüzleýji düşegi
+Асфальтобетон                               Asfaltobeton (çagyl, çäge we asfalt garyndysy)
+Атмосфера                                   Atmosfera, howagurşaw
+Атмосферные осадки                          Atmosfera ygallry 2
+Атмосферные условия                         Atmosfera şertleri
+Аттестация                                  Attestasiýa, hünär synagy
+Ацетилен                                    Asetilen(uglerod we kisloroddan ybarat gaz)
+Аэрация                                     Aerasiýa, jaýyň howasyny täzeleme
+Баббит                                      Galaýynyň mis we sürme garylan ergini
+Багет                                       Çarçuwa we karniz ýasamak üçin ulanylýan nagyşly tagta
+Бадейка                                     Agaç bedrejik
+Бадья                                       Beton göterilýän gap
+База колонны                                Sütüniň düýbi, aşaky bölegi
+Базис                                       Bazis, esas
+Бак                                         Bak, gap
+Бакелит                                     Sintetik smola
+Бакен                                       Derýalarda, köllerde howply ýerleri görkezmek üçin goýulýan belgi
+Баланс                                      Deňagramlylyk, deňagramlylygy saklamak
+Балансир                                    Deňagramlaşdyryjy, barabarlaşdyryjy
+Балка                                       Balка, balаr
+Балка с консолью                            Ganatly balka
+Балка равного сопротивления                 Deňgarşylykly balka
+Балка наименьшего веса                      Iň ýeňil agramly balka
+Балка наибольшего сопротивления             Iň ýokary garşylykly balka
+Балкон                                      Balkon, jaýdan öňe çykýan eýwan
+Балласт                                     Ballast, leňňer, artyk ýük
+Баллон                                      Ballon, gysylan gazly gap
+Балюстрада                                  Balkonyň, eýwanyň, basgançagyň we ş.m. owadanlyk üçin agaç germewi
+Бареттер                                    Toguň güýjini kadalaşdyryjy gurluş
+Бархан                                      Alaň, aňňat
+Бетонирование                               Betonlama
+Безапелляционность                          Çürt-kesiklik, gutarnyklylyk, gürrüňsizlik
+Безбалочное перекрытие                      Balkasyz aralyk ýapgy
+Безграмотность                              Sowatsyzlyk, çala sowatlylyk
+Безграничность                              Çäksizlik, çensizlik, çakdanaşalyk
+Бездействие                                 Işsizlik, bikärlik, täsirsizlik
+Бездеятельность                             Başarnyksyzlyk, hereketsizlik
+Бездоказательность                          Subutsyzlyk, delilsizlik, esassyzlyk
+Беззаконность                               Kanunsyzlyk, bikanynlyk
+Безнадзорность                              Gözegçiliksizlik, idegsizlik
+Безналичный                                 Nagt däl, nagt nölegsiz
+Безнапорный трубопровод                     Basyşsyz turba geçirijisi
+Безопасность                                Howpsuzlyk
+Безопасные приемы труда                     Howpsyz zähmet usullary
+Безосновательность                          Esassyz, delilsiz, subut edilmedik
+Безответственность                          Jogapkärsizlik, jogapkärçiliksizlk
+Безотлагательно                             Gijikdirmän, gaýra goýman, haýal etmän
+Безотрывный                                 Aýrylman, üznüksiz, arakesmesiz
+Безотходная переработка древесины           Agajy galyndysyz işläp bejermek
+Безотходная технология                      Galyndysyz tilsimat
+Безошибочность                              Yalňyşsyzlyk, hatasyzlyk
+Безразмерная система координат              Biölçeg koordinatlar ulgamy
+Безразличная форма равновесия               Deňagramlylygyň parhsyz görnüşi 3
+Безрасчетность                              Hasapsyzlyk, bihasaplyk
+Безрезультатность работы                    Işiň netijesizligi
+Безупречность работы                        Işiň birkemsizligi
+Безотходная технология                      Galyndysyz tilsimat
+Бельведер                                   Diň, minara
+Бельэтаж                                    Teatrda ložanyň parter bilen barabar aşaky gaty
+Бентонит                                    Magdan toýun
+Бережливость                                Tygşytlylyk, aýawlylyk, hasaplylyk
+Берилл                                      Zümmeret, akwamarin ýaly minerallar
+Беседка                                     Dalbar, telär
+Бесконтактность                             Gatnaşyksyzlyk
+Бесконтрольность                            Derňewsizlik, barlagsyzlyk
+Бесконфликтность                            Jedelsizlik, gapma-garşylyksyzlyk
+Бесперебойность                             Bökdençžsizlik, üznüksizlik
+Бесперспективность                          Perspektiwasyzlyk, gelejegi ýokluk
+Бесплановость                               Plansyzlyk, meýilnamasyzlyk
+Бесполезность                               Peýdasyzlyk, haýyrsyzlyk
+Беспорядочность                             Tertipsizlik, düzgünsizlik
+Беспочвенность                              Esassyzlyk, delilsizlik
+Бесправность                                Hukuksyzlyk
+Беспредельность                             Çäksizlik, serhetsizlik
+Беспрепятственность                         Päsgelsizlik, erkinlik, garşylyksyzlyk
+Беспрерывность                              Dyngysyzlyk, üznüksizlik
+Беспрецедентный                             Görülmedik, deňi-taýy bolmadyk
+Беспричинность                              Sebäpsizlik, esassyzlyk
+Бессистемность в работе                     Işde yzygiderliksizlik
+Бесспорность                                Jedelsizlik, gürrüňsizlik, şübhesizlik
+Бестарная перевозка                         Gapsyz, gaba salynman daşaýyş
+Бесформенность                              Formasyzlyk, şekilsizlik
+Бесхозяйственность                          Eýeçiliksizlik, hojalykçy dällik
+Бесчисленность                              San-sajaksyzlyk, örän köplük
+Бетономешалка                               Beton garyjy
+Бетонная смесь                              Beton garyndysy
+Бетонные работы                             Beton işleri
+Бетонирование                               Betonlama, betonlamak
+Бетонная подготовка                         Beton düşegi
+Бетонщик                                    Betonçy
+Биметаллы                                   Iki dürli metal garyndysyndan ýa-da splawlardan ybarat metal materriallar
+Бимомент                                    Ikileýin moment
+Бином                                       Binom, ikiçlen
+Бифуркация                                  Ikä aýrylma, ikä bölünme
+Благоустройство                             Abadanlaşdyrma
+Бойлер                                      Suw gyzdyrylýan gurluş
+Болото                                      Batga, batgalyk
+Болт                                        Bolt, hyrly myh
+Большегрузный                               Köp ýük göterýän, köp ýük daşaýan
+Большепролетный мост                        Uly gerimli köpri
+Бордюр                                      Ýoluň, ýodanyň jähegi
+Бочка                                       Çelek
+Брак                                        Kemçilikli, zaýa
+Бревно                                      Pürs, togalak agaç
+Бригада                                     Brigada, topar
+Бригадир                                    Brigadir, topar ýolbaşçysy 4
+Бригадный подряд                            Brigadalaýyn potrat
+Бровка тротуара                             Ýan ýodanyň jähegi
+Бронза                                      Bürünç
+Брус                                        Pürs
+Бруствер                                    Çukuryň gyrasyndaky gum üýşmegi
+Брусчатка                                   Daş düşelen ýol
+Брутто                                      Brutto, gaply agram
+Буксировка                                  Tirkege alma, süýrege alma
+Бульвар                                     Bulwar, şäheriň giň köçeleriniň ortasyndaky bag ekilen zolak
+Бурение                                     Burawlama, burawlap deşme
+Буровзрывные работы                         Partlama-gazuw işleri
+Буссоль                                     Burç ölçeýji geodeziki gural
+Бутовый камень                              But daşy
+Бутовая кладка стен                         But daşyndan örülen diwar
+Важность                                    Möhümlik, wajyplyk, zerurlyk
+Вакуум                                      Wakuum, boşluk
+Вал                                         Ok, çarh
+Валик                                       Oklawjyk, çarhjagaz
+Ванная сварка                               Wannaly kebşir
+Ванты                                       Polat tros, tanap
+Вариант                                     Wariant, görnüş
+Вариантное проектирование                   Köp görnüşli taslama
+Вариация                                    Üýtgeşme, özgerme
+Ватерпас                                    Kerpiç örmekde gorizontallygy görkezýän gural
+Вахта трудовая                              Zähmet wahtasy
+Ваяние                                      Skulptura, heýkel sungaty
+Ваятель                                     Heýkeltaraş
+Введение в курс дела                        Işiň ýagdaýy bilen tanyşdyrma
+Ввинчивание                                 Towlap girizme
+Ввод водопровода                            Suw geçirijisiniň girmeli ýeri
+Ввод в действие                             Işe girizme, tabşyrma
+Вглубь                                      Çuňlugyna, jümmüşine
+Вдалбливание                                Urup sokma, kakyp girizme
+Вдоль                                       Uzaboýuna, uzynlygyna
+Ведомость                                   Wedomost, sanawnama
+Ведущий                                     Alyp baryjy, öňdebaryjy
+Вектор                                      Wektor
+Векторная величина                          Wektor ululyk
+Век                                         Asyr, ýüz ýyl
+Вентиль                                     Wentil, açyp-ýapyjy
+Вентиляция                                  Howa çalyşygy
+Вентиляционная шахта                        Howany sorujy guýy
+Веранда                                     Eýwan
+Вердикт                                     Karar, höküm
+Вероятность события                         Wakanyň ähtimallygy
+Вероятность точности                        Takyklygyň ähtimallygy
+Верста                                      Çakyrym, 1.06 km uzynlk ölçegi
+Верстак                                     Werstak, ussanyň iş stoly
+Вертикаль                                   Dik, dik çyzyk
+Вертикальность колонны                      Sütüniň dikligi 5
+Вершина                                     Depe, baş
+Вес                                         Agram
+Весомость                                   Agramlylyk, saldamlylyk
+Весы                                        Terezi, gapan
+Ветвь                                       Şaha, pudak
+Ветка                                       Gol, aýyrt
+Ветер                                       Ýel
+Ветровая нагрузка                           Ýel ýüki
+Ветхий                                      Çagşan, könelen
+Вещество                                    Madda
+Взаимность работ                            Işleriň özaralygy
+Взаимность перемещений                      Orun ūýtgemeleriň özaralygy
+Взаимовыгодность                            Özara peýdalylyk, bähbitlilik
+Взаимодействие                              Özara baglanyşyk, özara täsir
+Взаимозаменяемость                          Biri-biriniň deregini tutujylyk
+Взаимоотношение                             Özara gatnaşyk
+Взаиморасчеты                               Özara hasaplaşyk
+Взамен                                      Deregine, ýerine, öwezine
+Взыскательность                             Talapkärlik, talap edijilik
+Виадук                                      Köpri, geçelge
+Вибратор                                    Wibrator, titreme dykyzlandyryjysy
+Вибрация                                    Titreme
+Виброгаситель                               Titremäni söndüriji
+Виброзащита                                 Titremeden gorama
+Видоизменение                               Görnüşiň üýtgemegi
+Виды работ                                  Işleriň görnüşleri
+Виза                                        Wiza, ygtyýarnama
+Визуальный осмотр                           Görüp synlamak
+Визуальная оценка                           Synlap baha bermek
+Винт                                        Nurbat
+Винтовая лестница                           Aýlawly merdiwan
+Вира                                        «Ýokary galdyr» manyly söz
+Висячий мост                                Asma köpri
+Вклад                                       Pul, goýum, goşant
+Вклеить                                     Ýtlmemek, ýelmeşdirmek
+Вклепать                                    Berçinlemek
+Вклинить                                    Pahnalamak, pahna kakmak
+Влажность                                   Çyglylyk
+Вместимость                                 Sygymlylyk, göwrümlilik
+Вмятина                                     Ýemşik, ýepbeşik
+Внаем                                       Kireýne
+Внедрение                                   Girizme, ornaşdyrma
+Внешний контур                              Daşky sudur
+Внешняя сила                                Daşky gūýć
+Внешнее воздействие                         Daşky täsir
+Внецентренное сжатие                        Merkezi däl gysylma
+Внутреннее усилие                           Ićki gūýć
+Вогнутый                                    Oýuk, çukanak
+Водоем                                      Howdan
+Водозаборное сооружение                     Suw alyjy desga, gatla
+Водопровод                                  Suw geçirijisi
+Водомер                                     Suw ölçeýjisi
+Водонагреватель                             Suw gyzdyryjy
+Водонапорная башня                          Suw diňi
+Водопроницаемость                           Suw syzyjylyk 6
+Водонепроницаемость                         Suw syzmazlyk
+Водоотвод                                   Suw sowujy, suw akdyryjy
+Водопонижение                               Suwuň derejesini peseltmek
+Водопровод                                  Suw geçirijisi
+Водосброс                                   Artykmaç suwy akdyryjy desga
+Водоснабжение                               Suw üpjünçiligi
+Водохранилище                               Suw howdany
+Водоэмульсионная краска                     Suw-emulsiýaly reňk
+Военно-инженерное сооружение                Harby-inženerçilik desgasy
+Возведение                                  Galdyrmak, dikeltmek
+Возглавить                                  Baştutanlyk etmek
+Воздуходувка                                Howa üfleýji
+Воздухонагреватель                          Howa gyzdyryjy
+Воздухообмен                                Howa çalşygy
+Воздухопроницаемость                        Howa syzdyryjylyk
+Возмещение ущерба                           Etirilen zyýanyň öwezini dolmak
+Возникновение                               Döreme, ýüze çykma
+Возобновление                               Täzeden başlama, gaýtadan başlama
+Возражение                                  Närazylyk, ylalaşmazlyk
+Вокзал                                      Wokzal, menzil
+Волна                                       Tolkun
+Волнорез                                    Tolkunlardan goraýan gaçy
+Волокно                                     Sūýūm, damar, tar
+Воронка                                     Guýguç
+Ворота                                      Derweze
+Воспроизводство                             Gaýtadan döretme, üznüksiz önümçilik
+Восстановление                              Dikeltmek
+Востребование                               Berilmegini talap etme
+Восьмигранник                               Sekizgyraňlyk
+Восьмиугольник                              Sekizburçluk
+Восходящая линия                            Beýgelýän, ýokary galýan çyzyk
+Впитывание                                  Siňdirme, sorup alma
+Вплотную                                    Degişdirip, jebis
+Впритирку                                   Degip, galtaşyp
+Впритык                                     Mäkäm degrip, jebis
+Вращательное движение                       Aýlanyş hereketi
+Вращательная сила                           Aýlandyryjy güýç
+Вредное производство                        Saglyga zyýanly önümçilik
+Врезка                                      Oýup oturtma, köwüp oturtma
+Врезной замок                               Köwüp oturdylýan gulp
+Временная нагрузка                          Wagtlaýyn ýūk
+Временное сопротивление                     Wagtlaýyn garşylyk
+Временное сооружение                        Wagtlaýn desgalar
+Времяисчисление                             Wagt hasaby, sene, ýyl hasaby
+Времянка                                    Wagtlaýyn jaý
+Вровень с краями                            Gyralary bilen deň
+Врубка                                      Kertip sepleme, köwüp oturtma
+Вручную                                     Elde, el bilen, el güýji bilen
+Всевозможные варианты                       Her hili, mümkingadar ähli wariantlar
+Всестороннее обоснование                    Her taraplaýyn esaslandyrma
+Вскрытие недостатков                        Kemçilikleriň üstini açma
+Вспучивание                                 Güberme, pökgerme
+Встроенный                                  Içinden gurulan
+Второсортный материал                       Ikinji sortly material
+Второстепенная балка                        Ikinji derejeli balka 7
+Вторсырье                                   Gaýtadan işlenilmeli çig mal
+Вулкан                                      Wulkan, ýanardag, patlawuk
+Вход основной                               Esasy girelge
+Входная дверь                               Girilýän gapy, daşky gapy
+Вширь                                       Inine, inliligine, giňligine
+Въезд                                       Ulag girelgesi
+Выбоина                                     Çukanak, oý, çöket
+Выбор материала                             Materialy saýlap-seçme
+Выборка материалов                          Materiallarýň sanawy
+Выборочная проверка                         Her ýerinden barlama
+Выверка                                     Barlama, gönüleme
+Выветривание                                Ýel çalmadan dargama
+Вывод                                       Netije
+Выгиб проволоки                             Simiň egrelen ýeri
+Выгрузка                                    Ýüki düşürme, boşatma
+Выезд                                       Ulag çykalgasy
+Выемка грунта                               Toprak çykarma, gazma
+Выклеить                                    Ýelmäp çykmak, ýelmeşdirip çykmak
+Выклепать                                   Berçinläp çykmak
+Выключатель                                 Togy öçürip-ýakyjy
+Выковать                                    Köwüp çykmak
+Выкрасить                                   Boýap çykmak, reňkläp çykmak
+Выкроить                                    Biçüwläp çykmak
+Выносливость                                Çydamlylyk
+Вынужденные колебания                       Mejbury yrgyldylar
+Выполнить                                   Ýerine ýetirmek
+Выправка                                    Düzeltme, düzetme, düzedişdirme
+Выпрямитель                                 Göneldiji
+Выпуклость                                  Güberçeklik
+Выпуск арматуры                             Armatura çykyntgysy
+Выработка                                   Öndürme, öndürijilik
+Выражение                                   Aňlatma
+Вырезание                                   Kesip aýyrma, kesip alma
+Вырубка деревьев                            Agaçlary çapyp aýyrmak
+Высверлить отверстие                        Burawlap deşik deşme
+Выскабливание                               Gazap aýyrma, gyryp aýyrma
+Высококачественная отделка                  Ýokary hilli bezeg işleri
+Высококвалифицированный рабочий             Ýokary hünärli işçi
+Высоколегированная сталь                    Ýokary hilli garyndyly polat
+Высота                                      Beýiklik
+Высота сечения                              Kesigiň beýikligi
+Высотная отметка                            Belentlik belgisi
+Высотное сооружение                         Beýik desga
+Выставка                                    Sergi
+Выстелить                                   Düşäp çykmak, ýazyp çykmak
+Выстрогать                                  Ýonup ýasamak, rendeläp ýasamak
+Выступ                                      Çykyt
+Высушить                                    Guratmak
+Вытяжка                                     Süýndirme, sorup çykarma
+Выход                                       Çykalga, çykym
+Вычисление                                  Hasaplama, hasaplap çykarma
+Вычислительный комплекс                     Hasap toplumy
+Вышестоящая инстанция                       Ýokarky instansiýa
+Выштукатурить                               Suwap çykmak
+Выявление недостатков                       Kemçilikleri ýüze çykarma, aýdyňlaşdrma 8
+Выяснение причин                            Sebäpleri aýan etme
+Вяжущие материалы                           Tutluşdyryjy materiallar
+Вязальная проволока                         Baglaýjy sim
+Вязка арматуры                              Armaturalary örmek
+Вязаный каркас                              Örme karkas
+Вязальная проволока                         Örüm simi
+Вязкость                                    Sogalyk
+Вязкий                                      Soga
+Вязкая жидкость                             Soga suwuklyk
+Вязко-упругая среда                         Soga-maýyşgak sreda
+Габарит                                     Göwrüm, gabara, möçber, ululyk
+Газгольдер                                  Gazgolder (gaz kabul ediji, saklaýjy we gaz geçirijisine goýberiji desga)
+Газификация                                 Gazlandyrma, gazlaşdyrma
+Газобетон                                   Gazobeton (ýylylyk goraýjy gurluşyk materialy-öýjükli beton)
+Газовик                                     Gazçy, gaz senagatynyň işgäri
+Газогенератор                               Gaz generatory
+Газолин                                     Gazolin, suwuk önüm
+Газонепроницаемость                         Gaz geçirmezlik, syzmazlyk
+Газообмен                                   Gaz çalşygy
+Газопровод                                  Gaz geçirijisi
+Газосварка                                  Gaz bilen kebşirleme
+Газосварщик                                 Gaz bilen kebşirleýji
+Газоснабжение                               Gaz üpjünçiligi
+Газохранилище                               Gaz saklanýan gurluş
+Гайка                                       Gaýka nurbat
+Галерея                                     Galereýa, birleşdiriji ötük
+Галтель                                     Önümiň sepini örtüji ýaşmak
+Гарант                                      Kepillendiriji, güwä geçiji
+Гарантия                                    Kepil, güwä
+Гардероб                                    Garderob, geýimasar
+Гармонические колебания                     Birsydyrgyn yrgyldylar
+Гаситель                                    Söndüriji
+Гашение                                     Söndürmek
+Гашеная известь                             Sönen hek
+Гауссова кривизна                           Gaussyň egriligi
+Гвоздь                                      Çüý, myh
+Гвоздильный автомат                         Çüý öndürýän awtomat
+Гексаэдр                                    Geksaedr, altygraňlyk
+Гектар                                      Gektar, 10000 m 2 barabar meýdan
+Гекто                                       Ýüz esse ulaldýan sözöňi goşulyjy
+Гелиоэлектростанция                         Gelioelektrostansiýa, gün elektrik stansiýasy
+Генерация                                   Öndürme, emele getirme
+Генподряд                                   Bütewi potrat
+Генподрядчик                                Baş potratçy
+Геодезия                                    Geodeziýa, ýer ölçegi baradaky ylym
+Геодезические работы                        Ýerüsti ölçeg işleri
+Геодезическая служба                        Geodeziya gullugy
+Геология                                    Geologiýa, ýer gurluşy baradaky ylym
+Геологические изыскания                     Geologik barlaglar 9
+Геологические условия                       Geologik şertler
+Геометрия                                   Geometriýa, ýer ölçemek
+Геометрические характеристики               Geometrik häsietnamalar
+Геометрически изменяемая система            Geometrik üýtgeýän sistema
+Геометрически неизменяемая система          Geometrik ūýtgewsiz sistema
+Герметизация                                Syzdyrmazlyk
+Герметичность                               Syzmazlyk
+Генеральный план (генплан)                  Baş meýilnama
+Генеральный подрядчик                       Baş potratçy
+Гибкость                                    Çeýelik
+Гидравлика                                  Gidrawlika
+Гидрант                                     Basyşly suw pürküji gurluş
+Гироизоляция                                Gidroizolýasiýa, çygdan gorama
+Гидросооружение                             Suw gurluşyk desgasy
+Гидроэлектростанция                         Suw elektrik stansiýasy
+Гипербола                                   Giperbola
+Гипотеза                                    Gipoteza, çaklama
+Гипотеза плоских сечений                    Tekiz kesikler çaklamasy
+Гипотеза прямых нормалей                    Göni normallar çaklamasy
+Гипотезы прочности                          Berklik ćaklamalary
+Гипотенуза                                  Gipotenuza
+Гипоцентр                                   Ýerasty merkez
+Гипс                                        Gips, tutluşdyryjy material
+Глав-                                       «Baş» manyly sözöňi goşulyjy
+Главные площадки                            Baş meýdanćalar
+Главные напряжения                          Baş gūýjenmeler
+Главные оси инерции                         Baş inersiýa oklary
+Главные моменты инерции                     Baş inersiýa momentleri
+Главный специалист                          Baş hünärmen
+Гладилка                                    Mala, tekizleýji gural
+Гладкий                                     Tekiz, ýylmanak
+Глазомер                                    Göz çaky, göz çeni
+Глазурь                                     Syrça
+Глазурованный                               Syrçalanan, syrça bilen örtülen
+Глина                                       Toýun, palçyk, laý
+Глинистый                                   Toýunly, toýunsow
+Глинобитные стены                           Palçykdan salnan diwar
+Глиноземистый цемент                        Glinozemli sement
+Глиномешалка                                Laý garyjy, palçyk garyjy
+Глобальные оси                              Global oklar
+Глубина                                     Çuňluk
+Глубина анкеровки                           Ankerleniş çuňlugy
+Глубина заделки                             Gömüliş çuňlugy
+Глубина заложения фундамента                Binýadyň oturyş çuňlugy
+Глубина промерзания грунта                  Topragyň doňuş çuňlugy
+Глубинный вибратор                          Çuňluk titreme dykyzlandyryjysy
+Глухая стена                                Boşluksyz, tutuş diwar
+Гниение древесины                           Agajyň çüýremesi
+Гнутье арматуры                             Armaturany egme
+Годность                                    Ýaramlylyk
+Годовой план                                Ýyllyk meýilnama
+Головное сооружение                         Başsaka desgasy
+Гонт                                        Ýukajyk tagtadan basyrgy
+Гончарные материалы                         Küýzegärlik materiallary
+Горбыль                                     Ýarymtogalak tagta 10
+Горизонт                                    Gözýetim
+Горизонталь                                 Gorizontal, kese
+Горнопромышленность                         Dag-magdan senagaty
+Горняк                                      Dag-magdan senagatynyň işgäri
+Горообразование                             Dag emele gelişi
+Горсовет                                    Şäher soweti
+Горючесть                                   Ýanyjylyk
+Госнадзор                                   Döwlet gözegçilik gullugy
+Господствующее направление                  Agdyklyk ediji ugur
+Госснабжение                                Döwlet üpjünçiligi
+Гостиная                                    Myhman jaýy
+Госстрах                                    Döwlet strahowaniýesi
+Гостиница                                   Myhmanhana
+Госучреждение                               Döwlet edarasy
+Готика                                      Gotika, binagärlik stili
+Готовность                                  Taýýarlyk, taýynlyk
+Государственный контроль                    Döwlet gözegçiligi
+Государственные стандарты                   Döwlet standartlary
+Гофрированный материал                      Gasynlanan material
+Граб                                        Grab, agajyň görnüşi
+Гравий                                      Çagyl
+Гравийно-песчаная подушка                   Çagylly-çäge ýassygy
+Градирня                                    Gradirnýa, suw sowadyjy desga
+Градостроитель                              Şäher gurujy hünärmen
+Градостроительство                          Şäher gurluşygy
+Градуирование                               Ölçeg gabyny belgileme
+Градус                                      Gradus, burç ölçeg birligi
+Градус                                      Gradus, temperatura ölçeg birligi
+Гранит                                      Granit daşy
+Граница                                     Çäk, araçäk, serhet
+Граничные условия                           Çäkleýin şertler
+Гранка                                      Gyraňlama, gyraň çykarma
+Гранула                                     Düwür, digir owuntyklar
+Гранулометрический состав                   Ownuk-irilik düzümi
+График                                      Grafik, tertipnama, kada
+График завоза материалов                    Materiallaryň getiriliş grafigi
+График подачи воды                          Suwuň beriliş kadasy
+График выполнения работ                     Işleri ýerine ýetirmegiň tertipnamasy
+Графический метод                           Grafik usul
+Графо-аналитический метод                   Grafik-analitik usul
+Гребень крыши                               Üçegiň gerşi
+Грейдер                                     Ýer tekizleýji maşyn
+Грубое приближение                          Gödek ýakynlaşma
+Груз                                        Ýük
+Грузовая площадь                            Ýüklenme meýdany
+Грузоподъемность                            Ýūk göterijilik
+Грузоотправитель                            Ýüki ugradyjy
+Грузополучатель                             Ýüki kabul ediji
+Грузоперевозка                              Ýüki daşamak
+Гусеничный кран                             Zynjyrly göteriji kran
+Грунт                                       Teýgum,toprak, gum, ýer
+Грунтовые воды                              Ýerasty suwlar
+Грунтовые условия строительной площадки     Gurluşyk meýdançasynyň teýgum şertleri
+Грунтовое основание                         Teýgum esasy
+Грунтовая подушка                           Teýgum ýassygy 11
+Давление                                    Basyş, basyş güýji
+Дальномер                                   Dalnomer, uzaklygy ölçeýji
+Дальность                                   Uzaklyk, daşlyk, alyslyk
+Дамба                                       Bent, gaçy, raýyş
+Данные                                      Berlenler, maglumatlar
+Дата                                        Sene, wagt
+Двадцатиугольник                            Ýigrimiburçluk
+Дверь                                       Gapy
+Дверной проем                               Gapy boşlugy
+Движение                                    Hereket
+Двор                                        Howly
+Дворец                                      Köşk
+Двояковогнутый                              Iki tarapy oýuk
+Двояковыпуклый                              Iki tarapy güberçek
+Двузначное число                            Iki belgili san
+Двупольная дверь                            Iki gabsaly işik
+Двускатная крыша                            Eşegarka, iki ýana ýapgyt üçek
+Двустворчатое окно                          Iki açylýan penjire
+Двутавр                                     Dwutawr, iki tawr
+Двухдневный срок                            Iki günlük möhlet
+Двухквартирный дом                          Iki kwartiraly jaý
+Двухкомнатная квартира                      Iki otagly kwartira
+Двухслойная кровля                          Iki gatly üçek
+Двухсменная работа                          Iki smenaly iş
+Двухэтажный дом                             Iki gatly jaý
+Дебит                                       Debit, çykym
+Дебитор                                     Debitor, bergili, bergidar
+Девальвация                                 Dewalwasiýa, hümmetsizlenmek
+Девиатор напряжений                         Güýjenmeler dewiatory
+Девятибалльная шкала                        Dokuzballyk şkala
+Дедукция                                    Umumy netijeden hususy netijä gelme
+Действительность                            Hakykat, hak, çyn, dogry zat
+Действующие законы                          Hereket edýän kanunlar
+Действующие нормы                           Hereket edýän kadalar
+Дека-                                       On esse ulaldyjy sözöňi goiulyjy
+Декаэдр                                     Dekaedr, ongyraňlyk
+Деквалификация                              Hünär derejesini ýitirme
+Декоративность                              Owadanlyk, gelşiklilik
+Декретирование                              Dekret arkaly kanunlaşdyrma
+Деление                                     Bölme, böleklere bölme
+Делопроизводитель                           Iş dolandyryjy
+Делювиальные отложения                      Delýuwial çökündiler
+Демонтаж                                    Demontaž, sökme
+Демпфер                                     Söndüriji, köşeşdiriji
+Демпфирующие свойства                       Togtadyş häsiýetleri
+Деноминация                                 Denominasiýa, puluň hümmetiniň peselmegi
+Деревообработка                             Agajy işläp taýýarlama
+Деревянный брус                             Agaç pürs
+Дерн                                        Bajak
+Дерновка                                    Bajak düşeme, bajak bilen örtme
+Десятигранник                               Ongyraňlyk
+Десятиугольник                              Onburçluk 12
+Десятичные дроби                            Onluk droblar
+Детализация                                 Jikme-jik öwrenme
+Деталь                                      Detal, bölek, şaý
+Детская площадка                            Çagalar meýdançasy
+Де-факто                                    Iş ýüzünde, aslynda
+Дефект                                      Kemçilik, şikes, nogsan
+Дефицит                                     Ýetmezçilik, gytlyk, gytçylyk
+Деформация                                  Deformasiýa
+Деформированное состояние                   Deformirlenen ýagdaý
+Деформированная ось                         Deformirlenen ok
+Деци-                                       On esse kiçeldiji sözöňi goşulma
+Действительная схема                        Hakyky shema
+Депланация                                  Deplanasiýa(kesigiň deformirlenmesi)
+Джоуль                                      Joul, energiýa birligi
+Диагональ                                   Depebirikdiriji
+Диаграмма растяжения                        Sūýnme diagrammasy
+Диаметр                                     Diametr, töweregiň ortaçyzygy
+Диапазон                                    Diapazon, çäkler
+Диафрагма жесткости                         Gatylyk diafragmasy, gapyrgasy
+Дизайн                                      Dizaýn, bezeg, çeper taslama
+Динамика                                    Dinamika (mehanikanyň bölümi)
+Динамическая нагрузка                       Dinamik ýūk
+Динамический коэффициент                    Dinamik koeffisient
+Динамика упругих систем                     Maýyşgak sistemalaryň dinamikasy
+Дисгармония                                 Sazlaşyksyzlyk
+Диск                                        Disk (tutuş, bütewi zat)
+Дисквалификация                             Hünär derejesinden mahrum etme
+Дискретный                                  Aýry-aýry böleklerden durýan
+Дисперсность                                Pytraňňylyk, dagynyklyk
+Диспропорция                                Proporsiýasyzlyk, deň ölçegde dällik
+Дифференциал                                Garaşsyz üýtgeýän ululygyň artdyrylmasy
+Дифференциальное уравнение                  Differensial deňleme
+Дифференцирование                           Differensirleme, önümi hasaplama
+Длина                                       Uzynlyk
+Длина здания                                Binanyň uzynlygy
+Длительная нагрузка                         Uzak möhletleýin ýük
+Дно стакана фундамента                      Binýat stakanynyň düýbi
+Днище резервуара                            Howuzyň düýbi
+Добавки активные                            Aktiw goşundylar
+Добеливание                                 Aklap bolma, agardyp gutarma
+Доброкачественность                         Ýokary, oňat hillilik
+Доверенность                                Ynanç haty
+Довод                                       Delil, sebäp, esas
+Договор                                     Şertnama
+Договорные объязательства                   Şertnama borçlary
+Договорные отношения                        Şertnama gatnaşyklary
+Догрузка                                    Ýüküň üstüni ýetirme
+Доделка                                     Kemçiligi düzedilen iş
+Доказательство                              Subut etmek, subutnama
+Доклеить                                    Ýelimläp bolmak, ýelmäp gutarmak
+Докрасить                                   Reňkläp bolmak, reňkläp gutarmak
+Документ                                    Dokument, resminama
+Документация                                Resminamalar
+Документирование                            Resmileşdirme
+Долбление                                   Urup oýma 13
+Долговечность                               Uzakömūrlilik
+Должность                                   Wezipe, orun
+Доминирующее положение                      Agdyklyk, agalyk edýän ýagdaý
+Домовладелец                                Öý eýesi
+Домостроительный комбинат                   Jaýgurluşyk kombinaty
+Домоуправление                              Öý uprawleniýesi
+Дооборудование                              Abzallaşdyryp bolma
+Дооснащение                                 Goşmaça abzallaşdyrma
+Дополнение                                  Goşma, üstüni ýetirme
+Дополнительно                               Goşmaça
+Допустимость                                Mümkinlik, ýol bererlik
+Допущение                                   Rugsat etme, ygtyýar berme
+Допуск                                      Ölçegden, kadadan çykmanyň çägi
+Допускаемая нагрузка                        Rugsat ýūki
+Допускаемое напряжение                      Rugsat gūýjenmesi
+Допускаемая нагрузка                        Rugsat ýūki
+Допускаемое напряжение                      Rugsat gūýjenmesi
+Доработка                                   Işläp gutarma, gutarnykly işleme
+Дорога                                      Ýol
+Дорожка                                     Ýoda, ýoljagaz
+Дорожное строительство                      Ýol gurluşygy
+Доскональность                              Birin-birinlik, jikme-jiklik
+Досрочно                                    Wagtyndan öň, möhletinden öň
+Доставка                                    Gowşurma, ýerine eltip berme
+Достаточность                               Ýeterlilik, yeterlikli bolmak
+Достоверность результатов                   Netijeleriň ynamdarlylygy
+Достроить                                   Gurup bolmak, gurup gutarmak
+Доступность                                 Geçip, baryp bolmak, elýeterlilik
+Доход                                       Girdeji, düşewünt
+Дощатый пол                                 Tagta, tagtadan pol
+Древесина                                   Agaç
+Дренаж                                      Drenaž, zeýkeş
+Дробилка                                    Owradyjy maşyn
+Дробь неправильная                          Nädogry drob
+Дрова                                       Odun
+Дубильщик                                   Eýleýji, aşgarlaýjy
+Дюжина                                      On iki sany
+Дюйм                                        Dýuým, 2.54sm deň uzynlyk ölçegi
+Единица                                     Bir, birlik
+Единичная сила                              Birlik güýç
+Единица измерения                           Ölćeg birligi
+Единовременные затраты                      Birwagtlaýyn harajatlar
+Единогласно                                 Biragyzdan
+Единообразие                                Birmeňzeşlik, bir şekillilik
+Единые нормы и расценки (ЕНиР)              Ýeke-täk kadalar we nyrhlar
+Единственность решения                      Çözgūdiň eke-täkligi
+Едкость                                     Iýijilik, ötgürlik
+Емкость                                     Sygym, göwrüm
+Ендова                                      Üçegiň iki tarapdan aşak eňňitliginiň tapyşýan ýeri
+Естественность                              Tebigylyk 14
+Естественная убыль                          Tebigy ýitgi
+Естественное состояние                      Tebigy ýagdaý
+Жалюзи                                      Ýuka tagtajyklrdan ýasalan penjire perdesi
+Жаропрочность                               Gyzgyna garşy berklik
+Жаростойкий материал                        Gyzgyna durumly material
+Жароупорный кирпич                          Gyzgyna çydamly kerpiç
+Железко                                     Rendäniň ýongujy
+Железная руда                               Demir magdany
+Железнодорожник                             Demirýolçy
+Железнодорожный мост                        Demirýol köprüsi
+Железо                                      Demir
+Железобетон                                 Demirbeton
+Желоб                                       Ternaw
+Жердь                                       Syryk, syrdam agaç
+Жерло печи                                  Pejiň agzy
+Жернов                                      Degirmen daşy
+Жесткость                                   Gatylyk
+Жесткая заделка                             Gaty berkitme
+Жесткость при изгибе                        Egilme gatylygy
+Жесткость при кручении                      Towlanma gatylygy
+Жесткость при сдвиге                        Sūýşme gatylygy
+Жесткость при растяжении                    Sūýnme gatylygy
+Жесть                                       Ýuka demir, galaýy
+Животноводческая ферма                      Maldarçylyk fermasy
+Животноводческий комплекс                   Maldarçylyk toplumy
+Жидкость                                    Suwuklyk
+Жилище                                      Ýaşaýyş jaýy
+Жилищно-коммунальный                        Ýaşaýyş jaý-kommunal
+Жилищное строительство                      Ýaşaýyş jaý gurluşygy
+Жилплощадь                                  Ýaşalýan jaýyň meýdany
+Житель                                      Ýaşaýjy, ýaşaýan adam
+Журнал работ                                Iş depderi
+Заактировать                                Aktlaşdyrmak, akt düzmek
+Заарендовать                                Kärendesine almak
+Заасфальтировать                            Asfaltlamak, asfalt düşemek
+Забелить                                    Agartmak
+Забетонировать                              Betonlamak, beton guýmak
+Забивные сваи                               Kakylýan, kakma gazyklar
+Забутовка                                   But, gurluşyk daşy bilen doldurma
+Забор                                       Haýat
+Заведование                                 Müdirlik etme, dolandyrma
+Заведомо                                    Görnetin, göre-bile
+Заведующий отделом                          Bölüm müdiri
+Заверение                                   Ynandyrma
+Заверить                                    Tassyklamak, tassyk etmek
+Завершение                                  Tamamlama, gutarma
+Завибрировать                               Titretmek, titredip dykyzlandyrmak
+Завинтить                                   Towlap, burup berkitmek 15
+Зависимость                                 Baglylyk, garaşlylyk
+Завод-поставщик                             Üpjün ediji zawod
+Заводной ключ                               Tow berýän açar
+Заводской дефект                            Zawodda goýberilen şikes
+Загиб                                       Öwrüm, egrelme, epin
+Загибание                                   Epleme, egreltme
+Заглубить                                   Çuň ýerleşdirmek, çuňlaşdyrmak
+Заглубление                                 Çuňlaşyşy, ýerleşiş çuňlugy
+Заглушка                                    Gapak, dyky
+Загораживание                               Öňüni örtme, öňüni tutma
+Заготовка                                   Taýýarlama, biçip goýma
+Заграждение                                 Germew, aýmança, haýat
+Задание                                     Tabşyryk, ýumuş
+Заданная балка                              Berlen balka
+Заданные условия                            Berlen şertler
+Задел                                       Dowam edilmeli iş, artyk öndürilen önüm
+Заделка                                     Petikleme
+Задолженность                               Bergi, bergililik
+Заземление                                  Ýereçatma, ýer bilen birleşdirme
+Заинтересованность сторон                   Taraplaryň gyzykmasy
+Заказ                                       Tabşyryk, buýurma, sargyt
+Заказчик                                    Buýrujy
+Закалка                                     Taplama, suw berme
+Закладка                                    Düýbüni tutma
+Заклеивание                                 Ýelmeme, ýelimleme
+Заклепка                                    Berćin
+Заклепочное соединение                      Berćinli birikme
+Заключение                                  Netije
+Закон                                       Kanun, hukuk
+Закон Гука                                  Gukuň kanuny
+Закон парности касательных напряжений       Galtaşma gūýjenmeleriň jūbūtlik kanuny
+Закон всемирного тяготения                  Bütindünýä dartylma kanuny
+Законодательство                            Kanunçylyk, kanun düzmeklik
+Закономерность                              Kanunalaýyklyk
+Законопроект                                Kanun taslamasy
+Законсервировать                            Duruzmak, ýatyrmak, togtatmak
+Закрашивание                                Reňkleme, reňk bilen örtme
+Закрепление                                 Berkitme, pugtalama
+Закручивание                                Towlama, burma
+Закуток                                     Hütdük, burç
+Зал заседаний                               Mejlisler zaly
+Залежь пласта                               Gatlagyň ýatagy
+Залив                                       Aýlag
+Залог                                       Girew
+Замазка                                     Çalgy
+Замаркировать                               Belgilemek, tagmalamak
+Замачивание                                 Ölleme, suwlama
+Замедление                                  Haýallatma, gowşatma
+Замена                                      Çalşyrma
+Заменитель                                  Çalşyryjy, ýerini tutujy
+Замер                                       Ölçeme, ölçegini alma
+Замерзание                                  Doňma, doňuş
+Замес                                       Ýugurma, garma, eýleme
+Заместитель                                 Orunbasar
+Замечание                                   Bellik, bellemek 16
+Замечательное решение                       Ajaýyp çözgüt
+Замкнутый контур                            Ýapyk kontur
+Замок                                       Gala
+Замоноличивание                             Guýup petikleme
+Занижение                                   Aşaklatma, peseltme, azaltma
+Занумеровать                                Nomerlemek, tertip belgisini goýmak
+Запад                                       Günbatar
+Запас                                       Ätiýaçlyk, gor
+Запас прочности                             Ätiýać berklik
+Запатентовать                               Patentlemek, patent almak
+Записка                                     Habar ýazgysy
+Заподлицо                                   Deň, gyradeň
+Запоздалость ответа                         Jogabyň gijikmegi
+Заполнители бетона                          Betonuň garnuwlary, dolduryjylary
+Запотевание стекол                          Aýnalaryň derlemegi
+Запрещение                                  Gadagan etme
+Запрограммировать                           Programmirlemek, kompýuterde hasaplamak üçin öňünden meýilnamasyny düzmek
+Запроектировать                             Meýilnama düzmek
+Запрос                                      Talap, isleg,haýyş, ýüz tutma
+Запротоколировать                           Ýygnagyň beýan ýazgysyny düzmek
+Запрудить                                   Böwetlemek, böwet basmak
+Запуск                                      Işletme, ýöretme, goýberme
+Запутанный вопрос                           Çylşyrymly, bulaşyk sorag
+Запчасти                                    Ätiýaçlyk şaýlar
+Заработок                                   Zähmet haky, iş haky
+Зарегистрировать                            Registrirlemek, ýazgy etmek
+Зарекомендовать                             Görkezmek, tanatmak, hödürlemek
+Заржаветь                                   Poslamak, poslap gitmek
+Зарплата                                    Aýlyk iş haky
+Зарубка                                     Kertik, bellik
+Засвидетельствование                        Tassyklama, tassyk etme, güwä geçme
+Заседание                                   Mejlis, oturdaşlyk
+Заседатель                                  Oturdaş
+Заселение                                   Göçüp gelip girmek, ornaşmak
+Заселенность                                Ilat gürlügi
+Заселенный дом                              Ýaşaýjylary doly ýerleşdirilen jaý
+Заслон                                      Böwet, bökdenç
+Заслуженный строитель                       Görnükli, at gazanan gurluşykçy
+Засов двери                                 Gapynyň sokmasy
+Засоленные грунты                           Duzlaşan topraklar
+Застеклить                                  Aýnalamak, aýna salmak
+Застелить                                   Düşemek, ýazmak
+Застой в экономике                          Ykdysadyýetde durgunlyk
+Застраховать                                Ätiýaçlandyrmak, howpsuzlandyrmak
+Застройка района                            Etraby jaý gurup doldurmak
+Застройщик                                  Jaý gurujy, jaý salyjy
+Застывший бетон                             Doňan beton
+Засушивание                                 Guratma
+Засыпка ямы                                 Çukury gömme
+Затвердение бетона                          Betonyň gatamagy
+Затирка штукатурки                          Suwagyň ýüzüni sürtüp tekizleme
+Затопление                                  Suw alma, suwa basdyrma
+Затромбовать                                Basgylap dykyzlandyrmak
+Затрата                                     Harçlama, harç etme 17
+Затруднение                                 Kynçylyk, päsgelçilik
+Затухание                                   Togtamaklyk, sönmeklik
+Затычка                                     Dyky
+Затухающие колебания                        Togtaýan yrgyldylar
+Затрата                                     Harç, harçlaýyş, harçlama
+Зацементировать                             Sementlemek
+Зачисление                                  Kabul edilme, işe alynma
+Зачистка края                               Gyrasynyň büdür-südürini aýyrma
+Зашлифовка                                  Ýylmama, ýylmap ýaldyratma
+Зашпаклевка поверхности                     Şpaklýowkalamak, üstüň büdür-südürini yapmak üçin çalgy çalmak
+Зашпунтовка                                 Tagtalary biri-birine sokmak üçin dyrnak çykarmak
+Заштукатурить стены                         Diwarlary suwamak
+Защелка                                     Kilt, ildirgiç
+Защемление                                  Gaty berkitme, petikleme, doňdurma
+Защитная гидроизоляция                      Çyg geçirmezlik goragy
+Защита от коррозии                          Çüýremekden goramak
+Защитная стенка                             Gorag diwary
+Защитный слой                               Gorag gatlagy
+Заявка на изобретение                       Oýlap tapylyşy resmileşdirme
+Заявление                                   Arza, beýannama
+Звено                                       Halka, bölek
+Звук                                        Ses
+Звукоизоляция                               Ses geçirmekden goramak
+Звуконепроницаемая стена                    Ses geçirmeýän diwar
+Здание                                      Bina
+Здравница                                   Sagaldyş-dynç alyş öýi
+Здравый смысл                               Dogry, sagdyn manyly
+Земельный участок                           Ýer uçastogy
+Землекоп                                    Ýer gazyjy işçi
+Землепользователь                           Ýerden peýdalanyjy
+Земляные работы                             Ýer işleri
+Землетрясение                               Ýer titreme, ýer yranma, sarsgyn
+Земная кора                                 Ýeriň gabygy
+Земная мантия                               Ýeriň örtügi
+Земное ядро                                 Ýeriň özeni
+Зенит                                       Zenit, dik ýokary, dik asman
+Зернистость                                 Digir-digirlik
+Зернохранилище                              Däne ammary, galla saklanýan jaý
+Злободневный вопрос                         Zerur, möhüm, wajyp sorag
+Злоупотребление                             Hyýanat etme, öte geçme
+Змеевик                                     Egrem-bugram turbajyk
+Знак                                        Alamat, belgi, bellik
+Знакопостоянный цикл                        Alamaty hemişelik sikl
+Знакопеременный цикл                        Alamaty üýtgeýän sikl
+Знаменатель                                 Maýdalawjy
+Значение                                    Baha, many, ähmiýet
+Значительность                              Ululyk, ep-eslilik
+Значительный дефект                         Ähmiýetli şikes
+Зной                                        Jöwza, güýçli yssy
+Зодчество                                   Jaý gurmak sungaty
+Зодчий                                      Binaçy, jaý salyjy ussa
+Зона                                        Zona, zolak
+Зона упрочнения                             Berkleşme zonasy 18
+Зондирование                                Barlama, synama, aňtama
+Зоолесопарк                                 Haýwanat-tokaý parky
+Зрелищные предприятия                       Tomaşa jaýlary
+Зрелое решение                              Ýetişen, bişen çözgüt
+Зритель                                     Tomaşaçy
+Зыбкая почва                                Gowşak toprak
+Зыбучий песок                               Ürgün çäge
+Ибо                                         Şoňa görä, şol sebäpli, çünki
+Иглофильтр                                  Topragy guratmak üçin çuňlukdan suw çykarýan ujy süzgüçli turba gurluş
+Игнорирование ошибок                        Ýalňyşlara ähmiýet bermezlik
+Идеал                                       Ideal, nusga, görelde
+Идеализация действительности                Hakykaty ideallaşdyrma
+Идеализированное тело                       Ideallaşdyrylan jisim
+Идентификация                               Deň hasap etme, barabar etme
+Изба                                        Jaý, külbe
+Избирательно                                Seçijilik bilen, saýlaýjylyk bilen
+Избыточный расход                           Artykmaç harç
+Избыточное давление                         Aşa basyş
+Изваять                                     Şekil ýasamak, heýkel ýasamak
+Известь                                     Hek
+Изветшалый                                  Çagşan, tozan, gaty könelen
+Известить                                   Habarly etmek
+Известковый раствор                         Hekli palçyk
+Извлечение                                  Çykarma, sogurma
+Извне                                       Daşyndan, başga ýerden
+Изобретатель                                Oýlap tapyjy
+Изобретение                                 Oýlanyp tapylan
+Изотропия                                   Izotroplyk
+Изотропное тело                             Izotrop jisim
+Изгиб                                       Egilme
+Изгибание                                   Egme, bükme
+Изгибающий момент                           Egiji moment
+Изгиб с кручением                           Towlanmaly egilme
+Изготовитель                                Taýýarlaýjy
+Изготовление                                Taýýarlama, ýasama, işläp çykarma
+Изделие                                     Önüm, haryt, öndürilen zat
+Изложение                                   Beýan etme
+Измельчение                                 Bölekleme, ownuklama, maýdalama
+Изменение                                   Üýtgeme, özgerme
+Изменение объема                            Göwrūmiň ūýtgemegi
+Изменение формы                             Formanyň (şekiliň) ūýtgemegi
+Измерение                                   Ölçeme, ölçeg
+Измерительный прибор                        Ölçeg guraly
+Изнанка                                     Çöwre ýüzi, iç ýüzi, arka ýüzi
+Износ                                       Könelme, sandan çykma, dargama
+Износостойкий материал                      Berk, könelmezek material
+Изнутри                                     Içinden, iç tarapyndan, iç ýüzinden
+Изобара                                     Hemişelik basyşda temperatura bilen göwrümiň arabaglanyşynyň çyzgydy
+Изобретатель                                Oýlap tapyjy
+Изобретение                                 Oýlanyp tapylan zat, döredilen zat 19
+Изолиния                                    Birmeňzeş gökezijili ýerleri birlrşdirýän çyzyk
+Изоляция                                    Izolýasiýa, gorag
+Изоляционные работы                         Izolýasiýa, gorag işleri
+Изоляционные слои                           Izolýasiýa, gorag gatlary
+Изотерма                                    Hemişelik temperaturada basyş bilen göwrümiň arabaglanyşynyň çyzgydy
+Изогнутая ось                               Egilen ok
+Изохора                                     Hemişelik göwrümde temperatura bilen basyşyň arabaglanyşynyň çyzgydy
+Изучение                                    Öwrenme
+Изыскания                                   Barlaglar, gözlegler, derňewler
+Ил                                          Gyrmança, çökündi laý
+Импортирование файла                        Faýly daşyndan getirmek
+Инвентарь                                   Esbap
+Инвентаризация                              Inwentarizasiýa, ýerinde barlygynyň barlagy
+Ингредиент                                  Garyndynyň düzüm bölekleri
+Индустрия                                   Industriýa, senagat
+Инертность                                  Inertlik, hereketsizlik
+Инертные материалы                          Inert materiallar (sement we ş.m.)
+Инструмент                                  Gural
+Интегрирование                              Itegrirleme
+Интенсивность                               Intensiwlilik, depgin
+Интенсивность землетрясения                 Sarsgynyň ýerüsti güýji
+Интенсивность нагрузки                      Ýūkūň intensiwligi
+Интенсификация производства                 Önümçiligiň güýçlendirilmegi
+Интерполяция                                Funksiýanyň käbir bahalary boýunça aralyk bahalarynyň kesgitleniş usuly
+Инженерные решения                          Inženerçilik çözgütleri
+Инженерные коммуникации                     Inženerçilik hyzmat ulgamlary
+Инженерные сооружения                       Inženerçilik desgalary
+Инерционные силы                            Inersiýal gūýćler
+Интеграл Мора                               Moruň integraly
+Информация                                  Maglumat
+Информационная служба                       Maglumatlar gullugy
+Инфразвук                                   Infrases, şuwwuldy
+Ирригационная система                       Suwaryş ulgamy
+Исключение                                  Çykarma, aýyrma, öçürme, kadadan çykma
+Исключительность ситуации                   Ýagdaýyň adatdan daşarylygy
+Искусственные материалы                     Emeli, ýasama, tebigy däl materiallar
+Искривление                                 Egrelme
+Искривленная ось                            Egrelen ok
+Испарение                                   Bugarma, bugaryş
+Исполнитель                                 Ýerine ýetiriji, amala aşyryjy
+Исполнение                                  Ýerine ýetirmek, berjaý etmek
+Использование                               Ulanmak, peýdalanmak
+Исправить                                   Düzetmek, dogrulamak
+Исправность                                 Düzüwlik, abatlyk
+Испытание                                   Synag
+Испытуемый материал                         Synalýan, synag edilýän material
+Исследование                                Derňeme, derňew
+Истец                                       Talapkär, talap ediji tarap
+Истина                                      Hakyky, çyn
+Истинная диаграмма                          Hakyky duagramma
+Истираемость материалов                     Materiallaryň sürtülijiligi 20
+Истолкование                                Düşündiriş berme, teswirleme
+Источник ссылки                             Salgylanylýan çeşme
+Истребление грызунов                        Gemrijileri gryp ýok etme
+Исход                                       Netije, çykalga, çäre, ýol
+Исходные материалы                          Başlangyç, deslapky, ilkinji materiallar
+Исходная документация                       Deslapky resminamalar
+Исчисление                                  Hasaplama, hasabyny çykarma
+Кабель                                      Daşy izolirlenen geçiriji sim
+Кабельтов                                   185.2metre barabar uzynlyk ölçegi
+Кабинет                                     Kabinet, iş otagy
+Каверна                                     Suwda döreýän köwük, boşluk, düwme
+Кадр                                        Kadr, işgär
+Календарь                                   Kalendar, senenama
+Каление                                     Gyzdyryp taplama
+Калорифер                                   Kalorifer, ýyladyş enjamy
+Камень                                      Daş
+Камнедробилка                               Daş owradyjy maşyn
+Канат стальной                              Polat tanap
+Канонизация                                 Kanunlaşdyrma, kanuna salma
+Канонические уравнения                      Kanuny deňlemeler
+Канцелярия                                  Kanselýariýa, diwanhana
+Капиталовложения                            Maýa goýumlar
+Капитель                                    Sütüniň başy
+Капитальный ремонт                          Düýpli abatlama
+Капитальное строительство                   Düýpli gurluşyk
+Каркас здания                               Jaýyň karkasy, süňňi
+Карниз                                      Karniz, diwaryň üçekden ýokarky bölegi
+Касательные напряжения                      Galtaşma (tangensiýal) gūýjenme
+Катастрофа                                  Heläkçilik, opurlyşyk
+Категория                                   Kategoriýa, dereje
+Качество                                    Hil
+Качественный анализ                         Hil derňewi
+Качество работ                              Işleriň hili
+Качество исполнения                         Ýerine ýetiriliş hili
+Качественная характеристика                 Hil häsiýetnamasy
+Качественная оценка                         Hil taýdan baha bermek
+Качество поверхности                        Üstūň hili
+Квадрат                                     Kwadrat, ikinji dereje
+Квадрант                                    Kwadrant, tegelegiň dörtden bir bölegi
+Квалификация                                Hünär derejesi
+Квартал                                     Kwartal, ýylyň dörtden bir bölegi
+Квартал                                     Şäheriň dört çatryk bilen çäklenen bölegi
+Квартира                                    Kwartira, öý
+Керамическое производство                   Keramika önümçiligi
+Кессон                                      Suw astynda işlemek üçin suwsuz kamera
+Кибернетика                                 Kibernetika ( mehaniki, elektrik we başga dürli prosesleriň öz-özini dolandyryjylygy)
+Киловатт                                    Kilowatt, kuwwat birligi
+Килограмм                                   Kilogramm, massa birligi
+Килоньютон                                  Kilonýuton, güýç birligi
+Кинематика                                  Kinematika (mehanikanyň jisimleriň hereketini geometriki nukdaý nazardan öwrenýän 21
+Кинематика движения                         Hereketiň kinematikasy
+Кинематический анализ сооружений            Desgalaryň kinematiki derňewi
+Кинетическая энергия                        Kinetik energiýa
+Кипение                                     Gaýnama, gaýnaýyş
+Кипячение                                   Gaýnatma, gaýnadyş
+Кипящая сталь                               Gaýnaýan polat
+Кирка                                       Külüň
+Кирпич                                      Kerpiç
+Кислотоупорный кирпич                       Kislota çydamly kerpiç
+Кладка                                      Örüm
+Кладка стен                                 Diwarlary örmek
+Кладка из блоков                            Bloklardan örmek
+Класс                                       Klas, synp
+Классификация                               Klaslaşdyrmak
+Класс точности                              Takyklyk klasy(derejesi)
+Клееварение                                 Ýelim gaýnatmaklyk
+Клеевая краска                              Ýelimli reňk
+Клей столярный                              Agaç ýelimi
+Клепание                                    Berçinleme
+Клещи                                       Atagzy, gysaç
+Клиент                                      Müşderi
+Климат                                      Klimat, howa
+Климатические условия                       Howa şertleri
+Климатологическая карта                     Howa şertleriniň kartasy
+Клинкер                                     Sement önümçiliginiň çig maly
+Клин                                        Pahna
+Клиновидная нагрузка                        Pahna görnüşli ýük
+Клиновидное опирание                        Pahna görnüşli daýanyş
+Ковш                                        Susak
+Ковшовый эксковатор                         Susakly ekskowator
+Кодекс                                      Kodeks, kanunlar ýygyndysy
+Козырек                                     Jaýdan öňe çykyp duran gaş
+Коллективный договор                        Kollektiwleýin şertnama
+Колебание                                   Yrgyldy, yranma, ikirjiňlenme
+Колебательное движение                      Yrgyldyly hereket
+Колено трубы                                Turbanyň tirsegi
+Коленчатый вал                              Tirsekli wal
+Колер                                       Reňk, reňk öwüşgini
+Колесо                                      Tigir, teker
+Количество                                  Mukdar, möçber
+Количественный анализ                       Mukdar barlagy
+Коллегиальное решение                       Kärdeşleriň toparlaýyn çözgüdi
+Коллектор                                   Kollektor, zeýkeş, zeýakaba
+Колодец                                     Guýy
+Колонна                                     Sūtūn
+Колоннада                                   Sütünler hatary
+Кольцо                                      Halka
+Кольцевое сечение                           Halka görnüşli kesik
+Комбинат                                    Kombinat, kärhana
+Коммунальные услуги                         Kommunal hyzmatlar
+Коммуникации                                Hyzmat ulgamlary
+Комната                                     Otag
+Компактность                                Ykjamlyk, jaýlaşyklylyk
+Компенсатор                                 Kompensirleýji, sazlaýjy 22
+Компенсация                                 Öwezini doldurma,ýerini dolma
+Компетентность                              Abraýlylyk, baş çykaryjylyk
+Комплекс                                    Toplum, ýygyndy
+Комлектность оборудования                   Enjamlaryň doly jemlenşigi
+Композиционные материалы                    Kompozit materiallar
+Компоненты бетона                           Betonyň düzüjileri
+Компоновка конструкции                      Konstruksiýanyň urnaşdyrylşy
+Компрессор                                  Gaz, howa, bug gysmak üçin maşyn
+Компьютерные технологии                     Kompýuter tilsimatlary
+Комфорт                                     Rahatlylyk, amatlylyk, oňaýlylyk
+Комфортабельность                           Hemme zady üpjünlik
+Конвейерное производство                    Üznüksiz önümçilik
+Конденсатор                                 Kondensator, sygym
+Конденсация                                 Toplama, ýygnama
+Конденсирование                             Kondensirleme, suwuk hala geçirme
+Кондиционер                                 Howanyň temperaturasyny sazlaýjy
+Кондиция                                    Bir zadyň laýyk gelmeli kadasy
+Кондиционирование воздуха                   Howanyň kadaly çalyşygy
+Конечный                                    Anyk, gutarnykly
+Конечно-элементная модель                   Takyk elementler modeli
+Конкретизация                               Anyklaşdyrma, takyklama
+Конкурент                                   Bäsdeş
+Конкурс                                     Bäsleşik
+Конопатка швов                              Sepleri dykma, petikleme
+Консоль                                     Konsol, ganat
+Консольная балка                            Ganatly balka
+Константа                                   Üýtgemeýän, hemişelik ululyk
+Конструкция                                 Konstruksiya, serenjam
+Конструктивные мероприятия                  Konstruktiw çäreler
+Конструктивные решения                      Konstruktiw çözgütler
+Контактные напряжения                       Kontakt gūýjenmeleri
+Контроль                                    Barlag, derňew, gözegçilik
+Контрольный замер                           Barlag ölçegi
+Контрольный образец                         Barlag nusgasy
+Контур                                      Daşky çäkler
+Концентрация напряжений                     Gūýjenmeleriň konsentrasiýasy
+Координатные оси                            Koordinata oklary
+Координатные плоскости                      Koordinata tekizlikleri
+Координационный центр                       Dolandyryş merkezi
+Копер                                       Gazyk kakýan tokmakly maşyn
+Копирование                                 Nusgasyny alma
+Корень квадратный                           Kwadrat kök
+Коридор                                     Däliz
+Корректор                                   Korrektor, düzediji
+Корректировка                               Gönükdirme, ugrukdyrma
+Коррозия металла                            Metalyň poslamasy, zeňlemesi
+Коррозиестойкий материал                    Poslamazak material
+Корчевка деревьев                           Agaçlary köwleme
+Косая симметрия                             Gyşyk simmetriýa
+Косогор                                     Ýapgyt dag
+Косой изгиб                                 Gyşyk egilme
+Котел                                       Bug gazany
+Котельный цех                               Bug gazan sehi
+Котлован здания                             Jaýyň binýat çukury
+Коэффициент запаса прочности                Berkligiň ätiýaćlyk koeffisienti 23
+Коэффициент запаса устойчивости             Durnuklylygyň ätiýaćlyk koeffisienti
+Коэффициент надежности                      Ygtybarlylyk koeffisienti
+Коэффициент приведения длины                Uzynlygyň getirme koeffisienti
+Коэффициент продольного изгиба              Boy egilme koeffisienti
+Коэффициент Пуассона                        Puassonyň koeffisienti
+Коэффициент сочетания нагрузок              Ýükleriň bileleşik koeffisienti
+Коэффициент чувствительности                Duýgurlyk koeffisienti
+Коэффициент условий работы                  Işertleriniň koeffisienti
+Коэффициент перегрузки                      Ýūki artdyryjy koeffisient
+Коэффициент постели                         Dūşek koeffisienti
+Коэффициент температурного расширения       Temperaturadan giňelme koeffisienti
+Краевые условия                             Çetgyra şertler
+Крайний ряд колонн                          Sütünleriň çetki hatary
+Кран водопроводный                          Suw akýan kran
+Кран подъемный                              Göteriji kran
+Кран башенный                               Diň görnüşli kran
+Красильный цех                              Reňkli kran
+Краскопульт                                 Reňk pürkgüç
+Кратер вулкана                              Ýanardagyň agzy
+Кратковременная нагрузка                    Gysga möhletleýin ýük
+Кратность                                   Galndysyz bölünijilik
+Кратный                                     «Gezek, esse» manyly sanöňi goşulma
+Кредит                                      Karz
+Крен                                        Gyşarma, ugur üýtgeme
+Крепежные детали                            Berkidiji şaýlar
+Крепежные работы                            Berkidiş işleri
+Крепление откосов                           Çukuryň erňeklerini opmakdan berkitme
+Кривизна                                    Egrilik
+Криволинейность                             Egri çyzyklylyk
+Кризисная ситуация                          Ýetmezçilikli, gytçylyklykly kynçylykly ýagdaý
+Критерий                                    Häsiýetlendiriji görkeziji
+Критическое состояние                       Kritik ýagdaý
+Критическая сила                            Kritik gūýć
+Критическая нагрузка                        Kritik ýūk
+Критическое напряжение                      Kritik gūýjenme
+Критический дефект                          Kritik şikes
+Кривая усталости Вёлера                     Wýoleriň ýadawlyk egrisi
+Кривая гибкости Эйлера                      Eýleriň çeýelik egrisi
+Кривые брусья                               Egri pūrsler
+Криволинейная форма                         Egrićyzykly forma
+Криволинейная система координат             Egriçyzykly koordinatlar ulgamy
+Кровля                                      Örtgi
+Кровельные материалы                        Örtgi materiallary
+Кровельные слои                             Örtgi gatlaklary
+Круг Мора                                   Moruň tegelegi
+Крупнопанельный дом                         Iri panelli jaý
+Крутизна                                    Uçutlyk, kertlik
+Крутильные колебания                        Towlaýjy yrgyldylar
+Крутящий момент                             Towlaýjy moment
+Кручение                                    Towlanma
+Кручение круглого бруса                     Togalak pūrsūň towlanmasy
+Крушение                                    Opurlyşykly synma
+Крыло здания                                Jaýyň ganaty
+Крыльцо                                     Bosaga basgançaklary 24
+Крытый рынок                                Üsti basyrylan bazar
+Крыша                                       Üçek
+Крышка                                      Gapak
+Крюк                                        Gaňrak, gaňyrçak
+Крючок                                      Kilt, ildirgiç
+Куб                                         Kub, üçünji dereje
+Кубатура здания                             Jaýyň kubaturasy, göwrümi
+Кувалда                                     Ýekedaban
+Купол                                       Gümmez
+Кусачки                                     Gysgyç, gysaç
+Кухня                                       Aşhana
+Лабильное давление                          Üýtgäp durýan basyş
+Лабиринт улиц                               Köçäniň egrem-bugram ýeri
+Лаборатория                                 Tejribehana
+Лабораторный анализ                         Tejribe derňewi
+Лабораторное оборудование                   Tejribe enjamy
+Лабораторное испытание                      Tejribe synagy
+Лабораторный образец                        Tejribelik nusga
+Лага                                        Agaç poluň aşagyna goýulýan pürs
+Лазурь                                      Gök boýag
+Лак                                         Lak, ýalpyldyly reňk
+Лакокрасочные материалы                     Lak-boýag materiallary
+Ландшафт                                    Landşaft, ýer üstüniň keşbi
+Левостороннее движение                      Çep taraplaýyn hereket
+Легированная сталь                          Legirlenen polat
+Легкосбрасываемая кровля                    Ýeňil sypyrylýan örtgi
+Легковоспламеняющийся материал              Ot almasy aňsat material
+Лента                                       Zolak
+Ленточный фундамент                         Zolak görnüşli binýat
+Лепные работы                               Ýelmäp ýasalýan işler
+Леса строительные                           Gurluşygyň gurşaw sekileri
+Лесоматериалы                               Agaç materiallary
+Лесопарк                                    Tokaý-park
+Лесополоса                                  Tokaý zolagy
+Лессовые грунты                             Mele topraklar
+Лестница                                    Merdiwan
+Лестничный марш                             Merdiwan marşy
+Лестничная площадка                         Merdiwan meýdançasy
+Ликвидация недостатков                      Kemçilikleri ýok etmek
+Лимб                                        Limb (burç ölçeýji gurallaryň graduslara bölünen tegelek halkasy)
+Лимит                                       Limit (belli bir çäk goýlan kada)
+Линейная деформация                         Çyzyklaýyn deformasiýa
+Линейная зависимость                        Çyzykly baglylyk
+Линейное напряженное состояние              Çyzyklaýyn dartgynlyk ýagdaýy
+Линия горизонта                             Gözýetim çyzygy
+Линолеум                                    linoleum( polluk düýrme material)
+Липкость                                    Şepbeşiklik
+Липкий                                      Şepbeşik, ýelmeşegen, ýapyşagan
+Лист                                        Tagta kagyz
+Литосфера                                   Litosfera, ýer gabygy
+Литраж                                      Litr hasabynda gabyň sygymy 25
+Лифт                                        Lift (adamlary, ýükleri galdyryjy kabina)
+Лифтовая шахта                              Lift guýusy
+Лицевание                                   Ýüzüni örtme, ýüzlendirme
+Лицензия                                    Lisenziýa, ygtyýarnama
+Лишние неизвестные                          Artykmaç näbelliler
+Лишние связи                                Artykmaç baglanyşyklar
+Лобзик                                      Nagyş salynýan byçgyjyk
+Лобовая врубка                              Maňlaýdan kertip sepleme
+Лог                                         Jar, uly köw ýer
+Логарифм                                    Logarifm
+Логарифмирование                            Logarifmirleme, logarifmini tapma
+Логарифмический декремент затухания         Sönmegiň logarifmik hemişeligi
+Лоджия                                      Lodžiýa, jaýyň açyk eýwany
+Локализация пожара                          Ýangyny çäklendirme
+Локальность                                 Lokallyk, ýerli häsiýete eýelik
+Локальный режим расчета                     Hasabyň gysgaldylan kadasy
+Лом                                         Lom, külüň
+Ломаная ось                                 Döwūk ok
+Лопата                                      Pil
+Лопатка                                     Piljagaz, pilçe, kepje
+Лоток                                       Nowa
+Лощина                                      Köw, oý, çöket ýer
+Луда                                        Galaýy
+Лудильщик                                   Galaýyçy
+Лужение                                     Galayylama, galaýy çaýma
+Луч                                         Şöhle
+Лучина                                      Ýonuşga, inçejik agaç bölejigi
+Льгота                                      Ýeňillik
+Льготные условия                            Ýeňillikli şertler
+Люк                                         Içine girmek üçin edilen agzy gapakly deşik
+Люнет                                       Gapynyň ýokarsynda edilýän arka
+Магистраль                                  Esasy ýol, şaýol
+Магистральный трубопровод                   Esasy, baş turba geçirijisi
+Магнитуда землетрясения                     Sarsgynyň magnitudasy
+Макроклимат                                 Makroklimat, uly giňişlikleriň klimaty
+Максимум функции                            Funksiýanyň maksimumy, iň uly bahasy
+Максимальность                              Maksimallyk
+Маловероятность                             Ähtimallygy az, ähtibarsyzraklyk
+Малогабаритный                              Kiçi gabaraly, tagaşykly, ykjam
+Малозначительность                          Ähmiýetsizlik, uly ähmiýeti bolmazlyk
+Малозначительный дефект                     Az ähmiýetli, ujypsyz şikes
+Малоисследованный                           Az öwrenilen, doly barlanmadyk
+Малоквалифицированный труд                  Ýörite başarnygy talap etmeýän iş
+Малоквартирный дом                          Az kwartiraly jaý
+Маломощный агрегат                          Az kuwwatly agregat
+Малонаселенный                              Az ilatly, az ýaşaýjyly
+Малообжитой край                            Az ýaşalan ülke
+Малоотходные технологии                     Az galyndyly tilsimatlar
+Малоэтажные кварталы                        Az gatly jaýly kwartallar
+Маляр                                       Reňkleýji, bezegçi
+Манометр                                    Basyş ölçeýji abzal
+Мантисса                                    Logarifmiň drobly bölegi 26
+Марка цемента                               Sementiň hil belgisi
+Марка изделия                               Önümiň tagmasy, belgisi, nyşany
+Маркиза                                     Penjiräni günden goraýan saýawan
+Массивное тело                              Massiw jisim
+Мастер                                      Ussa, ussat
+Мастерок                                    Kerpiç örüjiniň laý kepjesi
+Мастерская                                  Ussahana
+Масштабный коэффициент                      Masştab koeffisienti
+Материал                                    Material, serişde, çig mal, haryt
+Материально-бытовые условия                 Maddy-durmuş şertleri
+Материально-производственная база           Maddy-önümçilik bazasy
+Материально-техническое снабжение           Material-tehniki üpjünçilik
+Матовое стекло                              Dury däl, tutuk aýna
+Мензула                                     Menzula (topografik suratlary almak üçin gural)
+Мера                                        Möçber
+Мера ползучести                             Dowamly deformirlenme möçberi
+Мерзлая почва                               Doňan toprak
+Местные напряжения                          Ýerli gūýjenmeler
+Местные ослабления                          Ýerli gowşamalar
+Металлизация поверхности                    Üstüň ýüzüne metal çaýmak
+Металлические конструкции                   Metal konstruksiýalar
+Металлоемкость сооружения                   Desganyň metal sygymlylygy
+Металлолом                                  Galyndy metal bölekleri
+Метод                                       Usul
+Методика                                    Usulyýet
+Метод сечений                               Kesikler usuly
+Метод разрушающих нагрузок                  Syndyryjy ýūkler usuly
+Метод допускаемых напряжений                Rugsat gūýjenmeler usuly
+Метод предельных состояний                  Aňryćäk ýagdaýlar usuly
+Метод непосредственного интегрирования      Göni integrirlemek usuly
+Метод начальных параметров                  Başlangyć parametrler usuly
+Метод сравнения                             Deňeşdirme usuly
+Метод последовательных приближений          Yzigiderli ýakynlaşma usuly
+Метод лаковых покрытий                      Lak örtūkler usuly
+Метод сил                                   Gūýćler usuly
+Метод перемещений                           Orun ūýtgetmeler usuly
+Метод конечных элементов                    Takyk elementler usuly
+Метод конечных разностей                    Takyk tapawutlar usuly
+Метод сеток                                 Torlar usuly
+Метод размазывания                          Çaýmak usuly, çyrşamak usuly
+Метод наискорейшего спуска                  Iň tiz iniş usuly
+Метод штрафных функций                      Jerime funksiýalar usuly
+Метод наименьших квадратов                  Iň kiçi kwadratlar usuly
+Метрополитен                                Metropoliten, ýerasty demirýol
+Механизм                                    Mehanizm
+Механик                                     Mehanik
+Механика                                    Mehanika (fizikanyň bölümi)
+Механические характеристики материалов      Materiallaryň mehaniki häsietnamalary
+Механика деформируемых твердых тел          Deformirlenýän gaty jisimler mehanikasy
+Механика разрушения                         Synma mehanikasy
+Механика жидкостей                          Suwuklyklaryň mehanikasy
+Механика газов                              Gazlaryň mehanikasy
+Мешалка                                     Garyjy
+Микроклимат                                 Mikroklimat, uly bolmadyk ýaýrawyň 27
+Микрон                                      Metriň milliondan bir bölegi
+Микрорайон                                  Mikroraýon, kiçi raýon, etrapça
+Минералогия                                 Minerologiýa(minerallar baradaky ylym)
+Минимум функции                             Funksiýanyň minimumy, iň kiçi bahasy
+Минимальность                               Minimallyk, iň azlyk, iň kiçilik
+Минимизация                                 Minimuma getirme, kemeltme, azaltma
+Мнимое число                                Hyýaly san
+Многогранник                                Köpgyraňlyk
+Многократность                              Köpgaýtalanmaklyk
+Многозначность                              Köpbahalylyk, köpmanylylyk
+Многозначное число                          Köpbelgili san
+Многоквартирный дом                         Köp kwartiraly jaý
+Многоковшовый эксковатор                    Köp susakly ekskowator
+Многолетний план                            Köpýyllyk meýilnama
+Многомерное пространство                    Köp ölçegli giňişlik
+Многопролетные балки                        Köpgerimli balkalar
+Многослойная конструкция                    Köp gatlakly konstruksiýa
+Многоугольник                               Köpburçluk
+Многочлен                                   Köpçlen
+Множимое                                    Köpeliji
+Множитель                                   Köpeldiji
+Модель                                      Model, nusga
+Моделирование                               Modelirlemek
+Модернизация производства                   Önümçiligi kämilleşdirme
+Модуль                                      Modul(käbir hemişelikleriň at goşulmasy)
+Модуль упругости                            Maýyşgaklyk moduly
+Модуль сдвига                               Sūýşme moduly
+Модуль деформации                           Deformirlenme moduly
+Молекулярный вес                            Molekulýar agram
+Молниезащита                                Ýyldyrymdan gorag
+Молниеотвод                                 Ýyldyrym sowujy
+Молот                                       Ýekedaban, uly çekiç
+Молоток                                     Çekiç
+Момент                                      Moment
+Момент силы                                 Gūýjūň momenti
+Момент инерции                              Inersiya momenti
+Момент сопротивления                        Garşylyk momenti
+Монолит                                     Monolit, bütewi, guýma
+Монолитность                                Monolitlik, bütewilik
+Монолитный железобетон                      Guýma demirbeton
+Монтаж конструкций                          Konstruksiýalary gurnamak
+Монтирование                                Gurnaýyş, ýerine oturdyş
+Монумент                                    Monument, ýadygärlik
+Монументальность сооружения                 Desganyň ägirt ululygy
+Мороз                                       Sowuk, aýaz
+Морозостойкость                             Sowuga çydamlylyk
+Мост                                        Köpri
+Мостить улицу булыжником                    Köçä daş düşemek
+Мостовая каменная                           Daş düşelen ýol
+Мостовые быки                               Köpri sütünleri
+Мостостроение                               Köpri gurluşygy
+Мотель                                      Awtosyýahatçylar üçin myhmanhana
+Мотивировка                                 Delillendirme, esaslandyrma
+Мотка                                       Sarama, kelepleme 28
+Моток                                       Sargy, ýumak
+Мощение                                     Düşeme, düşäp çykma
+Мощность производительная                   Öndürijilik kuwwaty
+Моющиеся обои                               Ýuwulýan oboýlar
+Мрамор                                      Mermer
+Муаровые полосы                             Muaryň zolaklary
+Мусоропровод                                Zibil, hapa äkidiji kanal
+Набережная                                  Kenar ýakasyndaky jaýlar
+Набивка                                     Dykma, dykyp doldurma, guýma
+Набивные сваи                               Guýma gazyklar
+Наблюдатель                                 Gözegçi, synçy
+Набор рабочей силы                          Işçi güýjüni toplama
+Набор инструментов                          Gurallaryň toplumy
+Набухание                                   Çişme, ýarsma
+Навал                                       Tertipsiz dökülip taşlanan
+Навес                                       Bassyrma, telär
+Навесные стеновые панели                    Asma diwar panelleri
+Наветренная сторона здания                  Jaýyň ýele tarapy
+Нагель                                      Agaç konstruksiýalaryň böleklerini birikdirmek üçin ulanylýan agaç çüý, pahna
+Наглухо                                     Jebis, berk, açylmaz ýaly
+Наглядность доказательств                   Subutnamalaryň aýdyňlygy
+Нагрев                                      Gyzdyrma
+Нагрузка                                    Ýūk
+Нагружение                                  Ýüklenme
+Надбавка                                    Goşma, goşmaça, artdyrma
+Надводная часть                             Suwüsti, suwdan ýokarky bölegi
+Надежно                                     Ynamdar, ähtibar
+Надежность                                  Ygtybarlylyk
+Надземная часть                             Ýerüsti, ýerden ýokarky bölegi
+Надзор технический                          Tehniki gözegçilik
+Надклейка                                   Üstünden ýelmeme, üstüne ýelmeme
+Надлежащим образом                          Bolmaly ýagdaýynda
+Надсмотр                                    Üstünden garama, gözegçilik etme
+Надсыпка                                    Üstüne dökme, üstüne sepme
+Надстройка                                  Üstüne gurmak
+Надфиль                                     Kiçijik ige
+Наем рабочих                                Işçileri hakyna tutma
+Наемный труд                                Hakyna tutma zähmet
+Наждачная бумага                            Naždak kagyzy, kagyzdan ige
+Наземные сооружения                         Ýerüsti desgalar
+Назидание                                   Nesihat, öwüt, pent
+Назидательный случай                        Sapak edinerlik ýagdaý
+Назначение                                  Etmeli işi, maksady, gerek ýeri
+Назначить размеры                           Ölçeglerini kesgitläp bellemek
+Назначить материал                          Materialyny kesgitläp saýlap almak
+Наиболее удачный вариант                    Has şowly wariant
+Наибольшее значение                         Iň uly bahasy
+Наилегчайшего веса конструкция              Iň ýeňil agramly konstruksiýa
+Наилучший результат                         Iň gowy netije
+Наименее выгодное решение                   Iň az peýdaly çözgüt
+Наименование                                Ady, atlandyrylyşy 29
+Наихудший из вариантов                      Wariantlaryň iň ýaramazy
+Наказание                                   Jeza, temmi
+Накапливание дефектов                       Şikesleriň toplanmagy, artmagy
+Накипь стенок котла                         Gazanyň diwarlarynyň kesmegi
+Накладка                                    Ýüzünden goýulýan detal
+Накладные расходы                           Goşmaça harajatlar
+Наклеивание                                 Ýelmeme, ýelmemek, ýelmäp çykmak
+Наклепанная часть                           Berçinlenen bölegi
+Наклон                                      Ýapgytlyk, eňňitlik
+Наклонное сечени                            Ýapgyt kesik
+Наклонная площадка                          Yapgyt meýdanća
+Наковальня                                  Sandal
+Наконечник                                  Uçluk, peýkam, päýnek
+Накопление                                  Ýygma, ýygnama, toplama
+Накрепко                                    Berk, pugta, mäkäm
+Наладка оборудования                        Enjamlary sazlama
+Наладчик-мастер                             Sazlaýjy-ussa
+Налаженная работа                           Sazlanan, ýola goýlan iş
+Налет пыли                                  Tozan örtügi
+Наличие материала                           Materialyň bar bolan mukdary
+Наличник                                    Gapy, penjire boşlugynyň daşyna ýuka tagtadan aýlanýan jähek
+Наличность                                  Ýerinde bar bolan mukdar
+Налог                                       Salgyt, paç
+Налогообложение                             Salgyt salma
+Налогоплательщик                            Salgyt töleyji
+Наложенный платеж                           Artdyrylan, üstüne goýlan toleg
+Наложение нагрузок                          Ýükleriň üsti-üstüne düşmegi
+Намалёвать                                  Çyrşamak, çyrşaşdyrmak
+Нанесение краски                            Reňk çalmak
+Наоборот                                    Tersine, tepbe-tersine
+Наполнители пластических масс               Plastik materiallaryň dolduryjy maddalary
+Напор воды                                  Suwuň zarbasy
+Напорный трубопровод                        Zarply turba geçiriji
+Направление                                 Ugur, tarap
+Направленность                              Ugrukdyrylanlyk, gönükdirilenlik
+Направляющие стержни                        Ugrukdyryjy syryklar
+Направляющие косинусы                       Ugrukdyryjy kosinuslar
+Например                                    Meselem, mysal üçin
+Напряжение                                  Gūýjenme
+Напряженное состояние                       Dartgynlyk ýagdaý
+Напряженно-деформированное состояние        Dartgynlaşan-deformirlenen ýagdaý
+Наращивание темпов производства             Önümçiligiň depginini güýçlendirme
+Нарицательная стоимость                     Bellenilen gymmat, baha
+Наружные сети                               Daşky ulgamlar
+Нарушение                                   Düzgüni, kadany bozma
+Наряд-задание                               Narýad-tabşyryk
+Наряд-заказ                                 Narýad-buýrma
+Насадка колонны                             Sütüni ösdüriji goşunt
+Население                                   Ilat
+Населенность                                Ilatyň gürlügi
+Населенный пункт                            Ilatly ýer
+Насечка поверхности                         Üsti çyzyp büdür-südürleme
+Насквозь                                    Parran, zowwam
+Наследственная теория ползучести            Nesili, dowamly deformirlenme teoriýasy 30
+Насос                                       Nasos, sorujy
+Наставник рабочего                          Işçiniň halypasy
+Настил дощатый                              Tagta düşek
+Насыпь                                      Ýasama depe, gum düşek
+Насыщенный битумом щебень                   Bitumdan doýrulan çagyl
+Наука                                       Ylym
+Наукоемкие технологии                       Ylmy tutumly tilsimatlar
+Научно-исследовательский институт           Ylmy-barlag instituty
+Научно-координационный центр                Ylmy-ugrukdyryjy merkez
+Научно-методическая работа                  Ylmy-usulyýet işi
+Научно-производственное объединение         Ylmy-önümçilik birleşigi
+Научно-технический прогресс                 Ylmy-tehniki progres
+Научно-экспериментальные исследования       Ylmy-eksperimental barlaglar
+Начало координат                            Koordinatlar başlangyjy
+Начальные условия                           Başlangyç şertler
+Начертательная геометрия                    Çyzma geometriýa
+Неблагоустроенная квартира                  Oňaýsyz, abadanlaşdyrylmadyk kwartira
+Небольшой недостаток                        Uly bolmadyk kemçilik
+Небоскрёб                                   Asmana ýetip duran, beýik jaý
+Небрежная работа                            Harsal edilen iş
+Неверность результата                       Netijäniň nädogrulygy
+Невоспламеняемое вещество                   Ýanmazak maddalar
+Невредное производство                      Zyýansyz önümçilik
+Невыгодное решение                          Peýdasyz çözgüt
+Невыполнение обязательств                   Boçnamalaryň ýerine ýetirilmezligi
+Негерметичный шов                           Dykyz däl, syzýan sep
+Недвижимость                                Gozgalmaýan mülk, emläk
+Неделимый фонд                              Bölünmeýän fond, maýa
+Недельный план                              Hepdelik meýilnama
+Недифференцируемая функция                  Differensirlenmeýän funksiýa
+Недоброкачественная продукция               Hili ýaramaz önümler
+Недобросовестная работа                     Ynsapsyz, başdansowma edilen iş
+Недоделка                                   Kemçilikli iş
+Недолговременная нагрузка                   Uzakmöhletli däl ýük
+Недонапряжение                              Dartgynsyzlyk derejesi
+Недооценка возможностей                     Mümkinçiliklere kembaha garamak
+Недоработка                                 Gutarylmadyk, bitirilmedik iş
+Недостаток                                  Kemçilik, ýetmezçilik
+Недра земли                                 Yerasty zatlar
+Нежилые комнаты                             Ýaşalmayan otaglar
+Незавершенное строительство                 Gutarulmadyk gurluşyk
+Независимость                               Garaşsyzlyk
+Нейтральная ось                             Bitarap ok
+Нейтральный слой                            Bitarap gatlak
+Неквалифицированный рабочий                 Hünärsiz işçi
+Некомлектованное оборудование               Doly toplanmadyk enjamlar
+Неликвидный материал                        Ulanyp bolmaýan material
+Неметаллы                                   Metal däller
+Ненормированный рабочий день                Kadalaşdyrylmadyk iş güni
+Необжитый дом                               Içinde ýaşalmadyk jaý
+Необходимые условия                         Zerur şertler
+Необъективная оценка                        Obýektiw däl baha
+Неограниченность                            Çäklendirilmänlik
+Неоднородность                              Deňdūzūmsizlik
+Неоплаченный труд                           Tölenmedik zähmet 31
+Неопределенный интеграл                     Kesgitsiz integral
+Неопределимость                             Kesgitsizlik
+Неорганизованное производство               Guramaçylyksyz önümçilik
+Неплотный шов                               Dykyz, jebis däl sep
+Неподвижность                               Hereketsizlik, gymyldysyzlyk
+Неподвижно-шарнирная опора                  Süýşmeýän-şarnir daýanç
+Непрерывность                               Üznūksizlik
+Непрерывное бетонирование                   Üznüksiz betonlama
+Неприемлемые условия                        Kabul edip bolmajak şertler
+Непроницаемая перегородка                   Geçirmeýän perde
+Неравенство                                 Deňsizlik
+Неравномерность                             Deňölçegsizlik
+Неразрывность                               Üznūksizlik
+Нерегулярная рама                           Regulýar däl, ölçegleri gaýtalanmaýan rama
+Нерентабельное производство                 Girdejisiz önümçilik
+Нержавеющая сталь                           Poslamaýan polat
+Неровная поверхность                        Tekiz däl üst
+Несгораемые материалы                       Ýanmaýan materiallar
+Несимметричные сечения                      Simmetrik däl kesikler
+Неразрезная балка                           Üznūksiz balka
+Неразрушающие методы испытания              Syndyrmasyz synag usullary
+Неравномерно-распределенная нагрузка        Deň ýaýradylmadyk ýūk
+Несгораемые материалы                       Ýanmaýan materiallar
+Несимметричные сечения                      Simmetrik däl kesikler
+Несовпадение                                Gabat gelmezlik
+Несоизмеримость                             Deňeşdirip bolmazlyk
+Нестандартная продукция                     Standart däl önümler
+Несущая конструкция                         Göteriji konstruksiýa
+Несущеспособность                           Göterijilik ukyby
+Нетрудоспособность                          Işe ýarawsyzlyk
+Нетто                                       Netto, sap agram
+Неувязка                                    Baglanyşyksyzlyk, näsazlyk
+Неудачное решение                           Şowsuz çözgüt
+Неуравновешенность моментов                 Momentleriň deňagramlaşmazlygy
+Неустойчивость                              Durnuksyzlyk
+Нефтегазопровод                             Nebit-gaz geçirijisi
+Нецелесообразность решения                  Çözgüdiň maksadalaýyk dälligi
+Нечетная функция                            Täk funksiýa
+Неэкономичность                             Tygşytsyzlyk
+Неявная функция                             Aýdyň däl funksiýa
+Нивелир                                     Niwelir (ýeriň belentlik derejesini ölçeýji geodeziki gural)
+Нивелирование                               Niwelirleme
+Нижеподписавшиеся                           Aşakda gol çekenler
+Низина                                      Oýluk, çöketlik
+Низколегированная сталь                     Pes legirlenen polat
+Нисходящая линия                            Peselýän, aşak inýän çyzyk
+Новатор                                     Täzelikçi
+Новизна дела                                Işiň täzeligi
+Нововведение                                Täzeden girizilen kada
+Новоселье                                   Täze jaýa göçmek
+Новостройка                                 Täze gurluşyk
+Норма                                       Kada
+Норма времени                               Wagt kadasy
+Нормы проектирования                        Taslama kadalary 32
+Нормы расхода                               Harçlaýyş kadalary
+Нормы потребления                           Sarplaýyş kadalary
+Нормирующие параметры                       Kadalaşdyryjy görkezijiler
+Нормируемые параметры                       Kadalaşdyrylýan görkezijiler
+Нормируемые требования                      Kadalaşdyrylýan talaplar
+Нормальное сечение                          Normal kesik
+Нормальная сила                             Normal gūýjenme
+Нормальное напряжение                       Nominal gūýjenme
+Нормативное напряжение                      Normatiw gūýjenme
+Нормативное сопротивление                   Normatiw garşylyk
+Нулевая линия                               Bitarap ćyzyk, nolunjy ćyzyk
+Нулевое приближение                         Ilkinji ýakynlaşma
+Обвал                                       Gorp atma, opurylma, opurylyp gaýtma
+Обветшалое здание                           Çagşan, könelen jaý
+Обводнительные работы                       Suwlandyryş işleri
+Обвязка                                     Çatmak, çatyşdyrmak
+Обвязочная балка                            Çatyjy balka
+Обделочные работы                           Bejergi, bezeg işleri
+Обделочный камень                           Bezeg daşy
+Обдуманное решение                          Oýlanşykly çözgüt
+Обеденный перерыв                           Nahar arakesmesi
+Обеспечение материальное                    Maddy üpjünçilik
+Обесцвечивание красок                       Reňkleriň öçmegi, solmagy
+Обесточить                                  Toguny aýyrmak, toguny kesmek
+Обжиг строительных материалов               Gurluşyk materiallaryny bişirme
+Обжитой район                               Ýaşalýan etrap
+Обзор                                       Syn, gözden geçirme, göz aýlama
+Облик здания                                Jaýyň keşbi
+Облицовочные работы                         Örtgi işleri
+Обмен опытом                                Tejribe alyşma
+Обмуровка котлов                            Gazanyň daşyny örüp çykma
+Обнаружение дефектов                        Şikesleriň ýüze çykarylmagy, üstüniň açylmagy
+Обновление оборудования                     Enjamlary täzeleme
+Обобщение результатов                       Netijeleri umumylaşdyrma
+Обогревание здания                          Jaýy ýylatma, gyzdyrma
+Обозначение                                 Belleme, belgileme,
+Обои                                        Diwara ýelmenýän suratly bezeg kagyzy
+Обогащение смеси                            Garyndyny gurplandyrma
+Оболочка                                    Oboloçka, gabyk
+Оборудование                                Enjam
+Оборудовать                                 Enjamlaşdyrmak
+Обоснование                                 Esas, esaslandyrmak
+Обоснованное решение                        Esaslandyrylan çözgüt
+Оборачиваемость опалубки                    Galyplaryň aýlanyşygy, dolanyşygy
+Обочина дороги                              Ýoluň gyrasy
+Обработка информации                        Maglumatlary işläp taýýarlama
+Образец                                     Nusga
+Образующая конуса                           Konusyň emele getirijisi
+Обрамление                                  Çarçuwa, çarçuwalamak
+Обратный метод                              Ters usul
+Обрешетка                                   Seýreklenen tagta düşegi 33
+Обрушение                                   Opurylyşyk
+Обслуживание агрегата                       Agregata hyzmat etmek, işletmek
+Обстановка                                  Şert, ýagdaý
+Обстоятельный                               Doly, oýlanyşykly, her taraplaýyn
+Обтекаемая форма                            Süýnmek şekil
+Обусловленность явлений                     Hadysalaryň şertliligi
+Обушок уголка                               Burçlugyň ýeňse tarapy
+Общежитие                                   Umumy ýaşaýyş jaýy
+Объявление                                  Bildiriş
+Объединение                                 Brleşik, birleşdirmek
+Объединение перемещений                     Orun üýtgemeleri birleşdirmek
+Объемная сила                               Göwrūmleýin gūýć
+Объемная деформация                         Göwrūmleýin deformasiýa
+Объемное напряженное состояние              Göwrūmleýin dartgynlyk ýagdaýy
+Объединенная теория прочности               Birleşdirilen berklik teoriýasy
+Обратная засыпка                            Yzyna serpme
+Обратная симметрия                          Ters simmetriýa
+Общие положения                             Umumy ýagdaýlar
+Объемная ферма                              Göwrümleýin ferma
+Обычная работа                              Adaty iş
+Обязательность                              Hökmanylyk, gürrüňsizlik
+Овал                                        Ellips, süýnmek tegelek
+Овраг                                       Jar
+Огарок электрода                            Elektrodyň ýanyk galyndysy
+Огнеопасные вещества                        Ýangyn howply jisimler
+Огнеупорная глина                           Oda dözümly toýun
+Оголовок колонны                            Sütüniň ýokarky bölegi
+Ограждение                                  Germew
+Ограждающие конструкции                     Germew konstruksiýalary
+Ограничение                                 Çäklendiriş
+Ограничить                                  Çäklendirmek
+Ограничитель                                Çäklendiriji
+Огнестойкость                               Oda durumlylyk
+Однокомнатная квартира                      Bir otagly kwartira
+Одноковшовый эксковатор                     Bir susakly ekskowator
+Одноэтажный дом                             Bir gatly jaý
+Однородность                                Deňdūzumlilik (birsydyrgynlyk)
+Однородное тело                             Deňdūzumli jisim
+Озеленение территории                       Daş-töwerege agaç ekmek
+Ознакомительная практика                    Tanyşdyryjy amalyýet
+Окалина металла                             Metalyň köýügi
+Окно                                        Äpişge, penjire
+Оконный проем                               Äpişge boşlugy
+Округление числа                            Sany tegeleklemek
+Октаэдр                                     Oktaedr, sekizgyraňlyk
+Опалубка                                    Galyp
+Опалубочные работы                          Galyp işleri
+Опасная зона                                Howply zona
+Опасная нагрузка                            Howply ýūk
+Опасное напряжение                          Howply gūýjenme
+Опасное сечение                             Howply kesik
+Опасное состояние                           Howply ýagdaý
+Опока                                       Ergin metal guýulýan galyp
+Опора                                       Daýanç
+Опорная площадь                             Daýanç meýdany 34
+Опорное сечение                             Daýanç kesigi
+Опорная реакция                             Daýanç gūýji, daýanç reaksiýasy
+Опорные связи                               Daýanç baglanyşyklary
+Определитель                                Kesgitleýji
+Опреснение воды                             Suwuň duzlaryny aýyrma, süýjütme
+Опт                                         Lomaý, tutuş
+Оптимальность                               Oňaýlylyk
+Оптимальное решение                         Oňaýly çözgüt
+Опубликование                               Çap etme
+Опускной колодец                            Çökerilýän guýy
+Опыт                                        Tejribe
+Опытно-конструкторские работы               Tejribe-konstruktorlyk işler
+Опытно-производственное объединение         Tejribe-önümçilik birleşigi
+Оранжерея                                   Ösümlik ösdürilýän aýnalanan ýyly jaý
+Ориентирование                              Gönükdirme
+Организатор                                 Guramaçy, başyny başlaýjy
+Организационные мероприятия                 Guramaçylyk çäreleri
+Организация                                 Gurama, guramaçylyk
+Организация контроля                        Gözegçiligiň guramaçylygy
+Оригинал                                    Asyl nusga, original
+Оригинальность решения                      Çözgüdiň aýratyn özboluşlylygy
+Ориентир                                    Nyşana, ugur
+Ориентирование                              Ugrukdyrma, gönükdirme
+Орнамент                                    Nagyş, bezeg
+Орошение                                    Suwarma
+Оросительная система                        Suwaryş ulgamy
+Ортогональная система координат             Göniburçly koordinatlar ulgamy
+Орудия труда                                Zähmet gurallary
+Осадка фундамента                           Binýadyň çokmegi, çöküşi
+Осадочный шов                               Çöküş sepi
+Освоение                                    Özleşdirme, ele alma
+Осведомление                                Habarly, habardar etme
+Осветительная система                       Ýagtylandyryş ulgamy
+Осветление воды                             Suwy durlamak
+Освидетельствование                         Anyklama, anyklap güwä geçme
+Оседание опоры                              Daýanjyň çökmegi, çöküşi
+Осмотр                                      Seredip görme, gözden geçirme
+Осмотрительность                            Seresaplyk, eserdeňlik
+Оснастка                                    Enjam, abzal
+Оснащение                                   Enjamlaşdyrma, abzallaşdyrma
+Ось                                         Ok
+Основание                                   Esas
+Основная система                            Esasy sistema
+Основное сочетание нагрузок                 Ýükleriň esasy bileleşigi
+Особое сочетание нагрузок                   Ýükleriň aýratyn bileleşigi
+Основные сведения                           Esasy maglumatlar
+Ось стержня                                 Syrygyň oky
+Ослабленное сечение                         Gowşadylan kesik
+Остаточная деформация                       Galyndy deformasiýa
+Осреднение                                  Ortaçalamak, ortaça görkezijileri almak
+Остекление                                  Aýnalama, aýna oturtma
+Остов здания                                Jaýyň esasy, süňňi
+Остродефицитный материал                    Örän gyt, örän seýrek material
+Осушение                                    Guratma, suwuny çekdirme
+Осциллограф                                 Wagt birliginde tiz üýtgeýän ululyklaryň 35
+Отборный материал                           Saýlama material
+Отвертка                                    Towlap açýan, ýapýan gural
+Отвес                                       Dikligi barlamak üçin sapakdan asylan ýyk
+Отгрузка                                    Ýükläp ugratma
+Отдел кадров                                Işgärler bölümi
+Отделочные работы                           Timarlaýyş işleri
+Отделочник                                  Timarlaýjy
+Отказ                                       Ret etme, boýun towlama
+Отказ оборудования                          Enjamyň hatardan çykmagy, doly işden çykmagy
+Отклонение от нормы                         Kadadan gyşarma
+Оттенок краски                              Reňkiň öwüşgini
+Отопительная система                        Ýyladyş ulgamy
+Отопительный сезон                          Ýyladyş möwsümi
+Ответственность                             Jogapkärçilik
+Ответственность сторон                      Taraplaryň jogapkärçiligi
+Отвод                                       Sowgut
+Отжиг                                       Ýakmak, gyzdyrmak, bişirmek
+Отрыв                                       Gopmak, goparylmak
+Отход                                       Galyndy
+Относительное удлинение                     Otnositel uzalma
+Относительное сужение                       Otnositel inçelme
+Отнулевой цикл                              Noldan başlanýan sikl
+Официальное сообщение                       Resmi habar berme
+Оформление                                  Resmileşdirme, rejeleşdirme
+Охрана труда в строительстве                Gurluşykda zähmeti goramak
+Охрана окружающей среды                     Daşky gurşawy goramak
+Оценка точности решений                     Çözgütleriň takyklygyna baha bermek
+Очевидный недостаток                        Aç-açan, göz-görtele ýetmezçilik
+Очертание                                   Daşky sudur, daş sudury
+Пазух фундамента                            Binýadyň goltugy
+Палисадник                                  Agaç haýatjyk, jaýyň öňündäki bagjagazlar
+Палитра цветов                              Reňkleriň utgaşmasy
+Панель стеновая                             Diwar paneli
+Парадоксальность                            Paradoksallyk (kabul edilen kadalara, ylma çapraz gelýän ýa-da sagdyn pähime garşy bolan özbaşdak bir hadysa)
+Парапет                                     Diwaryň iň ýokarky, germew bölegi
+Паркетный пол                               Parket (insiz gysga tagtalardan) pol
+Парообразование                             Bug emele gelme, getirme
+Паропровод                                  Bug geçirijisi
+Патент                                      Patent (oýlanyp tapylan zada eýeçilik haty)
+Пенобетон                                   Köpürjikbeton (ýylylyk goraýjy ýeňil beton)
+Пентаэдр                                    Pentaedr, bäşgyraňlyk
+Перевооружение предприятия                  Kärhanany täzeçe abzallaşdyrmak
+Переделка проекта                           Taslamany täzeden işläp düzetme
+Передовая технология                        Öňdebaryjy, döwrebap tilsimat
+Перемешивание                               Garma, garyşdyrma, ýugurma
+Первое приближение                          Ilkinji ýakynlaşma
+Перемещение                                 Orun ūýtgeme 36
+Перекрытие                                  Aralyk ýapmalary
+Переменная нагрузка                         Üýtgeýàn ýük
+Перемычка                                   Boşluküsti pürs
+Переход                                     Geçelge
+Перегородка                                 Perde
+Перепад высот                               Beýiklikleriň tapawudy
+Перерасход материалов                       Materiallaryň artykmaç harçlanmagy
+Пересечение поверхностей                    Üstleriň kesişmesi
+Переставные полки                           Aýrylyp goýulýan tekjeler
+Переставные леса                            Sökülip düzülýän gurşaw sekiler
+Пересчитать задачу                          Meseläni täzeden hasaplamak
+Переход подземный                           Ýerasty geçelge, ötük
+Перигей                                     Ellipsiň merkeze iň golaý nokady
+Периметр здания                             Jaýyň, daşky çyzygy boýunça uzynlygy
+Период колебаний                            Yrgyldylaryň periody
+Перерезывающая сила                         Kesiji gūýç
+Перекрытие                                  Aralyk basyrgy(ýapgy)
+Пескоструйный аппарат                       Çäge pürküji gurluş
+Песок строительный                          Gurluşyk çägesi
+Песок мытый                                 Ýuwulan çäge, ownuk çagyl
+Пешеходная дорожка                          Pyýada ýodasy
+Пигмент                                     Reňk beriji gury, külke massa
+Пиломатериалы                               Agaç materiallary
+Пилон                                       Pilon (1.kesiginiň ölçegleriniň gatnaşygy we şekili adaty sütünleriňkiden tapawutly sütün. 2. diwaryň käbir böleginiň güýçli armirlenmegi bilen emele getirilýän sütün)
+Пилястра                                    Diwardaky gyraňly çykgyt
+Планиметрия                                 Geometriýanyň tekizlikdäki figuralary öwrenýän bölümi
+План                                        Meýilnama
+Плановые накопления                         Meýilnamalaşdyrylan ýygymlar
+План этажа                                  Gatyň meýilnamasy
+Планирование                                Meýilnamalaşdyrmak
+Пластинка                                   Plastinka, tekiz gabyk
+Пластичность                                Plastiklik, sozumlylyk
+Пластичный                                  Plastik, sozumly
+Пластическая деформация                     Sozumly deformirlenme
+Пластическое разрушение                     Plastik synmak
+Пластичные материалы                        Plastik materiallar
+Пластический шарнир                         Plastik şarnir
+Пластический момент сопротивления           Plastik garşylyk momenti
+Пластическое течение                        Sozumly akym
+Плексиглас                                  Pleksiglas, organiki aýna
+Пленка                                      Ýorka, ýuka perde
+Плечо силы                                  Güýjüň egni
+Плинтус                                     Pol bilen diwaryň yşyny ýapyjy tagta
+Плоскость                                   Tekizlik
+Плоская ферма                               Tekiz ferma
+Плотина                                     Bent
+Плотник                                     Agaç ussasy
+Плотность вещества                          Jisimiň dykyzlygy
+Площадь сечения                             Kesigiň meýdany
+Площадка чистого сдвига                     Sap sūýsme meýdançasy 37
+Плоскость                                   Tekizlik
+Плоская система сил                         Tekiz güýçler ulgamy
+Площадка текучести                          Akymlylyk meýdançasy
+Плоское напряженное состояние               Tekiz dartgynlyk ýagdaýy
+Пневмоконструкция                           Howa bilen doldurylan, ýumşak materialdan ýasalan kostruksiýa
+Победит                                     Wolfram garyndyly gaty polat
+Побелка стен и потолков                     Diwarlary we petikleri agartmak
+Поверка инструмента                         Guralyň dogry işleýşiniň barlagy
+Поверхностные силы                          Üstleýin gūýçler
+Повреждение                                 Şikes, zeper
+Поворот осей                                Oklary öwürme, aýlama
+Погружение сваи                             Gazygy çümdürme, çuňlaşdyrma
+Подбор сечения                              Kesigiň saýlanylyşy
+Подобные циклы                              Meňzeş sikller
+Подпорка                                    Direg, söýe
+Подпорная стена                             Direg diwary
+Подъемный кран                              Göteriji kran
+Подмост                                     Gurşaw sekisi
+Подпольное хозяйство                        Polasty hojalyk
+Подпольные коммуникации                     Polasty hyzmat ulgamlary, geçirijiler
+Подпорка                                    Diireg
+Подпорная стена                             Direg diwary
+Подтверждение                               Makullamak, makullama
+Почва                                       Toprak
+Подпочвенная вода                           Topragasty suw
+Покрытие                                    Basyrgy(ýapgy)
+Покрытие пола                               Düşekýüzi
+Полимеры                                    Himiki düzümi meňzeş molekulada atomlaryň sany bilen tapawutlanýan maddalar
+Полином                                     Polinom, köpçlen
+Полировка поверхности                       Üstleri ýylmama, ýaldyratma, ýalpyldatma
+Полиспаст                                   Polispast (ýükleri götermek, süýşürmek üçin ulanylýan blokly mehanizm)
+Полистирол                                  Goraýjy häsiýetli plastik jisim
+Полиэдр                                     Poliedr, köpgyraňlyk
+Политехнизм                                 Önümçiligiň esasy pudaklary bilen nazary we amaly taýdan tanyşdyrýan okuw sistemasy
+Пологая оболочка                            Ýalpak oboloçka, ýalpak gabyk
+Полубезмоментная теория                     Ýarymmomentsiz teoriýa
+Полуподвал                                  Ýarymýerzemin
+Полусфера                                   Ýarymsfera
+Пользователь                                Ulanyjy peýdalanyjy
+Полярная система координат                  Polýar koordinatlar ulgamy
+Полярный момент инерции                     Polýar inersiýa momenti
+Полярный момент сопротивления               Polýar garşylyk momenti
+Пол                                         Düşek
+Полоса                                      Zolak
+Полоска                                     Zolajyk
+Ползучесть                                  Dowamly deformirlenme
+Полуспокойная сталь                         Ýarymasuda polat
+Поперечное сечение                          Kese kesik
+Поперечная сила                             Kese gūýç
+Поперечное волокно                          Kese sūýūm, argaç
+Поперечная деформация                       Kese deformasiýa 38
+Поперечный удар                             Kese urgy
+Порыв ветра                                 Ýeliň güýjemesi, joşguny
+Последовательность явлений                  Hadysalaryň yzygiderliligi
+Постамент колонны                           Sütüniň esasy, düýbi
+Постоянная нагрузка                         Hemişelik ýuk
+Построение эпюр                             Epýūralary gurmak
+Последействие                               Durugyşýan deformasiýa
+Последовательные приближения                Yzygiderli ýakynlaşma
+Последующие приближения                     Soňky ýakynlaşmalar
+Потенциальная энергия                       Potensial energiýa
+Потенциальная функция                       Potensial funksiýa
+Потолок                                     Petik
+Потребитель                                 Sarplaýjy
+Потребительские свойства                    Sarplanyş häsiýetleri
+Потребление                                 Sarplamak, sarplaýyş
+Пояснительная записка                       Düşündiriş ýazgysy
+По ходу часовой стрелки                     Sagat diliniň ugruna
+Практикант                                  Praktikaçy, usulyýetçi
+Практические расчеты                        Praktiki, usuly hasaplamalar
+Правило                                     Düzgün
+Правило знаков                              Alamatlaryň dūzgūni
+Правило Верещагина                          Wereşaginiň dūzgūni
+Предел применимости                         Ulanmagyň çàgi
+Предел пропорциональности                   Proporsionallygyň çàgi
+Предел упругости                            Maýyşgaklygyň çàgi
+Предел текучести                            Akymlylygyň çàgi
+Предел прочности                            Berkligiň çàgi
+Предельное состояние                        Aňryçäk ýagdaý
+Предельное значение                         Aňryçäk baha
+Предельное напряженное состояние            Aňryçàk dartgynlyk ýagdaýy
+Предел выносливости                         Cydamlylygyň çàgi
+Предложение                                 Teklip
+Предназначение                              Öňünden bellenişi, niýetlenişi
+Предотвращение опасности                    Howpa ýol bermezlik
+Предохранитель                              Predohranitel, goraýjy, saklaýjy
+Предпосылки теоретические                   Teoretiki esaslar, başlangyçlar
+Предпочтение                                Makul bilme, ileri tutma
+Предусмотрительность                        Öňünden görüjilik, öňünden duýujylyk
+Преимущественно                             Esasan, köplenç, aglaba, galapyn
+Премиальный фонд                            Sylag fondy, baýrak fondy
+Преобразование                              Özgertme, täze görnüşe getirme
+Преуменьшение                               Kiçeltme, kemeltme, peseltme, azaltma
+Преувеличение                               Ulaltma, artdyrma, çişirme
+Преграда                                    Päsgelçilik
+Приближенность вычисления                   Hasaplamanyň takmynanlygy, ýakynlaşanlygy
+Прибор                                      Gural, abzal
+Приемка работ                               Işleri kabul etme
+Признак расчетной схемы                     Hasap çyzgydynyň belgisi, derejesi
+Прикладные науки                            Amaly ähmiýetli ylymlar
+Применительность                            Ulanylyp bolunmagy
+Примечание                                  Bellik, belgi
+Примыкание                                  Birikme, gelip birikme, gelip goşulma
+Принадлежность                              Degişlilik, degişli bolmaklyk
+Прикладная механика                         Amaly mehanika 39
+Принцип Даламбера                           Dalamberiň ýörelgesi
+Принцип наложения                           Urnaşdyrma ýörelgesi
+Принцип независимости действия сил          Gūýçleriň tàsirleriniň garaşsyzlyk ýörelgesi
+Приведенная жесткость                       Getirilen gatylyk
+Приведенная длина                           Getirilen uzynlyk
+Приспособление                              Emelleşdirme
+Приставная лестница                         Söýeme merdiwan
+Приостановка работы                         Işleri wagtlaýyn togtatmak
+Приравнять                                  Deňleşdirmek, deň hasap etmek
+Приращение функции                          Funksiýanyň bahasynyň artmasy
+Пристройка                                  Gapdalyndan goşmaça gurlan jaý ýa-da otag
+Притирка                                    Ýylmap, ýonup jebisleme
+Причина и следствие                         Sebäp we netije
+Пробел                                      Boşluk, kemçilik, ýetmezçilik
+Проверенный                                 Barlanan, synagdan geçen
+Проверочный расчет                          Barlag hasaby
+Проводимость                                Geçirijilik
+Проволока                                   Sim
+Проблема                                    Problema, kynçylyk, heniz çözülmedik
+Прогиб балки                                Balkanyň egilmesi
+Прогнозирование                             Öňünden çaklama
+Прогон                                      Progon, balka
+Программа                                   Maksatnama
+Программирование                            Programmirleme (hasaplaýjy matematikanyň we hasaplaýjy tehnikanyň bölümi)
+Прогресс                                    Progress, ösüş, öňe gidiş, ýokary galyş
+Прогрессия арифметическая                   Arifmetiki progressiýa
+Прогрессия геометрическая                   Geometriki progressiýa
+Продавливание                               Agram salyp çökermek, deşmek
+Продолжительность                           Dowamlylyk
+Продольный                                  Boý, uzaboýuna, dikligine
+Продольная сила                             Boý gūýç
+Продольный изгиб                            Boý egilme
+Продольное волокно                          Boý sūýūm, eriş
+Продольная деформация                       Boý deformasiýa
+Продольно-поперечный изгиб                  Boý-kese egilme
+Продольный удар                             Boý urgy
+Проект                                      Taslama
+Проектировочный расчет                      Taslama hasaby, taslýjy hasap
+Проем                                       Boşluk
+Прозрачность стекла                         Aýnanyň durulygy
+Производство                                Önümçilik
+Производственные отношения                  Önümçilik gatnaşyklary
+Производительность                          Öndürijilik
+Производительные силы                       Öndüriji güýçler
+Производитель работ                         Iş öndüriji
+Прокладка промежуточная                     Aralyk jebislendiriji gat, prokladka
+Прокладка газовых труб                      Gaz turbalaryny geçirmek
+Проконтролирование                          Gözegçilik yzarlamasy
+Пролет                                      Gerim
+Промышленность                              Senagat
+Промздание                                  Senagat jaýy, önümçilik jaýy
+Промышленный товар                          Senagat harydy
+Промышленная продукция                      Senagat önümi
+Простенок                                   Boşlugara diwar 40
+Протокол расчета                            Hasabyň beýany
+Проектировочный расчет                      Taslama hasaplamasy
+Проект                                      Taslama
+Проектирование                              Taslamak
+Проект производства работ                   Işleriň öndüriliş taslamsy
+Проект организации строительства            Gurluşygyň guramaçylyk taslamasy
+Проектные решения                           Taslama çözgütleri
+Пропарочная камера                          Gyzgyn bug bilen guradyjy kamera
+Пропитка битумом                            Bitum içirmek, bitum siňdirmek
+Пропорциональность                          Proporsionallyk, deň gatnaşyklylyk
+Простой в работе                            Işde bökdençlik, arakesme
+Пространство                                Giňişlik
+Пространственная ферма                      Göwrümleýin ferma
+Просчет в работе                            Işde goýberilen hata
+Просадочность                               Çöküjilik
+Просадочные грунты                          Çökegen topraklar
+Против часовой стрелки                      Sagat diliniň garşysyna
+Прочность                                   Berklik
+Противолежащий угол                         Garşyda ýatan burç
+Профилактика                                Profilaktika, öňüni alyjy çäre
+Профилированный настил                      Profilirlenen, gasyn-gasyn örtgi
+Проходка                                    Gazyp geçiş, köwüp geçiş
+Прямая гибкости Ясинского                   Ýasinskiniň çeýelik gönisi
+Прямолинейная форма стержня                 Syrygyň goniçyzykly şekili (formasy)
+Психрометр                                  Howanyň çyglygyny ölçeýji gural
+Пустотелый кирпич                           Boşlukly, içi gowaç kerpiç
+Работа                                      Iş
+Работа упругих сил                          Maýyşgak güýçleriň işi
+Работодатель                                Iş beriji
+Работы нулевого цикла                       Noldan aşaky işler
+Рабочие чертежи                             Işçi çyzgylar
+Рабочий проект                              Işçi taslama
+Равенство                                   Deňlik, barabarlyk
+Равнобедренный треугольник                  Deňýanly üçburçluk
+Равновеликие фигуры                         Deň ulukly figuralar
+Равномерная осадка                          Deňölçegli çöküş
+Равновесие                                  Deňagramlylyk
+Равномерно-распределенная нагрузка          Deň ýaýradylan ýūk
+Равнодействующая распределенной нагрузки    Ýaýradylan ýūkūň deňtàsiredijisi
+Равновесие упругих систем                   Maýyşgak sistemalaryň deňagramlylygy
+Радиальные напряжения                       Radial, radiusa ugurdaş güýjenmeler
+Радиатор отопления                          Ýyladyş ulgamynyň radiatory
+Радикал                                     Köküň matimatiki belgisi
+Радиан                                      Radian
+Радиус кривизны                             Egrilik radiusy
+Радиус инерции                              Inersiýa radiusy
+Разбежка стыков арматуры                    Armatura sepleriniň başaşalanyşy
+Разбивка                                    Bölme, bölekleme, bölüşdirme
+Разбивка геодезическая                      Geodeziki bölekleme
+Разбивочные оси                             Bölekleýji oklar
+Разборка стены                              Diwary sökme 41
+Развалина                                   Harabaçylyk
+Развертка цилиндра                          Silindriň ýazgyny, ýazgyn çyzgysy
+Развитие производительных сил               Öndüriji güýçleriň ösüşi
+Разводной мост                              Arasy açylýan köpri
+Разгерметизация                             Syzmazlygyň bozulmagy
+Разгрузка                                   Ýük düşürme, ýükden boşama
+Разомкнутая цепь                            Açyk,üzük zynjyr
+Разреженный настил                          Seýreklendirilen düşek
+Разрез поперечный                           Kese ýaryk
+Разрез продольный                           Boý ýaryk
+Разрешающее уравнение                       Çözüji deňleme (matematikada birnäçe deňlemäni, şol bir çögüdi berýän bir deňlemä öwürmekden alynýan deňleme)
+Разрыв образца при растяжении               Süýnmede nusganyň ýolunmagy
+Развязка стен                               Diwarlaryň kesişmesi
+Размерность                                 Ölçeg birligi
+Разрешение                                  Çözmek, rugsat bermek
+Разрушение                                  Synma, synmak
+Разрыв образца                              Nusganyň ūzūlmegi (ýolunagy)
+Разрушающая нагрузка                        Syndyryjy ýük
+Разрушающие методы испытания                Syndyryjy synag usullary
+Район                                       Etrap
+Районирование                               Etraplaşdyrma
+Раковина в бетоне                           Betonyň tenindäki çukurjyk, kemsiklik
+Рама                                        Rama
+Рамка                                       Çarçuwa
+Раскос фермы                                Fermanyň ýapgyt gözenegi
+Распалубка конструкции                      Konstruksiýanyň galyplaryny sökme
+Расположение комнат                         Otaglaryň ýerleşişi
+Распорядок рабочего дня                     Iş gününiň tertibi
+Распределение напряжений                    Güýjenmeleriň paýlanyşygy
+Распылитель красок                          Reňkleri pürkgüç
+Раствор строительный                        Gurluşyk palçygy
+Растворитель красок                         Reňkleriň erediji goşundysy
+Распорка                                    Söeg, direg
+Расход                                      Harçlamak, harçlaýyş, sarplaýyş, çykdajy
+Расценка                                    Iş birliginiň bahasy
+Расчет                                      Hasaplama
+Расчетные параметры                         Hasap görkezijileri
+Расчетное значение                          Hasap bahasy
+Расчетное сочетание усилий (РСУ)            Güýçleriň hasap bileleşigi
+Расчетное сочетание нагрузок (РСН)          Ýükleriň hasap bileleşigi
+Расчетные формулы                           Hasaplaýyş formulalary
+Расчет кривых брусьев                       Egri pūrsleriň hasaplamasy
+Расчетное сопротивление                     Hasaplama garşylygy
+Расчет сварных соединений                   Kebşirli birikmeleriň hasaplamasy
+Расчет заклепочных соединений               Berçinli birikmeleriň hasaplamasy
+Растяжение                                  Sūýnme
+Распределенная нагрузка                     Yayradylan ýūk
+Рациональная форма сечения                  Kesigiň kämil şekili
+Рациональная ось арки                       Arkanyň kämil oky
+Рационализатор                              Kämilleşdiriji
+Рационализаторские предложения              Kämilleşdiriji teklipler
+Рациональное сечение                        Yerlikli kesik
+Рашпиль                                     Törpi 42
+Реакция опоры                               Daýanç güýji
+Реализация проекта                          Taslamany amala aşyrma
+Ребристая плита                             Gapyrgaly plita
+Регулирование напряжений                    Güýjenmeleri sazlamak
+Резак ацетиленовый                          Asetilen keijisi
+Результативность работы                     Işiň netijeliligi
+Резьба                                      Hyr
+Рейка нивелирная                            Niwelir reýkasy (beýikligi keçgitlemek üçin iki ýüzi belgili insiz tagta)
+Рейсмус                                     Reýsmus (detalyň, önümiň gyrasyna parallel çyzyk çekmek üçin ulanylýan gural)
+Реконструкция                               Täzeçe dikeltme
+Реактивные силы                             Reaktiw gūýçler
+Регион                                      Sebit
+Региональная карта                          Sebitleşdiriş kartasy
+Регулятор                                   Sazlaýjy
+Резервуар                                   Howuz
+Результаты расчета                          Hasabyň netijeleri
+Релаксация напряжений                       Gūýjenmeleriň peselmegi
+Рельеф местности                            Ýer üstüniň beýikli-peslilik keşbi
+Ремесленник                                 Senetçi ussa
+Рентабельность предприятия                  Kärhananyň girdejililigi
+Ресурс                                      Gor
+Ржа                                         Rža
+Ригель                                      Rigel (çylşyrymly balka)
+Рифление поверхности                        Üsti büdür-südür etme
+Рихтовка                                    Ornunda oturşyny dogrulamak
+Рубанок                                     Rende
+Рубероид                                    Ruberoid, düýrme örtgi
+Руководствоваться правилами                 Düzgünlere esaslanmak, gollanmak
+Рукоятка инструмента                        Guralyň sapy, dessesi, tutary
+Рулонные материалы                          Düýrme materiallar
+Рыночная экономика                          Bazar ykdysadyýeti
+Рытье траншеи                               Binýat yaplaryny gazmak
+Самотечный коллектор                        Özakymly zeýkeş
+Самоходный кран                             Özi ýöreýän kran
+Самофинансирование                          Öz-özüňi maliýeleşdirme
+Сантехнические оборудования                 Santehniki enjamlar
+Сбой в работе                               Işde bökdençlik
+Сбор нагрузок                               Ýükleri toplamak
+Сборные конструкции                         Ýygnama konstruksiýalar
+Сборно-разборная опалубка                   Ýygnama-sökme galyp
+Свайные фундаменты                          Gazykly binýatlar
+Сваебойные работы                           Gazyk kakuw işleri
+Сварочные работы                            Kebşirleme işleri
+Свариваемость металлов                      Metallaryň kebşirlenijiligi
+Сварка газовая                              Gaz bilen kebşirleme
+Сварка электродуговая                       Elektrodugaly kebşirleme
+Сварочные электроды                         Kebşir elektrodlary
+Сварное соединение                          Kebşirli birikmeler
+Сварной шов                                 Kebşir ýodasy
+Сварщик высокой квалификации                Ýokary hünärli kebşirleýji 43
+Сверка документов                           Resminamalary deňeşdirip görme
+Сверление отверстий                         Burawlap deşik deşme
+Сверхнормативные расходы                    Kadadan artyk harçlamalar
+Сверхурочная работа                         Iş wagtyndan daşary edilen iş
+Светопроницаемость                          Ýagty geçirijilik
+Светонепроницаемость                        Yagty geçirmezlik
+Свидетельство                               Şahadatnama, şaýatnama
+Свободная длина                             Erkin uzynlyk
+Свободные колебания                         Erkin yrgyldylar
+Свободное кручение                          Erkin towlanma
+Свод цидиндрический                         Silindrik gümmez
+Сводчатый потолок                           Silindrik gümmez şekilli petik
+Своевременность                             Özwagtlylyk, öz wagtyndalyk
+Своеобразие                                 Özboluşlylyk, aýratynlyk
+Связь                                       Baglylyk, baglanyşyk
+Связевые конструкции                        Baglayjy konstruksiýalar
+Связевая балка                              Baglaýjy balkalar
+Связующее звено                             Baglaýjy halka
+Сгущаемость красок                          Reňkleriň goyalyjylygy
+Сдаточный объект                            Tabşyrylmaly obýekt
+Сдвиг                                       Sūýşme
+Сдельная работа                             Potrat iş
+Сдельно-премиальная оплата                  Potrat-sylagly töleg
+Себестоимость продукции                     Önümiň özüne düşýän gymmaty
+Северо-восток                               Demrgazyk-gündogar
+Северо-запад                                Demirgazyk-günbatar
+Сезонные работы                             Möwsümleýin işler
+Сейсмика                                    Seýsmika, sarsgyn, ýer titreme
+Сейсмическая нагрузка                       Seýsmiki ýük
+Сейсмограф                                  Ýer gabygynyň yranmalaryny awtomatik kadada ýazgy edýän abzal
+Сейсмометр                                  Ýer titremesi wagtynda topragyň, desgalaryň süýşmelerini ölçeýän gural
+Сейсмостойкость                             Seýsmika durumlylyk
+Сейсмостойкое строительство                 Seýsmika durumly gurluşyk
+Сейсмобезопасный район                      Seýsmiki howpsuz etrap
+Сейсморазведочные работы                    Seýsmiki barlag işleri
+Сектор                                      Sektor, bölümçe
+Сектор                                      Sektor, töweregiň iki radiusynyň arasy
+Секториальные характеристики                Sektorial hàsietnamalar
+Секущая плоскость                           Kesiji tekizlik
+Селепропускное сооружение                   Sili geçiriji desga
+Селеотводной канал                          Sili sowujy akaba
+Сеть                                        Set, tor, ulgam
+Сетка арматурная                            Armatura tory
+Сечение                                     Kesik
+Сжатие                                      Gysylma
+Сжатые стержни                              Gysylan syryklar
+Сжиженный газ                               Suwuklandyrylan gaz
+Сжимаемость грунта                          Topragyň gysylyjylygy
+Сила                                        Gūýç
+Силовой многоугольник                       Güýç köpburçlugy
+Силы диссипации                             Köşeşdiriji güýçler
+Силовая линия                               Gūýç çyzygy
+Силы инерции                                Inersiýa gūýçleri 44
+Симметричное сечение                        Simmetrik kesik
+Симметричные колебания                      Simmetrik yrgyldylar
+Симметричная расчетная схема                Simmetrik hasap çyzgydy
+Симметричный цикл                           Simmetrik sikl
+Синтез                                      Sintezleme, bölekleri birleşdirip bütewileme
+Синтезирование красок                       Sintezlenen reňkler
+Синтетические материалы                     Sintetik materiallar
+Система                                     Ulgam
+Скалывание                                  Owranma
+Скат крыши                                  Üçegiň eňňitligi
+Скачкообразность                            Üznüklilik, böküşlilik
+Скачок эпюры                                Epýuranyň böküşi
+Скважина                                    Skwažina, guüy
+Сквозные колонны                            Boý ugruna zowwam deşik sütün
+Склад                                       Sklad, ammar
+Складирование материалов                    Materiallary ammarlama, örüşdirip goýma
+Скобель                                     Rende
+Скобельное лезвие                           Rendäniň tygy
+Скользящая опалубка                         Typdyryp süýşürilýän galyp
+Скручивание                                 Towlama
+Скрытые работы                              Soňundan görünmeýän işler
+Следы плоскости                             Tekizligiň koordinat tekizlikleri bilen kesişme çyzyklary
+Следствие                                   Netije
+Слой                                        Gatlak
+Сложное сопротивление                       Cylşyrymly garşylyk
+Служебные обязанности                       Gulluk wezipeleri
+Случайные оси                               Totànleýin oklar
+Слой                                        Gatlak
+Смазочные материалы                         Çalgy materiallary
+Смежные комнаты                             Ýanaşyk otaglar
+Смеситель                                   Garyjy, garyşdyryjy
+Смесительная камера                         Garyjy kamera
+Смешанный метод                             Garyşyk usul
+Смешиваемость красок                        Reňkleriň garyşyjylygy
+Смятие                                      Yygrylma, ýenjilme
+Снабжение централизованное                  Merkezleşdirilen üpjünçilik
+Снаружи                                     Daşyndan, daş ýüzünden
+Снеговая нагрузка                           Gar ýüki
+Снос сооружений                             Degalary ýykyp aýyrma
+Соблюдение требований                       Talaplaryň berjaý edilişi
+Собирание                                   Ýygnamak
+Собрание                                    Ýygnak
+Собственные центральные оси                 Hususy merkezi oklar
+Собственный вес                             Hussy agram
+Собственные колебания                       Hususy yrgyldylar
+Событие                                     Waka
+Совершенство                                Kämillik
+Совет                                       Maslahat
+Совместимость                               Ylalaşyjylyk
+Совместность деформаций                     Deformasiýalaryň arkalaşygy
+Совмещение профессий                        Hünärleri utgaşdyrma
+Совмещенный график работ                    Işleriň utgaşdyrylan grafigi
+Совмещенный санузел                         Utgaşdyrylan sanitar düwün
+Совокупность значений величины              Ululygyň bahalarynyň köplügi 45
+Совпадение результатов                      Netijeleriň gabt gelmegi, deň gelmegi
+Современные требования                      Döwrebap talaplar
+Современный уровень                         Döwrebap dereje
+Согласие                                    Ylalaşmak
+Согласование                                Ylalaşyk, ylalaşdyrmak
+Согнуть и разогнуть проволоку               Simi egreldip göneltmek
+Содержание                                  Mazmuny
+Соединение                                  Birleşme
+Соизмеримость                               Deňeçerlik
+Сокращение сроков строительства             Gurluşygyň möhletini gysgaltmak
+Солончак                                    Şorluk, şorluk ýer
+Сомнительность сведений                     Maglumatlaryň şübheliligi
+Сообразность действий                       Hereketleriň laýyklygy
+Сооружение                                  Desga
+Соответствующие меры                        Degişli çäreler
+Соотношение                                 Gatnaşyk, baglanyşyk
+Сопротивление материалов                    Materiallaryň garşylygy
+Сопряжение                                  Utgaşma
+Сопутствующие нагрузки                      Baglanyşykly, ugurdaş ýükler
+Сортамент                                   Burçluk, şweller dwutawr ýaly prokat metal önümleriň geometriki häsiýetnamalary ýerleşdirilen tablisa
+Сосредоточенная сила                        Toplanan ýūk
+Составное сечение                           Dūzme kesik
+Сотрудничество                              Hyzmatdaşlyk
+Сохранность ценностей                       Gymmatlyklaryň, abatlygy, bütewiligi, tükelligi
+Сочетание                                   Bileleşik
+Спектр частот колебаний                     Yrgyldylaryň ýygylyklarynyň spektri
+Спектральный анализ                         Spektral derňew
+Специализированная бригада                  Ýöriteleşdirilen brigada, topar
+Специальность                               Hünär
+Специфика производства                      Önümçiligiň aýratynlygy
+Спецификация арматуры                       Armaturalaryň spesifikasiýasy
+Спецкурс                                    Ýörite kurs
+Спецодежда                                  Ýörite iş eşigi
+Спецподготовка                              Ýörite hünär taýýarlygy
+Списание материалов                         Materiallaryň hasapdan çykarylmagy
+Сплав                                       Splaw, garyndyly metal
+Сплошное тело                               Būtewi jisim
+Сплошность                                  Gowaksyzlyk, jebislik
+Сподручная работа                           Çemeli, başartjak iş
+Спокойная сталь                             Asuda polat
+Спонсорство                                 Hemaýatkärlik
+Спорный вопрос                              Jedelli sorag
+Спорткомплекс                               Sport toplumy
+Способ                                      Usul, tär, ýol
+Способность                                 Ukyp, zehin, başarnyk
+Справедливость решения                      Çözgüdiň adalatlylygy
+Справка                                     Delilnama
+Справочная информация                       Delillendiriji maglumatlar
+Спрос                                       Isleg
+Сравнение вариантов                         Wariantlary deňeşdirme
+Среднесуточный расход воды                  Suwuň gije-gündizde ortaça harçlanyşy
+Срединная плоскость                         Orta tekizlik 46
+Срез                                        Kesilme
+Срезка растительного слоя грунта            Topragyň ösüşli gatlagyny kesip aýyrma
+Срочность исполнения заказа                 Buýrmanyň ýerine ýetirliş gyssaglylygy
+Ссылка на источник                          Çeşmä salgylanma
+Стабилизатор                                Stabilizator, sazlaýjy
+Стабильность                                Durnuklylyk, üýtgewsizlik
+Ставни окон                                 Penjire gabsasy
+Сталепрокатное производство                 Polat süýüş önümçiligi
+Стальные конструкции                        Polat konstruksiýalar
+Стамеска                                    Isgene
+Старательный исполнитель                    Yhlasly ýerine ýetiriji
+Старение материала                          Materialyň könelmegi
+Статика                                     Statika (mehanikanyň jisimleriň deňagramlylyk şertini örenýän bölümi)
+Статистика                                  Statistika (özgerişleri mukdar taýdan öwrenmek usullaryny işläp derňeýän ylym)
+Статический момент                          Statik moment
+Статическая неопределимость                 Statik kesgitsizlik
+Статически определимые системы              Statik kesgitli sistemalar
+Статическая нагрузка                        Statik ýūk
+Стекловолокно                               Aýna süýümi
+Стена                                       Diwar
+Стесненность                                Daryşgynlyk
+Стесненное кручение                         Daryşgyn towlanma
+Стесненные условия                          Daryşgynlyk şertleri
+Степень свободы                             Erkinlik derejesi
+Степень статической неопределимости         Statik kesgitsizlik derejesi
+Степень числа                               Sanyň derejesi, görkezijisi
+Стержень                                    Syryk
+Стимулирование экономическое                Ykdysady höweslendirme
+Стихийное бедствие                          Tebigy betbagtçylyk
+Стойка                                      Sūtūn
+Стойкость                                   Durumlylyk
+Столяр                                      Neçjar agaç ussasy
+Столярные изделия                           Neçjarçylyk agaç önümleri
+Столярная мастерская                        Neçjarçylyk ussahanasy
+Строгальный станок                          Ýonujy stanok
+Строитель                                   Gurluşykçy
+Строительно-монтажная организация           Gurluşyk-gurnama guramasy
+Строительный генеральный план               Gurluşygyň baş meýilnamasy
+Строительные нормы и правила (СНиП)         Gurluşygyň kadalary we düzgünleri
+Строительные нормы Туркменистана (СНТ)      Türkmenistanyň gurluşyk kadalary
+Строительные материалы                      Gurluşyk materiallary
+Строительный раствор                        Gurluşyk palçygy
+Строительный мастер                         Gurluşyk ussasy
+Строительный рабочий                        Gurluşyk işçisi
+Строительный инструмент                     Gurluşyk guraly
+Строительная площадка                       Gurluşyk meýdançasy
+Строительные термины                        Gurluşyk adalgalary
+Строительные нормы                          Gurluşyk kadalary
+Строительные правила                        Gurluşyk düzgünleri
+Строительный контроль                       Gurluşyk gözegçiligi
+Строительное управление                     Gurluşyk guramasy
+Стропило                                    Örtgi balkasy
+Стропильная ферма                           Örtgi fermasy 47
+Стружка                                     Ýonuşga
+Структура                                   Struktura, gurluş, düzüm
+Ступенька                                   Basgançak
+Стык                                        Sep
+Стыковка                                    Seplemek, sepleşdirmek
+Стяжка болтов                               Boltlary çekip berkitme
+Субподрядчик                                Kömekçi potratçy
+Субъективность                              Subýektiwlik, hususylyk
+Суглинок                                    Toýunsow toprak
+Сужение                                     Daralma
+Суммирование                                Jemleme, jemini çykarma
+Супесь                                      Çägesöw toprak
+Существенность                              Wajyplyk, düýplilik
+Сферическая система координат               Sferiki koordinatlar ulgamy
+Сформулирование выводов                     Netijeleri düşnükli aýtmak
+Схватывание бетона                          Betonyň tutluşmagy
+Сыпучесть песка                             Çägäniň ürgünligi
+Сыпучие материалы                           Ürgün materiallar
+Сырцовый кирпич                             Çig kerpiç
+Сырьё                                       Çig mal
+Табличные сведения                          Tablisa görnüşli maglumatlar
+Тавровое сечение                            Tawr, «T» görnüşli kesik
+Тара                                        Gap
+Тарировка измерительных приборов            Ölçeýji gurallaryň takyklygyny sazlama
+Тарификация заработной платы                Zähmet hakyny belli nyrhlaşdyrma
+Твердение бетона                            Betonyň gatamagy
+Твердое тело                                Gaty jisim
+Тектонические землетрясения                 Ýer gabygynyň gurluşyny üýtgediji ýer titremeleri
+Текучесть металла                           Metalyň akyjylygy, akaganlygy
+Телебашня                                   Telewizion minarasy, diňi
+Темпы работ                                 Işleriň depgini
+Температура                                 Temperatura, gyzgynlyk derejesi
+Температурное поле                          Temperatura meýdany
+Температурная деформация                    Temperaturadan deformirlenme
+Температурные напряжения                    Temperatura güýjenmeleri
+Тендер                                      Tender, bäsleşik
+Теодолит                                    Teodolit, geodziýada burç ölçeýji gural
+Теорема                                     Teorema, ylmy subutnama
+Теорема о взаимности работ                  Işleriň ozaralyk teoremasy
+Теорема о взаимности перемещений            Orun ūýtgetmeleriň ozaralyk teoremasy
+Теория                                      Teoriýa, taglymat, nazaryýet
+Теория упругости                            Maýyşgaklyk teoriýasy
+Теория пластичности                         Plastiklik teoriýasy
+Теория ползучести                           Dowamly deformirlenme teoriýasy
+Теория старения                             Könelişme teoriýasy
+Теория разрушения                           Synma teoriýasy
+Теория расчета                              Hasaplama teoriýasy
+Теория разрушения                           Synmagyň teoriýasy
+Теоретические расчеты                       Teoretiki hasaplamalar
+Теории прочности                            Berklik teoriýalary
+Теплоемкость                                Ýylylyk sygymy 48
+Теплоизоляция зданий                        Jaýlaryň ýylylyk geçirmezligi
+Теплонепроницаемые материалы                Ýylylyk geçirmeýän materiallar
+Теплообмен                                  Ýylylyk çalyşygy
+Теплоотдача горючих материалов              Ýangyç materiallryň ýylylyk berijiligi
+Теплопроводность                            Ýylylyk geçirijiligi
+Теплосеть                                   Ýyladyş ulgamy
+Теплоснабжение                              Ýylylyk üpjünçiligi
+Теплотехнический расчет стен                Diwarlaryň ýylylyk goraýyş hasaby
+Термин                                      Adalga
+Терминологический словарь                   Adalgalary düşündiriş sözlügi
+Терраса                                     Eýwan, dalan
+Территория завода                           Zawodyň tutýan ýeri
+Тесаный камень                              Ýonulyp taraşlanan daş
+Тетраэдр                                    Tetraedr (hemme taraplary üçburçluk görnüşli dörtgraňlyk
+Технадзор                                   Tehniki gözegçilik
+Технико-экономические показатели            Tehniki-ykdysady görkezijiler
+Техника безопасности в строительстве        Gurluşykda howpsuzlyk tehnikasy
+Техническая механика                        Tehniki mehanika
+Технические условия                         Tehniki şertler
+Технические трудности                       Tehniki kynçylyklar
+Техническое совершенство                    Tehniki kämillik
+Техногенные воды                            Tehnogen(tehniki ulanylan) suwlar
+Технология                                  Tilsimat
+Технологические оборудования                Tilsimat enjamlary
+Технологический процесс                     Tilsimat hadysasy
+Технологический перерыв                     Tilsimat arakesmesi
+Технологический шов                         Tilsimat sepi
+Технологическое нарушение                   Tilsimat
+Технологический поток                       Tilsimat akymy
+Технологическая последовательность          Tilsimat yzygiderliligi
+Течь резервуара                             Howuzyň syzmasy
+Тип                                         Nusga, görnüş
+Типовой проект                              Nusgawy, bir görnüşli taslama
+Титульный лист проекта                      Taslamanyň ýüzlendiriji sahypasy
+Тождественность                             Deňlik, barabarlyk
+Толкование чему-либо                        Bir zada düşündiriş bermek
+Толщина                                     Galyňlyk
+Толщина уплотняемых слоев                   Dykyzlandyrylýan gatlagyň galyňlygy
+Толщина слоя                                Gatlagyň galyňlygy
+Толщина стенки                              Diwaryň galyňlygy
+Толщина плиты                               Plitanyň galyňlygy
+Толстостенные цилиндры                      Galyňdiwarly silindler
+Тонкостенные стержни                        Yukadiwarly syryklar
+Тональность красок                          Reňkleriň öwüşginleri
+Тоннаж транспорта                           Ulagyň tonna hasabynda ýük göterijiligi
+Топор                                       Palta
+Топорище                                    Palta sapy
+Торец здания                                Jaýyň gysga ganaty
+Точность расчета                            Hasabyň takyklygy
+Трамбовка грунта                            Topragy basgylap dykyzlandyrma
+Транспортировка грузов                      Ýükleri daşamak
+Траншея под фундаменты                      Binýat ganawy
+Требование                                  Talap
+Требовательность                            Talapkärlik, talap edijilik 49
+Требуемые характеристики                    Talap edilýän häsiýetnamalar
+Требуемая площадь сечения                   Kesigiň talap edilýän meýdany
+Трехбалльный ветер                          Üç ballyk ýel
+Трехдневный срок                            Üç günlük möhlet
+Трехмерное пространство                     Üç ölçegli giňişlik
+Трещина                                     Jaýryk
+Трещиностойкость                            Jaýrylma durumlylyk
+Тригонометрические функции                  Trigonometrik funksiýalar
+Тропосфера                                  Ýer atmosferasynyň aşaky gatlagy
+Трос стальной                               Polat tros, tanap, urgan
+Тротуар                                     Trotuar, ýanýoda
+Труба водопроводная                         Suw geçiriji turba
+Труд                                        Zähmet
+Трудность                                   Kynçylyk
+Труднодоступные места                       Barmasy kyn ýerler
+Труднопроходимый участок                    Geçmesi kyn uçastok
+Трудоемкость работ                          Işleriň zähmet sygymy
+Трудозатраты                                Zähmet sarp ediliş
+Трудоспособность                            Zähmete ukyplylyk
+Трудосберегающий инструмент                 Zähmeti tygşytlaýjy, ýeňilleşdiriji gural
+Трудоустройство                             Işe ýerleşdirilmek
+Тряска                                      Sarsgyn, silteme
+Туалетная комната                           Hajathana otagy
+Туннель                                     Ýerasty geçelge
+Туннелестроение                             Ýerasty geçelge gurluşygy
+Тупик                                       Öňi ýapyk köçe
+Тупиковая ситуация                          Çykgynsyz ýagdaý
+Туф                                         Örtgi material hökmünde ulanylýan dag jynsy
+Тщательный анализ                           Jikme-jik derňew
+Убедительный пример                         Ynandyryjy mysal
+Убыль естественная                          Tebigy ýitgi
+Убыстрение темпов работы                    Işiň depginini güýçklndirme
+Убыточность предприятия                     Kärhananyň zyýan çekijiligi
+Уведомительное письмо                       Habarly, habardar ediji hat
+Увлажнение                                  Çyglama, çyglandyrma
+Увлажнитель воздуха                         Howany çyglandyryjy
+Увольнение с работы                         Işden çykarma, boşatma, aýyrma
+Увязка теории с практикой                   Taglymat bilen usulyýeti baglanyşdyrma
+Углеводородные соединения                   Uglewodorod birleşmeler
+Угловой дом                                 Burçdaky, çüňkdäki jaý
+Угловое перемещение                         Burçlaýyn orun üýtgeme
+Угол закручивания                           Towlanma burçy
+Угол поворота                               Owrūlme burçy
+Угол внутреннего трения                     Iç sürtülme burçy
+Угол согласования                           Ylalaşyk burçy
+Углубление сваи                             Gazyklary kakma, çuňlaşdyrma
+Уголок стальной                             Polat burçluk
+Удаление ржавчины                           Posy aýyrma, posdan arassalama
+Ударник труда                               Zähmet zarpçysy
+Удар                                        Urgy
+Ударная нагрузка                            Urgy ýūki 50
+Удачное решение                             Şowly çözgüt, Şowuna düşen çözgüt
+Удвоение численности рабочих                Işçileriň sanyny ikeltme
+Удельный вес                                Udel agram
+Удешевление продукции                       Önümiň arzanlamagy
+Удлинение                                   Uzalma
+Удобоукладываемость бетона                  Betonyň aňsat guýulyjylygy
+Удобство квартиры                           Öýüň amatlylygy
+Удовлетворительность результатов            Netijeleriň kanagatlanarlylygy
+Удорожание себестоимости                    Özüne düşýän gymmatyň artmagy
+Узел фермы                                  Fermanyň düwüni
+Узлы и детали архитектурные                 Binagärlik düwünleri we bölekleri
+Узкоспециализированное хозяйство            Çäkli ugurly hojalyk
+Узкая специализация                         Hünäriň inçe ugry
+Указ                                        Ukaz, perman
+Указание                                    Görkezme
+Укладка бетона в опалубку                   Betony galyba guýmak
+Уклон кровли                                Üçegiň ýapgytlygy, eňňitligi
+Укомплектованность оборудования             Enjamyň doly düzümliligi
+Укорочение                                  Gysgalma
+Укорачивание длины стержня                  Syrygyň uzynlygyny gysgaltmak
+Укрепление основания                        Esasy berkitme, berkleşdirme
+Укрупнение конструкции                      Konstruksiýany irileşdirme
+Укрупнительная сборка                       Irileşdiriji gurnama
+Укрывательство недостатков                  Kemçilikleriň üstini ýapmak, ýaşyrmak
+Уловитель пыли                              Tozan sorujy
+Улучшение условий труда                     Zähmet şertlerini gowulaşdyrmak
+Улучшенная отделка                          Gowulandyrylan timarlaýyş
+Улучшенная планировка дома                  Jaýyň gowulandyryp meýilnamalaşdyrylyşy
+Умелое руководство производством            Önümçilige başarnykly ýolbaşçylyk etmek
+Уменьшение непроизводительных затрат        Önümçiliksiz harajatlary azaltmak
+Умеренность климата                         Howa şertleriniň aramlygy
+Уместное использование                      Ýerlikli ulanyş
+Умозаключение                               Netije çykarma, netijä gelme
+Умывальник                                  Elýuwar
+Универсальность                             Herbaplyk
+Универсальный узел                          Herbap düwün
+Универсальное решение                       Herbap çözgüt
+Уникальность сооружения                     Desganyň seýrek duş gelýänligi
+Унификация                                  Bir nusga getirme
+Упадок производства                         Önümçiligiň pese düşmegi
+Упаковка                                    Gaplama, gapgarma
+Уплотнение                                  Dykyzlandyrma
+Уплотнение оснований                        Esaslary dykyzlandyrma
+Уплотненность рабочего времени              Iş wagtynyň peýdalanylşynyň dolulygy
+Уплотнитель швов                            Sepleri dykyzlaýjy
+Уполномоченный представитель                Ygtyýarlandyrylan wekil
+Упорядочение                                Tertipleşdirme, tertibe salma
+Управление                                  Gurama, dolandyrma
+Упразднение                                 Ýatyrma, ýapma
+Упругость                                   Maýyşgaklyk
+Упругая деформация                          Maýyşgak deformasiýa
+Упругая заделка                             Maýyşgak berkitme
+Упругое основание                           Maýyşgak dūşek
+Упрощения расчета                           Hasaplamanyň sadalaşdyrylmalary
+Упор                                        Direg 51
+Уравнения равновесия                        Deňagramlylyk deňlemeleri
+Уравнение деформаций                        Deformasiýlar deňlemesi
+Уравнение неразрывности деформаций          Deformasiýalaryň laýyklyk deňlemeleri
+Уравнения сплошности                        Bütewilik deňlemeleri
+Уравнение перемещений                       Orun ūýtgetmeler deňlemesi
+Уравнение трех моментов                     Uç momentiň deňlemesi
+Уравнивание                                 Deňlemek, deňleşdirmek
+Уравновешенность моментов                   Momentleriň deňagramlaşygy
+Урбанизация                                 Ykdysady we medeni durmuşyň şäher merkezlerinde jemlenmegi
+Урегулирование напряжений                   Güýjenmeleri sazlaşdyrmak, düzgüne salmak
+Уровень                                     Üstüň gorizontallygyny görkezýän abzal
+Уровень залегания грунтовых вод             Ýerasty suw ýatagynyň derejesi
+Усадка бетона                               Betonyň çöküjiligi
+Усиление                                    Güýçlendirme
+Ускорение                                   Tizlenme, tizleşme
+Условный предел упругости                   Sertli maýyşgaklyk çàgi
+Условная диаграмма растяжения               Sertli sūýnme diagrammasy
+Условие прочности                           Berklik şerti
+Условие жесткости                           Gatylyk şerti
+Условия закрепления                         Berkidiliş şertleri
+Усовершенствование методов расчета          Hasap usullarynyň kämilleşdirilmegi
+Успокоитель                                 Köşeşdiriji, rahatlandyryjy
+Устав предприятия                           Kärhananyň düzgünnamasy
+Устои моста                                 Köpriniň kenar diregleri
+Устойчивость                                Durnuklylyk
+Усталость                                   Yadawlyk
+Усталостное разрушение                      Yadawlykdan synma
+Установившаяся ползучесть                   Durugyşan, dowamly deformirlenme
+Установка                                   Ornuna ýerleşdirmek, oturtmak
+Установка колонн                            Sütünleriň oturdylyşy
+Устранение недостатков                      Kemçilikleri ýok etme
+Устройство                                  Ýerine ýetirmek, gurnamak
+Устройство опалубки                         Galyplaryň gurnalyşy
+Устройство фундаментов                      Binýatlaryň ýerine ýetirilişi
+Устойчивость сжатых стержней                Gysylan syryklaryň durnuklylygy
+Уступообразный фундамент                    Basgançak şekilli binýat
+Устье трубы                                 Turbanyň agzy
+Усушка древесины                            Agaç önümlerini guratmak
+Утварь инструментальная                     Gural enjamlary
+Утверждение                                 Tassyklama
+Утеплитель                                  Ýylylyk goraýjy material
+Утилизация продуктов сгорания               Ýanyş önüleriniň galyndylaryndan gaýtadan peýdalanmak
+Утилитарный подход к делу                   Işe peýdasysyna çapyp çemeleşme
+Утолщение                                   Ýognalma, galňama
+Уточнение                                   Takyklama
+Утрамбованный грунт                         Basgylanyp zynç edilen toprak
+Утяжеление конструкции                      Konstruksiýanyň agyrlaşmagy
+Уход за бетоном                             Betona ideg etme
+Учебно-производственная практика            Okuw-öümçilik usulyýeti
+Ученик мастера                              Ussanyň şägirdi, kömekçisi
+Учет расхода материалов                     Materiallaryň harçlanyşyny hasba almak
+Учреждение                                  Edara, gurama
+Ущемление прав работника                    Işgäriň hukuklaryny gysma 52
+Уяснение создавшегося положения             Ýüze çykan ýagdaýy anyklama
+Фаза колебания маятника                     Maýatnigiň yrgyldylarynyň fazasy
+Фактические данные                          Hakyky maglumatlar
+Фактический объем работ                     Işleriň hakyky mukdary, göwrümi
+Фактурный слой                              Ýüzlendiriji gatlak
+Фанера трехслойная                          Üç gatly faner
+Фасад главный                               Öňünden görnüş
+Фасад дворовый                              Yzyndan görnüş
+Фасад боковой                               Gapdalyndan görnüş
+Фаска                                       Ýylmanan erňek
+Фасонный лист                               Şekil berlen list
+Фаянсовые изделия                           Syrçalanan önümler
+Ферма                                       Ferma
+Феррохром                                   Hromly demir
+Фешенебельность сооружения                  Desganyň haýbatlylygy, kaşaňlylgy
+Фибролит                                    Agaç ýonuşgalaryndan preslenen gurluşyk materialy
+Фигура геометрическая                       Geometrik şekiller
+Фиксатор                                    Bir zady gerek ýagdaýda berkidigi enjam
+Фиктивная балка                             Toslama (ýasama) balar
+Фиктивная нагрузка                          Toslama (ýasama) ýūk
+Филенка                                     Zolak çalynan reňk
+Фильтр                                      Süzgüç, süzüji
+Фильтрационный колодец                      Süzýän, sgüçden geçirýän guýy
+Финансирование производства                 Önümçiligi malýeleşdirme
+Финифть                                     Syrça
+Фирма строительная                          Gurluşyk firmasy, şereketi
+Фисташковый цвет                            Pisse reňk
+Фланговый сварной шов                       Gapdal laýyn kebşir sepi
+Флигель                                     Gapdaldan goşmaça salnan jaý
+Фойе                                        Foýe, içişik
+Фокус землетрясения                         Ýer titremesiniň merkezi, ojagy
+Форма                                       Şekil
+Форма сечения                               Kesigiň şekili
+Формат чертежа                              Çyzgynyň formaty, ölçegi
+Формование                                  Galyplap şekile getirme
+Формовка кирпича                            Kerpiç galyby
+Формула расчета                             Hasap formulasy
+Формулировка задачи                         Meseläniň aýdyň kesgitlenmesi
+Форсирование строительства                  Gurluşygy çaltlaşdyrma
+Форсунка                                    Forsunka, pürküji gural
+Фрагмент плана здания                       Jaýyň meýilnamasynyň käbir bölegi, parçasy
+Фрагментирование чертежа                    Çyzgylary parçalaýyn görkezmek
+Фрамуга                                     Penjiräniň ýa-da gapynyň ýokarky açylmaýan bölegi
+Фреза                                       Metalyň we agajyň ýüzüni bejeriji gural
+Фрезерный станок                            Ýüzüni ýylmap bejeriji enjam
+Фрезеровка гранитных плит                   Granit plitalaryň ýüzüni ýylmamak
+Фреска                                      Täze suwalan diwaryň öüzüne çekilen surat, nagyş
+Фронтальная проекция                        Maňlaýdan proýeksiýa, görnüş
+Фуганок                                     Rende, ýonguç 53
+Фундамент                                   Binýat
+Фундаментная балка                          Binýat balkasy
+Фундаментная лента                          Binýat zolagy
+Фундаментная плита                          Binýat plitasy
+Фундаментальное исследование                Berk, düýpli barlag
+Функциональный анализ                       Funksional baglanyşykly derňew
+Функциональная зависимость                  Funksional baglylyk
+Функционирование предприятия                Kärhananyň işläp durmagy
+Фут                                         Fut, 30.48sm barabar uzynlyk ölçegi
+Халатность в работе                         Işde sowuk-salalyk
+Халтурная работа                            Harsal edilen iş
+Характеристика                              Hàsiýetnama
+Характерные точки сечения                   Kesigiň hàsietlendiriji nokatlary
+Характеристики металла                      Metalyň häsiýetnamalary
+Хладостойкий металл                         Sowuga çydamly metal
+Ходатайство                                 Haýyş etme, towakga etme
+Хоздоговор                                  Hojalyk şertnamasy
+Хозрасчетное предприятие                    Hojalyk hasaplaşykdaky kärhana
+Хозяйство коммунальное                      Komunnal hojalyk
+Холмистая местность                         Baýyrlyk ýer
+Холостой ход машины                         Maşynyň boş işleýşi
+Хомуты арматурные                           Armatura hamytlary
+Хорда кривой                                Egri çyzygyň iki nokadyny birikdirýän göni çyzyk
+Хранение материалов                         Materiallaryň saklanylyşy
+Хрупкость                                   Portluk
+Хрупкое разрушение                          Port synma
+Хрупкие материалы                           Port materiallary
+Цветные металлы                             Reňkli metallar
+Целевое финансирование                      Maksatly maliýeleşdirme
+Целесообразность                            Maksadalaýyklyk
+Целенаправленность                          Maksada gönügijilik
+Целевая функция                             Maksaty funksiýa
+Целесообразное использование материалов     Materiallaryň maksadalaýyk ulanylmagy
+Целостность                                 Dolulyk, bütewilik, tutuşlyk
+Цемент                                      Sement
+Цементный раствор                           Sementli palçyk
+Цементирование                              Sementlemek
+Цементовоз                                  Sement daşaýan ýörite ulag
+Цементный склад                             Sement ammary
+Цена                                        Nyrh, baha, gymmat
+Ценообразование                             Nyrhlary emele getiriş
+Ценности материальные                       Material gymmatlyklar
+Центр                                       Merkez
+Центр изгиба                                Egilme merkezi
+Центр тяжести                               Agyrlyk merkezi
+Центр жесткости                             Gatylyk merkezi
+Центр масс                                  Massalar merkezi
+Центральный угол                            Merkezi burç 54
+Центральное сжатие                          Merkezi gysylma
+Центробежный момент инерции                 Merkezden daşlaşýàn inersiýa momenti
+Центробежная сила                           Merkezden daşlaşýan güýç
+Центростремительная сила                    Merkeze ymtylýan güýç
+Цепь                                        Zynjyr
+Цех                                         Seh
+Цех арматурный                              Armatura sehi
+Цеховая организация труда                   Zähmeti seh şekilinde guramak
+Циклевка                                    Tekizleme, düzleme, ýylmama
+Цикл напряжений                             Gūýnmeleriň sikli
+Циклическая нагрузка                        Siklleýin ýūk
+Цилиндрический резервуар                    Silindrik howdan
+Цилиндрическое тело                         Silindrik jisim
+Цилиндрическая поверхность                  Silindrik üst
+Цилиндрическая система координат            Silindriki koordinatlar sistemasy
+Циркуль                                     Sirkul(tegelek çyzylýan gural)
+Циркульный зал                              Tegelek zal
+Циркульная арка                             Tegelek arka, egme
+Циркуляция воды в системе                   Ulgamda suwuň aýlanyşygy
+Цифровые данные                             San maglumatlary
+Частица                                     Bolejik
+Частичность                                 Bölekleýinlik, ýarpy-yaltalyk
+Частник                                     Hususyýetçi
+Частное                                     Paý
+Частный случай                              Hususy hal
+Частота колебаний                           Yrgyldylaryň ýygylygy
+Частотные характеристики                    Ýygylyk häsiýetnamalary
+Челночный маршрут транспорта                Ulagyň üznüksiz gatnaw ýoly
+Человеко-день                               Adam-gün
+Человеко-час                                Adam-sagat
+Чердак                                      Üçegasty boşluk
+Черенок лопаты                              Piliň sapy
+Черепица                                    Bişirilen toýundan örtgi materialy
+Чернорабочий                                Gara işçi, ýönekeý işçi
+Чертеж                                      Çyzgy
+Чертежные инструменты                       Çyzuw esbaplary
+Четность                                    Jübütlik
+Четные функции                              Jübüt funksiýalar
+Четырехгранник                              Dörtgyraňlyk
+Черчение                                    Çyzuw
+Числитель дроби                             Drobuň sanawjysy
+Число уплотняющих проходок                  Dykyzlaşdyryjy geçişleriň sany
+Чистый изгиб                                Sap egilme, arassa egilme
+Чистый сдвиг                                Sap sūýşme
+Число оборотов                              Aýlawlaryň sany
+Чрезвычайность положения                    Ýagdaýyň adatdan daşarylygy
+Чрезмерность                                Çendenaşalyk, çakdanaşalyk
+Чрезмерные местные деформации               Cakdanaşa ýerli deformasiýalar
+Чувствительность измерительного прибора     Ölçeg esbabynyň duýgurlygy
+Чугун                                       Çoýun 55
+Шаблон                                      Galyp, nusga, ülňi
+Шаг                                         Ädim, gadam
+Шаг заклепок                                Berçinleriň ýygylygy (arasy)
+Шаг колонн                                  Sütünleriň ädimi
+Шамот                                       Ýakylan toýun(oda durumly material)
+Шамотный кирпич                             Oda durumly kerpiç
+Шар                                         Şar
+Шарнир                                      Şarnir
+Шарнирно-подвижная опора                    Şarnirli gozganýan daýanç
+Шарнирно-неподвижная опора                  Şarnirli gozganmaýan daýanç
+Шахта лифта                                 Lift guýusy
+Швеллер                                     Şweller
+Шейка                                       Boýunjyk
+Шероховатость поверхности                   Üstüň büdür-südürligi
+Шестигранник                                Altygyraňlyk
+Ширина                                      In, ini
+Ширина сечения                              Kesigiň ini
+Ширина раскрытия трещины                    Jaýrygyň açylyş ini
+Широта                                      Giňlik, giňişlik, ýaýbaňlyk
+Шифер                                       Asbest, sement garylyp ýasalýan tolkunly örtgi materialy
+Шифр                                        Şifr, sanbelgi
+Шлак                                        Şlak, metal ergininden galýan galyndy
+Шлакобетон                                  Şlakly beton
+Шлифовка поверхности                        Üsti ýylmama
+Шов                                         Sep, ýoda
+Шпаклевка                                   Şpaklýowka, tekizleýji çalgysy
+Шпаклевание стен и потолков                 Diwarlara, petiklere tekizleýji çalgy çalmak
+Шпатель                                     Çalgy çalynýan mala
+Шпингалет                                   Ildirgiç
+Шпунт                                       Dyrnak, geýdirme dyrnak
+Штукатурка                                  Suwag
+Штукатурные работы                          Suwag işleri
+Штукатурный раствор                         Suwag palçygy
+Штукатурные инструменты                     Suwag işleriniň gurallary
+Штучные материалы                           Däneleýin materiallar
+Шумоизоляционные материалы                  Seslerden goraýan materiallar
+Шуруп                                       Hyrly çüý
+Шурф                                        Topragyň nusgasyny almak üçin gazylýan çukur
+Шпренгельная ферма                          Şprengelli(düzme) ferma
+Щебень                                      Çagyl, iri daşlary owradyp alynýan material
+Щебеночная подготовка                       Çagyl düşegi
+Щеколда дверная                             Gapy zülpesi
+Щепка                                       Agaç bölekleri
+Щит защитный                                Gorag germewi
+Щитовая опалубка                            Germew görnüşli galyp
+Щиток электросварщика                       Elektrik kebşirleýjisiniň gorag nikaby 56
+Эвакуация                                   Howply ýerden göçürmek
+Эквивалентность                             Des-deňlik, barabarlyk
+Экзотермическая реакция                     Ýylylyk bölünýän reaksiýa
+Экономика                                   Ykdysadyýet
+Экономичность                               Tygşytlylyk
+Экономичная конструкция                     Tygşytly konstruksiýa
+Экономическая целесообразность              Ykdysady maksadalaýyklyk
+Экономическое обоснование                   Ykdysady esaslandyrylyş
+Эксковатор                                  Ekskowator, ýer gazyjy maşyn
+Эксперимент                                 Eksperiment, tejribe, synag
+Экспериментальный метод                     Synag usuly
+Экспертиза техническая                      Tehniki seljeriş
+Эксплуатация                                Ulanmaklyk, peýdalanmaklyk
+Экстремумы функции                          Funksiýanyň iň ýokary we iň pes bahalary
+Эластичность материала                      Materialyň deformilenijiligi
+Элеватор                                    Galla saklamak üçin mehanizmleşdirilen uly ammar
+Электроводонагреватель                      Elektrik suw gyzdyryjysy
+Электроды сварочные                         Kebşir elektrodlary
+Электрооборудование                         Elektrik enjamlary
+Электросварка                               Elektrokebşir
+Электросварщик                              Elektrokebşirleýji
+Элементарность                              Ýönekeýlik, sadalyk
+Эллипс                                      Ellips
+Эллипсоид                                   Ellipsoid
+Эллипс инерции                              Inersiýa ellipsi
+Эмпирическая формула                        Tejribä daýanýan formula
+Эндотермическая реакция                     Ýylylyk siňdirýän reaksiýa
+Энергетические методы механики              Mehanikanyň energetiki usullary
+Эрлифт                                      Suwuklygy gysylan howanyň kömegi bilen ýokary çykaryjy gurluş
+Эскалатор                                   Eskalator(üznüksiz hereketlenýän basgançakly mehanizm)
+Эскизный проект                             Eskiz görnüşindäki taslama
+Эстакадная дорога                           Ýerden ýokary göterilen ýol
+Этаж                                        Etaž, gat
+Эталон                                      Nusga, görelde
+Этап                                        Tapgyr
+Эффект                                      Effekt, täsir, netije
+Эффективность                               Netijelilik
+Эксцентриситет силы                         Gūýjūň eksentrisiteti
+Экстремальные касательные напряжения        Ekstremal galtaşma gūýjenmeler
+Эксплуатационные требования                 Ekspluatasion talaplar
+Элемент                                     Element, agza
+Элементарная частица                        Ujypsyz owuntyk
+Элементарная площадка                       Ujypsyz meýdança
+Эйлерова сила                               Eýler gūýji
+Энергия изменения формы                     Şekil ūýtgetme energiýasy
+Энергия изменения объема                    Gowrūm ūýtgetme energiýasy
+Энергетическая теория прочности             Energetiki berklik teoriýasy
+Энергоемкость производства                  Energiýa sygymly ýnümçilik
+Энергосберегающее производство              Energiýa tygşytlaýjy önümçilik
+Энергетические ресурсы                      Energiýa gorlary
+Эпицентр                                    Ýerüsti merkez 57
+Эпюры внутренних сил                        Içki gūýçleriň epýuralary
+Эпюра поперечных сил                        Kese gūýçleriň epýuralary
+Эпюра изгибающих моментов                   Egiji momentleriň epýurasy
+Эпюра прогибов                              Egilme epýurasy
+Ювелирно выполненная работа                 Inçe, nepis ýerine ýetirilen iş
+Юго-восток                                  Günorta-gündogar
+Юго-запад                                   Günorta-günbatar
+Юрисконсульт                                Edarada hukuk meselelerini çözýän işgär
+Явление                                     Hadysa
+Явление временное                           Wagtlaýyn hadysa
+Явления природы                             Tebigat hadysalary
+Явление текучести                           Akyjylyk hadysasy
+Явная функция                               Aýdyň funksiýa
+Явно                                        Mese-mälim, aç-açan
+Явное нарушение                             Görnetin düzgün bozulma
+Ядро сечения                                Kesigiň özeni
+Ядро жесткости                              Gatylyk özeni
+Ядровый момент                              Özen momenti
+Ядовитость                                  Awylylyk, zäherlilik
+Ядовитые газы                               Awyly gazlar
+Ядовитые вещества                           Awyly maddalar
+Язычок замка                                Gulpuň diljagazy
+Яма                                         Çukur
+Ярд                                         91.4sm barabar uzynlyk ölçeg birligi
+Яркость                                     Ýagtylygyň ýitiligi
+Ярус                                        Setir, hatar, gat
+Ярусный                                     Setir-setir, hatar-hatar
+Ясность                                     Aýdyňlyk, düşnüklilik
+Ячеистый бетон                              Öýjükli beton
+Ячейка                                      Öýjük, kiçi bölek 58

@@ -7,6 +7,10 @@ const {
   BLUESKY_APP_PASSWORD,
   BEFORE_SHA,
   AFTER_SHA,
+<<<<<<< HEAD
+  EVENT_NAME,
+=======
+>>>>>>> origin/main
   REPOSITORY,
   SERVER_URL = "https://github.com",
 } = process.env;
@@ -15,6 +19,24 @@ if (!BLUESKY_HANDLE || !BLUESKY_APP_PASSWORD) {
   throw new Error("BLUESKY_HANDLE and BLUESKY_APP_PASSWORD secrets are required.");
 }
 
+<<<<<<< HEAD
+const isWeekly = EVENT_NAME === "schedule" || EVENT_NAME === "workflow_dispatch";
+const dataExtensions = new Set([
+  ".csv", ".db", ".json", ".jsonl", ".sqlite", ".sql", ".tsv", ".txt", ".xml", ".yaml", ".yml",
+]);
+let output;
+if (isWeekly) {
+  output = execFileSync("git", ["ls-files", "-z"], { encoding: "utf8" });
+} else {
+  const zeroSha = /^0+$/.test(BEFORE_SHA ?? "");
+  const base = zeroSha ? `${AFTER_SHA}^` : BEFORE_SHA;
+  output = execFileSync(
+    "git",
+    ["diff", "--name-only", "--diff-filter=A", "-z", base, AFTER_SHA],
+    { encoding: "utf8" },
+  );
+}
+=======
 const zeroSha = /^0+$/.test(BEFORE_SHA ?? "");
 const base = zeroSha ? `${AFTER_SHA}^` : BEFORE_SHA;
 const output = execFileSync(
@@ -22,14 +44,22 @@ const output = execFileSync(
   ["diff", "--name-only", "--diff-filter=A", "-z", base, AFTER_SHA],
   { encoding: "utf8" },
 );
+>>>>>>> origin/main
 
 // Workflow implementation files are not dataset additions.
 const files = output
   .split("\0")
   .filter(Boolean)
+<<<<<<< HEAD
+  .filter((file) => !file.startsWith(".github/"))
+  .filter((file) => dataExtensions.has(extname(file).toLowerCase()));
+
+if (!isWeekly && files.length === 0) {
+=======
   .filter((file) => !file.startsWith(".github/"));
 
 if (files.length === 0) {
+>>>>>>> origin/main
   console.log("No new data files to post.");
   process.exit(0);
 }
@@ -156,6 +186,88 @@ function fileDetails(file) {
   };
 }
 
+<<<<<<< HEAD
+function groupNewFiles(newFiles) {
+  const groups = new Map();
+  for (const file of newFiles) {
+    const key = file.slice(0, file.length - extname(file).length);
+    const group = groups.get(key) ?? [];
+    group.push(file);
+    groups.set(key, group);
+  }
+  return [...groups.values()];
+}
+
+function preferredFile(group) {
+  const priority = [".json", ".txt", ".csv", ".sql", ".db"];
+  const rank = (file) => {
+    const index = priority.indexOf(extname(file).toLowerCase());
+    return index === -1 ? priority.length : index;
+  };
+  return [...group].sort(
+    (a, b) => rank(a) - rank(b),
+  )[0];
+}
+
+function weeklyPost(allFiles) {
+  let totalBytes = 0;
+  let works = 0;
+  let pages = 0;
+  let poems = 0;
+  let words = 0;
+
+  for (const file of allFiles) {
+    totalBytes += statSync(file).size;
+    if (extname(file).toLowerCase() !== ".json") continue;
+    try {
+      const data = JSON.parse(readFileSync(file, "utf8").replace(/^\uFEFF/, ""));
+      if (Array.isArray(data?.pages)) {
+        works += 1;
+        pages += data.pages.length;
+      }
+      if (Array.isArray(data?.poems)) {
+        works += 1;
+        poems += data.poems.length;
+      }
+      words += Number(data?.meta?.wordCount) || 0;
+    } catch {
+      // Only valid JSON datasets contribute to the detailed totals.
+    }
+  }
+
+  const lines = [
+    "📊 Hepdelik maglumat hasabaty",
+    `📚 ${works.toLocaleString("en-US")} eser`,
+    `📄 ${allFiles.length.toLocaleString("en-US")} maglumat faýly · ${formatBytes(totalBytes)}`,
+  ];
+  if (pages) lines.push(`📖 ${pages.toLocaleString("en-US")} sahypa`);
+  if (poems) lines.push(`✍️ ${poems.toLocaleString("en-US")} goşgy`);
+  if (words) lines.push(`🔤 ${words.toLocaleString("en-US")} söz`);
+  lines.push("", `🔗 ${SERVER_URL}/${REPOSITORY}`);
+  return lines.join("\n");
+}
+
+const posts = [];
+if (isWeekly) {
+  posts.push({ label: "weekly report", text: weeklyPost(files) });
+} else {
+  for (const group of groupNewFiles(files)) {
+    const file = preferredFile(group);
+    const details = fileDetails(file);
+    const totalSize = formatBytes(group.reduce((total, item) => total + statSync(item).size, 0));
+    const formats = group.length > 1 ? ` · ${group.length} görnüş · jemi ${totalSize}` : "";
+    const prefix = `🆕 Täze maglumat goşuldy\n📚 Eser: ${truncate(details.title, 100)}\n📊 ${details.amount}${formats}\n\n`;
+    const suffix = `\n\n🔗 ${SERVER_URL}/${REPOSITORY}`;
+    const available = 300 - [...segmenter.segment(prefix + suffix)].length;
+    posts.push({
+      label: details.title,
+      text: `${prefix}${truncate(details.preview, Math.max(0, available))}${suffix}`,
+    });
+  }
+}
+
+for (const post of posts) {
+=======
 for (const file of files) {
   const details = fileDetails(file);
   const prefix = `🆕 Täze maglumat goşuldy\n📚 Eser: ${truncate(details.title, 100)}\n📊 ${details.amount}\n\n`;
@@ -163,6 +275,7 @@ for (const file of files) {
   const available = 300 - [...segmenter.segment(prefix + suffix)].length;
   const text = `${prefix}${truncate(details.preview, Math.max(0, available))}${suffix}`;
 
+>>>>>>> origin/main
   const response = await fetch(`${service}/xrpc/com.atproto.repo.createRecord`, {
     method: "POST",
     headers: {
@@ -174,16 +287,27 @@ for (const file of files) {
       collection: "app.bsky.feed.post",
       record: {
         $type: "app.bsky.feed.post",
+<<<<<<< HEAD
+        text: post.text,
+=======
         text,
+>>>>>>> origin/main
         createdAt: new Date().toISOString(),
       },
     }),
   });
 
   if (!response.ok) {
+<<<<<<< HEAD
+    throw new Error(`Posting ${post.label} failed (${response.status}): ${await response.text()}`);
+  }
+
+  console.log(`Posted ${post.label}`);
+=======
     throw new Error(`Posting ${file} failed (${response.status}): ${await response.text()}`);
   }
 
   console.log(`Posted ${file}`);
+>>>>>>> origin/main
   await new Promise((resolve) => setTimeout(resolve, 1000));
 }
