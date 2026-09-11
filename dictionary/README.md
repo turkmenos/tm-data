@@ -29,7 +29,11 @@ The source PDF is not included in this repository. The download URL and access d
 
 | File | Format | Description |
 | --- | --- | --- |
+<<<<<<< Updated upstream
 | [`dictionary.json`](dictionary.json) | JSON, UTF-8 | Dictionary metadata and structured word entries |
+=======
+| [`dictionary.json`](turkmen-dili-sozlugu/dictionary-1.json) | JSON, UTF-8 | Dictionary metadata and structured word entries |
+>>>>>>> Stashed changes
 
 Approximate file statistics:
 
