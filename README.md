@@ -16,6 +16,8 @@ Open, machine-readable datasets related to Turkmenistan.
 
 Each dataset documents its structure, import process, limitations, and available sources in its own directory.
 
+See [DATA_FORMAT.md](DATA_FORMAT.md) for shared encoding, field naming, date, and export conventions.
+
 ## Usage
 
 Clone the repository:
@@ -37,38 +39,12 @@ Contributions may include new datasets, corrections, sources, translations, or a
 4. Preserve the Turkmen alphabet in UTF-8 and check for duplicates where possible.
 5. Do not include private, sensitive, or non-redistributable data.
 
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> origin/main
-## Bluesky bot
 
-When a new data file is pushed to `main`, the GitHub Action publishes a Turkmen
-post containing the work's title, data size, a short content preview, and only the
-repository's main link. JSON datasets also include a record count or, where
-applicable, page, poem, word, and character counts.
-Binary files are posted with their name and size instead of a content preview.
-<<<<<<< HEAD
-Multiple formats of the same work (such as JSON, SQL, and SQLite) produce one
-post rather than one post per file. Every Monday at 09:00 Ashgabat time, the bot
-also publishes a Turkmen summary of the repository's total works and data.
-=======
->>>>>>> origin/main
+## Roadmap
 
-Configure these repository secrets under **Settings → Secrets and variables →
-Actions**:
+See [ROADMAP.md](ROADMAP.md) for the planned datasets, data quality improvements, export formats, and usage documentation.
 
-- `BLUESKY_HANDLE` — the bot account handle, for example `bot.bsky.social`
-- `BLUESKY_APP_PASSWORD` — an app password created in the Bluesky account settings
-
-Use an app password rather than the account's main password.
-
-<<<<<<< HEAD
->>>>>>> Stashed changes
-=======
->>>>>>> origin/main
-## Ideas for future datasets
+### Ideas for future datasets
 
 - Proverbs, sayings, and riddles with topic labels
 - Turkmen given names with gender, meaning, and origin
