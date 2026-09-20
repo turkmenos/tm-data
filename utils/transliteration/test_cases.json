@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "rules_file": "rules.json",
+  "normalization": "NFC",
+  "test_cases": [
+    { "id": "country_name", "latin": "Türkmenistan", "cyrillic": "Түркменистан" },
+    { "id": "capital_city", "latin": "Aşgabat", "cyrillic": "Ашгабат" },
+    { "id": "turkmen_language", "latin": "türkmen dili", "cyrillic": "түркмен дили" },
+    { "id": "independence", "latin": "Garaşsyzlyk", "cyrillic": "Гарашсызлык" },
+    { "id": "friendship", "latin": "Dostluk", "cyrillic": "Достлук" },
+    { "id": "happiness", "latin": "bagtyýarlyk", "cyrillic": "багтыярлык" },
+    { "id": "new_year", "latin": "Täze ýyl", "cyrillic": "Тәзе йыл" },
+    { "id": "heart", "latin": "ýürek", "cyrillic": "йүрек" },
+    { "id": "life", "latin": "ýaşaýyş", "cyrillic": "яшайыш" },
+    { "id": "star", "latin": "ýyldyz", "cyrillic": "йылдыз" },
+    { "id": "spring", "latin": "ýaz", "cyrillic": "яз" },
+    { "id": "literature", "latin": "edebiýat", "cyrillic": "эдебият" },
+    { "id": "male_name", "latin": "Esen", "cyrillic": "Эсен" },
+    { "id": "mother", "latin": "ene", "cyrillic": "эне" },
+    { "id": "bread", "latin": "çörek", "cyrillic": "чөрек" },
+    { "id": "knowledge", "latin": "bilim", "cyrillic": "билим" },
+    { "id": "world", "latin": "dünýä", "cyrillic": "дүнйә" },
+    { "id": "dear", "latin": "eziz", "cyrillic": "эзиз" },
+    { "id": "mixed_case", "latin": "TÜRKMEN", "cyrillic": "ТҮРКМЕН" },
+    { "id": "punctuation_and_digits", "latin": "Aşgabat, 2026!", "cyrillic": "Ашгабат, 2026!" },
+    { "id": "full_alphabet_lowercase", "latin": "a b ç d e ä f g h i j ž k l m n ň o ö p r s ş t u ü w y ý z", "cyrillic": "а б ч д э ә ф г х и җ ж к л м н ң о ө п р с ш т у ү в ы й з" },
+    { "id": "extended_yo", "latin": "ýolka", "cyrillic": "ёлка" },
+    { "id": "loanword_cyrillic_ts", "latin": "sement", "cyrillic": "семент", "cyrillic_input_variant": "цемент", "latin_from_variant": "sement" },
+    { "id": "empty_string", "latin": "", "cyrillic": "" }
+  ]
+}

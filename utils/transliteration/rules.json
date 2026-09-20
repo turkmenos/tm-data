@@ -1,0 +1,136 @@
+{
+  "schema_version": "1.0.0",
+  "language": "Turkmen",
+  "language_code": "tk",
+  "normalization": "NFC",
+  "case_sensitive": true,
+  "basis": "BGN/PCGN 2000 table of correspondences between the former Turkmen Cyrillic alphabet and the current Turkmen Roman alphabet",
+  "sources": [
+    {
+      "title": "Turkmen: Table of Correspondences, BGN/PCGN 2000 Agreement",
+      "url": "https://geonames.nga.mil/geonames/GNSSearch/GNSDocs/romanization/TABLE_OF_CORRESPONDENCES_FOR_TURKMEN.pdf"
+    },
+    {
+      "title": "UNGEGN Report on the Current Status of United Nations Romanization Systems: Turkmen",
+      "url": "https://arhiiv.eki.ee/wgrs/rom2_tk.htm"
+    }
+  ],
+  "processing_order": [
+    "normalize_input_to_nfc",
+    "apply_contextual_rules",
+    "apply_multi_character_mappings_longest_first",
+    "apply_character_mappings",
+    "preserve_unmapped_characters"
+  ],
+  "latin_to_cyrillic": {
+    "character_mappings": {
+      "A": "А", "a": "а",
+      "B": "Б", "b": "б",
+      "Ç": "Ч", "ç": "ч",
+      "D": "Д", "d": "д",
+      "E": "Е", "e": "е",
+      "Ä": "Ә", "ä": "ә",
+      "F": "Ф", "f": "ф",
+      "G": "Г", "g": "г",
+      "H": "Х", "h": "х",
+      "I": "И", "i": "и",
+      "J": "Җ", "j": "җ",
+      "Ž": "Ж", "ž": "ж",
+      "K": "К", "k": "к",
+      "L": "Л", "l": "л",
+      "M": "М", "m": "м",
+      "N": "Н", "n": "н",
+      "Ň": "Ң", "ň": "ң",
+      "O": "О", "o": "о",
+      "Ö": "Ө", "ö": "ө",
+      "P": "П", "p": "п",
+      "R": "Р", "r": "р",
+      "S": "С", "s": "с",
+      "Ş": "Ш", "ş": "ш",
+      "T": "Т", "t": "т",
+      "U": "У", "u": "у",
+      "Ü": "Ү", "ü": "ү",
+      "W": "В", "w": "в",
+      "Y": "Ы", "y": "ы",
+      "Ý": "Й", "ý": "й",
+      "Z": "З", "z": "з"
+    },
+    "contextual_rules": [
+      {
+        "id": "word_initial_e",
+        "description": "At the beginning of a word, Latin E/e is written with Cyrillic Э/э.",
+        "match": "E|e",
+        "condition": "word_initial",
+        "replacement": { "E": "Э", "e": "э" },
+        "priority": 100
+      }
+    ],
+    "multi_character_mappings": {
+      "ÝA": "Я", "Ýa": "Я", "ýa": "я",
+      "ÝO": "Ё", "Ýo": "Ё", "ýo": "ё",
+      "ÝU": "Ю", "Ýu": "Ю", "ýu": "ю",
+      "ÝE": "Е", "Ýe": "Е", "ýe": "е",
+      "ŞÇ": "Щ", "Şç": "Щ", "şç": "щ"
+    }
+  },
+  "cyrillic_to_latin": {
+    "character_mappings": {
+      "А": "A", "а": "a",
+      "Б": "B", "б": "b",
+      "В": "W", "в": "w",
+      "Г": "G", "г": "g",
+      "Д": "D", "д": "d",
+      "Е": "E", "е": "e",
+      "Ә": "Ä", "ә": "ä",
+      "Ж": "Ž", "ж": "ž",
+      "Җ": "J", "җ": "j",
+      "З": "Z", "з": "z",
+      "И": "I", "и": "i",
+      "Й": "Ý", "й": "ý",
+      "К": "K", "к": "k",
+      "Л": "L", "л": "l",
+      "М": "M", "м": "m",
+      "Н": "N", "н": "n",
+      "Ң": "Ň", "ң": "ň",
+      "О": "O", "о": "o",
+      "Ө": "Ö", "ө": "ö",
+      "П": "P", "п": "p",
+      "Р": "R", "р": "r",
+      "С": "S", "с": "s",
+      "Т": "T", "т": "t",
+      "У": "U", "у": "u",
+      "Ү": "Ü", "ү": "ü",
+      "Ф": "F", "ф": "f",
+      "Х": "H", "х": "h",
+      "Ч": "Ç", "ч": "ç",
+      "Ш": "Ş", "ш": "ş",
+      "Ы": "Y", "ы": "y",
+      "Э": "E", "э": "e"
+    },
+    "extended_character_mappings": {
+      "Ё": "Ýo", "ё": "ýo",
+      "Ц": "S", "ц": "s",
+      "Щ": "Şç", "щ": "şç",
+      "Ъ": "", "ъ": "",
+      "Ь": "", "ь": "",
+      "Ю": "Ýu", "ю": "ýu",
+      "Я": "Ýa", "я": "ýa"
+    },
+    "contextual_rules": [
+      {
+        "id": "cyrillic_e_with_y_glide",
+        "description": "Cyrillic Е/е becomes Ýe/ýe word-initially, after a vowel other than Ә/ә, and after Й/й.",
+        "match": "Е|е",
+        "condition": {
+          "any_of": [
+            "word_initial",
+            "preceded_by:АаЕеЁёИиОоӨөУуҮүЫыЭэЮюЯяЙй"
+          ]
+        },
+        "replacement": { "Е": "Ýe", "е": "ýe" },
+        "priority": 100
+      }
+    ]
+  },
+  "unmapped_character_policy": "preserve"
+}
