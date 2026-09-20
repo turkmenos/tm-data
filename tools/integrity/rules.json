@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "datasets": [
+    {
+      "path": "utils/calendar/months.json",
+      "required": { "number": "number", "tm": "string", "en": "string" },
+      "non_empty": ["tm", "en"],
+      "unique": [["number"], ["tm"], ["en"]],
+      "ranges": { "number": { "min": 1, "max": 12 } }
+    },
+    {
+      "path": "utils/calendar/weekdays.json",
+      "required": { "iso": "number", "tm": "string", "en": "string" },
+      "non_empty": ["tm", "en"],
+      "unique": [["iso"], ["tm"], ["en"]],
+      "ranges": { "iso": { "min": 1, "max": 7 } }
+    },
+    {
+      "path": "utils/calendar/seasons.json",
+      "required": { "id": "string", "tm": "string", "en": "string" },
+      "non_empty": ["id", "tm", "en"],
+      "unique": [["id"], ["tm"], ["en"]]
+    },
+    {
+      "path": "utils/calendar/day-periods.json",
+      "required": { "id": "string", "tm": "string", "en": "string" },
+      "non_empty": ["id", "tm", "en"],
+      "unique": [["id"], ["tm"], ["en"]]
+    },
+    {
+      "path": "utils/calendar/time-units.json",
+      "required": { "id": "string", "tm": "string", "en": "string" },
+      "non_empty": ["id", "tm", "en"],
+      "unique": [["id"], ["tm"], ["en"]]
+    },
+    {
+      "path": "utils/country-names/countries.json",
+      "required": { "code": "string", "tm": "string", "en": "string" },
+      "non_empty": ["code", "tm", "en"],
+      "unique": [["code"], ["tm"], ["en"]]
+    },
+    {
+      "path": "utils/holidays/holidays.json",
+      "required": { "name": "string", "type": "string", "day_off": "boolean" },
+      "non_empty": ["name", "type"],
+      "unique": [["name"]],
+      "allowed_values": { "type": ["public_holiday", "observance"] },
+      "ranges": { "month": { "min": 1, "max": 12 }, "day": { "min": 1, "max": 31 }, "start_day": { "min": 1, "max": 31 }, "end_day": { "min": 1, "max": 31 } },
+      "any_required": [["month", "rule"], ["day", "rule", "start_day"]]
+    },
+    {
+      "path": "utils/names/man-names.json",
+      "required": { "name": "string", "description": "string" },
+      "non_empty": ["name"],
+      "unique": [["name"]]
+    },
+    {
+      "path": "utils/names/woman-names.json",
+      "required": { "name": "string", "description": "string" },
+      "non_empty": ["name"],
+      "unique": [["name"]]
+    },
+    {
+      "path": "utils/names/unisex-names.json",
+      "required": { "name": "string", "description": "string" },
+      "non_empty": ["name"],
+      "unique": [["name"]]
+    },
+    {
+      "path": "utils/postal-codes/regions.json",
+      "required": { "iso": "string", "level": "string", "type": "string", "name": "string", "iso2": "string" },
+      "non_empty": ["iso", "level", "type", "name"],
+      "unique": [["level", "region1", "name"]]
+    },
+    {
+      "path": "utils/postal-codes/places.json",
+      "required": { "id": "string", "iso": "string", "region1": "string", "locality": "string", "iso2": "string", "latitude": "string", "longitude": "string" },
+      "non_empty": ["id", "iso", "region1", "locality", "iso2", "latitude", "longitude"],
+      "unique": [["id"]]
+    }
+  ],
+  "references": [
+    {
+      "from_path": "utils/postal-codes/places.json",
+      "from_field": "iso2",
+      "to_path": "utils/postal-codes/regions.json",
+      "to_field": "iso2"
+    }
+  ]
+}

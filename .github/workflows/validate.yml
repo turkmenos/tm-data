@@ -24,5 +24,8 @@ jobs:
       - name: Validate datasets
         run: go run ./tools/validate/main.go
 
+      - name: Validate dataset integrity
+        run: go run ./tools/integrity
+
       - name: Test Turkmen text validation
         run: go test ./tools/validation

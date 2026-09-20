@@ -9,7 +9,7 @@ This directory contains Turkmenistan postal-code and place data, split into regi
 | File | Format | Records | Description |
 | --- | --- | ---: | --- |
 | [`regions.json`](regions.json) | JSON, UTF-8 | 30 | Country, capital, region, and district-level records |
-| [`places.json`](places.json) | JSON, UTF-8 | 101 | Localities with postal codes, coordinates, and administrative fields |
+| [`places.json`](places.json) | JSON, UTF-8 | 100 | Localities with postal codes, coordinates, and administrative fields |
 
 ## Regions structure
 

@@ -41,6 +41,13 @@ Strict UTF-8 and modern Turkmen Latin alphabet validation is available in
 go run ./tools/validation -text "Türkmenistanyň paýtagty Aşgabat."
 ```
 
+Schema, required-field, uniqueness, range, and cross-file reference checks are
+defined in [`tools/integrity/rules.json`](tools/integrity/rules.json) and run with:
+
+```sh
+go run ./tools/integrity
+```
+
 ## Usage
 
 Clone the repository:
