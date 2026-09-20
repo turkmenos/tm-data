@@ -34,6 +34,13 @@ UTF-8, or malformed JSON, JSONL, or CSV. It is original repository tooling,
 uses only the Go standard library, and does not contain or download external
 data; dataset provenance remains documented with each dataset.
 
+Strict UTF-8 and modern Turkmen Latin alphabet validation is available in
+[`tools/validation`](tools/validation/README.md):
+
+```sh
+go run ./tools/validation -text "Türkmenistanyň paýtagty Aşgabat."
+```
+
 ## Usage
 
 Clone the repository:

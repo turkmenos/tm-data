@@ -23,3 +23,6 @@ jobs:
 
       - name: Validate datasets
         run: go run ./tools/validate/main.go
+
+      - name: Test Turkmen text validation
+        run: go test ./tools/validation
