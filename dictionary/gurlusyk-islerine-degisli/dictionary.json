@@ -3515,16 +3515,6 @@
     "page": 14
   },
   {
-    "russian": "Допускаемая нагрузка",
-    "turkmen": "Rugsat ýūki",
-    "page": 14
-  },
-  {
-    "russian": "Допускаемое напряжение",
-    "turkmen": "Rugsat gūýjenmesi",
-    "page": 14
-  },
-  {
     "russian": "Доработка",
     "turkmen": "Işläp gutarma, gutarnykly işleme",
     "page": 14
@@ -4862,11 +4852,6 @@
   {
     "russian": "Извне",
     "turkmen": "Daşyndan, başga ýerden",
-    "page": 19
-  },
-  {
-    "russian": "Изобретатель",
-    "turkmen": "Oýlap tapyjy",
     "page": 19
   },
   {
@@ -8275,16 +8260,6 @@
     "page": 32
   },
   {
-    "russian": "Несгораемые материалы",
-    "turkmen": "Ýanmaýan materiallar",
-    "page": 32
-  },
-  {
-    "russian": "Несимметричные сечения",
-    "turkmen": "Simmetrik däl kesikler",
-    "page": 32
-  },
-  {
     "russian": "Несовпадение",
     "turkmen": "Gabat gelmezlik",
     "page": 32
@@ -9827,11 +9802,6 @@
   {
     "russian": "Подпорка",
     "turkmen": "Diireg",
-    "page": 38
-  },
-  {
-    "russian": "Подпорная стена",
-    "turkmen": "Direg diwary",
     "page": 38
   },
   {
@@ -11687,11 +11657,6 @@
   {
     "russian": "Случайные оси",
     "turkmen": "Totànleýin oklar",
-    "page": 45
-  },
-  {
-    "russian": "Слой",
-    "turkmen": "Gatlak",
     "page": 45
   },
   {

@@ -18,6 +18,22 @@ Each dataset documents its structure, import process, limitations, and available
 
 See [DATA_FORMAT.md](DATA_FORMAT.md) for shared encoding, field naming, date, and export conventions.
 
+## Data quality checks
+
+Repository-wide duplicate and format validation is available in
+[`tools/validate/main.go`](tools/validate/main.go). It checks JSON, JSONL, and
+CSV datasets using only the Go standard library:
+
+```sh
+go run ./tools/validate/main.go
+```
+
+Specific files or directories can be passed as arguments. The validator exits
+with status `1` when it finds duplicate records, duplicate JSON keys, invalid
+UTF-8, or malformed JSON, JSONL, or CSV. It is original repository tooling,
+uses only the Go standard library, and does not contain or download external
+data; dataset provenance remains documented with each dataset.
+
 ## Usage
 
 Clone the repository:
