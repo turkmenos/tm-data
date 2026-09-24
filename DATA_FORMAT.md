@@ -14,6 +14,7 @@ Shared conventions for new datasets and exports in `tm-data`. Existing datasets 
 | Calendar | JSON arrays using `tm`, `en`, and an identifier such as `number`, `iso`, or `id` | [Calendar](utils/calendar/README.md) |
 | Names | JSON arrays containing `name` and `description` | [Names](utils/names/README.md) |
 | Postal codes | JSON records with string-valued source fields, including codes and coordinates | [Postal codes](utils/postal-codes/README.md) |
+| Colors | JSON array of records with `name_tm`, `name_en`, `hex_code`, and `category`; also available as MySQL SQL | [Colors](utils/colors/README.md) |
 
 Consult each dataset before assuming a top-level array, identifier type, or naming convention. For example, dictionary fields include `generatedAt` and `partOfSpeech`, while story fields include `created_at` and `page_number`.
 

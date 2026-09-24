@@ -1,0 +1,345 @@
+[
+  {
+    "id": 1,
+    "name_tm": "ak",
+    "name_en": "white",
+    "hex_code": "#FFFFFF",
+    "category": "basic"
+  },
+  {
+    "id": 2,
+    "name_tm": "gara",
+    "name_en": "black",
+    "hex_code": "#000000",
+    "category": "basic"
+  },
+  {
+    "id": 3,
+    "name_tm": "gök",
+    "name_en": "blue",
+    "hex_code": "#0000FF",
+    "category": "basic"
+  },
+  {
+    "id": 4,
+    "name_tm": "gyzyl",
+    "name_en": "red",
+    "hex_code": "#FF0000",
+    "category": "basic"
+  },
+  {
+    "id": 5,
+    "name_tm": "ýaşyl",
+    "name_en": "green",
+    "hex_code": "#008000",
+    "category": "basic"
+  },
+  {
+    "id": 6,
+    "name_tm": "goňur",
+    "name_en": "brown",
+    "hex_code": "#A52A2A",
+    "category": "basic"
+  },
+  {
+    "id": 7,
+    "name_tm": "sary",
+    "name_en": "yellow",
+    "hex_code": "#FFFF00",
+    "category": "basic"
+  },
+  {
+    "id": 8,
+    "name_tm": "gülgün",
+    "name_en": "pink",
+    "hex_code": "#FFC0CB",
+    "category": "basic"
+  },
+  {
+    "id": 9,
+    "name_tm": "narynç",
+    "name_en": "orange",
+    "hex_code": "#FFA500",
+    "category": "basic"
+  },
+  {
+    "id": 10,
+    "name_tm": "mämişi",
+    "name_en": "orange",
+    "hex_code": "#FFA500",
+    "category": "basic"
+  },
+  {
+    "id": 11,
+    "name_tm": "melewşe",
+    "name_en": "violet",
+    "hex_code": "#EE82EE",
+    "category": "basic"
+  },
+  {
+    "id": 12,
+    "name_tm": "al",
+    "name_en": "scarlet",
+    "hex_code": "#FF2400",
+    "category": "shade"
+  },
+  {
+    "id": 13,
+    "name_tm": "gyrmyzy",
+    "name_en": "crimson",
+    "hex_code": "#DC143C",
+    "category": "shade"
+  },
+  {
+    "id": 14,
+    "name_tm": "kümüşsöw",
+    "name_en": "silver",
+    "hex_code": "#C0C0C0",
+    "category": "metallic"
+  },
+  {
+    "id": 15,
+    "name_tm": "altyn",
+    "name_en": "gold",
+    "hex_code": "#FFD700",
+    "category": "metallic"
+  },
+  {
+    "id": 16,
+    "name_tm": "bürünç",
+    "name_en": "bronze",
+    "hex_code": "#CD7F32",
+    "category": "metallic"
+  },
+  {
+    "id": 17,
+    "name_tm": "goýy gyrmyzy",
+    "name_en": "dark crimson",
+    "hex_code": "#8B0A1A",
+    "category": "shade"
+  },
+  {
+    "id": 18,
+    "name_tm": "açyk gyzyl",
+    "name_en": "light red",
+    "hex_code": "#FF7F7F",
+    "category": "shade"
+  },
+  {
+    "id": 19,
+    "name_tm": "çym-gyzyl",
+    "name_en": "deep red",
+    "hex_code": "#B00020",
+    "category": "shade"
+  },
+  {
+    "id": 20,
+    "name_tm": "goýy gök",
+    "name_en": "dark blue",
+    "hex_code": "#00008B",
+    "category": "shade"
+  },
+  {
+    "id": 21,
+    "name_tm": "goýy ýaşyl",
+    "name_en": "dark green",
+    "hex_code": "#006400",
+    "category": "shade"
+  },
+  {
+    "id": 22,
+    "name_tm": "açyk ýaşyl",
+    "name_en": "light green",
+    "hex_code": "#90EE90",
+    "category": "shade"
+  },
+  {
+    "id": 23,
+    "name_tm": "alma reňk",
+    "name_en": "apple green",
+    "hex_code": "#8DB600",
+    "category": "shade"
+  },
+  {
+    "id": 24,
+    "name_tm": "açyk mawy",
+    "name_en": "light blue",
+    "hex_code": "#ADD8E6",
+    "category": "shade"
+  },
+  {
+    "id": 25,
+    "name_tm": "mawy",
+    "name_en": "sky blue / azure",
+    "hex_code": "#87CEEB",
+    "category": "shade"
+  },
+  {
+    "id": 26,
+    "name_tm": "gögümtil-mawy",
+    "name_en": "bluish blue",
+    "hex_code": "#6699CC",
+    "category": "shade"
+  },
+  {
+    "id": 27,
+    "name_tm": "mawymtyl-ýaşyl",
+    "name_en": "turquoise green",
+    "hex_code": "#40E0D0",
+    "category": "shade"
+  },
+  {
+    "id": 28,
+    "name_tm": "sarymtyl-ýaşyl",
+    "name_en": "yellowish green",
+    "hex_code": "#9ACD32",
+    "category": "shade"
+  },
+  {
+    "id": 29,
+    "name_tm": "sarymtyl-gyzyl",
+    "name_en": "yellowish red",
+    "hex_code": "#FF6347",
+    "category": "shade"
+  },
+  {
+    "id": 30,
+    "name_tm": "açyk goňur",
+    "name_en": "light brown",
+    "hex_code": "#C4A484",
+    "category": "shade"
+  },
+  {
+    "id": 31,
+    "name_tm": "goňrumtyl-ýaşyl",
+    "name_en": "brownish green",
+    "hex_code": "#6B7045",
+    "category": "shade"
+  },
+  {
+    "id": 32,
+    "name_tm": "goňras",
+    "name_en": "brownish",
+    "hex_code": "#964B00",
+    "category": "shade"
+  },
+  {
+    "id": 33,
+    "name_tm": "goňur mele",
+    "name_en": "chestnut",
+    "hex_code": "#954535",
+    "category": "shade"
+  },
+  {
+    "id": 34,
+    "name_tm": "gan reňk",
+    "name_en": "blood red",
+    "hex_code": "#880808",
+    "category": "shade"
+  },
+  {
+    "id": 35,
+    "name_tm": "lagyl reňk",
+    "name_en": "ruby red",
+    "hex_code": "#E0115F",
+    "category": "shade"
+  },
+  {
+    "id": 36,
+    "name_tm": "badamjan reňk",
+    "name_en": "eggplant",
+    "hex_code": "#614051",
+    "category": "shade"
+  },
+  {
+    "id": 37,
+    "name_tm": "mis reňk",
+    "name_en": "copper",
+    "hex_code": "#B87333",
+    "category": "metallic"
+  },
+  {
+    "id": 38,
+    "name_tm": "käşir reňk",
+    "name_en": "carrot orange",
+    "hex_code": "#ED9121",
+    "category": "shade"
+  },
+  {
+    "id": 39,
+    "name_tm": "asman reňk",
+    "name_en": "sky blue",
+    "hex_code": "#87CEEB",
+    "category": "shade"
+  },
+  {
+    "id": 40,
+    "name_tm": "kümüşsöw çal",
+    "name_en": "silver gray",
+    "hex_code": "#C0C0C0",
+    "category": "shade"
+  },
+  {
+    "id": 41,
+    "name_tm": "gögümtil-çal",
+    "name_en": "bluish gray",
+    "hex_code": "#6699CC",
+    "category": "shade"
+  },
+  {
+    "id": 42,
+    "name_tm": "bugdaý reňk",
+    "name_en": "wheaten",
+    "hex_code": "#F5DEB3",
+    "category": "shade"
+  },
+  {
+    "id": 43,
+    "name_tm": "mele-tüsse reňk",
+    "name_en": "smoke gray",
+    "hex_code": "#848884",
+    "category": "shade"
+  },
+  {
+    "id": 44,
+    "name_tm": "çakyr reňk",
+    "name_en": "wine red",
+    "hex_code": "#722F37",
+    "category": "shade"
+  },
+  {
+    "id": 45,
+    "name_tm": "solgun",
+    "name_en": "pale",
+    "hex_code": null,
+    "category": "modifier"
+  },
+  {
+    "id": 46,
+    "name_tm": "öçük reňk",
+    "name_en": "faded color",
+    "hex_code": null,
+    "category": "modifier"
+  },
+  {
+    "id": 47,
+    "name_tm": "goýy reňk",
+    "name_en": "dark color",
+    "hex_code": null,
+    "category": "modifier"
+  },
+  {
+    "id": 48,
+    "name_tm": "doýgun reňk",
+    "name_en": "saturated color",
+    "hex_code": null,
+    "category": "modifier"
+  },
+  {
+    "id": 49,
+    "name_tm": "ala-mula",
+    "name_en": "multicolored / spotted",
+    "hex_code": null,
+    "category": "pattern"
+  }
+]
