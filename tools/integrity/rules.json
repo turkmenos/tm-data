@@ -77,6 +77,13 @@
       "required": { "id": "string", "iso": "string", "region1": "string", "locality": "string", "iso2": "string", "latitude": "string", "longitude": "string" },
       "non_empty": ["id", "iso", "region1", "locality", "iso2", "latitude", "longitude"],
       "unique": [["id"]]
+    },
+    {
+      "path": "utils/colors/colors.json",
+      "required": { "id": "number", "name_tm": "string", "category": "string" },
+      "non_empty": ["name_tm", "category"],
+      "unique": [["id"], ["name_tm"]],
+      "allowed_values": { "category": ["basic", "shade", "metallic", "modifier", "pattern"] }
     }
   ],
   "references": [
