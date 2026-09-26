@@ -1,15 +1,16 @@
 # Dataset catalog
 
 [`catalog.json`](../../catalog.json) is the central UTF-8 JSON inventory. It is
-generated from the repository's dataset files using Python 3 and its standard
-library. No external data is downloaded or changed.
+generated from the repository's dataset files using Go. No external data is
+downloaded or changed. SQLite row counting uses the `sqlite3` command-line
+program in read-only mode.
 
 Run from the repository root:
 
 ```sh
-python3 tools/catalog/main.py
-python3 tools/catalog/main.py --check
-python3 -m unittest discover -s tools/catalog -p 'test_*.py'
+go run ./tools/catalog
+go run ./tools/catalog --check
+go test ./tools/catalog
 ```
 
 Regenerate after adding, removing, renaming, or editing data files or adding
@@ -46,9 +47,9 @@ not URLs. All fields below are required unless explicitly described otherwise.
 
 Dataset versions identify content snapshots, not upstream release numbers or
 publication dates. They change on data edits, additions, removals, or renames;
-documentation-only edits do not change them. The manifest is serialized by
-Python `json.dumps` with `ensure_ascii=False` and default separators before
-hashing. Catalog schema versions are maintained separately in the generator;
+documentation-only edits do not change them. The ordered path/version manifest
+is serialized as compact UTF-8 JSON before hashing. Catalog schema versions are
+maintained separately in the generator;
 breaking schema changes require a major version increment.
 
 ## Counts and coverage

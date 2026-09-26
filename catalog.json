@@ -5,7 +5,7 @@
       "id": "dictionary",
       "title": "Dictionary",
       "location": "dictionary",
-      "version": "sha256:5f036780ab985d4443c42a4e7db15a7f5d234db02d056d50ab7d80b44ba8f593",
+      "version": "sha256:5eb353bfdb9dc843f862115303f79262b6f4ab83e3e7595edcc738a6c5d7b0bb",
       "formats": [
         "json",
         "text"
@@ -85,7 +85,7 @@
       "id": "geo",
       "title": "Geo",
       "location": "geo",
-      "version": "sha256:4a30d0993f755e37865e7e88d0734a9031addbf54d8cdfd85164ff30b9ee0de6",
+      "version": "sha256:2fbd81dd12d28cb98797d38c5260d9fa9708cf83c27664ecab4153991d6d97c9",
       "formats": [
         "sql"
       ],
@@ -145,7 +145,7 @@
       "id": "poetry",
       "title": "Poetry",
       "location": "poetry",
-      "version": "sha256:98737587fd3c318e29e7cebc78796f13505821e5a55776a4b30abcda3f300fab",
+      "version": "sha256:475c5c039edc85dc0ae4d10b9e413ff8d37f4a899dc8deb99e8ba282eef5e93c",
       "formats": [
         "json",
         "sql",
@@ -502,7 +502,7 @@
       "id": "stories",
       "title": "Stories",
       "location": "stories",
-      "version": "sha256:6424b9cd2622e9598a823875e4f25277b0a31b824d5193246fdcf1a37a83641d",
+      "version": "sha256:b016f4f665f989e3d7ab18715e138b60e459d63a7335f81327544e430cde65e8",
       "formats": [
         "json",
         "sql",
@@ -894,7 +894,7 @@
       "id": "utils-calendar",
       "title": "Calendar",
       "location": "utils/calendar",
-      "version": "sha256:5af82e61a4fe72aaed70e0d6eb3422e3db4f6861fd769bde6887d6bf85d6e1d3",
+      "version": "sha256:1b39dfa59d943a612d50793369298c6154fd68ad67e026516ed56747f97a97c3",
       "formats": [
         "json"
       ],
@@ -949,7 +949,7 @@
       "id": "utils-colors",
       "title": "Colors",
       "location": "utils/colors",
-      "version": "sha256:d571ef33e716a909fd877d66fb1c8b9a862e3557b9118d39350eebfe7befe53f",
+      "version": "sha256:36689439b1cf26d2a1bb621946c642498475c2500f84c28eafdccbce50c20659",
       "formats": [
         "json",
         "sql"
@@ -985,7 +985,7 @@
       "id": "utils-country-names",
       "title": "Country Names",
       "location": "utils/country-names",
-      "version": "sha256:9ea2ef5dcc1045e00c12012d512f54989233c8c89975e491dba9084d13abaa10",
+      "version": "sha256:2ef1e05511894be8c9d5978e614116bd1ddb8de217d95b1516a68a7481d4c467",
       "formats": [
         "json"
       ],
@@ -1012,7 +1012,7 @@
       "id": "utils-holidays",
       "title": "Holidays",
       "location": "utils/holidays",
-      "version": "sha256:8f5c6c3a9ef78588d9ba793053e00997d6ade8d4b31dccb315b088185ace17fa",
+      "version": "sha256:833bebf8697c945fe4dc24763fa8d267419aa4034c5dad66e73b56193dd1bc13",
       "formats": [
         "json"
       ],
@@ -1039,7 +1039,7 @@
       "id": "utils-names",
       "title": "Names",
       "location": "utils/names",
-      "version": "sha256:ff7c07c9e8af24f7a8af29086e4a66441fc1787d6efbfa8f6a6612660a7b9c8f",
+      "version": "sha256:981fe18839d978bbf59a7dabd040276a97bfdf1b5abc70c68e12ec43763b4b37",
       "formats": [
         "json"
       ],
@@ -1080,7 +1080,7 @@
       "id": "utils-postal-codes",
       "title": "Postal Codes",
       "location": "utils/postal-codes",
-      "version": "sha256:901eeea3e8eca45c6b3d13eff49de41976ee7745b1475828eb3552cfec270fc7",
+      "version": "sha256:17ed69e44728b2d85f2a4f24a9be0ea7176e8ab10abae6f7d8dbac08331cc275",
       "formats": [
         "json"
       ],
@@ -1114,7 +1114,7 @@
       "id": "utils-proverbs",
       "title": "Proverbs",
       "location": "utils/proverbs",
-      "version": "sha256:2cac0525ee2ce83e2005326bddfc327da908c11495ab2c117565171f3b841027",
+      "version": "sha256:6766df4c156958354a45c2b645dbf6fbcd01f86eb8e63a5136c278af25d8d8db",
       "formats": [
         "json",
         "text"
@@ -1150,7 +1150,7 @@
       "id": "utils-stopword",
       "title": "Stopword",
       "location": "utils/stopword",
-      "version": "sha256:509516b89b3639188330fc1e650a865e3a157c06fc028ee167e7e33a1e443eeb",
+      "version": "sha256:81e98d6bfd7e4fdb44a527dcf818f49abd3a76014f5bbcbc4eb9eb46fe948ed0",
       "formats": [
         "json"
       ],
@@ -1177,7 +1177,7 @@
       "id": "utils-transliteration",
       "title": "Transliteration",
       "location": "utils/transliteration",
-      "version": "sha256:5a1cfebb5662f07805ca03334448a271c74286dc4ba3db94a72968f8ff9967c3",
+      "version": "sha256:0330db546ade041dcd2bce825955612addd5ca18d3e489388a0f35180a03fdcf",
       "formats": [
         "json"
       ],

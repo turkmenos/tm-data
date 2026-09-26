@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0.0",
+  "reports": [
+    {
+      "id": "dataset-format-validation",
+      "tool": "go run ./tools/validate/main.go",
+      "status": "passed",
+      "scope": "62 JSON, JSONL, and CSV files",
+      "checks": [
+        "UTF-8 encoding",
+        "valid syntax",
+        "duplicate JSON keys",
+        "duplicate records"
+      ]
+    },
+    {
+      "id": "dataset-integrity-validation",
+      "tool": "go run ./tools/integrity",
+      "status": "passed",
+      "scope": "13 dataset schemas and 1 reference rule",
+      "checks": [
+        "required fields",
+        "field types",
+        "uniqueness",
+        "allowed values",
+        "numeric ranges",
+        "cross-file references"
+      ]
+    },
+    {
+      "id": "catalog-validation",
+      "tool": "go test ./tools/catalog && go run ./tools/catalog --check",
+      "status": "passed",
+      "scope": "catalog.json",
+      "checks": [
+        "resource inventory",
+        "record counts",
+        "content versions",
+        "documentation references",
+        "catalog freshness"
+      ]
+    },
+    {
+      "id": "turkmen-text-validation",
+      "tool": "go test ./tools/validation",
+      "status": "passed",
+      "scope": "Turkmen validation package",
+      "checks": [
+        "UTF-8 text handling",
+        "Turkmen alphabet validation"
+      ]
+    }
+  ],
+  "limitations": [
+    "This file records the latest repository validation result and is not a historical test log.",
+    "Passing structural checks does not prove factual accuracy, source reliability, or redistribution rights.",
+    "Record counts remain unknown for formats without a supported counter."
+  ]
+}

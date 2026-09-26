@@ -28,8 +28,8 @@ when unknown), and documentation/provenance references. See the
 After changing datasets, regenerate and verify the inventory:
 
 ```sh
-python3 tools/catalog/main.py
-python3 tools/catalog/main.py --check
+go run ./tools/catalog
+go run ./tools/catalog --check
 ```
 
 ## Data quality checks
