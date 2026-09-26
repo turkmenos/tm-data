@@ -1,0 +1,1211 @@
+{
+  "schema_version": "1.0.0",
+  "datasets": [
+    {
+      "id": "dictionary",
+      "title": "Dictionary",
+      "location": "dictionary",
+      "version": "sha256:5f036780ab985d4443c42a4e7db15a7f5d234db02d056d50ab7d80b44ba8f593",
+      "formats": [
+        "json",
+        "text"
+      ],
+      "documentation": [
+        "dictionary/README.md"
+      ],
+      "provenance": {
+        "references": [
+          "dictionary/README.md"
+        ],
+        "note": "Repository documentation and embedded source metadata; coverage and redistribution rights may be incomplete."
+      },
+      "resources": [
+        {
+          "path": "dictionary/gurlusyk-islerine-degisli/dictionary.json",
+          "format": "json",
+          "version": "sha256:966c391bc04dbdab9fad10fdaf2fcd5455290d8146e6e8392c7cedb0f6b33e30",
+          "record_count": 3001,
+          "record_unit": "records"
+        },
+        {
+          "path": "dictionary/gurlusyk-islerine-degisli/dictionary.txt",
+          "format": "text",
+          "version": "sha256:14f6f294561eb719e61294b9aed1415109234ddf9000feaeb56279e2b7630ca5",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "dictionary/medisine-terimleri/dictionary.json",
+          "format": "json",
+          "version": "sha256:238c7f2c80d137fe0fd15f23e098f92000b7cc663c86fdbd9afa4d32b6dfec93",
+          "record_count": 11503,
+          "record_unit": "records"
+        },
+        {
+          "path": "dictionary/medisine-terimleri/dictionary.txt",
+          "format": "text",
+          "version": "sha256:1917cab8c951293a9c1d8135abb0a39cf1c41577e359576784f7f835dc1402c6",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "dictionary/oba-hojalyk-sozluk/dictionary.json",
+          "format": "json",
+          "version": "sha256:cfb84530b9feb1ce02aa5c18c91ea18644ecad8f4f27ca5274e4fc483eeb5c0e",
+          "record_count": 12101,
+          "record_unit": "records"
+        },
+        {
+          "path": "dictionary/oba-hojalyk-sozluk/dictionary.txt",
+          "format": "text",
+          "version": "sha256:fee8514eda13de2de70f5c0a5ad451ad86467ff396c9159bff01697d59204d1c",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "dictionary/turkmen-dili-sozlugu/dictionary-1.json",
+          "format": "json",
+          "version": "sha256:98cd0e0d2f89da2f9c9bcc8dcc0fd80c6c7ac8fb8cb302b37334cb738f9e65bc",
+          "record_count": 18674,
+          "record_unit": "search_keys"
+        },
+        {
+          "path": "dictionary/turkmen-dili-sozlugu/dictionary-2.json",
+          "format": "json",
+          "version": "sha256:964640699936e0c78265cfd3e8849c924d93bece3457db94e5fe34ea798686a0",
+          "record_count": 17026,
+          "record_unit": "search_keys"
+        }
+      ]
+    },
+    {
+      "id": "geo",
+      "title": "Geo",
+      "location": "geo",
+      "version": "sha256:4a30d0993f755e37865e7e88d0734a9031addbf54d8cdfd85164ff30b9ee0de6",
+      "formats": [
+        "sql"
+      ],
+      "documentation": [
+        "geo/README.md",
+        "geo/source/en/README.md",
+        "geo/source/en/SOURCES.md",
+        "geo/source/tm/README.md",
+        "geo/source/tm/SOURCES.md"
+      ],
+      "provenance": {
+        "references": [
+          "geo/README.md",
+          "geo/source/en/README.md",
+          "geo/source/en/SOURCES.md",
+          "geo/source/tm/README.md",
+          "geo/source/tm/SOURCES.md"
+        ],
+        "note": "Repository documentation and embedded source metadata; coverage and redistribution rights may be incomplete."
+      },
+      "resources": [
+        {
+          "path": "geo/sql/mysql/import.sql",
+          "format": "sql",
+          "version": "sha256:d3f8c327fdcb7035fa4c85880024778c48b19f2af899f20795367f95223f5809",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "geo/sql/postgresql/import.sql",
+          "format": "sql",
+          "version": "sha256:843f5d86a11b5d7e3897afc4e6a2481a305f5a153ce35bd5eeb999128551c98f",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "geo/sql/sqlite/import.sql",
+          "format": "sql",
+          "version": "sha256:67f315df0ecd2fdbab97109fb2bd0a0acf397d9ac4dc0f376508f7a1a1c5250b",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "geo/sql/sqlserver/import.sql",
+          "format": "sql",
+          "version": "sha256:195f81b5a86322fd0c8ec6a78910b11b93c4c83287458d7fb8aec4fb3aa2ffe4",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        }
+      ]
+    },
+    {
+      "id": "poetry",
+      "title": "Poetry",
+      "location": "poetry",
+      "version": "sha256:98737587fd3c318e29e7cebc78796f13505821e5a55776a4b30abcda3f300fab",
+      "formats": [
+        "json",
+        "sql",
+        "text"
+      ],
+      "documentation": [
+        "poetry/README.md",
+        "poetry/json/README.md"
+      ],
+      "provenance": {
+        "references": [
+          "poetry/README.md",
+          "poetry/json/README.md"
+        ],
+        "note": "Repository documentation and embedded source metadata; coverage and redistribution rights may be incomplete."
+      },
+      "resources": [
+        {
+          "path": "poetry/json/annasoltan-kekilowa---omruzaya-yyldyzym/poetry.json",
+          "format": "json",
+          "version": "sha256:3c45d8b25ae080c5eb0f9b4a48757ef819912dff09e2ca3cd3dfdb925bc74a95",
+          "record_count": 25,
+          "record_unit": "poems"
+        },
+        {
+          "path": "poetry/json/bahargul-mejidova/poetry.json",
+          "format": "json",
+          "version": "sha256:4ddde42c9659d6325d956c6b7a5aa70bb5913d610b3ca3e6f75af9a019c5e756",
+          "record_count": 24,
+          "record_unit": "poems"
+        },
+        {
+          "path": "poetry/json/chary-yegenmyradov/poetry.json",
+          "format": "json",
+          "version": "sha256:8474e41be5b17356e38518f7fb972f70342d66b610e5f5fb4bad92e4e9d0d3d3",
+          "record_count": 89,
+          "record_unit": "poems"
+        },
+        {
+          "path": "poetry/json/gara-seyitliyev/poetry.json",
+          "format": "json",
+          "version": "sha256:98b4841cee84abd239ef8415cf96fea1af352abccb7ea165698d14177cb59a16",
+          "record_count": 98,
+          "record_unit": "poems"
+        },
+        {
+          "path": "poetry/json/kemine/poetry.json",
+          "format": "json",
+          "version": "sha256:04734f98cc2a6e09876c04df2d33e9fdde937ec8c2a54c51cb676f7e1148e7bc",
+          "record_count": 35,
+          "record_unit": "poems"
+        },
+        {
+          "path": "poetry/json/kerim-gurbannepesov/poetry.json",
+          "format": "json",
+          "version": "sha256:55b76814237a09116b623ac627118e2b71fa70ec0871ad8617230da8b7fc27b7",
+          "record_count": 250,
+          "record_unit": "poems"
+        },
+        {
+          "path": "poetry/json/magrupy/poetry.json",
+          "format": "json",
+          "version": "sha256:ee06427e7daf08b2358449cd592b7a214894d48f8957b0482cee48495302d9ac",
+          "record_count": 36,
+          "record_unit": "poems"
+        },
+        {
+          "path": "poetry/json/mataji/poetry.json",
+          "format": "json",
+          "version": "sha256:ddb43bbd05fa75d4f62cfdc013cdb621067d507ad46b4b27add101a0deb57291",
+          "record_count": 31,
+          "record_unit": "poems"
+        },
+        {
+          "path": "poetry/json/mollanepes/poetry.json",
+          "format": "json",
+          "version": "sha256:be7e656ead188533dc1fb1546d13716f918c48c0ef81c1e9d549a8c87b51f595",
+          "record_count": 26,
+          "record_unit": "poems"
+        },
+        {
+          "path": "poetry/json/nobatguly-rejepov/poetry.json",
+          "format": "json",
+          "version": "sha256:dcd445269765b465bdaf380ef8d8c8dedb48d9ac73b748ceebb925aaabecdd46",
+          "record_count": 48,
+          "record_unit": "poems"
+        },
+        {
+          "path": "poetry/json/pyragy/poetry.json",
+          "format": "json",
+          "version": "sha256:160897271edc5ed74c2258e9afb1d65fc8a1ede8e9e1c62c9b95d20b78aa9146",
+          "record_count": 130,
+          "record_unit": "poems"
+        },
+        {
+          "path": "poetry/json/seydi/poetry.json",
+          "format": "json",
+          "version": "sha256:dec46fba26040a61579e7e1106f165643bc99e1c3c2233f73fe56ae28b2e00e4",
+          "record_count": 29,
+          "record_unit": "poems"
+        },
+        {
+          "path": "poetry/json/zelili/poetry.json",
+          "format": "json",
+          "version": "sha256:ee7ee2094635cd15950e42b146a377837f7e06eb91de129aa57cf6bfc769a9a9",
+          "record_count": 34,
+          "record_unit": "poems"
+        },
+        {
+          "path": "poetry/sql/annasoltan-kekilowa---omruzaya-yyldyzym/annasoltan_kekilowa_-_omruzaya_yyldyzym.json",
+          "format": "json",
+          "version": "sha256:1c25d54ed3681c84bf161ec8a4b9f00093afc4944ab3a4a5c56a3bfe35f41d69",
+          "record_count": 25,
+          "record_unit": "poems"
+        },
+        {
+          "path": "poetry/sql/annasoltan-kekilowa---omruzaya-yyldyzym/annasoltan_kekilowa_-_omruzaya_yyldyzym.sql",
+          "format": "sql",
+          "version": "sha256:0fd2d9b7ea72841871319625d77f41b9de894c0d631fe2f87dce9d0c2f63c65e",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "poetry/sql/bahargul-mejidova/bahargul-mejidova-layout.txt",
+          "format": "text",
+          "version": "sha256:fa1e3413dc152881aa2ef2e6c2384901b257f45616947b6af9b8848796f6c2e3",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "poetry/sql/bahargul-mejidova/poetry.sql",
+          "format": "sql",
+          "version": "sha256:2824c779ab213ef8b1509e2f04d9186bd152da2ccbd593b262ae617a2c998519",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "poetry/sql/chary-yegenmyradov/gunler-geçip-baryar.json",
+          "format": "json",
+          "version": "sha256:bcf934434a5ec54d14445fa2fbaae9429af825baab4ec1a0caa57310f49b250b",
+          "record_count": 89,
+          "record_unit": "poems"
+        },
+        {
+          "path": "poetry/sql/chary-yegenmyradov/gunler-geçip-baryar.sql",
+          "format": "sql",
+          "version": "sha256:5b5ee3bc4d02e6442db95ef05a90152b820fc1127d15fbe93f53fa5d83e8c553",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "poetry/sql/chary-yegenmyradov/gunler-geçip-baryar.txt",
+          "format": "text",
+          "version": "sha256:d3f6b6617c20c5b3e1a01f49bc17d7f69cbbf12af666e40942c6e1bdedee7fd8",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "poetry/sql/gara-seyitliyev/gara-layout.txt",
+          "format": "text",
+          "version": "sha256:87518d2e91b6494922b77d688df3ef9322c752c963c7d135343f7e9f70e31e22",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "poetry/sql/gara-seyitliyev/poetry.sql",
+          "format": "sql",
+          "version": "sha256:2d6781cde6d0e861e58ee33547d592ed477cf5dbc633a790250fc86a92ef3fa1",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "poetry/sql/kemine/kemine.json",
+          "format": "json",
+          "version": "sha256:22d4c677cea8c93eb194b420f1077cc4ad042a4f8f81854ca0f9118b53448b46",
+          "record_count": 35,
+          "record_unit": "poems"
+        },
+        {
+          "path": "poetry/sql/kemine/kemine.sql",
+          "format": "sql",
+          "version": "sha256:da37b569e0f2e3b68aa48c13c47b9ba810f89bde11dbb38cd2c6219937854432",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "poetry/sql/kemine/kemine.txt",
+          "format": "text",
+          "version": "sha256:7fc75ebe56ed973d1ad9c7f675319019fbd6b975bbfbe919b51fdd1546474722",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "poetry/sql/kerim-gurbannepesov/kerim-gurbannepesow-layout.txt",
+          "format": "text",
+          "version": "sha256:1ca1eb64af8c9c78c77663bdd46323b164d16dca2141ca5d76f32c254f58c1c6",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "poetry/sql/kerim-gurbannepesov/poetry.sql",
+          "format": "sql",
+          "version": "sha256:da7b3ee50a08f38a3471580075b4928156c3bc0b2f0b373771778abec0f669da",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "poetry/sql/magrupy/yedigen_magrupy.json",
+          "format": "json",
+          "version": "sha256:7443d40e3a8d31e729315cc2208b092d90814f30f3b379d623e93a0bc1a68f11",
+          "record_count": 36,
+          "record_unit": "poems"
+        },
+        {
+          "path": "poetry/sql/magrupy/yedigen_magrupy.sql",
+          "format": "sql",
+          "version": "sha256:2184725765cea07507aa08c1003df2849f0b765c74b1ee3d21215b07781a8f65",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "poetry/sql/magrupy/yedigen_magrupy.txt",
+          "format": "text",
+          "version": "sha256:db15569499b91e7ea375bae153a7c2cf97030cbb3d8ddc27b56a38a98e0564fe",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "poetry/sql/mataji/yedigen_mataji.json",
+          "format": "json",
+          "version": "sha256:2d60f83b90841ed65a84284c8b3ddbf4de073201cd0bc1f2338ba74a76a53013",
+          "record_count": 31,
+          "record_unit": "poems"
+        },
+        {
+          "path": "poetry/sql/mataji/yedigen_mataji.sql",
+          "format": "sql",
+          "version": "sha256:aeb78d5a33d924a994349ee43746f5e0effc2265d2ec38c9ad3c0f6acbfc73c5",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "poetry/sql/mataji/yedigen_mataji.txt",
+          "format": "text",
+          "version": "sha256:8db93356494baeb31bcfad71bc3bfedd74a60544a9b2fc5011bd84d9d0e36195",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "poetry/sql/mollanepes/mollanepes-layout.txt",
+          "format": "text",
+          "version": "sha256:e0e454f10753ed6b8d68374030b07fab5309dc234ed5775c42e7c675fee6afc7",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "poetry/sql/mollanepes/poetry.sql",
+          "format": "sql",
+          "version": "sha256:86ebee4c5edc43b976fb21c769e24cad573046784ea02e86327690e770123b24",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "poetry/sql/nobatguly-rejepov/nobatguly-rejepov-layout.txt",
+          "format": "text",
+          "version": "sha256:34bc61a79915017c83a463896a0e117636097ba5f8954836e3ab2d4525dd9df9",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "poetry/sql/nobatguly-rejepov/poetry.sql",
+          "format": "sql",
+          "version": "sha256:c431945023aeaa0df39b5a31c65c8193740bb07ef0d4e854663826255bcc5d81",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "poetry/sql/pyragy/pyragy-layout.txt",
+          "format": "text",
+          "version": "sha256:0a44881363ba3c6351dc3e17e7f92cb5258e052b5ab5b933741c2da50445d744",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "poetry/sql/pyragy/pyragy.sql",
+          "format": "sql",
+          "version": "sha256:4997821c80cd534a04058d7969238781978f9d1ac74194a6e06abb11677fa469",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "poetry/sql/seydi/poetry.sql",
+          "format": "sql",
+          "version": "sha256:70d5690d15b9dd0512a25fd9b82fbbabce5d2db418ffdbda1489d457201fc8b3",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "poetry/sql/seydi/seydi-layout.txt",
+          "format": "text",
+          "version": "sha256:6464ced028893a773dae9cfcc2fda2a366f10cb0e846889e43fc0e3e3b882bdf",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "poetry/sql/zelili/yedigen_zelili.json",
+          "format": "json",
+          "version": "sha256:8f404e57e191a56c415ce5809f422d719766c1dc7cb94c166f078108d342fb84",
+          "record_count": 34,
+          "record_unit": "poems"
+        },
+        {
+          "path": "poetry/sql/zelili/yedigen_zelili.sql",
+          "format": "sql",
+          "version": "sha256:19f0ca77b2ef2839891f97b70d02d9694e51417bb5c49f208a7c79d45c9e2362",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "poetry/sql/zelili/yedigen_zelili.txt",
+          "format": "text",
+          "version": "sha256:4cc2be01fcb5a0277502597e1aee3b59590cdead26a140882dfd6d9a0d88dc7e",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        }
+      ]
+    },
+    {
+      "id": "stories",
+      "title": "Stories",
+      "location": "stories",
+      "version": "sha256:6424b9cd2622e9598a823875e4f25277b0a31b824d5193246fdcf1a37a83641d",
+      "formats": [
+        "json",
+        "sql",
+        "sqlite"
+      ],
+      "documentation": [
+        "stories/README.md",
+        "stories/SOURCES.md"
+      ],
+      "provenance": {
+        "references": [
+          "stories/README.md",
+          "stories/SOURCES.md"
+        ],
+        "note": "Repository documentation and embedded source metadata; coverage and redistribution rights may be incomplete."
+      },
+      "resources": [
+        {
+          "path": "stories/azmyrat-shadurdyyev/azmyrat Şadurdyýew~Teke gyzy Tatýana (Artykgül) hakynda.db",
+          "format": "sqlite",
+          "version": "sha256:891d5295412d8ed418c44bc6655e95cb8d8798ceaa464ddd1c52adbb5f5f0ba1",
+          "record_count": 43,
+          "record_unit": "table_rows"
+        },
+        {
+          "path": "stories/azmyrat-shadurdyyev/azmyrat Şadurdyýew~Teke gyzy Tatýana (Artykgül) hakynda.json",
+          "format": "json",
+          "version": "sha256:13a02617729cb98d5a16c44cc6b81883ce7c7a05591ad6aac8ac6e1e15aefbf4",
+          "record_count": 42,
+          "record_unit": "pages"
+        },
+        {
+          "path": "stories/azmyrat-shadurdyyev/azmyrat Şadurdyýew~Teke gyzy Tatýana (Artykgül) hakynda.sql",
+          "format": "sql",
+          "version": "sha256:b73ae558feffd5e5b79407ae90b66dc2f9d090c8c6291edd7464e152713f0681",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "stories/berdi-kerbabayew-saylanan-eserler/berdi_kerbabayew_-_saylanan_eserler.db",
+          "format": "sqlite",
+          "version": "sha256:96e51935cbb0324a90b00e65568519a97e1d5e6e41e65b9a5d7aee88be0462e3",
+          "record_count": 336,
+          "record_unit": "table_rows"
+        },
+        {
+          "path": "stories/berdi-kerbabayew-saylanan-eserler/berdi_kerbabayew_-_saylanan_eserler.json",
+          "format": "json",
+          "version": "sha256:28df41801477ed00a66fc72ae13eb5bde6aebf29ff255b23b2703feafef70a5e",
+          "record_count": 335,
+          "record_unit": "pages"
+        },
+        {
+          "path": "stories/berdi-kerbabayew-saylanan-eserler/berdi_kerbabayew_-_saylanan_eserler.sql",
+          "format": "sql",
+          "version": "sha256:02018d6e9561388823deee964c9365357288d3e416566d269432ebbe41b577fd",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "stories/bir soragyn yigrimi yyllyk sutemi/allayar_churiyew_-_bir_soragyn_yigrimi_yyllyk_sutemi.json",
+          "format": "json",
+          "version": "sha256:1b7bb0a767ead4bbb6540951b0e0eaee6c0f85bbd4ba5c05c53d5833983a4ed6",
+          "record_count": 148,
+          "record_unit": "pages"
+        },
+        {
+          "path": "stories/bir soragyn yigrimi yyllyk sutemi/allayar_churiyew_-_bir_soragyn_yigrimi_yyllyk_sutemi.sql",
+          "format": "sql",
+          "version": "sha256:7d2a465c784cd9b199c6dd34d3f5c2bfb21a1a9374036f8c2fd1a1b8b34c1688",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "stories/gokdepe-galasy/gokdepe_galasy.db",
+          "format": "sqlite",
+          "version": "sha256:ebdd03ebe9401eaa4409362ce81e534e1b49cc1f3d4a4171c0941d6679754449",
+          "record_count": 86,
+          "record_unit": "table_rows"
+        },
+        {
+          "path": "stories/gokdepe-galasy/gokdepe_galasy.json",
+          "format": "json",
+          "version": "sha256:28ecfada04076d0a2dc2010bdf381068aff19cfb389ded434f11316893152756",
+          "record_count": 84,
+          "record_unit": "pages"
+        },
+        {
+          "path": "stories/gokdepe-galasy/gokdepe_galasy.sql",
+          "format": "sql",
+          "version": "sha256:ad4dabb8166bebac41175c2de6b5690313500f66efb02d169b95c2b36fa108cd",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "stories/gonubek/gonubek.db",
+          "format": "sqlite",
+          "version": "sha256:7822079900ff2d713431132790b2005bf642f14b261c46e6010369560a3ac611",
+          "record_count": 40,
+          "record_unit": "table_rows"
+        },
+        {
+          "path": "stories/gonubek/gonubek.json",
+          "format": "json",
+          "version": "sha256:363c3c9e3624ec0d53f48440fcf8714a22c7fa50c807422027bb7dc23e940012",
+          "record_count": 38,
+          "record_unit": "pages"
+        },
+        {
+          "path": "stories/gonubek/gonubek.sql",
+          "format": "sql",
+          "version": "sha256:f104d86cbdadc7e70c3a6b115c50c248c005bb556d4a2cf3b3f54b582d890be9",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "stories/goresh/chary_ashyr_-_goresh.json",
+          "format": "json",
+          "version": "sha256:08caa127ce59d220939fc3398e7dd8b9872705062623e17b0d5ae5dcda38c5f3",
+          "record_count": 235,
+          "record_unit": "pages"
+        },
+        {
+          "path": "stories/goresh/chary_ashyr_-_goresh.sql",
+          "format": "sql",
+          "version": "sha256:bdc64528d0f094f7ed5a86f77615522c17089eee54011dde06a8fac139cbd4a9",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "stories/konelmeyan-soz/konelmeyan-soz.db",
+          "format": "sqlite",
+          "version": "sha256:57afa571df168e606b0c5eaa0efff968e07906bda0a2b65e3b90195e0ea04c15",
+          "record_count": 46,
+          "record_unit": "table_rows"
+        },
+        {
+          "path": "stories/konelmeyan-soz/konelmeyan-soz.json",
+          "format": "json",
+          "version": "sha256:5de85f19d62968546bf03b99499a7fc24f2aff8b75f5e6595207bd9e094e5dc1",
+          "record_count": 45,
+          "record_unit": "pages"
+        },
+        {
+          "path": "stories/konelmeyan-soz/konelmeyan-soz.sql",
+          "format": "sql",
+          "version": "sha256:436250a5b77637e22ac6f81c74aa5998d1f6717bd5eeae0e8f277e2d42f0066f",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "stories/magtymguly-hakynda-halk-rowayatlary/magtymguly_hakynda_halk_rowayatlary.json",
+          "format": "json",
+          "version": "sha256:146db035b7461d78883c8f2d1124de720a867a0dae2ebc72f7aec8df80958e62",
+          "record_count": 56,
+          "record_unit": "pages"
+        },
+        {
+          "path": "stories/magtymguly-hakynda-halk-rowayatlary/magtymguly_hakynda_halk_rowayatlary.sql",
+          "format": "sql",
+          "version": "sha256:80fdf4b91aacad15df9d132d960c1d2db9322e54323c463a7c03329517a93833",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "stories/nejep-oglan/nejep_oglan_-_dessan.db",
+          "format": "sqlite",
+          "version": "sha256:f5c4be92cdbef36ff37abcaac0b17eff77714b23ce7e619ffc97fc8f17bade81",
+          "record_count": 75,
+          "record_unit": "table_rows"
+        },
+        {
+          "path": "stories/nejep-oglan/nejep_oglan_-_dessan.json",
+          "format": "json",
+          "version": "sha256:b97d18182405015ae3b20e7c8e3574590956e2db08f851f519851a830d4ea749",
+          "record_count": 74,
+          "record_unit": "pages"
+        },
+        {
+          "path": "stories/nejep-oglan/nejep_oglan_-_dessan.sql",
+          "format": "sql",
+          "version": "sha256:0a51fd6b216299dec836073dbfb89a377d6106d97694e74fbe0d5a7d64578469",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "stories/osman-odayew/altynjan-hatyn/I/Osman Ödäýew~Altynjan hatyn I-2012`Türkmen döwlet neşirýat gullugy.db",
+          "format": "sqlite",
+          "version": "sha256:4fe09b686accd486da009e978325387a7ac3449472e88ba541efd570253a7e0c",
+          "record_count": 449,
+          "record_unit": "table_rows"
+        },
+        {
+          "path": "stories/osman-odayew/altynjan-hatyn/I/Osman Ödäýew~Altynjan hatyn I-2012`Türkmen döwlet neşirýat gullugy.json",
+          "format": "json",
+          "version": "sha256:7e39defcf14dff218c14bfe4f9047ce3acc612b1670453800691b7f9b7e0f45c",
+          "record_count": 448,
+          "record_unit": "pages"
+        },
+        {
+          "path": "stories/osman-odayew/altynjan-hatyn/I/Osman Ödäýew~Altynjan hatyn I-2012`Türkmen döwlet neşirýat gullugy.sql",
+          "format": "sql",
+          "version": "sha256:7cc0f4628fda30bfc3e615dfdcad54e6ea81ca681c1585a5ee2cc580996b8e2d",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "stories/osman-odayew/altynjan-hatyn/II/Osman Ödäýew~Altynjan hatyn II-2012`Türkmen döwlet neşirýat gullugy.json",
+          "format": "json",
+          "version": "sha256:e02c73e24b96896b8ee199ef038a55f0010169d0cafcf36ef28ecd1d32eabb96",
+          "record_count": 488,
+          "record_unit": "pages"
+        },
+        {
+          "path": "stories/osman-odayew/altynjan-hatyn/II/Osman Ödäýew~Altynjan hatyn II-2012`Türkmen döwlet neşirýat gullugy.sql",
+          "format": "sql",
+          "version": "sha256:520d09fc3734cbefd51e7f03657e87146a60324fb43a48d9b96baa9906d1f7ba",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "stories/rahym-esenow-eziz-han-hakda-hakykat/rahym_esenow_-_eziz_han_hakda_hakykat.db",
+          "format": "sqlite",
+          "version": "sha256:9bdadf7eff7717726f29bfb7de957e68cf5e2dee73c49b357665036fe1a48114",
+          "record_count": 74,
+          "record_unit": "table_rows"
+        },
+        {
+          "path": "stories/rahym-esenow-eziz-han-hakda-hakykat/rahym_esenow_-_eziz_han_hakda_hakykat.json",
+          "format": "json",
+          "version": "sha256:3fb2c5466bff0d9d0a4833d177255430196bfb3cf0c8289770341bca2269b319",
+          "record_count": 73,
+          "record_unit": "pages"
+        },
+        {
+          "path": "stories/rahym-esenow-eziz-han-hakda-hakykat/rahym_esenow_-_eziz_han_hakda_hakykat.sql",
+          "format": "sql",
+          "version": "sha256:531133e37ef45e9504e20d170fce011886c713ed884470c1ea9258846434b9cb",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "stories/ruslar-ahaltekede/Tugan W.A~Ruslar ahaltekede-1993`Ýurt.db",
+          "format": "sqlite",
+          "version": "sha256:dd8ab9d4a2bf2339fdbe7f41b0329f0c1c6af5d97ccd95e21acb1e2b9e531d46",
+          "record_count": 168,
+          "record_unit": "table_rows"
+        },
+        {
+          "path": "stories/ruslar-ahaltekede/Tugan W.A~Ruslar ahaltekede-1993`Ýurt.json",
+          "format": "json",
+          "version": "sha256:bb27efa016e273df756bf794e8254b171031f9fc36a96eaee0e09fde5373ad64",
+          "record_count": 167,
+          "record_unit": "pages"
+        },
+        {
+          "path": "stories/ruslar-ahaltekede/Tugan W.A~Ruslar ahaltekede-1993`Ýurt.sql",
+          "format": "sql",
+          "version": "sha256:7d73add9b3939762d1ad190a082f480f57dd30bd5293eab63e9c275827fccab5",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "stories/sapargeldi-anasahet-inerogly/Sapargeldi Annasähet Iner ogly~Keltegoňur kyssasy.db",
+          "format": "sqlite",
+          "version": "sha256:f7d7cb9b175ed483b5b7003b59ebb84ad0f31945ebfe084d36142afa365ef91f",
+          "record_count": 141,
+          "record_unit": "table_rows"
+        },
+        {
+          "path": "stories/sapargeldi-anasahet-inerogly/Sapargeldi Annasähet Iner ogly~Keltegoňur kyssasy.json",
+          "format": "json",
+          "version": "sha256:d184c130c9c5f470dba5b03c915cba5585d711037c694c43a7f3f76ae711872c",
+          "record_count": 140,
+          "record_unit": "pages"
+        },
+        {
+          "path": "stories/sapargeldi-anasahet-inerogly/Sapargeldi Annasähet Iner ogly~Keltegoňur kyssasy.sql",
+          "format": "sql",
+          "version": "sha256:f9500d370ae76132b5c070aea3ae2a5f58e53648e40c7dde0eda3ff745ecdeb2",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "stories/shukur-bagshy/shukur-bagshy.db",
+          "format": "sqlite",
+          "version": "sha256:0d2ecabea011288640b82967ea3d10b3a2f378a5466722f74b07eab11e4bc954",
+          "record_count": 59,
+          "record_unit": "table_rows"
+        },
+        {
+          "path": "stories/shukur-bagshy/shukur-bagshy.json",
+          "format": "json",
+          "version": "sha256:049bb4f030fb194b70cedfd7878d01d883d49ea54d7cb7e99159c150ffd71778",
+          "record_count": 58,
+          "record_unit": "pages"
+        },
+        {
+          "path": "stories/shukur-bagshy/shukur-bagshy.sql",
+          "format": "sql",
+          "version": "sha256:5eea26708cc0fe245e7a59531d6c9af3222eefef4030b276007a587b33dce77e",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "stories/tachmyrat-repbimow/Täçmyrat Repbimow~Baharyň elwan gülleri (hekaýalar ýygyndysy)-2022.db",
+          "format": "sqlite",
+          "version": "sha256:7bc9bc46cf88703b7acbd381c8f658841e690f5c4a532abb48bb4cb8a6e77c3d",
+          "record_count": 159,
+          "record_unit": "table_rows"
+        },
+        {
+          "path": "stories/tachmyrat-repbimow/Täçmyrat Repbimow~Baharyň elwan gülleri (hekaýalar ýygyndysy)-2022.json",
+          "format": "json",
+          "version": "sha256:6da1e6e0319cb451ea9ef229619447daa986e533e511e44d5353bad3cfd771d7",
+          "record_count": 158,
+          "record_unit": "pages"
+        },
+        {
+          "path": "stories/tachmyrat-repbimow/Täçmyrat Repbimow~Baharyň elwan gülleri (hekaýalar ýygyndysy)-2022.sql",
+          "format": "sql",
+          "version": "sha256:65a6babfae095f442e44dc4559ae8788578565928b0c1940c99956fe6f20ad2d",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "stories/turkmen-hanlary/Türkmen hanlary we serdarlary.db",
+          "format": "sqlite",
+          "version": "sha256:fcc2e22dcf3981d4b2e3fd044132f4491348112ea459df89dddefebd54e6122d",
+          "record_count": 164,
+          "record_unit": "table_rows"
+        },
+        {
+          "path": "stories/turkmen-hanlary/Türkmen hanlary we serdarlary.json",
+          "format": "json",
+          "version": "sha256:673cb75c8c7b55b3674870b94710c6aade6eb9d3c40fe8d7122edc3dba42af83",
+          "record_count": 163,
+          "record_unit": "pages"
+        },
+        {
+          "path": "stories/turkmen-hanlary/Türkmen hanlary we serdarlary.sql",
+          "format": "sql",
+          "version": "sha256:d09058001ab784ecc4a45f6b666bfc7a8ad0b524eb82b848ba60e0c690133275",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "stories/turkmen-sozi/Türkmen sözüniň gelip çykyşy boýunça aýratyn kitap.db",
+          "format": "sqlite",
+          "version": "sha256:cbbb463528c56da07eb8e554362913525390a20456e57653047543b604734678",
+          "record_count": 374,
+          "record_unit": "table_rows"
+        },
+        {
+          "path": "stories/turkmen-sozi/Türkmen sözüniň gelip çykyşy boýunça aýratyn kitap.json",
+          "format": "json",
+          "version": "sha256:0f97f97f235be3ff8d51bc65780770abf75903b25ed30407925ecc42d7c55f98",
+          "record_count": 373,
+          "record_unit": "pages"
+        },
+        {
+          "path": "stories/turkmen-sozi/Türkmen sözüniň gelip çykyşy boýunça aýratyn kitap.sql",
+          "format": "sql",
+          "version": "sha256:d7ccbdb3b8968a47d38975c0fe04d608ec336c933ef288ac6bacdba93096dfac",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        }
+      ]
+    },
+    {
+      "id": "utils-calendar",
+      "title": "Calendar",
+      "location": "utils/calendar",
+      "version": "sha256:5af82e61a4fe72aaed70e0d6eb3422e3db4f6861fd769bde6887d6bf85d6e1d3",
+      "formats": [
+        "json"
+      ],
+      "documentation": [
+        "utils/calendar/README.md"
+      ],
+      "provenance": {
+        "references": [
+          "utils/calendar/README.md"
+        ],
+        "note": "Repository documentation and embedded source metadata; coverage and redistribution rights may be incomplete."
+      },
+      "resources": [
+        {
+          "path": "utils/calendar/day-periods.json",
+          "format": "json",
+          "version": "sha256:506987f4c1833671abec932eaa44278c9a97707702da41d523e1f86ad18c103b",
+          "record_count": 5,
+          "record_unit": "records"
+        },
+        {
+          "path": "utils/calendar/months.json",
+          "format": "json",
+          "version": "sha256:7e62227efa42c0d0b468527d88193a5d3e25861129a2d7a263721ff1a54ddb66",
+          "record_count": 12,
+          "record_unit": "records"
+        },
+        {
+          "path": "utils/calendar/seasons.json",
+          "format": "json",
+          "version": "sha256:294bb1064f6c082240950940d5d8d3e585a8817c39bc6188ddb08389b6c26460",
+          "record_count": 4,
+          "record_unit": "records"
+        },
+        {
+          "path": "utils/calendar/time-units.json",
+          "format": "json",
+          "version": "sha256:8ee0dc3c5b5be8640cbda993cb4e37244e3411f0a4e96acc9f25b8c645c0f23b",
+          "record_count": 8,
+          "record_unit": "records"
+        },
+        {
+          "path": "utils/calendar/weekdays.json",
+          "format": "json",
+          "version": "sha256:dedd77fd21afc7e42516f26d0771b5d1c3992ce60a5c9171393dd18ea04970f6",
+          "record_count": 7,
+          "record_unit": "records"
+        }
+      ]
+    },
+    {
+      "id": "utils-colors",
+      "title": "Colors",
+      "location": "utils/colors",
+      "version": "sha256:d571ef33e716a909fd877d66fb1c8b9a862e3557b9118d39350eebfe7befe53f",
+      "formats": [
+        "json",
+        "sql"
+      ],
+      "documentation": [
+        "utils/colors/README.md"
+      ],
+      "provenance": {
+        "references": [
+          "utils/colors/README.md"
+        ],
+        "note": "Repository documentation and embedded source metadata; coverage and redistribution rights may be incomplete."
+      },
+      "resources": [
+        {
+          "path": "utils/colors/colors.json",
+          "format": "json",
+          "version": "sha256:08b4dbdd338a6bc4b86cfdf66ffa767325d9449ff1393059439f6467fbdc8b4b",
+          "record_count": 49,
+          "record_unit": "records"
+        },
+        {
+          "path": "utils/colors/import.sql",
+          "format": "sql",
+          "version": "sha256:6da8298b74052893e174e131a4257c9bbd8ccb2f98fb8462686235b3f88b742c",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        }
+      ]
+    },
+    {
+      "id": "utils-country-names",
+      "title": "Country Names",
+      "location": "utils/country-names",
+      "version": "sha256:9ea2ef5dcc1045e00c12012d512f54989233c8c89975e491dba9084d13abaa10",
+      "formats": [
+        "json"
+      ],
+      "documentation": [
+        "utils/country-names/README.md"
+      ],
+      "provenance": {
+        "references": [
+          "utils/country-names/README.md"
+        ],
+        "note": "Repository documentation and embedded source metadata; coverage and redistribution rights may be incomplete."
+      },
+      "resources": [
+        {
+          "path": "utils/country-names/countries.json",
+          "format": "json",
+          "version": "sha256:6876eb34818da624f4f5b86df2f9ffc36b5c9cf3ff00ceea2d99ed538ac6893a",
+          "record_count": 249,
+          "record_unit": "records"
+        }
+      ]
+    },
+    {
+      "id": "utils-holidays",
+      "title": "Holidays",
+      "location": "utils/holidays",
+      "version": "sha256:8f5c6c3a9ef78588d9ba793053e00997d6ade8d4b31dccb315b088185ace17fa",
+      "formats": [
+        "json"
+      ],
+      "documentation": [
+        "utils/holidays/README.md"
+      ],
+      "provenance": {
+        "references": [
+          "utils/holidays/README.md"
+        ],
+        "note": "Repository documentation and embedded source metadata; coverage and redistribution rights may be incomplete."
+      },
+      "resources": [
+        {
+          "path": "utils/holidays/holidays.json",
+          "format": "json",
+          "version": "sha256:873c3dbe0979bcbc7b3e555d033ecb18363c563b3bf461a002ed3ead09c52cdd",
+          "record_count": 29,
+          "record_unit": "records"
+        }
+      ]
+    },
+    {
+      "id": "utils-names",
+      "title": "Names",
+      "location": "utils/names",
+      "version": "sha256:ff7c07c9e8af24f7a8af29086e4a66441fc1787d6efbfa8f6a6612660a7b9c8f",
+      "formats": [
+        "json"
+      ],
+      "documentation": [
+        "utils/names/README.md"
+      ],
+      "provenance": {
+        "references": [
+          "utils/names/README.md"
+        ],
+        "note": "Repository documentation and embedded source metadata; coverage and redistribution rights may be incomplete."
+      },
+      "resources": [
+        {
+          "path": "utils/names/man-names.json",
+          "format": "json",
+          "version": "sha256:bc9d79f1d9151dc654ec85ad6419eb5b72442872b90f704808b07139cd65a561",
+          "record_count": 282,
+          "record_unit": "records"
+        },
+        {
+          "path": "utils/names/unisex-names.json",
+          "format": "json",
+          "version": "sha256:4c5cfda5b3d05899e45c95f8b26e4e2d2a198dd357ce236ef51774b6871672fb",
+          "record_count": 30,
+          "record_unit": "records"
+        },
+        {
+          "path": "utils/names/woman-names.json",
+          "format": "json",
+          "version": "sha256:1f9c090a91864ea4da3a753460021ec450313363508b56067a3156bddec0592f",
+          "record_count": 135,
+          "record_unit": "records"
+        }
+      ]
+    },
+    {
+      "id": "utils-postal-codes",
+      "title": "Postal Codes",
+      "location": "utils/postal-codes",
+      "version": "sha256:901eeea3e8eca45c6b3d13eff49de41976ee7745b1475828eb3552cfec270fc7",
+      "formats": [
+        "json"
+      ],
+      "documentation": [
+        "utils/postal-codes/README.md"
+      ],
+      "provenance": {
+        "references": [
+          "utils/postal-codes/README.md"
+        ],
+        "note": "Repository documentation and embedded source metadata; coverage and redistribution rights may be incomplete."
+      },
+      "resources": [
+        {
+          "path": "utils/postal-codes/places.json",
+          "format": "json",
+          "version": "sha256:527cccf88069a2fc4fe8a1f569b80610706e9e60d3a421530d67cad2b8b46770",
+          "record_count": 100,
+          "record_unit": "records"
+        },
+        {
+          "path": "utils/postal-codes/regions.json",
+          "format": "json",
+          "version": "sha256:0b009f01c0d1c4599aff316a216e925653651e36aa4f09c1e565ffad659d58dc",
+          "record_count": 30,
+          "record_unit": "records"
+        }
+      ]
+    },
+    {
+      "id": "utils-proverbs",
+      "title": "Proverbs",
+      "location": "utils/proverbs",
+      "version": "sha256:2cac0525ee2ce83e2005326bddfc327da908c11495ab2c117565171f3b841027",
+      "formats": [
+        "json",
+        "text"
+      ],
+      "documentation": [
+        "utils/proverbs/README.md"
+      ],
+      "provenance": {
+        "references": [
+          "utils/proverbs/README.md"
+        ],
+        "note": "Repository documentation and embedded source metadata; coverage and redistribution rights may be incomplete."
+      },
+      "resources": [
+        {
+          "path": "utils/proverbs/nakyllar.json",
+          "format": "json",
+          "version": "sha256:e0914c04fc659c3e5dd976603d6efc0bea62d7f4ca4bac9e791a6c86514798f3",
+          "record_count": 5168,
+          "record_unit": "proverbs"
+        },
+        {
+          "path": "utils/proverbs/nakyllar.txt",
+          "format": "text",
+          "version": "sha256:7b54876a2cb0e3a730d88f981385212531351b122adc7b6d05b955dc7d34eaf1",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        }
+      ]
+    },
+    {
+      "id": "utils-stopword",
+      "title": "Stopword",
+      "location": "utils/stopword",
+      "version": "sha256:509516b89b3639188330fc1e650a865e3a157c06fc028ee167e7e33a1e443eeb",
+      "formats": [
+        "json"
+      ],
+      "documentation": [
+        "utils/stopword/README.md"
+      ],
+      "provenance": {
+        "references": [
+          "utils/stopword/README.md"
+        ],
+        "note": "Repository documentation and embedded source metadata; coverage and redistribution rights may be incomplete."
+      },
+      "resources": [
+        {
+          "path": "utils/stopword/stopwords.json",
+          "format": "json",
+          "version": "sha256:104289ca907164975250dd4555008f3491efc5b2e40b6915ebfe795613760746",
+          "record_count": 5,
+          "record_unit": "words"
+        }
+      ]
+    },
+    {
+      "id": "utils-transliteration",
+      "title": "Transliteration",
+      "location": "utils/transliteration",
+      "version": "sha256:5a1cfebb5662f07805ca03334448a271c74286dc4ba3db94a72968f8ff9967c3",
+      "formats": [
+        "json"
+      ],
+      "documentation": [
+        "utils/transliteration/README.md"
+      ],
+      "provenance": {
+        "references": [
+          "utils/transliteration/README.md"
+        ],
+        "note": "Repository documentation and embedded source metadata; coverage and redistribution rights may be incomplete."
+      },
+      "resources": [
+        {
+          "path": "utils/transliteration/rules.json",
+          "format": "json",
+          "version": "sha256:e2ffedbd475ac83ce4284bf00d1c6efed8c005690cc60a22092f532bef576410",
+          "record_count": 153,
+          "record_unit": "mappings_and_rules"
+        },
+        {
+          "path": "utils/transliteration/test_cases.json",
+          "format": "json",
+          "version": "sha256:1392a30d28c7da7faebe3c4facf5d75bbb9e0c415ee24694700b86af3f1ac81e",
+          "record_count": 24,
+          "record_unit": "test_cases"
+        }
+      ]
+    }
+  ]
+}

@@ -29,3 +29,14 @@ jobs:
 
       - name: Test Turkmen text validation
         run: go test ./tools/validation
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Test dataset catalog
+        run: python3 -m unittest discover -s tools/catalog -p 'test_*.py'
+
+      - name: Check dataset catalog freshness
+        run: python3 tools/catalog/main.py --check

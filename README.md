@@ -18,6 +18,20 @@ Each dataset documents its structure, import process, limitations, and available
 
 See [DATA_FORMAT.md](DATA_FORMAT.md) for shared encoding, field naming, date, and export conventions.
 
+## Machine-readable catalog
+
+[`catalog.json`](catalog.json) lists all dataset directories and data files,
+available formats, content-based versions, per-file record counts (or `null`
+when unknown), and documentation/provenance references. See the
+[catalog guide](tools/catalog/README.md) for the schema and counting rules.
+
+After changing datasets, regenerate and verify the inventory:
+
+```sh
+python3 tools/catalog/main.py
+python3 tools/catalog/main.py --check
+```
+
 ## Data quality checks
 
 Repository-wide duplicate and format validation is available in
