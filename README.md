@@ -59,6 +59,16 @@ Strict UTF-8 and modern Turkmen Latin alphabet validation is available in
 go run ./tools/validation -text "Türkmenistanyň paýtagty Aşgabat."
 ```
 
+Machine-readable, conservative Turkmen text normalization rules and fixtures
+are documented in [`utils/normalization`](utils/normalization/README.md). A
+reference implementation provides UTF-8 validation, BOM handling, LF line
+endings, and Unicode NFC without changing spelling or script:
+
+```sh
+go run ./tools/normalization -text $'A\u0308new\r\n'
+go run ./tools/normalization --check
+```
+
 Schema, required-field, uniqueness, range, and cross-file reference checks are
 defined in [`tools/integrity/rules.json`](tools/integrity/rules.json) and run with:
 
@@ -99,7 +109,7 @@ See [ROADMAP.md](ROADMAP.md) for the planned datasets, data quality improvements
 - District codes, postal codes, and telephone codes
 - Holidays, historical dates, and cultural heritage sites
 - Thematic vocabulary for animals, plants, food, occupations, and family relationships
-- Turkmen stop words, suffixes, transliteration rules, and text-normalization data
+- Turkmen suffixes and additional language-processing data
 - GeoJSON and CSV exports for geography, plus JSON and CSV exports for other datasets
 - Automated schema, encoding, duplicate, and integrity checks
 

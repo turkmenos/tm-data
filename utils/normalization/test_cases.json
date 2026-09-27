@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "rules_file": "rules.json",
+  "test_cases": [
+    { "id": "already_nfc", "input": "Türkmenistanyň paýtagty Aşgabat.", "expected": "Türkmenistanyň paýtagty Aşgabat." },
+    { "id": "compose_lowercase_diaeresis", "input": "A\u0308new", "expected": "Änew" },
+    { "id": "compose_uppercase_diaeresis", "input": "U\u0308", "expected": "Ü" },
+    { "id": "compose_c_cedilla", "input": "C\u0327ary", "expected": "Çary" },
+    { "id": "compose_s_cedilla", "input": "s\u0327äher", "expected": "şäher" },
+    { "id": "compose_n_caron", "input": "n\u030c", "expected": "ň" },
+    { "id": "compose_y_acute", "input": "y\u0301yl", "expected": "ýyl" },
+    { "id": "compose_z_caron", "input": "z\u030curnal", "expected": "žurnal" },
+    { "id": "crlf_to_lf", "input": "bir\r\niki", "expected": "bir\niki" },
+    { "id": "cr_to_lf", "input": "bir\riki", "expected": "bir\niki" },
+    { "id": "remove_initial_bom", "input": "\ufeffTürkmen", "expected": "Türkmen" },
+    { "id": "preserve_embedded_bom", "input": "Türk\ufeffmen", "expected": "Türk\ufeffmen" },
+    { "id": "preserve_whitespace", "input": "  türkmen  dili  ", "expected": "  türkmen  dili  " },
+    { "id": "preserve_punctuation", "input": "Aşgabat—Türkmenistan’s paýtagty.", "expected": "Aşgabat—Türkmenistan’s paýtagty." },
+    { "id": "preserve_cyrillic", "input": "Түркменистан", "expected": "Түркменистан" },
+    { "id": "empty", "input": "", "expected": "" }
+  ]
+}

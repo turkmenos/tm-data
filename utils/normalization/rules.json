@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0.0",
+  "language": "Turkmen",
+  "language_code": "tk",
+  "encoding": "UTF-8",
+  "profile": "storage",
+  "description": "Conservative normalization for storing modern Turkmen Latin text without changing spelling, punctuation, or meaningful whitespace.",
+  "processing_order": [
+    "reject_invalid_utf8",
+    "remove_initial_utf8_bom",
+    "normalize_line_endings_to_lf",
+    "normalize_unicode_to_nfc"
+  ],
+  "unicode_normalization": {
+    "form": "NFC",
+    "compatibility_normalization": false,
+    "preserve_unassigned_characters": true
+  },
+  "line_endings": {
+    "canonical": "LF",
+    "replace": ["CRLF", "CR"]
+  },
+  "byte_order_mark": {
+    "initial_utf8_bom": "remove",
+    "embedded_u_fe_ff": "preserve"
+  },
+  "alphabet": {
+    "script": "Latin",
+    "uppercase": "ABCÇDEÄFGHIJŽKLMNŇOÖPRSŞTUÜWYÝZ",
+    "lowercase": "abcçdeäfghijžklmnňoöprsştuüwyýz",
+    "turkmen_specific_case_pairs": [
+      { "uppercase": "Ä", "lowercase": "ä" },
+      { "uppercase": "Ç", "lowercase": "ç" },
+      { "uppercase": "Ň", "lowercase": "ň" },
+      { "uppercase": "Ö", "lowercase": "ö" },
+      { "uppercase": "Ş", "lowercase": "ş" },
+      { "uppercase": "Ü", "lowercase": "ü" },
+      { "uppercase": "Ý", "lowercase": "ý" },
+      { "uppercase": "Ž", "lowercase": "ž" }
+    ]
+  },
+  "non_operations": [
+    "do_not_transliterate",
+    "do_not_replace_cyrillic_confusables",
+    "do_not_apply_nfkc_or_nfkd",
+    "do_not_change_case",
+    "do_not_strip_diacritics",
+    "do_not_normalize_apostrophes_or_dashes",
+    "do_not_trim_or_collapse_whitespace"
+  ],
+  "sources": [
+    {
+      "title": "Unicode Standard Annex #15: Unicode Normalization Forms",
+      "url": "https://www.unicode.org/reports/tr15/",
+      "role": "Normative definition of NFC"
+    },
+    {
+      "title": "Turkmen: Table of Correspondences, BGN/PCGN 2000 Agreement",
+      "url": "https://geonames.nga.mil/geonames/GNSSearch/GNSDocs/romanization/TABLE_OF_CORRESPONDENCES_FOR_TURKMEN.pdf",
+      "role": "Turkmen Latin alphabet and special letters"
+    }
+  ]
+}

@@ -30,6 +30,12 @@ jobs:
       - name: Test Turkmen text validation
         run: go test ./tools/validation
 
+      - name: Test Turkmen text normalization
+        run: go test ./tools/normalization
+
+      - name: Validate normalization fixtures
+        run: go run ./tools/normalization --check
+
       - name: Test dataset catalog
         run: go test ./tools/catalog
 

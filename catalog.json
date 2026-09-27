@@ -1145,6 +1145,41 @@
       ]
     },
     {
+      "id": "utils-normalization",
+      "title": "Normalization",
+      "location": "utils/normalization",
+      "version": "sha256:459682ba3dcd1e071b2effdd77b1fdac5549e8192a0e179754edfe0d03cf9bf4",
+      "formats": [
+        "json"
+      ],
+      "documentation": [
+        "utils/normalization/README.md"
+      ],
+      "provenance": {
+        "references": [
+          "utils/normalization/README.md"
+        ],
+        "note": "Repository documentation and embedded source metadata; coverage and redistribution rights may be incomplete."
+      },
+      "resources": [
+        {
+          "path": "utils/normalization/rules.json",
+          "format": "json",
+          "version": "sha256:89792e15746f0baf6cd5e43f8f015da2698cb540823853bc6a897d7a37bf6904",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "utils/normalization/test_cases.json",
+          "format": "json",
+          "version": "sha256:d0c00f9f0ee2ae8cc4a48e7f05fdbaf4f06b50ebb5b6ca59e1cc60ca196afcdc",
+          "record_count": 16,
+          "record_unit": "test_cases"
+        }
+      ]
+    },
+    {
       "id": "utils-postal-codes",
       "title": "Postal Codes",
       "location": "utils/postal-codes",
