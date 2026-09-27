@@ -18,9 +18,10 @@ import (
 )
 
 var supportedExtensions = map[string]bool{
-	".csv":   true,
-	".json":  true,
-	".jsonl": true,
+	".csv":     true,
+	".geojson": true,
+	".json":    true,
+	".jsonl":   true,
 }
 
 var excludedDirectories = map[string]bool{
@@ -117,7 +118,7 @@ func discoverFiles(paths []string) ([]string, error) {
 
 func validateFile(path string) []problem {
 	switch strings.ToLower(filepath.Ext(path)) {
-	case ".json":
+	case ".json", ".geojson":
 		return validateJSON(path)
 	case ".jsonl":
 		return validateJSONL(path)

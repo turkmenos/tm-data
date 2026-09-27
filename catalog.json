@@ -85,8 +85,9 @@
       "id": "geo",
       "title": "Geo",
       "location": "geo",
-      "version": "sha256:2fbd81dd12d28cb98797d38c5260d9fa9708cf83c27664ecab4153991d6d97c9",
+      "version": "sha256:026387806c57e9af669c82902a7044cbc15530d8beb6055577b87a7933592278",
       "formats": [
+        "geojson",
         "sql"
       ],
       "documentation": [
@@ -107,6 +108,13 @@
         "note": "Repository documentation and embedded source metadata; coverage and redistribution rights may be incomplete."
       },
       "resources": [
+        {
+          "path": "geo/geojson/regions.geojson",
+          "format": "geojson",
+          "version": "sha256:93c7fb70d69ca12f7fc8ff15b29b00d434c0edba6732aef1980020d12a7ed5ef",
+          "record_count": 2711,
+          "record_unit": "features"
+        },
         {
           "path": "geo/sql/mysql/import.sql",
           "format": "sql",

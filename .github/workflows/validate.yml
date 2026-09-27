@@ -39,5 +39,11 @@ jobs:
       - name: Check CSV export freshness
         run: go run ./tools/csvexports --check
 
+      - name: Test GeoJSON export
+        run: go test ./tools/geojson
+
+      - name: Check GeoJSON export freshness
+        run: go run ./tools/geojson --check
+
       - name: Check dataset catalog freshness
         run: go run ./tools/catalog --check

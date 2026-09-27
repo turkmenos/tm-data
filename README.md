@@ -8,7 +8,7 @@ Open, machine-readable datasets related to Turkmenistan.
 
 | Dataset | Contents | Format | Documentation |
 | --- | --- | --- | --- |
-| Geography | Administrative divisions, settlements, alternative names, and search helpers | PostgreSQL, MySQL, SQLite, SQL Server | [Guide](geo/README.md) |
+| Geography | Administrative divisions, settlements, alternative names, and search helpers | GeoJSON, PostgreSQL, MySQL, SQLite, SQL Server | [Guide](geo/README.md) |
 | Poetry | 855 works by 13 Turkmen poets | MySQL 8+ SQL, JSON — see [Guide](poetry/README.md) | [Guide](poetry/README.md) |
 | Stories | Page-level text extracted from Turkmen stories and prose | JSON, SQLite, MySQL SQL | [Guide](stories/README.md) |
 | Colors | Turkmen color names, English translations, HEX values, and categories | MySQL 8+ SQL, JSON, CSV | [Guide](utils/colors/README.md) |
@@ -40,7 +40,7 @@ go run ./tools/catalog --check
 
 Repository-wide duplicate and format validation is available in
 [`tools/validate/main.go`](tools/validate/main.go). It checks JSON, JSONL, and
-CSV datasets using only the Go standard library:
+CSV datasets, including GeoJSON, using only the Go standard library:
 
 ```sh
 go run ./tools/validate/main.go
