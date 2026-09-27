@@ -10,8 +10,11 @@ A small dataset of Turkmen color names with English translations, approximate HE
 | --- | --- |
 | MySQL 8+ SQL | [`import.sql`](import.sql) |
 | JSON | [`colors.json`](colors.json) |
+| CSV | [`colors.csv`](colors.csv) |
 
-Both formats represent the same 49 records. `colors.json` is generated from `import.sql`; edit `import.sql` and regenerate `colors.json` rather than editing it independently.
+All formats represent the same 49 records. `colors.json` is generated from
+`import.sql`, and `colors.csv` is generated from JSON. Empty CSV cells represent
+missing or `null` JSON values. Regenerate CSV with `go run ./tools/csvexports`.
 
 ## Contents and schema
 

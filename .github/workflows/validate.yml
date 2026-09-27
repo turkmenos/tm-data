@@ -33,5 +33,11 @@ jobs:
       - name: Test dataset catalog
         run: go test ./tools/catalog
 
+      - name: Test CSV exports
+        run: go test ./tools/csvexports
+
+      - name: Check CSV export freshness
+        run: go run ./tools/csvexports --check
+
       - name: Check dataset catalog freshness
         run: go run ./tools/catalog --check

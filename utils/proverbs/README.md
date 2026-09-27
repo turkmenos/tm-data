@@ -10,6 +10,7 @@ This directory contains Turkmen proverbs and sayings in JSON and plain-text form
 | --- | --- | ---: | --- |
 | [`nakyllar.json`](nakyllar.json) | JSON, UTF-8 | 5,168 | Count metadata and proverb list |
 | [`nakyllar.txt`](nakyllar.txt) | Plain text, UTF-8 | 5,168 | One proverb per paragraph |
+| [`nakyllar.csv`](nakyllar.csv) | CSV, UTF-8 | 5,168 | One `proverb` column |
 
 ## JSON structure
 
@@ -27,6 +28,9 @@ This directory contains Turkmen proverbs and sayings in JSON and plain-text form
 | --- | --- | --- |
 | `count` | number | Number of proverbs in the dataset |
 | `proverbs` | array of strings | Proverbs written in Turkmen |
+
+The CSV export has one `proverb` column and uses standard CSV quoting for
+punctuation. JSON is canonical; regenerate CSV with `go run ./tools/csvexports`.
 
 ## Usage
 

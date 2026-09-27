@@ -5,6 +5,9 @@
 or comparing the words. The list is a starting point, not a comprehensive
 or evaluated stop-word vocabulary.
 
+`stopwords.csv` is a generated UTF-8 export with one `word` column and five
+records. JSON is canonical; regenerate CSV with `go run ./tools/csvexports`.
+
 ## Sources and provenance
 
 The existing file does not record an author, external source, retrieval date,

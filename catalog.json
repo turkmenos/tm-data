@@ -894,8 +894,9 @@
       "id": "utils-calendar",
       "title": "Calendar",
       "location": "utils/calendar",
-      "version": "sha256:1b39dfa59d943a612d50793369298c6154fd68ad67e026516ed56747f97a97c3",
+      "version": "sha256:1c566b398b9fa7317be5a670c6f7ddb3087b5afde67873e6b143ce40b8c74cb9",
       "formats": [
+        "csv",
         "json"
       ],
       "documentation": [
@@ -909,10 +910,24 @@
       },
       "resources": [
         {
+          "path": "utils/calendar/day-periods.csv",
+          "format": "csv",
+          "version": "sha256:6abcfea8eb4db0702909a9c08ffd6376f42d77f2bb5992713924d7cf980c2ea1",
+          "record_count": 5,
+          "record_unit": "records"
+        },
+        {
           "path": "utils/calendar/day-periods.json",
           "format": "json",
           "version": "sha256:506987f4c1833671abec932eaa44278c9a97707702da41d523e1f86ad18c103b",
           "record_count": 5,
+          "record_unit": "records"
+        },
+        {
+          "path": "utils/calendar/months.csv",
+          "format": "csv",
+          "version": "sha256:363c2fe6ad1d47cf751cac7887d5180e3a8fd5bc83b60cd5c6646afad742eab5",
+          "record_count": 12,
           "record_unit": "records"
         },
         {
@@ -923,6 +938,13 @@
           "record_unit": "records"
         },
         {
+          "path": "utils/calendar/seasons.csv",
+          "format": "csv",
+          "version": "sha256:7edfc6d15008c1882e34f88fe4b50b8a350360139af25469317c4756c5142061",
+          "record_count": 4,
+          "record_unit": "records"
+        },
+        {
           "path": "utils/calendar/seasons.json",
           "format": "json",
           "version": "sha256:294bb1064f6c082240950940d5d8d3e585a8817c39bc6188ddb08389b6c26460",
@@ -930,10 +952,24 @@
           "record_unit": "records"
         },
         {
+          "path": "utils/calendar/time-units.csv",
+          "format": "csv",
+          "version": "sha256:58c8201e366b87db7141db94a65c459b161a350a3063180bed5e1d3f80be6358",
+          "record_count": 8,
+          "record_unit": "records"
+        },
+        {
           "path": "utils/calendar/time-units.json",
           "format": "json",
           "version": "sha256:8ee0dc3c5b5be8640cbda993cb4e37244e3411f0a4e96acc9f25b8c645c0f23b",
           "record_count": 8,
+          "record_unit": "records"
+        },
+        {
+          "path": "utils/calendar/weekdays.csv",
+          "format": "csv",
+          "version": "sha256:d2c8ed488b5ca13e4a291460c7e0c8de13316d41b5864a33c1fbf231cf6e5845",
+          "record_count": 7,
           "record_unit": "records"
         },
         {
@@ -949,8 +985,9 @@
       "id": "utils-colors",
       "title": "Colors",
       "location": "utils/colors",
-      "version": "sha256:36689439b1cf26d2a1bb621946c642498475c2500f84c28eafdccbce50c20659",
+      "version": "sha256:88a565117f683990900f3bcbaf568cb6f68b5a0f6eb23ea7809d708d2bfd4a7f",
       "formats": [
+        "csv",
         "json",
         "sql"
       ],
@@ -964,6 +1001,13 @@
         "note": "Repository documentation and embedded source metadata; coverage and redistribution rights may be incomplete."
       },
       "resources": [
+        {
+          "path": "utils/colors/colors.csv",
+          "format": "csv",
+          "version": "sha256:b0206674e3e818563eb6e640f843ac11a18e05287a6955a52058bd9235d8981a",
+          "record_count": 49,
+          "record_unit": "records"
+        },
         {
           "path": "utils/colors/colors.json",
           "format": "json",
@@ -985,8 +1029,9 @@
       "id": "utils-country-names",
       "title": "Country Names",
       "location": "utils/country-names",
-      "version": "sha256:2ef1e05511894be8c9d5978e614116bd1ddb8de217d95b1516a68a7481d4c467",
+      "version": "sha256:53e998ae614f7f6f534a0403c601a85af5dec618bd05754c6acf72077d74fd63",
       "formats": [
+        "csv",
         "json"
       ],
       "documentation": [
@@ -1000,6 +1045,13 @@
       },
       "resources": [
         {
+          "path": "utils/country-names/countries.csv",
+          "format": "csv",
+          "version": "sha256:97f0fe0577315ef659a6ff10080cf395405f2a6d1c137a58271c704d3e10f9a5",
+          "record_count": 249,
+          "record_unit": "records"
+        },
+        {
           "path": "utils/country-names/countries.json",
           "format": "json",
           "version": "sha256:6876eb34818da624f4f5b86df2f9ffc36b5c9cf3ff00ceea2d99ed538ac6893a",
@@ -1012,8 +1064,9 @@
       "id": "utils-holidays",
       "title": "Holidays",
       "location": "utils/holidays",
-      "version": "sha256:833bebf8697c945fe4dc24763fa8d267419aa4034c5dad66e73b56193dd1bc13",
+      "version": "sha256:258650502f2a9acf511aa9e94d2d10ec2f9d61312ba57f16ec186d69fce8e75d",
       "formats": [
+        "csv",
         "json"
       ],
       "documentation": [
@@ -1026,6 +1079,13 @@
         "note": "Repository documentation and embedded source metadata; coverage and redistribution rights may be incomplete."
       },
       "resources": [
+        {
+          "path": "utils/holidays/holidays.csv",
+          "format": "csv",
+          "version": "sha256:3342dd788158a5df07c4b5a6a4b8972d509b581e3ba58191c0e32929a54119ec",
+          "record_count": 29,
+          "record_unit": "records"
+        },
         {
           "path": "utils/holidays/holidays.json",
           "format": "json",
@@ -1080,8 +1140,9 @@
       "id": "utils-postal-codes",
       "title": "Postal Codes",
       "location": "utils/postal-codes",
-      "version": "sha256:17ed69e44728b2d85f2a4f24a9be0ea7176e8ab10abae6f7d8dbac08331cc275",
+      "version": "sha256:a86b592d7f29e59fd3fd36a9fb72d65fb3f25dbec627e5b9ea106f16612d886a",
       "formats": [
+        "csv",
         "json"
       ],
       "documentation": [
@@ -1095,10 +1156,24 @@
       },
       "resources": [
         {
+          "path": "utils/postal-codes/places.csv",
+          "format": "csv",
+          "version": "sha256:e06606a4a95cd41d291974bd209d8a65eb806178bc8bfd2ef944524fe586b775",
+          "record_count": 100,
+          "record_unit": "records"
+        },
+        {
           "path": "utils/postal-codes/places.json",
           "format": "json",
           "version": "sha256:527cccf88069a2fc4fe8a1f569b80610706e9e60d3a421530d67cad2b8b46770",
           "record_count": 100,
+          "record_unit": "records"
+        },
+        {
+          "path": "utils/postal-codes/regions.csv",
+          "format": "csv",
+          "version": "sha256:f0d1b1e1632be86df3fd324f17d8d072b6310f5ca8268c2dd014500d57486548",
+          "record_count": 30,
           "record_unit": "records"
         },
         {
@@ -1114,8 +1189,9 @@
       "id": "utils-proverbs",
       "title": "Proverbs",
       "location": "utils/proverbs",
-      "version": "sha256:6766df4c156958354a45c2b645dbf6fbcd01f86eb8e63a5136c278af25d8d8db",
+      "version": "sha256:d3409e6acc4d2977589733e14077f4c142dbadb68f042d135dccc1f29ba5e24e",
       "formats": [
+        "csv",
         "json",
         "text"
       ],
@@ -1129,6 +1205,13 @@
         "note": "Repository documentation and embedded source metadata; coverage and redistribution rights may be incomplete."
       },
       "resources": [
+        {
+          "path": "utils/proverbs/nakyllar.csv",
+          "format": "csv",
+          "version": "sha256:8d007db6d4e4c9e95f10ec63b222f3c0cb3337c9c98c0ddf67ec09a372e98570",
+          "record_count": 5168,
+          "record_unit": "records"
+        },
         {
           "path": "utils/proverbs/nakyllar.json",
           "format": "json",
@@ -1150,8 +1233,9 @@
       "id": "utils-stopword",
       "title": "Stopword",
       "location": "utils/stopword",
-      "version": "sha256:81e98d6bfd7e4fdb44a527dcf818f49abd3a76014f5bbcbc4eb9eb46fe948ed0",
+      "version": "sha256:939b833432cae1494ab03b4ae78628e8c05fff34ff2d8d40e40ff58483219adb",
       "formats": [
+        "csv",
         "json"
       ],
       "documentation": [
@@ -1164,6 +1248,13 @@
         "note": "Repository documentation and embedded source metadata; coverage and redistribution rights may be incomplete."
       },
       "resources": [
+        {
+          "path": "utils/stopword/stopwords.csv",
+          "format": "csv",
+          "version": "sha256:47dd05c87adf53b24c3e95f18c687854537a326e73a62342886569a0b4286f88",
+          "record_count": 5,
+          "record_unit": "records"
+        },
         {
           "path": "utils/stopword/stopwords.json",
           "format": "json",

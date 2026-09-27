@@ -8,7 +8,8 @@ This directory contains a small JSON dataset of public holidays and observance d
 
 | File | Format | Records | Description |
 | --- | --- | ---: | --- |
-| [`holidays.json`](holidays.json) | JSON, UTF-8 | 29 | Fixed-date holidays and observances |
+| [`holidays.json`](holidays.json) | JSON, UTF-8 | 29 | Canonical holiday and observance records |
+| [`holidays.csv`](holidays.csv) | CSV, UTF-8 | 29 | Flat export of the same records |
 
 ## JSON structure
 
@@ -44,8 +45,13 @@ Multi-day holidays use `start_day` and `end_day` instead of `day`:
 | `day` | number | Day of month for a single-day entry |
 | `start_day` | number | First day of a multi-day entry |
 | `end_day` | number | Last day of a multi-day entry |
+| `rule` | string | Date rule for a moving observance, when applicable |
 | `type` | string | `public_holiday` or `observance` |
 | `day_off` | boolean | Whether the date is listed as a day off |
+
+In CSV, missing optional values are empty cells and `day_off` is `true` or
+`false`. The JSON file is canonical; regenerate CSV with
+`go run ./tools/csvexports` from the repository root.
 
 ## Usage
 
