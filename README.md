@@ -1,5 +1,7 @@
 # tm-data
 
+![Illustration of Turkmenistan, books, and geographic data](assets/tm-data-banner.png)
+
 Open, machine-readable datasets related to Turkmenistan.
 
 `tm-data` collects, organizes, and shares Turkmen data for use in software, research, data analysis, education, and machine learning.
