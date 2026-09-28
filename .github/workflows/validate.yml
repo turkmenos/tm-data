@@ -36,6 +36,12 @@ jobs:
       - name: Validate normalization fixtures
         run: go run ./tools/normalization --check
 
+      - name: Test unified names dataset
+        run: go test ./tools/names
+
+      - name: Check unified names dataset freshness
+        run: go run ./tools/names --check
+
       - name: Test dataset catalog
         run: go test ./tools/catalog
 

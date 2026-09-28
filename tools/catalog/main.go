@@ -294,7 +294,7 @@ func countRecords(value any, path string) (*int, *string, error) {
 		}
 		return count(total, "mappings_and_rules")
 	}
-	for _, candidate := range [][2]string{{"pages", "pages"}, {"poems", "poems"}, {"proverbs", "proverbs"}, {"test_cases", "test_cases"}} {
+	for _, candidate := range [][2]string{{"pages", "pages"}, {"poems", "poems"}, {"proverbs", "proverbs"}, {"test_cases", "test_cases"}, {"names", "names"}} {
 		if rows, ok := object[candidate[0]].([]any); ok {
 			return count(len(rows), candidate[1])
 		}

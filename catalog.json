@@ -1107,7 +1107,7 @@
       "id": "utils-names",
       "title": "Names",
       "location": "utils/names",
-      "version": "sha256:981fe18839d978bbf59a7dabd040276a97bfdf1b5abc70c68e12ec43763b4b37",
+      "version": "sha256:5daa4747e9a6c27eaa78e75d1fdbae164e3265e3ade0ac31ca0c0715931c43ab",
       "formats": [
         "json"
       ],
@@ -1121,6 +1121,13 @@
         "note": "Repository documentation and embedded source metadata; coverage and redistribution rights may be incomplete."
       },
       "resources": [
+        {
+          "path": "utils/names/given-names.json",
+          "format": "json",
+          "version": "sha256:931fe324da71ff0cea14359907ab1725c761a8f2271ada594bb0162d3e278887",
+          "record_count": 447,
+          "record_unit": "names"
+        },
         {
           "path": "utils/names/man-names.json",
           "format": "json",

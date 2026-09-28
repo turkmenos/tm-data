@@ -13,6 +13,7 @@ Open, machine-readable datasets related to Turkmenistan.
 | Stories | Page-level text extracted from Turkmen stories and prose | JSON, SQLite, MySQL SQL | [Guide](stories/README.md) |
 | Colors | Turkmen color names, English translations, HEX values, and categories | MySQL 8+ SQL, JSON, CSV | [Guide](utils/colors/README.md) |
 | Dictionary | 18,674 searchable Turkmen headwords with pronunciations, definitions, and examples | JSON | [Guide](dictionary/README.md) |
+| Given names | 447 Turkmen names with meaning, origin, gender, variants, and provenance status | JSON | [Guide](utils/names/README.md) |
 
 Each dataset documents its structure, import process, limitations, and available sources in its own directory.
 
