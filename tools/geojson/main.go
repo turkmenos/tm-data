@@ -10,29 +10,48 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"strconv"
 )
 
 const query = `
 SELECT r.slug, p.slug AS parent_slug, r.name_tm, r.name_en, r.name_ru,
-       r.type, r.latitude, r.longitude, r.country_code,
+	   r.type,
+	   CASE WHEN r.latitude IS NULL THEN NULL ELSE printf('%.15g', r.latitude) END AS latitude,
+	   CASE WHEN r.longitude IS NULL THEN NULL ELSE printf('%.15g', r.longitude) END AS longitude,
+	   r.country_code,
        r.verification_status, r.source_url, r.source_date
 FROM regions r
 LEFT JOIN regions p ON p.id = r.parent_id
 ORDER BY r.id;`
 
+type databaseRow struct {
+	Slug               string  `json:"slug"`
+	ParentSlug         *string `json:"parent_slug"`
+	NameTM             string  `json:"name_tm"`
+	NameEN             string  `json:"name_en"`
+	NameRU             *string `json:"name_ru"`
+	Type               string  `json:"type"`
+	Latitude           *string `json:"latitude"`
+	Longitude          *string `json:"longitude"`
+	CountryCode        string  `json:"country_code"`
+	VerificationStatus string  `json:"verification_status"`
+	SourceURL          *string `json:"source_url"`
+	SourceDate         *string `json:"source_date"`
+}
+
 type row struct {
-	Slug               string   `json:"slug"`
-	ParentSlug         *string  `json:"parent_slug"`
-	NameTM             string   `json:"name_tm"`
-	NameEN             string   `json:"name_en"`
-	NameRU             *string  `json:"name_ru"`
-	Type               string   `json:"type"`
-	Latitude           *float64 `json:"latitude"`
-	Longitude          *float64 `json:"longitude"`
-	CountryCode        string   `json:"country_code"`
-	VerificationStatus string   `json:"verification_status"`
-	SourceURL          *string  `json:"source_url"`
-	SourceDate         *string  `json:"source_date"`
+	Slug               string
+	ParentSlug         *string
+	NameTM             string
+	NameEN             string
+	NameRU             *string
+	Type               string
+	Latitude           *float64
+	Longitude          *float64
+	CountryCode        string
+	VerificationStatus string
+	SourceURL          *string
+	SourceDate         *string
 }
 
 type featureCollection struct {
@@ -124,11 +143,40 @@ func generate(root string) ([]byte, error) {
 	if err != nil {
 		return nil, fmt.Errorf("query geography: %w", err)
 	}
-	var rows []row
-	if err := json.Unmarshal(output, &rows); err != nil {
+	var databaseRows []databaseRow
+	if err := json.Unmarshal(output, &databaseRows); err != nil {
 		return nil, fmt.Errorf("decode geography: %w", err)
 	}
+	rows := make([]row, 0, len(databaseRows))
+	for _, item := range databaseRows {
+		latitude, err := parseCoordinate(item.Latitude)
+		if err != nil {
+			return nil, fmt.Errorf("decode latitude for %s: %w", item.Slug, err)
+		}
+		longitude, err := parseCoordinate(item.Longitude)
+		if err != nil {
+			return nil, fmt.Errorf("decode longitude for %s: %w", item.Slug, err)
+		}
+		rows = append(rows, row{
+			Slug: item.Slug, ParentSlug: item.ParentSlug, NameTM: item.NameTM,
+			NameEN: item.NameEN, NameRU: item.NameRU, Type: item.Type,
+			Latitude: latitude, Longitude: longitude, CountryCode: item.CountryCode,
+			VerificationStatus: item.VerificationStatus, SourceURL: item.SourceURL,
+			SourceDate: item.SourceDate,
+		})
+	}
 	return render(rows)
+}
+
+func parseCoordinate(value *string) (*float64, error) {
+	if value == nil {
+		return nil, nil
+	}
+	parsed, err := strconv.ParseFloat(*value, 64)
+	if err != nil {
+		return nil, err
+	}
+	return &parsed, nil
 }
 
 func render(rows []row) ([]byte, error) {
