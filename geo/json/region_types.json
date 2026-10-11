@@ -1,0 +1,34 @@
+[
+  {
+    "type": "country",
+    "description": "Sovereign country"
+  },
+  {
+    "type": "independent_city",
+    "description": "Province-equivalent city"
+  },
+  {
+    "type": "welayat",
+    "description": "First-level province"
+  },
+  {
+    "type": "etrap",
+    "description": "District or city borough"
+  },
+  {
+    "type": "city",
+    "description": "Şäher"
+  },
+  {
+    "type": "town",
+    "description": "Şäherçe"
+  },
+  {
+    "type": "village",
+    "description": "Oba or OSM-mapped village"
+  },
+  {
+    "type": "rural_council",
+    "description": "Geňeşlik"
+  }
+]
