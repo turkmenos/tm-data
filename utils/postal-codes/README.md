@@ -10,6 +10,8 @@ This directory contains Turkmenistan postal-code and place data, split into regi
 | --- | --- | ---: | --- |
 | [`regions.json`](regions.json) | JSON, UTF-8 | 30 | Country, capital, region, and district-level records |
 | [`places.json`](places.json) | JSON, UTF-8 | 100 | Localities with postal codes, coordinates, and administrative fields |
+| [`regions.csv`](regions.csv) | CSV, UTF-8 | 30 | Flat export of region records |
+| [`places.csv`](places.csv) | CSV, UTF-8 | 100 | Flat export of locality records |
 
 ## Regions structure
 
@@ -114,6 +116,10 @@ This directory contains Turkmenistan postal-code and place data, split into regi
 Common geographic/code fields such as `iso`, `country`, `language`, `iso2`, `fips`, `nuts`, `hasc`, and `stat` follow the same meaning as in `regions.json`.
 
 Numeric-looking values are stored as strings in the current files. Applications may parse coordinates or flags when needed, but should keep `postcode` as a string so formatting is not lost.
+
+CSV headers match the JSON fields and empty optional strings remain empty cells.
+JSON is canonical; regenerate CSV with `go run ./tools/csvexports`. Import IDs,
+postal codes, codes, and flags as text when using spreadsheet software.
 
 ## Usage
 

@@ -1,5 +1,7 @@
 # tm-data
 
+![Illustration of Turkmenistan, books, and geographic data](assets/tm-data-banner.png)
+
 Open, machine-readable datasets related to Turkmenistan.
 
 `tm-data` collects, organizes, and shares Turkmen data for use in software, research, data analysis, education, and machine learning.
@@ -8,21 +10,40 @@ Open, machine-readable datasets related to Turkmenistan.
 
 | Dataset | Contents | Format | Documentation |
 | --- | --- | --- | --- |
-| Geography | Administrative divisions, settlements, alternative names, and search helpers | PostgreSQL, MySQL, SQLite, SQL Server, JSON | [Guide](geo/README.md) |
+| Geography | Administrative divisions, settlements, alternative names, and search helpers | GeoJSON, JSON, PostgreSQL, MySQL, SQLite, SQL Server | [Guide](geo/README.md) |
 | Poetry | 855 works by 13 Turkmen poets | MySQL 8+ SQL, JSON — see [Guide](poetry/README.md) | [Guide](poetry/README.md) |
 | Stories | Page-level text extracted from Turkmen stories and prose | JSON, SQLite, MySQL SQL | [Guide](stories/README.md) |
-| Colors | Turkmen color names, English translations, HEX values, and categories | MySQL 8+ SQL, JSON | [Guide](utils/colors/README.md) |
+| Colors | Turkmen color names, English translations, HEX values, and categories | MySQL 8+ SQL, JSON, CSV | [Guide](utils/colors/README.md) |
 | Dictionary | 18,674 searchable Turkmen headwords with pronunciations, definitions, and examples | JSON | [Guide](dictionary/README.md) |
+| Given names | 447 Turkmen names with meaning, origin, gender, variants, and provenance status | JSON | [Guide](utils/names/README.md) |
 
 Each dataset documents its structure, import process, limitations, and available sources in its own directory.
 
+Flat utility datasets also provide deterministic UTF-8 CSV exports for users
+who do not need JSON or SQL. See the [CSV export guide](tools/csvexports/README.md)
+for coverage, representation rules, and regeneration commands.
+
 See [DATA_FORMAT.md](DATA_FORMAT.md) for shared encoding, field naming, date, and export conventions.
+
+## Machine-readable catalog
+
+[`catalog.json`](catalog.json) lists all dataset directories and data files,
+available formats, content-based versions, per-file record counts (or `null`
+when unknown), and documentation/provenance references. See the
+[catalog guide](tools/catalog/README.md) for the schema and counting rules.
+
+After changing datasets, regenerate and verify the inventory:
+
+```sh
+go run ./tools/catalog
+go run ./tools/catalog --check
+```
 
 ## Data quality checks
 
 Repository-wide duplicate and format validation is available in
 [`tools/validate/main.go`](tools/validate/main.go). It checks JSON, JSONL, and
-CSV datasets using only the Go standard library:
+CSV datasets, including GeoJSON, using only the Go standard library:
 
 ```sh
 go run ./tools/validate/main.go
@@ -39,6 +60,16 @@ Strict UTF-8 and modern Turkmen Latin alphabet validation is available in
 
 ```sh
 go run ./tools/validation -text "Türkmenistanyň paýtagty Aşgabat."
+```
+
+Machine-readable, conservative Turkmen text normalization rules and fixtures
+are documented in [`utils/normalization`](utils/normalization/README.md). A
+reference implementation provides UTF-8 validation, BOM handling, LF line
+endings, and Unicode NFC without changing spelling or script:
+
+```sh
+go run ./tools/normalization -text $'A\u0308new\r\n'
+go run ./tools/normalization --check
 ```
 
 Schema, required-field, uniqueness, range, and cross-file reference checks are
@@ -81,7 +112,7 @@ See [ROADMAP.md](ROADMAP.md) for the planned datasets, data quality improvements
 - District codes, postal codes, and telephone codes
 - Holidays, historical dates, and cultural heritage sites
 - Thematic vocabulary for animals, plants, food, occupations, and family relationships
-- Turkmen stop words, suffixes, transliteration rules, and text-normalization data
+- Turkmen suffixes and additional language-processing data
 - GeoJSON and CSV exports for geography, plus JSON and CSV exports for other datasets
 - Automated schema, encoding, duplicate, and integrity checks
 

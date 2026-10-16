@@ -1,0 +1,30 @@
+name,month,day,start_day,end_day,rule,type,day_off
+Täze ýyl,1,1,,,,public_holiday,true
+Watan goragçylarynyň güni,1,27,,,,observance,false
+Türkmenistanyň diplomatik işgärleriniň güni,2,18,,,,observance,false
+Halkara zenanlar güni,3,8,,,,public_holiday,true
+Milli bahar baýramy,3,,21,22,,public_holiday,true
+Bütindünýä saglyk güni,4,7,,,,observance,false
+Türkmen bedewiniň milli baýramy,4,,,,last_sunday,observance,false
+1941-1945-nji ýyllaryň Beýik Watançylyk urşunda Ýeňiş güni,5,9,,,,observance,false
+Türkmenistanyň Konstitusiýasynyň we Türkmenistanyň Döwlet baýdagynyň güni,5,18,,,,public_holiday,true
+Aşgabat şäheriniň güni,5,25,,,,observance,false
+Türkmen halysynyň baýramy,5,,,,last_sunday,observance,false
+Çagalary goramagyň halkara güni,6,1,,,,observance,false
+Bütindünýä welosiped güni,6,3,,,,observance,false
+Daşky gurşawy goramagyň bütindünýä güni,6,5,,,,observance,false
+Ylymlar güni,6,12,,,,observance,false
+Medeniýet we sungat işgärleriniň hem-de Magtymguly Pyragynyň şygryýet güni,6,27,,,,observance,false
+Gurluşyk we senagat toplumynyň işgärleriniň güni,8,6,,,,observance,false
+Bilimler we talyp ýaşlar güni,9,1,,,,observance,false
+Türkmenistanyň Garaşsyzlyk güni,9,27,,,,public_holiday,true
+Ýaşulularyň halkara güni,10,1,,,,observance,false
+Hatyra güni,10,6,,,,public_holiday,true
+Türkmenistanyň Saglygy goraýyş we derman senagaty işgärleriniň güni,10,10,,,,observance,false
+Türkmen alabaýynyň baýramy,10,,,,last_sunday,observance,false
+Hasyl toýy,11,,,,second_sunday,observance,false
+Halkara Bitaraplyk güni,12,12,,,,public_holiday,true
+Nebitgaz senagaty we geologiýa işgärleriniň güni,12,14,,,,observance,false
+Türkmenistanyň ilkinji Prezidenti S.A.Nyýazowy (Beýik Saparmyrat Türkmenbaşyny) ýatlama güni,12,21,,,,observance,false
+Gurban baýramy,,,,,presidential_decree,public_holiday,true
+Oraza baýramy,,,,,presidential_decree,public_holiday,true

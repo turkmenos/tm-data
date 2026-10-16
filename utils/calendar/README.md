@@ -6,15 +6,16 @@ Turkmen and English names for months, weekdays, seasons, periods of the day, and
 
 ## Files
 
-All files contain JSON arrays encoded in UTF-8, with 36 records in total.
+Each vocabulary is available as a canonical JSON array and a generated UTF-8
+CSV file, with 36 records in total.
 
 | File | Records | Contents |
 | --- | ---: | --- |
-| [`months.json`](months.json) | 12 | Months, ordered from January to December |
-| [`weekdays.json`](weekdays.json) | 7 | Weekdays, ordered from Monday to Sunday |
-| [`seasons.json`](seasons.json) | 4 | Spring, summer, autumn, and winter |
-| [`day-periods.json`](day-periods.json) | 5 | Morning, noon, afternoon, evening, and night |
-| [`time-units.json`](time-units.json) | 8 | Second, minute, hour, day, week, month, year, and century |
+| `months.json`, `months.csv` | 12 | Months, ordered from January to December |
+| `weekdays.json`, `weekdays.csv` | 7 | Weekdays, ordered from Monday to Sunday |
+| `seasons.json`, `seasons.csv` | 4 | Spring, summer, autumn, and winter |
+| `day-periods.json`, `day-periods.csv` | 5 | Morning, noon, afternoon, evening, and night |
+| `time-units.json`, `time-units.csv` | 8 | Second, minute, hour, day, week, month, year, and century |
 
 ## JSON structure
 
@@ -72,6 +73,9 @@ print(names_tm[1])  # Ýanwar
 ```
 
 Preserve UTF-8 encoding and the supplied capitalization when displaying labels. Month, weekday, and season labels begin with capital letters; day-period and time-unit labels are lowercase.
+
+The CSV headers match the JSON field names. JSON is canonical; regenerate CSV
+with `go run ./tools/csvexports` from the repository root.
 
 ## Scope and limitations
 

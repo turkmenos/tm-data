@@ -1,0 +1,50 @@
+id,name_tm,name_en,hex_code,category
+1,ak,white,#FFFFFF,basic
+2,gara,black,#000000,basic
+3,gök,blue,#0000FF,basic
+4,gyzyl,red,#FF0000,basic
+5,ýaşyl,green,#008000,basic
+6,goňur,brown,#A52A2A,basic
+7,sary,yellow,#FFFF00,basic
+8,gülgün,pink,#FFC0CB,basic
+9,narynç,orange,#FFA500,basic
+10,mämişi,orange,#FFA500,basic
+11,melewşe,violet,#EE82EE,basic
+12,al,scarlet,#FF2400,shade
+13,gyrmyzy,crimson,#DC143C,shade
+14,kümüşsöw,silver,#C0C0C0,metallic
+15,altyn,gold,#FFD700,metallic
+16,bürünç,bronze,#CD7F32,metallic
+17,goýy gyrmyzy,dark crimson,#8B0A1A,shade
+18,açyk gyzyl,light red,#FF7F7F,shade
+19,çym-gyzyl,deep red,#B00020,shade
+20,goýy gök,dark blue,#00008B,shade
+21,goýy ýaşyl,dark green,#006400,shade
+22,açyk ýaşyl,light green,#90EE90,shade
+23,alma reňk,apple green,#8DB600,shade
+24,açyk mawy,light blue,#ADD8E6,shade
+25,mawy,sky blue / azure,#87CEEB,shade
+26,gögümtil-mawy,bluish blue,#6699CC,shade
+27,mawymtyl-ýaşyl,turquoise green,#40E0D0,shade
+28,sarymtyl-ýaşyl,yellowish green,#9ACD32,shade
+29,sarymtyl-gyzyl,yellowish red,#FF6347,shade
+30,açyk goňur,light brown,#C4A484,shade
+31,goňrumtyl-ýaşyl,brownish green,#6B7045,shade
+32,goňras,brownish,#964B00,shade
+33,goňur mele,chestnut,#954535,shade
+34,gan reňk,blood red,#880808,shade
+35,lagyl reňk,ruby red,#E0115F,shade
+36,badamjan reňk,eggplant,#614051,shade
+37,mis reňk,copper,#B87333,metallic
+38,käşir reňk,carrot orange,#ED9121,shade
+39,asman reňk,sky blue,#87CEEB,shade
+40,kümüşsöw çal,silver gray,#C0C0C0,shade
+41,gögümtil-çal,bluish gray,#6699CC,shade
+42,bugdaý reňk,wheaten,#F5DEB3,shade
+43,mele-tüsse reňk,smoke gray,#848884,shade
+44,çakyr reňk,wine red,#722F37,shade
+45,solgun,pale,,modifier
+46,öçük reňk,faded color,,modifier
+47,goýy reňk,dark color,,modifier
+48,doýgun reňk,saturated color,,modifier
+49,ala-mula,multicolored / spotted,,pattern

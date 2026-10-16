@@ -216,6 +216,15 @@ If a file is generated from another source file in this repository, avoid editin
 
 Modify the source data and regenerate the derived files instead.
 
+After changing dataset files or their documentation, regenerate and verify the machine-readable catalog:
+
+````
+go run ./tools/catalog
+go run ./tools/catalog --check
+````
+
+The latest repository-wide validation summary is stored in `quality-reports.json`.
+
 When possible, the repository should have one clearly defined source of truth for each dataset.
 
 License

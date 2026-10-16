@@ -84,6 +84,10 @@ For new CSV exports:
 - Document how nested arrays or objects are represented, such as JSON-encoded cells or separate related files.
 - Preserve identifier strings during import; spreadsheet software may otherwise strip leading zeros.
 
+Repository-maintained CSV derivatives are generated and checked with
+[`tools/csvexports`](tools/csvexports/README.md). The adjacent JSON file is the
+canonical source unless a dataset README says otherwise.
+
 ## SQL and SQLite
 
 Document the database engine, minimum supported version, tables, keys, indexes, and import command. SQL scripts are engine-specific unless explicitly documented otherwise; `.db` files are SQLite databases rather than SQL text.

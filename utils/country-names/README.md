@@ -9,6 +9,7 @@ Country and territory names in Turkmen and English, paired with two-letter codes
 | File | Format | Records | Description |
 | --- | --- | ---: | --- |
 | [`countries.json`](countries.json) | JSON, UTF-8 | 249 | Country and territory codes with Turkmen and English names |
+| [`countries.csv`](countries.csv) | CSV, UTF-8 | 249 | Flat export with `code`, `tm`, and `en` columns |
 
 ## JSON structure
 
@@ -29,6 +30,9 @@ The file contains an array of objects, sorted by `code`:
 | `en` | string | English display name |
 
 All three fields are present in every record. The `tm` field identifies the Turkmen name within this dataset.
+
+The JSON file is canonical; regenerate CSV with `go run ./tools/csvexports`.
+Import `code` as text to prevent spreadsheet coercion.
 
 ## Usage
 

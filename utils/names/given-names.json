@@ -1,0 +1,6296 @@
+{
+  "schema_version": "1.0.0",
+  "language": "Turkmen",
+  "language_code": "tk",
+  "record_count": 447,
+  "generated_from": [
+    "utils/names/man-names.json",
+    "utils/names/woman-names.json",
+    "utils/names/unisex-names.json"
+  ],
+  "sources": [],
+  "provenance": {
+    "status": "source_unknown",
+    "note": "The legacy files do not identify an author, publication, URL, retrieval date, or redistribution terms. Records remain unverified until sources are supplied."
+  },
+  "names": [
+    {
+      "name": "Aba",
+      "gender": "male",
+      "meaning": "dialektlerde bu söz «ata»‚ «kaka» we «kakanyň erkek dogany» ýaly manylary aňladýar.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Abadan",
+      "gender": "female",
+      "meaning": "abadan‚ abadançylyk.",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Abat",
+      "gender": "unisex",
+      "meaning": "Şikestsiz‚ bat.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Abdy",
+      "gender": "male",
+      "meaning": "arapça abd—«gul». Abdylla ýaly goşma adyň gysgalan görnüşi.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Abdykerim",
+      "gender": "male",
+      "meaning": "keremliniň‚ sahawatlynyň‚ jomardyň (allanyň) guly.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Abdylla",
+      "gender": "male",
+      "meaning": "allanyň guly.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Abdyrahman",
+      "gender": "male",
+      "meaning": "mähirliniň (allanyň) guly.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Abdyrahym",
+      "gender": "male",
+      "meaning": "rehimliniň (allanyň) guly.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Abdyresul",
+      "gender": "male",
+      "meaning": "allanyň ilçisiniň (pygamberiň) guly.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Abdysetdar",
+      "gender": "male",
+      "meaning": "geçirimliniň (allanyň) guly.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Abraý",
+      "gender": "male",
+      "meaning": "atly-abraýly.",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Abraýguly",
+      "gender": "male",
+      "meaning": "abraýly gul‚ atly-abraýly ogul.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Abyl",
+      "gender": "male",
+      "meaning": "ata. Gysgalan at.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Adyl",
+      "gender": "male",
+      "meaning": "adyl‚ hemmä deň seredýän.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Aga",
+      "gender": "male",
+      "meaning": "uly erkek dogan. Bu at «kiçilere aga bolsun» diýen manydadyr.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Agabeg",
+      "gender": "female",
+      "meaning": "agasynyň begi.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Agabike",
+      "gender": "female",
+      "meaning": "agasynyň bikesi.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Agageldi",
+      "gender": "male",
+      "meaning": "agasy gelende bolan ogul.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Agagül",
+      "gender": "female",
+      "meaning": "agasynyň güli.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Agahan",
+      "gender": "male",
+      "meaning": "agalaryň hany.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Agajan",
+      "gender": "male",
+      "meaning": "agasynyň jany‚ ezizi.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Agajemal",
+      "gender": "female",
+      "meaning": "agasynyň gözel yýasy.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Agöýli",
+      "gender": "male",
+      "meaning": "ak (bagtly) öýüň eýesi.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Ahmet",
+      "gender": "male",
+      "meaning": "öwlen‚ öwgüsi ýeten.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Ajaýyp",
+      "gender": "female",
+      "meaning": "geň‚ täsin‚ ajap.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Akbibi",
+      "gender": "female",
+      "meaning": "bagtly we mähriban gyz ýa-da bagtly hanym.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Akbike",
+      "gender": "female",
+      "meaning": "bagtly gyz‚ bagtly hanym.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Akbäbek",
+      "gender": "female",
+      "meaning": "bagtly çaga.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Akgözel",
+      "gender": "female",
+      "meaning": "bagtly‚ gözel çaga.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Akgül",
+      "gender": "female",
+      "meaning": "bagtly‚ gül ýaly gyz.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Akjahan",
+      "gender": "female",
+      "meaning": "bagtly we açyk‚ giň göwrümli gyz.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Akjemal",
+      "gender": "female",
+      "meaning": "bagtly we owadan gyz.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Akmaral",
+      "gender": "female",
+      "meaning": "bagtly we gözel gyz.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Akmaýa",
+      "gender": "female",
+      "meaning": "bagtly we maýa ýaly ýuwaş.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Akmeňli",
+      "gender": "female",
+      "meaning": "bedeninde meňi bolan bagtly gyz.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Akmuhammet",
+      "gender": "male",
+      "meaning": "bagtly we öwgä mynasyp.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Aknabat",
+      "gender": "female",
+      "meaning": "bagtly we süýji dilli.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Akpamyk",
+      "gender": "female",
+      "meaning": "bagtly we pamyk ýaly mylaýym.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Allaberdi",
+      "gender": "male",
+      "meaning": "allanyň beren çagasy.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Allaguly",
+      "gender": "male",
+      "meaning": "allanyň guly.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Allanazar",
+      "gender": "male",
+      "meaning": "allanyň nazary bilen doglan.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Alma",
+      "gender": "female",
+      "meaning": "alma ýaly.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Almaz",
+      "gender": "male",
+      "meaning": "1) Italmaz diýen adyň gysga görnüşi; 2) kesgir‚ ýiti akylly.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Alty",
+      "gender": "male",
+      "meaning": "1) altynjy; 2) altybarmakly.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Altyn",
+      "gender": "female",
+      "meaning": "gymmat bahaly.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Aly",
+      "gender": "male",
+      "meaning": "belent derejeli.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Aman",
+      "gender": "unisex",
+      "meaning": "sag-aman dünýä inen.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Anna",
+      "gender": "unisex",
+      "meaning": "anna güni doglan.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Arslan",
+      "gender": "male",
+      "meaning": "arslan ýaly güýçli‚ batyr.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Artyk",
+      "gender": "male",
+      "meaning": "bedeninde artykmaç ösüntgisi bolan.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Arzuw",
+      "gender": "female",
+      "meaning": "arzuw bilen ýetilen.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Ata",
+      "gender": "male",
+      "meaning": "1) ata bolsun; 2) atasynyň ady dakylan.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Azat",
+      "gender": "unisex",
+      "meaning": "erkana‚ azat.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Azym",
+      "gender": "male",
+      "meaning": "beýik‚ uly.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Açyl",
+      "gender": "male",
+      "meaning": "keselden gutul.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Aýaz",
+      "gender": "male",
+      "meaning": "aýazda doglan.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Aýbahar",
+      "gender": "female",
+      "meaning": "baharda doglan aý ýaly gyz.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Aýbibi",
+      "gender": "female",
+      "meaning": "aý ýaly owadan gyz.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Aýbike",
+      "gender": "female",
+      "meaning": "aý ýaly gözel gyz.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Aýbäbek",
+      "gender": "female",
+      "meaning": "aý ýaly çaga.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Aýbölek",
+      "gender": "female",
+      "meaning": "aýyň bölegi.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Aýdogdy",
+      "gender": "male",
+      "meaning": "täze aý doganda bolan çaga.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Aýdolan",
+      "gender": "female",
+      "meaning": "aý dolanda doglan.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Aýguly",
+      "gender": "male",
+      "meaning": "aýyň guly.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Aýgözel",
+      "gender": "female",
+      "meaning": "aý ýaly gözel.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Aýhan",
+      "gender": "male",
+      "meaning": "aýlaryň hany.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Aýjahan",
+      "gender": "female",
+      "meaning": "älem-jahanyň aýy.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Aýjemal",
+      "gender": "female",
+      "meaning": "aý ýaly gözel.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Aýmyrat",
+      "gender": "male",
+      "meaning": "aýly gijede doglup‚ maksat-myrada ýetiren ogul.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Aýna",
+      "gender": "female",
+      "meaning": "1) Anna‚ Adine (a.); 2) aýna ýaly gözel‚ päkize.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Aýnabat",
+      "gender": "female",
+      "meaning": "aý ýaly gözel‚ nabat ýaly süýji.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Aýnur",
+      "gender": "female",
+      "meaning": "aýyň nury.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Aýogul",
+      "gender": "female",
+      "meaning": "aý ýaly gözel gyzyň yzyndan ogul bolsun.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Aýperi",
+      "gender": "female",
+      "meaning": "aý ýaly gözel peri.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Aýsenem",
+      "gender": "female",
+      "meaning": "aý ýaly owadan.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Aýsere",
+      "gender": "female",
+      "meaning": "aý ýaly gözelleriň seresi.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Aýsoltan",
+      "gender": "female",
+      "meaning": "aý ýaly gözelleriň soltany.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Aýsuluw",
+      "gender": "female",
+      "meaning": "aý ýaly owadan (suluw — «owadan»‚ «gözel»).",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Aýtuwak",
+      "gender": "female",
+      "meaning": "perdede doglan aý ýaly gyz.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Aýtäç",
+      "gender": "female",
+      "meaning": "täçli‚ aý ýaly gyz.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Aýyt",
+      "gender": "male",
+      "meaning": "baýram.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [
+        "Haýyt"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": "arapça rýt",
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Aýçemen",
+      "gender": "female",
+      "meaning": "aý ýaly owadan; gülleriň çemeni.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Aşyr",
+      "gender": "male",
+      "meaning": "1) aşyr aýynda doglan; 2) onunjy‚ ýagny muharram aýynyň 10-njy güni doglan.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Baba",
+      "gender": "male",
+      "meaning": "1) baba bolsun; babasynyň ady dakylan.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Bagybek",
+      "gender": "male",
+      "meaning": "uzak ýaşasyn‚ ölmesin.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Bagşy",
+      "gender": "male",
+      "meaning": "bagşy ýa-da bagşy ýaly abraýly bolsun.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Bahar",
+      "gender": "female",
+      "meaning": "baharda doglan‚ şadyýan.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Baky",
+      "gender": "male",
+      "meaning": "uzak ýaşasyn‚ ölmesin.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Bazar",
+      "gender": "male",
+      "meaning": "1) bazar güni doglan; 2) gelim-gidimli‚ şagalaňly.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Baýram",
+      "gender": "male",
+      "meaning": "baýramçylykda doglan.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Begenç",
+      "gender": "male",
+      "meaning": "maşgalany begendiren.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Beki",
+      "gender": "male",
+      "meaning": "jany bek.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Bekpolat",
+      "gender": "male",
+      "meaning": "polat ýaly bek.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Bezirgen",
+      "gender": "male",
+      "meaning": "bazarçy‚ täjir‚ söwdagär.",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Bibi",
+      "gender": "female",
+      "meaning": "hanym‚ gyz dogan.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Bike",
+      "gender": "female",
+      "meaning": "hanym‚ begim.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Bilbil",
+      "gender": "female",
+      "meaning": "saýrak dilli‚ şol owaz.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Boran",
+      "gender": "male",
+      "meaning": "boranda doglan.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Borjak",
+      "gender": "male",
+      "meaning": "borjak ýaly berk‚ kynçylygy ýeňişi.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Bossan",
+      "gender": "female",
+      "meaning": "gözel‚ bagy-bossan ýaly ýakymly.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Buga",
+      "gender": "male",
+      "meaning": "öküz‚ öküz ýaly güýçli.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Bugra",
+      "gender": "male",
+      "meaning": "iki örküçli düýe‚ güýçli.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Bähram",
+      "gender": "male",
+      "meaning": "mars planetasy‚ ýagny ýyldyz ýaly parlak.",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Bäşim",
+      "gender": "male",
+      "meaning": "bäşinji oglum.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Böke",
+      "gender": "male",
+      "meaning": "pälwan‚ güýçli.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Böri",
+      "gender": "male",
+      "meaning": "böri ýaly çydamly‚ berk.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Datly",
+      "gender": "female",
+      "meaning": "süýji‚ şirin dilli.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Dawut",
+      "gender": "male",
+      "meaning": "söýgüli‚ mähirli.",
+      "origins": [
+        "Hebrew"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Daňatar",
+      "gender": "male",
+      "meaning": "daňdan doglan.",
+      "origins": [],
+      "variants": [
+        "Daňgeldi"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Daşpolat",
+      "gender": "male",
+      "meaning": "daş we polat ýaly berk‚ sagdyn‚ uzak ömürli.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Demir",
+      "gender": "male",
+      "meaning": "demir ýaly jany berk‚ sagdyn‚ ömri uzak.",
+      "origins": [],
+      "variants": [
+        "Temir"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Derýa",
+      "gender": "male",
+      "meaning": "joşgunly‚ giň göwrümli.",
+      "origins": [],
+      "variants": [
+        "Deňiz"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Dessegül",
+      "gender": "female",
+      "meaning": "gülüň dessesi owadan‚ gözel.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Dilew",
+      "gender": "male",
+      "meaning": "dilenip‚ ýalbarylyp alnan.",
+      "origins": [],
+      "variants": [
+        "Dilegberdi"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Doly",
+      "gender": "male",
+      "meaning": "1) aý dolanda doglan; 2) saçagy doly bolsun; 3) kemis doglan çaga soňra doluşsyn.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Doýduk",
+      "gender": "female",
+      "meaning": "gyzymyz ýeterlik.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Durdy",
+      "gender": "male",
+      "meaning": "uzak ýaşasyn‚ ölmesin‚ dursun.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Dursun",
+      "gender": "unisex",
+      "meaning": "ölmesin‚ uzak ýaşasyn‚ dursun.",
+      "origins": [],
+      "variants": [
+        "Tursun"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Duşem",
+      "gender": "male",
+      "meaning": "duşenbe güni doglan.",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [
+        "Duşy",
+        "Tuşy"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Döndi",
+      "gender": "female",
+      "meaning": "şu gyzyň yzyndan ogul bolsun (ogla dönsün).",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Dönmez",
+      "gender": "male",
+      "meaning": "ölmez‚ yzyna dönmez.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Döwlet",
+      "gender": "male",
+      "meaning": "döwletli.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Döwran",
+      "gender": "male",
+      "meaning": "döwrüň‚ zamananyň ogly ýa-da döwran sürsün.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Dünýä",
+      "gender": "female",
+      "meaning": "dünýä ýaly owadan.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Dünýägözel",
+      "gender": "female",
+      "meaning": "dünýäde iň gözel.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Dürjemal",
+      "gender": "female",
+      "meaning": "dür ýaly gözel‚ owadan‚ gymmat bahaly.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Dürli",
+      "gender": "female",
+      "meaning": "1) şu gyzyň yzyndan ogul bolsun (dürlülensin); 2) Dürjemal ýaly goşma adyň gysgalan görnüşi.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Eje",
+      "gender": "female",
+      "meaning": "enesiniň ýa-da mamasynyň ady dakylan.",
+      "origins": [],
+      "variants": [
+        "Ejegül"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Ekber",
+      "gender": "male",
+      "meaning": "iň uly‚ iň belent.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Emin",
+      "gender": "male",
+      "meaning": "ynamdar‚ wekil.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Emir",
+      "gender": "male",
+      "meaning": "öňbaşçy‚ ýolbaşçy‚ hökümdar.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Ene",
+      "gender": "female",
+      "meaning": "enesiniň ady dakylan.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Erke",
+      "gender": "unisex",
+      "meaning": "erkin ösýän‚ göwnüne degilmeýän.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Erkin",
+      "gender": "male",
+      "meaning": "erkin ösýän.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Esen",
+      "gender": "male",
+      "meaning": "hasan‚ ýagny oňat.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Eset",
+      "gender": "male",
+      "meaning": "ýolbars; güýçli.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [
+        "Esat"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Eziz",
+      "gender": "male",
+      "meaning": "gadyrly‚ söýgüli‚ eziz.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Eýe",
+      "gender": "male",
+      "meaning": "allanyň ady (eýäm‚ ýagny allam berdi).",
+      "origins": [],
+      "variants": [
+        "Ege",
+        "Egem",
+        "Eýäm"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Eýýup",
+      "gender": "male",
+      "meaning": "hormatly.",
+      "origins": [
+        "Hebrew"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Gadam",
+      "gender": "male",
+      "meaning": "ädim‚ ýagny ädimi batly bolsun.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Galkan",
+      "gender": "male",
+      "meaning": "goragçy‚ goraýjy.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Galpak",
+      "gender": "male",
+      "meaning": "garagalpakly‚ saçly doglan.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Gammar",
+      "gender": "male",
+      "meaning": "torgaý (Allanyň gulunyň ady).",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Gaplaň",
+      "gender": "male",
+      "meaning": "gaplaň ýaly güýçli‚ çalasyn.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Garly",
+      "gender": "male",
+      "meaning": "gar ýaganda doglan.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Garry",
+      "gender": "male",
+      "meaning": "garrylaryň ady dakylan.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Gaýgysyz",
+      "gender": "male",
+      "meaning": "şadyýan‚ gam çekmeýän.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Gaýrat",
+      "gender": "male",
+      "meaning": "gujurly‚ gaýratly.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Gaýyp",
+      "gender": "male",
+      "meaning": "gözden gaýyp bolan‚ ýogalan‚ mukaddes.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Genje",
+      "gender": "male",
+      "meaning": "iň kiçi çaga‚ bäbek.",
+      "origins": [],
+      "variants": [
+        "Genji",
+        "Genjim"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Geňlik",
+      "gender": "female",
+      "meaning": "geň‚ täsin gyz.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Gowşut",
+      "gender": "male",
+      "meaning": "1) maksada ýetiren; 2) ene-atasyna sag-aman gowşan.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Goç",
+      "gender": "male",
+      "meaning": "batyr‚ güýçli‚ goç ogul.",
+      "origins": [],
+      "variants": [
+        "Goçgar"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Gunça",
+      "gender": "female",
+      "meaning": "gülüň gunçasy.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Gurban",
+      "gender": "male",
+      "meaning": "gurban aýynda doglan.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Gurt",
+      "gender": "male",
+      "meaning": "gurt ýaly çydamly‚ jany berk.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Gutly",
+      "gender": "male",
+      "meaning": "bagtly.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Guwanç",
+      "gender": "male",
+      "meaning": "ata-enesini begendiren‚ guwandyran.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Gylyç",
+      "gender": "male",
+      "meaning": "gylyç ýaly ýiti‚ kesgir‚ uzak ümürli.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Gymmat",
+      "gender": "female",
+      "meaning": "gymmat bahaly.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Gyrmyzy",
+      "gender": "female",
+      "meaning": "gözel‚ owadan.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Göwher",
+      "gender": "female",
+      "meaning": "gymmat bahaly‚ gözel.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Gül",
+      "gender": "female",
+      "meaning": "gül ýaly owadan.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Gündogdy",
+      "gender": "male",
+      "meaning": "gün doganda bolan.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Güýç",
+      "gender": "male",
+      "meaning": "güýçli‚ kuwwatly ýa-da ene-atasyna güýç getiren.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Habyp",
+      "gender": "male",
+      "meaning": "söýgüli‚ dost.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Hajar",
+      "gender": "female",
+      "meaning": "göçe‚ göçüp ýören.",
+      "origins": [
+        "Hebrew"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Hajat",
+      "gender": "female",
+      "meaning": "ogul gerek.",
+      "origins": [],
+      "variants": [
+        "Ogulhajat"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Hajy",
+      "gender": "male",
+      "meaning": "hajy kabul bolan.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Hakberdi",
+      "gender": "male",
+      "meaning": "hak (alla) berdi.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Hally",
+      "gender": "unisex",
+      "meaning": "haly tegmili bolan.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Halym",
+      "gender": "male",
+      "meaning": "mylaýym‚ güler ýüzli‚ jomart‚ sahy.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Han",
+      "gender": "male",
+      "meaning": "abraýly‚ atly‚ ile baş bolsun.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Hapyz",
+      "gender": "male",
+      "meaning": "goragçy‚ saklaýjy.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Hasan",
+      "gender": "male",
+      "meaning": "gowy‚ oňat.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Hatam",
+      "gender": "male",
+      "meaning": "çözüji‚ ýiti.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Hatyja",
+      "gender": "female",
+      "meaning": "ir doglan.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Haýdar",
+      "gender": "male",
+      "meaning": "ýolbars‚ güýçli.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Haşym",
+      "gender": "male",
+      "meaning": "hormatly.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Hekim",
+      "gender": "male",
+      "meaning": "bilgiç‚ akylly‚ tebip.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Hemdem",
+      "gender": "male",
+      "meaning": "ýürekdeş.",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Hemra",
+      "gender": "male",
+      "meaning": "ýoldaş‚ hemra.",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Hemze",
+      "gender": "male",
+      "meaning": "ýiti‚ ötgür.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [
+        "Hamza"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Hesel",
+      "gender": "female",
+      "meaning": "bal‚ süýji dilli.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Hezret",
+      "gender": "male",
+      "meaning": "jenap‚ hormatly.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Hezzet",
+      "gender": "female",
+      "meaning": "hezzetli‚ hormata mynasyp.",
+      "origins": [],
+      "variants": [
+        "Ezzet"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Hoja",
+      "gender": "male",
+      "meaning": "jenap‚ halypa.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Hommat",
+      "gender": "male",
+      "meaning": "muhammet diýen adyň gysga görnüşi.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Humaý",
+      "gender": "female",
+      "meaning": "bagt guşy‚ owadan.",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Hurma",
+      "gender": "female",
+      "meaning": "hurma ýaly süýji‚ şirin dilli.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Hydyr",
+      "gender": "male",
+      "meaning": "ebedi diri (pygamberiň ady).",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Hümmet",
+      "gender": "male",
+      "meaning": "hümmetli‚ güýçli‚ baý.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Hüseýin",
+      "gender": "male",
+      "meaning": "oňatja‚ gowuja.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [
+        "Söýün"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Hüýrjemal",
+      "gender": "female",
+      "meaning": "peri ýaly gözel.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Isa",
+      "gender": "male",
+      "meaning": "allanyň ýalkany.",
+      "origins": [
+        "Hebrew"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Isgender",
+      "gender": "male",
+      "meaning": "grekçe Aleksandr diýen adyň arapça görnüşi. Manysy: «erkekleriň‚ mertleriň goragçysy‚ penakäri».",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Işan",
+      "gender": "male",
+      "meaning": "olar‚ ýagny ruhanylaryň adynyň 3-nji ýöňkemede ulanylýan görnüşi.",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Jahan",
+      "gender": "female",
+      "meaning": "dünýä‚ ýagty giň göwrümli ýa-da iň owadan.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Japar",
+      "gender": "male",
+      "meaning": "behişt çeşmesi‚ derýa.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Jelal",
+      "gender": "male",
+      "meaning": "beýik‚ mertebesi belent.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Jelil",
+      "gender": "male",
+      "meaning": "beýik‚ mertebesi belent.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Jemal",
+      "gender": "female",
+      "meaning": "owadanlyk‚ görkem‚ gelşikli.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [
+        "Jemile"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Jemşit",
+      "gender": "male",
+      "meaning": "owadan‚ gymmatly (Eýranyň mifik şasynyň ady).",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Jennet",
+      "gender": "female",
+      "meaning": "behişt‚ uçmah.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Jepbar",
+      "gender": "male",
+      "meaning": "gudratly‚ güýçli (allanyň ady).",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Jeren",
+      "gender": "female",
+      "meaning": "jeren ýaly owadan‚ gelşikli.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Jeýran",
+      "gender": "female",
+      "meaning": null,
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Jomart",
+      "gender": "male",
+      "meaning": "sahy‚ eli açyk.",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Jora",
+      "gender": "male",
+      "meaning": "ikinji ogul‚ hemra.",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Juma",
+      "gender": "male",
+      "meaning": "jemlenilýän gün‚ ýagny juma (anna) güni doglan.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Jyga",
+      "gender": "male",
+      "meaning": "başyň täji‚ jygasy.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Jöwher",
+      "gender": "unisex",
+      "meaning": "gymmat bahaly.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Kadyr",
+      "gender": "male",
+      "meaning": "her bir zady başarýan (allanyň ady).",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Kaka",
+      "gender": "male",
+      "meaning": "kakasynyň ýa-da atasynyň ady dakylan.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Kamar",
+      "gender": "female",
+      "meaning": "aý‚ ýagny owadan‚ ýüzi nuly.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Kasym",
+      "gender": "male",
+      "meaning": "deň bölünji‚ paýlaýjy.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Kaýum",
+      "gender": "male",
+      "meaning": "gaýym‚ üýtgemeýän‚ baky (allanyň ady).",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Kekil",
+      "gender": "unisex",
+      "meaning": "çokul‚ depede goýulýan saç‚ ýagny çokully.",
+      "origins": [],
+      "variants": [
+        "Käkil"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Kemal",
+      "gender": "male",
+      "meaning": "kämillik‚ ýetişinlik.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Kerim",
+      "gender": "male",
+      "meaning": "asylly‚ keremli‚ sahy.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Kerwen",
+      "gender": "male",
+      "meaning": "oglumyz köp‚ ýagny hatar-kerwen bolsun.",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Keýik",
+      "gender": "female",
+      "meaning": "keýik ýaly çalasyn‚ owadan‚ görmegeý.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Kiçi",
+      "gender": "unisex",
+      "meaning": "çagalaryň iň kiçisi.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Kuly",
+      "gender": "male",
+      "meaning": "(allanyň) guly.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Kuwwat",
+      "gender": "male",
+      "meaning": "güýçli‚ kuwwatly.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Kyýas",
+      "gender": "male",
+      "meaning": "nusga‚ ýadygärlik.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Kömek",
+      "gender": "male",
+      "meaning": "kömekçi‚ ýardamçy.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Körpe",
+      "gender": "unisex",
+      "meaning": "iň kiçi çaga.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Kössek",
+      "gender": "male",
+      "meaning": "kössekli‚ duşalan‚ ýagny ölmesin.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Kümüş",
+      "gender": "female",
+      "meaning": "gymmat bahaly‚ gözel.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Küren",
+      "gender": "male",
+      "meaning": "ogul köp bolsun‚ küren oba bolsun.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Leýli",
+      "gender": "female",
+      "meaning": "liliýa (gül)‚ ýagny owadan‚ gözel.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Läle",
+      "gender": "female",
+      "meaning": "gül‚ gülzar.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Mahmyt",
+      "gender": "male",
+      "meaning": "öwlen‚ magtalan.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [
+        "Mahmut"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Mahym",
+      "gender": "female",
+      "meaning": "aý‚ meniň aýym.",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Maksat",
+      "gender": "unisex",
+      "meaning": "makastly‚ maksat-myrada ýetiren.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Mama",
+      "gender": "female",
+      "meaning": "mamasynyň ady dakylan ýa-da mama bolsun.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Mamur",
+      "gender": "unisex",
+      "meaning": "ýaşaýjy‚ gülleýän‚ ömür sürýän.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Mansur",
+      "gender": "male",
+      "meaning": "ýeňişi.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Maral",
+      "gender": "female",
+      "meaning": "maral ýaly owadan‚ gelşikli.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Mawy",
+      "gender": "male",
+      "meaning": "mawy gözli.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Maýa",
+      "gender": "female",
+      "meaning": "maýa ýaly ýuwaş‚ owadan.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Maýsa",
+      "gender": "female",
+      "meaning": "maýsa (bahar) wagty doglan ýa-da owadan‚ göwün açyk.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Merdan",
+      "gender": "male",
+      "meaning": "mertleriň‚ batyrlaryň serkerdary.",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Meret",
+      "gender": "male",
+      "meaning": "meret aýynda doglan.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Mergen",
+      "gender": "male",
+      "meaning": "ökde atyjy‚ mergen.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Merjen",
+      "gender": "female",
+      "meaning": "gymmat bahaly‚ owadan.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Meňli",
+      "gender": "unisex",
+      "meaning": "meňi‚ haly bolan.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Miwe",
+      "gender": "female",
+      "meaning": "miwe ýaly süýji‚ şirin dilli.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Molla",
+      "gender": "male",
+      "meaning": "okumyş‚ bilimli.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Mugja",
+      "gender": "female",
+      "meaning": "gülgüň gunçasy.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Muhammet",
+      "gender": "male",
+      "meaning": "öwgä mynasyp‚ öwürlýän.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Muhat",
+      "gender": "male",
+      "meaning": "muhammet diýen adyň gysga görnüşi.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Muhtar",
+      "gender": "male",
+      "meaning": "saýlantgy.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Mukym",
+      "gender": "male",
+      "meaning": "baky‚ ömürlik‚ oturymly.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Murtaza",
+      "gender": "male",
+      "meaning": "saýlanan‚ seçilen.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Musa",
+      "gender": "male",
+      "meaning": "çaga‚ bäbek («töwratda» Moiseý).",
+      "origins": [
+        "Ancient Egyptian"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": "gadymy müsür dilinde meşu",
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Mustapa",
+      "gender": "male",
+      "meaning": "arassalanan‚ saýlanan.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Myhmangeldi",
+      "gender": "male",
+      "meaning": "myhman gelende doglan.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Mylaýym",
+      "gender": "female",
+      "meaning": "ýuwaş‚ mylaýym.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Myrat",
+      "gender": "male",
+      "meaning": "islegli‚ garaşylýan; myrat-maksada ýetirýän.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Mährem",
+      "gender": "unisex",
+      "meaning": "1) Muharram aýynda doglan (Bharam ýa-da Mahram-Mars planetasy‚ ýaldyrawyk; 2) mährem‚ ýakyn.",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Mähri",
+      "gender": "female",
+      "meaning": "aý ýüzli‚ owadan.",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": "parsça «mah-ruý»",
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Mälik",
+      "gender": "male",
+      "meaning": "häkim‚ hökümdar.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Mämmet",
+      "gender": "male",
+      "meaning": "muhammet diýen adyň gysga görnüşi.",
+      "origins": [],
+      "variants": [
+        "Mät"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Mäti",
+      "gender": "male",
+      "meaning": "dogry ýol salgy beriji.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Möjek",
+      "gender": "male",
+      "meaning": "möjek ýaly çydamly‚ uzak ömürli.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Möwlam",
+      "gender": "male",
+      "meaning": "ýaradan (allanyň ady).",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Nabat",
+      "gender": "female",
+      "meaning": "şirin-şeker‚ süýji dilli.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Nagym",
+      "gender": "male",
+      "meaning": "bagtly‚ rahat ýaşaýan.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Nar",
+      "gender": "unisex",
+      "meaning": "nary‚ ýagny bedeninde uly gyzgylt tegmili bolan.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Naryman",
+      "gender": "male",
+      "meaning": "mert‚ ruhy güçli.",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Narzy",
+      "gender": "male",
+      "meaning": "wada edilen.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Nasyr",
+      "gender": "male",
+      "meaning": "kömekçi‚ ýeňişi.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Nawruz",
+      "gender": "unisex",
+      "meaning": "täze gün‚ ýagny täze ýylyň ilkinji güni doglan.",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Nazar",
+      "gender": "male",
+      "meaning": "garaýyş‚ ýagny allanyň nazary bilen doglan.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Nazly",
+      "gender": "unisex",
+      "meaning": "1) «Nyýazly» diýen adyň gysga görnüşi; 2) näz-kereşmeli gyz.",
+      "origins": [],
+      "variants": [
+        "näzli"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Naýza",
+      "gender": "male",
+      "meaning": "naýza ýaly ötgür.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Nedir",
+      "gender": "male",
+      "meaning": "seýrek‚ duş gelýän.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Nepes",
+      "gender": "male",
+      "meaning": "dem‚ howa‚ ýagny allanyň nepesi bilen doglan.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Nesim",
+      "gender": "male",
+      "meaning": "daň şemaly‚ ýagny ýakymly.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Nezir",
+      "gender": "male",
+      "meaning": "ministr.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Nowbahar",
+      "gender": "female",
+      "meaning": "täze bahar‚ ýagny baharda doglan.",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [
+        "Nopar"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Nur",
+      "gender": "unisex",
+      "meaning": "şöhle‚ nur.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Nurjahan",
+      "gender": "female",
+      "meaning": "dünýä şöhle saçýan‚ jahanyň nury.",
+      "origins": [
+        "Arabic",
+        "Persian"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Nyýaz",
+      "gender": "unisex",
+      "meaning": "diläp alnan‚ sowgat berlen (goşma atlaryň sostaw bölegi).",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Näzik",
+      "gender": "female",
+      "meaning": "mylaýym‚ näzik.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Nöker",
+      "gender": "male",
+      "meaning": "dost‚ nöker.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Ogul",
+      "gender": "female",
+      "meaning": "şu gyzyň yzyndan ogul bolsun.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": "ogulbagt",
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Ojar",
+      "gender": "male",
+      "meaning": "ojar ýaly çydamly‚ dözümli.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Omar",
+      "gender": "male",
+      "meaning": "dirilik‚ ömürli.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "On",
+      "gender": "male",
+      "meaning": "onunjy.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Orak",
+      "gender": "male",
+      "meaning": "kesgir‚ ötgür; uzak ömürli.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Oraz",
+      "gender": "male",
+      "meaning": "1) bagt; 2) oraza aýynda doglan.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Orun",
+      "gender": "male",
+      "meaning": "ölen ogluň ornuna gelen.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Osman",
+      "gender": "male",
+      "meaning": "mert‚ gorkmazak.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Otaga",
+      "gender": "female",
+      "meaning": "belent mertebeli‚ başyň täçi.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Owadan",
+      "gender": "female",
+      "meaning": "gözel‚ görmegeý.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Palta",
+      "gender": "male",
+      "meaning": "ötgür‚ ýiti‚ uzak ömürli.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Pamyk",
+      "gender": "female",
+      "meaning": "mylaýym‚ hoş gylykly.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Parahat",
+      "gender": "female",
+      "meaning": "ýuwaş‚ asuda‚ bagtly.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Parça",
+      "gender": "female",
+      "meaning": "ýüpek ýaly ýümşak‚ mylaýym.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Patma",
+      "gender": "female",
+      "meaning": "süýtden aýrylan.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Paýzy",
+      "gender": "male",
+      "meaning": "allanyň sahylygy.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [
+        "Paýzylla"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Peleň",
+      "gender": "male",
+      "meaning": "güýçli‚ batyr.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Penji",
+      "gender": "male",
+      "meaning": "bäşinji.",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Perde",
+      "gender": "male",
+      "meaning": "perdeli‚ tuwakly doglan.",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Pirguly",
+      "gender": "male",
+      "meaning": "piriň guly.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Polat",
+      "gender": "male",
+      "meaning": "polat ýaly berk.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Pygam",
+      "gender": "male",
+      "meaning": "habar‚ derek‚ buşluk.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Pälwan",
+      "gender": "male",
+      "meaning": "güýçli.",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Pürli",
+      "gender": "male",
+      "meaning": "şahaly‚ ýagny köpelsin.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Rahman",
+      "gender": "male",
+      "meaning": "mähirli (allanyň ady).",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Rahym",
+      "gender": "male",
+      "meaning": "rehimli‚ mähirli (allanyň ady).",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [
+        "Rehim",
+        "Reýim"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Rejep",
+      "gender": "male",
+      "meaning": "rejep aýynda doglan.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Remezan",
+      "gender": "male",
+      "meaning": "remezan aýynda doglan.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Resul",
+      "gender": "male",
+      "meaning": "wekil‚ ilçi.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Reşit",
+      "gender": "male",
+      "meaning": "akylly‚ dogry ýol bilen barýan.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Rozy",
+      "gender": "male",
+      "meaning": "oraza aýynda doglan.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Rustem",
+      "gender": "male",
+      "meaning": "daýaw‚ batyr.",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Rähmet",
+      "gender": "male",
+      "meaning": "minnetdar‚ bereket.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Röwşen",
+      "gender": "male",
+      "meaning": "şöhleli‚ röwşen.",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Sabyr",
+      "gender": "unisex",
+      "meaning": "sabyrly‚ takatly.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Sadap",
+      "gender": "female",
+      "meaning": "1) sadap ýaly owadan; 2) dişli doglan.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Sahy",
+      "gender": "male",
+      "meaning": "jomart‚ eli açyk.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Salam",
+      "gender": "male",
+      "meaning": "sag‚ sagdyn‚ dynç.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [
+        "Salamat"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Salyh",
+      "gender": "male",
+      "meaning": "gowy‚ güler ýüzli ýa-da dogry ýol görkezinji.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Sanjar",
+      "gender": "male",
+      "meaning": "ötgür‚ ýiti‚ kesgir‚ ýeňişi.",
+      "origins": [],
+      "variants": [
+        "Hanjar"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Sapa",
+      "gender": "male",
+      "meaning": "sapaly‚ ýürekdeş‚ arassa.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Sapar",
+      "gender": "male",
+      "meaning": "1) sapar aýynda doglan; 2) atasy sapara (syýahata) gidende doglan.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Sapdy",
+      "gender": "female",
+      "meaning": "şu gyzyň yzyndan ogul bolsun (ogul sapsyn).",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": "Ogulsapdy",
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Sary",
+      "gender": "male",
+      "meaning": "saryýagyz‚ arassa.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Satdyh",
+      "gender": "male",
+      "meaning": "dogruçyl.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Satlyk",
+      "gender": "male",
+      "meaning": "satylan‚ ýagny uzak ýaşasyn.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Sazak",
+      "gender": "male",
+      "meaning": "sazak ýaly çydamly‚ dözümli.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Saýat",
+      "gender": "unisex",
+      "meaning": "awçy‚ adamlaryň göwnüni awlap bilýän.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Selbi",
+      "gender": "female",
+      "meaning": "serwi ýaly gelşikli‚ syratly‚ owadan.",
+      "origins": [],
+      "variants": [
+        "Serwi"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Selim",
+      "gender": "male",
+      "meaning": "sagdyn‚ sagat.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Semet",
+      "gender": "male",
+      "meaning": "baky‚ ömürlik.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [
+        "samat"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Senem",
+      "gender": "female",
+      "meaning": "gözel‚ görkli.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Senewer",
+      "gender": "female",
+      "meaning": "sosna‚ sosna ýaly uzyn boýly‚ gelşikli.",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [
+        "Senuber"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Serdar",
+      "gender": "male",
+      "meaning": "ýolbaşçy‚ başlyk.",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Sere",
+      "gender": "female",
+      "meaning": "görkli‚ gyzlaryň seresi.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Setdar",
+      "gender": "male",
+      "meaning": "geçirimli (allanyň ady).",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Seýit",
+      "gender": "male",
+      "meaning": "jenap‚ hormatly.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Solmaz",
+      "gender": "female",
+      "meaning": "güllesin‚ ölmesin.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Soltan",
+      "gender": "male",
+      "meaning": "häkim‚ patyşa.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Sona",
+      "gender": "female",
+      "meaning": "sona ýaly owadan‚ görmegeý.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Sopy",
+      "gender": "male",
+      "meaning": "arassa‚ päk; sopy.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Suhan",
+      "gender": "male",
+      "meaning": "şöhratly‚ belent (allanyň ady).",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Suraý",
+      "gender": "female",
+      "meaning": "owadan‚ şöhleli (Suraýýa — ýyldyz ady).",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Sylapberdi",
+      "gender": "male",
+      "meaning": "(Alla) sylap berdi.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Sähet",
+      "gender": "male",
+      "meaning": "sähetli‚ bagtly günde doglan.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Sähra",
+      "gender": "female",
+      "meaning": "sähra ýaly açyk‚ giň.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Sähragül",
+      "gender": "female",
+      "meaning": "sähranyň güli‚ gözel.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Söhbet",
+      "gender": "male",
+      "meaning": "söhbetdeş‚ hemra.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Söýeg",
+      "gender": "male",
+      "meaning": "daýanç‚ söýget.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Söýün",
+      "gender": "male",
+      "meaning": "oňatja‚ gowuja.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": "a. Husain",
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Süleýman",
+      "gender": "male",
+      "meaning": "rahat‚ goralan.",
+      "origins": [
+        "Hebrew"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Sülgün",
+      "gender": "female",
+      "meaning": "sülgün ýaly owadan‚ görmegeý.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Tagan",
+      "gender": "male",
+      "meaning": "jany berk‚ ýaşy uzak bolsun.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Tagaý",
+      "gender": "male",
+      "meaning": "daýy. (?)",
+      "origins": [],
+      "variants": [
+        "Tagy"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Tahyr",
+      "gender": "male",
+      "meaning": "päk‚ arassa‚ köstsüz.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [
+        "Taýyr"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Tarlaň",
+      "gender": "male",
+      "meaning": "tarlan ýaly batyr‚ dogumly.",
+      "origins": [],
+      "variants": [
+        "Tarlan"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Tawus",
+      "gender": "female",
+      "meaning": "tawus ýaly owdan‚ gözel‚ gelşikli.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Tawşan",
+      "gender": "female",
+      "meaning": "ullakan gözel‚ çalasyn.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Taýly",
+      "gender": "male",
+      "meaning": "ikinji ogul.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Taýmaz",
+      "gender": "male",
+      "meaning": "ölmez‚ uzak ýaşar.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Taňgül",
+      "gender": "female",
+      "meaning": "geň gül‚ owdan‚ täsin gözel.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Taş",
+      "gender": "male",
+      "meaning": "daş ýaly berk‚ çydamly‚ ömürli.",
+      "origins": [],
+      "variants": [
+        "Daş"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Tirkeş",
+      "gender": "male",
+      "meaning": "yzly-yzly tirkeşsin‚ ogul köp bolsun.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Togta",
+      "gender": "unisex",
+      "meaning": "dur‚ gitme‚ aýak çek‚ ölmesin.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Togtamyş",
+      "gender": "male",
+      "meaning": "dursun‚ gitmesin‚ ölmesin.",
+      "origins": [],
+      "variants": [
+        "Togtar"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Toty",
+      "gender": "female",
+      "meaning": "toty ýaly owadan‚ saýrak.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Toýly",
+      "gender": "male",
+      "meaning": "toý güni doglan ýa-da toýy köp bolsun.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Tumar",
+      "gender": "female",
+      "meaning": "eý görülýän‚ guwanylýan.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Tuwak",
+      "gender": "unisex",
+      "meaning": "tuwakly‚ perdeli doglan.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Tylla",
+      "gender": "female",
+      "meaning": "gymmat bahaly.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Täze",
+      "gender": "unisex",
+      "meaning": "täzelendi‚ täzelensin (şu ogluň yzyndan gyz ýa-da gyzyň yzyndan ogul bolsun).",
+      "origins": [],
+      "variants": [],
+      "related_names": [
+        "Täzebaý",
+        "Täzegül"
+      ],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Täç",
+      "gender": "unisex",
+      "meaning": "1) täji )uly garamatyl tegmili‚ haly) bolan; 2) başymyzyň täji.",
+      "origins": [],
+      "variants": [
+        "Täçli",
+        "Täşli"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Töre",
+      "gender": "male",
+      "meaning": "1) ýolbaşçy‚ öňbaşçy; 2) üçünji‚ käýerde dördünji çaga.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Ugurly",
+      "gender": "male",
+      "meaning": "gowy ugra gidýän‚ akylly.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Ulug",
+      "gender": "male",
+      "meaning": "uly (ýagny alla) berdi.",
+      "origins": [],
+      "variants": [
+        "Ulugberdi"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Umyt",
+      "gender": "unisex",
+      "meaning": "umydy‚ islegi ödän.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Uzuk",
+      "gender": "female",
+      "meaning": "owadan‚ gelşikli‚ görmegeý.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Wagyt",
+      "gender": "male",
+      "meaning": "ýeke‚ ýalňyz (allanyň ady).",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Wekil",
+      "gender": "male",
+      "meaning": "köpçüligiň‚ iliň wekili‚ ynamly adam.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Weli",
+      "gender": "male",
+      "meaning": "ýakyn kişi ýa-da akylly adam‚ serdar.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Wepa",
+      "gender": "male",
+      "meaning": "wepaly.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Weýis",
+      "gender": "male",
+      "meaning": "güýçli‚ kuwwatly.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Ybagül",
+      "gender": "female",
+      "meaning": "ybagül‚ ýagny akylly‚ owadan.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Ybraýym",
+      "gender": "male",
+      "meaning": "halklaryň atasy.",
+      "origins": [
+        "Hebrew"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": "Abraham",
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Ylýas",
+      "gender": "male",
+      "meaning": "allanyň kuwwaty.",
+      "origins": [
+        "Hebrew"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Ymam",
+      "gender": "male",
+      "meaning": "namazda öňde durýan‚ ýolbaşçy.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Ysmaýyl",
+      "gender": "male",
+      "meaning": "alla eşidýär.",
+      "origins": [
+        "Hebrew"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Yzbasar",
+      "gender": "male",
+      "meaning": "atasynyň yzyny‚ ornuny tutsun.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Zahyr",
+      "gender": "male",
+      "meaning": "kömekçi ýa-da röwşen ýüzli.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [
+        "Zaýyr"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Zeýnep",
+      "gender": "female",
+      "meaning": "doly‚ dolmuş ýa-da belent‚ güýçli.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Zyba",
+      "gender": "female",
+      "meaning": "owadan‚ görkli.",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Zylyha",
+      "gender": "female",
+      "meaning": "manysy belli däl‚ ähtimal‚ ýakyn garyndaş.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Zöhre",
+      "gender": "female",
+      "meaning": "ýagty‚ ýaldyrawyk (daň ýyldyzy).",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Äşe",
+      "gender": "female",
+      "meaning": "ýaşaýan‚ ýaşagyç‚ jany berk.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [
+        "Aýşa"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Çaly",
+      "gender": "male",
+      "meaning": "çöl akasiýasy (акациясы); çaly ýaly çydamly‚ berk.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Çary",
+      "gender": "male",
+      "meaning": "dördünji.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Çebşek",
+      "gender": "female",
+      "meaning": "tawşanyň çagasy‚ gözi ullakan.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Çemen",
+      "gender": "female",
+      "meaning": "gül dessesi‚ görkli‚ gözel.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Çerkez",
+      "gender": "male",
+      "meaning": "çerkez ýaly çydamly‚ berk.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Çopan",
+      "gender": "male",
+      "meaning": "maldar bolsun.",
+      "origins": [],
+      "variants": [
+        "Çoluk"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Çoýan",
+      "gender": "male",
+      "meaning": "çoýun ýaly berk‚ çydamly.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": "Çoýun",
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Çynar",
+      "gender": "female",
+      "meaning": "çynat ýaly uzyn boýly‚ syratly.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Çäjek",
+      "gender": "female",
+      "meaning": "owadan‚ täsin.",
+      "origins": [],
+      "variants": [
+        "Jäjek"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Çäşem",
+      "gender": "male",
+      "meaning": "çarşenbe güni doglan.",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Çöli",
+      "gender": "male",
+      "meaning": "çölde doglan.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Öde",
+      "gender": "male",
+      "meaning": "1) ynamy ödesi; 2) öwezine‚ ornuna gelen.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Ölmez",
+      "gender": "male",
+      "meaning": "ölmesin‚ uzak ýaşasyn.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Öre",
+      "gender": "male",
+      "meaning": "1) keselinden örlesin; 2) sütün‚ maşgalanyň diregi (Daşhowuz); dördünji çaga (Daşhowuz).",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Öwez",
+      "gender": "male",
+      "meaning": "ölen çaganyň ornuna‚ öwezine gelen.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Ýagmyr",
+      "gender": "male",
+      "meaning": "ýagyş ýagyp durka doglan.",
+      "origins": [],
+      "variants": [
+        "Ýagdy"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Ýagty",
+      "gender": "male",
+      "meaning": "ýagtylyk‚ nurly.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Ýagşy",
+      "gender": "unisex",
+      "meaning": "oňat‚ gowy.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Ýakup",
+      "gender": "male",
+      "meaning": "atasynyň yzyny‚ ornuny tutsun.",
+      "origins": [
+        "Hebrew"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Ýalkapberdi",
+      "gender": "male",
+      "meaning": "allanyň ýalkap bereni.",
+      "origins": [],
+      "variants": [
+        "Ýalkap"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Ýalkym",
+      "gender": "male",
+      "meaning": "ýalkymly‚ şöhleli (täze at).",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Ýaradan",
+      "gender": "male",
+      "meaning": "döreden (allanyň ady).",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Ýaran",
+      "gender": "male",
+      "meaning": "ýoldaş‚ hemra.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Ýaraş",
+      "gender": "male",
+      "meaning": "ýaraşykly‚ gelşikli.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Ýazberdi",
+      "gender": "male",
+      "meaning": "1) Nyýazberdi; 2) ýazda doglan.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Ýaýlan",
+      "gender": "male",
+      "meaning": "ýaýylsyn‚ köpelsin.",
+      "origins": [],
+      "variants": [
+        "Ýaýlym",
+        "Ýaýyl"
+      ],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Ýaňyl",
+      "gender": "female",
+      "meaning": "täzelen‚ ýagny indi ogul bolsun.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Ýegşem",
+      "gender": "male",
+      "meaning": "ýekşenbe güni doglan.",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Ýeter",
+      "gender": "female",
+      "meaning": "gyzmyz ýeterlik‚ indi ogul bolsun.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Ýolbars",
+      "gender": "male",
+      "meaning": "ýolbars ýaly batyr‚ sagdan‚ güýçli.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Ýoldaş",
+      "gender": "male",
+      "meaning": "kakasynyň ýa-da agasynyň ýoldaşy‚ hemrasy bolsun.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Ýowlýars",
+      "gender": "male",
+      "meaning": "batyr‚ ýola gidenler aman gelsin; 2) ýolda doglan çaga aman bolsun.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Ýunus",
+      "gender": "unisex",
+      "meaning": "kepderi‚ ýagny owadan.",
+      "origins": [
+        "Hebrew"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Ýusup",
+      "gender": "male",
+      "meaning": "köpelsin.",
+      "origins": [
+        "Hebrew"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Şatlyk",
+      "gender": "male",
+      "meaning": "çadyýanlyk (täze at).",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Şaýmerdan",
+      "gender": "male",
+      "meaning": "mertleriň şasy.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": "p. Çah –e merdan",
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Şeker",
+      "gender": "female",
+      "meaning": "şirin-şerbet‚ süýji dilli.",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Şemsi",
+      "gender": "male",
+      "meaning": "güneşli‚ ýagny nurly. (Şemsiýe — gyz ady).",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Şemşat",
+      "gender": "female",
+      "meaning": "şemşat agajy ýaly suratly‚ gözel.",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Şerap",
+      "gender": "male",
+      "meaning": "abraýly‚ şöhratly (Şerapat gyz ady).",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": "a. Şaraf",
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Şerip",
+      "gender": "male",
+      "meaning": "mukaddes‚ abraýly‚ meşhur‚ asylly.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Şir",
+      "gender": "male",
+      "meaning": "ýolbars‚ şir‚ ýagny batyr.",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Şirin",
+      "gender": "unisex",
+      "meaning": "süýji‚ tagamly‚ şirin dilli.",
+      "origins": [
+        "Persian"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Şyh",
+      "gender": "male",
+      "meaning": "goja‚ dini ýolbaşçy.",
+      "origins": [
+        "Arabic"
+      ],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    },
+    {
+      "name": "Şöhrat",
+      "gender": "male",
+      "meaning": "şöhratly (täze at).",
+      "origins": [],
+      "variants": [],
+      "related_names": [],
+      "original_form": null,
+      "note": null,
+      "origin_note": null,
+      "source_ids": [],
+      "verification_status": "unverified"
+    }
+  ]
+}

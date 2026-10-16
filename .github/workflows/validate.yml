@@ -29,3 +29,33 @@ jobs:
 
       - name: Test Turkmen text validation
         run: go test ./tools/validation
+
+      - name: Test Turkmen text normalization
+        run: go test ./tools/normalization
+
+      - name: Validate normalization fixtures
+        run: go run ./tools/normalization --check
+
+      - name: Test unified names dataset
+        run: go test ./tools/names
+
+      - name: Check unified names dataset freshness
+        run: go run ./tools/names --check
+
+      - name: Test dataset catalog
+        run: go test ./tools/catalog
+
+      - name: Test CSV exports
+        run: go test ./tools/csvexports
+
+      - name: Check CSV export freshness
+        run: go run ./tools/csvexports --check
+
+      - name: Test GeoJSON export
+        run: go test ./tools/geojson
+
+      - name: Check GeoJSON export freshness
+        run: go run ./tools/geojson --check
+
+      - name: Check dataset catalog freshness
+        run: go run ./tools/catalog --check
