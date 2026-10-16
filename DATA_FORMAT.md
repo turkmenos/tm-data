@@ -8,7 +8,7 @@ Shared conventions for new datasets and exports in `tm-data`. Existing datasets 
 
 | Dataset | Structure | Documentation |
 | --- | --- | --- |
-| Geography | Database-specific SQL schemas and import scripts | [Geography](geo/README.md) |
+| Geography | Database-specific SQL schemas and import scripts; JSON export as flat arrays (`regions.json`, `region_aliases.json`, `region_types.json`) | [Geography](geo/README.md) |
 | Dictionary | JSON object with `meta` and a `words` lookup; each search key maps to an array of entries | [Dictionary](dictionary/README.md) |
 | Stories | JSON document with metadata and a `pages` array; SQLite and MySQL exports are also available for some works | [Stories](stories/README.md) |
 | Poetry | JSON object per poet with `poet`, `source_file`, `poem_count`, and a `poems` array; MySQL SQL also available | [Poetry](poetry/README.md) |

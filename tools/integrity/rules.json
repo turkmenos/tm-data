@@ -84,6 +84,29 @@
       "non_empty": ["name_tm", "category"],
       "unique": [["id"], ["name_tm"]],
       "allowed_values": { "category": ["basic", "shade", "metallic", "modifier", "pattern"] }
+    },
+    {
+      "path": "geo/json/region_types.json",
+      "required": { "type": "string", "description": "string" },
+      "non_empty": ["type", "description"],
+      "unique": [["type"]]
+    },
+    {
+      "path": "geo/json/regions.json",
+      "required": { "slug": "string", "name_tm": "string", "name_en": "string", "type": "string", "country_code": "string", "verification_status": "string" },
+      "non_empty": ["slug", "name_tm", "name_en", "type", "country_code", "verification_status"],
+      "unique": [["slug"]],
+      "allowed_values": {
+        "type": ["country", "independent_city", "welayat", "etrap", "city", "town", "village", "rural_council"],
+        "verification_status": ["verified", "verification_required"]
+      }
+    },
+    {
+      "path": "geo/json/region_aliases.json",
+      "required": { "region_slug": "string", "alias": "string", "language": "string", "alias_type": "string", "normalized_alias": "string" },
+      "non_empty": ["region_slug", "alias", "language", "alias_type", "normalized_alias"],
+      "unique": [["region_slug", "alias"]],
+      "allowed_values": { "alias_type": ["canonical", "transliteration", "ascii", "historical"] }
     }
   ],
   "references": [
@@ -92,6 +115,18 @@
       "from_field": "iso2",
       "to_path": "utils/postal-codes/regions.json",
       "to_field": "iso2"
+    },
+    {
+      "from_path": "geo/json/region_aliases.json",
+      "from_field": "region_slug",
+      "to_path": "geo/json/regions.json",
+      "to_field": "slug"
+    },
+    {
+      "from_path": "geo/json/regions.json",
+      "from_field": "parent_slug",
+      "to_path": "geo/json/regions.json",
+      "to_field": "slug"
     }
   ]
 }
