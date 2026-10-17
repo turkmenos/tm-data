@@ -45,3 +45,7 @@ name, and postal-code schemas. They were derived from the structures documented
 in each dataset README; no external data was added or downloaded. Dataset
 sources and redistribution terms remain documented beside the corresponding
 data files.
+
+Morphology top-level schemas are also registered here. Nested references, suffix
+compatibility, harmony, and reconstruction are checked by `go run ./tools/morphology`;
+see the [morphology guide](../../language/morphology/README.md). Both run in CI.

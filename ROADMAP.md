@@ -21,8 +21,10 @@ Planned improvements for `tm-data`. Items are proposals without fixed release da
 - [ ] Add thematic vocabulary for animals, plants, food, occupations, and family relationships.
 - [ ] Add Turkmen interface translations for common buttons, labels, and error messages.
 - [ ] Document the Turkmen alphabet, sorting conventions, and Latin–Cyrillic transliteration mappings.
-- [ ] Add stop words, suffixes, and text-normalization resources.
-- [ ] Expand proverbs with topic labels and add sayings and riddles with explanations or answers.
+- [ ] Add stop words and expand text-normalization resources.
+- [x] Add a source-linked [Turkmen morphology dataset](language/morphology/README.md) with common noun/verb suffixes, segmentation, harmony, and automated integrity checks.
+- [ ] Expand morphology with specialist-reviewed analyses, vowel-loss and dative-contraction patterns, derivational suffixes, and additional verb paradigms.
+- [ ] Expand proverbs with topic labels, add sayings, and grow the original riddles collection with reviewed wording and sources.
 - [ ] Expand given names with verified meanings and origins where sources are available.
 - [ ] Add historical dates and cultural heritage records with sources.
 - [ ] Add parallel Turkmen–Turkish–English sentences for language learning and translation.

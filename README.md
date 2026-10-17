@@ -16,6 +16,8 @@ Open, machine-readable datasets related to Turkmenistan.
 | Colors | Turkmen color names, English translations, HEX values, and categories | MySQL 8+ SQL, JSON, CSV | [Guide](utils/colors/README.md) |
 | Dictionary | 18,674 searchable Turkmen headwords with pronunciations, definitions, and examples | JSON | [Guide](dictionary/README.md) |
 | Given names | 447 Turkmen names with meaning, origin, gender, variants, and provenance status | JSON | [Guide](utils/names/README.md) |
+| Morphology | 25 suffix families, 50 noun/verb analyses, harmony rules, and selected exceptions | JSON | [Guide](language/morphology/README.md) |
+| Riddles | 10 original Turkmen riddles with answers, categories, and source metadata | JSON | [Guide](utils/riddles/README.md) |
 
 Each dataset documents its structure, import process, limitations, and available sources in its own directory.
 
@@ -79,6 +81,14 @@ defined in [`tools/integrity/rules.json`](tools/integrity/rules.json) and run wi
 go run ./tools/integrity
 ```
 
+Curated noun and verb segmentation, harmony, compatibility, and stem-change checks:
+
+```sh
+go run ./tools/morphology
+```
+
+See the [morphology guide](language/morphology/README.md) for coverage and verification limits.
+
 ## Usage
 
 Clone the repository:
@@ -107,13 +117,12 @@ See [ROADMAP.md](ROADMAP.md) for the planned datasets, data quality improvements
 
 ### Ideas for future datasets
 
-- Proverbs, sayings, and riddles with topic labels
+- Topic labels for proverbs and sayings; expand the riddles collection
 - Turkmen given names with gender, meaning, and origin
 - District codes, postal codes, and telephone codes
 - Holidays, historical dates, and cultural heritage sites
 - Thematic vocabulary for animals, plants, food, occupations, and family relationships
-- Turkmen suffixes and additional language-processing data
-- GeoJSON and CSV exports for geography, plus JSON and CSV exports for other datasets
+- Expand the Turkmen morphology dataset with additional suffixes and reviewed analyses
 - Automated schema, encoding, duplicate, and integrity checks
 
 For any new dataset, reliable provenance, redistribution rights, and verification status are more important than record count alone.

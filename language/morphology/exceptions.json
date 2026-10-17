@@ -1,0 +1,76 @@
+[
+  {
+    "id": "kitap-voicing",
+    "kind": "stem_alternation",
+    "root": "kitap",
+    "stem": "kitab",
+    "pos": "noun",
+    "trigger": "vowel_initial_suffix",
+    "suffix_ids": [],
+    "example_word": "kitabym",
+    "note": "Lexically scoped spelling alternation; other words and suffixes require separate evidence.",
+    "verification_status": "source_checked",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "pp. 12–13"
+      }
+    ]
+  },
+  {
+    "id": "pisik-voicing",
+    "kind": "stem_alternation",
+    "root": "pişik",
+    "stem": "pişig",
+    "pos": "noun",
+    "trigger": "vowel_initial_suffix",
+    "suffix_ids": [],
+    "example_word": "pişigi",
+    "note": "Lexically scoped spelling alternation; other words and suffixes require separate evidence.",
+    "verification_status": "source_checked",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "pp. 12–13"
+      }
+    ]
+  },
+  {
+    "id": "git-voicing",
+    "kind": "stem_alternation",
+    "root": "git",
+    "stem": "gid",
+    "pos": "verb",
+    "trigger": "suffix_ids",
+    "suffix_ids": [
+      "verb-present"
+    ],
+    "example_word": "gidýärin",
+    "note": "Lexically scoped spelling alternation; other words and suffixes require separate evidence.",
+    "verification_status": "source_checked",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "pp. 12, 23"
+      }
+    ]
+  },
+  {
+    "id": "mixed-vowel-kitap",
+    "kind": "mixed_vowel_root",
+    "root": "kitap",
+    "stem": "kitap",
+    "pos": "noun",
+    "trigger": "last_vowel",
+    "suffix_ids": [],
+    "example_word": "kitaplarymyzdan",
+    "note": "Mixed root vowels do not license front-vowel suffixes after the final a. The example is constructed, not a quotation.",
+    "verification_status": "source_checked",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 11"
+      }
+    ]
+  }
+]

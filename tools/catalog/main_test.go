@@ -85,3 +85,22 @@ func TestInventoryAndVersions(t *testing.T) {
 		t.Fatal("rename did not change version")
 	}
 }
+
+func TestLanguageDatasets(t *testing.T) {
+	root := t.TempDir()
+	for _, name := range []string{"dictionary", "geo", "poetry", "stories", "utils", "language/morphology"} {
+		if err := os.MkdirAll(filepath.Join(root, name), 0o755); err != nil {
+			t.Fatal(err)
+		}
+	}
+	if err := os.WriteFile(filepath.Join(root, "language/morphology/suffixes.json"), []byte(`[{"id":"noun-plural"}]`), 0o644); err != nil {
+		t.Fatal(err)
+	}
+	got, err := build(root)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(got.Datasets) != 1 || got.Datasets[0].ID != "language-morphology" || *got.Datasets[0].Resources[0].RecordCount != 1 {
+		t.Fatalf("unexpected language catalog: %#v", got)
+	}
+}

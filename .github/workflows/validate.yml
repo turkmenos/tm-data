@@ -42,6 +42,12 @@ jobs:
       - name: Check unified names dataset freshness
         run: go run ./tools/names --check
 
+      - name: Test morphology integrity checks
+        run: go test ./tools/morphology
+
+      - name: Validate morphology analyses
+        run: go run ./tools/morphology
+
       - name: Test dataset catalog
         run: go test ./tools/catalog
 

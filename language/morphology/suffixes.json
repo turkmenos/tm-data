@@ -1,0 +1,917 @@
+[
+  {
+    "id": "noun-plural",
+    "pos": "noun",
+    "slot": 10,
+    "features": {
+      "number": "plural"
+    },
+    "harmony": "backness",
+    "variants": [
+      {
+        "value": "lar",
+        "backness": "back",
+        "after": "any"
+      },
+      {
+        "value": "ler",
+        "backness": "front",
+        "after": "any"
+      }
+    ],
+    "requires_previous": [],
+    "excludes": [],
+    "verification_status": "source_checked",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 21"
+      }
+    ]
+  },
+  {
+    "id": "noun-poss-1sg",
+    "pos": "noun",
+    "slot": 20,
+    "features": {
+      "possessor_person": "1",
+      "possessor_number": "singular"
+    },
+    "harmony": "second_syllable_high",
+    "variants": [
+      {
+        "value": "ym",
+        "backness": "back",
+        "after": "consonant",
+        "rounded": false
+      },
+      {
+        "value": "im",
+        "backness": "front",
+        "after": "consonant",
+        "rounded": false
+      },
+      {
+        "value": "um",
+        "backness": "back",
+        "after": "consonant",
+        "rounded": true
+      },
+      {
+        "value": "üm",
+        "backness": "front",
+        "after": "consonant",
+        "rounded": true
+      },
+      {
+        "value": "m",
+        "backness": "any",
+        "after": "vowel"
+      }
+    ],
+    "requires_previous": [],
+    "excludes": [],
+    "verification_status": "source_checked",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 18"
+      }
+    ]
+  },
+  {
+    "id": "noun-poss-2sg",
+    "pos": "noun",
+    "slot": 20,
+    "features": {
+      "possessor_person": "2",
+      "possessor_number": "singular"
+    },
+    "harmony": "second_syllable_high",
+    "variants": [
+      {
+        "value": "yň",
+        "backness": "back",
+        "after": "consonant",
+        "rounded": false
+      },
+      {
+        "value": "iň",
+        "backness": "front",
+        "after": "consonant",
+        "rounded": false
+      },
+      {
+        "value": "uň",
+        "backness": "back",
+        "after": "consonant",
+        "rounded": true
+      },
+      {
+        "value": "üň",
+        "backness": "front",
+        "after": "consonant",
+        "rounded": true
+      },
+      {
+        "value": "ň",
+        "backness": "any",
+        "after": "vowel"
+      }
+    ],
+    "requires_previous": [],
+    "excludes": [],
+    "verification_status": "source_checked",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 18"
+      }
+    ]
+  },
+  {
+    "id": "noun-poss-3",
+    "pos": "noun",
+    "slot": 20,
+    "features": {
+      "possessor_person": "3",
+      "possessor_number": "unspecified"
+    },
+    "harmony": "backness",
+    "variants": [
+      {
+        "value": "y",
+        "backness": "back",
+        "after": "consonant"
+      },
+      {
+        "value": "i",
+        "backness": "front",
+        "after": "consonant"
+      },
+      {
+        "value": "sy",
+        "backness": "back",
+        "after": "vowel"
+      },
+      {
+        "value": "si",
+        "backness": "front",
+        "after": "vowel"
+      }
+    ],
+    "requires_previous": [],
+    "excludes": [],
+    "verification_status": "source_checked",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 18"
+      }
+    ]
+  },
+  {
+    "id": "noun-poss-1pl",
+    "pos": "noun",
+    "slot": 20,
+    "features": {
+      "possessor_person": "1",
+      "possessor_number": "plural"
+    },
+    "harmony": "second_syllable_high",
+    "variants": [
+      {
+        "value": "ymyz",
+        "backness": "back",
+        "after": "consonant",
+        "rounded": false
+      },
+      {
+        "value": "imiz",
+        "backness": "front",
+        "after": "consonant",
+        "rounded": false
+      },
+      {
+        "value": "umyz",
+        "backness": "back",
+        "after": "consonant",
+        "rounded": true
+      },
+      {
+        "value": "ümiz",
+        "backness": "front",
+        "after": "consonant",
+        "rounded": true
+      },
+      {
+        "value": "myz",
+        "backness": "back",
+        "after": "vowel"
+      },
+      {
+        "value": "miz",
+        "backness": "front",
+        "after": "vowel"
+      }
+    ],
+    "requires_previous": [],
+    "excludes": [],
+    "verification_status": "source_checked",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 18"
+      }
+    ]
+  },
+  {
+    "id": "noun-poss-2pl",
+    "pos": "noun",
+    "slot": 20,
+    "features": {
+      "possessor_person": "2",
+      "possessor_number": "plural"
+    },
+    "harmony": "second_syllable_high",
+    "variants": [
+      {
+        "value": "yňyz",
+        "backness": "back",
+        "after": "consonant",
+        "rounded": false
+      },
+      {
+        "value": "iňiz",
+        "backness": "front",
+        "after": "consonant",
+        "rounded": false
+      },
+      {
+        "value": "uňyz",
+        "backness": "back",
+        "after": "consonant",
+        "rounded": true
+      },
+      {
+        "value": "üňiz",
+        "backness": "front",
+        "after": "consonant",
+        "rounded": true
+      },
+      {
+        "value": "ňyz",
+        "backness": "back",
+        "after": "vowel"
+      },
+      {
+        "value": "ňiz",
+        "backness": "front",
+        "after": "vowel"
+      }
+    ],
+    "requires_previous": [],
+    "excludes": [],
+    "verification_status": "source_checked",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 18"
+      }
+    ]
+  },
+  {
+    "id": "noun-genitive",
+    "pos": "noun",
+    "slot": 30,
+    "features": {
+      "case": "genitive"
+    },
+    "harmony": "second_syllable_high",
+    "variants": [
+      {
+        "value": "yň",
+        "backness": "back",
+        "after": "consonant",
+        "rounded": false
+      },
+      {
+        "value": "iň",
+        "backness": "front",
+        "after": "consonant",
+        "rounded": false
+      },
+      {
+        "value": "uň",
+        "backness": "back",
+        "after": "consonant",
+        "rounded": true
+      },
+      {
+        "value": "üň",
+        "backness": "front",
+        "after": "consonant",
+        "rounded": true
+      },
+      {
+        "value": "nyň",
+        "backness": "back",
+        "after": "vowel"
+      },
+      {
+        "value": "niň",
+        "backness": "front",
+        "after": "vowel"
+      }
+    ],
+    "requires_previous": [],
+    "excludes": [],
+    "verification_status": "source_checked",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 14; p. 12"
+      }
+    ]
+  },
+  {
+    "id": "noun-dative",
+    "pos": "noun",
+    "slot": 30,
+    "features": {
+      "case": "dative"
+    },
+    "harmony": "backness",
+    "variants": [
+      {
+        "value": "a",
+        "backness": "back",
+        "after": "consonant"
+      },
+      {
+        "value": "e",
+        "backness": "front",
+        "after": "consonant"
+      }
+    ],
+    "requires_previous": [],
+    "excludes": [],
+    "verification_status": "source_checked",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "pp. 14–15"
+      }
+    ]
+  },
+  {
+    "id": "noun-accusative",
+    "pos": "noun",
+    "slot": 30,
+    "features": {
+      "case": "accusative"
+    },
+    "harmony": "backness",
+    "variants": [
+      {
+        "value": "y",
+        "backness": "back",
+        "after": "consonant"
+      },
+      {
+        "value": "i",
+        "backness": "front",
+        "after": "consonant"
+      },
+      {
+        "value": "ny",
+        "backness": "back",
+        "after": "vowel"
+      },
+      {
+        "value": "ni",
+        "backness": "front",
+        "after": "vowel"
+      }
+    ],
+    "requires_previous": [],
+    "excludes": [],
+    "verification_status": "source_checked",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "pp. 14, 16"
+      }
+    ]
+  },
+  {
+    "id": "noun-locative",
+    "pos": "noun",
+    "slot": 30,
+    "features": {
+      "case": "locative"
+    },
+    "harmony": "backness",
+    "variants": [
+      {
+        "value": "da",
+        "backness": "back",
+        "after": "any"
+      },
+      {
+        "value": "de",
+        "backness": "front",
+        "after": "any"
+      }
+    ],
+    "requires_previous": [],
+    "excludes": [],
+    "verification_status": "source_checked",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "pp. 14, 16"
+      }
+    ]
+  },
+  {
+    "id": "noun-ablative",
+    "pos": "noun",
+    "slot": 30,
+    "features": {
+      "case": "ablative"
+    },
+    "harmony": "backness",
+    "variants": [
+      {
+        "value": "dan",
+        "backness": "back",
+        "after": "any"
+      },
+      {
+        "value": "den",
+        "backness": "front",
+        "after": "any"
+      }
+    ],
+    "requires_previous": [],
+    "excludes": [],
+    "verification_status": "source_checked",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "pp. 14, 16"
+      }
+    ]
+  },
+  {
+    "id": "verb-negative",
+    "pos": "verb",
+    "slot": 10,
+    "features": {
+      "polarity": "negative"
+    },
+    "harmony": "backness",
+    "variants": [
+      {
+        "value": "ma",
+        "backness": "back",
+        "after": "any"
+      },
+      {
+        "value": "me",
+        "backness": "front",
+        "after": "any"
+      }
+    ],
+    "requires_previous": [],
+    "excludes": [],
+    "verification_status": "source_checked",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "pp. 23, 25, 46–47"
+      }
+    ]
+  },
+  {
+    "id": "verb-infinitive",
+    "pos": "verb",
+    "slot": 20,
+    "features": {
+      "verb_form": "infinitive"
+    },
+    "harmony": "backness",
+    "variants": [
+      {
+        "value": "mak",
+        "backness": "back",
+        "after": "any"
+      },
+      {
+        "value": "mek",
+        "backness": "front",
+        "after": "any"
+      }
+    ],
+    "requires_previous": [],
+    "excludes": [],
+    "verification_status": "source_checked",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 22"
+      }
+    ]
+  },
+  {
+    "id": "verb-past",
+    "pos": "verb",
+    "slot": 20,
+    "features": {
+      "tense": "past"
+    },
+    "harmony": "second_syllable_high",
+    "variants": [
+      {
+        "value": "dy",
+        "backness": "back",
+        "after": "any",
+        "rounded": false
+      },
+      {
+        "value": "di",
+        "backness": "front",
+        "after": "any",
+        "rounded": false
+      },
+      {
+        "value": "du",
+        "backness": "back",
+        "after": "any",
+        "rounded": true
+      },
+      {
+        "value": "dü",
+        "backness": "front",
+        "after": "any",
+        "rounded": true
+      }
+    ],
+    "requires_previous": [],
+    "excludes": [],
+    "verification_status": "source_checked",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "pp. 12, 25"
+      }
+    ]
+  },
+  {
+    "id": "verb-present",
+    "pos": "verb",
+    "slot": 20,
+    "features": {
+      "tense": "present"
+    },
+    "harmony": "backness",
+    "variants": [
+      {
+        "value": "ýar",
+        "backness": "back",
+        "after": "any"
+      },
+      {
+        "value": "ýär",
+        "backness": "front",
+        "after": "any"
+      }
+    ],
+    "requires_previous": [],
+    "excludes": [],
+    "verification_status": "source_checked",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 23"
+      }
+    ]
+  },
+  {
+    "id": "verb-future-definite",
+    "pos": "verb",
+    "slot": 20,
+    "features": {
+      "tense": "future",
+      "mood": "intentional"
+    },
+    "harmony": "backness",
+    "variants": [
+      {
+        "value": "jak",
+        "backness": "back",
+        "after": "any"
+      },
+      {
+        "value": "jek",
+        "backness": "front",
+        "after": "any"
+      }
+    ],
+    "requires_previous": [],
+    "excludes": [
+      "verb-negative"
+    ],
+    "verification_status": "source_checked",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 28"
+      }
+    ]
+  },
+  {
+    "id": "verb-conditional",
+    "pos": "verb",
+    "slot": 20,
+    "features": {
+      "mood": "conditional"
+    },
+    "harmony": "backness",
+    "variants": [
+      {
+        "value": "sa",
+        "backness": "back",
+        "after": "any"
+      },
+      {
+        "value": "se",
+        "backness": "front",
+        "after": "any"
+      }
+    ],
+    "requires_previous": [],
+    "excludes": [],
+    "verification_status": "source_checked",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "pp. 46–47"
+      }
+    ]
+  },
+  {
+    "id": "verb-short-1sg",
+    "pos": "verb",
+    "slot": 30,
+    "features": {
+      "person": "1",
+      "number": "singular"
+    },
+    "harmony": "none",
+    "variants": [
+      {
+        "value": "m",
+        "backness": "any",
+        "after": "any"
+      }
+    ],
+    "requires_previous": [
+      "verb-past",
+      "verb-conditional"
+    ],
+    "excludes": [],
+    "verification_status": "source_checked",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "pp. 25, 46"
+      }
+    ]
+  },
+  {
+    "id": "verb-short-2sg",
+    "pos": "verb",
+    "slot": 30,
+    "features": {
+      "person": "2",
+      "number": "singular"
+    },
+    "harmony": "none",
+    "variants": [
+      {
+        "value": "ň",
+        "backness": "any",
+        "after": "any"
+      }
+    ],
+    "requires_previous": [
+      "verb-past",
+      "verb-conditional"
+    ],
+    "excludes": [],
+    "verification_status": "source_checked",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "pp. 25, 46"
+      }
+    ]
+  },
+  {
+    "id": "verb-short-1pl",
+    "pos": "verb",
+    "slot": 30,
+    "features": {
+      "person": "1",
+      "number": "plural"
+    },
+    "harmony": "none",
+    "variants": [
+      {
+        "value": "k",
+        "backness": "any",
+        "after": "any"
+      }
+    ],
+    "requires_previous": [
+      "verb-past",
+      "verb-conditional"
+    ],
+    "excludes": [],
+    "verification_status": "source_checked",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "pp. 25, 46"
+      }
+    ]
+  },
+  {
+    "id": "verb-short-2pl",
+    "pos": "verb",
+    "slot": 30,
+    "features": {
+      "person": "2",
+      "number": "plural"
+    },
+    "harmony": "backness",
+    "variants": [
+      {
+        "value": "ňyz",
+        "backness": "back",
+        "after": "any"
+      },
+      {
+        "value": "ňiz",
+        "backness": "front",
+        "after": "any"
+      }
+    ],
+    "requires_previous": [
+      "verb-past",
+      "verb-conditional"
+    ],
+    "excludes": [],
+    "verification_status": "source_checked",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "pp. 25, 46"
+      }
+    ]
+  },
+  {
+    "id": "verb-present-1sg",
+    "pos": "verb",
+    "slot": 30,
+    "features": {
+      "person": "1",
+      "number": "singular"
+    },
+    "harmony": "backness",
+    "variants": [
+      {
+        "value": "yn",
+        "backness": "back",
+        "after": "any"
+      },
+      {
+        "value": "in",
+        "backness": "front",
+        "after": "any"
+      }
+    ],
+    "requires_previous": [
+      "verb-present"
+    ],
+    "excludes": [],
+    "verification_status": "source_checked",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 23"
+      }
+    ]
+  },
+  {
+    "id": "verb-present-2sg",
+    "pos": "verb",
+    "slot": 30,
+    "features": {
+      "person": "2",
+      "number": "singular"
+    },
+    "harmony": "backness",
+    "variants": [
+      {
+        "value": "syň",
+        "backness": "back",
+        "after": "any"
+      },
+      {
+        "value": "siň",
+        "backness": "front",
+        "after": "any"
+      }
+    ],
+    "requires_previous": [
+      "verb-present"
+    ],
+    "excludes": [],
+    "verification_status": "source_checked",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 23"
+      }
+    ]
+  },
+  {
+    "id": "verb-present-1pl",
+    "pos": "verb",
+    "slot": 30,
+    "features": {
+      "person": "1",
+      "number": "plural"
+    },
+    "harmony": "backness",
+    "variants": [
+      {
+        "value": "ys",
+        "backness": "back",
+        "after": "any"
+      },
+      {
+        "value": "is",
+        "backness": "front",
+        "after": "any"
+      }
+    ],
+    "requires_previous": [
+      "verb-present"
+    ],
+    "excludes": [],
+    "verification_status": "source_checked",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 23"
+      }
+    ]
+  },
+  {
+    "id": "verb-present-2pl",
+    "pos": "verb",
+    "slot": 30,
+    "features": {
+      "person": "2",
+      "number": "plural"
+    },
+    "harmony": "backness",
+    "variants": [
+      {
+        "value": "syňyz",
+        "backness": "back",
+        "after": "any"
+      },
+      {
+        "value": "siňiz",
+        "backness": "front",
+        "after": "any"
+      }
+    ],
+    "requires_previous": [
+      "verb-present"
+    ],
+    "excludes": [],
+    "verification_status": "source_checked",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 23"
+      }
+    ]
+  }
+]

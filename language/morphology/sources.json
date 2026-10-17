@@ -1,0 +1,22 @@
+[
+  {
+    "id": "pc-grammar",
+    "title": "Turkmen Language Grammar Guide",
+    "creator": "U.S. Peace Corps Turkmenistan",
+    "publication_year": null,
+    "url": "https://parsistrans.com/wp-content/uploads/2019/02/TurkmenLanguageLearningGuide_001.pdf",
+    "accessed_on": "2026-10-17",
+    "rights": "No explicit reuse license identified in the consulted copy; third-party PDF is not redistributed. See SOURCES.md.",
+    "note": "Primary instructional grammar hosted by a third-party mirror. Printed page numbers are PDF page numbers plus 1 after the cover/contents offset: printed p. 18 is PDF page 17. Some tables contain typos; see SOURCES.md."
+  },
+  {
+    "id": "pc-manual-1993",
+    "title": "Turkmen Language Manual",
+    "creator": "David Tyson and Larry Clark; U.S. Peace Corps",
+    "publication_year": 1993,
+    "url": "https://files.eric.ed.gov/fulltext/ED362052.pdf",
+    "accessed_on": "2026-10-17",
+    "rights": "Publicly accessible ERIC copy; no blanket third-party redistribution permission asserted. PDF is not redistributed.",
+    "note": "Background cross-check for agglutination and suffix ordering, introduction pp. 7–10 (PDF pages 14–17). Uses Cyrillic; not mechanically converted into this dataset."
+  }
+]

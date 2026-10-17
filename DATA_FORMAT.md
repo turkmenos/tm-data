@@ -14,6 +14,8 @@ Shared conventions for new datasets and exports in `tm-data`. Existing datasets 
 | Poetry | JSON object per poet with `poet`, `source_file`, `poem_count`, and a `poems` array; MySQL SQL also available | [Poetry](poetry/README.md) |
 | Calendar | JSON arrays using `tm`, `en`, and an identifier such as `number`, `iso`, or `id` | [Calendar](utils/calendar/README.md) |
 | Names | JSON arrays containing `name` and `description` | [Names](utils/names/README.md) |
+| Morphology | JSON arrays of suffixes, rules, segmented examples, exceptions, and source records | [Morphology](language/morphology/README.md) |
+| Riddles | JSON array of riddle records plus a source registry | [Riddles](utils/riddles/README.md) |
 | Postal codes | JSON records with string-valued source fields, including codes and coordinates | [Postal codes](utils/postal-codes/README.md) |
 | Colors | JSON array of records with `name_tm`, `name_en`, `hex_code`, and `category`; also available as MySQL SQL | [Colors](utils/colors/README.md) |
 

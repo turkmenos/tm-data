@@ -1,0 +1,158 @@
+[
+  {
+    "id": "vowel-backness",
+    "kind": "harmony",
+    "description": "Select suffix backness from the last written vowel of the current surface stem.",
+    "parameters": {
+      "front": [
+        "ä",
+        "e",
+        "i",
+        "ö",
+        "ü"
+      ],
+      "back": [
+        "a",
+        "o",
+        "u",
+        "y"
+      ]
+    },
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 11"
+      }
+    ],
+    "verification_status": "source_checked"
+  },
+  {
+    "id": "written-rounding",
+    "kind": "harmony",
+    "description": "For marked high-vowel variants, use rounding after a monosyllabic surface stem whose vowel is rounded. Do not extend this to every suffix or to pronunciation.",
+    "parameters": {
+      "rounded": [
+        "o",
+        "ö",
+        "u",
+        "ü"
+      ],
+      "max_stem_vowels": 1,
+      "suffix_harmony": "second_syllable_high"
+    },
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "pp. 11–12"
+      }
+    ],
+    "verification_status": "source_checked"
+  },
+  {
+    "id": "noun-order",
+    "kind": "ordering",
+    "description": "Within this subset: root, optional plural, optional possessive, optional case; at most one suffix per slot.",
+    "parameters": {
+      "pos": "noun",
+      "slots": [
+        10,
+        20,
+        30
+      ]
+    },
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "pp. 11, 14–18"
+      }
+    ],
+    "verification_status": "source_checked"
+  },
+  {
+    "id": "verb-order",
+    "kind": "ordering",
+    "description": "Within this subset: root, optional negation, one tense/mood/infinitive, optional compatible agreement. Definite future negation uses a separate word outside this dataset.",
+    "parameters": {
+      "pos": "verb",
+      "slots": [
+        10,
+        20,
+        30
+      ],
+      "required_slot": 20
+    },
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "pp. 22–25, 28, 46–47"
+      }
+    ],
+    "verification_status": "source_checked"
+  },
+  {
+    "id": "possessive-case-buffer",
+    "kind": "compatibility",
+    "description": "Third-person possession before case may require a linking n and special dative realization. These combinations are excluded from the current case inventory.",
+    "parameters": {
+      "blocked_predecessor": "noun-poss-3",
+      "blocked_slot": 30
+    },
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "pp. 14–16, 25 (goňşusyna)"
+      }
+    ],
+    "verification_status": "source_checked"
+  },
+  {
+    "id": "lexical-stem-voicing",
+    "kind": "alternation",
+    "description": "Use only the listed lexical stem alternations before a vowel-initial suffix. Do not voice all final stops automatically.",
+    "parameters": {
+      "exception_kind": "stem_alternation",
+      "trigger": "vowel_initial_suffix"
+    },
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "pp. 12–13"
+      }
+    ],
+    "verification_status": "source_checked"
+  },
+  {
+    "id": "mixed-vowel-roots",
+    "kind": "exception",
+    "description": "Borrowed and compound roots can mix front and back vowels; suffix selection still follows the last vowel.",
+    "parameters": {
+      "examples": [
+        "kitap",
+        "dükan",
+        "telewizor"
+      ]
+    },
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 11"
+      }
+    ],
+    "verification_status": "source_checked"
+  },
+  {
+    "id": "orthography-not-speech",
+    "kind": "scope",
+    "description": "Keep written forms even when spoken consonant assimilation or rounding differs. Vowel length is not reconstructed.",
+    "parameters": {
+      "representation": "modern_latin_orthography"
+    },
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "pp. 10–13"
+      }
+    ],
+    "verification_status": "source_checked"
+  }
+]

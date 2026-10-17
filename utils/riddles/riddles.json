@@ -1,0 +1,82 @@
+[
+  {
+    "id": "riddle-001",
+    "text": "Gündiz asmanda şöhle saçýar, gije görünmeýär. Bu näme?",
+    "answer": "Gün",
+    "category": "asman",
+    "source_id": "tm-data-original-2026",
+    "verification_status": "unreviewed"
+  },
+  {
+    "id": "riddle-002",
+    "text": "Gije asmanda görünýär, käte tegelek, käte ýarym bolýar. Bu näme?",
+    "answer": "Aý",
+    "category": "asman",
+    "source_id": "tm-data-original-2026",
+    "verification_status": "unreviewed"
+  },
+  {
+    "id": "riddle-003",
+    "text": "Özi görünmeýär, emma agaçlaryň ýapraklaryny gymyldadýar. Bu näme?",
+    "answer": "Ýel",
+    "category": "tebigat",
+    "source_id": "tm-data-original-2026",
+    "verification_status": "unreviewed"
+  },
+  {
+    "id": "riddle-004",
+    "text": "Bulutdan damja-damja ýere düşýär. Bu näme?",
+    "answer": "Ýagyş",
+    "category": "tebigat",
+    "source_id": "tm-data-original-2026",
+    "verification_status": "unreviewed"
+  },
+  {
+    "id": "riddle-005",
+    "text": "Ýerden çykýar, suwdan güýç alýar, şahalary asmana uzalýar. Bu näme?",
+    "answer": "Agaç",
+    "category": "tebigat",
+    "source_id": "tm-data-original-2026",
+    "verification_status": "unreviewed"
+  },
+  {
+    "id": "riddle-006",
+    "text": "Sahypalary bar, dili ýok; açsaň, saňa gürrüň berýär. Bu näme?",
+    "answer": "Kitap",
+    "category": "esbaplar",
+    "source_id": "tm-data-original-2026",
+    "verification_status": "unreviewed"
+  },
+  {
+    "id": "riddle-007",
+    "text": "Özi kiçi, ýazan yzy uzyn. Bu näme?",
+    "answer": "Galam",
+    "category": "esbaplar",
+    "source_id": "tm-data-original-2026",
+    "verification_status": "unreviewed"
+  },
+  {
+    "id": "riddle-008",
+    "text": "Dişleri bar, emma iýmeýär; saçyňy tertipleýär. Bu näme?",
+    "answer": "Darak",
+    "category": "esbaplar",
+    "source_id": "tm-data-original-2026",
+    "verification_status": "unreviewed"
+  },
+  {
+    "id": "riddle-009",
+    "text": "Özi gürlemeýär, emma wagty görkezýär. Bu näme?",
+    "answer": "Sagat",
+    "category": "wagt",
+    "source_id": "tm-data-original-2026",
+    "verification_status": "unreviewed"
+  },
+  {
+    "id": "riddle-010",
+    "text": "Özüň gürleýärsiň, ol bolsa sesiňi yzyna gaýtaryp berýär. Bu näme?",
+    "answer": "Ýaň",
+    "category": "ses",
+    "source_id": "tm-data-original-2026",
+    "verification_status": "unreviewed"
+  }
+]

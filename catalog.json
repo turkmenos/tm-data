@@ -85,13 +85,15 @@
       "id": "geo",
       "title": "Geo",
       "location": "geo",
-      "version": "sha256:026387806c57e9af669c82902a7044cbc15530d8beb6055577b87a7933592278",
+      "version": "sha256:040770fd65ed6deb6ce4db6bec3c6176bbbbf29aaf54c9e0a35d6358f21e129c",
       "formats": [
         "geojson",
+        "json",
         "sql"
       ],
       "documentation": [
         "geo/README.md",
+        "geo/json/README.md",
         "geo/source/en/README.md",
         "geo/source/en/SOURCES.md",
         "geo/source/tm/README.md",
@@ -100,6 +102,7 @@
       "provenance": {
         "references": [
           "geo/README.md",
+          "geo/json/README.md",
           "geo/source/en/README.md",
           "geo/source/en/SOURCES.md",
           "geo/source/tm/README.md",
@@ -114,6 +117,27 @@
           "version": "sha256:93c7fb70d69ca12f7fc8ff15b29b00d434c0edba6732aef1980020d12a7ed5ef",
           "record_count": 2711,
           "record_unit": "features"
+        },
+        {
+          "path": "geo/json/region_aliases.json",
+          "format": "json",
+          "version": "sha256:ee15905bf1aa479e74c9d41c842fba4aa10f1d6c9cdaafd6e89e00704c9c3477",
+          "record_count": 7494,
+          "record_unit": "records"
+        },
+        {
+          "path": "geo/json/region_types.json",
+          "format": "json",
+          "version": "sha256:84fe0952eb02ccee10d87e896c0d88b73bdca3ec2c6a5921d43ef1effca650ab",
+          "record_count": 8,
+          "record_unit": "records"
+        },
+        {
+          "path": "geo/json/regions.json",
+          "format": "json",
+          "version": "sha256:dec9d41c77f35ea2c24267efc195ca73a8e88e5aa6990ad41a4379df8b9ce571",
+          "record_count": 2711,
+          "record_unit": "records"
         },
         {
           "path": "geo/sql/mysql/import.sql",
@@ -899,6 +923,63 @@
       ]
     },
     {
+      "id": "language-morphology",
+      "title": "Morphology",
+      "location": "language/morphology",
+      "version": "sha256:81329c594dfe437defe00ede4b0ea00460dd55414b08a1cda3eed0391a5013b6",
+      "formats": [
+        "json"
+      ],
+      "documentation": [
+        "language/morphology/README.md",
+        "language/morphology/SOURCES.md"
+      ],
+      "provenance": {
+        "references": [
+          "language/morphology/README.md",
+          "language/morphology/SOURCES.md"
+        ],
+        "note": "Repository documentation and embedded source metadata; coverage and redistribution rights may be incomplete."
+      },
+      "resources": [
+        {
+          "path": "language/morphology/examples.json",
+          "format": "json",
+          "version": "sha256:8d512a53d67f58e87d965f36c54a0cd407b5365747849529bb1b3ff518bb57b3",
+          "record_count": 50,
+          "record_unit": "records"
+        },
+        {
+          "path": "language/morphology/exceptions.json",
+          "format": "json",
+          "version": "sha256:419aa86c1e11ebe27b97de5133cb5cbca329f47af00a9c1e27773130882fd21f",
+          "record_count": 4,
+          "record_unit": "records"
+        },
+        {
+          "path": "language/morphology/rules.json",
+          "format": "json",
+          "version": "sha256:4c8700d65237a55ff293b028d7f9da560b6bca068646d23444a5802256d9d72c",
+          "record_count": 8,
+          "record_unit": "records"
+        },
+        {
+          "path": "language/morphology/sources.json",
+          "format": "json",
+          "version": "sha256:b43db86aa559fec9ac12cfa8e779efc840788a89e3c0de1a2a66cfd6c24d9812",
+          "record_count": 2,
+          "record_unit": "records"
+        },
+        {
+          "path": "language/morphology/suffixes.json",
+          "format": "json",
+          "version": "sha256:17fdb0c3745f4578d9999e069a5bb5c608ea37eb9c27b2c763a0184636e39013",
+          "record_count": 25,
+          "record_unit": "records"
+        }
+      ]
+    },
+    {
       "id": "utils-calendar",
       "title": "Calendar",
       "location": "utils/calendar",
@@ -1276,6 +1357,40 @@
           "record_count": null,
           "record_unit": null,
           "count_note": "No supported record counter; count is unknown, not zero."
+        }
+      ]
+    },
+    {
+      "id": "utils-riddles",
+      "title": "Riddles",
+      "location": "utils/riddles",
+      "version": "sha256:2c595f498c99563199138f7eee556a9400fe0a9d8520588a6bb7a8d33169f861",
+      "formats": [
+        "json"
+      ],
+      "documentation": [
+        "utils/riddles/README.md"
+      ],
+      "provenance": {
+        "references": [
+          "utils/riddles/README.md"
+        ],
+        "note": "Repository documentation and embedded source metadata; coverage and redistribution rights may be incomplete."
+      },
+      "resources": [
+        {
+          "path": "utils/riddles/riddles.json",
+          "format": "json",
+          "version": "sha256:05b534a253d21419172b7fffd5789a7a032488e8dd7d0b20520a60e79eb9105e",
+          "record_count": 10,
+          "record_unit": "records"
+        },
+        {
+          "path": "utils/riddles/sources.json",
+          "format": "json",
+          "version": "sha256:2178119e62536ff95d37a8ab2b1d684e74ce11a88914683b39afaa01ee06227e",
+          "record_count": 1,
+          "record_unit": "records"
         }
       ]
     },

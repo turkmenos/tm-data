@@ -102,15 +102,21 @@ func repositoryRoot() (string, error) {
 
 func build(root string) (catalog, error) {
 	folders := []string{"dictionary", "geo", "poetry", "stories"}
-	entries, err := os.ReadDir(filepath.Join(root, "utils"))
-	if err != nil {
-		return catalog{}, err
-	}
-	for _, entry := range entries {
-		if entry.IsDir() {
-			folders = append(folders, filepath.Join("utils", entry.Name()))
+	for _, group := range []string{"language", "utils"} {
+		entries, err := os.ReadDir(filepath.Join(root, group))
+		if group == "language" && errors.Is(err, os.ErrNotExist) {
+			continue
+		}
+		if err != nil {
+			return catalog{}, err
+		}
+		for _, entry := range entries {
+			if entry.IsDir() {
+				folders = append(folders, filepath.Join(group, entry.Name()))
+			}
 		}
 	}
+
 	sort.Strings(folders[4:])
 	result := catalog{SchemaVersion: "1.0.0", Datasets: []dataset{}}
 	seen := map[string]bool{}

@@ -2,6 +2,174 @@
   "version": 1,
   "datasets": [
     {
+      "path": "language/morphology/suffixes.json",
+      "required": {
+        "id": "string",
+        "pos": "string",
+        "slot": "number",
+        "features": "object",
+        "harmony": "string",
+        "variants": "array",
+        "requires_previous": "array",
+        "excludes": "array",
+        "verification_status": "string",
+        "references": "array"
+      },
+      "non_empty": [
+        "id",
+        "pos",
+        "harmony",
+        "verification_status"
+      ],
+      "unique": [
+        [
+          "id"
+        ]
+      ],
+      "allowed_values": {
+        "verification_status": [
+          "source_checked"
+        ],
+        "pos": [
+          "noun",
+          "verb"
+        ]
+      }
+    },
+    {
+      "path": "language/morphology/rules.json",
+      "required": {
+        "id": "string",
+        "kind": "string",
+        "description": "string",
+        "parameters": "object",
+        "verification_status": "string",
+        "references": "array"
+      },
+      "non_empty": [
+        "id",
+        "kind",
+        "description",
+        "verification_status"
+      ],
+      "unique": [
+        [
+          "id"
+        ]
+      ],
+      "allowed_values": {
+        "verification_status": [
+          "source_checked"
+        ]
+      }
+    },
+    {
+      "path": "language/morphology/examples.json",
+      "required": {
+        "id": "string",
+        "word": "string",
+        "root": "string",
+        "stem": "string",
+        "pos": "string",
+        "segments": "array",
+        "meaning_en": "string",
+        "exception_ids": "array",
+        "verification_status": "string",
+        "references": "array"
+      },
+      "non_empty": [
+        "id",
+        "word",
+        "root",
+        "stem",
+        "pos",
+        "meaning_en",
+        "verification_status"
+      ],
+      "unique": [
+        [
+          "id"
+        ]
+      ],
+      "allowed_values": {
+        "verification_status": [
+          "attested",
+          "rule_checked"
+        ],
+        "pos": [
+          "noun",
+          "verb"
+        ]
+      }
+    },
+    {
+      "path": "language/morphology/exceptions.json",
+      "required": {
+        "id": "string",
+        "kind": "string",
+        "root": "string",
+        "stem": "string",
+        "pos": "string",
+        "trigger": "string",
+        "suffix_ids": "array",
+        "example_word": "string",
+        "note": "string",
+        "verification_status": "string",
+        "references": "array"
+      },
+      "non_empty": [
+        "id",
+        "kind",
+        "root",
+        "stem",
+        "pos",
+        "trigger",
+        "example_word",
+        "note",
+        "verification_status"
+      ],
+      "unique": [
+        [
+          "id"
+        ]
+      ],
+      "allowed_values": {
+        "verification_status": [
+          "source_checked"
+        ],
+        "pos": [
+          "noun",
+          "verb"
+        ]
+      }
+    },
+    {
+      "path": "language/morphology/sources.json",
+      "required": {
+        "id": "string",
+        "title": "string",
+        "creator": "string",
+        "url": "string",
+        "accessed_on": "string",
+        "rights": "string",
+        "note": "string"
+      },
+      "non_empty": [
+        "id",
+        "title",
+        "creator",
+        "url",
+        "accessed_on",
+        "rights",
+        "note"
+      ],
+      "unique": [
+        [
+          "id"
+        ]
+      ]
+    },
+    {
       "path": "utils/calendar/months.json",
       "required": { "number": "number", "tm": "string", "en": "string" },
       "non_empty": ["tm", "en"],
@@ -67,6 +235,24 @@
       "unique": [["name"]]
     },
     {
+      "path": "utils/riddles/riddles.json",
+      "required": { "id": "string", "text": "string", "answer": "string", "category": "string", "source_id": "string", "verification_status": "string" },
+      "non_empty": ["id", "text", "answer", "category", "source_id", "verification_status"],
+      "unique": [["id"], ["text"]],
+      "allowed_values": {
+        "category": ["asman", "tebigat", "esbaplar", "wagt", "ses"],
+        "verification_status": ["unreviewed"]
+      }
+    },
+    {
+      "path": "utils/riddles/sources.json",
+      "required": { "id": "string", "type": "string", "title": "string", "creator": "string", "rights": "string", "note": "string" },
+      "non_empty": ["id", "type", "title", "creator", "rights", "note"],
+      "unique": [["id"]],
+      "allowed_values": { "type": ["original", "publication", "oral_recording", "website"] },
+      "ranges": { "created_year": { "min": 1900, "max": 2100 } }
+    },
+    {
       "path": "utils/postal-codes/regions.json",
       "required": { "iso": "string", "level": "string", "type": "string", "name": "string", "iso2": "string" },
       "non_empty": ["iso", "level", "type", "name"],
@@ -127,6 +313,12 @@
       "from_field": "parent_slug",
       "to_path": "geo/json/regions.json",
       "to_field": "slug"
+    },
+    {
+      "from_path": "utils/riddles/riddles.json",
+      "from_field": "source_id",
+      "to_path": "utils/riddles/sources.json",
+      "to_field": "id"
     }
   ]
 }

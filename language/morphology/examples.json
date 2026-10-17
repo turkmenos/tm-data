@@ -1,0 +1,1200 @@
+[
+  {
+    "id": "books-our-from",
+    "word": "kitaplarymyzdan",
+    "root": "kitap",
+    "stem": "kitap",
+    "pos": "noun",
+    "segments": [
+      {
+        "suffix_id": "noun-plural",
+        "value": "lar"
+      },
+      {
+        "suffix_id": "noun-poss-1pl",
+        "value": "ymyz"
+      },
+      {
+        "suffix_id": "noun-ablative",
+        "value": "dan"
+      }
+    ],
+    "meaning_en": "from our books",
+    "exception_ids": [],
+    "verification_status": "rule_checked",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "pp. 11, 14, 18, 21"
+      }
+    ]
+  },
+  {
+    "id": "streets",
+    "word": "köçeler",
+    "root": "köçe",
+    "stem": "köçe",
+    "pos": "noun",
+    "segments": [
+      {
+        "suffix_id": "noun-plural",
+        "value": "ler"
+      }
+    ],
+    "meaning_en": "streets",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 21"
+      }
+    ]
+  },
+  {
+    "id": "guests",
+    "word": "myhmanlar",
+    "root": "myhman",
+    "stem": "myhman",
+    "pos": "noun",
+    "segments": [
+      {
+        "suffix_id": "noun-plural",
+        "value": "lar"
+      }
+    ],
+    "meaning_en": "guests",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 21"
+      }
+    ]
+  },
+  {
+    "id": "my-father",
+    "word": "kakam",
+    "root": "kaka",
+    "stem": "kaka",
+    "pos": "noun",
+    "segments": [
+      {
+        "suffix_id": "noun-poss-1sg",
+        "value": "m"
+      }
+    ],
+    "meaning_en": "my father",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 18"
+      }
+    ]
+  },
+  {
+    "id": "my-mother",
+    "word": "ejem",
+    "root": "eje",
+    "stem": "eje",
+    "pos": "noun",
+    "segments": [
+      {
+        "suffix_id": "noun-poss-1sg",
+        "value": "m"
+      }
+    ],
+    "meaning_en": "my mother",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 18"
+      }
+    ]
+  },
+  {
+    "id": "my-car",
+    "word": "maşynym",
+    "root": "maşyn",
+    "stem": "maşyn",
+    "pos": "noun",
+    "segments": [
+      {
+        "suffix_id": "noun-poss-1sg",
+        "value": "ym"
+      }
+    ],
+    "meaning_en": "my car",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 18"
+      }
+    ]
+  },
+  {
+    "id": "my-dog",
+    "word": "itim",
+    "root": "it",
+    "stem": "it",
+    "pos": "noun",
+    "segments": [
+      {
+        "suffix_id": "noun-poss-1sg",
+        "value": "im"
+      }
+    ],
+    "meaning_en": "my dog",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 18"
+      }
+    ]
+  },
+  {
+    "id": "your-father",
+    "word": "kakaň",
+    "root": "kaka",
+    "stem": "kaka",
+    "pos": "noun",
+    "segments": [
+      {
+        "suffix_id": "noun-poss-2sg",
+        "value": "ň"
+      }
+    ],
+    "meaning_en": "your father (singular possessor)",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 18"
+      }
+    ]
+  },
+  {
+    "id": "your-car",
+    "word": "maşynyň",
+    "root": "maşyn",
+    "stem": "maşyn",
+    "pos": "noun",
+    "segments": [
+      {
+        "suffix_id": "noun-poss-2sg",
+        "value": "yň"
+      }
+    ],
+    "meaning_en": "your car (singular possessor)",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 18"
+      }
+    ]
+  },
+  {
+    "id": "their-father",
+    "word": "kakasy",
+    "root": "kaka",
+    "stem": "kaka",
+    "pos": "noun",
+    "segments": [
+      {
+        "suffix_id": "noun-poss-3",
+        "value": "sy"
+      }
+    ],
+    "meaning_en": "his/her/its/their father",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 18"
+      }
+    ]
+  },
+  {
+    "id": "their-car",
+    "word": "maşyny",
+    "root": "maşyn",
+    "stem": "maşyn",
+    "pos": "noun",
+    "segments": [
+      {
+        "suffix_id": "noun-poss-3",
+        "value": "y"
+      }
+    ],
+    "meaning_en": "his/her/its/their car",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 18"
+      }
+    ]
+  },
+  {
+    "id": "our-father",
+    "word": "kakamyz",
+    "root": "kaka",
+    "stem": "kaka",
+    "pos": "noun",
+    "segments": [
+      {
+        "suffix_id": "noun-poss-1pl",
+        "value": "myz"
+      }
+    ],
+    "meaning_en": "our father",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 18"
+      }
+    ]
+  },
+  {
+    "id": "our-dog",
+    "word": "itimiz",
+    "root": "it",
+    "stem": "it",
+    "pos": "noun",
+    "segments": [
+      {
+        "suffix_id": "noun-poss-1pl",
+        "value": "imiz"
+      }
+    ],
+    "meaning_en": "our dog",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 18"
+      }
+    ]
+  },
+  {
+    "id": "your-mother-pl",
+    "word": "ejeňiz",
+    "root": "eje",
+    "stem": "eje",
+    "pos": "noun",
+    "segments": [
+      {
+        "suffix_id": "noun-poss-2pl",
+        "value": "ňiz"
+      }
+    ],
+    "meaning_en": "your mother (plural or polite possessor)",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 18"
+      }
+    ]
+  },
+  {
+    "id": "your-dog-pl",
+    "word": "itiňiz",
+    "root": "it",
+    "stem": "it",
+    "pos": "noun",
+    "segments": [
+      {
+        "suffix_id": "noun-poss-2pl",
+        "value": "iňiz"
+      }
+    ],
+    "meaning_en": "your dog (plural or polite possessor)",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 18"
+      }
+    ]
+  },
+  {
+    "id": "pot-genitive",
+    "word": "gazanyň",
+    "root": "gazan",
+    "stem": "gazan",
+    "pos": "noun",
+    "segments": [
+      {
+        "suffix_id": "noun-genitive",
+        "value": "yň"
+      }
+    ],
+    "meaning_en": "of the pot",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 14"
+      }
+    ]
+  },
+  {
+    "id": "cotton-genitive",
+    "word": "pagtanyň",
+    "root": "pagta",
+    "stem": "pagta",
+    "pos": "noun",
+    "segments": [
+      {
+        "suffix_id": "noun-genitive",
+        "value": "nyň"
+      }
+    ],
+    "meaning_en": "of cotton",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 14"
+      }
+    ]
+  },
+  {
+    "id": "ball-genitive",
+    "word": "topuň",
+    "root": "top",
+    "stem": "top",
+    "pos": "noun",
+    "segments": [
+      {
+        "suffix_id": "noun-genitive",
+        "value": "uň"
+      }
+    ],
+    "meaning_en": "of the ball",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 12"
+      }
+    ]
+  },
+  {
+    "id": "flower-genitive",
+    "word": "gülüň",
+    "root": "gül",
+    "stem": "gül",
+    "pos": "noun",
+    "segments": [
+      {
+        "suffix_id": "noun-genitive",
+        "value": "üň"
+      }
+    ],
+    "meaning_en": "of the flower",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 12"
+      }
+    ]
+  },
+  {
+    "id": "pot-dative",
+    "word": "gazana",
+    "root": "gazan",
+    "stem": "gazan",
+    "pos": "noun",
+    "segments": [
+      {
+        "suffix_id": "noun-dative",
+        "value": "a"
+      }
+    ],
+    "meaning_en": "to the pot",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 14"
+      }
+    ]
+  },
+  {
+    "id": "carrot-dative",
+    "word": "käşire",
+    "root": "käşir",
+    "stem": "käşir",
+    "pos": "noun",
+    "segments": [
+      {
+        "suffix_id": "noun-dative",
+        "value": "e"
+      }
+    ],
+    "meaning_en": "to the carrot",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 14"
+      }
+    ]
+  },
+  {
+    "id": "pot-accusative",
+    "word": "gazany",
+    "root": "gazan",
+    "stem": "gazan",
+    "pos": "noun",
+    "segments": [
+      {
+        "suffix_id": "noun-accusative",
+        "value": "y"
+      }
+    ],
+    "meaning_en": "the pot (definite object)",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 14"
+      }
+    ]
+  },
+  {
+    "id": "cotton-accusative",
+    "word": "pagtany",
+    "root": "pagta",
+    "stem": "pagta",
+    "pos": "noun",
+    "segments": [
+      {
+        "suffix_id": "noun-accusative",
+        "value": "ny"
+      }
+    ],
+    "meaning_en": "cotton (definite object)",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 14"
+      }
+    ]
+  },
+  {
+    "id": "pot-locative",
+    "word": "gazanda",
+    "root": "gazan",
+    "stem": "gazan",
+    "pos": "noun",
+    "segments": [
+      {
+        "suffix_id": "noun-locative",
+        "value": "da"
+      }
+    ],
+    "meaning_en": "in the pot",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 14"
+      }
+    ]
+  },
+  {
+    "id": "carrot-locative",
+    "word": "käşirde",
+    "root": "käşir",
+    "stem": "käşir",
+    "pos": "noun",
+    "segments": [
+      {
+        "suffix_id": "noun-locative",
+        "value": "de"
+      }
+    ],
+    "meaning_en": "in the carrots",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 14"
+      }
+    ]
+  },
+  {
+    "id": "cotton-ablative",
+    "word": "pagtadan",
+    "root": "pagta",
+    "stem": "pagta",
+    "pos": "noun",
+    "segments": [
+      {
+        "suffix_id": "noun-ablative",
+        "value": "dan"
+      }
+    ],
+    "meaning_en": "from cotton",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 14"
+      }
+    ]
+  },
+  {
+    "id": "carrot-ablative",
+    "word": "käşirden",
+    "root": "käşir",
+    "stem": "käşir",
+    "pos": "noun",
+    "segments": [
+      {
+        "suffix_id": "noun-ablative",
+        "value": "den"
+      }
+    ],
+    "meaning_en": "from carrots",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 14"
+      }
+    ]
+  },
+  {
+    "id": "my-book",
+    "word": "kitabym",
+    "root": "kitap",
+    "stem": "kitab",
+    "pos": "noun",
+    "segments": [
+      {
+        "suffix_id": "noun-poss-1sg",
+        "value": "ym"
+      }
+    ],
+    "meaning_en": "my book",
+    "exception_ids": [
+      "kitap-voicing"
+    ],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "pp. 12–13"
+      }
+    ]
+  },
+  {
+    "id": "their-cat",
+    "word": "pişigi",
+    "root": "pişik",
+    "stem": "pişig",
+    "pos": "noun",
+    "segments": [
+      {
+        "suffix_id": "noun-poss-3",
+        "value": "i"
+      }
+    ],
+    "meaning_en": "his/her/its/their cat",
+    "exception_ids": [
+      "pisik-voicing"
+    ],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "pp. 12–13"
+      }
+    ]
+  },
+  {
+    "id": "infinitive-read",
+    "word": "okamak",
+    "root": "oka",
+    "stem": "oka",
+    "pos": "verb",
+    "segments": [
+      {
+        "suffix_id": "verb-infinitive",
+        "value": "mak"
+      }
+    ],
+    "meaning_en": "to read",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 22"
+      }
+    ]
+  },
+  {
+    "id": "infinitive-eat",
+    "word": "iýmek",
+    "root": "iý",
+    "stem": "iý",
+    "pos": "verb",
+    "segments": [
+      {
+        "suffix_id": "verb-infinitive",
+        "value": "mek"
+      }
+    ],
+    "meaning_en": "to eat",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 22"
+      }
+    ]
+  },
+  {
+    "id": "past-run-1sg",
+    "word": "ylgadym",
+    "root": "ylga",
+    "stem": "ylga",
+    "pos": "verb",
+    "segments": [
+      {
+        "suffix_id": "verb-past",
+        "value": "dy"
+      },
+      {
+        "suffix_id": "verb-short-1sg",
+        "value": "m"
+      }
+    ],
+    "meaning_en": "I ran",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 25"
+      }
+    ]
+  },
+  {
+    "id": "past-walk-2sg",
+    "word": "ýörediň",
+    "root": "ýöre",
+    "stem": "ýöre",
+    "pos": "verb",
+    "segments": [
+      {
+        "suffix_id": "verb-past",
+        "value": "di"
+      },
+      {
+        "suffix_id": "verb-short-2sg",
+        "value": "ň"
+      }
+    ],
+    "meaning_en": "you walked",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 25"
+      }
+    ]
+  },
+  {
+    "id": "past-walk-1pl",
+    "word": "ýöredik",
+    "root": "ýöre",
+    "stem": "ýöre",
+    "pos": "verb",
+    "segments": [
+      {
+        "suffix_id": "verb-past",
+        "value": "di"
+      },
+      {
+        "suffix_id": "verb-short-1pl",
+        "value": "k"
+      }
+    ],
+    "meaning_en": "we walked",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 25"
+      }
+    ]
+  },
+  {
+    "id": "past-run-2pl",
+    "word": "ylgadyňyz",
+    "root": "ylga",
+    "stem": "ylga",
+    "pos": "verb",
+    "segments": [
+      {
+        "suffix_id": "verb-past",
+        "value": "dy"
+      },
+      {
+        "suffix_id": "verb-short-2pl",
+        "value": "ňyz"
+      }
+    ],
+    "meaning_en": "you ran (plural or polite)",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 25"
+      }
+    ]
+  },
+  {
+    "id": "past-be-1sg",
+    "word": "boldum",
+    "root": "bol",
+    "stem": "bol",
+    "pos": "verb",
+    "segments": [
+      {
+        "suffix_id": "verb-past",
+        "value": "du"
+      },
+      {
+        "suffix_id": "verb-short-1sg",
+        "value": "m"
+      }
+    ],
+    "meaning_en": "I became/was",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 12"
+      }
+    ]
+  },
+  {
+    "id": "past-fall-1sg",
+    "word": "düşdüm",
+    "root": "düş",
+    "stem": "düş",
+    "pos": "verb",
+    "segments": [
+      {
+        "suffix_id": "verb-past",
+        "value": "dü"
+      },
+      {
+        "suffix_id": "verb-short-1sg",
+        "value": "m"
+      }
+    ],
+    "meaning_en": "I fell",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 12"
+      }
+    ]
+  },
+  {
+    "id": "negative-past-write",
+    "word": "ýazmadym",
+    "root": "ýaz",
+    "stem": "ýaz",
+    "pos": "verb",
+    "segments": [
+      {
+        "suffix_id": "verb-negative",
+        "value": "ma"
+      },
+      {
+        "suffix_id": "verb-past",
+        "value": "dy"
+      },
+      {
+        "suffix_id": "verb-short-1sg",
+        "value": "m"
+      }
+    ],
+    "meaning_en": "I did not write",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 25"
+      }
+    ]
+  },
+  {
+    "id": "negative-past-go",
+    "word": "gitmediň",
+    "root": "git",
+    "stem": "git",
+    "pos": "verb",
+    "segments": [
+      {
+        "suffix_id": "verb-negative",
+        "value": "me"
+      },
+      {
+        "suffix_id": "verb-past",
+        "value": "di"
+      },
+      {
+        "suffix_id": "verb-short-2sg",
+        "value": "ň"
+      }
+    ],
+    "meaning_en": "you did not go",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 25"
+      }
+    ]
+  },
+  {
+    "id": "present-write-1sg",
+    "word": "ýazýaryn",
+    "root": "ýaz",
+    "stem": "ýaz",
+    "pos": "verb",
+    "segments": [
+      {
+        "suffix_id": "verb-present",
+        "value": "ýar"
+      },
+      {
+        "suffix_id": "verb-present-1sg",
+        "value": "yn"
+      }
+    ],
+    "meaning_en": "I write/am writing",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 23"
+      }
+    ]
+  },
+  {
+    "id": "present-eat-2sg",
+    "word": "iýýärsiň",
+    "root": "iý",
+    "stem": "iý",
+    "pos": "verb",
+    "segments": [
+      {
+        "suffix_id": "verb-present",
+        "value": "ýär"
+      },
+      {
+        "suffix_id": "verb-present-2sg",
+        "value": "siň"
+      }
+    ],
+    "meaning_en": "you eat/are eating",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 23"
+      }
+    ]
+  },
+  {
+    "id": "present-write-1pl",
+    "word": "ýazýarys",
+    "root": "ýaz",
+    "stem": "ýaz",
+    "pos": "verb",
+    "segments": [
+      {
+        "suffix_id": "verb-present",
+        "value": "ýar"
+      },
+      {
+        "suffix_id": "verb-present-1pl",
+        "value": "ys"
+      }
+    ],
+    "meaning_en": "we write/are writing",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 23"
+      }
+    ]
+  },
+  {
+    "id": "present-eat-2pl",
+    "word": "iýýärsiňiz",
+    "root": "iý",
+    "stem": "iý",
+    "pos": "verb",
+    "segments": [
+      {
+        "suffix_id": "verb-present",
+        "value": "ýär"
+      },
+      {
+        "suffix_id": "verb-present-2pl",
+        "value": "siňiz"
+      }
+    ],
+    "meaning_en": "you eat/are eating (plural or polite)",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 23"
+      }
+    ]
+  },
+  {
+    "id": "negative-present-write",
+    "word": "ýazmaýaryn",
+    "root": "ýaz",
+    "stem": "ýaz",
+    "pos": "verb",
+    "segments": [
+      {
+        "suffix_id": "verb-negative",
+        "value": "ma"
+      },
+      {
+        "suffix_id": "verb-present",
+        "value": "ýar"
+      },
+      {
+        "suffix_id": "verb-present-1sg",
+        "value": "yn"
+      }
+    ],
+    "meaning_en": "I do not write/am not writing",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 23"
+      }
+    ]
+  },
+  {
+    "id": "future-read",
+    "word": "okajak",
+    "root": "oka",
+    "stem": "oka",
+    "pos": "verb",
+    "segments": [
+      {
+        "suffix_id": "verb-future-definite",
+        "value": "jak"
+      }
+    ],
+    "meaning_en": "will/intend to read (person supplied by context)",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 28"
+      }
+    ]
+  },
+  {
+    "id": "future-know",
+    "word": "biljek",
+    "root": "bil",
+    "stem": "bil",
+    "pos": "verb",
+    "segments": [
+      {
+        "suffix_id": "verb-future-definite",
+        "value": "jek"
+      }
+    ],
+    "meaning_en": "will/intend to know (person supplied by context)",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 28"
+      }
+    ]
+  },
+  {
+    "id": "conditional-wash",
+    "word": "ýuwsam",
+    "root": "ýuw",
+    "stem": "ýuw",
+    "pos": "verb",
+    "segments": [
+      {
+        "suffix_id": "verb-conditional",
+        "value": "sa"
+      },
+      {
+        "suffix_id": "verb-short-1sg",
+        "value": "m"
+      }
+    ],
+    "meaning_en": "if I wash",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 46"
+      }
+    ]
+  },
+  {
+    "id": "conditional-wipe",
+    "word": "süpürseň",
+    "root": "süpür",
+    "stem": "süpür",
+    "pos": "verb",
+    "segments": [
+      {
+        "suffix_id": "verb-conditional",
+        "value": "se"
+      },
+      {
+        "suffix_id": "verb-short-2sg",
+        "value": "ň"
+      }
+    ],
+    "meaning_en": "if you wipe",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 46"
+      }
+    ]
+  },
+  {
+    "id": "negative-conditional-write",
+    "word": "ýazmasam",
+    "root": "ýaz",
+    "stem": "ýaz",
+    "pos": "verb",
+    "segments": [
+      {
+        "suffix_id": "verb-negative",
+        "value": "ma"
+      },
+      {
+        "suffix_id": "verb-conditional",
+        "value": "sa"
+      },
+      {
+        "suffix_id": "verb-short-1sg",
+        "value": "m"
+      }
+    ],
+    "meaning_en": "if I do not write",
+    "exception_ids": [],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 47"
+      }
+    ]
+  },
+  {
+    "id": "present-go-1sg",
+    "word": "gidýärin",
+    "root": "git",
+    "stem": "gid",
+    "pos": "verb",
+    "segments": [
+      {
+        "suffix_id": "verb-present",
+        "value": "ýär"
+      },
+      {
+        "suffix_id": "verb-present-1sg",
+        "value": "in"
+      }
+    ],
+    "meaning_en": "I go/am going",
+    "exception_ids": [
+      "git-voicing"
+    ],
+    "verification_status": "attested",
+    "references": [
+      {
+        "source_id": "pc-grammar",
+        "locator": "p. 23"
+      }
+    ]
+  }
+]

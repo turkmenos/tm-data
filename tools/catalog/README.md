@@ -28,7 +28,7 @@ not URLs. All fields below are required unless explicitly described otherwise.
 | Field | Meaning |
 | --- | --- |
 | `schema_version` | Catalog schema version, currently `1.0.0` |
-| `datasets` | Array of datasets; one per top-level dataset directory or immediate `utils` subdirectory containing data |
+| `datasets` | Array of datasets; one per top-level dataset directory or immediate `language` or `utils` subdirectory containing data |
 | `datasets[].id` | Unique directory-derived identifier, with `/` replaced by `-`; keep directory names stable |
 | `title` | Display label derived from the directory name |
 | `location` | Dataset directory |
@@ -66,7 +66,7 @@ Other object schemas, SQL scripts, text extracts, and Parquet have unknown count
 means a recognized empty collection; `null` never means zero.
 
 Every supported data file beneath `dictionary`, `geo`, `poetry`, `stories`, and
-immediate `utils` subdirectories is included, including legacy exports, text
+immediate `language` and `utils` subdirectories is included, including legacy exports, text
 layouts, and transliteration test fixtures. Tools, images, and Markdown files
 are not data resources. SQL dialect and import instructions remain in linked
 dataset guides. There is deliberately no summed record count: exports overlap,
