@@ -31,3 +31,15 @@ go test ./tools/geojson
 The source coverage, dates, licensing, and verification limitations documented
 in the [English](source/en/SOURCES.md) and [Turkmen](source/tm/SOURCES.md)
 source guides apply unchanged to this derived export.
+
+## Geographic search
+
+[The derived search index](search/README.md) supports canonical names, existing
+aliases, Unicode and ASCII-normalized matching, optional prefix and fuzzy
+matching, and administrative filters while preserving stable slugs and provenance.
+
+```sh
+go run ./tools/geosearch
+go run ./tools/geosearch --query Ashgabat
+go run ./tools/geosearch --check
+```

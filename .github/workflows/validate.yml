@@ -63,5 +63,11 @@ jobs:
       - name: Check GeoJSON export freshness
         run: go run ./tools/geojson --check
 
+      - name: Test geographic search
+        run: go test ./tools/geosearch
+
+      - name: Check geographic search index freshness
+        run: go run ./tools/geosearch --check
+
       - name: Check dataset catalog freshness
         run: go run ./tools/catalog --check

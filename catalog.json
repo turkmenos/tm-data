@@ -85,7 +85,7 @@
       "id": "geo",
       "title": "Geo",
       "location": "geo",
-      "version": "sha256:040770fd65ed6deb6ce4db6bec3c6176bbbbf29aaf54c9e0a35d6358f21e129c",
+      "version": "sha256:7e55c797ca99f70d41e809086b38f3021fc65833e5988bcd91fef082a2df239a",
       "formats": [
         "geojson",
         "json",
@@ -94,6 +94,7 @@
       "documentation": [
         "geo/README.md",
         "geo/json/README.md",
+        "geo/search/README.md",
         "geo/source/en/README.md",
         "geo/source/en/SOURCES.md",
         "geo/source/tm/README.md",
@@ -103,6 +104,7 @@
         "references": [
           "geo/README.md",
           "geo/json/README.md",
+          "geo/search/README.md",
           "geo/source/en/README.md",
           "geo/source/en/SOURCES.md",
           "geo/source/tm/README.md",
@@ -138,6 +140,21 @@
           "version": "sha256:dec9d41c77f35ea2c24267efc195ca73a8e88e5aa6990ad41a4379df8b9ce571",
           "record_count": 2711,
           "record_unit": "records"
+        },
+        {
+          "path": "geo/search/index.json",
+          "format": "json",
+          "version": "sha256:171734a6fcedbb97796e00422ccca5fc3e5f9872ee68855f5257d5968911291b",
+          "record_count": 2711,
+          "record_unit": "records"
+        },
+        {
+          "path": "geo/search/schema.json",
+          "format": "json",
+          "version": "sha256:40752e4c7b81778aca94e75df6ac5618af28f511a069110f35a40eac9e0ee203",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
         },
         {
           "path": "geo/sql/mysql/import.sql",

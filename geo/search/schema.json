@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/turkmenos/tm-data/geo/search/schema.json",
+  "title": "Derived geographic search index",
+  "type": "array",
+  "items": {
+    "$ref": "#/$defs/entry"
+  },
+  "$defs": {
+    "alias": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "alias",
+        "language",
+        "alias_type",
+        "key",
+        "ascii_key"
+      ],
+      "properties": {
+        "alias": {
+          "type": "string",
+          "minLength": 1
+        },
+        "language": {
+          "enum": [
+            "tm",
+            "en",
+            "ru",
+            "und"
+          ]
+        },
+        "alias_type": {
+          "enum": [
+            "canonical",
+            "transliteration",
+            "ascii",
+            "historical"
+          ]
+        },
+        "key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ascii_key": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "slug",
+        "parent_slug",
+        "name",
+        "type",
+        "verification_status",
+        "source_url",
+        "source_date",
+        "aliases"
+      ],
+      "properties": {
+        "slug": {
+          "type": "string",
+          "minLength": 1
+        },
+        "parent_slug": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "enum": [
+            "country",
+            "independent_city",
+            "welayat",
+            "etrap",
+            "city",
+            "town",
+            "village",
+            "rural_council"
+          ]
+        },
+        "verification_status": {
+          "enum": [
+            "verified",
+            "verification_required"
+          ]
+        },
+        "source_url": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "aliases": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/alias"
+          }
+        }
+      }
+    }
+  }
+}

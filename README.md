@@ -10,8 +10,8 @@ Open, machine-readable datasets related to Turkmenistan.
 
 | Dataset | Contents | Format | Documentation |
 | --- | --- | --- | --- |
-| Geography | Administrative divisions, settlements, alternative names, and search helpers | GeoJSON, JSON, PostgreSQL, MySQL, SQLite, SQL Server | [Guide](geo/README.md) |
-| Poetry | 855 works by 13 Turkmen poets | MySQL 8+ SQL, JSON — see [Guide](poetry/README.md) | [Guide](poetry/README.md) |
+| Geography | Administrative divisions, settlements, alternative names, and [multilingual search](geo/search/README.md) | GeoJSON, JSON, PostgreSQL, MySQL, SQLite, SQL Server | [Guide](geo/README.md) |
+| Poetry | 855 works by 13 Turkmen poets | MySQL 8+ SQL, JSON | [Guide](poetry/README.md) |
 | Stories | Page-level text extracted from Turkmen stories and prose | JSON, SQLite, MySQL SQL | [Guide](stories/README.md) |
 | Colors | Turkmen color names, English translations, HEX values, and categories | MySQL 8+ SQL, JSON, CSV | [Guide](utils/colors/README.md) |
 | Dictionary | 18,674 searchable Turkmen headwords with pronunciations, definitions, and examples | JSON | [Guide](dictionary/README.md) |
@@ -26,6 +26,59 @@ who do not need JSON or SQL. See the [CSV export guide](tools/csvexports/README.
 for coverage, representation rules, and regeneration commands.
 
 See [DATA_FORMAT.md](DATA_FORMAT.md) for shared encoding, field naming, date, and export conventions.
+
+## Usage
+
+Clone the repository:
+
+```sh
+git clone https://github.com/turkmenos/tm-data.git
+cd tm-data
+```
+
+Follow the import instructions for the dataset you want to use. SQL files use UTF-8; choose a connection encoding and collation that preserve Turkmen characters such as `ä`, `ç`, `ň`, `ö`, `ş`, `ü`, `ý`, and `ž`.
+
+### Geographic search
+
+Search 2,711 administrative divisions and settlements by canonical name or
+existing alias. The [geographic search index](geo/search/README.md) preserves
+original Turkmen names, stable identifiers, verification status, and source metadata.
+
+Run the Go tool from the repository root (Go 1.23 or later):
+
+```sh
+# Match an existing English alias or an ASCII-normalized name
+go run ./tools/geosearch --query Ashgabat
+go run ./tools/geosearch --query asgabat
+
+# Search existing Cyrillic names
+go run ./tools/geosearch --query 'Ашхабад'
+
+# Enable prefix matching and filter by administrative type
+go run ./tools/geosearch --query das --prefix --type welayat
+
+# Filter by ancestor region, or enable approximate matching
+go run ./tools/geosearch --query asgabat --parent turkmenistan-lebap
+go run ./tools/geosearch --query Ashgabatx --fuzzy
+```
+
+Matching is Unicode-aware and case-insensitive. Duplicate place names remain
+separate results identified by their slugs. Prefix and fuzzy matching are
+optional; fuzzy results can be ambiguous and do not establish a place's identity.
+Existing Cyrillic aliases retain their recorded language, and no new names or
+administrative relationships are inferred.
+
+Use `--verified-only` to restrict results to verified region records. Alias
+records have no separate verification status. See the [search guide](geo/search/README.md)
+for JSON requests, result fields, ranking, and provenance limitations.
+
+Regenerate and check the index after changing geographic source data:
+
+```sh
+go run ./tools/geosearch
+go run ./tools/geosearch --check
+go test ./tools/geosearch
+```
 
 ## Machine-readable catalog
 
@@ -89,17 +142,6 @@ go run ./tools/morphology
 
 See the [morphology guide](language/morphology/README.md) for coverage and verification limits.
 
-## Usage
-
-Clone the repository:
-
-```sh
-git clone https://github.com/turkmenos/tm-data.git
-cd tm-data
-```
-
-Follow the import instructions for the dataset you want to use. SQL files use UTF-8; choose a connection encoding and collation that preserve Turkmen characters such as `ä`, `ç`, `ň`, `ö`, `ş`, `ü`, `ý`, and `ž`.
-
 ## Contributing
 
 Contributions may include new datasets, corrections, sources, translations, or additional export formats.
@@ -109,7 +151,7 @@ Contributions may include new datasets, corrections, sources, translations, or a
 3. Describe the schema, format, import steps, and known limitations in the dataset README.
 4. Preserve the Turkmen alphabet in UTF-8 and check for duplicates where possible.
 5. Do not include private, sensitive, or non-redistributable data.
-
+6. Regenerate affected exports and the dataset catalog, then run the relevant validation checks.
 
 ## Roadmap
 
@@ -118,12 +160,12 @@ See [ROADMAP.md](ROADMAP.md) for the planned datasets, data quality improvements
 ### Ideas for future datasets
 
 - Topic labels for proverbs and sayings; expand the riddles collection
-- Turkmen given names with gender, meaning, and origin
+- Expand Turkmen given names with reviewed meanings, origins, and sources
 - District codes, postal codes, and telephone codes
 - Holidays, historical dates, and cultural heritage sites
 - Thematic vocabulary for animals, plants, food, occupations, and family relationships
 - Expand the Turkmen morphology dataset with additional suffixes and reviewed analyses
-- Automated schema, encoding, duplicate, and integrity checks
+- Extend automated schema, encoding, duplicate, and integrity checks
 
 For any new dataset, reliable provenance, redistribution rights, and verification status are more important than record count alone.
 
