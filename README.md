@@ -1,6 +1,6 @@
 # tm-data
 
-![tm-data: open, machine-readable datasets related to Turkmenistan. A stack of data tables next to a grid of data cells.](assets/tm-data-banner.svg)
+![tm-data: open, machine-readable datasets related to Turkmenistan. A stack of data tables next to a grid of data cells.](assets/readme-banner.svg)
 
 Open, machine-readable datasets related to Turkmenistan.
 
