@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 420" width="1280" height="420" role="img" aria-labelledby="t d">
+<title id="t">tm-data</title>
+<desc id="d">Open, machine-readable datasets related to Turkmenistan. A stack of data tables next to a grid of data cells.</desc>
+<style>
+.title{font:800 104px/1 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;fill:#f6f0df;letter-spacing:-3px}
+.tag{font:500 27px/1 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;fill:#c9e0d2}
+.mono{font:500 15px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#f6f0df;text-anchor:middle}
+.chip{fill:#ffffff14;stroke:#e2bd62;stroke-opacity:.55}
+</style>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#0e3a2c"/><stop offset="1" stop-color="#15523d"/>
+</linearGradient>
+<clipPath id="card"><rect width="1280" height="420" rx="22"/></clipPath>
+<pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+<circle cx="12" cy="12" r="1.2" fill="#f6f0df" fill-opacity=".14"/>
+</pattern>
+<radialGradient id="fade"><stop offset=".5" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<mask id="fadeMask"><rect x="640" y="-40" width="680" height="500" fill="url(#fade)"/></mask>
+</defs>
+<g clip-path="url(#card)">
+<rect width="1280" height="420" fill="url(#bg)"/>
+<rect x="640" y="-40" width="680" height="500" fill="url(#dots)" mask="url(#fadeMask)"/>
+<rect x="800" y="34" width="380" height="230" rx="14" fill="#0a2a20" fill-opacity=".5" stroke="#e2bd62" stroke-opacity=".2"/>
+<rect x="768" y="58" width="380" height="230" rx="14" fill="#0a2a20" fill-opacity=".75" stroke="#e2bd62" stroke-opacity=".32"/>
+<g transform="translate(736 82)">
+<rect width="380" height="230" rx="14" fill="#0a2a20" stroke="#e2bd62" stroke-opacity=".5"/>
+<path d="M0 14a14 14 0 0 1 14-14h352a14 14 0 0 1 14 14v30H0Z" fill="#ffffff0f"/>
+<g fill="#e2bd62"><rect x="24" y="17" width="60" height="10" rx="5"/><rect x="148" y="17" width="88" height="10" rx="5"/><rect x="276" y="17" width="72" height="10" rx="5"/></g>
+<path d="M132 44V230M260 44V230" stroke="#f6f0df" stroke-opacity=".08"/>
+<g fill="#ffffff08"><rect y="80" width="380" height="36"/><rect y="152" width="380" height="36"/></g>
+<g fill="#f6f0df" fill-opacity=".85">
+<rect x="24" y="57" width="84" height="10" rx="5"/><rect x="24" y="93" width="64" height="10" rx="5"/><rect x="24" y="129" width="92" height="10" rx="5"/><rect x="24" y="165" width="56" height="10" rx="5"/><rect x="24" y="201" width="76" height="10" rx="5"/>
+</g>
+<g fill="#6fa58b">
+<rect x="148" y="57" width="96" height="10" rx="5"/><rect x="148" y="93" width="70" height="10" rx="5"/><rect x="148" y="129" width="88" height="10" rx="5"/><rect x="148" y="165" width="100" height="10" rx="5"/><rect x="148" y="201" width="60" height="10" rx="5"/>
+</g>
+<g fill="#f6f0df" fill-opacity=".5">
+<rect x="276" y="57" width="48" height="10" rx="5"/><rect x="276" y="93" width="80" height="10" rx="5"/><rect x="276" y="129" width="40" height="10" rx="5"/><rect x="276" y="165" width="64" height="10" rx="5"/><rect x="276" y="201" width="52" height="10" rx="5"/>
+</g>
+</g>
+<g fill="#e2bd62">
+<rect x="1146" y="304" width="14" height="14" rx="3" fill-opacity=".3"/><rect x="1166" y="304" width="14" height="14" rx="3" fill-opacity=".8"/><rect x="1186" y="304" width="14" height="14" rx="3" fill-opacity=".5"/><rect x="1206" y="304" width="14" height="14" rx="3"/><rect x="1226" y="304" width="14" height="14" rx="3" fill-opacity=".3"/>
+<rect x="1146" y="324" width="14" height="14" rx="3"/><rect x="1166" y="324" width="14" height="14" rx="3" fill-opacity=".5"/><rect x="1186" y="324" width="14" height="14" rx="3" fill-opacity=".3"/><rect x="1206" y="324" width="14" height="14" rx="3" fill-opacity=".8"/><rect x="1226" y="324" width="14" height="14" rx="3" fill-opacity=".5"/>
+<rect x="1146" y="344" width="14" height="14" rx="3" fill-opacity=".5"/><rect x="1166" y="344" width="14" height="14" rx="3" fill-opacity=".3"/><rect x="1186" y="344" width="14" height="14" rx="3"/><rect x="1206" y="344" width="14" height="14" rx="3" fill-opacity=".5"/><rect x="1226" y="344" width="14" height="14" rx="3" fill-opacity=".8"/>
+<rect x="1146" y="364" width="14" height="14" rx="3" fill-opacity=".8"/><rect x="1166" y="364" width="14" height="14" rx="3"/><rect x="1186" y="364" width="14" height="14" rx="3" fill-opacity=".5"/><rect x="1206" y="364" width="14" height="14" rx="3" fill-opacity=".3"/><rect x="1226" y="364" width="14" height="14" rx="3" fill-opacity=".5"/>
+</g>
+<text x="66" y="168" class="title">tm-data</text>
+<text x="72" y="216" class="tag">Open, machine-readable datasets</text>
+<text x="72" y="250" class="tag">related to Turkmenistan</text>
+<rect x="72" y="278" width="53" height="32" rx="16" class="chip"/><text x="98.5" y="299.5" class="mono">geo</text>
+<rect x="135" y="278" width="80" height="32" rx="16" class="chip"/><text x="175" y="299.5" class="mono">poetry</text>
+<rect x="225" y="278" width="89" height="32" rx="16" class="chip"/><text x="269.5" y="299.5" class="mono">stories</text>
+<rect x="324" y="278" width="116" height="32" rx="16" class="chip"/><text x="382" y="299.5" class="mono">dictionary</text>
+<rect x="450" y="278" width="116" height="32" rx="16" class="chip"/><text x="508" y="299.5" class="mono">morphology</text>
+<rect y="414" width="1280" height="6" fill="#e2bd62"/>
+</g>
+</svg>
