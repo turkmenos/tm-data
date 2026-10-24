@@ -1,0 +1,123 @@
+{
+  "version": 1,
+  "datasets": [
+    {
+      "id": "dictionary",
+      "record_resources": [
+        { "pattern": "dictionary/*/dictionary.json" },
+        { "pattern": "dictionary/turkmen-dili-sozlugu/dictionary-1.json" }
+      ]
+    },
+    {
+      "id": "geo",
+      "record_resources": [{ "pattern": "geo/json/regions.json" }],
+      "metrics": [
+        {
+          "path": "geo/json/regions.json",
+          "verification": { "field": "verification_status", "verified": ["verified"] },
+          "source_fields": ["source_url"],
+          "coordinate_fields": ["latitude", "longitude"]
+        }
+      ]
+    },
+    {
+      "id": "poetry",
+      "record_resources": [{ "pattern": "poetry/json/*/poetry.json" }]
+    },
+    {
+      "id": "stories",
+      "record_resources": [{ "format": "json" }]
+    },
+    {
+      "id": "language-morphology",
+      "record_resources": [{ "format": "json" }],
+      "metrics": [
+        {
+          "path": "language/morphology/suffixes.json",
+          "verification": { "field": "verification_status", "verified": ["source_checked"] },
+          "source_fields": ["references"]
+        },
+        {
+          "path": "language/morphology/rules.json",
+          "verification": { "field": "verification_status", "verified": ["source_checked"] },
+          "source_fields": ["references"]
+        },
+        {
+          "path": "language/morphology/examples.json",
+          "verification": { "field": "verification_status", "verified": ["attested", "rule_checked"] },
+          "source_fields": ["references"]
+        },
+        {
+          "path": "language/morphology/exceptions.json",
+          "verification": { "field": "verification_status", "verified": ["source_checked"] },
+          "source_fields": ["references"]
+        }
+      ]
+    },
+    {
+      "id": "utils-calendar",
+      "record_resources": [{ "format": "json" }]
+    },
+    {
+      "id": "utils-colors",
+      "record_resources": [{ "pattern": "utils/colors/colors.json" }]
+    },
+    {
+      "id": "utils-country-names",
+      "record_resources": [{ "pattern": "utils/country-names/countries.json" }]
+    },
+    {
+      "id": "utils-holidays",
+      "record_resources": [{ "pattern": "utils/holidays/holidays.json" }]
+    },
+    {
+      "id": "utils-names",
+      "record_resources": [{ "pattern": "utils/names/given-names.json" }],
+      "metrics": [
+        {
+          "path": "utils/names/given-names.json",
+          "records_key": "names",
+          "verification": { "field": "verification_status", "verified": [] },
+          "source_fields": ["source_ids"]
+        }
+      ]
+    },
+    {
+      "id": "utils-normalization",
+      "record_resources": [{ "pattern": "utils/normalization/test_cases.json" }]
+    },
+    {
+      "id": "utils-postal-codes",
+      "record_resources": [{ "pattern": "utils/postal-codes/places.json" }],
+      "metrics": [
+        {
+          "path": "utils/postal-codes/places.json",
+          "coordinate_fields": ["latitude", "longitude"]
+        }
+      ]
+    },
+    {
+      "id": "utils-proverbs",
+      "record_resources": [{ "pattern": "utils/proverbs/nakyllar.json" }]
+    },
+    {
+      "id": "utils-riddles",
+      "record_resources": [{ "pattern": "utils/riddles/riddles.json" }],
+      "metrics": [
+        {
+          "path": "utils/riddles/riddles.json",
+          "verification": { "field": "verification_status", "verified": [] },
+          "source_fields": ["source_id"]
+        }
+      ]
+    },
+    {
+      "id": "utils-stopword",
+      "record_resources": [{ "pattern": "utils/stopword/stopwords.json" }]
+    },
+    {
+      "id": "utils-transliteration",
+      "record_resources": [{ "pattern": "utils/transliteration/rules.json" }]
+    }
+  ]
+}

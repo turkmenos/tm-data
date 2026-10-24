@@ -1,0 +1,552 @@
+{
+  "schema_version": "1.0.0",
+  "status": "warning",
+  "inputs": {
+    "catalog": "catalog.json",
+    "config": "tools/quality/config.json",
+    "integrity_rules": "tools/integrity/rules.json"
+  },
+  "totals": {
+    "datasets": 16,
+    "passed": 13,
+    "warning": 3,
+    "error": 0,
+    "errors": 0,
+    "warnings": 5
+  },
+  "datasets": [
+    {
+      "dataset": "dictionary",
+      "title": "Dictionary",
+      "location": "dictionary",
+      "version": "sha256:5eb353bfdb9dc843f862115303f79262b6f4ab83e3e7595edcc738a6c5d7b0bb",
+      "record_count": 45279,
+      "record_unit": "mixed",
+      "status": "passed",
+      "checks": {
+        "utf8": "passed",
+        "syntax": "passed",
+        "duplicates": "passed",
+        "schema": "not_configured",
+        "references": "not_configured",
+        "metrics": "not_configured"
+      },
+      "metrics": {
+        "files_checked": 5,
+        "invalid_utf8_files": 0,
+        "syntax_errors": 0,
+        "duplicate_records": 0,
+        "missing_required_fields": null,
+        "schema_violations": null,
+        "referential_integrity_errors": null,
+        "unverified_records": null,
+        "missing_sources": null,
+        "missing_coordinates": null
+      },
+      "error_count": 0,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "dataset": "geo",
+      "title": "Geo",
+      "location": "geo",
+      "version": "sha256:7e55c797ca99f70d41e809086b38f3021fc65833e5988bcd91fef082a2df239a",
+      "record_count": 2711,
+      "record_unit": "records",
+      "status": "warning",
+      "checks": {
+        "utf8": "passed",
+        "syntax": "passed",
+        "duplicates": "passed",
+        "schema": "passed",
+        "references": "passed",
+        "metrics": "passed"
+      },
+      "metrics": {
+        "files_checked": 6,
+        "invalid_utf8_files": 0,
+        "syntax_errors": 0,
+        "duplicate_records": 0,
+        "missing_required_fields": 0,
+        "schema_violations": 0,
+        "referential_integrity_errors": 0,
+        "unverified_records": 2606,
+        "missing_sources": 0,
+        "missing_coordinates": 1225
+      },
+      "error_count": 0,
+      "errors": [],
+      "warnings": [
+        "1225 of 2711 records in geo/json/regions.json have no coordinates (latitude, longitude)",
+        "2606 of 2711 records in geo/json/regions.json are not verified (verification_status)"
+      ]
+    },
+    {
+      "dataset": "poetry",
+      "title": "Poetry",
+      "location": "poetry",
+      "version": "sha256:475c5c039edc85dc0ae4d10b9e413ff8d37f4a899dc8deb99e8ba282eef5e93c",
+      "record_count": 855,
+      "record_unit": "poems",
+      "status": "passed",
+      "checks": {
+        "utf8": "passed",
+        "syntax": "passed",
+        "duplicates": "passed",
+        "schema": "not_configured",
+        "references": "not_configured",
+        "metrics": "not_configured"
+      },
+      "metrics": {
+        "files_checked": 19,
+        "invalid_utf8_files": 0,
+        "syntax_errors": 0,
+        "duplicate_records": 0,
+        "missing_required_fields": null,
+        "schema_violations": null,
+        "referential_integrity_errors": null,
+        "unverified_records": null,
+        "missing_sources": null,
+        "missing_coordinates": null
+      },
+      "error_count": 0,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "dataset": "stories",
+      "title": "Stories",
+      "location": "stories",
+      "version": "sha256:b016f4f665f989e3d7ab18715e138b60e459d63a7335f81327544e430cde65e8",
+      "record_count": 3125,
+      "record_unit": "pages",
+      "status": "passed",
+      "checks": {
+        "utf8": "passed",
+        "syntax": "passed",
+        "duplicates": "passed",
+        "schema": "not_configured",
+        "references": "not_configured",
+        "metrics": "not_configured"
+      },
+      "metrics": {
+        "files_checked": 18,
+        "invalid_utf8_files": 0,
+        "syntax_errors": 0,
+        "duplicate_records": 0,
+        "missing_required_fields": null,
+        "schema_violations": null,
+        "referential_integrity_errors": null,
+        "unverified_records": null,
+        "missing_sources": null,
+        "missing_coordinates": null
+      },
+      "error_count": 0,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "dataset": "language-morphology",
+      "title": "Morphology",
+      "location": "language/morphology",
+      "version": "sha256:81329c594dfe437defe00ede4b0ea00460dd55414b08a1cda3eed0391a5013b6",
+      "record_count": 89,
+      "record_unit": "records",
+      "status": "passed",
+      "checks": {
+        "utf8": "passed",
+        "syntax": "passed",
+        "duplicates": "passed",
+        "schema": "passed",
+        "references": "not_configured",
+        "metrics": "passed"
+      },
+      "metrics": {
+        "files_checked": 5,
+        "invalid_utf8_files": 0,
+        "syntax_errors": 0,
+        "duplicate_records": 0,
+        "missing_required_fields": 0,
+        "schema_violations": 0,
+        "referential_integrity_errors": null,
+        "unverified_records": 0,
+        "missing_sources": 0,
+        "missing_coordinates": null
+      },
+      "error_count": 0,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "dataset": "utils-calendar",
+      "title": "Calendar",
+      "location": "utils/calendar",
+      "version": "sha256:1c566b398b9fa7317be5a670c6f7ddb3087b5afde67873e6b143ce40b8c74cb9",
+      "record_count": 36,
+      "record_unit": "records",
+      "status": "passed",
+      "checks": {
+        "utf8": "passed",
+        "syntax": "passed",
+        "duplicates": "passed",
+        "schema": "passed",
+        "references": "not_configured",
+        "metrics": "not_configured"
+      },
+      "metrics": {
+        "files_checked": 10,
+        "invalid_utf8_files": 0,
+        "syntax_errors": 0,
+        "duplicate_records": 0,
+        "missing_required_fields": 0,
+        "schema_violations": 0,
+        "referential_integrity_errors": null,
+        "unverified_records": null,
+        "missing_sources": null,
+        "missing_coordinates": null
+      },
+      "error_count": 0,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "dataset": "utils-colors",
+      "title": "Colors",
+      "location": "utils/colors",
+      "version": "sha256:88a565117f683990900f3bcbaf568cb6f68b5a0f6eb23ea7809d708d2bfd4a7f",
+      "record_count": 49,
+      "record_unit": "records",
+      "status": "passed",
+      "checks": {
+        "utf8": "passed",
+        "syntax": "passed",
+        "duplicates": "passed",
+        "schema": "passed",
+        "references": "not_configured",
+        "metrics": "not_configured"
+      },
+      "metrics": {
+        "files_checked": 2,
+        "invalid_utf8_files": 0,
+        "syntax_errors": 0,
+        "duplicate_records": 0,
+        "missing_required_fields": 0,
+        "schema_violations": 0,
+        "referential_integrity_errors": null,
+        "unverified_records": null,
+        "missing_sources": null,
+        "missing_coordinates": null
+      },
+      "error_count": 0,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "dataset": "utils-country-names",
+      "title": "Country Names",
+      "location": "utils/country-names",
+      "version": "sha256:53e998ae614f7f6f534a0403c601a85af5dec618bd05754c6acf72077d74fd63",
+      "record_count": 249,
+      "record_unit": "records",
+      "status": "passed",
+      "checks": {
+        "utf8": "passed",
+        "syntax": "passed",
+        "duplicates": "passed",
+        "schema": "passed",
+        "references": "not_configured",
+        "metrics": "not_configured"
+      },
+      "metrics": {
+        "files_checked": 2,
+        "invalid_utf8_files": 0,
+        "syntax_errors": 0,
+        "duplicate_records": 0,
+        "missing_required_fields": 0,
+        "schema_violations": 0,
+        "referential_integrity_errors": null,
+        "unverified_records": null,
+        "missing_sources": null,
+        "missing_coordinates": null
+      },
+      "error_count": 0,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "dataset": "utils-holidays",
+      "title": "Holidays",
+      "location": "utils/holidays",
+      "version": "sha256:258650502f2a9acf511aa9e94d2d10ec2f9d61312ba57f16ec186d69fce8e75d",
+      "record_count": 29,
+      "record_unit": "records",
+      "status": "passed",
+      "checks": {
+        "utf8": "passed",
+        "syntax": "passed",
+        "duplicates": "passed",
+        "schema": "passed",
+        "references": "not_configured",
+        "metrics": "not_configured"
+      },
+      "metrics": {
+        "files_checked": 2,
+        "invalid_utf8_files": 0,
+        "syntax_errors": 0,
+        "duplicate_records": 0,
+        "missing_required_fields": 0,
+        "schema_violations": 0,
+        "referential_integrity_errors": null,
+        "unverified_records": null,
+        "missing_sources": null,
+        "missing_coordinates": null
+      },
+      "error_count": 0,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "dataset": "utils-names",
+      "title": "Names",
+      "location": "utils/names",
+      "version": "sha256:5daa4747e9a6c27eaa78e75d1fdbae164e3265e3ade0ac31ca0c0715931c43ab",
+      "record_count": 447,
+      "record_unit": "names",
+      "status": "warning",
+      "checks": {
+        "utf8": "passed",
+        "syntax": "passed",
+        "duplicates": "passed",
+        "schema": "passed",
+        "references": "not_configured",
+        "metrics": "passed"
+      },
+      "metrics": {
+        "files_checked": 4,
+        "invalid_utf8_files": 0,
+        "syntax_errors": 0,
+        "duplicate_records": 0,
+        "missing_required_fields": 0,
+        "schema_violations": 0,
+        "referential_integrity_errors": null,
+        "unverified_records": 447,
+        "missing_sources": 447,
+        "missing_coordinates": null
+      },
+      "error_count": 0,
+      "errors": [],
+      "warnings": [
+        "447 of 447 records in utils/names/given-names.json are not verified (verification_status)",
+        "447 of 447 records in utils/names/given-names.json have no source metadata (source_ids)"
+      ]
+    },
+    {
+      "dataset": "utils-normalization",
+      "title": "Normalization",
+      "location": "utils/normalization",
+      "version": "sha256:459682ba3dcd1e071b2effdd77b1fdac5549e8192a0e179754edfe0d03cf9bf4",
+      "record_count": 16,
+      "record_unit": "test_cases",
+      "status": "passed",
+      "checks": {
+        "utf8": "passed",
+        "syntax": "passed",
+        "duplicates": "passed",
+        "schema": "not_configured",
+        "references": "not_configured",
+        "metrics": "not_configured"
+      },
+      "metrics": {
+        "files_checked": 2,
+        "invalid_utf8_files": 0,
+        "syntax_errors": 0,
+        "duplicate_records": 0,
+        "missing_required_fields": null,
+        "schema_violations": null,
+        "referential_integrity_errors": null,
+        "unverified_records": null,
+        "missing_sources": null,
+        "missing_coordinates": null
+      },
+      "error_count": 0,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "dataset": "utils-postal-codes",
+      "title": "Postal Codes",
+      "location": "utils/postal-codes",
+      "version": "sha256:a86b592d7f29e59fd3fd36a9fb72d65fb3f25dbec627e5b9ea106f16612d886a",
+      "record_count": 100,
+      "record_unit": "records",
+      "status": "passed",
+      "checks": {
+        "utf8": "passed",
+        "syntax": "passed",
+        "duplicates": "passed",
+        "schema": "passed",
+        "references": "passed",
+        "metrics": "passed"
+      },
+      "metrics": {
+        "files_checked": 4,
+        "invalid_utf8_files": 0,
+        "syntax_errors": 0,
+        "duplicate_records": 0,
+        "missing_required_fields": 0,
+        "schema_violations": 0,
+        "referential_integrity_errors": 0,
+        "unverified_records": null,
+        "missing_sources": null,
+        "missing_coordinates": 0
+      },
+      "error_count": 0,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "dataset": "utils-proverbs",
+      "title": "Proverbs",
+      "location": "utils/proverbs",
+      "version": "sha256:d3409e6acc4d2977589733e14077f4c142dbadb68f042d135dccc1f29ba5e24e",
+      "record_count": 5168,
+      "record_unit": "proverbs",
+      "status": "passed",
+      "checks": {
+        "utf8": "passed",
+        "syntax": "passed",
+        "duplicates": "passed",
+        "schema": "not_configured",
+        "references": "not_configured",
+        "metrics": "not_configured"
+      },
+      "metrics": {
+        "files_checked": 2,
+        "invalid_utf8_files": 0,
+        "syntax_errors": 0,
+        "duplicate_records": 0,
+        "missing_required_fields": null,
+        "schema_violations": null,
+        "referential_integrity_errors": null,
+        "unverified_records": null,
+        "missing_sources": null,
+        "missing_coordinates": null
+      },
+      "error_count": 0,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "dataset": "utils-riddles",
+      "title": "Riddles",
+      "location": "utils/riddles",
+      "version": "sha256:2c595f498c99563199138f7eee556a9400fe0a9d8520588a6bb7a8d33169f861",
+      "record_count": 10,
+      "record_unit": "records",
+      "status": "warning",
+      "checks": {
+        "utf8": "passed",
+        "syntax": "passed",
+        "duplicates": "passed",
+        "schema": "passed",
+        "references": "passed",
+        "metrics": "passed"
+      },
+      "metrics": {
+        "files_checked": 2,
+        "invalid_utf8_files": 0,
+        "syntax_errors": 0,
+        "duplicate_records": 0,
+        "missing_required_fields": 0,
+        "schema_violations": 0,
+        "referential_integrity_errors": 0,
+        "unverified_records": 10,
+        "missing_sources": 0,
+        "missing_coordinates": null
+      },
+      "error_count": 0,
+      "errors": [],
+      "warnings": [
+        "10 of 10 records in utils/riddles/riddles.json are not verified (verification_status)"
+      ]
+    },
+    {
+      "dataset": "utils-stopword",
+      "title": "Stopword",
+      "location": "utils/stopword",
+      "version": "sha256:939b833432cae1494ab03b4ae78628e8c05fff34ff2d8d40e40ff58483219adb",
+      "record_count": 5,
+      "record_unit": "words",
+      "status": "passed",
+      "checks": {
+        "utf8": "passed",
+        "syntax": "passed",
+        "duplicates": "passed",
+        "schema": "not_configured",
+        "references": "not_configured",
+        "metrics": "not_configured"
+      },
+      "metrics": {
+        "files_checked": 2,
+        "invalid_utf8_files": 0,
+        "syntax_errors": 0,
+        "duplicate_records": 0,
+        "missing_required_fields": null,
+        "schema_violations": null,
+        "referential_integrity_errors": null,
+        "unverified_records": null,
+        "missing_sources": null,
+        "missing_coordinates": null
+      },
+      "error_count": 0,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "dataset": "utils-transliteration",
+      "title": "Transliteration",
+      "location": "utils/transliteration",
+      "version": "sha256:0330db546ade041dcd2bce825955612addd5ca18d3e489388a0f35180a03fdcf",
+      "record_count": 153,
+      "record_unit": "mappings_and_rules",
+      "status": "passed",
+      "checks": {
+        "utf8": "passed",
+        "syntax": "passed",
+        "duplicates": "passed",
+        "schema": "not_configured",
+        "references": "not_configured",
+        "metrics": "not_configured"
+      },
+      "metrics": {
+        "files_checked": 2,
+        "invalid_utf8_files": 0,
+        "syntax_errors": 0,
+        "duplicate_records": 0,
+        "missing_required_fields": null,
+        "schema_violations": null,
+        "referential_integrity_errors": null,
+        "unverified_records": null,
+        "missing_sources": null,
+        "missing_coordinates": null
+      },
+      "error_count": 0,
+      "errors": [],
+      "warnings": []
+    }
+  ],
+  "repository": {
+    "status": "passed",
+    "files_checked": 4,
+    "error_count": 0,
+    "errors": []
+  },
+  "limitations": [
+    "Checks are structural: passing does not prove factual accuracy, source reliability, or redistribution rights.",
+    "Schema and reference checks cover only the files registered in tools/integrity/rules.json; other datasets report not_configured.",
+    "Record-level metrics are null when tools/quality/config.json does not configure them for a dataset; null means unknown, not zero.",
+    "Record counts come from catalog.json and are null when any selected resource has no supported counter.",
+    "Error lists are truncated to the first 100 findings per dataset; error_count holds the full total."
+  ]
+}

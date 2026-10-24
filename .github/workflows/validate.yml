@@ -21,6 +21,25 @@ jobs:
         with:
           go-version: "1.23"
 
+      - name: Generate dataset quality report
+        id: quality
+        continue-on-error: true
+        run: go run ./tools/quality --output "$RUNNER_TEMP/quality/summary.json"
+
+      - name: Upload dataset quality report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dataset-quality-report
+          path: ${{ runner.temp }}/quality/summary.json
+          if-no-files-found: warn
+
+      - name: Test validation packages
+        run: go test ./internal/...
+
+      - name: Test dataset quality report
+        run: go test ./tools/quality
+
       - name: Validate datasets
         run: go run ./tools/validate/main.go
 
@@ -71,3 +90,12 @@ jobs:
 
       - name: Check dataset catalog freshness
         run: go run ./tools/catalog --check
+
+      - name: Check dataset quality report freshness
+        run: go run ./tools/quality --check
+
+      - name: Fail on critical quality errors
+        if: steps.quality.outcome == 'failure'
+        run: |
+          echo "The dataset quality report contains errors; see the generate step log and the dataset-quality-report artifact."
+          exit 1

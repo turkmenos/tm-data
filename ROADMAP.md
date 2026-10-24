@@ -5,7 +5,7 @@ Planned improvements for `tm-data`. Items are proposals without fixed release da
 ## Data structure and quality
 
 - [x] Document shared conventions for field names, identifiers, dates, and UTF-8 encoding in [DATA_FORMAT.md](DATA_FORMAT.md).
-- [ ] Add automated schema, duplicate, encoding, and integrity checks.
+- [x] Add automated schema, duplicate, encoding, and integrity checks, summarized in a machine-readable [quality report](reports/quality/README.md).
 - [ ] Document source URLs, retrieval dates, redistribution rights, and verification status for each dataset.
 - [ ] Update the main dataset catalog to include all datasets under `utils/`.
 

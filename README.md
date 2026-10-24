@@ -142,6 +142,22 @@ go run ./tools/morphology
 
 See the [morphology guide](language/morphology/README.md) for coverage and verification limits.
 
+### Quality report
+
+[`reports/quality/summary.json`](reports/quality/README.md) combines the format
+and integrity checks above into one machine-readable report with per-dataset
+record counts, check results, error and warning lists, and metrics such as
+unverified records, missing source metadata, and missing coordinates. CI fails
+on errors, treats documented gaps as warnings, and uploads the fresh report as
+the `dataset-quality-report` workflow artifact.
+
+```sh
+go run ./tools/quality
+go run ./tools/quality --check
+```
+
+See the [quality tool guide](tools/quality/README.md) for configuration and exit codes.
+
 ## Contributing
 
 Contributions may include new datasets, corrections, sources, translations, or additional export formats.
@@ -151,7 +167,7 @@ Contributions may include new datasets, corrections, sources, translations, or a
 3. Describe the schema, format, import steps, and known limitations in the dataset README.
 4. Preserve the Turkmen alphabet in UTF-8 and check for duplicates where possible.
 5. Do not include private, sensitive, or non-redistributable data.
-6. Regenerate affected exports and the dataset catalog, then run the relevant validation checks.
+6. Regenerate affected exports, the dataset catalog, and the quality report, then run the relevant validation checks.
 
 ## Roadmap
 
