@@ -1,6 +1,6 @@
 # tm-data
 
-![Illustration of Turkmenistan, books, and geographic data](assets/tm-data-banner.png)
+![tm-data: open, machine-readable datasets related to Turkmenistan. A dot map of settlements from the geography dataset above a Turkmen carpet göl border.](assets/tm-data-banner.svg)
 
 Open, machine-readable datasets related to Turkmenistan.
 
