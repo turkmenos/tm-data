@@ -49,6 +49,20 @@
         "UTF-8 text handling",
         "Turkmen alphabet validation"
       ]
+    },
+    {
+      "id": "dataset-quality-report",
+      "tool": "go test ./tools/quality ./internal/... && go run ./tools/quality --check",
+      "status": "passed",
+      "scope": "reports/quality/summary.json",
+      "checks": [
+        "per-dataset record counts",
+        "errors and warnings",
+        "unverified records",
+        "missing source metadata",
+        "missing coordinates",
+        "report freshness"
+      ]
     }
   ],
   "limitations": [
