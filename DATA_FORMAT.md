@@ -18,6 +18,8 @@ Shared conventions for new datasets and exports in `tm-data`. Existing datasets 
 | Riddles | JSON array of riddle records plus a source registry | [Riddles](utils/riddles/README.md) |
 | Postal codes | JSON records with string-valued source fields, including codes and coordinates | [Postal codes](utils/postal-codes/README.md) |
 | Colors | JSON array of records with `name_tm`, `name_en`, `hex_code`, and `category`; also available as MySQL SQL | [Colors](utils/colors/README.md) |
+| Currencies | JSON arrays of ISO 4217 codes and code-to-entity rows, with a source registry | [Currencies](utils/currencies/README.md) |
+| Units | JSON arrays of units and SI prefixes, with a source registry | [Units](utils/units/README.md) |
 
 Consult each dataset before assuming a top-level array, identifier type, or naming convention. For example, dictionary fields include `generatedAt` and `partOfSpeech`, while story fields include `created_at` and `page_number`.
 

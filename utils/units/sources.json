@@ -1,0 +1,20 @@
+[
+  {
+    "id": "si-brochure-9-v4.01",
+    "type": "publication",
+    "title": "The International System of Units (SI), 9th edition (2019), V4.01 (June 2026), Tables 2, 5, and 8; and the concise summary V4.01",
+    "creator": "Bureau International des Poids et Mesures (BIPM)",
+    "url": "https://www.bipm.org/en/publications/si-brochure",
+    "accessed_on": "2026-10-31",
+    "rights": "© BIPM. Unit names, symbols, prefixes, and values are reproduced as factual reference data with attribution; no brochure text beyond these table entries is included.",
+    "note": "Base unit definitions are not reproduced. Non-SI units are those listed in Table 8; values for neper, bel, and decibel depend on the quantity and are stored as null. Unicode symbols (µ, Ω, °, ′, ″, Å) follow the brochure."
+  },
+  {
+    "id": "tm-data-turkmen-drafts-2026",
+    "type": "original",
+    "title": "Turkmen names drafted for tm-data",
+    "creator": "tm-data contributors",
+    "rights": "MIT License (repository license)",
+    "note": "Drafted Turkmen names for commonly used units and prefixes. They are not taken from an official Turkmen terminology source and remain unreviewed until checked by a Turkmen-language reviewer."
+  }
+]

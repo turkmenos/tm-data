@@ -1,0 +1,179 @@
+code,numeric,minor_units,name_en,name_tk,name_tk_status,name_tk_source_id,is_fund,source_id
+AED,784,2,UAE Dirham,BAE dirhemi,unreviewed,tm-data-turkmen-drafts-2026,false,iso-4217-list-one-2026-09-17
+AFN,971,2,Afghani,Owgan afganisi,unreviewed,tm-data-turkmen-drafts-2026,false,iso-4217-list-one-2026-09-17
+ALL,008,2,Lek,,,,false,iso-4217-list-one-2026-09-17
+AMD,051,2,Armenian Dram,Ermeni dramy,unreviewed,tm-data-turkmen-drafts-2026,false,iso-4217-list-one-2026-09-17
+AOA,973,2,Kwanza,,,,false,iso-4217-list-one-2026-09-17
+ARS,032,2,Argentine Peso,,,,false,iso-4217-list-one-2026-09-17
+AUD,036,2,Australian Dollar,,,,false,iso-4217-list-one-2026-09-17
+AWG,533,2,Aruban Florin,,,,false,iso-4217-list-one-2026-09-17
+AZN,944,2,Azerbaijan Manat,Azerbaýjan manady,unreviewed,tm-data-turkmen-drafts-2026,false,iso-4217-list-one-2026-09-17
+BAM,977,2,Convertible Mark,,,,false,iso-4217-list-one-2026-09-17
+BBD,052,2,Barbados Dollar,,,,false,iso-4217-list-one-2026-09-17
+BDT,050,2,Taka,,,,false,iso-4217-list-one-2026-09-17
+BHD,048,3,Bahraini Dinar,,,,false,iso-4217-list-one-2026-09-17
+BIF,108,0,Burundi Franc,,,,false,iso-4217-list-one-2026-09-17
+BMD,060,2,Bermudian Dollar,,,,false,iso-4217-list-one-2026-09-17
+BND,096,2,Brunei Dollar,,,,false,iso-4217-list-one-2026-09-17
+BOB,068,2,Boliviano,,,,false,iso-4217-list-one-2026-09-17
+BOV,984,2,Mvdol,,,,true,iso-4217-list-one-2026-09-17
+BRL,986,2,Brazilian Real,,,,false,iso-4217-list-one-2026-09-17
+BSD,044,2,Bahamian Dollar,,,,false,iso-4217-list-one-2026-09-17
+BTN,064,2,Ngultrum,,,,false,iso-4217-list-one-2026-09-17
+BWP,072,2,Pula,,,,false,iso-4217-list-one-2026-09-17
+BYN,933,2,Belarusian Ruble,Belarus rubly,unreviewed,tm-data-turkmen-drafts-2026,false,iso-4217-list-one-2026-09-17
+BZD,084,2,Belize Dollar,,,,false,iso-4217-list-one-2026-09-17
+CAD,124,2,Canadian Dollar,,,,false,iso-4217-list-one-2026-09-17
+CDF,976,2,Congolese Franc,,,,false,iso-4217-list-one-2026-09-17
+CHE,947,2,WIR Euro,,,,true,iso-4217-list-one-2026-09-17
+CHF,756,2,Swiss Franc,Şweýsar franky,unreviewed,tm-data-turkmen-drafts-2026,false,iso-4217-list-one-2026-09-17
+CHW,948,2,WIR Franc,,,,true,iso-4217-list-one-2026-09-17
+CLF,990,4,Unidad de Fomento,,,,true,iso-4217-list-one-2026-09-17
+CLP,152,0,Chilean Peso,,,,false,iso-4217-list-one-2026-09-17
+CNY,156,2,Yuan Renminbi,Hytaý ýuany,unreviewed,tm-data-turkmen-drafts-2026,false,iso-4217-list-one-2026-09-17
+COP,170,2,Colombian Peso,,,,false,iso-4217-list-one-2026-09-17
+COU,970,2,Unidad de Valor Real,,,,true,iso-4217-list-one-2026-09-17
+CRC,188,2,Costa Rican Colon,,,,false,iso-4217-list-one-2026-09-17
+CUP,192,2,Cuban Peso,,,,false,iso-4217-list-one-2026-09-17
+CVE,132,2,Cabo Verde Escudo,,,,false,iso-4217-list-one-2026-09-17
+CZK,203,2,Czech Koruna,,,,false,iso-4217-list-one-2026-09-17
+DJF,262,0,Djibouti Franc,,,,false,iso-4217-list-one-2026-09-17
+DKK,208,2,Danish Krone,,,,false,iso-4217-list-one-2026-09-17
+DOP,214,2,Dominican Peso,,,,false,iso-4217-list-one-2026-09-17
+DZD,012,2,Algerian Dinar,,,,false,iso-4217-list-one-2026-09-17
+EGP,818,2,Egyptian Pound,,,,false,iso-4217-list-one-2026-09-17
+ERN,232,2,Nakfa,,,,false,iso-4217-list-one-2026-09-17
+ETB,230,2,Ethiopian Birr,,,,false,iso-4217-list-one-2026-09-17
+EUR,978,2,Euro,Ýewro,unreviewed,tm-data-turkmen-drafts-2026,false,iso-4217-list-one-2026-09-17
+FJD,242,2,Fiji Dollar,,,,false,iso-4217-list-one-2026-09-17
+FKP,238,2,Falkland Islands Pound,,,,false,iso-4217-list-one-2026-09-17
+GBP,826,2,Pound Sterling,Funt sterling,unreviewed,tm-data-turkmen-drafts-2026,false,iso-4217-list-one-2026-09-17
+GEL,981,2,Lari,Gruzin larisi,unreviewed,tm-data-turkmen-drafts-2026,false,iso-4217-list-one-2026-09-17
+GHS,936,2,Ghana Cedi,,,,false,iso-4217-list-one-2026-09-17
+GIP,292,2,Gibraltar Pound,,,,false,iso-4217-list-one-2026-09-17
+GMD,270,2,Dalasi,,,,false,iso-4217-list-one-2026-09-17
+GNF,324,0,Guinean Franc,,,,false,iso-4217-list-one-2026-09-17
+GTQ,320,2,Quetzal,,,,false,iso-4217-list-one-2026-09-17
+GYD,328,2,Guyana Dollar,,,,false,iso-4217-list-one-2026-09-17
+HKD,344,2,Hong Kong Dollar,,,,false,iso-4217-list-one-2026-09-17
+HNL,340,2,Lempira,,,,false,iso-4217-list-one-2026-09-17
+HTG,332,2,Gourde,,,,false,iso-4217-list-one-2026-09-17
+HUF,348,2,Forint,,,,false,iso-4217-list-one-2026-09-17
+IDR,360,2,Rupiah,,,,false,iso-4217-list-one-2026-09-17
+ILS,376,2,New Israeli Sheqel,,,,false,iso-4217-list-one-2026-09-17
+INR,356,2,Indian Rupee,Hindi rupiýasy,unreviewed,tm-data-turkmen-drafts-2026,false,iso-4217-list-one-2026-09-17
+IQD,368,3,Iraqi Dinar,,,,false,iso-4217-list-one-2026-09-17
+IRR,364,2,Iranian Rial,Eýran rialy,unreviewed,tm-data-turkmen-drafts-2026,false,iso-4217-list-one-2026-09-17
+ISK,352,0,Iceland Krona,,,,false,iso-4217-list-one-2026-09-17
+JMD,388,2,Jamaican Dollar,,,,false,iso-4217-list-one-2026-09-17
+JOD,400,3,Jordanian Dinar,,,,false,iso-4217-list-one-2026-09-17
+JPY,392,0,Yen,Ýapon ýeni,unreviewed,tm-data-turkmen-drafts-2026,false,iso-4217-list-one-2026-09-17
+KES,404,2,Kenyan Shilling,,,,false,iso-4217-list-one-2026-09-17
+KGS,417,2,Som,Gyrgyz somy,unreviewed,tm-data-turkmen-drafts-2026,false,iso-4217-list-one-2026-09-17
+KHR,116,2,Riel,,,,false,iso-4217-list-one-2026-09-17
+KMF,174,0,Comorian Franc ,,,,false,iso-4217-list-one-2026-09-17
+KPW,408,2,North Korean Won,,,,false,iso-4217-list-one-2026-09-17
+KRW,410,0,Won,Koreý wony,unreviewed,tm-data-turkmen-drafts-2026,false,iso-4217-list-one-2026-09-17
+KWD,414,3,Kuwaiti Dinar,,,,false,iso-4217-list-one-2026-09-17
+KYD,136,2,Cayman Islands Dollar,,,,false,iso-4217-list-one-2026-09-17
+KZT,398,2,Tenge,Gazak teňňesi,unreviewed,tm-data-turkmen-drafts-2026,false,iso-4217-list-one-2026-09-17
+LAK,418,2,Lao Kip,,,,false,iso-4217-list-one-2026-09-17
+LBP,422,2,Lebanese Pound,,,,false,iso-4217-list-one-2026-09-17
+LKR,144,2,Sri Lanka Rupee,,,,false,iso-4217-list-one-2026-09-17
+LRD,430,2,Liberian Dollar,,,,false,iso-4217-list-one-2026-09-17
+LSL,426,2,Loti,,,,false,iso-4217-list-one-2026-09-17
+LYD,434,3,Libyan Dinar,,,,false,iso-4217-list-one-2026-09-17
+MAD,504,2,Moroccan Dirham,,,,false,iso-4217-list-one-2026-09-17
+MDL,498,2,Moldovan Leu,,,,false,iso-4217-list-one-2026-09-17
+MGA,969,2,Malagasy Ariary,,,,false,iso-4217-list-one-2026-09-17
+MKD,807,2,Denar,,,,false,iso-4217-list-one-2026-09-17
+MMK,104,2,Kyat,,,,false,iso-4217-list-one-2026-09-17
+MNT,496,2,Tugrik,,,,false,iso-4217-list-one-2026-09-17
+MOP,446,2,Pataca,,,,false,iso-4217-list-one-2026-09-17
+MRU,929,2,Ouguiya,,,,false,iso-4217-list-one-2026-09-17
+MUR,480,2,Mauritius Rupee,,,,false,iso-4217-list-one-2026-09-17
+MVR,462,2,Rufiyaa,,,,false,iso-4217-list-one-2026-09-17
+MWK,454,2,Malawi Kwacha,,,,false,iso-4217-list-one-2026-09-17
+MXN,484,2,Mexican Peso,,,,false,iso-4217-list-one-2026-09-17
+MXV,979,2,Mexican Unidad de Inversion (UDI),,,,true,iso-4217-list-one-2026-09-17
+MYR,458,2,Malaysian Ringgit,,,,false,iso-4217-list-one-2026-09-17
+MZN,943,2,Mozambique Metical,,,,false,iso-4217-list-one-2026-09-17
+NAD,516,2,Namibia Dollar,,,,false,iso-4217-list-one-2026-09-17
+NGN,566,2,Naira,,,,false,iso-4217-list-one-2026-09-17
+NIO,558,2,Cordoba Oro,,,,false,iso-4217-list-one-2026-09-17
+NOK,578,2,Norwegian Krone,,,,false,iso-4217-list-one-2026-09-17
+NPR,524,2,Nepalese Rupee,,,,false,iso-4217-list-one-2026-09-17
+NZD,554,2,New Zealand Dollar,,,,false,iso-4217-list-one-2026-09-17
+OMR,512,3,Rial Omani,,,,false,iso-4217-list-one-2026-09-17
+PAB,590,2,Balboa,,,,false,iso-4217-list-one-2026-09-17
+PEN,604,2,Sol,,,,false,iso-4217-list-one-2026-09-17
+PGK,598,2,Kina,,,,false,iso-4217-list-one-2026-09-17
+PHP,608,2,Philippine Peso,,,,false,iso-4217-list-one-2026-09-17
+PKR,586,2,Pakistan Rupee,Pakistan rupiýasy,unreviewed,tm-data-turkmen-drafts-2026,false,iso-4217-list-one-2026-09-17
+PLN,985,2,Zloty,,,,false,iso-4217-list-one-2026-09-17
+PYG,600,0,Guarani,,,,false,iso-4217-list-one-2026-09-17
+QAR,634,2,Qatari Rial,,,,false,iso-4217-list-one-2026-09-17
+RON,946,2,Romanian Leu,,,,false,iso-4217-list-one-2026-09-17
+RSD,941,2,Serbian Dinar,,,,false,iso-4217-list-one-2026-09-17
+RUB,643,2,Russian Ruble,Rus rubly,unreviewed,tm-data-turkmen-drafts-2026,false,iso-4217-list-one-2026-09-17
+RWF,646,0,Rwanda Franc,,,,false,iso-4217-list-one-2026-09-17
+SAR,682,2,Saudi Riyal,Saud rialy,unreviewed,tm-data-turkmen-drafts-2026,false,iso-4217-list-one-2026-09-17
+SBD,090,2,Solomon Islands Dollar,,,,false,iso-4217-list-one-2026-09-17
+SCR,690,2,Seychelles Rupee,,,,false,iso-4217-list-one-2026-09-17
+SDG,938,2,Sudanese Pound,,,,false,iso-4217-list-one-2026-09-17
+SEK,752,2,Swedish Krona,,,,false,iso-4217-list-one-2026-09-17
+SGD,702,2,Singapore Dollar,,,,false,iso-4217-list-one-2026-09-17
+SHP,654,2,Saint Helena Pound,,,,false,iso-4217-list-one-2026-09-17
+SLE,925,2,Leone,,,,false,iso-4217-list-one-2026-09-17
+SOS,706,2,Somali Shilling,,,,false,iso-4217-list-one-2026-09-17
+SRD,968,2,Surinam Dollar,,,,false,iso-4217-list-one-2026-09-17
+SSP,728,2,South Sudanese Pound,,,,false,iso-4217-list-one-2026-09-17
+STN,930,2,Dobra,,,,false,iso-4217-list-one-2026-09-17
+SVC,222,2,El Salvador Colon,,,,false,iso-4217-list-one-2026-09-17
+SYP,760,2,Syrian Pound,,,,false,iso-4217-list-one-2026-09-17
+SZL,748,2,Lilangeni,,,,false,iso-4217-list-one-2026-09-17
+THB,764,2,Baht,,,,false,iso-4217-list-one-2026-09-17
+TJS,972,2,Somoni,Täjik somonisi,unreviewed,tm-data-turkmen-drafts-2026,false,iso-4217-list-one-2026-09-17
+TMT,934,2,Turkmenistan New Manat,Türkmen manady,unreviewed,tm-data-turkmen-drafts-2026,false,iso-4217-list-one-2026-09-17
+TND,788,3,Tunisian Dinar,,,,false,iso-4217-list-one-2026-09-17
+TOP,776,2,Pa’anga,,,,false,iso-4217-list-one-2026-09-17
+TRY,949,2,Turkish Lira,Türk lirasy,unreviewed,tm-data-turkmen-drafts-2026,false,iso-4217-list-one-2026-09-17
+TTD,780,2,Trinidad and Tobago Dollar,,,,false,iso-4217-list-one-2026-09-17
+TWD,901,2,New Taiwan Dollar,,,,false,iso-4217-list-one-2026-09-17
+TZS,834,2,Tanzanian Shilling,,,,false,iso-4217-list-one-2026-09-17
+UAH,980,2,Hryvnia,Ukrain griwnasy,unreviewed,tm-data-turkmen-drafts-2026,false,iso-4217-list-one-2026-09-17
+UGX,800,0,Uganda Shilling,,,,false,iso-4217-list-one-2026-09-17
+USD,840,2,US Dollar,ABŞ dollary,unreviewed,tm-data-turkmen-drafts-2026,false,iso-4217-list-one-2026-09-17
+USN,997,2,US Dollar (Next day),,,,true,iso-4217-list-one-2026-09-17
+UYI,940,0,Uruguay Peso en Unidades Indexadas (UI),,,,true,iso-4217-list-one-2026-09-17
+UYU,858,2,Peso Uruguayo,,,,false,iso-4217-list-one-2026-09-17
+UYW,927,4,Unidad Previsional,,,,true,iso-4217-list-one-2026-09-17
+UZS,860,2,Uzbekistan Sum,Özbek somy,unreviewed,tm-data-turkmen-drafts-2026,false,iso-4217-list-one-2026-09-17
+VED,926,2,Bolívar Soberano,,,,false,iso-4217-list-one-2026-09-17
+VES,928,2,Bolívar Soberano,,,,false,iso-4217-list-one-2026-09-17
+VND,704,0,Dong,,,,false,iso-4217-list-one-2026-09-17
+VUV,548,0,Vatu,,,,false,iso-4217-list-one-2026-09-17
+WST,882,2,Tala,,,,false,iso-4217-list-one-2026-09-17
+XAD,396,2,Arab Accounting Dinar,,,,true,iso-4217-list-one-2026-09-17
+XAF,950,0,CFA Franc BEAC,,,,false,iso-4217-list-one-2026-09-17
+XAG,961,,Silver,,,,false,iso-4217-list-one-2026-09-17
+XAU,959,,Gold,,,,false,iso-4217-list-one-2026-09-17
+XBA,955,,Bond Markets Unit European Composite Unit (EURCO),,,,false,iso-4217-list-one-2026-09-17
+XBB,956,,Bond Markets Unit European Monetary Unit (E.M.U.-6),,,,false,iso-4217-list-one-2026-09-17
+XBC,957,,Bond Markets Unit European Unit of Account 9 (E.U.A.-9),,,,false,iso-4217-list-one-2026-09-17
+XBD,958,,Bond Markets Unit European Unit of Account 17 (E.U.A.-17),,,,false,iso-4217-list-one-2026-09-17
+XCD,951,2,East Caribbean Dollar,,,,false,iso-4217-list-one-2026-09-17
+XCG,532,2,Caribbean Guilder,,,,false,iso-4217-list-one-2026-09-17
+XDR,960,,SDR (Special Drawing Right),,,,false,iso-4217-list-one-2026-09-17
+XOF,952,0,CFA Franc BCEAO,,,,false,iso-4217-list-one-2026-09-17
+XPD,964,,Palladium,,,,false,iso-4217-list-one-2026-09-17
+XPF,953,0,CFP Franc,,,,false,iso-4217-list-one-2026-09-17
+XPT,962,,Platinum,,,,false,iso-4217-list-one-2026-09-17
+XSU,994,,Sucre,,,,false,iso-4217-list-one-2026-09-17
+XTS,963,,Codes specifically reserved for testing purposes,,,,false,iso-4217-list-one-2026-09-17
+XUA,965,,ADB Unit of Account,,,,false,iso-4217-list-one-2026-09-17
+XXX,999,,The codes assigned for transactions where no currency is involved,,,,false,iso-4217-list-one-2026-09-17
+YER,886,2,Yemeni Rial,,,,false,iso-4217-list-one-2026-09-17
+ZAR,710,2,Rand,,,,false,iso-4217-list-one-2026-09-17
+ZMW,967,2,Zambian Kwacha,,,,false,iso-4217-list-one-2026-09-17
+ZWG,924,2,Zimbabwe Gold,,,,false,iso-4217-list-one-2026-09-17

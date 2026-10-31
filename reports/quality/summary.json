@@ -7,8 +7,8 @@
     "integrity_rules": "tools/integrity/rules.json"
   },
   "totals": {
-    "datasets": 16,
-    "passed": 13,
+    "datasets": 18,
+    "passed": 15,
     "warning": 3,
     "error": 0,
     "errors": 0,
@@ -275,6 +275,38 @@
       "warnings": []
     },
     {
+      "dataset": "utils-currencies",
+      "title": "Currencies",
+      "location": "utils/currencies",
+      "version": "sha256:b77b8f2c10117b978dbfba35cc90aa4b049fe9a2c5c454628cdf5530cb8689b1",
+      "record_count": 178,
+      "record_unit": "records",
+      "status": "passed",
+      "checks": {
+        "utf8": "passed",
+        "syntax": "passed",
+        "duplicates": "passed",
+        "schema": "passed",
+        "references": "passed",
+        "metrics": "not_configured"
+      },
+      "metrics": {
+        "files_checked": 5,
+        "invalid_utf8_files": 0,
+        "syntax_errors": 0,
+        "duplicate_records": 0,
+        "missing_required_fields": 0,
+        "schema_violations": 0,
+        "referential_integrity_errors": 0,
+        "unverified_records": null,
+        "missing_sources": null,
+        "missing_coordinates": null
+      },
+      "error_count": 0,
+      "errors": [],
+      "warnings": []
+    },
+    {
       "dataset": "utils-holidays",
       "title": "Holidays",
       "location": "utils/holidays",
@@ -527,6 +559,38 @@
         "missing_required_fields": null,
         "schema_violations": null,
         "referential_integrity_errors": null,
+        "unverified_records": null,
+        "missing_sources": null,
+        "missing_coordinates": null
+      },
+      "error_count": 0,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "dataset": "utils-units",
+      "title": "Units",
+      "location": "utils/units",
+      "version": "sha256:c45d71a47b0c1de2e6b27b07fc96cd6d7b857e262d9fd64826e2a8c95ac1f4a2",
+      "record_count": 52,
+      "record_unit": "records",
+      "status": "passed",
+      "checks": {
+        "utf8": "passed",
+        "syntax": "passed",
+        "duplicates": "passed",
+        "schema": "passed",
+        "references": "passed",
+        "metrics": "not_configured"
+      },
+      "metrics": {
+        "files_checked": 5,
+        "invalid_utf8_files": 0,
+        "syntax_errors": 0,
+        "duplicate_records": 0,
+        "missing_required_fields": 0,
+        "schema_violations": 0,
+        "referential_integrity_errors": 0,
         "unverified_records": null,
         "missing_sources": null,
         "missing_coordinates": null

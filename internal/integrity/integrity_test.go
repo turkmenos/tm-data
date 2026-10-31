@@ -59,3 +59,15 @@ func TestValidateReferences(t *testing.T) {
 		t.Fatalf("unexpected issues %+v", issues)
 	}
 }
+
+func TestNullOptionalValuesAreSkipped(t *testing.T) {
+	rule := Dataset{
+		Path:          "a.json",
+		AllowedValues: map[string][]string{"status": {"unreviewed"}},
+		Ranges:        map[string]numRange{"n": {Min: 0, Max: 4}},
+	}
+	issues := ValidateDataset(rule, records(t, `[{"status":null,"n":null},{"status":"x","n":9}]`))
+	if got := kinds(issues); len(issues) != 2 || got[KindAllowedValue] != 1 || got[KindRange] != 1 || issues[0].Record != 2 {
+		t.Fatalf("unexpected issues %+v", issues)
+	}
+}

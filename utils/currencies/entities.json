@@ -1,0 +1,1387 @@
+[
+  {
+    "currency_code": "AED",
+    "entity": "UNITED ARAB EMIRATES (THE)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "AFN",
+    "entity": "AFGHANISTAN",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "ALL",
+    "entity": "ALBANIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "AMD",
+    "entity": "ARMENIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "AOA",
+    "entity": "ANGOLA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "ARS",
+    "entity": "ARGENTINA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "AUD",
+    "entity": "AUSTRALIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "AUD",
+    "entity": "CHRISTMAS ISLAND",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "AUD",
+    "entity": "COCOS (KEELING) ISLANDS (THE)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "AUD",
+    "entity": "HEARD ISLAND AND McDONALD ISLANDS",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "AUD",
+    "entity": "KIRIBATI",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "AUD",
+    "entity": "NAURU",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "AUD",
+    "entity": "NORFOLK ISLAND",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "AUD",
+    "entity": "TUVALU",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "AWG",
+    "entity": "ARUBA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "AZN",
+    "entity": "AZERBAIJAN",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "BAM",
+    "entity": "BOSNIA AND HERZEGOVINA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "BBD",
+    "entity": "BARBADOS",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "BDT",
+    "entity": "BANGLADESH",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "BHD",
+    "entity": "BAHRAIN",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "BIF",
+    "entity": "BURUNDI",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "BMD",
+    "entity": "BERMUDA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "BND",
+    "entity": "BRUNEI DARUSSALAM",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "BOB",
+    "entity": "BOLIVIA (PLURINATIONAL STATE OF)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "BOV",
+    "entity": "BOLIVIA (PLURINATIONAL STATE OF)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "BRL",
+    "entity": "BRAZIL",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "BSD",
+    "entity": "BAHAMAS (THE)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "BTN",
+    "entity": "BHUTAN",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "BWP",
+    "entity": "BOTSWANA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "BYN",
+    "entity": "BELARUS",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "BZD",
+    "entity": "BELIZE",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "CAD",
+    "entity": "CANADA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "CDF",
+    "entity": "CONGO (THE DEMOCRATIC REPUBLIC OF THE)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "CHE",
+    "entity": "SWITZERLAND",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "CHF",
+    "entity": "LIECHTENSTEIN",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "CHF",
+    "entity": "SWITZERLAND",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "CHW",
+    "entity": "SWITZERLAND",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "CLF",
+    "entity": "CHILE",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "CLP",
+    "entity": "CHILE",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "CNY",
+    "entity": "CHINA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "COP",
+    "entity": "COLOMBIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "COU",
+    "entity": "COLOMBIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "CRC",
+    "entity": "COSTA RICA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "CUP",
+    "entity": "CUBA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "CVE",
+    "entity": "CABO VERDE",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "CZK",
+    "entity": "CZECHIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "DJF",
+    "entity": "DJIBOUTI",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "DKK",
+    "entity": "DENMARK",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "DKK",
+    "entity": "FAROE ISLANDS (THE)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "DKK",
+    "entity": "GREENLAND",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "DOP",
+    "entity": "DOMINICAN REPUBLIC (THE)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "DZD",
+    "entity": "ALGERIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EGP",
+    "entity": "EGYPT",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "ERN",
+    "entity": "ERITREA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "ETB",
+    "entity": "ETHIOPIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "ANDORRA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "AUSTRIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "BELGIUM",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "BULGARIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "CROATIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "CYPRUS",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "ESTONIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "EUROPEAN UNION",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "FINLAND",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "FRANCE",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "FRENCH GUIANA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "FRENCH SOUTHERN TERRITORIES (THE)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "GERMANY",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "GREECE",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "GUADELOUPE",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "HOLY SEE (THE)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "IRELAND",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "ITALY",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "LATVIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "LITHUANIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "LUXEMBOURG",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "MALTA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "MARTINIQUE",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "MAYOTTE",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "MONACO",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "MONTENEGRO",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "NETHERLANDS (THE)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "PORTUGAL",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "RÉUNION",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "SAINT BARTHÉLEMY",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "SAINT MARTIN (FRENCH PART)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "SAINT PIERRE AND MIQUELON",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "SAN MARINO",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "SLOVAKIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "SLOVENIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "SPAIN",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "EUR",
+    "entity": "ÅLAND ISLANDS",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "FJD",
+    "entity": "FIJI",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "FKP",
+    "entity": "FALKLAND ISLANDS (THE) [MALVINAS]",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "GBP",
+    "entity": "GUERNSEY",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "GBP",
+    "entity": "ISLE OF MAN",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "GBP",
+    "entity": "JERSEY",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "GBP",
+    "entity": "UNITED KINGDOM OF GREAT BRITAIN AND NORTHERN IRELAND (THE)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "GEL",
+    "entity": "GEORGIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "GHS",
+    "entity": "GHANA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "GIP",
+    "entity": "GIBRALTAR",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "GMD",
+    "entity": "GAMBIA (THE)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "GNF",
+    "entity": "GUINEA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "GTQ",
+    "entity": "GUATEMALA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "GYD",
+    "entity": "GUYANA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "HKD",
+    "entity": "HONG KONG",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "HNL",
+    "entity": "HONDURAS",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "HTG",
+    "entity": "HAITI",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "HUF",
+    "entity": "HUNGARY",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "IDR",
+    "entity": "INDONESIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "ILS",
+    "entity": "ISRAEL",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "INR",
+    "entity": "BHUTAN",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "INR",
+    "entity": "INDIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "IQD",
+    "entity": "IRAQ",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "IRR",
+    "entity": "IRAN (ISLAMIC REPUBLIC OF)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "ISK",
+    "entity": "ICELAND",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "JMD",
+    "entity": "JAMAICA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "JOD",
+    "entity": "JORDAN",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "JPY",
+    "entity": "JAPAN",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "KES",
+    "entity": "KENYA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "KGS",
+    "entity": "KYRGYZSTAN",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "KHR",
+    "entity": "CAMBODIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "KMF",
+    "entity": "COMOROS (THE)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "KPW",
+    "entity": "KOREA (THE DEMOCRATIC PEOPLE’S REPUBLIC OF)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "KRW",
+    "entity": "KOREA (THE REPUBLIC OF)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "KWD",
+    "entity": "KUWAIT",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "KYD",
+    "entity": "CAYMAN ISLANDS (THE)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "KZT",
+    "entity": "KAZAKHSTAN",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "LAK",
+    "entity": "LAO PEOPLE’S DEMOCRATIC REPUBLIC (THE)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "LBP",
+    "entity": "LEBANON",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "LKR",
+    "entity": "SRI LANKA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "LRD",
+    "entity": "LIBERIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "LSL",
+    "entity": "LESOTHO",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "LYD",
+    "entity": "LIBYA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "MAD",
+    "entity": "MOROCCO",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "MAD",
+    "entity": "WESTERN SAHARA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "MDL",
+    "entity": "MOLDOVA (THE REPUBLIC OF)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "MGA",
+    "entity": "MADAGASCAR",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "MKD",
+    "entity": "NORTH MACEDONIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "MMK",
+    "entity": "MYANMAR",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "MNT",
+    "entity": "MONGOLIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "MOP",
+    "entity": "MACAO",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "MRU",
+    "entity": "MAURITANIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "MUR",
+    "entity": "MAURITIUS",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "MVR",
+    "entity": "MALDIVES",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "MWK",
+    "entity": "MALAWI",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "MXN",
+    "entity": "MEXICO",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "MXV",
+    "entity": "MEXICO",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "MYR",
+    "entity": "MALAYSIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "MZN",
+    "entity": "MOZAMBIQUE",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "NAD",
+    "entity": "NAMIBIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "NGN",
+    "entity": "NIGERIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "NIO",
+    "entity": "NICARAGUA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "NOK",
+    "entity": "BOUVET ISLAND",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "NOK",
+    "entity": "NORWAY",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "NOK",
+    "entity": "SVALBARD AND JAN MAYEN",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "NPR",
+    "entity": "NEPAL",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "NZD",
+    "entity": "COOK ISLANDS (THE)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "NZD",
+    "entity": "NEW ZEALAND",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "NZD",
+    "entity": "NIUE",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "NZD",
+    "entity": "PITCAIRN",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "NZD",
+    "entity": "TOKELAU",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "OMR",
+    "entity": "OMAN",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "PAB",
+    "entity": "PANAMA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "PEN",
+    "entity": "PERU",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "PGK",
+    "entity": "PAPUA NEW GUINEA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "PHP",
+    "entity": "PHILIPPINES (THE)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "PKR",
+    "entity": "PAKISTAN",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "PLN",
+    "entity": "POLAND",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "PYG",
+    "entity": "PARAGUAY",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "QAR",
+    "entity": "QATAR",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "RON",
+    "entity": "ROMANIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "RSD",
+    "entity": "SERBIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "RUB",
+    "entity": "RUSSIAN FEDERATION (THE)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "RWF",
+    "entity": "RWANDA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "SAR",
+    "entity": "SAUDI ARABIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "SBD",
+    "entity": "SOLOMON ISLANDS",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "SCR",
+    "entity": "SEYCHELLES",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "SDG",
+    "entity": "SUDAN (THE)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "SEK",
+    "entity": "SWEDEN",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "SGD",
+    "entity": "SINGAPORE",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "SHP",
+    "entity": "SAINT HELENA, ASCENSION AND TRISTAN DA CUNHA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "SLE",
+    "entity": "SIERRA LEONE",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "SOS",
+    "entity": "SOMALIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "SRD",
+    "entity": "SURINAME",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "SSP",
+    "entity": "SOUTH SUDAN",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "STN",
+    "entity": "SAO TOME AND PRINCIPE",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "SVC",
+    "entity": "EL SALVADOR",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "SYP",
+    "entity": "SYRIAN ARAB REPUBLIC",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "SZL",
+    "entity": "ESWATINI",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "THB",
+    "entity": "THAILAND",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "TJS",
+    "entity": "TAJIKISTAN",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "TMT",
+    "entity": "TURKMENISTAN",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "TND",
+    "entity": "TUNISIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "TOP",
+    "entity": "TONGA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "TRY",
+    "entity": "TÜRKİYE",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "TTD",
+    "entity": "TRINIDAD AND TOBAGO",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "TWD",
+    "entity": "TAIWAN (PROVINCE OF CHINA)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "TZS",
+    "entity": "TANZANIA, UNITED REPUBLIC OF",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "UAH",
+    "entity": "UKRAINE",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "UGX",
+    "entity": "UGANDA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "USD",
+    "entity": "AMERICAN SAMOA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "USD",
+    "entity": "BONAIRE, SINT EUSTATIUS AND SABA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "USD",
+    "entity": "BRITISH INDIAN OCEAN TERRITORY (THE)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "USD",
+    "entity": "ECUADOR",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "USD",
+    "entity": "EL SALVADOR",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "USD",
+    "entity": "GUAM",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "USD",
+    "entity": "HAITI",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "USD",
+    "entity": "MARSHALL ISLANDS (THE)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "USD",
+    "entity": "MICRONESIA (FEDERATED STATES OF)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "USD",
+    "entity": "NORTHERN MARIANA ISLANDS (THE)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "USD",
+    "entity": "PALAU",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "USD",
+    "entity": "PANAMA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "USD",
+    "entity": "PUERTO RICO",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "USD",
+    "entity": "TIMOR-LESTE",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "USD",
+    "entity": "TURKS AND CAICOS ISLANDS (THE)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "USD",
+    "entity": "UNITED STATES MINOR OUTLYING ISLANDS (THE)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "USD",
+    "entity": "UNITED STATES OF AMERICA (THE)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "USD",
+    "entity": "VIRGIN ISLANDS (BRITISH)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "USD",
+    "entity": "VIRGIN ISLANDS (U.S.)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "USN",
+    "entity": "UNITED STATES OF AMERICA (THE)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "UYI",
+    "entity": "URUGUAY",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "UYU",
+    "entity": "URUGUAY",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "UYW",
+    "entity": "URUGUAY",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "UZS",
+    "entity": "UZBEKISTAN",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "VED",
+    "entity": "VENEZUELA (BOLIVARIAN REPUBLIC OF)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "VES",
+    "entity": "VENEZUELA (BOLIVARIAN REPUBLIC OF)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "VND",
+    "entity": "VIET NAM",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "VUV",
+    "entity": "VANUATU",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "WST",
+    "entity": "SAMOA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XAD",
+    "entity": "ARAB MONETARY FUND",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XAF",
+    "entity": "CAMEROON",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XAF",
+    "entity": "CENTRAL AFRICAN REPUBLIC (THE)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XAF",
+    "entity": "CHAD",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XAF",
+    "entity": "CONGO (THE)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XAF",
+    "entity": "EQUATORIAL GUINEA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XAF",
+    "entity": "GABON",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XAG",
+    "entity": "ZZ11_Silver",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XAU",
+    "entity": "ZZ08_Gold",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XBA",
+    "entity": "ZZ01_Bond Markets Unit European_EURCO",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XBB",
+    "entity": "ZZ02_Bond Markets Unit European_EMU-6",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XBC",
+    "entity": "ZZ03_Bond Markets Unit European_EUA-9",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XBD",
+    "entity": "ZZ04_Bond Markets Unit European_EUA-17",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XCD",
+    "entity": "ANGUILLA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XCD",
+    "entity": "ANTIGUA AND BARBUDA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XCD",
+    "entity": "DOMINICA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XCD",
+    "entity": "GRENADA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XCD",
+    "entity": "MONTSERRAT",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XCD",
+    "entity": "SAINT KITTS AND NEVIS",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XCD",
+    "entity": "SAINT LUCIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XCD",
+    "entity": "SAINT VINCENT AND THE GRENADINES",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XCG",
+    "entity": "CURAÇAO",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XCG",
+    "entity": "SINT MAARTEN (DUTCH PART)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XDR",
+    "entity": "INTERNATIONAL MONETARY FUND (IMF) ",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XOF",
+    "entity": "BENIN",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XOF",
+    "entity": "BURKINA FASO",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XOF",
+    "entity": "CÔTE D'IVOIRE",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XOF",
+    "entity": "GUINEA-BISSAU",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XOF",
+    "entity": "MALI",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XOF",
+    "entity": "NIGER (THE)",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XOF",
+    "entity": "SENEGAL",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XOF",
+    "entity": "TOGO",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XPD",
+    "entity": "ZZ09_Palladium",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XPF",
+    "entity": "FRENCH POLYNESIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XPF",
+    "entity": "NEW CALEDONIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XPF",
+    "entity": "WALLIS AND FUTUNA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XPT",
+    "entity": "ZZ10_Platinum",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XSU",
+    "entity": "SISTEMA UNITARIO DE COMPENSACION REGIONAL DE PAGOS \"SUCRE\"",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XTS",
+    "entity": "ZZ06_Testing_Code",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XUA",
+    "entity": "MEMBER COUNTRIES OF THE AFRICAN DEVELOPMENT BANK GROUP",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "XXX",
+    "entity": "ZZ07_No_Currency",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "YER",
+    "entity": "YEMEN",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "ZAR",
+    "entity": "LESOTHO",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "ZAR",
+    "entity": "NAMIBIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "ZAR",
+    "entity": "SOUTH AFRICA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "ZMW",
+    "entity": "ZAMBIA",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  },
+  {
+    "currency_code": "ZWG",
+    "entity": "ZIMBABWE",
+    "source_id": "iso-4217-list-one-2026-09-17"
+  }
+]

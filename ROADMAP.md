@@ -18,6 +18,7 @@ Planned improvements for `tm-data`. Items are proposals without fixed release da
 
 ## New and expanded datasets
 
+- [x] Add [ISO 4217 currencies](utils/currencies/README.md) and [SI units and prefixes](utils/units/README.md) with sources; Turkmen names await review.
 - [ ] Add thematic vocabulary for animals, plants, food, occupations, and family relationships.
 - [ ] Add Turkmen interface translations for common buttons, labels, and error messages.
 - [ ] Document the Turkmen alphabet, sorting conventions, and Latin–Cyrillic transliteration mappings.

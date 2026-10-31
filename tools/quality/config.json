@@ -67,6 +67,10 @@
       "record_resources": [{ "pattern": "utils/country-names/countries.json" }]
     },
     {
+      "id": "utils-currencies",
+      "record_resources": [{ "pattern": "utils/currencies/currencies.json" }]
+    },
+    {
       "id": "utils-holidays",
       "record_resources": [{ "pattern": "utils/holidays/holidays.json" }]
     },
@@ -118,6 +122,10 @@
     {
       "id": "utils-transliteration",
       "record_resources": [{ "pattern": "utils/transliteration/rules.json" }]
+    },
+    {
+      "id": "utils-units",
+      "record_resources": [{ "pattern": "utils/units/units.json" }]
     }
   ]
 }

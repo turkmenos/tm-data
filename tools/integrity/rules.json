@@ -272,6 +272,49 @@
       "allowed_values": { "category": ["basic", "shade", "metallic", "modifier", "pattern"] }
     },
     {
+      "path": "utils/currencies/currencies.json",
+      "required": { "code": "string", "numeric": "string", "name_en": "string", "is_fund": "boolean", "source_id": "string" },
+      "non_empty": ["code", "numeric", "name_en", "source_id"],
+      "unique": [["code"], ["numeric"]],
+      "allowed_values": { "name_tk_status": ["unreviewed"] },
+      "ranges": { "minor_units": { "min": 0, "max": 4 } }
+    },
+    {
+      "path": "utils/currencies/entities.json",
+      "required": { "currency_code": "string", "entity": "string", "source_id": "string" },
+      "non_empty": ["currency_code", "entity", "source_id"],
+      "unique": [["currency_code", "entity"]]
+    },
+    {
+      "path": "utils/currencies/sources.json",
+      "required": { "id": "string", "type": "string", "title": "string", "creator": "string", "rights": "string", "note": "string" },
+      "non_empty": ["id", "type", "title", "creator", "rights", "note"],
+      "unique": [["id"]],
+      "allowed_values": { "type": ["original", "publication", "website"] }
+    },
+    {
+      "path": "utils/units/units.json",
+      "required": { "id": "string", "category": "string", "quantity_en": "string", "name_en": "string", "source_id": "string" },
+      "non_empty": ["id", "category", "quantity_en", "name_en", "source_id"],
+      "unique": [["id"]],
+      "allowed_values": { "category": ["si_base", "si_derived", "non_si"], "name_tk_status": ["unreviewed"] }
+    },
+    {
+      "path": "utils/units/prefixes.json",
+      "required": { "name_en": "string", "symbol": "string", "exponent": "number", "source_id": "string" },
+      "non_empty": ["name_en", "symbol", "source_id"],
+      "unique": [["name_en"], ["symbol"], ["exponent"]],
+      "allowed_values": { "name_tk_status": ["unreviewed"] },
+      "ranges": { "exponent": { "min": -30, "max": 30 } }
+    },
+    {
+      "path": "utils/units/sources.json",
+      "required": { "id": "string", "type": "string", "title": "string", "creator": "string", "rights": "string", "note": "string" },
+      "non_empty": ["id", "type", "title", "creator", "rights", "note"],
+      "unique": [["id"]],
+      "allowed_values": { "type": ["original", "publication", "website"] }
+    },
+    {
       "path": "geo/json/region_types.json",
       "required": { "type": "string", "description": "string" },
       "non_empty": ["type", "description"],
@@ -318,6 +361,54 @@
       "from_path": "utils/riddles/riddles.json",
       "from_field": "source_id",
       "to_path": "utils/riddles/sources.json",
+      "to_field": "id"
+    },
+    {
+      "from_path": "utils/currencies/entities.json",
+      "from_field": "currency_code",
+      "to_path": "utils/currencies/currencies.json",
+      "to_field": "code"
+    },
+    {
+      "from_path": "utils/currencies/currencies.json",
+      "from_field": "source_id",
+      "to_path": "utils/currencies/sources.json",
+      "to_field": "id"
+    },
+    {
+      "from_path": "utils/currencies/currencies.json",
+      "from_field": "name_tk_source_id",
+      "to_path": "utils/currencies/sources.json",
+      "to_field": "id"
+    },
+    {
+      "from_path": "utils/currencies/entities.json",
+      "from_field": "source_id",
+      "to_path": "utils/currencies/sources.json",
+      "to_field": "id"
+    },
+    {
+      "from_path": "utils/units/units.json",
+      "from_field": "source_id",
+      "to_path": "utils/units/sources.json",
+      "to_field": "id"
+    },
+    {
+      "from_path": "utils/units/units.json",
+      "from_field": "name_tk_source_id",
+      "to_path": "utils/units/sources.json",
+      "to_field": "id"
+    },
+    {
+      "from_path": "utils/units/prefixes.json",
+      "from_field": "source_id",
+      "to_path": "utils/units/sources.json",
+      "to_field": "id"
+    },
+    {
+      "from_path": "utils/units/prefixes.json",
+      "from_field": "name_tk_source_id",
+      "to_path": "utils/units/sources.json",
       "to_field": "id"
     }
   ]
