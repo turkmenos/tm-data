@@ -1167,6 +1167,62 @@
       ]
     },
     {
+      "id": "utils-currencies",
+      "title": "Currencies",
+      "location": "utils/currencies",
+      "version": "sha256:b77b8f2c10117b978dbfba35cc90aa4b049fe9a2c5c454628cdf5530cb8689b1",
+      "formats": [
+        "csv",
+        "json"
+      ],
+      "documentation": [
+        "utils/currencies/README.md"
+      ],
+      "provenance": {
+        "references": [
+          "utils/currencies/README.md"
+        ],
+        "note": "Repository documentation and embedded source metadata; coverage and redistribution rights may be incomplete."
+      },
+      "resources": [
+        {
+          "path": "utils/currencies/currencies.csv",
+          "format": "csv",
+          "version": "sha256:f615b7d53617af412606aa8af96c08e70a9d5a6bebbcbdfc08a9ebd65701a234",
+          "record_count": 178,
+          "record_unit": "records"
+        },
+        {
+          "path": "utils/currencies/currencies.json",
+          "format": "json",
+          "version": "sha256:04647f0b302d9507b8456cedc3fb115ddb47fc58ef8eb41f4fd2c73655992ca3",
+          "record_count": 178,
+          "record_unit": "records"
+        },
+        {
+          "path": "utils/currencies/entities.csv",
+          "format": "csv",
+          "version": "sha256:fe4cd596ad6fea9e2e7ee66d8b18bc409becfa764d7c99b8f4ddb6cdf75f15fb",
+          "record_count": 277,
+          "record_unit": "records"
+        },
+        {
+          "path": "utils/currencies/entities.json",
+          "format": "json",
+          "version": "sha256:efd33eb4bbec56c532c90d0d8776954892cf9e073b413c057619757b0dbcb98f",
+          "record_count": 277,
+          "record_unit": "records"
+        },
+        {
+          "path": "utils/currencies/sources.json",
+          "format": "json",
+          "version": "sha256:7765fe21b3bfb882fbca17e31c2d2609a218603ee5950c3802f1b665dc1d748b",
+          "record_count": 2,
+          "record_unit": "records"
+        }
+      ]
+    },
+    {
       "id": "utils-holidays",
       "title": "Holidays",
       "location": "utils/holidays",
@@ -1477,6 +1533,62 @@
           "version": "sha256:1392a30d28c7da7faebe3c4facf5d75bbb9e0c415ee24694700b86af3f1ac81e",
           "record_count": 24,
           "record_unit": "test_cases"
+        }
+      ]
+    },
+    {
+      "id": "utils-units",
+      "title": "Units",
+      "location": "utils/units",
+      "version": "sha256:c45d71a47b0c1de2e6b27b07fc96cd6d7b857e262d9fd64826e2a8c95ac1f4a2",
+      "formats": [
+        "csv",
+        "json"
+      ],
+      "documentation": [
+        "utils/units/README.md"
+      ],
+      "provenance": {
+        "references": [
+          "utils/units/README.md"
+        ],
+        "note": "Repository documentation and embedded source metadata; coverage and redistribution rights may be incomplete."
+      },
+      "resources": [
+        {
+          "path": "utils/units/prefixes.csv",
+          "format": "csv",
+          "version": "sha256:33fa82c2eac7c9133a00a7aa1ae5ff4c93dcd3c83aff4f7add3fd70eb582aa24",
+          "record_count": 24,
+          "record_unit": "records"
+        },
+        {
+          "path": "utils/units/prefixes.json",
+          "format": "json",
+          "version": "sha256:7729e140fe0d667b1ac66d94691fa13e3af679eaf81b12a0415e2755e21239b7",
+          "record_count": 24,
+          "record_unit": "records"
+        },
+        {
+          "path": "utils/units/sources.json",
+          "format": "json",
+          "version": "sha256:8187401a35ac3d3238347223d68c7af8c1e976cb615a16e84e3a4b6f684bb08d",
+          "record_count": 2,
+          "record_unit": "records"
+        },
+        {
+          "path": "utils/units/units.csv",
+          "format": "csv",
+          "version": "sha256:48516cb3b14632c795bcecaacfa3b6c7ca34481ae77d2e20914e7f41a3784e8a",
+          "record_count": 52,
+          "record_unit": "records"
+        },
+        {
+          "path": "utils/units/units.json",
+          "format": "json",
+          "version": "sha256:877bdc4c1a17700410105ebdd0acc7e19cc9a38f5b5faa17b0b3e0e0e99e42f3",
+          "record_count": 52,
+          "record_unit": "records"
         }
       ]
     }

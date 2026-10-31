@@ -1,0 +1,53 @@
+id,category,quantity_en,name_en,symbol,alternative_symbol,name_tk,name_tk_status,name_tk_source_id,si_expression,source_id
+second,si_base,time,second,s,,sekunt,unreviewed,tm-data-turkmen-drafts-2026,,si-brochure-9-v4.01
+metre,si_base,length,metre,m,,metr,unreviewed,tm-data-turkmen-drafts-2026,,si-brochure-9-v4.01
+kilogram,si_base,mass,kilogram,kg,,kilogram,unreviewed,tm-data-turkmen-drafts-2026,,si-brochure-9-v4.01
+ampere,si_base,electric current,ampere,A,,amper,unreviewed,tm-data-turkmen-drafts-2026,,si-brochure-9-v4.01
+kelvin,si_base,thermodynamic temperature,kelvin,K,,kelwin,unreviewed,tm-data-turkmen-drafts-2026,,si-brochure-9-v4.01
+mole,si_base,amount of substance,mole,mol,,mol,unreviewed,tm-data-turkmen-drafts-2026,,si-brochure-9-v4.01
+candela,si_base,luminous intensity,candela,cd,,kandela,unreviewed,tm-data-turkmen-drafts-2026,,si-brochure-9-v4.01
+radian,si_derived,plane angle,radian,rad,,radian,unreviewed,tm-data-turkmen-drafts-2026,1,si-brochure-9-v4.01
+steradian,si_derived,solid angle,steradian,sr,,steradian,unreviewed,tm-data-turkmen-drafts-2026,1,si-brochure-9-v4.01
+hertz,si_derived,frequency,hertz,Hz,,gers,unreviewed,tm-data-turkmen-drafts-2026,s⁻¹,si-brochure-9-v4.01
+newton,si_derived,force,newton,N,,nýuton,unreviewed,tm-data-turkmen-drafts-2026,kg m s⁻²,si-brochure-9-v4.01
+pascal,si_derived,"pressure, stress",pascal,Pa,,paskal,unreviewed,tm-data-turkmen-drafts-2026,N/m² = kg m⁻¹ s⁻²,si-brochure-9-v4.01
+joule,si_derived,"energy, work, amount of heat",joule,J,,joul,unreviewed,tm-data-turkmen-drafts-2026,N m = kg m² s⁻²,si-brochure-9-v4.01
+watt,si_derived,"power, radiant flux",watt,W,,watt,unreviewed,tm-data-turkmen-drafts-2026,J/s = kg m² s⁻³,si-brochure-9-v4.01
+coulomb,si_derived,electric charge,coulomb,C,,kulon,unreviewed,tm-data-turkmen-drafts-2026,A s,si-brochure-9-v4.01
+volt,si_derived,electric potential difference,volt,V,,wolt,unreviewed,tm-data-turkmen-drafts-2026,W/A = kg m² s⁻³ A⁻¹,si-brochure-9-v4.01
+farad,si_derived,capacitance,farad,F,,farad,unreviewed,tm-data-turkmen-drafts-2026,C/V = kg⁻¹ m⁻² s⁴ A²,si-brochure-9-v4.01
+ohm,si_derived,electric resistance,ohm,Ω,,om,unreviewed,tm-data-turkmen-drafts-2026,V/A = kg m² s⁻³ A⁻²,si-brochure-9-v4.01
+siemens,si_derived,electric conductance,siemens,S,,,,,A/V = kg⁻¹ m⁻² s³ A²,si-brochure-9-v4.01
+weber,si_derived,magnetic flux,weber,Wb,,,,,V s = kg m² s⁻² A⁻¹,si-brochure-9-v4.01
+tesla,si_derived,magnetic flux density,tesla,T,,tesla,unreviewed,tm-data-turkmen-drafts-2026,Wb/m² = kg s⁻² A⁻¹,si-brochure-9-v4.01
+henry,si_derived,inductance,henry,H,,,,,Wb/A = kg m² s⁻² A⁻²,si-brochure-9-v4.01
+degree-celsius,si_derived,Celsius temperature,degree Celsius,°C,,Selsiý gradusy,unreviewed,tm-data-turkmen-drafts-2026,K,si-brochure-9-v4.01
+lumen,si_derived,luminous flux,lumen,lm,,,,,cd sr,si-brochure-9-v4.01
+lux,si_derived,illuminance,lux,lx,,,,,lm/m² = cd sr m⁻²,si-brochure-9-v4.01
+becquerel,si_derived,activity referred to a radionuclide,becquerel,Bq,,,,,s⁻¹,si-brochure-9-v4.01
+gray,si_derived,"absorbed dose, kerma",gray,Gy,,,,,J/kg = m² s⁻²,si-brochure-9-v4.01
+sievert,si_derived,dose equivalent,sievert,Sv,,,,,J/kg = m² s⁻²,si-brochure-9-v4.01
+katal,si_derived,catalytic activity,katal,kat,,,,,mol s⁻¹,si-brochure-9-v4.01
+minute,non_si,time,minute,min,,minut,unreviewed,tm-data-turkmen-drafts-2026,1 min = 60 s,si-brochure-9-v4.01
+hour,non_si,time,hour,h,,sagat,unreviewed,tm-data-turkmen-drafts-2026,1 h = 60 min = 3600 s,si-brochure-9-v4.01
+day,non_si,time,day,d,,gün,unreviewed,tm-data-turkmen-drafts-2026,1 d = 24 h = 86 400 s,si-brochure-9-v4.01
+degree,non_si,plane and phase angle,degree,°,,gradus,unreviewed,tm-data-turkmen-drafts-2026,1° = (π/180) rad,si-brochure-9-v4.01
+arcminute,non_si,plane and phase angle,minute,′,,,,,1′ = (1/60)° = (π/10 800) rad,si-brochure-9-v4.01
+arcsecond,non_si,plane and phase angle,second,″,as,,,,1″ = (1/60)′ = (π/648 000) rad,si-brochure-9-v4.01
+are,non_si,area,are,a,,,,,1 a = 1 dam² = 10² m²,si-brochure-9-v4.01
+hectare,non_si,area,hectare,ha,,gektar,unreviewed,tm-data-turkmen-drafts-2026,1 ha = 1 hm² = 10⁴ m²,si-brochure-9-v4.01
+barn,non_si,area,barn,b,,,,,1 b = 100 fm² = 10⁻²⁸ m²,si-brochure-9-v4.01
+litre,non_si,volume,litre,L,l,litr,unreviewed,tm-data-turkmen-drafts-2026,1 l = 1 L = 1 dm³ = 10⁻³ m³,si-brochure-9-v4.01
+tonne,non_si,mass,tonne,t,,tonna,unreviewed,tm-data-turkmen-drafts-2026,1 t = 1 Mg = 10³ kg,si-brochure-9-v4.01
+angstrom,non_si,length,angstrom,Å,,,,,1 Å = 0.1 nm = 10⁻¹⁰ m,si-brochure-9-v4.01
+gal,non_si,acceleration,gal,Gal,,,,,1 Gal = 1 cm/s² = 10⁻² m/s²,si-brochure-9-v4.01
+bar,non_si,pressure,bar,bar,,bar,unreviewed,tm-data-turkmen-drafts-2026,1 bar = 0.1 MPa = 10⁵ Pa,si-brochure-9-v4.01
+dalton,non_si,mass,dalton,Da,,,,,1 Da = 1.660 539 068 92(52) × 10⁻²⁷ kg,si-brochure-9-v4.01
+astronomical-unit,non_si,length,astronomical unit,au,,,,,1 au = 149 597 870 700 m,si-brochure-9-v4.01
+nautical-mile,non_si,length,nautical mile,,,,,,1 nautical mile = 1852 m,si-brochure-9-v4.01
+knot,non_si,speed,knot,,,,,,1 nautical mile per hour = (1852/3600) m/s,si-brochure-9-v4.01
+electronvolt,non_si,energy,electronvolt,eV,,,,,1 eV = 1.602 176 634 × 10⁻¹⁹ J,si-brochure-9-v4.01
+neper,non_si,logarithmic ratio quantities,neper,Np,,,,,,si-brochure-9-v4.01
+bel,non_si,logarithmic ratio quantities,bel,B,,,,,,si-brochure-9-v4.01
+decibel,non_si,logarithmic ratio quantities,decibel,dB,,,,,,si-brochure-9-v4.01
+var,non_si,reactive power,var,var,,,,,1 var = 1 V A = 1 W,si-brochure-9-v4.01

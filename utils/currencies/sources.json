@@ -1,0 +1,20 @@
+[
+  {
+    "id": "iso-4217-list-one-2026-09-17",
+    "type": "website",
+    "title": "ISO 4217 currency code list, List One: current currency & funds (published 2026-09-17)",
+    "creator": "SIX Financial Information AG, ISO 4217 maintenance agency",
+    "url": "https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list-one.xml",
+    "accessed_on": "2026-10-31",
+    "rights": "Public code list published by the ISO 4217 maintenance agency. Codes, numeric codes, minor units, currency names, fund flags, and entity names are reproduced as factual identifiers; the text of the ISO 4217 standard is not included.",
+    "note": "Entries without a currency (Antarctica; Palestine, State of; South Georgia and the South Sandwich Islands) are omitted. Minor units \"N.A.\" are stored as null."
+  },
+  {
+    "id": "tm-data-turkmen-drafts-2026",
+    "type": "original",
+    "title": "Turkmen names drafted for tm-data",
+    "creator": "tm-data contributors",
+    "rights": "MIT License (repository license)",
+    "note": "Drafted Turkmen names for commonly used currencies, units, and prefixes. They are not taken from an official Turkmen terminology source and remain unreviewed until checked by a Turkmen-language reviewer."
+  }
+]

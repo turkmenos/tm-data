@@ -14,10 +14,12 @@ Open, machine-readable datasets related to Turkmenistan.
 | Poetry | 855 works by 13 Turkmen poets | MySQL 8+ SQL, JSON | [Guide](poetry/README.md) |
 | Stories | Page-level text extracted from Turkmen stories and prose | JSON, SQLite, MySQL SQL | [Guide](stories/README.md) |
 | Colors | Turkmen color names, English translations, HEX values, and categories | MySQL 8+ SQL, JSON, CSV | [Guide](utils/colors/README.md) |
+| Currencies | 178 ISO 4217 currency and fund codes with numeric codes, minor units, users, and drafted Turkmen names for common currencies | JSON, CSV | [Guide](utils/currencies/README.md) |
 | Dictionary | 18,674 searchable Turkmen headwords with pronunciations, definitions, and examples | JSON | [Guide](dictionary/README.md) |
 | Given names | 447 Turkmen names with meaning, origin, gender, variants, and provenance status | JSON | [Guide](utils/names/README.md) |
 | Morphology | 25 suffix families, 50 noun/verb analyses, harmony rules, and selected exceptions | JSON | [Guide](language/morphology/README.md) |
 | Riddles | 10 original Turkmen riddles with answers, categories, and source metadata | JSON | [Guide](utils/riddles/README.md) |
+| Units | 52 SI and accepted non-SI units and 24 SI prefixes with symbols, SI values, and drafted Turkmen names | JSON, CSV | [Guide](utils/units/README.md) |
 
 Each dataset documents its structure, import process, limitations, and available sources in its own directory.
 

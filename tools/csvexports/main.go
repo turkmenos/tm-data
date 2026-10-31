@@ -28,11 +28,15 @@ var specifications = []specification{
 	{"utils/calendar/weekdays.json", "utils/calendar/weekdays.csv", "", []string{"iso", "tm", "en"}},
 	{"utils/colors/colors.json", "utils/colors/colors.csv", "", []string{"id", "name_tm", "name_en", "hex_code", "category"}},
 	{"utils/country-names/countries.json", "utils/country-names/countries.csv", "", []string{"code", "tm", "en"}},
+	{"utils/currencies/currencies.json", "utils/currencies/currencies.csv", "", []string{"code", "numeric", "minor_units", "name_en", "name_tk", "name_tk_status", "name_tk_source_id", "is_fund", "source_id"}},
+	{"utils/currencies/entities.json", "utils/currencies/entities.csv", "", []string{"currency_code", "entity", "source_id"}},
 	{"utils/holidays/holidays.json", "utils/holidays/holidays.csv", "", []string{"name", "month", "day", "start_day", "end_day", "rule", "type", "day_off"}},
 	{"utils/postal-codes/places.json", "utils/postal-codes/places.csv", "", []string{"iso", "country", "language", "id", "region1", "region2", "region3", "region4", "locality", "postcode", "suburb", "latitude", "longitude", "elevation", "iso2", "fips", "nuts", "hasc", "stat", "timezone", "utc", "dst", "locality_type", "is_postal", "is_business", "is_po_box", "post_town"}},
 	{"utils/postal-codes/regions.json", "utils/postal-codes/regions.csv", "", []string{"iso", "country", "language", "level", "type", "name", "region1", "region2", "region3", "region4", "iso2", "fips", "nuts", "hasc", "stat"}},
 	{"utils/proverbs/nakyllar.json", "utils/proverbs/nakyllar.csv", "proverbs", []string{"proverb"}},
 	{"utils/stopword/stopwords.json", "utils/stopword/stopwords.csv", "words", []string{"word"}},
+	{"utils/units/prefixes.json", "utils/units/prefixes.csv", "", []string{"name_en", "symbol", "exponent", "name_tk", "name_tk_status", "name_tk_source_id", "source_id"}},
+	{"utils/units/units.json", "utils/units/units.csv", "", []string{"id", "category", "quantity_en", "name_en", "symbol", "alternative_symbol", "name_tk", "name_tk_status", "name_tk_source_id", "si_expression", "source_id"}},
 }
 
 func main() {

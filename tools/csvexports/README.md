@@ -1,7 +1,8 @@
 # CSV exports
 
 The CSV files in `utils/calendar`, `utils/colors`, `utils/country-names`,
-`utils/holidays`, `utils/postal-codes`, `utils/proverbs`, and `utils/stopword`
+`utils/currencies`, `utils/holidays`, `utils/postal-codes`, `utils/proverbs`,
+`utils/stopword`, and `utils/units`
 are deterministic UTF-8 derivatives of the adjacent JSON files. They preserve
 record order and scalar values and add no external data.
 

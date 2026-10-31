@@ -152,7 +152,7 @@ func ValidateDataset(rule Dataset, records []map[string]any) []Issue {
 
 		for field, values := range rule.AllowedValues {
 			value, exists := record[field]
-			if !exists {
+			if !exists || value == nil {
 				continue
 			}
 			actual, ok := value.(string)
@@ -163,7 +163,7 @@ func ValidateDataset(rule Dataset, records []map[string]any) []Issue {
 
 		for field, limits := range rule.Ranges {
 			value, exists := record[field]
-			if !exists {
+			if !exists || value == nil {
 				continue
 			}
 			number, ok := asNumber(value)

@@ -1,0 +1,218 @@
+[
+  {
+    "name_en": "quetta",
+    "symbol": "Q",
+    "exponent": 30,
+    "name_tk": null,
+    "name_tk_status": null,
+    "name_tk_source_id": null,
+    "source_id": "si-brochure-9-v4.01"
+  },
+  {
+    "name_en": "ronna",
+    "symbol": "R",
+    "exponent": 27,
+    "name_tk": null,
+    "name_tk_status": null,
+    "name_tk_source_id": null,
+    "source_id": "si-brochure-9-v4.01"
+  },
+  {
+    "name_en": "yotta",
+    "symbol": "Y",
+    "exponent": 24,
+    "name_tk": null,
+    "name_tk_status": null,
+    "name_tk_source_id": null,
+    "source_id": "si-brochure-9-v4.01"
+  },
+  {
+    "name_en": "zetta",
+    "symbol": "Z",
+    "exponent": 21,
+    "name_tk": null,
+    "name_tk_status": null,
+    "name_tk_source_id": null,
+    "source_id": "si-brochure-9-v4.01"
+  },
+  {
+    "name_en": "exa",
+    "symbol": "E",
+    "exponent": 18,
+    "name_tk": null,
+    "name_tk_status": null,
+    "name_tk_source_id": null,
+    "source_id": "si-brochure-9-v4.01"
+  },
+  {
+    "name_en": "peta",
+    "symbol": "P",
+    "exponent": 15,
+    "name_tk": null,
+    "name_tk_status": null,
+    "name_tk_source_id": null,
+    "source_id": "si-brochure-9-v4.01"
+  },
+  {
+    "name_en": "tera",
+    "symbol": "T",
+    "exponent": 12,
+    "name_tk": "tera",
+    "name_tk_status": "unreviewed",
+    "name_tk_source_id": "tm-data-turkmen-drafts-2026",
+    "source_id": "si-brochure-9-v4.01"
+  },
+  {
+    "name_en": "giga",
+    "symbol": "G",
+    "exponent": 9,
+    "name_tk": "giga",
+    "name_tk_status": "unreviewed",
+    "name_tk_source_id": "tm-data-turkmen-drafts-2026",
+    "source_id": "si-brochure-9-v4.01"
+  },
+  {
+    "name_en": "mega",
+    "symbol": "M",
+    "exponent": 6,
+    "name_tk": "mega",
+    "name_tk_status": "unreviewed",
+    "name_tk_source_id": "tm-data-turkmen-drafts-2026",
+    "source_id": "si-brochure-9-v4.01"
+  },
+  {
+    "name_en": "kilo",
+    "symbol": "k",
+    "exponent": 3,
+    "name_tk": "kilo",
+    "name_tk_status": "unreviewed",
+    "name_tk_source_id": "tm-data-turkmen-drafts-2026",
+    "source_id": "si-brochure-9-v4.01"
+  },
+  {
+    "name_en": "hecto",
+    "symbol": "h",
+    "exponent": 2,
+    "name_tk": "gekto",
+    "name_tk_status": "unreviewed",
+    "name_tk_source_id": "tm-data-turkmen-drafts-2026",
+    "source_id": "si-brochure-9-v4.01"
+  },
+  {
+    "name_en": "deca",
+    "symbol": "da",
+    "exponent": 1,
+    "name_tk": "deka",
+    "name_tk_status": "unreviewed",
+    "name_tk_source_id": "tm-data-turkmen-drafts-2026",
+    "source_id": "si-brochure-9-v4.01"
+  },
+  {
+    "name_en": "deci",
+    "symbol": "d",
+    "exponent": -1,
+    "name_tk": "desi",
+    "name_tk_status": "unreviewed",
+    "name_tk_source_id": "tm-data-turkmen-drafts-2026",
+    "source_id": "si-brochure-9-v4.01"
+  },
+  {
+    "name_en": "centi",
+    "symbol": "c",
+    "exponent": -2,
+    "name_tk": "santi",
+    "name_tk_status": "unreviewed",
+    "name_tk_source_id": "tm-data-turkmen-drafts-2026",
+    "source_id": "si-brochure-9-v4.01"
+  },
+  {
+    "name_en": "milli",
+    "symbol": "m",
+    "exponent": -3,
+    "name_tk": "milli",
+    "name_tk_status": "unreviewed",
+    "name_tk_source_id": "tm-data-turkmen-drafts-2026",
+    "source_id": "si-brochure-9-v4.01"
+  },
+  {
+    "name_en": "micro",
+    "symbol": "µ",
+    "exponent": -6,
+    "name_tk": "mikro",
+    "name_tk_status": "unreviewed",
+    "name_tk_source_id": "tm-data-turkmen-drafts-2026",
+    "source_id": "si-brochure-9-v4.01"
+  },
+  {
+    "name_en": "nano",
+    "symbol": "n",
+    "exponent": -9,
+    "name_tk": "nano",
+    "name_tk_status": "unreviewed",
+    "name_tk_source_id": "tm-data-turkmen-drafts-2026",
+    "source_id": "si-brochure-9-v4.01"
+  },
+  {
+    "name_en": "pico",
+    "symbol": "p",
+    "exponent": -12,
+    "name_tk": null,
+    "name_tk_status": null,
+    "name_tk_source_id": null,
+    "source_id": "si-brochure-9-v4.01"
+  },
+  {
+    "name_en": "femto",
+    "symbol": "f",
+    "exponent": -15,
+    "name_tk": null,
+    "name_tk_status": null,
+    "name_tk_source_id": null,
+    "source_id": "si-brochure-9-v4.01"
+  },
+  {
+    "name_en": "atto",
+    "symbol": "a",
+    "exponent": -18,
+    "name_tk": null,
+    "name_tk_status": null,
+    "name_tk_source_id": null,
+    "source_id": "si-brochure-9-v4.01"
+  },
+  {
+    "name_en": "zepto",
+    "symbol": "z",
+    "exponent": -21,
+    "name_tk": null,
+    "name_tk_status": null,
+    "name_tk_source_id": null,
+    "source_id": "si-brochure-9-v4.01"
+  },
+  {
+    "name_en": "yocto",
+    "symbol": "y",
+    "exponent": -24,
+    "name_tk": null,
+    "name_tk_status": null,
+    "name_tk_source_id": null,
+    "source_id": "si-brochure-9-v4.01"
+  },
+  {
+    "name_en": "ronto",
+    "symbol": "r",
+    "exponent": -27,
+    "name_tk": null,
+    "name_tk_status": null,
+    "name_tk_source_id": null,
+    "source_id": "si-brochure-9-v4.01"
+  },
+  {
+    "name_en": "quecto",
+    "symbol": "q",
+    "exponent": -30,
+    "name_tk": null,
+    "name_tk_status": null,
+    "name_tk_source_id": null,
+    "source_id": "si-brochure-9-v4.01"
+  }
+]

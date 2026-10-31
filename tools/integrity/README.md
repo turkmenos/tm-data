@@ -35,6 +35,8 @@ integrity errors, and `2` for invalid command usage or rules configuration.
 
 Each item in `datasets` identifies a JSON array and may define `required`,
 `non_empty`, `unique`, `allowed_values`, `ranges`, and `any_required` rules.
+`allowed_values` and `ranges` apply only to present, non-null values, so
+optional fields may be `null` when unknown; use `required` to forbid nulls.
 The top-level `references` array relates a source field to a target field.
 Paths are relative to the repository root.
 
