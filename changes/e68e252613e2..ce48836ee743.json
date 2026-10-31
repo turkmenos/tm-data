@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0.0",
+  "from": {
+    "revision": "e68e252613e2629a64ee5ef7b9fb98bcbdc42bd1",
+    "commit": "e68e252613e2629a64ee5ef7b9fb98bcbdc42bd1",
+    "date": "2026-09-27"
+  },
+  "to": {
+    "revision": "ce48836ee743d41baca6eac4b18bd207e2c27e02",
+    "commit": "ce48836ee743d41baca6eac4b18bd207e2c27e02",
+    "date": "2026-09-28"
+  },
+  "summary": {
+    "datasets_changed": 1,
+    "changes": {
+      "added": 447,
+      "modified": 0,
+      "deleted": 0
+    },
+    "breaking": false
+  },
+  "datasets": [
+    {
+      "dataset": "utils-names",
+      "title": "Names",
+      "status": "changed",
+      "from_version": "sha256:981fe18839d978bbf59a7dabd040276a97bfdf1b5abc70c68e12ec43763b4b37",
+      "to_version": "sha256:5daa4747e9a6c27eaa78e75d1fdbae164e3265e3ade0ac31ca0c0715931c43ab",
+      "changes": {
+        "added": 447,
+        "modified": 0,
+        "deleted": 0
+      },
+      "resources": {
+        "added": [
+          "utils/names/given-names.json"
+        ],
+        "removed": [],
+        "modified": []
+      },
+      "formats": {
+        "added": [],
+        "removed": []
+      },
+      "records": [
+        {
+          "path": "utils/names/given-names.json",
+          "identity": "key: name, gender",
+          "added": 447,
+          "modified": 0,
+          "deleted": 0,
+          "added_ids": [
+            "Aba / male",
+            "Abadan / female",
+            "Abat / unisex",
+            "Abdy / male",
+            "Abdykerim / male",
+            "Abdylla / male",
+            "Abdyrahman / male",
+            "Abdyrahym / male",
+            "Abdyresul / male",
+            "Abdysetdar / male",
+            "Abraý / male",
+            "Abraýguly / male",
+            "Abyl / male",
+            "Adyl / male",
+            "Aga / male",
+            "Agabeg / female",
+            "Agabike / female",
+            "Agageldi / male",
+            "Agagül / female",
+            "Agahan / male"
+          ],
+          "modified_ids": [],
+          "deleted_ids": []
+        }
+      ],
+      "schema": [],
+      "metadata": [],
+      "breaking": []
+    }
+  ]
+}

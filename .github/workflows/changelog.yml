@@ -1,0 +1,53 @@
+name: Dataset changes
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  changes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository with history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.23"
+
+      - name: Test changelog generator
+        run: go test ./tools/changelog
+
+      - name: Compare dataset versions
+        env:
+          BASE: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
+          HEAD: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/changes"
+          if [ -z "$BASE" ] || [ "$BASE" = "0000000000000000000000000000000000000000" ]; then
+            echo "No base revision to compare against." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          FROM=$(git merge-base "$BASE" "$HEAD")
+          go run ./tools/changelog --from "$FROM" --to "$HEAD" --output "$RUNNER_TEMP/changes/report.json"
+          {
+            echo "# Dataset changes"
+            echo
+            go run ./tools/changelog --from "$FROM" --to "$HEAD" --format markdown
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload dataset change report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dataset-change-report
+          path: ${{ runner.temp }}/changes/report.json
+          if-no-files-found: ignore

@@ -94,6 +94,22 @@ go run ./tools/catalog
 go run ./tools/catalog --check
 ```
 
+## Dataset versions and changelog
+
+Dataset versions are the content fingerprints in [`catalog.json`](catalog.json).
+[`CHANGELOG.md`](CHANGELOG.md) summarizes dataset changes between commits on
+`main`, with matching machine-readable reports in [`changes/`](changes/README.md),
+which also documents the versioning and breaking-change rules. Compare any two
+revisions:
+
+```sh
+go run ./tools/changelog --from main~1 --to main
+go run ./tools/changelog --from <base> --to HEAD --format markdown
+```
+
+Every pull request gets a dataset change summary and a `dataset-change-report`
+workflow artifact. See the [changelog tool guide](tools/changelog/README.md).
+
 ## Data quality checks
 
 Repository-wide duplicate and format validation is available in
