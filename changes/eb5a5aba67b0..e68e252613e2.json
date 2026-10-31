@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0.0",
+  "from": {
+    "revision": "eb5a5aba67b091456cd6ac1a410bb518e99952ff",
+    "commit": "eb5a5aba67b091456cd6ac1a410bb518e99952ff",
+    "date": "2026-09-27"
+  },
+  "to": {
+    "revision": "e68e252613e2629a64ee5ef7b9fb98bcbdc42bd1",
+    "commit": "e68e252613e2629a64ee5ef7b9fb98bcbdc42bd1",
+    "date": "2026-09-27"
+  },
+  "summary": {
+    "datasets_changed": 1,
+    "changes": {
+      "added": 16,
+      "modified": 0,
+      "deleted": 0
+    },
+    "breaking": false
+  },
+  "datasets": [
+    {
+      "dataset": "utils-normalization",
+      "title": "Normalization",
+      "status": "added",
+      "from_version": null,
+      "to_version": "sha256:459682ba3dcd1e071b2effdd77b1fdac5549e8192a0e179754edfe0d03cf9bf4",
+      "changes": {
+        "added": 16,
+        "modified": 0,
+        "deleted": 0
+      },
+      "resources": {
+        "added": [
+          "utils/normalization/rules.json",
+          "utils/normalization/test_cases.json"
+        ],
+        "removed": [],
+        "modified": []
+      },
+      "formats": {
+        "added": [
+          "json"
+        ],
+        "removed": []
+      },
+      "records": [
+        {
+          "path": "utils/normalization/test_cases.json",
+          "identity": "key: id",
+          "added": 16,
+          "modified": 0,
+          "deleted": 0,
+          "added_ids": [
+            "already_nfc",
+            "compose_c_cedilla",
+            "compose_lowercase_diaeresis",
+            "compose_n_caron",
+            "compose_s_cedilla",
+            "compose_uppercase_diaeresis",
+            "compose_y_acute",
+            "compose_z_caron",
+            "cr_to_lf",
+            "crlf_to_lf",
+            "empty",
+            "preserve_cyrillic",
+            "preserve_embedded_bom",
+            "preserve_punctuation",
+            "preserve_whitespace",
+            "remove_initial_bom"
+          ],
+          "modified_ids": [],
+          "deleted_ids": []
+        }
+      ],
+      "schema": [],
+      "metadata": [],
+      "breaking": []
+    }
+  ]
+}

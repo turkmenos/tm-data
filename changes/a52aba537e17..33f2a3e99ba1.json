@@ -1,0 +1,265 @@
+{
+  "schema_version": "1.0.0",
+  "from": {
+    "revision": "a52aba537e1794a84a4e5637bcecf89e28ab8a90",
+    "commit": "a52aba537e1794a84a4e5637bcecf89e28ab8a90",
+    "date": "2026-10-16"
+  },
+  "to": {
+    "revision": "33f2a3e99ba1bcb963e01887734b4ab3c398c4d9",
+    "commit": "33f2a3e99ba1bcb963e01887734b4ab3c398c4d9",
+    "date": "2026-10-17"
+  },
+  "summary": {
+    "datasets_changed": 3,
+    "changes": {
+      "added": 100,
+      "modified": 0,
+      "deleted": 0
+    },
+    "breaking": false
+  },
+  "datasets": [
+    {
+      "dataset": "geo",
+      "title": "Geo",
+      "status": "changed",
+      "from_version": "sha256:026387806c57e9af669c82902a7044cbc15530d8beb6055577b87a7933592278",
+      "to_version": "sha256:040770fd65ed6deb6ce4db6bec3c6176bbbbf29aaf54c9e0a35d6358f21e129c",
+      "changes": {
+        "added": 0,
+        "modified": 0,
+        "deleted": 0
+      },
+      "resources": {
+        "added": [],
+        "removed": [],
+        "modified": []
+      },
+      "formats": {
+        "added": [
+          "json"
+        ],
+        "removed": []
+      },
+      "records": [],
+      "schema": [],
+      "metadata": [
+        "documentation added: geo/json/README.md",
+        "provenance references or note changed",
+        "geo/json/region_aliases.json: already present but missing from the previous catalog",
+        "geo/json/region_types.json: already present but missing from the previous catalog",
+        "geo/json/regions.json: already present but missing from the previous catalog",
+        "version identifier changed without any file content change (catalog listing or fingerprint method changed)"
+      ],
+      "breaking": []
+    },
+    {
+      "dataset": "language-morphology",
+      "title": "Morphology",
+      "status": "added",
+      "from_version": null,
+      "to_version": "sha256:81329c594dfe437defe00ede4b0ea00460dd55414b08a1cda3eed0391a5013b6",
+      "changes": {
+        "added": 89,
+        "modified": 0,
+        "deleted": 0
+      },
+      "resources": {
+        "added": [
+          "language/morphology/examples.json",
+          "language/morphology/exceptions.json",
+          "language/morphology/rules.json",
+          "language/morphology/sources.json",
+          "language/morphology/suffixes.json"
+        ],
+        "removed": [],
+        "modified": []
+      },
+      "formats": {
+        "added": [
+          "json"
+        ],
+        "removed": []
+      },
+      "records": [
+        {
+          "path": "language/morphology/examples.json",
+          "identity": "key: id",
+          "added": 50,
+          "modified": 0,
+          "deleted": 0,
+          "added_ids": [
+            "ball-genitive",
+            "books-our-from",
+            "carrot-ablative",
+            "carrot-dative",
+            "carrot-locative",
+            "conditional-wash",
+            "conditional-wipe",
+            "cotton-ablative",
+            "cotton-accusative",
+            "cotton-genitive",
+            "flower-genitive",
+            "future-know",
+            "future-read",
+            "guests",
+            "infinitive-eat",
+            "infinitive-read",
+            "my-book",
+            "my-car",
+            "my-dog",
+            "my-father"
+          ],
+          "modified_ids": [],
+          "deleted_ids": []
+        },
+        {
+          "path": "language/morphology/exceptions.json",
+          "identity": "key: id",
+          "added": 4,
+          "modified": 0,
+          "deleted": 0,
+          "added_ids": [
+            "git-voicing",
+            "kitap-voicing",
+            "mixed-vowel-kitap",
+            "pisik-voicing"
+          ],
+          "modified_ids": [],
+          "deleted_ids": []
+        },
+        {
+          "path": "language/morphology/rules.json",
+          "identity": "key: id",
+          "added": 8,
+          "modified": 0,
+          "deleted": 0,
+          "added_ids": [
+            "lexical-stem-voicing",
+            "mixed-vowel-roots",
+            "noun-order",
+            "orthography-not-speech",
+            "possessive-case-buffer",
+            "verb-order",
+            "vowel-backness",
+            "written-rounding"
+          ],
+          "modified_ids": [],
+          "deleted_ids": []
+        },
+        {
+          "path": "language/morphology/sources.json",
+          "identity": "key: id",
+          "added": 2,
+          "modified": 0,
+          "deleted": 0,
+          "added_ids": [
+            "pc-grammar",
+            "pc-manual-1993"
+          ],
+          "modified_ids": [],
+          "deleted_ids": []
+        },
+        {
+          "path": "language/morphology/suffixes.json",
+          "identity": "key: id",
+          "added": 25,
+          "modified": 0,
+          "deleted": 0,
+          "added_ids": [
+            "noun-ablative",
+            "noun-accusative",
+            "noun-dative",
+            "noun-genitive",
+            "noun-locative",
+            "noun-plural",
+            "noun-poss-1pl",
+            "noun-poss-1sg",
+            "noun-poss-2pl",
+            "noun-poss-2sg",
+            "noun-poss-3",
+            "verb-conditional",
+            "verb-future-definite",
+            "verb-infinitive",
+            "verb-negative",
+            "verb-past",
+            "verb-present",
+            "verb-present-1pl",
+            "verb-present-1sg",
+            "verb-present-2pl"
+          ],
+          "modified_ids": [],
+          "deleted_ids": []
+        }
+      ],
+      "schema": [],
+      "metadata": [],
+      "breaking": []
+    },
+    {
+      "dataset": "utils-riddles",
+      "title": "Riddles",
+      "status": "added",
+      "from_version": null,
+      "to_version": "sha256:2c595f498c99563199138f7eee556a9400fe0a9d8520588a6bb7a8d33169f861",
+      "changes": {
+        "added": 11,
+        "modified": 0,
+        "deleted": 0
+      },
+      "resources": {
+        "added": [
+          "utils/riddles/riddles.json",
+          "utils/riddles/sources.json"
+        ],
+        "removed": [],
+        "modified": []
+      },
+      "formats": {
+        "added": [
+          "json"
+        ],
+        "removed": []
+      },
+      "records": [
+        {
+          "path": "utils/riddles/riddles.json",
+          "identity": "key: id",
+          "added": 10,
+          "modified": 0,
+          "deleted": 0,
+          "added_ids": [
+            "riddle-001",
+            "riddle-002",
+            "riddle-003",
+            "riddle-004",
+            "riddle-005",
+            "riddle-006",
+            "riddle-007",
+            "riddle-008",
+            "riddle-009",
+            "riddle-010"
+          ],
+          "modified_ids": [],
+          "deleted_ids": []
+        },
+        {
+          "path": "utils/riddles/sources.json",
+          "identity": "key: id",
+          "added": 1,
+          "modified": 0,
+          "deleted": 0,
+          "added_ids": [
+            "tm-data-original-2026"
+          ],
+          "modified_ids": [],
+          "deleted_ids": []
+        }
+      ],
+      "schema": [],
+      "metadata": [],
+      "breaking": []
+    }
+  ]
+}

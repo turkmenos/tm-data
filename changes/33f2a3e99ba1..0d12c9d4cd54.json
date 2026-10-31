@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "from": {
+    "revision": "33f2a3e99ba1bcb963e01887734b4ab3c398c4d9",
+    "commit": "33f2a3e99ba1bcb963e01887734b4ab3c398c4d9",
+    "date": "2026-10-17"
+  },
+  "to": {
+    "revision": "0d12c9d4cd541e888dd885f2ca7f6002e3e36834",
+    "commit": "0d12c9d4cd541e888dd885f2ca7f6002e3e36834",
+    "date": "2026-10-18"
+  },
+  "summary": {
+    "datasets_changed": 1,
+    "changes": {
+      "added": 0,
+      "modified": 0,
+      "deleted": 0
+    },
+    "breaking": false
+  },
+  "datasets": [
+    {
+      "dataset": "geo",
+      "title": "Geo",
+      "status": "changed",
+      "from_version": "sha256:040770fd65ed6deb6ce4db6bec3c6176bbbbf29aaf54c9e0a35d6358f21e129c",
+      "to_version": "sha256:7e55c797ca99f70d41e809086b38f3021fc65833e5988bcd91fef082a2df239a",
+      "changes": {
+        "added": 0,
+        "modified": 0,
+        "deleted": 0
+      },
+      "resources": {
+        "added": [
+          "geo/search/index.json",
+          "geo/search/schema.json"
+        ],
+        "removed": [],
+        "modified": []
+      },
+      "formats": {
+        "added": [],
+        "removed": []
+      },
+      "records": [],
+      "schema": [],
+      "metadata": [
+        "documentation added: geo/search/README.md",
+        "provenance references or note changed"
+      ],
+      "breaking": []
+    }
+  ]
+}

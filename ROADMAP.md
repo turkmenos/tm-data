@@ -14,7 +14,7 @@ Planned improvements for `tm-data`. Items are proposals without fixed release da
 - [ ] Add `USAGE.md` with examples for reading JSON and importing SQL data.
 - [ ] Provide JSON and CSV exports where practical.
 - [ ] Add GeoJSON exports for geography where suitable coordinate or boundary data is available.
-- [ ] Track dataset additions and corrections in `CHANGELOG.md`.
+- [x] Track dataset additions and corrections in [`CHANGELOG.md`](CHANGELOG.md), generated from Git history with machine-readable reports in [`changes/`](changes/README.md).
 
 ## New and expanded datasets
 

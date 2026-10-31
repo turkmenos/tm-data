@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "resources": [
+    { "pattern": "dictionary/*/dictionary.json" },
+    { "pattern": "dictionary/turkmen-dili-sozlugu/dictionary-1.json", "records": "words", "map": true },
+    { "pattern": "dictionary/turkmen-dili-sozlugu/dictionary-2.json", "map": true },
+    { "pattern": "geo/json/regions.json", "key": ["slug"] },
+    { "pattern": "geo/json/region_aliases.json", "key": ["region_slug", "alias"] },
+    { "pattern": "geo/json/region_types.json", "key": ["type"] },
+    { "pattern": "poetry/json/*/poetry.json", "records": "poems", "key": ["id"] },
+    { "pattern": "stories/**.json", "records": "pages", "key": ["page_number"] },
+    { "pattern": "language/morphology/*.json", "key": ["id"] },
+    { "pattern": "utils/calendar/months.json", "key": ["number"] },
+    { "pattern": "utils/calendar/weekdays.json", "key": ["iso"] },
+    { "pattern": "utils/calendar/*.json", "key": ["id"] },
+    { "pattern": "utils/colors/colors.json", "key": ["id"] },
+    { "pattern": "utils/country-names/countries.json", "key": ["code"] },
+    { "pattern": "utils/holidays/holidays.json", "key": ["name"] },
+    { "pattern": "utils/names/given-names.json", "records": "names", "key": ["name", "gender"] },
+    { "pattern": "utils/normalization/test_cases.json", "records": "test_cases", "key": ["id"] },
+    { "pattern": "utils/postal-codes/places.json", "key": ["id"] },
+    { "pattern": "utils/postal-codes/regions.json", "key": ["level", "region1", "name"] },
+    { "pattern": "utils/proverbs/nakyllar.json", "records": "proverbs" },
+    { "pattern": "utils/riddles/*.json", "key": ["id"] },
+    { "pattern": "utils/stopword/stopwords.json", "records": "words" },
+    { "pattern": "utils/transliteration/test_cases.json", "records": "test_cases", "key": ["id"] }
+  ]
+}

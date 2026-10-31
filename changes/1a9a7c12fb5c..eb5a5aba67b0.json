@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "from": {
+    "revision": "1a9a7c12fb5c8abaad263746f193466a426620e3",
+    "commit": "1a9a7c12fb5c8abaad263746f193466a426620e3",
+    "date": "2026-09-27"
+  },
+  "to": {
+    "revision": "eb5a5aba67b091456cd6ac1a410bb518e99952ff",
+    "commit": "eb5a5aba67b091456cd6ac1a410bb518e99952ff",
+    "date": "2026-09-27"
+  },
+  "summary": {
+    "datasets_changed": 1,
+    "changes": {
+      "added": 0,
+      "modified": 0,
+      "deleted": 0
+    },
+    "breaking": false
+  },
+  "datasets": [
+    {
+      "dataset": "geo",
+      "title": "Geo",
+      "status": "changed",
+      "from_version": "sha256:2fbd81dd12d28cb98797d38c5260d9fa9708cf83c27664ecab4153991d6d97c9",
+      "to_version": "sha256:026387806c57e9af669c82902a7044cbc15530d8beb6055577b87a7933592278",
+      "changes": {
+        "added": 0,
+        "modified": 0,
+        "deleted": 0
+      },
+      "resources": {
+        "added": [
+          "geo/geojson/regions.geojson"
+        ],
+        "removed": [],
+        "modified": []
+      },
+      "formats": {
+        "added": [
+          "geojson"
+        ],
+        "removed": []
+      },
+      "records": [],
+      "schema": [],
+      "metadata": [],
+      "breaking": []
+    }
+  ]
+}

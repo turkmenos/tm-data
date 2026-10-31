@@ -1,0 +1,232 @@
+{
+  "schema_version": "1.0.0",
+  "from": {
+    "revision": "6a83d68e41fe6ed8ab2dc0aa241e1bf23e4127a3",
+    "commit": "6a83d68e41fe6ed8ab2dc0aa241e1bf23e4127a3",
+    "date": "2026-09-26"
+  },
+  "to": {
+    "revision": "1a9a7c12fb5c8abaad263746f193466a426620e3",
+    "commit": "1a9a7c12fb5c8abaad263746f193466a426620e3",
+    "date": "2026-09-27"
+  },
+  "summary": {
+    "datasets_changed": 7,
+    "changes": {
+      "added": 0,
+      "modified": 0,
+      "deleted": 0
+    },
+    "breaking": false
+  },
+  "datasets": [
+    {
+      "dataset": "utils-calendar",
+      "title": "Calendar",
+      "status": "changed",
+      "from_version": "sha256:1b39dfa59d943a612d50793369298c6154fd68ad67e026516ed56747f97a97c3",
+      "to_version": "sha256:1c566b398b9fa7317be5a670c6f7ddb3087b5afde67873e6b143ce40b8c74cb9",
+      "changes": {
+        "added": 0,
+        "modified": 0,
+        "deleted": 0
+      },
+      "resources": {
+        "added": [
+          "utils/calendar/day-periods.csv",
+          "utils/calendar/months.csv",
+          "utils/calendar/seasons.csv",
+          "utils/calendar/time-units.csv",
+          "utils/calendar/weekdays.csv"
+        ],
+        "removed": [],
+        "modified": []
+      },
+      "formats": {
+        "added": [
+          "csv"
+        ],
+        "removed": []
+      },
+      "records": [],
+      "schema": [],
+      "metadata": [],
+      "breaking": []
+    },
+    {
+      "dataset": "utils-colors",
+      "title": "Colors",
+      "status": "changed",
+      "from_version": "sha256:36689439b1cf26d2a1bb621946c642498475c2500f84c28eafdccbce50c20659",
+      "to_version": "sha256:88a565117f683990900f3bcbaf568cb6f68b5a0f6eb23ea7809d708d2bfd4a7f",
+      "changes": {
+        "added": 0,
+        "modified": 0,
+        "deleted": 0
+      },
+      "resources": {
+        "added": [
+          "utils/colors/colors.csv"
+        ],
+        "removed": [],
+        "modified": []
+      },
+      "formats": {
+        "added": [
+          "csv"
+        ],
+        "removed": []
+      },
+      "records": [],
+      "schema": [],
+      "metadata": [],
+      "breaking": []
+    },
+    {
+      "dataset": "utils-country-names",
+      "title": "Country Names",
+      "status": "changed",
+      "from_version": "sha256:2ef1e05511894be8c9d5978e614116bd1ddb8de217d95b1516a68a7481d4c467",
+      "to_version": "sha256:53e998ae614f7f6f534a0403c601a85af5dec618bd05754c6acf72077d74fd63",
+      "changes": {
+        "added": 0,
+        "modified": 0,
+        "deleted": 0
+      },
+      "resources": {
+        "added": [
+          "utils/country-names/countries.csv"
+        ],
+        "removed": [],
+        "modified": []
+      },
+      "formats": {
+        "added": [
+          "csv"
+        ],
+        "removed": []
+      },
+      "records": [],
+      "schema": [],
+      "metadata": [],
+      "breaking": []
+    },
+    {
+      "dataset": "utils-holidays",
+      "title": "Holidays",
+      "status": "changed",
+      "from_version": "sha256:833bebf8697c945fe4dc24763fa8d267419aa4034c5dad66e73b56193dd1bc13",
+      "to_version": "sha256:258650502f2a9acf511aa9e94d2d10ec2f9d61312ba57f16ec186d69fce8e75d",
+      "changes": {
+        "added": 0,
+        "modified": 0,
+        "deleted": 0
+      },
+      "resources": {
+        "added": [
+          "utils/holidays/holidays.csv"
+        ],
+        "removed": [],
+        "modified": []
+      },
+      "formats": {
+        "added": [
+          "csv"
+        ],
+        "removed": []
+      },
+      "records": [],
+      "schema": [],
+      "metadata": [],
+      "breaking": []
+    },
+    {
+      "dataset": "utils-postal-codes",
+      "title": "Postal Codes",
+      "status": "changed",
+      "from_version": "sha256:17ed69e44728b2d85f2a4f24a9be0ea7176e8ab10abae6f7d8dbac08331cc275",
+      "to_version": "sha256:a86b592d7f29e59fd3fd36a9fb72d65fb3f25dbec627e5b9ea106f16612d886a",
+      "changes": {
+        "added": 0,
+        "modified": 0,
+        "deleted": 0
+      },
+      "resources": {
+        "added": [
+          "utils/postal-codes/places.csv",
+          "utils/postal-codes/regions.csv"
+        ],
+        "removed": [],
+        "modified": []
+      },
+      "formats": {
+        "added": [
+          "csv"
+        ],
+        "removed": []
+      },
+      "records": [],
+      "schema": [],
+      "metadata": [],
+      "breaking": []
+    },
+    {
+      "dataset": "utils-proverbs",
+      "title": "Proverbs",
+      "status": "changed",
+      "from_version": "sha256:6766df4c156958354a45c2b645dbf6fbcd01f86eb8e63a5136c278af25d8d8db",
+      "to_version": "sha256:d3409e6acc4d2977589733e14077f4c142dbadb68f042d135dccc1f29ba5e24e",
+      "changes": {
+        "added": 0,
+        "modified": 0,
+        "deleted": 0
+      },
+      "resources": {
+        "added": [
+          "utils/proverbs/nakyllar.csv"
+        ],
+        "removed": [],
+        "modified": []
+      },
+      "formats": {
+        "added": [
+          "csv"
+        ],
+        "removed": []
+      },
+      "records": [],
+      "schema": [],
+      "metadata": [],
+      "breaking": []
+    },
+    {
+      "dataset": "utils-stopword",
+      "title": "Stopword",
+      "status": "changed",
+      "from_version": "sha256:81e98d6bfd7e4fdb44a527dcf818f49abd3a76014f5bbcbc4eb9eb46fe948ed0",
+      "to_version": "sha256:939b833432cae1494ab03b4ae78628e8c05fff34ff2d8d40e40ff58483219adb",
+      "changes": {
+        "added": 0,
+        "modified": 0,
+        "deleted": 0
+      },
+      "resources": {
+        "added": [
+          "utils/stopword/stopwords.csv"
+        ],
+        "removed": [],
+        "modified": []
+      },
+      "formats": {
+        "added": [
+          "csv"
+        ],
+        "removed": []
+      },
+      "records": [],
+      "schema": [],
+      "metadata": [],
+      "breaking": []
+    }
+  ]
+}
