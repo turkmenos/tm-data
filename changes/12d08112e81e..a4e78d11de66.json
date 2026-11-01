@@ -1,0 +1,244 @@
+{
+  "schema_version": "1.0.0",
+  "from": {
+    "revision": "12d0811",
+    "commit": "12d08112e81e48fa8e95204911578d375934ad5c",
+    "date": "2026-10-31"
+  },
+  "to": {
+    "revision": "a4e78d1",
+    "commit": "a4e78d11de66bbe46e2a6a1986b6245983474edb",
+    "date": "2026-10-31"
+  },
+  "summary": {
+    "datasets_changed": 2,
+    "changes": {
+      "added": 535,
+      "modified": 0,
+      "deleted": 0
+    },
+    "breaking": false
+  },
+  "datasets": [
+    {
+      "dataset": "utils-currencies",
+      "title": "Currencies",
+      "status": "added",
+      "from_version": null,
+      "to_version": "sha256:b77b8f2c10117b978dbfba35cc90aa4b049fe9a2c5c454628cdf5530cb8689b1",
+      "changes": {
+        "added": 457,
+        "modified": 0,
+        "deleted": 0
+      },
+      "resources": {
+        "added": [
+          "utils/currencies/currencies.csv",
+          "utils/currencies/currencies.json",
+          "utils/currencies/entities.csv",
+          "utils/currencies/entities.json",
+          "utils/currencies/sources.json"
+        ],
+        "removed": [],
+        "modified": []
+      },
+      "formats": {
+        "added": [
+          "csv",
+          "json"
+        ],
+        "removed": []
+      },
+      "records": [
+        {
+          "path": "utils/currencies/currencies.json",
+          "identity": "key: code",
+          "added": 178,
+          "modified": 0,
+          "deleted": 0,
+          "added_ids": [
+            "AED",
+            "AFN",
+            "ALL",
+            "AMD",
+            "AOA",
+            "ARS",
+            "AUD",
+            "AWG",
+            "AZN",
+            "BAM",
+            "BBD",
+            "BDT",
+            "BHD",
+            "BIF",
+            "BMD",
+            "BND",
+            "BOB",
+            "BOV",
+            "BRL",
+            "BSD"
+          ],
+          "modified_ids": [],
+          "deleted_ids": []
+        },
+        {
+          "path": "utils/currencies/entities.json",
+          "identity": "key: currency_code, entity",
+          "added": 277,
+          "modified": 0,
+          "deleted": 0,
+          "added_ids": [
+            "AED / UNITED ARAB EMIRATES (THE)",
+            "AFN / AFGHANISTAN",
+            "ALL / ALBANIA",
+            "AMD / ARMENIA",
+            "AOA / ANGOLA",
+            "ARS / ARGENTINA",
+            "AUD / AUSTRALIA",
+            "AUD / CHRISTMAS ISLAND",
+            "AUD / COCOS (KEELING) ISLANDS (THE)",
+            "AUD / HEARD ISLAND AND McDONALD ISLANDS",
+            "AUD / KIRIBATI",
+            "AUD / NAURU",
+            "AUD / NORFOLK ISLAND",
+            "AUD / TUVALU",
+            "AWG / ARUBA",
+            "AZN / AZERBAIJAN",
+            "BAM / BOSNIA AND HERZEGOVINA",
+            "BBD / BARBADOS",
+            "BDT / BANGLADESH",
+            "BHD / BAHRAIN"
+          ],
+          "modified_ids": [],
+          "deleted_ids": []
+        },
+        {
+          "path": "utils/currencies/sources.json",
+          "identity": "key: id",
+          "added": 2,
+          "modified": 0,
+          "deleted": 0,
+          "added_ids": [
+            "iso-4217-list-one-2026-09-17",
+            "tm-data-turkmen-drafts-2026"
+          ],
+          "modified_ids": [],
+          "deleted_ids": []
+        }
+      ],
+      "schema": [],
+      "metadata": [],
+      "breaking": []
+    },
+    {
+      "dataset": "utils-units",
+      "title": "Units",
+      "status": "added",
+      "from_version": null,
+      "to_version": "sha256:c45d71a47b0c1de2e6b27b07fc96cd6d7b857e262d9fd64826e2a8c95ac1f4a2",
+      "changes": {
+        "added": 78,
+        "modified": 0,
+        "deleted": 0
+      },
+      "resources": {
+        "added": [
+          "utils/units/prefixes.csv",
+          "utils/units/prefixes.json",
+          "utils/units/sources.json",
+          "utils/units/units.csv",
+          "utils/units/units.json"
+        ],
+        "removed": [],
+        "modified": []
+      },
+      "formats": {
+        "added": [
+          "csv",
+          "json"
+        ],
+        "removed": []
+      },
+      "records": [
+        {
+          "path": "utils/units/prefixes.json",
+          "identity": "key: name_en",
+          "added": 24,
+          "modified": 0,
+          "deleted": 0,
+          "added_ids": [
+            "atto",
+            "centi",
+            "deca",
+            "deci",
+            "exa",
+            "femto",
+            "giga",
+            "hecto",
+            "kilo",
+            "mega",
+            "micro",
+            "milli",
+            "nano",
+            "peta",
+            "pico",
+            "quecto",
+            "quetta",
+            "ronna",
+            "ronto",
+            "tera"
+          ],
+          "modified_ids": [],
+          "deleted_ids": []
+        },
+        {
+          "path": "utils/units/sources.json",
+          "identity": "key: id",
+          "added": 2,
+          "modified": 0,
+          "deleted": 0,
+          "added_ids": [
+            "si-brochure-9-v4.01",
+            "tm-data-turkmen-drafts-2026"
+          ],
+          "modified_ids": [],
+          "deleted_ids": []
+        },
+        {
+          "path": "utils/units/units.json",
+          "identity": "key: id",
+          "added": 52,
+          "modified": 0,
+          "deleted": 0,
+          "added_ids": [
+            "ampere",
+            "angstrom",
+            "arcminute",
+            "arcsecond",
+            "are",
+            "astronomical-unit",
+            "bar",
+            "barn",
+            "becquerel",
+            "bel",
+            "candela",
+            "coulomb",
+            "dalton",
+            "day",
+            "decibel",
+            "degree",
+            "degree-celsius",
+            "electronvolt",
+            "farad",
+            "gal"
+          ],
+          "modified_ids": [],
+          "deleted_ids": []
+        }
+      ],
+      "schema": [],
+      "metadata": [],
+      "breaking": []
+    }
+  ]
+}

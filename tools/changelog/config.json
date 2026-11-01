@@ -15,6 +15,9 @@
     { "pattern": "utils/calendar/*.json", "key": ["id"] },
     { "pattern": "utils/colors/colors.json", "key": ["id"] },
     { "pattern": "utils/country-names/countries.json", "key": ["code"] },
+    { "pattern": "utils/currencies/currencies.json", "key": ["code"] },
+    { "pattern": "utils/currencies/entities.json", "key": ["currency_code", "entity"] },
+    { "pattern": "utils/currencies/sources.json", "key": ["id"] },
     { "pattern": "utils/holidays/holidays.json", "key": ["name"] },
     { "pattern": "utils/names/given-names.json", "records": "names", "key": ["name", "gender"] },
     { "pattern": "utils/normalization/test_cases.json", "records": "test_cases", "key": ["id"] },
@@ -23,6 +26,9 @@
     { "pattern": "utils/proverbs/nakyllar.json", "records": "proverbs" },
     { "pattern": "utils/riddles/*.json", "key": ["id"] },
     { "pattern": "utils/stopword/stopwords.json", "records": "words" },
-    { "pattern": "utils/transliteration/test_cases.json", "records": "test_cases", "key": ["id"] }
+    { "pattern": "utils/transliteration/test_cases.json", "records": "test_cases", "key": ["id"] },
+    { "pattern": "utils/units/units.json", "key": ["id"] },
+    { "pattern": "utils/units/prefixes.json", "key": ["name_en"] },
+    { "pattern": "utils/units/sources.json", "key": ["id"] }
   ]
 }
