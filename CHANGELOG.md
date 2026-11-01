@@ -15,6 +15,47 @@ go run ./tools/changelog --from <previous-commit> --to <commit> --changelog
 
 <!-- changelog:entries -->
 
+<!-- changelog:range 12d08112e81e48fa8e95204911578d375934ad5c..a4e78d11de66bbe46e2a6a1986b6245983474edb -->
+## 2026-10-31 · `12d08112e81e`…`a4e78d11de66`
+
+2 datasets changed: 535 added, 0 modified, 0 deleted record(s).
+
+### Currencies (`utils-currencies`)
+
+New dataset, version `sha256:b77b8f2c1011`.
+
+#### Added
+
+- 178 records in `utils/currencies/currencies.json`
+- 277 records in `utils/currencies/entities.json`
+- 2 records in `utils/currencies/sources.json`
+- File `utils/currencies/currencies.csv`
+- File `utils/currencies/currencies.json`
+- File `utils/currencies/entities.csv`
+- File `utils/currencies/entities.json`
+- File `utils/currencies/sources.json`
+- Format csv
+- Format json
+
+### Units (`utils-units`)
+
+New dataset, version `sha256:c45d71a47b0c`.
+
+#### Added
+
+- 24 records in `utils/units/prefixes.json`
+- 2 records in `utils/units/sources.json`
+- 52 records in `utils/units/units.json`
+- File `utils/units/prefixes.csv`
+- File `utils/units/prefixes.json`
+- File `utils/units/sources.json`
+- File `utils/units/units.csv`
+- File `utils/units/units.json`
+- Format csv
+- Format json
+
+<!-- changelog:end -->
+
 <!-- changelog:range 33f2a3e99ba1bcb963e01887734b4ab3c398c4d9..0d12c9d4cd541e888dd885f2ca7f6002e3e36834 -->
 ## 2026-10-18 · `33f2a3e99ba1`…`0d12c9d4cd54`
 
