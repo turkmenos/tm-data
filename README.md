@@ -29,6 +29,10 @@ for coverage, representation rules, and regeneration commands.
 
 See [DATA_FORMAT.md](DATA_FORMAT.md) for shared encoding, field naming, date, and export conventions.
 
+A static [dataset browser](site/README.md) lists every dataset with its files,
+record counts, quality status, and change history, and previews JSON files in
+the browser.
+
 ## Usage
 
 Clone the repository:
