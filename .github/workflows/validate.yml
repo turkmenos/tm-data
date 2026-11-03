@@ -67,6 +67,12 @@ jobs:
       - name: Validate morphology analyses
         run: go run ./tools/morphology
 
+      - name: Test parallel corpus tooling
+        run: go test ./tools/parallelcorpus
+
+      - name: Validate parallel corpus and exports
+        run: go run ./tools/parallelcorpus --check
+
       - name: Test dataset catalog
         run: go test ./tools/catalog
 

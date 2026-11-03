@@ -15,6 +15,7 @@ Shared conventions for new datasets and exports in `tm-data`. Existing datasets 
 | Calendar | JSON arrays using `tm`, `en`, and an identifier such as `number`, `iso`, or `id` | [Calendar](utils/calendar/README.md) |
 | Names | JSON arrays containing `name` and `description` | [Names](utils/names/README.md) |
 | Morphology | JSON arrays of suffixes, rules, segmented examples, exceptions, and source records | [Morphology](language/morphology/README.md) |
+| Parallel corpus | JSON array of aligned sentence records keyed by ISO 639-1 code, a CSV export, a JSON Schema, and a source registry | [Parallel corpus](language/parallel-corpus/README.md) |
 | Riddles | JSON array of riddle records plus a source registry | [Riddles](utils/riddles/README.md) |
 | Postal codes | JSON records with string-valued source fields, including codes and coordinates | [Postal codes](utils/postal-codes/README.md) |
 | Colors | JSON array of records with `name_tm`, `name_en`, `hex_code`, and `category`; also available as MySQL SQL | [Colors](utils/colors/README.md) |

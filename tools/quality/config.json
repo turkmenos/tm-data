@@ -55,6 +55,17 @@
       ]
     },
     {
+      "id": "language-parallel-corpus",
+      "record_resources": [{ "pattern": "language/parallel-corpus/sentences.json" }],
+      "metrics": [
+        {
+          "path": "language/parallel-corpus/sentences.json",
+          "verification": { "field": "verification_status", "verified": ["human_reviewed"] },
+          "source_fields": ["source"]
+        }
+      ]
+    },
+    {
       "id": "utils-calendar",
       "record_resources": [{ "format": "json" }]
     },

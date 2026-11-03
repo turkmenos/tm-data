@@ -997,6 +997,58 @@
       ]
     },
     {
+      "id": "language-parallel-corpus",
+      "title": "Parallel Corpus",
+      "location": "language/parallel-corpus",
+      "version": "sha256:ca9a67edbc6f2eaac791343283620cb0f8b998dc6b2f2f7b372326bac9a86db9",
+      "formats": [
+        "csv",
+        "json"
+      ],
+      "documentation": [
+        "language/parallel-corpus/README.md",
+        "language/parallel-corpus/SOURCES.md"
+      ],
+      "provenance": {
+        "references": [
+          "language/parallel-corpus/README.md",
+          "language/parallel-corpus/SOURCES.md"
+        ],
+        "note": "Repository documentation and embedded source metadata; coverage and redistribution rights may be incomplete."
+      },
+      "resources": [
+        {
+          "path": "language/parallel-corpus/schema.json",
+          "format": "json",
+          "version": "sha256:b9a570a38aaeaff153c962e1d463875799b808412f1721b522dd3dfa05e0af6e",
+          "record_count": null,
+          "record_unit": null,
+          "count_note": "No supported record counter; count is unknown, not zero."
+        },
+        {
+          "path": "language/parallel-corpus/sentences.csv",
+          "format": "csv",
+          "version": "sha256:04a2db7f2be1d97706d2ed858b01eb6efb44b12563f367de27fae288c831e265",
+          "record_count": 20,
+          "record_unit": "records"
+        },
+        {
+          "path": "language/parallel-corpus/sentences.json",
+          "format": "json",
+          "version": "sha256:05a122a15186152fcfd7ec5ea4d54b6545fa1572a8a768fa95cbf10f4540dc2d",
+          "record_count": 20,
+          "record_unit": "records"
+        },
+        {
+          "path": "language/parallel-corpus/sources.json",
+          "format": "json",
+          "version": "sha256:131ee9fd2eb9f01bb72d21da8d574e128a9ac0da497c8df043ab7894f2b486ad",
+          "record_count": 1,
+          "record_unit": "records"
+        }
+      ]
+    },
+    {
       "id": "utils-calendar",
       "title": "Calendar",
       "location": "utils/calendar",

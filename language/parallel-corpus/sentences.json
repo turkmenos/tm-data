@@ -1,0 +1,222 @@
+[
+  {
+    "id": "sentence-000001",
+    "translations": {
+      "tk": "Salam, nähili?",
+      "tr": "Merhaba, nasılsın?",
+      "en": "Hello, how are you?"
+    },
+    "category": "greetings",
+    "verification_status": "unverified",
+    "source": "tm-data-original-2026"
+  },
+  {
+    "id": "sentence-000002",
+    "translations": {
+      "tk": "Hoş geldiňiz!",
+      "tr": "Hoş geldiniz!",
+      "en": "Welcome!"
+    },
+    "category": "greetings",
+    "verification_status": "unverified",
+    "source": "tm-data-original-2026"
+  },
+  {
+    "id": "sentence-000003",
+    "translations": {
+      "tk": "Sag boluň.",
+      "tr": "Teşekkür ederim.",
+      "en": "Thank you."
+    },
+    "category": "greetings",
+    "verification_status": "unverified",
+    "source": "tm-data-original-2026"
+  },
+  {
+    "id": "sentence-000004",
+    "translations": {
+      "tk": "Görüşeris!",
+      "tr": "Görüşürüz!",
+      "en": "See you!"
+    },
+    "category": "greetings",
+    "verification_status": "unverified",
+    "source": "tm-data-original-2026"
+  },
+  {
+    "id": "sentence-000005",
+    "translations": {
+      "tk": "Meniň adym Merjen.",
+      "tr": "Benim adım Merjen.",
+      "en": "My name is Merjen."
+    },
+    "category": "greetings",
+    "verification_status": "unverified",
+    "source": "tm-data-original-2026"
+  },
+  {
+    "id": "sentence-000006",
+    "translations": {
+      "tk": "Men her gün ir turýaryn.",
+      "tr": "Her gün erken kalkarım.",
+      "en": "I get up early every day."
+    },
+    "category": "daily_life",
+    "verification_status": "unverified",
+    "source": "tm-data-original-2026"
+  },
+  {
+    "id": "sentence-000007",
+    "translations": {
+      "tk": "Biz agşam çaý içýäris.",
+      "tr": "Akşamları çay içeriz.",
+      "en": "We drink tea in the evening."
+    },
+    "category": "daily_life",
+    "verification_status": "unverified",
+    "source": "tm-data-original-2026"
+  },
+  {
+    "id": "sentence-000008",
+    "translations": {
+      "tk": "Kakam işe awtobus bilen gidýär.",
+      "tr": "Babam işe otobüsle gidiyor.",
+      "en": "My father goes to work by bus."
+    },
+    "category": "daily_life",
+    "verification_status": "unverified",
+    "source": "tm-data-original-2026"
+  },
+  {
+    "id": "sentence-000009",
+    "translations": {
+      "tk": "Bu çörek gaty tagamly.",
+      "tr": "Bu ekmek çok lezzetli.",
+      "en": "This bread is very tasty."
+    },
+    "category": "food",
+    "verification_status": "unverified",
+    "source": "tm-data-original-2026"
+  },
+  {
+    "id": "sentence-000010",
+    "translations": {
+      "tk": "Maňa bir käse suw beriň.",
+      "tr": "Bana bir bardak su verin.",
+      "en": "Please give me a cup of water."
+    },
+    "category": "food",
+    "verification_status": "unverified",
+    "source": "tm-data-original-2026"
+  },
+  {
+    "id": "sentence-000011",
+    "translations": {
+      "tk": "Bazar nirede?",
+      "tr": "Pazar nerede?",
+      "en": "Where is the market?"
+    },
+    "category": "travel",
+    "verification_status": "unverified",
+    "source": "tm-data-original-2026"
+  },
+  {
+    "id": "sentence-000012",
+    "translations": {
+      "tk": "Otly Aşgabada sagat sekizde ýetýär.",
+      "tr": "Tren Aşkabat'a saat sekizde varıyor.",
+      "en": "The train arrives in Ashgabat at eight o'clock."
+    },
+    "category": "travel",
+    "verification_status": "unverified",
+    "source": "tm-data-original-2026"
+  },
+  {
+    "id": "sentence-000013",
+    "translations": {
+      "tk": "Men Türkmenbaşy şäherine gitmek isleýärin.",
+      "tr": "Türkmenbaşı şehrine gitmek istiyorum.",
+      "en": "I want to go to the city of Türkmenbaşy."
+    },
+    "category": "travel",
+    "verification_status": "unverified",
+    "source": "tm-data-original-2026"
+  },
+  {
+    "id": "sentence-000014",
+    "translations": {
+      "tk": "Şu gün howa gaty yssy.",
+      "tr": "Bugün hava çok sıcak.",
+      "en": "The weather is very hot today."
+    },
+    "category": "weather",
+    "verification_status": "unverified",
+    "source": "tm-data-original-2026"
+  },
+  {
+    "id": "sentence-000015",
+    "translations": {
+      "tk": "Ertir ýagyş ýagjak.",
+      "tr": "Yarın yağmur yağacak.",
+      "en": "It is going to rain tomorrow."
+    },
+    "category": "weather",
+    "verification_status": "unverified",
+    "source": "tm-data-original-2026"
+  },
+  {
+    "id": "sentence-000016",
+    "translations": {
+      "tk": "Mekdep sagat dokuzda başlanýar.",
+      "tr": "Okul saat dokuzda başlıyor.",
+      "en": "School starts at nine o'clock."
+    },
+    "category": "education",
+    "verification_status": "unverified",
+    "source": "tm-data-original-2026"
+  },
+  {
+    "id": "sentence-000017",
+    "translations": {
+      "tk": "Men türkmen dilini öwrenýärin.",
+      "tr": "Türkmence öğreniyorum.",
+      "en": "I am learning Turkmen."
+    },
+    "category": "education",
+    "verification_status": "unverified",
+    "source": "tm-data-original-2026"
+  },
+  {
+    "id": "sentence-000018",
+    "translations": {
+      "tk": "Kitaby stoluň üstüne goý.",
+      "tr": "Kitabı masanın üstüne koy.",
+      "en": "Put the book on the table."
+    },
+    "category": "education",
+    "verification_status": "unverified",
+    "source": "tm-data-original-2026"
+  },
+  {
+    "id": "sentence-000019",
+    "translations": {
+      "tk": "Sagat näçe boldy?",
+      "tr": "Saat kaç oldu?",
+      "en": "What time is it?"
+    },
+    "category": "numbers_time",
+    "verification_status": "unverified",
+    "source": "tm-data-original-2026"
+  },
+  {
+    "id": "sentence-000020",
+    "translations": {
+      "tk": "Meniň iki doganym bar.",
+      "tr": "İki kardeşim var.",
+      "en": "I have two siblings."
+    },
+    "category": "numbers_time",
+    "verification_status": "unverified",
+    "source": "tm-data-original-2026"
+  }
+]
