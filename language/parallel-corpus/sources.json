@@ -1,0 +1,13 @@
+[
+  {
+    "id": "tm-data-original-2026",
+    "type": "original",
+    "title": "Original example sentences created for tm-data",
+    "creator": "tm-data (AI-assisted draft)",
+    "created_year": 2026,
+    "license": "ODbL-1.0",
+    "rights": "Original project content released under the repository LICENSE (ODbL 1.0); redistribution permitted under its terms",
+    "machine_assisted": true,
+    "note": "Composed for this dataset as schema and tooling examples, not copied from a book, website, phrasebook, or existing translation corpus. Turkmen, Turkish, and English wording has not been reviewed by a human translator."
+  }
+]

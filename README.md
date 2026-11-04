@@ -18,6 +18,7 @@ Open, machine-readable datasets related to Turkmenistan.
 | Dictionary | 18,674 searchable Turkmen headwords with pronunciations, definitions, and examples | JSON | [Guide](dictionary/README.md) |
 | Given names | 447 Turkmen names with meaning, origin, gender, variants, and provenance status | JSON | [Guide](utils/names/README.md) |
 | Morphology | 25 suffix families, 50 noun/verb analyses, harmony rules, and selected exceptions | JSON | [Guide](language/morphology/README.md) |
+| Parallel corpus | 20 original Turkmen–Turkish–English example sentences (unverified) with schema, provenance, and alignment checks | JSON, CSV | [Guide](language/parallel-corpus/README.md) |
 | Riddles | 10 original Turkmen riddles with answers, categories, and source metadata | JSON | [Guide](utils/riddles/README.md) |
 | Units | 52 SI and accepted non-SI units and 24 SI prefixes with symbols, SI values, and drafted Turkmen names | JSON, CSV | [Guide](utils/units/README.md) |
 
@@ -163,6 +164,14 @@ go run ./tools/morphology
 ```
 
 See the [morphology guide](language/morphology/README.md) for coverage and verification limits.
+
+Parallel corpus encoding, duplicate, alignment, provenance, and export checks:
+
+```sh
+go run ./tools/parallelcorpus --check
+```
+
+See the [parallel corpus guide](language/parallel-corpus/README.md) for the schema and verification statuses.
 
 ### Quality report
 

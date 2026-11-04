@@ -235,6 +235,24 @@
       "unique": [["name"]]
     },
     {
+      "path": "language/parallel-corpus/sentences.json",
+      "required": { "id": "string", "translations": "object", "category": "string", "verification_status": "string", "source": "string" },
+      "non_empty": ["id", "category", "verification_status", "source"],
+      "unique": [["id"]],
+      "allowed_values": {
+        "category": ["greetings", "daily_life", "food", "travel", "weather", "education", "numbers_time"],
+        "verification_status": ["unverified", "human_reviewed"]
+      }
+    },
+    {
+      "path": "language/parallel-corpus/sources.json",
+      "required": { "id": "string", "type": "string", "title": "string", "creator": "string", "license": "string", "rights": "string", "machine_assisted": "boolean", "note": "string" },
+      "non_empty": ["id", "type", "title", "creator", "license", "rights", "note"],
+      "unique": [["id"]],
+      "allowed_values": { "type": ["original", "publication", "website", "corpus"] },
+      "ranges": { "created_year": { "min": 1900, "max": 2100 } }
+    },
+    {
       "path": "utils/riddles/riddles.json",
       "required": { "id": "string", "text": "string", "answer": "string", "category": "string", "source_id": "string", "verification_status": "string" },
       "non_empty": ["id", "text", "answer", "category", "source_id", "verification_status"],
@@ -356,6 +374,12 @@
       "from_field": "parent_slug",
       "to_path": "geo/json/regions.json",
       "to_field": "slug"
+    },
+    {
+      "from_path": "language/parallel-corpus/sentences.json",
+      "from_field": "source",
+      "to_path": "language/parallel-corpus/sources.json",
+      "to_field": "id"
     },
     {
       "from_path": "utils/riddles/riddles.json",

@@ -1,0 +1,21 @@
+id,tk,tr,en,category,verification_status,source
+sentence-000001,"Salam, nähili?","Merhaba, nasılsın?","Hello, how are you?",greetings,unverified,tm-data-original-2026
+sentence-000002,Hoş geldiňiz!,Hoş geldiniz!,Welcome!,greetings,unverified,tm-data-original-2026
+sentence-000003,Sag boluň.,Teşekkür ederim.,Thank you.,greetings,unverified,tm-data-original-2026
+sentence-000004,Görüşeris!,Görüşürüz!,See you!,greetings,unverified,tm-data-original-2026
+sentence-000005,Meniň adym Merjen.,Benim adım Merjen.,My name is Merjen.,greetings,unverified,tm-data-original-2026
+sentence-000006,Men her gün ir turýaryn.,Her gün erken kalkarım.,I get up early every day.,daily_life,unverified,tm-data-original-2026
+sentence-000007,Biz agşam çaý içýäris.,Akşamları çay içeriz.,We drink tea in the evening.,daily_life,unverified,tm-data-original-2026
+sentence-000008,Kakam işe awtobus bilen gidýär.,Babam işe otobüsle gidiyor.,My father goes to work by bus.,daily_life,unverified,tm-data-original-2026
+sentence-000009,Bu çörek gaty tagamly.,Bu ekmek çok lezzetli.,This bread is very tasty.,food,unverified,tm-data-original-2026
+sentence-000010,Maňa bir käse suw beriň.,Bana bir bardak su verin.,Please give me a cup of water.,food,unverified,tm-data-original-2026
+sentence-000011,Bazar nirede?,Pazar nerede?,Where is the market?,travel,unverified,tm-data-original-2026
+sentence-000012,Otly Aşgabada sagat sekizde ýetýär.,Tren Aşkabat'a saat sekizde varıyor.,The train arrives in Ashgabat at eight o'clock.,travel,unverified,tm-data-original-2026
+sentence-000013,Men Türkmenbaşy şäherine gitmek isleýärin.,Türkmenbaşı şehrine gitmek istiyorum.,I want to go to the city of Türkmenbaşy.,travel,unverified,tm-data-original-2026
+sentence-000014,Şu gün howa gaty yssy.,Bugün hava çok sıcak.,The weather is very hot today.,weather,unverified,tm-data-original-2026
+sentence-000015,Ertir ýagyş ýagjak.,Yarın yağmur yağacak.,It is going to rain tomorrow.,weather,unverified,tm-data-original-2026
+sentence-000016,Mekdep sagat dokuzda başlanýar.,Okul saat dokuzda başlıyor.,School starts at nine o'clock.,education,unverified,tm-data-original-2026
+sentence-000017,Men türkmen dilini öwrenýärin.,Türkmence öğreniyorum.,I am learning Turkmen.,education,unverified,tm-data-original-2026
+sentence-000018,Kitaby stoluň üstüne goý.,Kitabı masanın üstüne koy.,Put the book on the table.,education,unverified,tm-data-original-2026
+sentence-000019,Sagat näçe boldy?,Saat kaç oldu?,What time is it?,numbers_time,unverified,tm-data-original-2026
+sentence-000020,Meniň iki doganym bar.,İki kardeşim var.,I have two siblings.,numbers_time,unverified,tm-data-original-2026

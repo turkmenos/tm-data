@@ -7,12 +7,12 @@
     "integrity_rules": "tools/integrity/rules.json"
   },
   "totals": {
-    "datasets": 18,
+    "datasets": 19,
     "passed": 15,
-    "warning": 3,
+    "warning": 4,
     "error": 0,
     "errors": 0,
-    "warnings": 5
+    "warnings": 6
   },
   "datasets": [
     {
@@ -177,6 +177,40 @@
       "error_count": 0,
       "errors": [],
       "warnings": []
+    },
+    {
+      "dataset": "language-parallel-corpus",
+      "title": "Parallel Corpus",
+      "location": "language/parallel-corpus",
+      "version": "sha256:ca9a67edbc6f2eaac791343283620cb0f8b998dc6b2f2f7b372326bac9a86db9",
+      "record_count": 20,
+      "record_unit": "records",
+      "status": "warning",
+      "checks": {
+        "utf8": "passed",
+        "syntax": "passed",
+        "duplicates": "passed",
+        "schema": "passed",
+        "references": "passed",
+        "metrics": "passed"
+      },
+      "metrics": {
+        "files_checked": 4,
+        "invalid_utf8_files": 0,
+        "syntax_errors": 0,
+        "duplicate_records": 0,
+        "missing_required_fields": 0,
+        "schema_violations": 0,
+        "referential_integrity_errors": 0,
+        "unverified_records": 20,
+        "missing_sources": 0,
+        "missing_coordinates": null
+      },
+      "error_count": 0,
+      "errors": [],
+      "warnings": [
+        "20 of 20 records in language/parallel-corpus/sentences.json are not verified (verification_status)"
+      ]
     },
     {
       "dataset": "utils-calendar",

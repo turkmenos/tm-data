@@ -25,6 +25,8 @@ Planned improvements for `tm-data`. Items are proposals without fixed release da
 - [ ] Add stop words and expand text-normalization resources.
 - [x] Add a source-linked [Turkmen morphology dataset](language/morphology/README.md) with common noun/verb suffixes, segmentation, harmony, and automated integrity checks.
 - [ ] Expand morphology with specialist-reviewed analyses, vowel-loss and dative-contraction patterns, derivational suffixes, and additional verb paradigms.
+- [x] Add a [Turkmen–Turkish–English parallel corpus](language/parallel-corpus/README.md) schema with provenance, duplicate, alignment, and export checks, seeded with original unverified example sentences.
+- [ ] Grow the parallel corpus with licensed, source-backed sentences and human-reviewed translations.
 - [ ] Expand proverbs with topic labels, add sayings, and grow the original riddles collection with reviewed wording and sources.
 - [ ] Expand given names with verified meanings and origins where sources are available.
 - [ ] Add historical dates and cultural heritage records with sources.

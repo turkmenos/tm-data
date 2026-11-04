@@ -51,3 +51,8 @@ data files.
 Morphology top-level schemas are also registered here. Nested references, suffix
 compatibility, harmony, and reconstruction are checked by `go run ./tools/morphology`;
 see the [morphology guide](../../language/morphology/README.md). Both run in CI.
+
+Parallel corpus top-level fields, allowed values, and source references are
+registered here as well; nested translation, duplicate-text, alignment, and
+export checks are run by `go run ./tools/parallelcorpus`. See the
+[parallel corpus guide](../../language/parallel-corpus/README.md).

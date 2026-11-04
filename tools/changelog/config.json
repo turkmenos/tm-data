@@ -10,6 +10,8 @@
     { "pattern": "poetry/json/*/poetry.json", "records": "poems", "key": ["id"] },
     { "pattern": "stories/**.json", "records": "pages", "key": ["page_number"] },
     { "pattern": "language/morphology/*.json", "key": ["id"] },
+    { "pattern": "language/parallel-corpus/sentences.json", "key": ["id"] },
+    { "pattern": "language/parallel-corpus/sources.json", "key": ["id"] },
     { "pattern": "utils/calendar/months.json", "key": ["number"] },
     { "pattern": "utils/calendar/weekdays.json", "key": ["iso"] },
     { "pattern": "utils/calendar/*.json", "key": ["id"] },
